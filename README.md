@@ -1,4 +1,2 @@
 # arteinvita
 Pagina de invitaciones
-
-
