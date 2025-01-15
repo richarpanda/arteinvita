@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
         /* Estilo global */
         @font-face {
             font-family: 'Nova Quinta';
-            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype'); /* Asegúrate de que el archivo esté en la carpeta correcta */
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+            /* Asegúrate de que el archivo esté en la carpeta correcta */
         }
 
         body {
@@ -25,12 +27,14 @@
             position: relative;
             width: 300px;
             height: 300px;
-            background-image: url('img/sobre.png'); /* Imagen del sobre */
+            background-image: url('img/sobre.png');
+            /* Imagen del sobre */
             background-size: cover;
             background-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform-origin: center; /* Punto de giro centrado */
+            transform-origin: center;
+            /* Punto de giro centrado */
         }
 
         .name {
@@ -49,17 +53,25 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px; /* Tamaño inicial del botón */
+            width: 80px;
+            /* Tamaño inicial del botón */
             height: 80px;
-            background-image: url('img/Sin-título-2.png'); /* Imagen del sello */
+            background-image: url('img/Sin-título-2.png');
+            /* Imagen del sello */
             background-size: cover;
             background-position: center;
-            background-color: transparent; /* Asegura fondo transparente */
-            border: none; /* Elimina bordes predeterminados */
-            outline: none; /* Elimina el contorno del botón */
-            box-shadow: none; /* Elimina sombras predeterminadas */
-            padding: 0; /* Elimina cualquier relleno */
-            appearance: none; /* Resetea el estilo del botón en navegadores */
+            background-color: transparent;
+            /* Asegura fondo transparente */
+            border: none;
+            /* Elimina bordes predeterminados */
+            outline: none;
+            /* Elimina el contorno del botón */
+            box-shadow: none;
+            /* Elimina sombras predeterminadas */
+            padding: 0;
+            /* Elimina cualquier relleno */
+            appearance: none;
+            /* Resetea el estilo del botón en navegadores */
             cursor: pointer;
             transition: transform 0.3s ease;
             font-size: 9px;
@@ -71,7 +83,8 @@
         }
 
         .button:hover {
-            transform: translate(-50%, -50%) scale(1.2); /* Escala mayor sin mover la posición */
+            transform: translate(-50%, -50%) scale(1.2);
+            /* Escala mayor sin mover la posición */
         }
 
         /* Animación de apertura desde el centro hacia afuera */
@@ -81,18 +94,25 @@
 
         @keyframes openEnvelopeOutwards {
             0% {
-                transform: scale(1) rotateX(0deg); /* Estado inicial */
+                transform: scale(1) rotateX(0deg);
+                /* Estado inicial */
             }
+
             50% {
-                transform: scale(1.05) rotateX(30deg) translateZ(10px); /* Expande y levanta */
+                transform: scale(1.05) rotateX(30deg) translateZ(10px);
+                /* Expande y levanta */
             }
+
             100% {
-                transform: scale(1.1) rotateX(180deg) translateZ(50px); /* Apertura completa */
-                opacity: 0; /* Desvanece el sobre al finalizar */
+                transform: scale(1.1) rotateX(180deg) translateZ(50px);
+                /* Apertura completa */
+                opacity: 0;
+                /* Desvanece el sobre al finalizar */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container" id="envelope">
         <div class="name">Romina</div> <!-- Ahora no editable -->
@@ -111,4 +131,5 @@
         });
     </script>
 </body>
+
 </html>
