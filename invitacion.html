@@ -23,10 +23,10 @@
        .background {
         background-image: url('img/fondo.png'); /* Ruta de tu imagen */
         background-repeat: no-repeat; /* Evita que se repita */
-        background-size: 375px 5310px; /* Tamaño exacto */
+        background-size: 375px 5546px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
         width: 375px; /* Ancho fijo */
-        height: 5310px; /* Altura exacta */
+        height: 5546px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
     }
@@ -347,7 +347,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: 2px;
-        height: 61px;
+        height: 0px;
         background-color: #6aa7cc;
         top: 426px;
     }
@@ -627,6 +627,12 @@
 		
 		
 		
+       
+        #countdown-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #6aa7cc;
+        }
 		
     </style>
 </head>
@@ -734,18 +740,34 @@ y alegría…<br>¡Ven a celebrarlos conmigo!</p>
         <div class="countdown-icon"></div>
         <h2 class="final-title">Faltan</h2>
         <div class="countdown-container">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">DÍAS</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">HRS</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">MIN</div>
-            </div>
+           
+        <div id="countdown-display"></div>
+    
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("February 1, 2025 00:00:00").getTime();
+            const countdownDisplay = document.getElementById("countdown-display");
+
+            function update() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
+
+                if (days > 0) {
+                    countdownDisplay.textContent = `${days} día${days !== 1 ? 's' : ''} `;
+                } else {
+                    countdownDisplay.textContent = "¡El evento es hoy!";
+                }
+            }
+
+            update(); // Actualizar inmediatamente
+            setInterval(update, 1000 * 60 * 60); // Actualizar cada hora
+        }
+
+        // Iniciar la cuenta regresiva cuando se cargue la página
+        window.onload = updateCountdown;
+    </script>
         </div>
         <p class="final-content">Para vivir esta gran<br>celebración</p>
     </div>
@@ -804,33 +826,7 @@ este hermoso sueño!.</p>
 </script>
 
     <script>
-    // Función para actualizar el contador
-    function updateCountdown() {
-        const targetDate = new Date("February 1, 2024 15:30:00").getTime();
-        
-        function update() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            document.getElementById("days").textContent = String(days).padStart(2, '0');
-            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-
-            if (distance < 0) {
-                document.getElementById("days").textContent = "00";
-                document.getElementById("hours").textContent = "00";
-                document.getElementById("minutes").textContent = "00";
-            }
-        }
-
-        update();
-        setInterval(update, 1000 * 60); // Actualizar cada minuto
-    }
-
+   
     // Animación de elementos al hacer scroll
     document.addEventListener('DOMContentLoaded', function() {
         updateCountdown();
