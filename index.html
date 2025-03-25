@@ -1,135 +1,454 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación - Mis XV Años</title>
-    <style>
-        /* Estilo global */
-        @font-face {
-            font-family: 'Nova Quinta';
-            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
-            /* Asegúrate de que el archivo esté en la carpeta correcta */
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background-image: url('img/sobre.png');
-            /* Imagen del sobre */
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform-origin: center;
-            /* Punto de giro centrado */
-        }
-
-        .name {
-            position: absolute;
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="TANIA SAENZ" />
+    <meta name="description" content="INVITACIONES DIGITALES PERSONALIZADAS//Tú eliges la temática, nosotros la hacemos realidad en tu invitación digital.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>Arte Invita - INVITACIONES DIGITALES PERSONALIZADAS</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="css/plugins.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+	 <!-- BOTON DE WHATS FLOTANTE -->
+	<style>
+       
+       .whatsapp-float {
+            position: fixed;
             bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 45px;
-            font-weight: bold;
-            color: #7f7f7f;
-            font-family: 'Nova Quinta', cursive;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
-
-        .button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            /* Tamaño inicial del botón */
-            height: 80px;
-            background-image: url('img/Sin-título-2.png');
-            /* Imagen del sello */
-            background-size: cover;
-            background-position: center;
-            background-color: transparent;
-            /* Asegura fondo transparente */
-            border: none;
-            /* Elimina bordes predeterminados */
-            outline: none;
-            /* Elimina el contorno del botón */
-            box-shadow: none;
-            /* Elimina sombras predeterminadas */
-            padding: 0;
-            /* Elimina cualquier relleno */
-            appearance: none;
-            /* Resetea el estilo del botón en navegadores */
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            font-size: 9px;
-            font-family: 'Baskerville', serif;
-            font-style: italic;
-            font-weight: 600;
-            color: #555;
-            text-align: center;
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
         }
-
-        .button:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-            /* Escala mayor sin mover la posición */
+        .whatsapp-icon {
+            width: 36px;
+            height: 36px;
+            fill: currentColor;
         }
+		
+		.button-container {
+    text-align: center;
+    margin: 20px;
+}
 
-        /* Animación de apertura desde el centro hacia afuera */
-        .container.open {
-            animation: openEnvelopeOutwards 1s forwards;
-        }
+.cta-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    font-size: 2rem; /* Tamaño del texto más grande */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 40px; /* Más espacio alrededor del texto */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-        @keyframes openEnvelopeOutwards {
-            0% {
-                transform: scale(1) rotateX(0deg);
-                /* Estado inicial */
-            }
+.cta-button:hover {
+    transform: scale(1.1); /* Escala mayor al pasar el mouse */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+	 background-color: #128C7E; /* Fondo blanco al pasar el mouse */
+    color: #28a745; /* Texto verde */
+    
+}
 
-            50% {
-                transform: scale(1.05) rotateX(30deg) translateZ(10px);
-                /* Expande y levanta */
-            }
+.subtext {
+    font-size: 1.2rem; /* Subtexto más grande */
+    color: #666;
+    margin-top: 15px;
+}
 
-            100% {
-                transform: scale(1.1) rotateX(180deg) translateZ(50px);
-                /* Apertura completa */
-                opacity: 0;
-                /* Desvanece el sobre al finalizar */
-            }
-        }
+@media (max-width: 768px) {
+    .cta-button {
+        font-size: 1.5rem; /* Ajuste para pantallas pequeñas */
+        padding: 15px 30px;
+    }
+
+    .subtext {
+        font-size: 1rem;
+    }
+}
+		
+		
+		
     </style>
 </head>
 
 <body>
-    <div class="container" id="envelope">
-        <div class="name">Romina</div> <!-- Ahora no editable -->
-        <button class="button" id="openButton">ABRIR</button>
+
+
+    <!-- Body Inner -->
+    <div class="body-inner">
+
+       
+ <!-- SECTION IMAGE FULLSCREEN -->
+        <section class="fullscreen" data-bg-video="index/video.mp4">
+            <div class="bg-overlay" data-style="1"></div>
+            <div class="container-fluid">
+                <div class="container-fullscreen">
+                    <div class="text-middle text-center">
+                          <h1 data-animate="fadeInUp" data-animate-delay="700" class="text-lg m-b-0"><img src="index/logo_big.png" alt="ARTE INVITA"></h1>
+                        
+                        <h1 class="text-medium m-t-0">ARTE INVITA</h1>
+                        <h2 class="lead"><strong>INVITACIONES DIGITALES
+ PERSONALIZADAS</strong></h2>
+					  <p class="lead">Súmate a la nueva era de invitaciones digitales y <br>
+ dale a tu evento un toque diferente, moderno y lleno de estilo</p>
+						<div data-animate="fadeInUp" data-animate-delay="1100">
+                           <div class="button-container">
+        <a href="https://wa.me/525591945042" class="cta-button">¡Escríbenos y hazla realidad!</a>
+        
+    </div>
+                    </div>
+                       
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- end: SECTION IMAGE FULLSCREEN -->
+
+       
+
+       <!-- ABOUT AUTHOR -->
+        <section id="section-about" class="p-t-100 p-b-100">
+            <div class="container">
+                <div class="row m-b-30">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="text-medium">Arte Invita</h2>
+                        <h3><strong>INVITACIONES DIGITALES:</strong></h3> 
+<h4><em>Prácticas, Modernas y Elegantes</em></h4>
+						<br>
+<br>
+
+						<button type="button"
+								class="btn btn-light btn-creative btn-icon-holder btn-shadow btn-light-hover"><a style="color: #705e35" href="demo/index.html" target="_blank"><strong>Ver invitación demo</strong></a><i class="icon-chevron-right"></i></button>
+					
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-4 text-end p-t-60">
+                        <p class="lead">En <strong>Arte Invita</strong>, nos especializamos en <strong>invitaciones 100% digitales</strong>. Olvídate del papel, los costos de impresión y los envíos tardados. Con nuestras invitaciones digitales ahorras tiempo y dinero. </p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <img src="homepages/fashion/images/cel.png" class="img-fluid btn-rounded" alt="">
+                    </div>
+
+                    <div class="col-lg-4  p-t-60">
+						
+					
+                        <p class="lead"> ¿Tu fiesta tiene temática de <strong>playa</strong>, <strong>mexicana</strong>, <strong>vintage</strong>, <strong>floral</strong> o de <strong>gala</strong>? ¡No importa!<br>
+<br>
+ <strong><em>TU INVITACIÓN DIGITAL ESTARÁ DISEÑADA A TU GUSTO.</em></strong>
+<br>
+<br>
+
+Tú eliges la temática, nosotros la hacemos realidad en tu invitación digital.</p>
+						<br>
+<br>
+ 
+						
+                    </div>
+                </div>
+            </div>
+
+			
+			<div class="button-container">
+        <a href="https://wa.me/525591945042" class="cta-button">Pide la tuya por WhatsApp ahora </a>
+         <p class="subtext"> ¡Aprovecha la promoción POR SOLO <strong>$999.00 MX</strong>! </p>
     </div>
 
-    <script>
-        const button = document.getElementById('openButton');
-        const envelope = document.getElementById('envelope');
+        </section>
+        <!-- end: ABOUT AUTHOR -->
+  <div class="seperator p-b-0 p-t-0"><i class="fa fa-chevron-down"></i>
+        </div>
+        <!-- TIPOS DE INVITACION -->
+        <section>
+            <div class="container">
 
-        button.addEventListener('click', () => {
-            envelope.classList.add('open'); // Agrega la clase para activar la animación
-            setTimeout(() => {
-                window.location.href = 'invitacion.html'; // Redirige después de la animación
-            }, 1000); // Tiempo en milisegundos (coincide con la duración de la animación)
-        });
-    </script>
+              
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="icon-box medium fancy">
+                            <div class="icon"> <img src="homepages/car-service/images/icons/1.png"> </div>
+                            <h4>Bodas</h4>
+                            <p>Celebra el amor con invitaciones que cuentan tu historia única.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="icon-box medium fancy">
+                            <div class="icon">  <img src="homepages/car-service/images/icons/2.png"> </div>
+                            <h4>XV Años</h4>
+                            <p>Destaca la magia de tus quince con diseños modernos y elegantes.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="icon-box medium fancy">
+                            <div class="icon"> <img src="homepages/car-service/images/icons/3.png"> </div>
+                            <h4>Bautizos</h4>
+                            <p>Invitaciones dulces y delicadas para dar la bienvenida al nuevo miembro de la familia.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="icon-box medium fancy">
+                            <div class="icon"> <img src="homepages/car-service/images/icons/4.png">  </div>
+                            <h4>Baby Shower</h4>
+                            <p>Anuncia la llegada de tu bebé con estilo y ternura.</p>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+				
+				<div class="button-container">
+        <a href="https://wa.me/525591945042" class="cta-button">¡Dale un toque moderno a tu celebración!  Contáctanos</a>
+        <p class="subtext">Tu fiesta tiene estilo… ¡tu invitación también! </p><br>
+<br>
+
+    </div>
+            </div>
+			
+			 <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                        <div class="accordion toggle fancy clean accordion-transparent">
+                            <div class="ac-item">
+                                <h5 class="ac-title">¿El Diseño es 100% Personalizado?</h5>
+                                <div class="ac-content" style="display: none;"><strong>¡Por supuesto! </strong>Diseñamos cada invitación 100% personalizada para que combine con la temática, colores y estilo de tu celebración. Desde bodas elegantes hasta XV años con brillo y glamour, nos adaptamos a lo que necesites.</div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title">¿Cómo reciben mis invitados la invitación digital?</h5>
+                                <div class="ac-content" style="display: none;">Es súper fácil. <strong>Te enviamos la invitación lista para compartir por WhatsApp</strong>, Facebook, Instagram o correo electrónico. Tus invitados podrán verla desde su celular, tablet o computadora sin necesidad de descargar nada.</div>
+                            </div>
+                            <div class="ac-item ac-active">
+                                <h5 class="ac-title">¿Las invitaciones digitales realmente son mejores que las impresas?</h5>
+                                <div class="ac-content"><strong>Sí.</strong> Las invitaciones digitales son más económicas, rápidas y <em>ecológicas</em>. Además, puedes compartirlas con un solo clic por WhatsApp, redes sociales o email, asegurándote de que todos tus invitados la reciban al instante.</div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title">¿Cómo sé cuántos invitados confirmarán su asistencia?</h5>
+                                <div class="ac-content" style="display: none;">Nuestras invitaciones <strong>incluyen un botón de confirmación de asistencia</strong>, donde tus invitados pueden confirmar su presencia con un solo clic. Así, puedes llevar el control sin complicaciones.Además te compartiremos un archivo editable donde podras ir anotando los nombres por persona o familia de tus invitados confirmados</div>
+                            </div>
+							
+							 <div class="ac-item">
+                                <h5 class="ac-title"> ¿Cuánto tiempo tarda en entregarse mi invitación digital?</h5>
+                                <div class="ac-content" style="display: none;">Depende del diseño y personalización, pero en general,<strong> la entrega es rápida.</strong> Los diseños pueden estar listos entre 3 a 5 días hábiles.</div>
+                            </div>
+
+							 <div class="ac-item">
+                                <h5 class="ac-title"> ¿Y si necesito hacer cambios después de recibir la invitación?</h5>
+                                <div class="ac-content" style="display: none;"><strong>Incluimos ajustes gratuitos en caso de que necesites cambiar un dato o corregir algún detalle.</strong> Si son cambios mayores o después de la entrega final, podemos hacerlos por un costo adicional.</div>
+                            </div>
+							
+							 <div class="ac-item">
+                                <h5 class="ac-title"> <strong>¿Cómo hago mi pedido y cuál es la forma de pago?</strong></h5>
+                                <div class="ac-content" style="display: none;"> Es fácil:<br>
+
+1️⃣ Llenas el formulario que te enviaremos por Whatsapp con los datos de tu evento y el estilo que te gustaría (puedes platicarnos y enviarnos fotos de tus ideas de decoración del salón, vestido, personajes, etc).<br>
+
+2️⃣ Realizas el pago<br>
+
+3️⃣ Creamos el diseño y te mostramos una vista previa. Y te enviamos la invitación lista para compartir.<br>
+
+📢 Aceptamos transferencias bancarias y pagos en OXXO.</div>
+                            </div>
+							
+							 <div class="ac-item">
+                                <h5 class="ac-title"> <strong>¿Puedo ver una muestra antes de contratar?</strong></h5>
+                                <div class="ac-content" style="display: none;"> 👀 <strong>Sí</strong>, tenemos ejemplos de invitaciones que hemos realizado para otros eventos. Escríbenos por WhatsApp y te enviamos una muestra para que veas la calidad de nuestro trabajo. Mientras aquí te dejamos una invitación demo:
+								 
+								 <br>
+<br>
+									
+									<button type="button"
+								class="btn btn-light btn-creative btn-icon-holder btn-shadow btn-light-hover"><a style="color: #705e35" href="demo/index.html" target="_blank"><strong>Ver invitación demo</strong></a><i class="icon-chevron-right"></i></button>
+</div>
+                            </div>
+							
+							
+							
+							 <div class="ac-item">
+                                <h5 class="ac-title"> ¿Necesito instalar alguna app para ver la invitación?</h5>
+                                <div class="ac-content" style="display: none;"><strong>No.</strong> Tus invitados podrán verla desde cualquier navegador, ya sea en su celular, tablet o computadora. No necesitan descargar nada.</div>
+                            </div>
+
+							<div class="ac-item">
+                                <h5 class="ac-title"> ¿Puedo agregar mi propio texto o frase especial?</h5>
+                                <div class="ac-content" style="display: none;"><strong>¡Claro!</strong> Podemos incluir frases, poemas, votos, dedicatorias o cualquier texto que tenga un significado especial para ti y tu evento.</div>
+                            </div>
+							
+							<div class="ac-item">
+                                <h5 class="ac-title"> ¿Se puede hacer la invitación en inglés o en otro idioma?</h5>
+                                <div class="ac-content" style="display: none;"><strong>Sí,</strong> <em>podemos hacer tu invitación en el idioma que necesites.</em> Ya sea todo en inglés o con traducción bilingüe (español-inglés, por ejemplo). ¡Escribemos y con gusto realzamos tu cotización!</div>
+                            </div>
+                        </div>
+                    </div>
+					<br>
+
+					<div class="button-container">
+        <a href="https://wa.me/525591945042" class="cta-button">Escríbenos por WhatsApp y resolvemos todas tus dudas</a>
+        <p class="subtext">Estamos aquí para ayudarte a crear la invitación perfecta.</p><br>
+<br>
+
+    </div>
+                    
+                </div>
+                
+            </div>
+			
+			<div class="seperator p-b-0 p-t-0"><i class="fa fa-chevron-down"></i>
+        </div>
+			
+			<section>
+            <div class="container">
+                <!-- Heading -->
+                <div class="text-center">
+                    <h3 class="fw-100"><strong>ÚNETE</strong> a quienes ya confiaron en Arte Invita</h3>
+                   
+                </div>
+                <!-- end: Heading -->
+
+                <!-- Testimonials -->
+                <div class="carousel testimonial testimonial-box" data-items="3" data-margin="30" data-arrows="false">
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                        <img src="images/team/6.jpg" alt="">
+                        <p>"Nuestra invitación de boda fue simplemente perfecta. 😍 Nos encantó el diseño, la música de fondo y lo fácil que fue compartirla con todos. ¡Hasta nuestros invitados nos preguntaron dónde la hicimos! Súper recomendados."</p>
+                        <span>Mariana & Daniel</span>
+                        <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                        <img src="images/team/6.jpg" alt="">
+                        <p>"Nos preocupaba que las invitaciones de papel no llegaran a todos a tiempo, pero con Arte Invita fue rapidísimo. Nuestra familia recibió la invitación en segundos y con un solo clic pudieron ver la ubicación del bautizo. ¡Práctico y hermoso!"</p>
+                        <span>Rosa y Javier, papás de Emiliano</span>
+					<span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                       <img src="images/team/6.jpg" alt="">
+                        <p>"Amé mi invitación de baby shower. La personalizaron justo como la quería, con tonos pastel y detalles súper lindos.  ¡10/10!"</p>
+                        <span>Ana Laura</span>
+                        <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                       <img src="images/team/6.jpg" alt="">
+                        <p>Hicimos una reunión familiar grande y necesitábamos algo fácil de compartir. Con la invitación digital todos recibieron los detalles y la ubicación sin problemas. Definitivamente lo volveremos a usar.</p>
+                        <span>Familia Rodríguez</span>
+                         <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                        <img src="images/team/6.jpg" alt="">
+                        <p>La invitación digital para mis XV quedó hermosa y lograrón la temática a la perfección de princesa. ¡Me encantó!"</p>
+                        <span>Andrea G.</span>
+                        <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+                    <!-- Testimonials item -->
+                    <div class="testimonial-item">
+                        <img src="images/team/6.jpg" alt="">
+                        <p>"Nos casamos en la playa y necesitábamos una forma fácil de compartir la ubicación con nuestros invitados así como hoteles cerca del evento. 🌊✨ La invitación digital fue increíble, con mapas, fotos y toda la info clara. ¡Gracias por hacerla tan especial!"</p>
+                        <span>Paola & Ricardo</span>
+                        <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    </div>
+                    <!-- end: Testimonials item-->
+
+                </div>
+                <!-- end: Testimonials -->
+            </div>
+        </section>
+			
+			
+			<div class="seperator p-b-0 p-t-0"><i class="fa fa-chevron-down"></i>
+        </div>
+			
+			 <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 center text-center">
+                        <br>
+<br>
+
+                        <h1 class="text-medium">Tu evento merece lo mejor</h1>
+                        <p class="lead m-b-60"> ¡Haz que tu evento brille desde el primer click con una invitación digital que sorprenderá a todos! 
+
+                        </p>
+                    </div>
+					
+                    <div class="col-lg-12" data-animate="fadeInUp">
+						<div align="center">
+                        <img  src="index/logo_small.png"  alt="Welcome to POLO">
+						</div>
+                    </div>
+                
+                </div>
+            </div>
+			
+        </section>
+        <!-- end: INVITACIONES -->
+
+ 
+      
+       
+       
+
+        <!-- Footer -->
+        <footer id="footer">
+            
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">&copy; 2025 ARTE INVITA. Todos los derechos reservados. </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end: Footer -->
+<!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/525591945042" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+    </div>
+    <!-- end: Body Inner -->
+
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!--Template functions-->
+    <script src="js/functions.js"></script>
+
 </body>
 
 </html>
