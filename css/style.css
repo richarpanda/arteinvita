@@ -1475,7 +1475,7 @@ a:not(.btn):not(.badge):not(.btn):not([href]):not([tabindex]) { color: #3c4043; 
 
 .fullscreen .container-fullscreen { width: 100%; }
 
-.halfscreen { width: 100%; height: 72%; overflow: hidden; -webkit-box-align: center !important; -ms-flex-align: center !important; -webkit-align-items: center !important; align-items: center !important; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; min-height: 72vh; }
+.halfscreen { width: 50%; height: 72%; overflow: hidden; -webkit-box-align: center !important; -ms-flex-align: center !important; -webkit-align-items: center !important; align-items: center !important; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; min-height: 72vh; }
 
 .halfscreen .container, .halfscreen .container-wide { margin-top: 2%; -ms-flex-preferred-size: 0; -webkit-flex-basis: 0; flex-basis: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; -webkit-flex-grow: 1; flex-grow: 1; }
 
