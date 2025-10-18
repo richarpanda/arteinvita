@@ -21,9 +21,12 @@
         body {
             margin: 0;
             padding: 0;
+			width: 100%;
+            overflow-x: hidden;
             font-family: 'Gabriola', serif;
             background-color: #fefefe;
         }
+
 
         /* Fondo fijo */
        .background {
@@ -31,10 +34,12 @@
         background-repeat: no-repeat; /* Evita que se repita */
         background-size: 450px 6205px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
-        width: 450px; /* Ancho fijo */
-        height: 6205px; /* Altura exacta */
+        width: 100%; /* Ancho fijo */
+		max-width: 450px; /* Ancho máximo */
+        min-height: 6205px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
+		position: relative;
     }
 
         @keyframes slideIn {
@@ -1022,14 +1027,12 @@ he preparado una pequeña mesa de regalos con opciones que me hacen mucha ilusi�
 </section>	
 			
 			
-			 <p class="parrafo">Este día será inolvidable gracias a ti. <br>
+			
+			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
-formes parte de mi historia  <br>
-y celebres conmigo<br>
-
-este hermoso sueño!.</p>
-			 <h2 class="final-title">¡Nos vemos pronto!</h2>
-
+celebres conmigo!.</p>
+			 <h2 class="final-title">¡Nos vemos<br>
+ pronto!</h2>
            
             <!-- Reproductor flotante -->
     <div class="floating-player">
