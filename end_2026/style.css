@@ -22,6 +22,19 @@ body{
 
 .container{width:min(1100px, 92%); margin:0 auto}
 
+/* === Estilo de enlaces blancos === */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff0099; /* cambia a rosa al pasar el mouse */
+  text-decoration: underline;
+}
+
+
 .topbar{
   background: linear-gradient(90deg, var(--black), var(--pink));
   color:#fff; font-size:.9rem;
