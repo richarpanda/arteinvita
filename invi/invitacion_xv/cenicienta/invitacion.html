@@ -18,12 +18,15 @@
             src: url('fonts/gabriola Font Download.ttf') format('truetype');
         }
 
-        body {
+       body {
             margin: 0;
             padding: 0;
+			width: 100%;
+            overflow-x: hidden;
             font-family: 'Gabriola', serif;
             background-color: #fefefe;
         }
+
 
         /* Fondo fijo */
        .background {
@@ -31,10 +34,12 @@
         background-repeat: no-repeat; /* Evita que se repita */
         background-size: 450px 6205px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
-        width: 450px; /* Ancho fijo */
-        height: 6205px; /* Altura exacta */
+        width: 100%; /* Ancho fijo */
+		max-width: 450px; /* Ancho máximo */
+        min-height: 6205px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
+		position: relative;
     }
 
         @keyframes slideIn {
@@ -883,7 +888,7 @@ y alegría…<br>¡Ven a celebrarlos conmigo!</p>
 <br>
 
 			 <p class="parrafo">La vida está hecha de momentos<br> únicos,
- y este es uno de los más<br> importantes para mí.<br> Junto a mis padres: <br>Adriana y Esteban,<br> te invito a celebrar conmigo<br> el inicio de una nueva etapa.
+ y este es uno de los<br>más importantes para mí.<br> Junto a mis padres: <br>Adriana y Esteban,<br> te invito a celebrar conmigo<br> el inicio de una nueva etapa.
 <br>
 <br>
 				 Con amor, los padrinos de Dafne:
@@ -941,7 +946,7 @@ Stephania Sánchez<br>
         <p class="social-content">y compártelo con el hashtag:</p>
         <p class="hashtag">#DafXV</p>
 		<p class="social-content">También puedes etiquetar a nuestra<br>quinceañera en IG con su username</p>
-		<p class="social-content instagram"><a href="https://www.instagram.com" class="enlace-instagram">@dafne</a></p>
+		<p class="social-content instagram"><a href="https://www.instagram.com" class="enlace-instagram">@daf12</a></p>
     </div>
     
    <div class="social-item">
@@ -1021,11 +1026,12 @@ he preparado una pequeña mesa de regalos con opciones que me hacen mucha ilusi�
 </section>	
 			
 			
-			 <p class="parrafo">Este día será inolvidable gracias a ti. <br>
+			
+			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
-formes parte de mi historia  <br>
-</p>
-			 <h2 class="final-title">¡Nos vemos pronto!</h2>
+celebres conmigo!.</p>
+			 <h2 class="final-title">¡Nos vemos<br>
+ pronto!</h2>
 
            
             <!-- Reproductor flotante -->
