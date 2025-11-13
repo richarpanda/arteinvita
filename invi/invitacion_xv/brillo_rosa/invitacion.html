@@ -18,9 +18,11 @@
             src: url('fonts/gabriola Font Download.ttf') format('truetype');
         }
 
-        body {
+         body {
             margin: 0;
             padding: 0;
+			width: 100%;
+            overflow-x: hidden;
             font-family: 'Gabriola', serif;
             background-color: #fefefe;
         }
@@ -31,10 +33,12 @@
         background-repeat: no-repeat; /* Evita que se repita */
         background-size: 450px 6205px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
-        width: 450px; /* Ancho fijo */
-        height: 6205px; /* Altura exacta */
+        width: 100%; /* Ancho fijo */
+		max-width: 450px; /* Ancho máximo */
+        min-height: 6205px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
+		position: relative;
     }
 
         @keyframes slideIn {
@@ -64,8 +68,26 @@
         color: #c7517b; /* Color del texto */
         text-align: center; /* Centrado */
         margin-top: 580px; /* Separación superior exacta */
+        /* <CHANGE> Agregando animación de aparecer al nombre */
+        animation: nameAppear 3s ease-out forwards;
        
-       
+    }
+
+    /* <CHANGE> Nueva animación para el efecto de aparecer del nombre */
+    @keyframes nameAppear {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+            letter-spacing: 5px;
+        }
+        50% {
+            letter-spacing: 2px;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            letter-spacing: normal;
+        }
     }
 
     /* Texto debajo del nombre */
@@ -248,8 +270,8 @@
 		
 		/* Ícono antes del título */
     .section-icon {
-        width: 50px; /* Ancho del ícono */
-        height: 50px; /* Altura del ícono */
+        width: 70px; /* Ancho del ícono */
+        height: 70px; /* Altura del ícono */
         margin: 0 auto 5px auto; /* Centrado con espacio debajo */
         display: block; /* Para manejarlo como bloque */
         background-image: url('img/icon-ceremony.png'); /* Enlace directo a la imagen */
@@ -257,9 +279,19 @@
         background-repeat: no-repeat; /* Sin repetición */
         background-position: center; /* Centrado dentro del contenedor */
     }
+		.section-iti {
+        width: 70px; /* Ancho del ícono */
+        height: 70px; /* Altura del ícono */
+        margin: 0 auto 5px auto; /* Centrado con espacio debajo */
+        display: block; /* Para manejarlo como bloque */
+        background-image: url('img/icon-iti.png'); /* Enlace directo a la imagen */
+        background-size: cover; /* Asegura que la imagen cubra todo el área */
+        background-repeat: no-repeat; /* Sin repetición */
+        background-position: center; /* Centrado dentro del contenedor */
+    }
 		 .section-icon-event {
-        width: 50px; /* Ancho del ícono */
-        height: 50px; /* Altura del ícono */
+        width: 70px; /* Ancho del ícono */
+        height: 70px; /* Altura del ícono */
         margin: 0 auto 5px auto; /* Centrado con espacio debajo */
         display: block; /* Para manejarlo como bloque */
         background-image: url('img/icon-event.png'); /* Enlace directo a la imagen */
@@ -269,8 +301,8 @@
     }
 		
 		 .section-icon-dress {
-        width: 50px; /* Ancho del ícono */
-        height: 50px; /* Altura del ícono */
+        width: 70px; /* Ancho del ícono */
+        height: 70px; /* Altura del ícono */
         margin: 0 auto 5px auto; /* Centrado con espacio debajo */
         display: block; /* Para manejarlo como bloque */
         background-image: url('img/icon-dress.png'); /* Enlace directo a la imagen */
@@ -871,8 +903,7 @@
 				<br>
 y alegría…<br>¡Ven a celebrarlos conmigo!</p>
 
-            
-
+ 
             <!-- Contador de Fecha -->
           <div class="date-container">
         <div class="day">Sábado</div>
@@ -904,16 +935,7 @@ Luis Pat<br>
 
             <!-- Línea de tiempo -->
             <div class="timeline">
-                <!-- <div class="timeline-item">
-					<div class="section-icon"></div> 
-                    <h2 class="section-title">Ceremonia Religiosa</h2>
-                    <p class="section-content"><strong>Parroquia del Sagrado Corazón de Jesús</strong><br>
-
-					Paseo de la Herradura Mz 66 -Lt 15, Hda.<br>
- Ojo de Agua, Edo de, Méx.</p>
-                    <p class="section-content-hora">Hora: 3:30 pm</p>
-                    <a href="https://maps.app.goo.gl/LG9GUuLsLvVTycYL6" class="btn">Ver mapa</a>
-                </div>-->
+                
                 <div class="timeline-item">
 					<div class="section-icon-event"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Recepción del evento</h2>
@@ -926,14 +948,31 @@ Luis Pat<br>
                     <a href="https://maps.app.goo.gl/fRRcP82fvPVNuobh9" class="btn">Ver mapa</a>
                 </div>
 				
+				<div class="timeline-item">
+					<div class="section-iti"></div> 
+                    <h2 class="section-title">Itineraio del Evento</h2>
+                    
+                    <p class="section-content">Recepción : <strong>9:00 pm</strong></p>
+					<p class="section-content">Presentación : <strong>10:00 pm</strong></p>
+					<p class="section-content">Brindis : <strong>10:20 pm</strong></p>
+					<p class="section-content">Vals Familiar: <strong>10:30 pm</strong></p>
+					<p class="section-content">Vals Principal: <strong>11:30 pm</strong></p>
+					<p class="section-content">Comida : <strong>11:30 pm</strong></p>
+					 <p class="section-content">Show : <strong>12:00 am</strong></p>
+					 
+                    
+                </div>
+				
 				 <div class="timeline-item">
 					<div class="section-icon-dress"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Código de Vestimenta</h2>
                     <p class="section-content">Vistamos este día de elegancia y alegría: 
 					</p>
                     <p class="section-content-hora">Formal-Casual</p>
-                   
+					 <p class="section-content">Con mucho cariño les pedimos evitar el color rosa, ya que será exclusivo para la festejada.</p>
                 </div>
+				
+				 
             </div>
 			
 			
@@ -941,14 +980,13 @@ Luis Pat<br>
 			<section class="social-section">
     <div class="social-item">
         <div class="social-icon social-icon-camera"></div>
-        <h2 class="social-title">Captura <br>
-cada<br>
+        <h2 class="social-title">Captura cada<br>
  instante</h2>
-        <p class="social-content">y compártelo con<br>
+        <p class="social-content">y compártelo con
  el hashtag:</p>
         <p class="hashtag">#AbiXV</p>
-		<p class="social-content">También puedes etiquetar a nuestra<br>quinceañera en IG con su username</p>
-		<p class="social-content instagram"><a href="https://www.instagram.com" class="enlace-instagram">@dani</a></p>
+		<p class="social-content">Puedes etiquetar a nuestra<br>quinceañera en IG :</p>
+		<p class="social-content instagram"><a href="https://www.instagram.com/abi.celmo/?igsh=MWh6aWtydDF5ODc5aQ%3D%3D#" class="enlace-instagram">@abi.celmo</a></p>
     </div>
     
      <div class="social-item">
@@ -958,7 +996,11 @@ cada<br>
 tu presencia<br>
  en este día tan importante.<br>
 
-Si deseas obsequiarme algo, prefiero recibirlo en el evento o en efectivo durante la lluvia de sobres que he preparado con mucho cariño.</p>
+Si deseas obsequiarme algo,<br>
+
+ prefiero recibirlo en el evento<br>
+ o en efectivo durante la lluvia <br>
+de sobres que he preparado.</p>
         <p class="thanks">¡Gracias!</p>
     </div>
 </section>
@@ -1019,7 +1061,8 @@ Si deseas obsequiarme algo, prefiero recibirlo en el evento o en efectivo durant
     <div class="final-item">
         <div class="whatsapp-icon"></div>
         <h2 class="final-title">Confirma tu asistencia</h2>
-        <p class="final-content">Tu presencia es muy importante para mí.<br><em>Por eso te pido<br>
+        <p class="final-content">Tu presencia es muy <br>
+importante para mí.<br><em>Por eso te pido<br>
  que confirmes tu asistencia.</em><br>Solo da click en el<br>
   botón y envía un mensaje <br>
 por WhatsApp.</p><br>
@@ -1038,7 +1081,7 @@ formes parte de mi historia  <br>
 y celebres conmigo<br>
 
 este hermoso sueño!.</p>
-			 <h2 class="final-title">¡Nos vemos <br>
+			 <h2 class="final-title">¡Nos vemos 
 pronto!</h2>
 
            
