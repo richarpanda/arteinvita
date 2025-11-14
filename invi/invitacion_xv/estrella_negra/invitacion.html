@@ -18,7 +18,7 @@
             src: url('fonts/gabriola Font Download.ttf') format('truetype');
         }
 
-         body {
+        body {
             margin: 0;
             padding: 0;
 			width: 100%;
@@ -27,15 +27,16 @@
             background-color: #fefefe;
         }
 
+
         /* Fondo fijo */
        .background {
-        background-image: url('img/fondo_1.png'); /* Ruta de tu imagen */
+        background-image: url('img/fondo.png'); /* Ruta de tu imagen */
         background-repeat: no-repeat; /* Evita que se repita */
-        background-size: 450px 6205px; /* Tamaño exacto */
+        background-size: 450px 4206px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
         width: 100%; /* Ancho fijo */
 		max-width: 450px; /* Ancho máximo */
-        min-height: 6205px; /* Altura exacta */
+        min-height: 4206px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
 		position: relative;
@@ -65,29 +66,11 @@
         font-family: 'Nova Quinta', cursive; /* Tipografía personalizada */
         font-size: 65px; /* Tamaño del texto */
 		font-weight:500;
-        color: #c7517b; /* Color del texto */
+        color: #212121; /* Color del texto */
         text-align: center; /* Centrado */
         margin-top: 580px; /* Separación superior exacta */
-       /* <CHANGE> Agregando animación de aparecer al nombre */
-        animation: nameAppear 2s ease-out forwards;
        
-    }
-		
-		/* <CHANGE> Nueva animación para el efecto de aparecer del nombre */
-    @keyframes nameAppear {
-        0% {
-            opacity: 0;
-            transform: translateY(30px);
-            letter-spacing: 5px;
-        }
-        50% {
-            letter-spacing: 2px;
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-            letter-spacing: normal;
-        }
+       
     }
 
     /* Texto debajo del nombre */
@@ -114,14 +97,14 @@
      .date-container {
             font-family: 'Gabriola', serif;
             text-align: center;
-            color: #c7517b;
+            color: #454646;
             width: 100%;
         }
 
         .day {
             font-size: 2.8em;
             margin-bottom: 0;
-            border-bottom: 2px solid #c7517b;
+            border-bottom: 2px solid #454646;
             display: inline-block;
             padding: 0 30px 2px;
         }
@@ -136,7 +119,7 @@
         .month {
             font-size: 2.8em;
             margin-top: 0;
-            border-top: 2px solid #c7517b;
+            border-top: 2px solid #454646;
             display: inline-block;
             padding: 2px 30px 0;
         }
@@ -304,14 +287,14 @@
         .section-title {
             font-family: 'Nova Quinta', cursive; /* Tipografía personalizada */
             font-size: 28px;
-            color: #af8843;
+            color: #212121;
             margin: 10px 0;
         }
 
         .section-content {
             font-family: 'Gabriola', serif;
             font-size: 24px;
-            color: #513814;
+            color: #212121;
             margin: 10px 0;
         }
 		.section-content-hora {
@@ -516,7 +499,7 @@
     .final-title {
         font-family: 'Nova Quinta', cursive;
         font-size: 34px;
-        color: #af8843;
+        color: #212121;
         margin: 15px 0;
         text-align: center;
     }
@@ -870,7 +853,6 @@
             }
         }
 		
-		
 		/* En móviles muy pequeños, centramos igual y bloqueamos el zoom lateral */
 @media (max-width: 480px) {
     html, body {
@@ -888,116 +870,69 @@
         <div class="arrow-up"></div>
     </button> 
 			
-            <h1 class="name">Abigail Alejandra</h1>
+            <h1 class="name">Clarissa Yorleth</h1>
             <p class="subtext">Quince años de amor, sueños
 				<br>
 y alegría…<br>¡Ven a celebrarlos conmigo!</p>
 
- 
+            
+
             <!-- Contador de Fecha -->
           <div class="date-container">
         <div class="day">Sábado</div>
-        <div class="number">20</div>
-        <div class="month">Diciembre</div>
-        <div class="time">9:00 pm</div>
+        <div class="number">7</div>
+        <div class="month">Febrero</div>
+        <div class="time">6:00 pm</div>
     </div>
 <br>
 
 			 <p class="parrafo">La vida está hecha de momentos<br> únicos,
- y este es uno de los más<br> importantes para mí.<br> Junto a mis padres: <br>Miguel Celmo y Marcy Polanco,<br> te invito a celebrar conmigo<br> el inicio de una nueva etapa.
+ y este es uno de los más<br> importantes para mí.<br> Junto a mis padres: <br>Clarisa Soto y Julio César Díaz,<br> te invito a celebrar conmigo<br> el inicio de una nueva etapa.
 <br>
 <br>
-				 Con amor,<br>
- los padrinos de Abigail:
+				 Con amor, los padrinos de Clarissa:
 <br>
 <br>
 
-Marcos Canul<br>
- y<br>
- Zeny Alcocer<br>
-<br>
+Alba Luz Escalante Romero<br>
 
-Luis Pat<br>
- y<br>
- Leydi Alcocer<br>
+y<br>
+
+Daniel Arturo Miranda Ayala<br>
 
 			</p>
 
             <!-- Línea de tiempo -->
             <div class="timeline">
-                
+                <div class="timeline-item">
+					<div class="section-icon"></div> <!-- Ícono con enlace a la imagen -->
+                    <h2 class="section-title">Ceremonia Religiosa</h2>
+                    <p class="section-content"><strong>Parroquia del Sagrado Corazón de Jesús</strong><br>
+5 de Mayo S/N, Centro, 81820 El Fuerte, Sin.
+					</p>
+                    <p class="section-content-hora">Hora: 6:00 pm</p>
+                    <a href="https://maps.app.goo.gl/PvVsBC1p6pyhdGfB6" class="btn">Ver mapa</a>
+                </div>
                 <div class="timeline-item">
 					<div class="section-icon-event"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Recepción del evento</h2>
-                    <p class="section-content"><strong>Salón "Eventos Regina" </strong><br>
+                    <p class="section-content"><strong>Vivajaqui </strong><br>
 
-						C. 66 415, San Martín, <br>
-97700 Tizimín, Yuc.
+						El Fuerte, Sinaloa.
 					</p>
-                    <p class="section-content-hora">Hora: 9:00 pm</p>
-                    <a href="https://maps.app.goo.gl/fRRcP82fvPVNuobh9" class="btn">Ver mapa</a>
-                </div>
-				
-				<div class="timeline-item">
-					<div class="section-iti"></div> 
-                    <h2 class="section-title">Itineraio del Evento</h2>
-                    
-                    <p class="section-content">Recepción : <strong>9:00 pm</strong></p>
-					<p class="section-content">Presentación : <strong>10:00 pm</strong></p>
-					<p class="section-content">Brindis : <strong>10:20 pm</strong></p>
-					<p class="section-content">Vals Familiar: <strong>10:30 pm</strong></p>
-					<p class="section-content">Vals Principal: <strong>11:30 pm</strong></p>
-					<p class="section-content">Comida : <strong>11:30 pm</strong></p>
-					 <p class="section-content">Show : <strong>12:00 am</strong></p>
-					 
-                    
-                </div>
-				
-				 <div class="timeline-item">
-					<div class="section-icon-dress"></div> <!-- Ícono con enlace a la imagen -->
-                    <h2 class="section-title">Código de Vestimenta</h2>
-                    <p class="section-content">Vistamos este día de elegancia y alegría: 
-					</p>
-                    <p class="section-content-hora">Formal-Casual</p>
-					 <p class="section-content">Con mucho cariño les pedimos evitar el color rosa, ya que será exclusivo para la festejada.</p>
+                    <p class="section-content-hora">Hora: 7:00 pm</p>
+                    <a href="https://maps.app.goo.gl/pqEwGBCwFxFW4AK38" class="btn">Ver mapa</a>
                 </div>
 				
 				 
             </div>
 			
 			
-			 <!-- seccion pinterest  y hastag -->
-			<section class="social-section">
-    <div class="social-item">
-        <div class="social-icon social-icon-camera"></div>
-        <h2 class="social-title">Captura cada<br>
- instante</h2>
-        <p class="social-content">y compártelo con
- el hashtag:</p>
-        <p class="hashtag">#AbiXV</p>
-		<p class="social-content">Puedes etiquetar a nuestra<br>quinceañera en IG :</p>
-		<p class="social-content instagram"><a href="https://www.instagram.com/abi.celmo/?igsh=MWh6aWtydDF5ODc5aQ%3D%3D#" class="enlace-instagram">@abi.celmo</a></p>
-    </div>
-    
-     <div class="social-item">
-        <div class="social-icon social-icon-gift"></div>
-        <h2 class="social-title">Con cariño</h2>
-		<p class="social-content">Agradezco con el alma <br>
-tu presencia<br>
- en este día tan importante.<br>
-
-Si deseas obsequiarme algo,<br>
-
- prefiero recibirlo en el evento<br>
- o en efectivo durante la lluvia <br>
-de sobres que he preparado.</p>
-        <p class="thanks">¡Gracias!</p>
-    </div>
-</section>
+			 
 			 <!-- seccion hospedaje,contador,whats -->
 			
 		<section class="final-section">
-    <!-- Sugerencia de Hospedaje 
+    <!-- Sugerencia de Hospedaje
     <div class="final-item">
         
         <h2 class="final-title">Sugerencia de Hospedaje</h2>
@@ -1006,7 +941,7 @@ de sobres que he preparado.</p>
         <p class="final-content" style="font-size: 32px;">Verticca Hotel</p>
         <a href="https://maps.app.goo.gl/cCecbyRYVahmwLaD8" class="confirm-button">Ver mapa</a>
     </div>
-    -->
+     -->
     
 
     <!-- Contador -->
@@ -1020,7 +955,7 @@ de sobres que he preparado.</p>
 
     <script>
         function updateCountdown() {
-            const targetDate = new Date("December 20, 2025 00:00:00").getTime();
+            const targetDate = new Date("February 7, 2026 00:00:00").getTime();
             const countdownDisplay = document.getElementById("countdown-display");
 
             function update() {
@@ -1051,29 +986,21 @@ de sobres que he preparado.</p>
     <div class="final-item">
         <div class="whatsapp-icon"></div>
         <h2 class="final-title">Confirma tu asistencia</h2>
-        <p class="final-content">Tu presencia es muy <br>
-importante para mí.<br><em>Por eso te pido<br>
- que confirmes tu asistencia.</em><br>Solo da click en el<br>
-  botón y envía un mensaje <br>
-por WhatsApp.</p><br>
+        <p class="final-content">Tu presencia es muy importante para mí.<br><em>Por eso te pido que confirmes tu asistencia.</em><br>Solo da click en el botón y envía un mensaje por WhatsApp.</p><br>
 
-        <a href="https://wa.me/529862167090" class="confirm-button">
+        <a href="https://wa.me/526981085437" class="confirm-button">
           <i class="fab fa-whatsapp"></i> <strong> Confirmar</strong> </a>
     </div>
 			
 </section>	
 			
 			
-			 <p class="parrafo">Este día será inolvidable <br>
-gracias a ti. <br>
+			
+			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
-formes parte de mi historia  <br>
-y celebres conmigo<br>
-
-este hermoso sueño!.</p>
-			 <h2 class="final-title" align="center">¡Nos vemos <br>
-
-pronto!</h2>
+celebres conmigo!.</p>
+			 <h2 class="final-title">¡Nos vemos<br>
+ pronto!</h2>
 
            
             <!-- Reproductor flotante -->
@@ -1154,6 +1081,7 @@ pronto!</h2>
 		
     </div>
 	
+	 
 	
 	<script>
         // JavaScript para manejar el clic del botón
@@ -1162,7 +1090,7 @@ pronto!</h2>
             
             // Reemplaza este número con el número de WhatsApp del asesor
             const phoneNumber = '5217713646690'; // Formato: código de país + número sin espacios ni símbolos
-            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Brillo Rosa. ¿Podrían orientarme con el proceso?';
+            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Estrella Negra. ¿Podrían orientarme con el proceso?';
             
             // Crear la URL de WhatsApp
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -1171,7 +1099,7 @@ pronto!</h2>
             window.open(whatsappUrl, '_blank');
         });
     </script>
-	 
+	
 	<script>
 		  // Seccion social
     document.addEventListener('DOMContentLoaded', function() {
