@@ -68,8 +68,26 @@
         color: #c7517b; /* Color del texto */
         text-align: center; /* Centrado */
         margin-top: 580px; /* Separación superior exacta */
+       /* <CHANGE> Agregando animación de aparecer al nombre */
+        animation: nameAppear 2s ease-out forwards;
        
-       
+    }
+		
+		/* <CHANGE> Nueva animación para el efecto de aparecer del nombre */
+    @keyframes nameAppear {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+            letter-spacing: 5px;
+        }
+        50% {
+            letter-spacing: 2px;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            letter-spacing: normal;
+        }
     }
 
     /* Texto debajo del nombre */
@@ -1053,7 +1071,8 @@ formes parte de mi historia  <br>
 y celebres conmigo<br>
 
 este hermoso sueño!.</p>
-			 <h2 class="final-title">¡Nos vemos 
+			 <h2 class="final-title" align="center">¡Nos vemos <br>
+
 pronto!</h2>
 
            
