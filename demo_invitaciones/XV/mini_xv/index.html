@@ -224,6 +224,20 @@
     justify-content: center;
    
     }
+		  /* Versión para pantallas grandes */
+@media (min-width: 520px) {
+  .buttons-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;        /* 👈 PERMITE QUE LOS BOTONES BAJEN DE LÍNEA */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons-wrapper .btn {
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+}
 
     .btn {
       display: inline-flex;
@@ -371,7 +385,11 @@
         <!-- Reemplaza el href por el enlace real de Google Maps -->
         <a class="btn btn-outline" href="https://maps.app.goo.gl/TU_MAPA_AQUI" target="_blank" rel="noopener noreferrer">
          
-          Ver mapa del lugar
+          Ver mapa de la inglesia
+        </a>
+		  <a class="btn btn-outline" href="https://maps.app.goo.gl/TU_MAPA_AQUI" target="_blank" rel="noopener noreferrer">
+         
+          Ver mapa del Salón de Eventos
         </a>
 
         <!-- BOTÓN CONFIRMAR POR WHATSAPP -->
