@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Mis XV Años </title>
+  <!-- Tipografías elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+	  <style>
+        /* Estilo Global */
+        @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+			
+        }
+		
+		@font-face {
+            font-family: 'Gabriola';
+            src: url('fonts/gabriola Font Download.ttf') format('truetype');
+        }
+
+    :root {
+      --bg: #f5f0ff;
+      --card-bg: #ffffff;
+      --primary: #af8843;
+      --primary-soft: rgba(176, 124, 255, 0.12);
+      --accent: #ff9bb0;
+      --text-main: #2e2140;
+      --text-soft: #6b5a80;
+      --border-soft: #e5daff;
+      --radius-card: 24px;
+      --radius-photo: 26px;
+      --shadow-soft: 0 18px 45px rgba(40, 18, 70, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      
+		/*  FONDO CON IMAGEN */
+    background-image: url('img/fondo.png');
+
+    background-size: cover;          /* La imagen cubre toda la pantalla */
+    background-position: center;     /* Centrada */
+    background-repeat: no-repeat;    /* No se repite */
+    background-attachment: fixed;    /* Efecto elegante tipo parallax */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 14px;
+    color: var(--text-main);
+    }
+
+    .invitation-wrapper {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .invitation-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 20px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      position: relative;
+	  transform: scale(0.94); /* Reducción muy elegante */
+      transform-origin: top center;
+    }
+
+    /* Detalles decorativos */
+    .invitation-card::before,
+    .invitation-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(0);
+      opacity: 0.32;
+      z-index: -1;
+    }
+
+    .invitation-card::before {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle at center, #ffd4e0, transparent 70%);
+      top: -80px;
+      right: -60px;
+    }
+
+    .invitation-card::after {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at center, #d4c6ff, transparent 70%);
+      bottom: -90px;
+      left: -80px;
+    }
+
+    .header-badge {
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #af8843;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      border-radius: var(--radius-photo);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+      margin-bottom: 18px;
+      background: #ccc;
+    }
+
+    .photo-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .name {
+      text-align: center;
+      font-family: "Nova Quinta", serif;
+      font-size: 4.55rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #a56d6d; /* Color del texto */
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #513814;
+      margin-bottom: 12px;
+    }
+
+    .title-main {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color:#af8843;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 0.98rem;
+      color: #513814;
+      line-height: 1.55;
+      padding: 0 6px;
+      margin-bottom: 18px;
+    }
+
+    .details-card {
+      background: #f7f7f7;
+      border-radius: 20px;
+      padding: 14px 14px 10px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(176, 124, 255, 0.2);
+    }
+
+    .details-title {
+      text-align: center;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .detail-icon {
+      font-size: 1.1rem;
+      margin-top: -1px;
+    }
+
+    .detail-text {
+	  text-align: center	;
+      line-height: 1.4;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .buttons-wrapper {
+	
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+		
+		/*  ESTO CENTRA TODO */
+    justify-content: center;
+   
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.13s ease, box-shadow 0.13s ease, background 0.13s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #af8843, #af8843);
+      color: #ffffff;
+      box-shadow: 0 10px 25px #af8843 0.35;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--primary);
+      border: 1px solid #af8843 ;
+      box-shadow: 0 6px 16px #af8843 0.12;
+    }
+
+    .btn span.icon {
+      font-size: 1.15rem;
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px #513814 0.2;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px #af8843 0.16;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 1.00rem;
+      color: #513814;
+      margin-top: 12px;
+      opacity: 0.9;
+    }
+
+    /* Responsivo */
+    @media (min-width: 520px) {
+      body {
+        padding: 40px 16px;
+      }
+
+      .invitation-card {
+        padding: 26px 26px 26px;
+      }
+		
+		 .countdown-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px;
+        background-image: url('img/icon-countdown.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .buttons-wrapper {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invitation-wrapper">
+    <main class="invitation-card" aria-label="Invitación digital XV años">
+      <div class="header-badge">
+        ESPECIAL PARA TI
+      </div>
+
+      <!-- FOTO DE LA FESTEJADA -->
+      <!-- Reemplaza el src por la foto real -->
+      <div class="photo-wrapper">
+        <img src="img/4.png" alt="Foto de la festejada">
+      </div>
+
+      <!-- NOMBRE Y TÍTULO -->
+      <h1 class="name">Martha</h1>
+      <p class="subtitle">Te invita a celebrar una noche inolvidable</p>
+
+      <h2 class="title-main">Mis XV Años</h2>
+
+      <!-- PÁRRAFO DE INTRODUCCIÓN -->
+      <p class="intro">
+        Con mucha ilusión y alegría, quiero compartir contigo este momento tan especial en mi vida.
+        Será un día lleno de amor, familia y amigos, y me encantaría que formaras parte de este recuerdo
+        que llevaré siempre en mi corazón.
+      </p>
+
+      <!-- DETALLES: FECHA, HORA, LUGAR -->
+      <section class="details-card" aria-label="Detalles del evento">
+		 
+        <p class="details-title">Detalles del evento</p>
+        <div class="details-grid">
+          <div class="detail-item">
+            
+            <div class="detail-text">
+              <span class="detail-label"><strong>Fecha:</strong></span><br>
+              Sábado 25 de Octubre de 2025
+            </div>
+          </div>
+
+          <div class="detail-item">
+           
+            <div class="detail-text">
+              <span class="detail-label"><strong>Hora:</strong></span><br>
+              7:00 p.m.
+            </div>
+          </div>
+
+          <div class="detail-item">
+            
+            <div class="detail-text">
+              <span class="detail-label"><strong>Lugar:</strong></span><br>
+              Salón Jardín “Luna Dorada”<br>
+              Pachuca, Hidalgo
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTONES -->
+      <div  class="buttons-wrapper" >
+        <!-- BOTÓN VER MAPA -->
+        <!-- Reemplaza el href por el enlace real de Google Maps -->
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/TU_MAPA_AQUI" target="_blank" rel="noopener noreferrer">
+         
+          Ver mapa del lugar
+        </a>
+
+        <!-- BOTÓN CONFIRMAR POR WHATSAPP -->
+        <!-- Reemplaza el número por el de la festejada/mamá (mantén el formato) -->
+        <a class="btn btn-primary" href="https://wa.me/5215512345678?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20a%20tus%20XV%20A%C3%B1os%20🎉" target="_blank" rel="noopener noreferrer">
+         
+          Confirmar por WhatsApp
+        </a>
+      </div>
+
+<br>
+
+      <p class="footer-note">
+        Tu presencia será el mejor regalo
+      </p>
+    </main>
+  </div>
+
+</body>
+</html>
