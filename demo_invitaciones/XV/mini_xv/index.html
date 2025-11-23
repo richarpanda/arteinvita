@@ -124,12 +124,131 @@
       background: #ccc;
     }
 
-    .photo-wrapper img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+    .photo-wrapper {
+  width: 100%;
+  border-radius: var(--radius-photo);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  margin-bottom: 18px;
+  background: #ccc;
+
+  position: relative;  /* 👈 IMPORTANTE para posicionar las flores */
+}
+
+.photo-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CONTENEDORES DE LAS FLORES */
+.photo-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;   /* no estorban al dar clic */
+  opacity: 0;
+}
+
+/* LADO IZQUIERDO */
+.decor-left {
+  left: -70px;                     /* qué tanto se “sale” del card */
+  animation: slide-in-left 0.9s ease-out 0.2s forwards;
+}
+
+/* LADO DERECHO */
+.decor-right {
+  right: -70px;
+  animation: slide-in-right 0.9s ease-out 0.35s forwards;
+}
+
+/* Tamaño de las flores */
+.photo-decor img {
+  width: 220px;      /* ajusta al gusto */
+  max-width: 40vw;   /* para que no revienten en pantallas chicas */
+}
+
+/* ANIMACIONES */
+@keyframes slide-in-left {
+  from {
+    transform: translate(-30%, -50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translate(30%, -50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+}
+
+/* En pantallas muy chicas, reducimos o escondemos si quieres */
+@media (max-width: 420px) {
+  .photo-decor img {
+    width: 160px;
+  }
+}
+
+		  /* Asegúrate que el card sea el contenedor de referencia */
+.invitation-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: 22px 20px 24px;
+  border: 1px solid var(--border-soft);
+  overflow: hidden;      /* mantiene todo dentro del marco del card */
+  position: relative;    /* 👈 importante para posicionar el decor del card */
+}
+
+/* DECORACIÓN A NIVEL CARD */
+.card-decor {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Ejemplo: esquina inferior derecha del card */
+.card-decor-bottom-right {
+  bottom: 750px;   /* qué tanto se “mete” hacia abajo */
+  right: -95px;    /* qué tanto se sale hacia la derecha */
+  animation: card-decor-in 1s ease-out 0.6s forwards;
+}
+
+.card-decor img {
+  width: 240px;       /* ajusta al gusto */
+  max-width: 45vw;    /* para que no reviente en pantallas chicas */
+}
+
+/* Animación de entrada desde abajo */
+@keyframes card-decor-in {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ajuste para pantallas pequeñas si hace falta */
+@media (max-width: 420px) {
+  .card-decor img {
+    width: 190px;
+  }
+}
+
 
     .name {
       text-align: center;
@@ -332,6 +451,15 @@
       <!-- Reemplaza el src por la foto real -->
       <div class="photo-wrapper">
         <img src="img/4.png" alt="Foto de la festejada">
+		  <!-- FLORES DECORATIVAS IZQUIERDA -->
+  <div class="photo-decor decor-left">
+    <img src="img/flores-left.png" alt="" />
+  </div>
+
+  <!-- FLORES DECORATIVAS DERECHA -->
+  <div class="photo-decor decor-right">
+    <img src="img/flores-right.png" alt="" />
+  </div>
       </div>
 
       <!-- NOMBRE Y TÍTULO -->
@@ -405,6 +533,9 @@
       <p class="footer-note">
         Tu presencia será el mejor regalo
       </p>
+		<div class="card-decor card-decor-bottom-right">
+    <img src="img/flores-card-bottom.png" alt="">
+  </div>
     </main>
   </div>
 
