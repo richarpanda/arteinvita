@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Festival de Prácticas Escénicas | Academia de Danza Jokale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="img/logo2.png">	
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cinzel:wght@400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Quattrocento:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+	
+	
+  <style>
+    /* ---------- RESET SIMPLE ---------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #f7f3f0 0, #efebe8 30%, #f7f3f0 60%, #efebe8Inter 100%);
+      color: #1f2933;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- ANIMACIÓN SCROLL ---------- */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- LAYOUT GENERAL ---------- */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .page {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+    }
+
+    /* ---------- ENCABEZADO ---------- */
+    .hero {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(220, 38, 38, 0.08);
+      color: #b91c1c;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #6b7280;
+      max-width: 40rem;
+      margin: 0 auto 1.2rem;
+    }
+
+    /* ---------- PORTADA ---------- */
+    .hero-cover {
+      border-radius: 1.3rem;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(209, 213, 219, 0.7);
+      background: #000;
+    }
+
+    .hero-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ---------- MENÚ DE ANCLAS ---------- */
+    .category-nav-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 0.6rem 0;
+      margin-bottom: 1.2rem;
+      /*background: linear-gradient(to bottom, rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0.94));*/
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.7);
+    }
+
+    .category-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+      scrollbar-width: thin;
+    }
+
+    .category-nav::-webkit-scrollbar {
+      height: 4px;
+    }
+    .category-nav::-webkit-scrollbar-thumb {
+      background: #dff4eb;
+      /*border-radius: 999px;*/
+    }
+
+    .category-nav a {
+      flex: 0 0 auto;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      /*border: 1px solid rgba(148, 163, 184, 0.7);*/
+      background: #399974;
+      color: #fff;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .category-nav a:hover {
+      background: #1e3f35;
+      border-color: #3b82f6;
+    }
+
+    /* ---------- TARJETA INTRODUCTORIA ---------- */
+    .intro-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.2rem 1.1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(209, 213, 219, 0.7);
+      backdrop-filter: blur(6px);
+    }
+
+    .intro-card h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #252d2b;
+	  font-family: "Berkshire Swash", serif; 	
+    }
+
+    .intro-card p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ---------- SECCIÓN LÍNEA DEL TIEMPO ---------- */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #252d2b;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+		font-family: "Berkshire Swash", serif; 
+    }
+
+    .section-title span {
+      font-size: 1.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 0.7rem;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0.5rem;
+      left: 22px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #399974, #1e3f35);
+      opacity: 0.7;
+    }
+
+    /* ---------- LABEL DE CATEGORÍA ---------- */
+    .category-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+      margin: 1.2rem 0 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .category-label span {
+      font-size: 0.8rem;
+    }
+
+    /* ---------- ITEM TIMELINE ---------- */
+    .timeline-item {
+      position: relative;
+      display: flex;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-marker {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #399974, #1e3f35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #e9e7de;
+      box-shadow: 0 10px 20px rgba(30, 63, 53, 0.4);
+    }
+
+    .timeline-marker span {
+      display: block;
+    }
+
+    .timeline-content {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(209, 213, 219, 0.8);
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #237554;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+	  font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: #f4e4e7;
+      color: #c94b5d;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-interpretes {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .timeline-interpretes strong {
+      font-weight: 600;
+    }
+
+    /* ---------- INTERMEDIO ---------- */
+    .timeline-item.break .timeline-content {
+      background: linear-gradient(135deg, #e87288, #c94b5d);
+      border-color: rgba(248, 113, 113, 0.5);
+      text-align: center;
+    }
+
+    .timeline-item.break .timeline-title {
+      font-size: 0.95rem;
+    }
+
+    .timeline-item.break .timeline-marker {
+      background: #e87288;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(249, 115, 115, 0.45);
+    }
+
+    /* ---------- BLOQUES DE FOTO INTERCALADOS ---------- */
+    .photo-break {
+      margin: 1.2rem 0 1.6rem;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(209, 213, 219, 0.8);
+      background: #020617;
+    }
+
+    .photo-break img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .photo-break-caption {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      padding: 0.4rem 0.75rem 0.6rem;
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.85));
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+	  /* ---------- BOTÓN FLOTANTE “SUBIR” ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f97373, #c94b5d);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(249, 115, 115, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  transform: scale(0.8);
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
+  </style>
+</head>
+<body>
+  <main class="page" id="inicio">
+    <!-- HERO -->
+	<!-- PORTADA (REEMPLAZA LA IMAGEN POR TU DISEÑO) -->
+    <div class="hero-cover animate-on-scroll">
+      <!-- 🔁 CAMBIA ESTA RUTA POR TU IMAGEN DE PORTADA -->
+      <img src="img/hero.png"
+           alt="Portada del Festival de Prácticas Escénicas">
+    </div>  
+	  
+    <header class="hero animate-on-scroll">
+      <div class="hero-badge">
+        🎄 Programa Navideño <span>2025</span>🎄
+      </div>
+      <!--<h1 class="hero-title">Festival de Prácticas Escénicas</h1>
+      <p class="hero-subtitle">Academia de Danza Jokale</p>-->
+      <p class="hero-note">
+        Consulta aquí, en orden, todas las participaciones del festival.
+        Diseñado para que mamás, papás y alumnas sigan el programa fácilmente desde su celular.
+      </p>
+    </header>
+
+    
+
+    <!-- MENÚ DE ANCLAS -->
+    <div class="category-nav-wrapper">
+      <nav class="category-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#ballet">Ballet</a>
+        <a href="#repertorio">Repertorio</a>
+        <a href="#jazz">Jazz</a>
+        <a href="#gimnasia">Gimnasia</a>
+        <a href="#contemporaneo">Contemporáneo</a>
+        <a href="#hiphop">Hip Hop</a>
+        <a href="#cierre">Cierre</a>
+      </nav>
+    </div>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="intro-card animate-on-scroll">
+      <h2>Sobre el festival</h2>
+      <p>
+        Festival de Prácticas Escénicas se implementó desde el 2024, consiste en mostrar avances a los padres de familia
+        en cuanto al desempeño de los alumnos en cada disciplina dancística, haciendo uso del uniforme. En él se resalta
+        al alumno por su desenvolvimiento escénico y no por el diseño de un vestuario.
+      </p>
+      <p>
+        Recordando que la importancia en la danza está en los momentos y acercamiento que tienen los alumnos con el foro.
+        Preparando a los alumnos con su seguridad, confianza, trabajo en equipo, desenvolvimiento escénico y trabajo técnico.
+      </p>
+    </section>
+
+    <!-- LÍNEA DEL TIEMPO -->
+    <h2 class="section-title animate-on-scroll">
+      Programa en orden de aparición
+    </h2>
+    <p class="section-subtitle animate-on-scroll">
+      Desliza hacia abajo para seguir el festival. Puedes usar el menú superior para saltar por disciplina.
+    </p>
+
+    <section class="timeline">
+
+      <!-- CATEGORÍA BALLET -->
+      <div class="category-label" id="ballet">
+        <span>🩰</span> Ballet
+      </div>
+
+      <!-- 1 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>01</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ballet de Adultos</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-text">
+            El ballet de adultos es una modalidad de clases de ballet diseñada específicamente para personas mayores de 18 años,
+            sin importar su nivel de experiencia.
+          </p>
+          <p class="timeline-text">
+            ¿Qué lo caracteriza? Enfoque accesible y progresivo: se adapta al cuerpo y las capacidades de los adultos.
+            Ambiente inclusivo: no exige tener la flexibilidad ni la técnica de un bailarín profesional. Entrenamiento completo:
+            trabaja postura, fuerza, coordinación, musicalidad y memoria. Beneficios físicos y mentales: mejora la postura, tonifica,
+            aumenta la concentración y reduce el estrés. Objetivo artístico y personal: muchos lo practican por hobby, salud, bienestar
+            o desarrollo artístico.
+          </p>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Violeta Gutiérrez, Adriana Rodríguez, Maria Ocampo, Diana Ocampo.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>02</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Baby Ballet</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-text">
+            El baby ballet es una modalidad de iniciación a la danza clásica dirigida a niños pequeños,
+            generalmente entre los 2 y 5 años. No es una clase de técnica formal como la que reciben los
+            bailarines mayores, sino una introducción suave y lúdica al mundo del ballet.
+          </p>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Grace López, Addison Meza, Elisa Pérez, Leah Flores, Defnne López, Isabella Menchaca,
+            Valeria Guerrero, Isabella Martínez.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>03</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ballet Puntas</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Kiara Parra, Fernanda Dávila, Gimena López, Siomara Bringas, Zoe Ortega, Natalia Muñoz,
+            Aryam León, Aylin Aviles, Aylin Antuna, Arantxa Alvarado, Miley Molina.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- FOTO INTERCALADA 1 (CAMBIA LA IMAGEN) -->
+      <div class="photo-break animate-on-scroll">
+        <!-- 🔁 FOTO GENERAL DE BALLET / ESCENARIO -->
+        <img src="img/banner01.png"             alt="Momento del festival de ballet">
+        <!--<div class="photo-break-caption">
+          Instantes que construyen confianza, técnica y amor por la danza. 💫
+        </div>-->
+      </div>
+
+      <!-- 4 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>04</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Pre Ballet I</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Regina Baltazar, Alaia Basurto, Angela Cervantes, Isabella Solano, Morgan Morschauser,
+            Julieta Bojorquez, Sabina Tapia, Gabriela Quevedo, Camila Contreras, Ania Martínez,
+            Alani Domínguez, Aitana Mora, Dilary Montiel, Lia Moedano, Miriam Cordero, Emilia Verdugo.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- CATEGORÍA REPERTORIO -->
+      <div class="category-label" id="repertorio">
+        <span>🎭</span> Repertorio Clásico
+      </div>
+
+      <!-- 5 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>05</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Repertorio Talismán · Equipo 1</h3>
+          <div class="timeline-tag">Disciplina: Repertorio Clásico</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Aylin Aviles, Arantxa Alvarado, Miley Molina, Zoe Ortega.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>06</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Repertorio Pájaro Azul · Equipo 1</h3>
+          <div class="timeline-tag">Disciplina: Repertorio Clásico</div>
+          <p class="timeline-text">
+            ¿Qué es el repertorio clásico? El repertorio clásico en ballet se refiere al conjunto de obras
+            tradicionales y más reconocidas de la historia del ballet, creadas principalmente entre los siglos XIX
+            y principios del XX. Es la base técnica del ballet académico, se usa en audiciones, concursos y evaluaciones
+            formativas, y mantiene viva la tradición histórica de la danza.
+          </p>
+			<p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Victoria López, Mariam González, Victoria Ortíz, Astrid Molina.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>07</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Pre Ballet II</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Daniela Pérez, Emily Magaña, Amaia Cruz, Lia Méndez.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>08</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Repertorio Talismán · Equipo 2</h3>
+          <div class="timeline-tag">Disciplina: Repertorio Clásico</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Natalia Muñoz, Kiara Parra, Fernanda Dávila.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>09</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Pre Ballet III · Danza China (Repertorio Cascanueces)</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Ana Sofia Pérez, Alyssa García, Alyssa Avalos, Patricia Cervantes, Emily Cardozo,
+            Renata Flores, Miranda Zapata, Mildred Hernández, Jacqueline Muñoz, Arantza Espinoza,
+            Ginna Espinoza, Mia Tapía.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- FOTO INTERCALADA 2 -->
+      <div class="photo-break animate-on-scroll">
+        <!-- 🔁 FOTO TEMÁTICA NAVIDEÑA / CASCANUECES -->
+        <img src="img/banner02.png"
+             alt="Escena navideña de Cascanueces">
+        <!--<div class="photo-break-caption">
+          La magia navideña también se baila sobre el escenario. 🎁✨
+        </div>-->
+      </div>
+
+      <!-- 10 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>10</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ejecutante I · Variación Pájaro Azul · Equipo 2</h3>
+          <div class="timeline-tag">Disciplina: Repertorio Clásico</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Valentina Guerrero, Maria Baez, Paula Quiroz, Melody Ramírez.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>11</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ejecutante III · Variación de Talismán · Equipo 3</h3>
+          <div class="timeline-tag">Disciplina: Repertorio Clásico</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Aryam León, Siomara Bringas, Gimena López, Aylin Aviles.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>12</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Pre Ballet III · Grupal Navideño</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Ana Sofia Pérez, Alyssa García, Alyssa Avalos, Patricia Cervantes, Emily Cardozo,
+            Renata Flores, Miranda Zapata, Mildred Hernández, Jacqueline Muñoz, Arantza Espinoza,
+            Ginna Espinoza, Mia Tapía.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>13</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ejecutante I · Grupal Navideño</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Valentina Guerrero, Maria Baez, Paula Quiroz, Melody Ramírez, Victoria López,
+            Mariam González, Victoria Ortíz, Astrid Molina.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>14</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Ejecutante III · Grupal Navideño</h3>
+          <div class="timeline-tag">Disciplina: Ballet</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Kiara Parra, Fernanda Dávila, Gimena López, Siomara Bringas, Zoe Ortega,
+            Natalia Muñoz, Aryam León, Aylin Aviles, Aylin Antuna, Arantxa Alvarado,
+            Miley Molina, Jaime Molina, Santiago Ayala.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- INTERMEDIO -->
+      <article class="timeline-item break animate-on-scroll">
+        <div class="timeline-marker"><span>⏸</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">
+            <span style="color:white">BREVE INTERMEDIO · Al regreso se continúa con las disciplinas complementarias.</span>
+          </h3>
+        </div>
+      </article>
+
+      <!-- CATEGORÍA JAZZ -->
+      <div class="category-label" id="jazz">
+        <span>✨</span> Jazz
+      </div>
+
+      <!-- 15 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>15</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Baby Jazz</h3>
+          <div class="timeline-tag">Disciplina: Jazz</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Miriam Cordero, Gabriela Quevedo, Addison Meza, Grace López,
+            Isabella Menchaca, Barbara Gúzman.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 16 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>16</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Jazz Kids</h3>
+          <div class="timeline-tag">Disciplina: Jazz</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Daniela Sánchez, Daniela Pérez, Ana Sofia Pérez, Arantza Espinoza,
+            Victoria López, Jacqueline Muñoz, Valeria Bustamante.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- FOTO INTERCALADA 3 -->
+      <div class="photo-break animate-on-scroll">
+        <!-- 🔁 FOTO DE JAZZ / LUCES / ESCENARIO COLORIDO -->
+        <img src="img/banner03.png"
+             alt="Rutina de jazz en escena">
+        <!--<div class="photo-break-caption">
+          Energía, ritmo y sonrisa en cada coreografía. 🎶
+        </div>-->
+      </div>
+
+      <!-- 17 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>17</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Jazz Junior</h3>
+          <div class="timeline-tag">Disciplina: Jazz</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Natalia Muñoz, Gimena López, Maria Baez, Aryam León, Aylin Antuna.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 18 -->
+      <article class="timeline-item animate-on-scroll" id="contemporaneo">
+        <div class="timeline-marker"><span>18</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Jazz Lírico</h3>
+          <div class="timeline-tag">Disciplina: Jazz / Contemporáneo</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Natalia Muñoz, Gimena López, Santiago Ayala, Aylin Antuna, Ana Sofía Pérez,
+            Arantza Espinoza, Jacqueline Muñoz, Alyssa García, Arantxa Alvarado, Victoria López.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- CATEGORÍA GIMNASIA -->
+      <div class="category-label" id="gimnasia">
+        <span>🤸‍♀️</span> Gimnasia
+      </div>
+
+      <!-- 19 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>19</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Gimnasia Baby</h3>
+          <div class="timeline-tag">Disciplina: Gimnasia</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Grace López, Camila Contreras, Ania Martínez, Isabella Menchaca,
+            Defnne López, Lia Moedano, Leah Flores.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 20 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>20</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Gimnasia Junior</h3>
+          <div class="timeline-tag">Disciplina: Gimnasia</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Emily Magaña, Amaia Zepeda, Ana Sofía Pérez, Arantza Espinoza,
+            Jacqueline Muñoz, Victoria López, Daniela Pérez, Daniela Sánchez,
+            Alyssa Avalos, Ainhoa Ruíz, Marina González, Renata Flores.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 21 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>21</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Gimnasia Junior</h3>
+          <div class="timeline-tag">Disciplina: Gimnasia</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Brenda Castellanos, Natalia Muñoz, Gimena López, Aylin Aviles,
+            Maria Baez, Siomara Bringas.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- CATEGORÍA CONTEMPORÁNEO (ya anclado arriba con 18, solo label extra) -->
+      <div class="category-label">
+        <span>🌙</span> Danza Contemporánea
+      </div>
+
+      <!-- 22 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>22</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Contemporáneo</h3>
+          <div class="timeline-tag">Disciplina: Danza Contemporánea</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Natalia Muñoz, Gimena López, Kiara Parra, Fernanda Davila,
+            Aylin Aviles, Melody Ramírez, Mia Cruz, Ana Sofía Pérez,
+            Arantza Espinoza, Jacqueline Muñoz, Victoria López, Siomara Bringas.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- CATEGORÍA HIP HOP -->
+      <div class="category-label" id="hiphop">
+        <span>🧢</span> Hip Hop
+      </div>
+
+      <!-- 23 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>23</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Hip Hop Kids</h3>
+          <div class="timeline-tag">Disciplina: Hip Hop</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Arantza Espinoza, Jacqueline Muñoz, Daniela Sánchez, Heyli Rojas,
+            Lia Méndez, Ainhoa Ruíz, Victoria López, Mariam González,
+            Marina González, Valeria Bustamante.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- 24 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>24</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Hip Hop Junior</h3>
+          <div class="timeline-tag">Disciplina: Hip Hop</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Santiago Ayala, Gael Rodríguez, Gimena López, Fernanda Dávila,
+            Brenda Castellanos, Shajiidee Ruíz, Valeria Ortíz,
+            Natalia Muñoz, Aylin Antuna.</strong>
+          </p>
+        </div>
+      </article>
+
+      <!-- FOTO INTERCALADA 4 -->
+      <div class="photo-break animate-on-scroll">
+        <!-- 🔁 FOTO DE HIP HOP / SALTO / POSE GRUPAL -->
+        <img src="img/banner04.png"
+             alt="Equipo de Hip Hop">
+        <!--<div class="photo-break-caption">
+          Actitud, estilo y trabajo en equipo en cada paso. 🔥
+        </div>-->
+      </div>
+
+      <!-- CIERRE -->
+      <div class="category-label" id="cierre">
+        <span>🌟</span> Cierre del festival
+      </div>
+
+      <!-- 25 -->
+      <article class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"><span>25</span></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Saludo final</h3>
+          <div class="timeline-tag">Cierre</div>
+          <p class="timeline-interpretes">
+            <strong>Intérpretes:
+            Todos los alumnos.</strong>
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="footer">
+      © Academia de Danza Jokale · Festival de Prácticas Escénicas
+    </footer>
+  </main>
+
+  <script>
+    // Animación de aparición al hacer scroll
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+	
+	
+
+	
+	
+	
+	<!-- BOTÓN FLOTANTE "SUBIR AL INICIO" -->
+<div class="back-to-top" id="backToTop">↑</div>
+	
+	<script>
+  // Mostrar / ocultar botón al hacer scroll
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+
+  // Función para subir
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
