@@ -1315,9 +1315,26 @@ César Acosta Sandoval<br>
 Solo da click en el botón y envía <br>
 un mensaje por WhatsApp.</p><br>
 
-        <a href="https://wa.me/524621575331" class="confirm-button">
+        <a href="https://wa.me/524621575331" class="confirm-button" id="whatsapp-button">
           <i class="fab fa-whatsapp"></i> <strong> Confirmar</strong> </a>
     </div>
+			
+			<script>
+        // JavaScript para manejar el clic del botón
+        document.getElementById('whatsapp-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Reemplaza este número con el número de WhatsApp del asesor
+            const phoneNumber = '524621575331'; // Formato: código de país + número sin espacios ni símbolos
+            const message = 'Hola, confirmo mi asistencia a los XV Años de Melany Dayne';
+            
+            // Crear la URL de WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Abrir WhatsApp en una nueva ventana/pestaña
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 			
 </section>	
 			
