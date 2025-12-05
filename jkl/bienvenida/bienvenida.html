@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es" id="inicio">
+<head>
+  <meta charset="UTF-8">
+  <title>JOKALE DANZA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuente opcional (puedes quitarla si no la quieres) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/logo.png">		
+
+  <style>
+    :root {
+      --rosa-primario: #ff4dee;
+      --rosa-secundario: #f987ee;
+      --rosa-soft: #fff3fe;
+      --negro: #000000;
+      --texto: #111111;
+      --blanco: #ffffff;
+      --max-width: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--rosa-soft);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header / menú */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: var(--rosa-secundario);
+    }
+	  
+	  .logo img{
+      width: 15%;
+	min-width: 80px;  
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--blanco);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background: var(--rosa-primario);
+      color: var(--negro);
+      transform: translateY(-1px);
+    }
+
+    /* Hero con parallax */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 6rem 1.25rem 4rem;
+      color: var(--blanco);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+        url("img/img01.jpg") center center / cover no-repeat fixed;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-text span.tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rosa-secundario);
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text h1 strong {
+      color: var(--rosa-primario);
+    }
+
+    .hero-text p.sub {
+      font-size: 1rem;
+      max-width: 26rem;
+      margin-bottom: 1rem;
+      color: #f7f7f7;
+    }
+
+    .hero-text p.location {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-cta {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--rosa-primario), var(--rosa-secundario));
+      color: var(--negro);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--blanco);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0,0,0,0.6);
+      transform: translateY(-1px);
+    }
+
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(255,77,238,0.35), rgba(249,135,238,0.1)),
+        url("img/img02.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    }
+	  
+	 .hero-image2 {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(255,77,238,0.35), rgba(249,135,238,0.1)),
+        url("img/img05.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    } 
+	  
+	  .hero-image3 {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(255,77,238,0.35), rgba(249,135,238,0.1)),
+        url("img/img06.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    } 
+	  
+	  .hero-image4 {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background: url("img/img07.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    } 
+	  
+	  .hero-image5 {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(255,77,238,0.25), rgba(249,135,238,0.05)),
+        url("img/img08.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    } 
+	  
+	  .hero-image6 {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+      min-height: 260px;
+      background: url("img/img09.jpg") center center / cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      position: relative;
+    } 
+
+    .hero-image::after {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.7);
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      text-align: center;
+      color: var(--rosa-soft);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 4rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Bloque Misión / visión / valores (texto tal cual) */
+    .mvv-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 1.4rem 1.4rem 1.1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+
+    /* Parallax strip intermedio */
+    .parallax-strip {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.5)),
+        url("img/img03.jpg") center center / cover no-repeat fixed;
+      color: var(--blanco);
+      text-align: center;
+    }
+	  
+	.parallax-strip2 {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.5)),
+        url("img/img04.jpg") center center / cover no-repeat fixed;
+      color: var(--blanco);
+      text-align: center;
+    }  
+
+    .parallax-strip .section-inner {
+      padding: 3rem 1.25rem;
+    }
+
+    .parallax-strip h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .parallax-strip p {
+      max-width: 34rem;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      opacity: 0.92;
+    }
+
+    /* Planes / costos */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .price-tag {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--rosa-primario);
+      margin-bottom: 0.4rem;
+    }
+
+    .price-note {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .pricing-list {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .pricing-list p {
+      margin-bottom: 0.35rem;
+    }
+
+    .pricing-highlight {
+      border: 1.5px solid var(--rosa-primario);
+      box-shadow: 0 10px 30px rgba(255,77,238,0.15);
+    }
+
+    .tag-pill {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,77,238,0.1);
+      color: var(--rosa-primario);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Horarios grid */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .schedule-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    /* Uniformes / souvenirs */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .bullet-list {
+      font-size: 0.9rem;
+    }
+
+    .bullet-list p {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Políticas */
+    .policy-list {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .policy-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .policy-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.4rem;
+      color: var(--rosa-primario);
+    }
+
+    /* Contacto (puedes editar datos reales) */
+    .contact-box {
+      background: var(--blanco);
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-box p {
+      font-size: 0.9rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.8rem;
+    }
+    /* Botón flotante volver al inicio */
+    .back-to-top {
+      position: fixed;
+      right: 1.1rem;
+      bottom: 1.2rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--rosa-primario), var(--rosa-secundario));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--negro);
+      font-size: 1.1rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+      z-index: 900;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.5);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.25rem 2.5rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 6.2rem;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        gap: 0.4rem;
+      }
+
+      nav a {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero-image::after {
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Desactivar parallax en móvil (mejor performance) */
+      .hero {
+        background-attachment: scroll;
+        background-position: center;
+      }
+
+      .parallax-strip {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo"><img src="img/logo.png"><!--JOKALE DANZA--></div>
+		
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#mvv">Misión</a>
+        <a href="#costos">Inscripción y mensualidades</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#uniformes">Uniformes</a>
+        <a href="#souvenirs">Souvenirs</a>
+        <a href="#politicas">Debes considerar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="tagline">Bienvenidos a JOKALE DANZA</span>
+        <h1>MI CORAZÓN NO LATE, <strong>BAILA</strong>.</h1>
+        <p class="sub">
+          BALLET, JAZZ, GIMNASIA, HIP HOP.
+        </p>
+        <p class="location">
+          Nos ubicamos en Plaza Villa Floresta a contra  esquina de la telefónica de TELNOR
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">Ballet</div>
+          <div class="badge">Jazz</div>
+          <div class="badge">Gimnasia</div>
+          <div class="badge">Hip Hop</div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#costos" class="btn-primary">Ver costos y paquetes</a>
+          <a href="#horarios" class="btn-secondary">Horarios de clases</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MISION / VISION / VALORES (texto tal cual) -->
+  <section id="mvv">
+    <div class="section-inner">
+	  <h2 class="section-title">¿Quiénes somos?</h2>
+	  <p>Somos una escuela de danza, con 12 años de experiencia formando bailarines, nos basamos en la metodología cubana del ballet.</p><br>	
+		
+      <h2 class="section-title">Misión, Visión y Valores</h2>
+     <!-- <p class="section-subtitle">Información institucional</p>-->
+
+      <div class="mvv-cards">
+        <div class="card">
+          <h3>Misión</h3>
+          <p>Formar bailarines disciplinados, responsables en los que se les inculque el amor por la danza; así mismo ofrecer a nuestros alumnos educación de calidad que les permita desarrollar y potenciar sus habilidades y aptitudes.</p>
+        </div>
+        <div class="card">
+          <h3>Visión</h3>
+          <p>Consolidarnos como una de las mejores academias de danza de la ciudad, que brinde un ambiente de aprendizaje óptimo para nuestros alumnos, en el cual les permita aprender  y mejorar día con día para desarrollarse de manera profesional en la danza.</p>
+        </div>
+		  
+		 
+        <div class="card">
+          <h3>Valores</h3>
+          <ul style="margin-left: 15px;">
+		  <li>Vocación</li>
+		  <li>Profesionalismo</li>
+		  <li>Trabajo en equipo</li>
+		  <li>Respeto</li>
+		  <li>Responsabilidad</li>
+		  <li>Tolerancia</li>
+		  <li>Empatía</li>
+			</ul>
+        </div>
+		  
+		<div class="hero-image4">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+      </div>  
+		  
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX INTERMEDIO -->
+  <section class="parallax-strip">
+    <div class="section-inner">
+      <h2>Formación artística con disciplina y corazón.</h2>
+      <p>MI CORAZÓN NO LATE, BAILA.</p>
+      <div style="margin-top: 50px">
+          <a href="https://forms.gle/LtYytYGE7cGnehkCA" target="_blank" class="btn-primary">Regístrate para una clase muestra</a>
+          <a href="https://forms.gle/S47QsB4FDwrZ3ixa6" target="_blank" class="btn-secondary">Registro de inscripción de alumno</a>
+        </div>		
+    </div>
+  </section>
+
+  <!-- COSTOS -->
+  <section id="costos">
+    <div class="section-inner">
+      <h2 class="section-title">Inscripción, mensualidades y paquetes</h2>
+      <p class="section-subtitle">COSTOS JOKALE DANZA</p>
+
+      <div class="pricing-grid">
+        <div class="card">
+          <span class="tag-pill">Inscripción anual</span>
+          <div class="price-tag">COSTO DE INSCRIPCIÓN: $800 MXN.</div>
+          <p class="price-note">
+            La inscripción es ANUAL sin reembolso si la alumna decide darse de baja al mes.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag-pill">Mensualidades</span>
+          <div class="pricing-list">
+            <p><strong>MENSUALIDAD BALLET:</strong> $1200 MXN (2 Clases a la semana)</p>
+            <p><strong>MENSUALIDAD BALLET Y JAZZ:</strong> $1200 MXN (2 Clases a la semana)</p>
+            <p><strong>MENSUALIDAD HIP HOP:</strong> $800 MXN</p>
+            <p><strong>MENSUALIDAD GIMNASIA:</strong> $800 MXN</p>
+          </div>
+        </div>
+
+        <div class="card pricing-highlight">
+          <span class="tag-pill">Paquetes</span>
+          <div class="pricing-list">
+            <p><strong>PAQUETE PLUS:</strong></p>
+            <p>Ballet</p>
+            <p>Jazz</p>
+			<p>2 Clases extra</p>
+			<p>$2800 MXN</p>
+            <br>
+            <p><strong>PAQUETE ESTANDÁR:</strong></p>
+            <p>Ballet o Jazz</p>
+            <p>1 Clase extra</p>
+            <p>$1600 MXN</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIOS -->
+  <section id="horarios">
+    <div class="section-inner">
+      <h2 class="section-title">Horarios de clases</h2>
+      <p class="section-subtitle">MATUTINAS Y VESPERTINAS</p>
+
+      <div class="schedule-grid">
+		  
+		<div class="hero-image2">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+      </div>
+        
+		  
+        <!-- MATUTINAS -->
+        <div class="card schedule-item">
+          <div class="price-tag">Nuestras clases matutinas</div>
+		  <p><strong>BALLET ADULTOS</strong></p>
+		  <p>INSCRIPCIÓN: $400 MXN</p>
+	      <p>MENSUALIDAD POR 3 CLASES A LA SEMANA INCLUYENDO BALLET FIT: $1000 MXN.</p>
+          <p>HORARIO: Lunes, miércoles y jueves de 9:00 a 10:00 a.m.</p>
+          <br>
+          <p><strong>MOMMY AND ME. DIRIGIDO A NIÑOS DE 18 A 36 MESES.</strong></p>
+		  <p>INSCRIPCIÓN: $400 MXN</p>
+		  <p>MENSUALIDAD POR APERTURA: $1000 MXN.</p>
+          <p>HORARIO: Miércoles y jueves de 10:00 a 11:00 a.m.</p>
+        </div> 
+		 
+
+        <!-- VESPERTINAS 3 A 6 -->
+        <div class="card schedule-item">
+          <div class="price-tag">Clases vespertinas para niños de 3 a 6 años</div>
+	      <p><strong>BABY BALLET B (DIRIGIDO A NIÑAS DE 3 A 4 AÑOS)</strong></p>
+		  <p>HORARIO: Lunes y martes de 3:00 a 4:00 p.m.</p>
+		  <p><strong>BABY BALLET A (4 A 4.11 MESES)</strong></p>
+		  <p>HORARIO: Lunes 4:00 p.m. y jueves 3:00 p.m.</p>
+          <p><strong>BABY GIMNASIA (4 A 6 AÑOS)</strong></p>
+		  <p>HORARIO: Viernes a las 3:00 p.m.</p>
+          <p><strong>PRE BALLET 1 (5 A 6 AÑOS)</strong></p>
+		  <p>HORARIO: Miércoles 3:00 p.m. y viernes 4:00 p.m.</p>
+        </div>
+
+        <!-- 6 A 9 -->
+        <div class="card schedule-item">
+          <div class="price-tag">Clases para niños de 6 a 9 años</div>
+          <p><strong>PRE BALLET II (NIÑAS 6 A 7 AÑOS Y MEDIO)</strong></p>
+		  <p>HORARIO: Miércoles  y jueves a las 5:00 p.m.</p>
+          <p><strong>PRE BALLET III (NIÑAS DE 7 AÑOS Y MEDIO A 8.11 AÑOS)</strong></p>
+		  <p>HORARIO: Lunes y viernes de 5:00 a 6:00 p.m.</p>
+          <p><strong>JAZZ FUSION KIDS (6 A 9 AÑOS)</strong></p>
+		  <p>HORARIO: Martes y viernes 6:00 a 7:00 p.m.</p>
+          <p><strong>GIMNASIA KIDS (6 A 9 AÑOS)</strong></p>
+		  <p>HORARIO: Martes de 5:00 a 6:00 p.m.</p>
+          <p><strong>HIP HOP KIDS (6 A 9 AÑOS)</strong></p>
+		  <p>HORARIO: Miércoles de 6:00 a 7:00 p.m.</p>
+        </div>
+
+        <!-- 10 A 15 -->
+        <div class="card schedule-item">
+          <div class="price-tag">Clases para niños de 10 a 15 años</div>
+          <p><strong>BALLET EJECUTANTE 1 (NIÑAS DE 9 A 10 AÑOS Y MEDIO)</strong></p>
+		  <p>HORARIO: Miércoles 4:00 y jueves 6:00 p.m.</p>
+          <p><strong>BALLET EJECUTANTE III</strong></p>
+		  <p>HORARIO: Lunes y jueves de 7:00 a 8:00, únicamente para niños con conocimientos previos de danza clásica</p>
+          <p><strong>JAZZ FUSION JUNIOR (10 A 14 AÑOS)</strong></p>
+		  <p>HORARIO: Martes y viernes de 7:00 a 8:00 p.m.</p>
+          <p><strong>GIMNASIA JUNIOR (10 A 14 AÑOS)</strong></p>
+		  <p>HORARIO: Martes 6:00 a 7:00 p.m.</p>
+          <p><strong>HIP HOP JUNIOR (10 A 15 AÑOS, principiante)</strong></p>
+		  <p>HORARIO: Miércoles de 7:00 a 8:00 p.m.</p>
+        </div>
+		  
+		  
+		  
+		 <div class="hero-image3">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+      </div>
+        
+		  
+      </div>
+		
+    </div>
+  </section>
+
+  <!-- UNIFORMES -->
+  <section id="uniformes">
+    <div class="section-inner">
+      <h2 class="section-title">Costo de uniformes</h2>
+      <p class="section-subtitle">BALLET · JAZZ · HIP HOP · GIMNASIA</p>
+
+      <div class="two-col">
+        <div class="card">
+		<div class="price-tag">Ballet</div>
+          <h3>Costo de uniformes</h3>
+          <div class="bullet-list">
+            <p>$1150 MXN Leotardo, falda y tocado.</p><br>
+            <p><strong>Opcionales</strong></p>
+			 <ul style="margin-left: 15px;">
+            <li>$630 MXN Leotardo de invierno</li>
+            <li>$370 MXN Zapatillas</li>
+            <li>$200 MXN Medias</li>
+            <li>$400 MXN Suéter</li>
+            <li>$450 MXN Torera</li>
+			 </ul>
+          </div>
+        </div>
+
+        <div class="card">
+		  <div class="price-tag">Jazz</div>
+          <h3>Costo uniforme</h3>
+          <div class="bullet-list">
+            <p>$1050 MXN  Legging  y leotardo manga corta</p><br>
+            <p><strong>Opcionales</strong></p>
+			<ul style="margin-left: 15px;">
+            <li>$265 MXN Blusa</li>
+            <li>$570 MXN Zapatillas</li>
+            <li>$110 MXN Calcetas cortas</li>
+            <li>$320 MXN Top</li>
+            <li>$135 MXN Moño personalizado</li>
+            <li>$400 MXN Short </li>
+			</ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col" style="margin-top:1.75rem;">
+        <div class="card">
+		  <div class="price-tag">Hip Hop</div>
+          <h3>Costo uniforme </h3>
+          <div class="bullet-list">
+            <p>$1050 MXN Jersey personalizada y mallón negro.</p>
+          </div>
+        </div>
+
+        <div class="card">
+		  <div class="price-tag">Gimnasia</div>
+          <h3>Costo uniforme</h3>
+          <div class="bullet-list">
+            <p>$1000 MXN  Legging  y leotardo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOUVENIRS -->
+  <section id="souvenirs">
+    <div class="section-inner">
+      <h2 class="section-title">Souvenirs extra</h2>
+      <p class="section-subtitle">MERCH OFICIAL JOKALE DANZA</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Souvenirs extra</h3>
+          <div class="bullet-list">
+			<p>$650 MXN Mochila personalizada grande</p>
+			<p>$550 MXN Mochila personalizada pequeña</p>
+            <p>$150 MXN Moño bordado</p>
+			<p>$135 MXN Moño con vinil</p>
+          </div><br>
+		  <h3>Chamarras y sudaderas*</h3>
+          <div class="bullet-list">
+            <p>$1100 MXN Chamarra cazadora</p>
+            <p>$500 MXN Sudadera sencilla</p>
+            <p>$750 MXN Chamarra corta </p><br>
+			<p><span style="font-size: 9pt">*Sujetas a disponibilidad</span></p>  
+          </div>	
+        </div>
+
+        <div class="hero-image5">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+      </div>
+		  
+      </div>
+    </div>
+  </section>
+
+  <!-- DEBES CONSIDERAR -->
+  <section id="politicas">
+    <div class="section-inner">
+      <h2 class="section-title">Debes considerar</h2>
+      <p class="section-subtitle">POLÍTICAS Y CONDICIONES</p>
+
+      <ul class="policy-list" style="list-style: none">
+        <li>Los pagos no son reembolsables.</li>
+        <li>Se pagan completas las cuotas de Diciembre, semana Santa y Julio.</li>
+        <li>Las clases no son transferibles ni acumulables.</li>
+        <li>En ausencia del menor por enfermedad u otra situación no hay ajuste en costo.</li>
+        <li>El uso del uniforme es obligatorio en todas las clases.</li>
+        <li>Los pagos se hacen del 1 al 5 o se aplican recargos correspondientes.</li>
+        <li>La inscripción es ANUAL sin reembolso si la alumna decide darse de baja al mes.</li>
+      </ul>
+    </div>
+  </section>
+	
+  <!-- PARALLAX FINAL -->
+  <section class="parallax-strip2">
+    <div class="section-inner">
+      <h2>Un espacio donde cada paso construye confianza y cada sonrisa cuenta una historia.</h2>
+		<div style="margin-top: 50px">
+          <a href="https://forms.gle/LtYytYGE7cGnehkCA" target="_blank" class="btn-primary">Regístrate para una clase muestra</a>
+          <a href="https://forms.gle/S47QsB4FDwrZ3ixa6" target="_blank" class="btn-secondary">Registro de inscripción de alumno</a>
+        </div>	
+    </div>
+  </section>	
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-inner">
+      <h2 class="section-title">Agenda tu lugar</h2>
+      <p class="section-subtitle">INSCRIPCIONES Y DUDAS</p>
+
+<table>
+<tr>
+<td width="45%">
+<div class="hero-image6">
+        <!-- Imagen de portada, se ve con CSS / puedes cambiar url en .hero-image -->
+</div>
+</td>	
+<td width="3%"></td>	
+<td>
+<div class="contact-box">
+        <div>
+          <h3>¿Lista para que tu corazón baile con JOKALE DANZA?</h3>
+          <p>Puedes editar estos datos con tu número real, redes y link de WhatsApp.</p>
+        </div>
+
+        <div>
+          <p><strong>Ubicación:</strong> Plaza Villa Floresta a contra  esquina de la telefónica de TELNOR</p>
+          <p><strong>WhatsApp:</strong> (coloca aquí tu número)</p>
+          <p><strong>Instagram / Facebook:</strong> (coloca aquí tus @)</p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="#costos" class="btn-primary">Ver costos completos</a>
+          <a href="#inicio" class="btn-secondary">Regresar al inicio</a>
+        </div>
+		</div> 	
+</td>	
+</tr>
+</table>	
+		
+		
+	  </div>
+  </section>
+
+  <!-- BOTÓN FLOTANTE REGRESO AL INICIO -->
+  <a href="#inicio" class="back-to-top" aria-label="Regresar al inicio">↑</a>
+
+  <!-- FOOTER -->
+  <footer>
+    JOKALE DANZA · MI CORAZON NO LATE, BAILA.
+  </footer>
+
+</body>
+</html>
