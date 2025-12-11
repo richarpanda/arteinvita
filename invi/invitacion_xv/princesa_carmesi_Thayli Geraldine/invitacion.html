@@ -990,127 +990,23 @@ Sra. Benita Cortes Paredes<br>
                     <a href="https://maps.app.goo.gl/twhMLDFge8gL6Ps27" class="btn">Ver mapa</a>
                 </div>
 				
-				<!-- <div class="timeline-item">
-					<div class="section-icon-dress"></div> <!-- Ícono con enlace a la imagen -->
-                 <!--   <h2 class="section-title">Código de Vestimenta</h2>
-                    <p class="section-content">Vistamos este día de elegancia y alegría: 
+				<div class="timeline-item">
+					<div class="whatsapp-icon"></div>
+                   <h2 class="section-title">Confirma tu asistencia</h2>
+                    <p class="section-content">Tu presencia es muy importante para mí.<br><em>Por eso te pido que confirmes tu asistencia.</em><br>Solo da click en el botón y envía un mensaje por WhatsApp. 
 					</p>
-                    <p class="section-content-hora">Formal-Casual</p>
-                   
-                </div>-->
+                    
+                   <a href="https://wa.me/527821034126" class="confirm-button">
+          <i class="fab fa-whatsapp"></i> <strong> Confirmar</strong> </a>
+                </div>
             </div>
 			
-			
-			 <!-- seccion pinterest  y hastag -->
-	 <!-- 		<section class="social-section">
-  <div class="social-item">
-        <div class="social-icon social-icon-camera"></div>
-        <h2 class="social-title">Captura cada instante</h2>
-        <p class="social-content">y compártelo con el hashtag:</p>
-        <p class="hashtag">#romixv</p>
-		<p class="social-content">También puedes etiquetar a nuestra<br>quinceañera en IG con su username</p>
-		<p class="social-content instagram"><a href="https://www.instagram.com" class="enlace-instagram">@romi</a></p>
-    </div>-->
-    
-  <!--   <div class="social-item">
-        <div class="social-icon social-icon-gift"></div>
-        <h2 class="social-title">Inspiración</h2>
-        <p class="social-content">Si estás pensando en sorprenderme,<br>creé un tablero en Pinterest<br>con ideas de cosas que me encantarían.<br>Puedes verlo aquí:</p>
-        <a href="https://mx.pinterest.com/" class="btn">Ver ideas</a>
-		<p class="social-content">Y si deseas tener un lindo detalle conmigo,
-he preparado una pequeña mesa de regalos con opciones que me hacen mucha ilusión.</p>
-        <a href="https://mesaderegalos.liverpool.com.mx/?_ga=2.250783045.2105570888.1744765848-1828678887.1735875147&_gac=1.113120502.1744765848.Cj0KCQjwh_i_BhCzARIsANimeoEa4bjjnYD2UUT94MTO2JqE62d8jNFW0UifX7nQXBuZfRGuok0nI1IaAlJAEALw_wcB" class="btn">Ver mesa de regalos</a>
-        <p class="thanks">¡Gracias!</p>
-    </div>
-</section>-->
-			 <!-- seccion hospedaje,contador,whats -->
-			
-		<section class="final-section">
-    <!-- Sugerencia de Hospedaje -->
- <!--   <div class="final-item">
-        
-        <h2 class="final-title">Sugerencia de Hospedaje</h2>
-        <p class="final-content">Si vienes de lejos,<br>
- te recomendamos hospedarte en:</p>
-        <p class="final-content" style="font-size: 32px;">Verticca Hotel</p>
-        <a href="https://maps.app.goo.gl/cCecbyRYVahmwLaD8" class="confirm-button">Ver mapa</a>
-    </div>-->
-    
-    
-
- <!-- Contador -->
-    <div class="final-item">
-        <div style="width: 100%">
-        
-        <!-- NUEVA SECCIÓN: Contenedor del reloj digital en formato de cronómetro -->
-        <div class="digital-clock-container">
-			<div class="countdown-icon"></div>
-        <h2 class="final-title">Faltan</h2>
-			<p class="final-content">DIAS// HORAS//MINUTOS </p>
-            <div id="digital-clock" class="digital-clock">
-                <span id="days">00</span><span class="clock-separator">:</span><span id="hours">00</span><span class="clock-separator">:</span><span id="minutes">00</span>
-            </div>
-            <div class="clock-label" id="clock-label"></div>
-            <div class="clock-status" id="clock-status"></div>
-        </div>
-        
-        <!-- NUEVA SECCIÓN: Script actualizado para calcular el reloj digital en formato DD:HH:MM -->
-        <script>
-            function updateDigitalClock() {
-                const targetDate = new Date("April 12, 2026 00:00:00").getTime();
-                const digitalClock = document.getElementById("digital-clock");
-                const clockStatus = document.getElementById("clock-status");
-                const daysElement = document.getElementById("days");
-                const hoursElement = document.getElementById("hours");
-                const minutesElement = document.getElementById("minutes");
-
-                function update() {
-                    const now = new Date().getTime();
-                    const distance = targetDate - now;
-
-                    if (distance > 0) {
-                        // Calcular días, horas y minutos
-                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-                        // Formatear con ceros a la izquierda
-                        daysElement.textContent = String(days).padStart(2, '0');
-                        hoursElement.textContent = String(hours).padStart(2, '0');
-                        minutesElement.textContent = String(minutes).padStart(2, '0');
-
-                        // Quitar clase "event-today" si existe
-                        digitalClock.classList.remove("event-today");
-                        clockStatus.textContent = "Para vivir esta gran celebración";
-                    } else {
-                        // El evento es hoy
-                        daysElement.textContent = "00";
-                        hoursElement.textContent = "00";
-                        minutesElement.textContent = "00";
-                        digitalClock.classList.add("event-today");
-                        clockStatus.textContent = "¡El evento es hoy!";
-                    }
-                }
-
-                update(); // Actualizar inmediatamente
-                setInterval(update, 1000); // Actualizar cada segundo para ver cambios en tiempo real
-            }
-
-            // Iniciar el reloj digital cuando se cargue la página
-            window.addEventListener('load', updateDigitalClock);
-        </script>
-
-		</div>
-    </div>
-			
-</section>	
-			
-			
+		
 			
 			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
 celebres conmigo!</p>
-			 <h2 class="final-title">¡Nos vemos<br>
+			 <h2 class="final-title">¡Nos vemos
  pronto!</h2>
 			<p class="thanks">Con Cariño,<br>
 Thayli Geraldine.</p>
