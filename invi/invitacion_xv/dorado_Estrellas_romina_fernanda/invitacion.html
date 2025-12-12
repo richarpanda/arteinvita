@@ -263,6 +263,17 @@
         background-repeat: no-repeat; /* Sin repetición */
         background-position: center; /* Centrado dentro del contenedor */
     }
+		
+		.section-iti {
+        width: 80px; /* Ancho del ícono */
+        height: 80px; /* Altura del ícono */
+        margin: 0 auto 5px auto; /* Centrado con espacio debajo */
+        display: block; /* Para manejarlo como bloque */
+        background-image: url('img/icon-iti.png'); /* Enlace directo a la imagen */
+        background-size: cover; /* Asegura que la imagen cubra todo el área */
+        background-repeat: no-repeat; /* Sin repetición */
+        background-position: center; /* Centrado dentro del contenedor */
+    }
 		 .section-icon-event {
         width: 80px; /* Ancho del ícono */
         height: 80px; /* Altura del ícono */
@@ -1174,15 +1185,7 @@ Salvador Espinoza<br>
 
             <!-- Línea de tiempo -->
             <div class="timeline">
-                <div class="timeline-item">
-					<div class="section-icon"></div> <!-- Ícono con enlace a la imagen -->
-                    <h2 class="section-title">Ceremonia Religiosa</h2>
-                    <p class="section-content"><strong></strong><br>
-
-					Valle de Sta. Cruz 9, 45640 Santa Cruz de las Flores, Jal.</p>
-                    <p class="section-content-hora">Hora: 7:00 pm</p>
-                    <a href="https://maps.app.goo.gl/5nAhbnJRh3rUYLTc6" class="btn">Ver mapa</a>
-                </div>
+                
                 <div class="timeline-item">
 					<div class="section-icon-event"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Recepción del evento</h2>
@@ -1192,6 +1195,17 @@ Salvador Espinoza<br>
 					</p>
                     <p class="section-content-hora">Hora: 8:00 pm</p>
                     <a href="https://maps.app.goo.gl/KhD1QFo6GaFAcNDY6" class="btn">Ver mapa</a>
+                </div>
+				
+				<div class="timeline-item">
+					<div class="section-iti"></div> 
+                    <h2 class="section-title">Itineraio</h2>
+                    
+                    <p class="section-content">Cóctel de bienvenida : <strong>7:00 pm</strong></p>
+					<p class="section-content">Inicio del evento : <strong>8:00 pm</strong></p>
+					
+					 
+                    
                 </div>
 				
 				 <div class="timeline-item">
@@ -1374,7 +1388,8 @@ celebres conmigo!.</p>
 <p class="thanks">
 Con Cariño <br>
 
-Romina Fernanda.</p>
+Romina <br>
+Fernanda.</p>
            
             <!-- Reproductor flotante -->
     <div class="floating-player">
@@ -1453,23 +1468,7 @@ Romina Fernanda.</p>
 		
     </div>
 	
-	 <script>
-        // JavaScript para manejar el clic del botón
-        document.getElementById('whatsapp-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Reemplaza este número con el número de WhatsApp del asesor
-            const phoneNumber = '5217713646690'; // Formato: código de país + número sin espacios ni símbolos
-            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Encanto Celeste. ¿Podrían orientarme con el proceso?';
-            
-            // Crear la URL de WhatsApp
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            // Abrir WhatsApp en una nueva ventana/pestaña
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
-	
+	 
 	
 	<script>
 
@@ -1669,11 +1668,11 @@ pauseIcon.style.display = 'block';
     <div id="galleryModal" class="gallery-modal">
         <button id="closeGalleryBtn" class="gallery-close-btn">&times;</button>
         <div class="gallery-container">
-            <img id="mainImage" class="gallery-main-image" src="/placeholder.svg" alt="Imagen Principal">
+            <img id="mainImage" class="gallery-main-image" src="img/galeria/1.jpg" alt="Imagen Principal">
             <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
             <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
         </div>
-        <div id="thumbnailsContainer" class="gallery-thumbnails"></div>
+        
         <div id="imageCounter" class="gallery-counter"></div>
     </div>
     <!-- FIN NUEVO: MODAL DE GALERÍA -->
