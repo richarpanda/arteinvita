@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación - Mis Quince Años</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script src="https://app.arteinvita.com/widget.js"></script>
     <style>
         /* Estilo Global */
         @font-face {
@@ -32,11 +33,11 @@
        .background {
         background-image: url('img/fondo.png'); /* Ruta de tu imagen */
         background-repeat: no-repeat; /* Evita que se repita */
-        background-size: 450px 6781px; /* Tamaño exacto */
+        background-size: 450px 7566px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
         width: 100%; /* Ancho fijo */
 		max-width: 450px; /* Ancho máximo */
-        min-height: 6781px; /* Altura exacta */
+        min-height: 7566px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
 		position: relative;
@@ -64,11 +65,11 @@
     /* Estilo del nombre */
     .name {
         font-family: 'Nova Quinta', cursive; /* Tipografía personalizada */
-        font-size: 65px; /* Tamaño del texto */
+        font-size: 55px; /* Tamaño del texto */
 		font-weight:500;
-        color: #2e7794; /* Color del texto */
+        color: #a56d6d; /* Color del texto */
         text-align: center; /* Centrado */
-        margin-top: 640px; /* Separación superior exacta */
+        margin-top: 590px; /* Separación superior exacta */
        
        
     }
@@ -97,14 +98,14 @@
      .date-container {
             font-family: 'Gabriola', serif;
             text-align: center;
-            color: #2e7794;
+            color: #a56d6d;
             width: 100%;
         }
 
         .day {
             font-size: 2.8em;
             margin-bottom: 0;
-            border-bottom: 2px solid #2e7794;
+            border-bottom: 2px solid #a56d6d;
             display: inline-block;
             padding: 0 30px 2px;
         }
@@ -119,7 +120,7 @@
         .month {
             font-size: 2.8em;
             margin-top: 0;
-            border-top: 2px solid #2e7794;
+            border-top: 2px solid #a56d6d;
             display: inline-block;
             padding: 2px 30px 0;
         }
@@ -411,7 +412,9 @@
     .social-icon-gift {
         background-image: url('img/icon-gift.png');
     }
-		
+		.social-icon-gift-2 {
+        background-image: url('img/icon-gift-2.png');
+    }
 		.social-icon-album {
         background-image: url('img/icon-album.png');
     }
@@ -503,7 +506,7 @@
     .final-title {
         font-family: 'Nova Quinta', cursive;
         font-size: 34px;
-        color: #2e7794;
+        color: #a56d6d;
         margin: 15px 0;
         text-align: center;
     }
@@ -511,7 +514,7 @@
     .final-content {
         font-family: 'Gabriola', serif;
         font-size: 24px;
-        color: #513814;
+        color: #000000;
         line-height: 1.4;
         text-align: center;
         margin: 10px 0;
@@ -863,72 +866,8 @@
     html, body {
         overflow-x: hidden;
     }
-	}	
-	/* NUEVA SECCIÓN: Estilos para el reloj digital en formato de cronómetro */
-        .digital-clock-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-       .digital-clock {
-    font-family: 'Courier New', monospace;
-    font-size: 2.8em;           /* Reducido de 4.5em */
-    font-weight: bold;
-    color: #af8843;
-   
-    padding: 10px 25px;         /* Reducido de 30px 50px */
-    border-radius: 15px;
-    border: 0px solid #af8843;
-    text-align: center;
-    letter-spacing: 5px;        /* Reducido de 8px */
-    
-    min-width: auto;            /* Cambiado de 350px */
-    transition: all 0.3s ease;
 }
-
-        .clock-separator {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 49%, 100% {
-                opacity: 1;
-            }
-            50%, 99% {
-                opacity: 0;
-            }
-        }
-
-        .clock-label {
-    font-family: 'Gabriola', serif;
-    font-size: 1.2em;           /* Reducido de 1.8em */
-    color: #477060;
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.clock-status {
-    font-family: 'Gabriola', serif;
-    font-size: 1.7em;           /* Reducido de 1.4em */
-    color: #513814;
-    margin-top: 10px;
-    font-style: italic;
-}
-        .digital-clock.event-today {
-            
-            border-color: #513814;
-            color: #513814;
-        }
-
-        .digital-clock.event-today .clock-separator {
-            color: #513814;
-        }
-	 }
-		
+	
 		/* NUEVO: ESTILOS PARA EL MODAL DE GALERÍA */
         .gallery-button-container {
             text-align: center;
@@ -1125,8 +1064,70 @@
             }
         }
         /* FIN NUEVO: ESTILOS GALERÍA */
+		
+        /* NUEVA SECCIÓN: Estilos para el reloj digital en formato de cronómetro */
+        .digital-clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
 
-    	
+       .digital-clock {
+    font-family: 'Courier New', monospace;
+    font-size: 2.8em;           /* Reducido de 4.5em */
+    font-weight: bold;
+    color: #af8843;
+   
+    padding: 10px 25px;         /* Reducido de 30px 50px */
+    border-radius: 15px;
+    border: 0px solid #af8843;
+    text-align: center;
+    letter-spacing: 5px;        /* Reducido de 8px */
+    
+    min-width: auto;            /* Cambiado de 350px */
+    transition: all 0.3s ease;
+}
+
+        .clock-separator {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% {
+                opacity: 1;
+            }
+            50%, 99% {
+                opacity: 0;
+            }
+        }
+
+        .clock-label {
+    font-family: 'Gabriola', serif;
+    font-size: 1.2em;           /* Reducido de 1.8em */
+    color: #477060;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.clock-status {
+    font-family: 'Gabriola', serif;
+    font-size: 1.7em;           /* Reducido de 1.4em */
+    color: #513814;
+    margin-top: 10px;
+    font-style: italic;
+}
+        .digital-clock.event-today {
+            
+            border-color: #513814;
+            color: #513814;
+        }
+
+        .digital-clock.event-today .clock-separator {
+            color: #513814;
+        }
     </style>
 </head>
 <body>
@@ -1137,10 +1138,10 @@
         <div class="arrow-up"></div>
     </button> 
 			
-            <h1 class="name">Larissa</h1>
-            <p class="subtext">Quince años de amor,<br>
- sueños
-				
+            <h1 class="name">Yamileth</h1>
+            <p class="subtext">Quince años de amor, <br>
+sueños
+				<br>
 y alegría…<br>¡Ven a celebrarlos <br>
 conmigo!</p>
 
@@ -1149,114 +1150,118 @@ conmigo!</p>
             <!-- Contador de Fecha -->
           <div class="date-container">
         <div class="day">Sábado</div>
-        <div class="number">14</div>
-        <div class="month">Febrero</div>
-        <div class="time">5:00 pm</div>
+        <div class="number">21</div>
+        <div class="month">Marzo</div>
+        <div class="time">6:30 pm</div>
     </div>
 <br>
 
-			 <p class="parrafo">La vida está hecha de momentos<br> únicos,
- y este es uno de los<br>más importantes para mi.<br> Junto a mis padres: <br>Karina Ramírez <br>
-y<br>Jesús Villaseñor,<br> te invito a celebrar <br>
- el inicio de una nueva etapa.
+			 <p class="parrafo">La vida está hecha de <br>
+momentos únicos,<br>
+ y este es uno de los<br>más importantes para mí.<br> Junto a mis padres: <br>Guadalupe Hernandez<br>y<br>
+ Blas Antonio,<br> te invito a celebrar conmigo<br> el inicio de una <br>
+nueva etapa.
 <br>
 <br>
-				 Con amor, los padrinos <br>
-de Larissa:
+				 Con amor, los padrinos<br>
+ de Yamileth:
 <br>
 <br>
 
-Mitzi Abigail Perez <br>
-y<br>Rafael Villaseñor</p>
+Maria Dolores Robledo Mariano<br>
+
+y<br>
+
+Miguel Angel Mendoza<br>
+
+			</p>
 
             <!-- Línea de tiempo -->
             <div class="timeline">
                 <div class="timeline-item">
 					<div class="section-icon"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Ceremonia Religiosa</h2>
-                    <p class="section-content"><strong>Parroquia de la Inmaculada Concepción</strong><br>
-Paseo de las Villas 150, Villas de la Hacienda, Atizapán de Zaragoza, Edo. de México, CP. 52929
-					</p>
-                    <p class="section-content-hora">Hora: 5:00 pm</p>
-                    <a href="https://maps.app.goo.gl/mdPjVTp1pL3CuamR7" class="btn">Ver mapa</a>
+                    <p class="section-content"><strong>Parroquia La Divina Providencia</strong><br>
+
+					Av. Arco del Triunfo 1530, Arcos de Zapopan, 45130 Zapopan, Jal.</p>
+                    <p class="section-content-hora">Hora: 6:30 pm</p>
+                    <a href="https://maps.app.goo.gl/ZYvoeVNadxEbpWMr5" class="btn">Ver mapa</a>
                 </div>
                 <div class="timeline-item">
 					<div class="section-icon-event"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Recepción del evento</h2>
-                    <p class="section-content"><strong>Salón de Fiestas Janitzio</strong><br>
+                    <p class="section-content"><strong>Salón Don Alejo</strong><br>
 
-					 Av. Lago de Guadalupe núm. 22, Atizapán de Zaragoza
+					Los Robles 490, Los Robles, 45134 Zapopan, Jal.
 					</p>
-                    <p class="section-content-hora">Hora: 7:00 pm</p>
-                    <a href="https://maps.app.goo.gl/fvmTfaWDQJTmG1Ax6" class="btn">Ver mapa</a>
+                    <p class="section-content-hora">Hora: 8:00 pm</p>
+                    <a href="https://maps.app.goo.gl/2HDh88HWnoimBhvi8" class="btn">Ver mapa</a>
                 </div>
 				
 				 <div class="timeline-item">
 					<div class="section-icon-dress"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Código de Vestimenta</h2>
-                   <p class="section-content">Vistamos este día de elegancia y alegría: 
+                    <p class="section-content">Vistamos este día de elegancia y alegría: 
 					</p>
-                    <p class="section-content-hora">Formal</p>
-					<p class="section-content">Solo con cariño les pedimos que el color azul queda reservado para la festejada.</p>
+                    <p class="section-content-hora">Formal-Casual</p>
+                   <p class="section-content">Solo con cariño les pedimos que el color lila o morado queda reservado para la festejada. </p>
+                </div>
             </div>
 			
-			</div>
-			 
 			
+			 <!-- seccion pinterest  y hastag -->
 			<section class="social-section">
-				
-	<div class="social-item">
-        <div class="social-icon social-icon-gift-2"></div>
-        <h2 class="social-title">Lluvia de 
-Sobres</h2>
-        <p class="social-content">Agradezco con el alma
-tu presencia<br>
-
-en este día tan importante.
-Si deseas obsequiarme algo,
-prefiero <br>
-recibirlo en el evento
-en efectivo durante la lluvia
-de sobres que he preparado.</p>
-		
-		<p class="social-content">O en la tarjeta 5579 1003 9316 0096 a nombre de Edith Carina Ramírez	</p>	
-       
-        <p class="thanks">¡Gracias!</p>
-    </div>			
-				
-    <div class="social-item">
+   <!--  <div class="social-item">
         <div class="social-icon social-icon-camera"></div>
         <h2 class="social-title">Captura cada instante</h2>
         <p class="social-content">y compártelo con el hashtag:</p>
-        <p class="hashtag">#Larissaxv</p>
+        <p class="hashtag">#JoselynXV</p>
 		<p class="social-content">También puedes etiquetar a nuestra<br>quinceañera en IG con su username</p>
-		<p class="social-content instagram"><a href="https://www.instagram.com/karyxramirez/" class="enlace-instagram">@karyxramirez</a></p>
+		<p class="social-content instagram"><a href="https://www.instagram.com/yoss_r_g1/" class="enlace-instagram">@yoss_rg1</a></p>
     </div>
-			
 				
-
+				<div class="social-item">
+        <div align="center"><img src="img/galeria/1.jpg" style="border-radius: 15px" width="100%"></div>
+        
+        <!-- Agregar botón "Ver Galería" 
+        <div class="gallery-button-container">
+            <button id="openGalleryBtn" class="gallery-button">Ver Galería</button>
+        </div>
+    </div>-->
     
    
 				
-				
-    
-    
-</section>
+				 <div class="social-item">
+        <div class="social-icon social-icon-gift-2"></div>
+        <h2 class="social-title">Lluvia de Sobres</h2>
+        <p class="social-content">Agradezco con el alma
+tu presencia
+en este día tan importante.
+Si deseas obsequiarme algo,<br>
 
+prefiero recibirlo en el evento
+en efectivo durante la lluvia
+de sobres que he preparado.</p>
+       
+        <p class="thanks">¡Gracias!</p>
+    </div>
+</section>
 			 <!-- seccion hospedaje,contador,whats -->
 			
 		<section class="final-section">
-    <!-- Album Compartido -->
+			
 			<div class="final-item">
          <div class="social-icon social-icon-album"></div>
         <h2 class="final-title">Álbum Compartido</h2>
         <p class="final-content">Da click aquí para subir<br> las fotos que tomes<br>
  durante la fiesta y formar <br>parte de mis recuerdos más especiales.</p>
        
-        <a href="https://drive.google.com/drive/folders/1b7r25_0MXEuCofK6DyZpfD5-WAt2-XUi?usp=drive_link" class="confirm-button"><strong><em>Subir Fotos</em></strong></a>
+        <a href="#" class="confirm-button"><strong><em>Subir Fotos</em></strong></a>
     </div>
 			
+    <!-- Sugerencia de Hospedaje -->
    
+    
     <!-- Contador -->
     <div class="final-item">
         <div style="width: 100%">
@@ -1276,7 +1281,7 @@ de sobres que he preparado.</p>
         <!-- NUEVA SECCIÓN: Script actualizado para calcular el reloj digital en formato DD:HH:MM -->
         <script>
             function updateDigitalClock() {
-                const targetDate = new Date("February 14, 2026 00:00:00").getTime();
+                const targetDate = new Date("March 21, 2026 00:00:00").getTime();
                 const digitalClock = document.getElementById("digital-clock");
                 const clockStatus = document.getElementById("clock-status");
                 const daysElement = document.getElementById("days");
@@ -1324,31 +1329,33 @@ de sobres que he preparado.</p>
 
     
     <!-- Confirmación WhatsApp -->
-    <div class="final-item">
-       <div class="whatsapp-icon"></div>
+   <div class="final-item">
+        <div class="whatsapp-icon"></div>
         <h2 class="final-title">Confirma tu asistencia</h2>
-        <p class="final-content">Tu presencia es muy importante para mí.<br><em>Por eso te pido que confirmes tu asistencia.</em><br>Solo da click en el botón y envía un mensaje por WhatsApp.</p><br>
+        <p class="final-content">Tu presencia es muy importante<br>
+ para mí.<em>Por eso te pido que confirmes tu asistencia.</em><br>
+Da click en el botón y escribas tu nombre.
+</p><br>
 
-        <a href="https://wa.me/525540432266" class="confirm-button">
-          <i class="fab fa-whatsapp"></i> <strong> Confirmar</strong> </a>
+        <button class="confirm-button" onclick="ArteInvita.open('FFB-6ECE-CA6')" >
+          <strong> Confirmar Asistencia</strong> </button>
     </div>
 			
 </section>	
 			
 			
 			
-			
-		 <p class="parrafo">
+			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
 celebres conmigo!</p>
 			 <h2 class="final-title">¡Nos vemos<br>
- pronto!</h2>
 
-           
-            <p class="thanks">
+ pronto!</h2>
+<p class="thanks">
 Con Cariño,<br>
-Larissa.
-</p>     
+
+Yamileth</p>
+           
             <!-- Reproductor flotante -->
     <div class="floating-player">
         <div class="player-button" id="playerButton">
@@ -1412,7 +1419,7 @@ Larissa.
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/LavendersBlue.mp3"></audio>
+            <audio id="audioPlayer" src="music/VeoEnTiLaLuz.mp3"></audio>
         </div>
     </div>
 			
@@ -1426,7 +1433,22 @@ Larissa.
 		
     </div>
 	
-	 
+	 <script>
+        // JavaScript para manejar el clic del botón
+        document.getElementById('whatsapp-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Reemplaza este número con el número de WhatsApp del asesor
+            const phoneNumber = '5217713646690'; // Formato: código de país + número sin espacios ni símbolos
+            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Encanto Celeste. ¿Podrían orientarme con el proceso?';
+            
+            // Crear la URL de WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Abrir WhatsApp en una nueva ventana/pestaña
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 	
 	
 	<script>
@@ -1470,17 +1492,17 @@ Larissa.
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/LavendersBlue.mp3"
+                src: "music/VeoEnTiLaLuz.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/LavendersBlue.mp3"
+                src: "music/VeoEnTiLaLuz.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/LavendersBlue.mp3"
+                src: "music/VeoEnTiLaLuz.mp3"
             }
         ];
 
@@ -1642,9 +1664,8 @@ pauseIcon.style.display = 'block';
         // IMPORTANTE: Asegúrate de que los archivos existan en la carpeta fotos/
         const galleryImages = [
            'img/galeria/1.jpg',
-            'img/galeria/2.jpg',
-            'img/galeria/3.jpg',
-			'img/galeria/4.jpg'
+			 'img/galeria/2.png',
+			 'img/galeria/3.jpg'
 			
 			
             // Agrega más fotos según necesites
@@ -1735,6 +1756,6 @@ pauseIcon.style.display = 'block';
     </script>
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
 
-	
 </body>
 </html>
+
