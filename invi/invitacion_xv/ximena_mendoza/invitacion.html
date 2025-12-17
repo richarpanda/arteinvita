@@ -878,9 +878,9 @@
             display: inline-block;
             font-family: 'Gabriola', serif;
             font-size: 22px;
-            color: #878787;
+            color: #af8843;
             padding: 8px 40px;
-            border: 2px solid #878787;
+            border: 2px solid #af8843;
             border-radius: 25px;
             text-decoration: none;
             text-align: center;
@@ -890,7 +890,7 @@
         }
 
         .gallery-button:hover {
-            background-color: #878787;
+            background-color: #af8843;
             color: white;
             transform: scale(1.05);
         }
@@ -1435,22 +1435,7 @@ Ximena.</p>
 		
     </div>
 	
-	 <script>
-        // JavaScript para manejar el clic del botón
-        document.getElementById('whatsapp-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Reemplaza este número con el número de WhatsApp del asesor
-            const phoneNumber = '5217713646690'; // Formato: código de país + número sin espacios ni símbolos
-            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Encanto Celeste. ¿Podrían orientarme con el proceso?';
-            
-            // Crear la URL de WhatsApp
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            // Abrir WhatsApp en una nueva ventana/pestaña
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
+	 
 	
 	
 	<script>
@@ -1655,7 +1640,7 @@ pauseIcon.style.display = 'block';
             <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
             <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
         </div>
-        <div id="thumbnailsContainer" class="gallery-thumbnails"></div>
+       
         <div id="imageCounter" class="gallery-counter"></div>
     </div>
     <!-- FIN NUEVO: MODAL DE GALERÍA -->
