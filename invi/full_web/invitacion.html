@@ -841,7 +841,7 @@
 
     .lightbox-image {
       max-width: 100%;
-      max-height: 60px;
+      max-height: 90vh;
       border-radius: 1rem;
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
       object-fit: contain;
@@ -1221,6 +1221,36 @@ O bien, si deseas darmelo en efectivo, estará la lluvia de sobres opcional dura
         </div>
       </div>
     </section>
+	  
+	  <!-- 8. GALERÍA – SLIDER -->
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-main">Un poquito de mi historia</div>
+      <div class="flourish"></div>
+      <p class="section-sub">
+        Algunas fotos que cuentan cómo pasé de muñecas y risas de niña,
+        a este momento en el que brilla un nuevo capítulo.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/PHOTO-2025-12-05-13-07-16_1.jpg" alt="Foto de la galería">
+          <button class="gallery-nav prev" id="galleryPrev">‹</button>
+          <button class="gallery-nav next" id="galleryNext">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX GALERÍA -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+      </div>
+    </div>
 
     <!-- 9. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
@@ -1438,8 +1468,8 @@ O bien, si deseas darmelo en efectivo, estará la lluvia de sobres opcional dura
       "img/PHOTO-2025-12-06-11-18-03_3.jpg",
       "img/PHOTO-2025-12-05-13-07-15.jpg",
       "img/PHOTO-2025-12-05-13-07-15_1.jpg",
-      "img/PHOTO-2025-12-06-11-18-03_2.jpg",
-      "img/PHOTO-2025-12-05-13-07-14.jpg"
+      "img/PHOTO-2025-12-06-11-18-03_2.jpg"
+      
     ];
 
     const gallerySlide = document.getElementById("gallerySlide");
