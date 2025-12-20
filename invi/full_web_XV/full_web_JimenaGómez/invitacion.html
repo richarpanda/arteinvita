@@ -1332,7 +1332,7 @@ O bien, si deseas darmelo en efectivo, estará la lluvia de sobres opcional dura
     // ✅ CUENTA REGRESIVA MINIMAL
     // =========================
     // Evento: 14 Febrero 2026 16:00 (hora local del dispositivo)
-    const targetDate = new Date(2026, 1, 3, 16, 0, 0); // mes 1 = Febrero
+    const targetDate = new Date(2026, 0, 3, 14, 0, 0); // mes 1 = Febrero
 
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
@@ -1559,6 +1559,44 @@ O bien, si deseas darmelo en efectivo, estará la lluvia de sobres opcional dura
         if (e.key === "Escape") closeLightbox();
       }
     });
+	  
+	  // =========================
+    // ✅ CONTADOR REGRESIVO
+    // =========================
+    
+    // CONFIGURA AQUÍ LA FECHA Y HORA DEL EVENTO
+    // Formato: Año, Mes (0=Enero, 11=Diciembre), Día, Hora, Minutos, Segundos
+    const targetEventDate = new Date(2026, 0, 3, 14, 00, 0); // 25 de Enero 2025, 1:30 PM
+
+    function updateEventCountdown() {
+      const now = new Date();
+      const difference = targetEventDate - now;
+
+      if (difference <= 0) {
+        // El evento ya pasó
+        document.getElementById("cdDays").textContent = "0";
+        document.getElementById("cdHours").textContent = "00";
+        document.getElementById("cdMins").textContent = "00";
+        document.getElementById("cdSecs").textContent = "00";
+        return;
+      }
+
+      // Calcular días, horas, minutos y segundos
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      // Actualizar los elementos del DOM
+      document.getElementById("cdDays").textContent = days;
+      document.getElementById("cdHours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("cdMins").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("cdSecs").textContent = seconds.toString().padStart(2, "0");
+    }
+
+    // Actualizar el contador inmediatamente y luego cada segundo
+    updateEventCountdown();
+    setInterval(updateEventCountdown, 1000);
   </script>
 </body>
 </html>
