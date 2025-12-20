@@ -1174,7 +1174,7 @@ siempre nace pequeño.
       <div class="lightbox-overlay" id="lightboxOverlay"></div>
       <div class="lightbox-content">
         <button class="lightbox-close" id="lightboxClose">✕</button>
-        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+        <img id="lightboxImage" src="/placeholder.svg" alt="Foto ampliada" class="lightbox-image">
         <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
         <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
       </div>
@@ -1261,7 +1261,7 @@ Ingrid y Fran!</div>
     // ✅ CUENTA REGRESIVA MINIMAL
     // =========================
     // Evento: 14 Febrero 2026 16:00 (hora local del dispositivo)
-    const targetDate = new Date(2026, 1, 04, 23, 0, 0); // mes 1 = Febrero
+    const targetDate = new Date(2026, 0, 04, 23, 13, 30); // mes 1 = Febrero
 
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
@@ -1488,6 +1488,44 @@ Ingrid y Fran!</div>
         if (e.key === "Escape") closeLightbox();
       }
     });
+
+    // =========================
+    // ✅ CONTADOR REGRESIVO
+    // =========================
+    
+    // CONFIGURA AQUÍ LA FECHA Y HORA DEL EVENTO
+    // Formato: Año, Mes (0=Enero, 11=Diciembre), Día, Hora, Minutos, Segundos
+    const targetEventDate = new Date(2026, 0, 4, 13, 30, 0); // 25 de Enero 2025, 1:30 PM
+
+    function updateEventCountdown() {
+      const now = new Date();
+      const difference = targetEventDate - now;
+
+      if (difference <= 0) {
+        // El evento ya pasó
+        document.getElementById("cdDays").textContent = "0";
+        document.getElementById("cdHours").textContent = "00";
+        document.getElementById("cdMins").textContent = "00";
+        document.getElementById("cdSecs").textContent = "00";
+        return;
+      }
+
+      // Calcular días, horas, minutos y segundos
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      // Actualizar los elementos del DOM
+      document.getElementById("cdDays").textContent = days;
+      document.getElementById("cdHours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("cdMins").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("cdSecs").textContent = seconds.toString().padStart(2, "0");
+    }
+
+    // Actualizar el contador inmediatamente y luego cada segundo
+    updateEventCountdown();
+    setInterval(updateEventCountdown, 1000);
   </script>
 </body>
 </html>
