@@ -145,10 +145,11 @@
        ✅ FONDO FIJO SOLO HERO+INTRO
     ========================= */
     .bg-fixed{
-      background-size: cover;
+		background-image: url("img/bg-paper.png");
+     background-size: 520px auto;
       background-position: center center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-attachment: scroll;
     }
     .bg-top{
       background-image: url("img/bg-paper.png");
@@ -159,10 +160,10 @@
     ========================= */
     .bg-event-fixed{
       background-image: url("img/bg-paper-2.png"); /* ✅ igual que inicio. Si quieres el otro: img/bg-event.png */
-      background-size: cover;
+      background-size: 520px auto;
       background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-repeat: repeat-y;
+      background-attachment: scroll;
       position: relative;
       overflow: hidden;
     }
@@ -543,8 +544,11 @@
     .calendar-grid{
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 0.4rem;
-      margin-top: 1rem;
+      gap: 0.5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
     }
     .calendar-day{
       aspect-ratio: 1;
