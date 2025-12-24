@@ -951,18 +951,63 @@
   }
 }
 	  
-	  @supports (-webkit-touch-callout: none){
-  .bg-fixed{ background-image: none !important; background-attachment: scroll !important; }
-  .bg-top{ background-image: none !important; }
-  .bg-bottom{ background-image: none !important; }
+/* =========================
+   FIX REAL iOS SAFARI (sin blanco)
+   Fondo en ::before para evitar zoom/pixel
+========================= */
 
-  /* hack anti-resize safari */
+.bg-fixed, .bg-top, .bg-bottom{
+  position: relative;
+  overflow: hidden;
+}
+
+/* asegura que el contenido quede arriba del fondo */
+.bg-fixed > *, .bg-top > *, .bg-bottom > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Fondo base (desktop) */
+.bg-top::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("img/bg-paper.png") center top / 520px auto repeat-y;
+  z-index:0;
+}
+
+.bg-bottom::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("img/bg-bottom.png") center top / 520px auto repeat-y;
+  z-index:0;
+}
+
+/* móvil */
+@media (max-width: 520px){
+  .bg-top::before,
+  .bg-bottom::before{
+    background-size: 100% auto;
+  }
+}
+
+/* iOS Safari: quitar fixed y evitar recalculo */
+@supports (-webkit-touch-callout: none){
+  .bg-fixed{
+    background-attachment: scroll !important;
+    background-image: none !important; /* el bg ahora lo controla bg-top/bg-bottom via ::before */
+  }
+  .bg-top, .bg-bottom{
+    background-image: none !important; /* importante para que NO compita con ::before */
+  }
   .bg-top::before,
   .bg-bottom::before{
     transform: translateZ(0);
     will-change: transform;
   }
 }
+	 
 
 	  
   </style>
