@@ -943,6 +943,40 @@
   }
 }
 
+/* =========================
+   FIX iOS Safari (fondo “se expande”)
+   ========================= */
+
+/* 1) Normal (desktop): tu lienzo centrado y con tamaño controlado */
+.bg-top, .bg-bottom{
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 520px auto;
+}
+
+/* 2) Mobile general: ajusta al ancho del contenedor */
+@media (max-width: 520px){
+  .bg-top, .bg-bottom{
+    background-size: 100% auto;
+  }
+}
+
+/* 3) iOS Safari: matar el fixed (es lo que causa el zoom/expand) */
+@supports (-webkit-touch-callout: none) {
+  .bg-fixed{
+    background-attachment: scroll !important;
+    /* Evita el “zoom” de Safari */
+    background-position: center top !important;
+    background-size: 100% auto !important;
+  }
+
+  /* Por si Safari se pone terco con top/bottom */
+  .bg-top, .bg-bottom{
+    background-attachment: scroll !important;
+    background-position: center top !important;
+    background-size: 100% auto !important;
+  }
+}
 
 	  
   </style>
