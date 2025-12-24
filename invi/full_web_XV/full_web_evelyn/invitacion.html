@@ -321,7 +321,7 @@
     /* =========================
        INTRO
     ========================= */
-    .intro-paper{ padding-top: 4.2rem; padding-bottom: 7.8rem; }
+    .intro-paper{ padding-top: 4.2rem; padding-bottom: 4.8rem; }
     .intro-card{
       position: relative;
       padding: 2.4rem 1.6rem 2.6rem;
@@ -950,6 +950,20 @@
     background-attachment: scroll !important;
   }
 }
+	  
+	  @supports (-webkit-touch-callout: none){
+  .bg-fixed{ background-image: none !important; background-attachment: scroll !important; }
+  .bg-top{ background-image: none !important; }
+  .bg-bottom{ background-image: none !important; }
+
+  /* hack anti-resize safari */
+  .bg-top::before,
+  .bg-bottom::before{
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
 	  
   </style>
 </head>
