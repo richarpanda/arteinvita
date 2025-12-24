@@ -913,6 +913,38 @@
       border: 1px solid rgba(175,136,67,0.25);
       pointer-events:none;
     }
+	  
+	  /* =========================
+   FIX: iOS/Android rompe background-attachment: fixed
+   => Solo desactivarlo en dispositivos táctiles
+========================= */
+@media (hover: none) and (pointer: coarse) {
+  .bg-fixed{
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+
+/* ===== FIX: que el lienzo NO se estire (desktop + mobile) ===== */
+.bg-top,
+.bg-bottom{
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 520px auto; /* clave: ya no se “gigantea” */
+}
+
+/* En móviles, que ajuste al ancho real del contenedor */
+@media (max-width: 520px){
+  .bg-top,
+  .bg-bottom{
+    background-size: 100% auto;
+  }
+}
+
+
+	  
   </style>
 </head>
 
