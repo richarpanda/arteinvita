@@ -787,6 +787,81 @@
       cursor:pointer;
       color: #af8843;
     }
+	  
+	  
+	  /* INSTAGRAM / HASHTAG */
+    .hashtag-section { padding: 0; }
+
+    .hashtag-photo-wrap {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .hashtag-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hashtag-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.25));
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 2.8rem 1.6rem;
+    }
+
+    .hashtag-text {
+      font-size: 1.0rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hashtag-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.5rem;
+      margin-top: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hashtag-tag {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #facc15;
+    }
+
+    .insta-handle-card {
+      padding: 2.1rem 1.6rem 2.6rem;
+      background: var(--crema-oscuro);
+      text-align: center;
+    }
+
+    .insta-handle {
+      margin-top: 0.6rem;
+      color: var(--rojo);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .btn-insta {
+      margin-top: 1.3rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid #683929;
+      background: #fff;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--texto);
+    }
 
     /* =========================
        CONFIRMACIÓN
@@ -1186,7 +1261,7 @@
 
     <!-- GALERÍA -->
     <section id="galeria-fotos" class="gallery-section">
-		<div align="center"><img src="img/cenefa_3.png" width="100%" alt="Foto"></div>
+		<div align="center"><img src="img/cenefa_3.png" width="50%" alt="Foto"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Galeria de Fotos</div>
         <div class="flourish"></div>
@@ -1239,7 +1314,7 @@
             </div>
           </div>
 
-          <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-item reveal reveal-right">
             <div class="itinerary-icon-wrapper"><img src="img/coctel.png" alt=""></div>
             <div class="itinerary-divider"></div>
             <div class="itinerary-content">
@@ -1248,18 +1323,29 @@
             </div>
           </div>
 			
-			    <div class="itinerary-item reveal reveal-right">
+			
+			
+			    <div class="itinerary-item reveal reveal-left">
           <div class="itinerary-icon-wrapper">
             <img src="img/cena.png">
           </div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
-            <div class="itinerary-time">21:00 Hrs</div>
+            <div class="itinerary-time">20:00 Hrs</div>
             <div class="itinerary-event">Cena</div>
           </div>
         </div>
+			
+			  <div class="itinerary-item reveal reveal-right">
+            <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt=""></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">21:00 Hrs</div>
+              <div class="itinerary-event">Vals</div>
+            </div>
+          </div>
 
-        <div class="itinerary-item reveal reveal-right">
+        <div class="itinerary-item reveal reveal-left">
           <div class="itinerary-icon-wrapper">
             <img src="img/baile.png">
           </div>
@@ -1294,7 +1380,75 @@
       </div>
 		
     </section>
-<div align="center"><img src="img/cenefa_7.png" width="100%" alt="Foto"></div>
+	  
+	  <div align="center"><img src="img/cenefa_7.png" width="100%" alt="Foto"></div>
+	  <!-- 6. MESA DE REGALOS -->
+    <section id="regalos" class="gifts-section">
+		 <div align="center"><img src="img/sobre_regalo.png" width="60%"></div>
+      <div class="section-title-script">Lluvia de sobres</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <!-- Depósito -->
+        <div class="gift-item">
+         
+			<p class="gift-sub">Tu presencia es el regalo más bonito,
+pero si deseas obsequiarme algo,
+prefiero recibirlo en el evento
+en efectivo durante la lluvia
+de sobres que he preparado.<br>
+			¡Gracias!</p>
+			<!-- <p class="gift-sub"><strong>Clabe Banamex:</strong> 002162702072650101<br><strong>Nombre:</strong> Rhode Joaana Colli Rivas</p>
+			
+			
+			 <p align="center"><img src="img/liverpool.ico" width="45px" style="vertical-align: middle"></p>
+			<p class="gift-sub">Liverpool 51728351</p>
+          
+          <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51728351" target="_blank" rel="noopener">
+            <button class="btn-insta">Ir a mesa de regalos</button>
+          </a>-->
+       
+        </div>
+
+      </div>
+    </section>
+	  
+	  <!--  7. INSTAGRAM / HASHTAG-->
+    <section id="insta" class="hashtag-section">
+		
+		 <div class="insta-handle-card reveal reveal-right">
+			 <div align="center"> <div class="gift-icon"><img src="img/camara.png" width="60%"></div></div>
+			 <div class="section-title-script">Captura cada Instante</div>
+      <div class="flourish"></div>
+        <p class="section-sub" style="margin-top:0;">
+          También puedes etiquetar a nuestra
+quinceañera en IG con su username
+        </p>
+        <div class="section-sub">@evelyn85582 </div>
+        <a href="https://www.instagram.com/evelyn85582/" target="_blank" rel="noopener">
+          <button class="btn-insta">Abrir Instagram</button>
+        </a>
+      </div>
+		
+      <div class="hashtag-photo-wrap">
+        <img src="img/galeria/Evelin-123.jpg" alt="fiesta">
+        <div class="hashtag-overlay reveal reveal-left">
+          <div>
+            <p class="hashtag-text">
+              Comparte conmigo, publica tus momentos de la fiesta en redes sociales
+            </p>
+            <p class="hashtag-script">con el hashtag</p>
+            <p class="hashtag-tag">#MISXVEVELYN</p>
+          </div>
+        </div>
+      </div>
+    </section>
+	  
+	  
+	  
+	  
+	  
+
     <!-- ÁLBUM -->
     <section id="galeria" class="gifts-section">
       <div class="content">
