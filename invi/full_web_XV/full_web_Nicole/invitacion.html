@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mis XV</title>
@@ -10,19 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    /* Estilo Global */
-    @font-face {
-      font-family: 'Nova Quinta';
-      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
-    }
+	   /* Estilo Global */
+        @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+        }
 
-    @font-face {
-      font-family: 'Gabriola';
-      src: url('fonts/gabriola Font Download.ttf') format('truetype');
-    }
+		@font-face {
+            font-family: 'Gabriola';
+            src: url('fonts/gabriola Font Download.ttf') format('truetype');
+        }
 
     :root {
-      --rojo: #b91c1c;
+      --verde: #5a7759;
       --rojo-claro: #b91c1c;
       --dorado: #c9a24f;
       --crema:#FFFF;
@@ -31,26 +30,35 @@
       --gris: #6b7280;
       --borde: #e5e7eb;
       --shadow-soft: 0 18px 40px rgba(15,23,42,0.12);
-
-      /* ✅ COLOR LILA NUEVO */
-      --lila: #b57edc;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: 'Gabriola', "Segoe UI", sans-serif;
+      font-family: 'Gabriola', serif;, "Segoe UI", sans-serif;
       color: var(--texto);
       background: #EBEBEB;
       scroll-behavior: smooth;
       font-size: 18px;
     }
 
-    img { max-width: 100%; display: block; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     /* ✅ LINKS EN GRIS (YA NO AZUL) */
-    a { text-decoration: none; color: var(--gris); }
-    a:hover { color: #4b5563; }
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+    a:hover {
+      color: #4b5563;
+    }
 
     /* ✅ EFECTOS PARA TODOS LOS BOTONES (hover + click) */
     button {
@@ -68,69 +76,103 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
+	   /* Texto debajo del nombre */
     .subtext {
-      font-family: 'Nova Quinta', cursive;
-      font-size: 24px;
-      color: #292929;
-      text-align: center;
-      margin-top: 1px;
-      line-height: 1.5;
-      width: 100%;
+        font-family: 'Nova Quinta', cursive;
+        font-size: 24px;
+        color: #292929;
+        text-align: center;
+        margin-top: 1px;
+        line-height: 1.5;
+		 width: 100%;
     }
-    .parrafo {
-      font-family: 'Gabriola', serif;
-      font-size: 26px;
-      color: #000000;
-      text-align: center;
-      margin-top: 1px;
-      line-height: 1.5;
-      width: 100%;
-    }
-
-    /* Contenedor general de la fecha */
-    .date-container {
-      font-family: "Great Vibes", cursive;
-      text-align: center;
-      color: #203a8e;
-      width: 100%;
+		.parrafo {
+         font-family: 'Gabriola', serif;
+        font-size: 26px;
+        color: #000000;
+        text-align: center;
+        margin-top: 1px;
+        line-height: 1.5;
+		 width: 100%;
     }
 
-    .day {
-      font-size: 3.8em;
-      margin-bottom: 0;
-      border-bottom: 2px solid var(--lila);
-      display: inline-block;
-      padding: 0 30px 2px;
+	 /* Contenedor general de la fecha */
+     .date-container {
+            font-family: "Great Vibes", cursive;
+            text-align: center;
+            color: #2f3d90;
+            width: 100%;
+        }
+
+        .day {
+            font-size: 3.8em;
+            margin-bottom: 0;
+            border-bottom: 2px solid #2f3d90;
+            display: inline-block;
+            padding: 0 30px 2px;
+        }
+
+        .number {
+            font-size: 10em;
+            margin: 0;
+            font-weight: lighter;
+            line-height: 1;
+        }
+
+        .month {
+            font-size: 3.8em;
+            margin-top: 0;
+            border-top: 2px solid #2f3d90;
+            display: inline-block;
+            padding: 2px 30px 0;
+        }
+
+        .time {
+            font-size: 2.4em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+    .timeline {
+        position: relative;
+        max-width: 300px;
+        margin: 40px auto;
+        padding: 20px;
     }
 
-    .number {
-      font-size: 10em;
-      margin: 0;
-      font-weight: lighter;
-      line-height: 1;
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: calc(100% - 280px);
+        background-color: #878787;
+        top: 140px;
     }
 
-    .month {
-      font-size: 3.8em;
-      margin-top: 0;
-      border-top: 2px solid var(--lila);
-      display: inline-block;
-      padding: 2px 30px 0;
+    .timeline-item {
+        position: relative;
+        margin-bottom: 60px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    .time {
-      font-size: 2.4em;
-      margin-top: 5px;
-      font-style: italic;
-    }
-
+    /* CONTENEDOR GENERAL */
     main {
       max-width: 520px;
       margin: 0 auto;
       background: var(--crema);
     }
 
-    section { padding: 3rem 1.6rem; }
+    section {
+      padding: 3rem 1.6rem;
+    }
 
     .section-title-script {
       font-family: "Great Vibes", cursive;
@@ -144,7 +186,7 @@
       font-family: "Playfair Display", serif;
       font-size: 1.8rem;
       text-align: center;
-      color:#ab93d1;
+      color: var(--rojo);
       margin-bottom: 0.2rem;
     }
 
@@ -166,6 +208,7 @@
       background-position: center;
     }
 
+    /* NAV SIMPLE */
     header {
       position: fixed;
       top: 0;
@@ -189,11 +232,14 @@
       color: #F3F3F3;
     }
 
-    .page-offset { margin-top: 50px; }
+    .page-offset {
+      margin-top: 50px;
+    }
 
+    /* HERO A PANTALLA COMPLETA */
     .hero-full {
       position: relative;
-      min-height: calc(100vh - 50px);
+      min-height: calc(60vh - 50px);
       padding: 0;
       overflow: hidden;
     }
@@ -209,23 +255,22 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(255,255,255,1.00),
-        rgba(255,255,255,0.80),
-        rgba(255,255,255,0.10),
-        rgba(255,255,255,0.00)
+        rgba(47,61,144,1.00),
+        rgba(47,61,144,0.95),
+        rgba(47,61,144,0.00)
       );
       display: flex;
       align-items: flex-end;
       justify-content: center;
       padding: 3.4rem 2.6rem 3rem;
       text-align: center;
-      color: #ab93d1;
+      color: #ffffff;
     }
 
     .hero-name {
       font-family: "Great Vibes", cursive;
-      font-size: 7.2rem;
-      margin-bottom: 6.4rem;
+      font-size: 8.2rem;
+      margin-bottom: 4.4rem;
     }
 
     .hero-sub {
@@ -233,9 +278,10 @@
       font-size: 2.25rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: #ab93d1;
+      color: #ffffff;
     }
 
+    /* REPRODUCTOR DE MÚSICA DENTRO DE LA INVITACIÓN */
     .music-section {
       padding: 1.4rem 1.6rem 0;
       background: #FFFFFF;
@@ -291,18 +337,22 @@
     .music-icon-min.playing::before { left: 4px; }
     .music-icon-min.playing::after { right: 4px; }
 
+    /* INTRO */
     .intro-section {
       background: linear-gradient(to bottom, var(--crema), var(--crema-oscuro));
       position: relative;
       overflow: hidden;
     }
 
-    .intro-card { position: relative; z-index: 1; }
+    .intro-card {
+      position: relative;
+      z-index: 1;
+    }
 
     .intro-script {
       font-family: "Great Vibes", cursive;
-      font-size: 2.8rem;
-      color: var(--lila);
+      font-size: 2.5rem;
+      color: #2f3d90;
       margin-top: 1.1rem;
       text-align: center;
     }
@@ -322,10 +372,11 @@
       text-align: center;
     }
 
+    /* ✅ NUEVO: APARTA LA FECHA MINIMAL + CONTADOR FUNCIONAL */
     .save-date-min {
       padding-top: 3.2rem;
       padding-bottom: 3.2rem;
-      background-image: url("img/1.png");
+      background-image: url("img/counter.png");
       background-size: cover;
       background-position: center;
       position: relative;
@@ -335,9 +386,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.85));
     }
-    .save-date-min-inner { position: relative; text-align: center; }
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
     .save-date-min-title {
       font-family: "Playfair Display", serif;
       font-size: 1.0rem;
@@ -368,7 +422,10 @@
       gap: 0.45rem;
       align-items: baseline;
     }
-    .countdown-time span { display: inline-block; min-width: 2ch; }
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
     .countdown-labels {
       margin-top: 0.6rem;
       display: flex;
@@ -387,12 +444,16 @@
       opacity: 0.9;
     }
 
-    .itinerary-section { padding: 3rem 1.6rem; background: var(--crema); }
+    /* NUEVA SECCIÓN DE ITINERARIO */
+    .itinerary-section {
+      padding: 3rem 1.6rem;
+      background: var(--crema);
+    }
 
     .itinerary-title {
       font-family: "Great Vibes", cursive;
       font-size: 4.5rem;
-      color: var(--lila);
+      color: #2f3d90;
       text-align: center;
       margin-bottom: 1rem;
     }
@@ -407,7 +468,10 @@
       margin-bottom: 3rem;
     }
 
-    .itinerary-timeline { max-width: 400px; margin: 0 auto; }
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+    }
 
     .itinerary-item {
       display: flex;
@@ -419,13 +483,29 @@
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    .itinerary-item.visible { opacity: 1; transform: translateY(0); }
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    .itinerary-icon-wrapper { flex-shrink: 0; width: 80px; display: flex; justify-content: center; }
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+    }
 
-    .itinerary-divider { flex-shrink: 0; width: 80px; height: 2px; background: var(--dorado); }
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 80px;
+      height: 2px;
+      background: var(--dorado);
+    }
 
-    .itinerary-content { flex: 1; text-align: left; }
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
 
     .itinerary-time {
       font-family: "Playfair Display", serif;
@@ -442,7 +522,11 @@
       letter-spacing: 0.05em;
     }
 
-    .when-where-header { text-align: center; margin-bottom: 2rem; }
+    /* CUÁNDO Y DÓNDE */
+    .when-where-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
     .event-card {
       background: #ffffff;
@@ -453,9 +537,16 @@
       margin-bottom: 2rem;
     }
 
-    .event-card img.event-photo { width: 100%; height: 210px; object-fit: cover; }
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
 
-    .event-content { padding: 1.6rem 1.6rem 1.8rem; text-align: center; }
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
 
     .event-script {
       font-family: "Great Vibes", cursive;
@@ -483,13 +574,12 @@
       font-size: 1.5rem;
       color: var(--gris);
       line-height: 1.7;
-      white-space: pre-line;
     }
 
     .event-time {
       margin-top: 1.2rem;
       font-weight: 700;
-      color: #ab93d1;
+      color: var(--verde);
       letter-spacing: 0.16em;
       text-transform: uppercase;
       font-size: 1.8rem;
@@ -501,7 +591,7 @@
       padding: 0.8rem 2rem;
       border-radius: 999px;
       border: none;
-      background: var(--lila);
+      background: #2f3d90;
       color: #fff;
       font-size: 0.8rem;
       letter-spacing: 0.18em;
@@ -509,16 +599,48 @@
       cursor: pointer;
     }
 
+    /* FOTO DESTACADA */
+    .slider-photo { padding-top: 0; padding-bottom: 0; }
+    .slider-photo img { width: 100%; height: 200px; object-fit: cover; }
+    .slider-photo2 img { width: 100%; height: 300px; object-fit: cover; }
+
+    /* MESA DE REGALOS */
     .gifts-section { background: var(--crema); }
 
     .gift-options { margin-top: 1rem; }
 
-    .gift-item { text-align: center; margin-bottom: 2rem; color: var(--texto); }
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
 
-    .gift-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 1.5rem; }
+    .gift-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+    }
 
-    .gift-sub { font-size: 1.6rem; color: var(--gris); white-space: pre-line; }
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+    }
 
+    .gift-button {
+      margin-top: 0.9rem;
+      display: inline-block;
+      padding: 0.65rem 1.8rem;
+      border-radius: 999px;
+      background: var(--dorado);
+      color: #fff;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* INSTAGRAM / HASHTAG */
     .hashtag-section { padding: 0; }
 
     .hashtag-photo-wrap {
@@ -527,7 +649,11 @@
       overflow: hidden;
     }
 
-    .hashtag-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hashtag-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .hashtag-overlay {
       position: absolute;
@@ -541,9 +667,18 @@
       padding: 2.8rem 1.6rem;
     }
 
-    .hashtag-text { font-size: 1.0rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .hashtag-text {
+      font-size: 1.0rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-    .hashtag-script { font-family: "Great Vibes", cursive; font-size: 1.5rem; margin-top: 0.9rem; margin-bottom: 0.8rem; }
+    .hashtag-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.5rem;
+      margin-top: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
 
     .hashtag-tag {
       font-size: 1.1rem;
@@ -559,11 +694,18 @@
       text-align: center;
     }
 
+    .insta-handle {
+      margin-top: 0.6rem;
+      color: var(--rojo);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
     .btn-insta {
       margin-top: 1.3rem;
       padding: 0.7rem 1.6rem;
       border-radius: 999px;
-      border: 1px solid var(--lila);
+      border: 2px solid #2f3d90;
       background: #fff;
       font-size: 0.82rem;
       letter-spacing: 0.18em;
@@ -572,6 +714,7 @@
       color: var(--texto);
     }
 
+    /* CONFIRMACIÓN */
     .confirm-section {
       background: linear-gradient(to bottom, var(--crema-oscuro), var(--crema));
       position: relative;
@@ -603,7 +746,7 @@
       padding: 0.9rem 1.1rem;
       border-radius: 999px;
       border: none;
-      background: var(--lila);
+      background: #2f3d90;
       color: #fff;
       font-size: 0.9rem;
       letter-spacing: 0.16em;
@@ -611,6 +754,7 @@
       cursor: pointer;
     }
 
+    /* GALERÍA – SLIDER */
     .gallery-section { background: var(--crema); }
 
     .gallery-slider { margin-top: 1.6rem; }
@@ -664,10 +808,11 @@
     }
 
     .gallery-dot.active {
-      background: #203a8e;
+      background: var(--rojo);
       transform: scale(1.2);
     }
 
+    /* LIGHTBOX */
     .lightbox {
       display: none;
       position: fixed;
@@ -678,7 +823,11 @@
       justify-content: center;
     }
 
-    .lightbox-overlay { position: absolute; inset: 0; cursor: pointer; }
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
 
     .lightbox-content {
       position: relative;
@@ -725,6 +874,7 @@
     .lightbox-prev { left: 10px; }
     .lightbox-next { right: 10px; }
 
+    /* BOTÓN IR ARRIBA */
     .scroll-top {
       position: fixed;
       bottom: 20px;
@@ -733,7 +883,7 @@
       height: 42px;
       border-radius: 999px;
       border: none;
-      background: var(--lila);
+      background: #2f3d90;
       color: #fff;
       display: flex;
       align-items: center;
@@ -759,9 +909,10 @@
       padding: 1.8rem 1.1rem 2.1rem;
       font-size: 1.8rem;
       text-align: center;
-      color: var(--lila);
+      color: #2f3d90;
     }
 
+    /* REVEAL LATERAL */
     .reveal {
       opacity: 0;
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
@@ -770,28 +921,40 @@
     .reveal-left { transform: translateX(-40px); }
     .reveal-right { transform: translateX(40px); }
 
-    .reveal.visible { opacity: 1; transform: translateX(0); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     @media (min-width: 768px) {
-      .hero-full { border-radius: 0 0 40px 40px; overflow: hidden; }
-      main { border-radius: 40px; margin-top: 12px; margin-bottom: 12px; }
-      body { background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb); }
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+        overflow: hidden;
+      }
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+      body {
+        background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
+      }
     }
   </style>
 </head>
-
 <body>
+
   <!-- AUDIO (intento de autoplay) -->
-  <audio id="bg-music" src="Lana Del Rey - Young and Beautiful (Official Instrumental).mp3" loop autoplay></audio>
+  <audio id="bg-music" src="Djo - End Of Beginning (Official Audio).mp3" loop autoplay></audio>
 
   <main>
 
     <!-- 1. HERO -->
     <section id="inicio" class="hero-full">
-      <img src="img/portada.png" alt="">
+      <img src="img/FESTEJADA.jpeg" alt="">
       <div class="hero-overlay">
         <div>
-          <div class="hero-name">Aitana Yare</div>
+          <div class="hero-name">Nicole</div>
           <div class="hero-sub">Mis XV Años</div>
         </div>
       </div>
@@ -809,29 +972,46 @@
     <section id="intro" class="intro-section">
       <div class="intro-card reveal reveal-left">
         <!-- Contador de Fecha -->
-        <p class="itinerary-date">24 de Enero del 2026</p>
+        <div class="date-container">
+          <div class="day">Sábado</div>
+          <div class="number">28</div>
+          <div class="month">Febrero</div>
+          <div class="time">19:00 hrs</div>
+        </div>
         <br>
 
         <p class="section-sub">
-         La Familia Real tiene el honor de invitarte al Gran Baile en honor a la presentación en sociedad de la Princesa Aitana Yare, quien celebra sus XV Años
-        </p><br>
-
-        <div class="flourish"></div>
-
-        <p class="intro-script">Tu presencia hará de este día un recuerdo inolvidable.</p>
-
-        <div class="intro-parents-title">Mis padres</div>
-        <p class="intro-list">
-          Anaid Gutiérrez Sánchez<br>
-          y<br>
-          Edson Orlando Gómez Jiménez
+		Hay momentos inolvidables que se atesoran en el corazón para siempre, 
+y este es uno de los más
+importantes para mí. <br><br>
+Por esta razón queremos que nos acompañen en este día tan especial.	<br>
         </p>
 
         <div class="flourish"></div>
+
+        <p class="intro-script">
+          Tu presencia hará de este día un recuerdo inolvidable.
+        </p>
+
+        <div class="intro-parents-title">Mis padres</div>
+        <p class="intro-list">
+          Georgina y Eduardo 
+        </p>
+  <div class="flourish"></div>
+		 
+        <p class="intro-list">
+          Con amor, los padrinos de Nicole:<br>
+
+Clara Hernández  y Saúl Baltazar 
+        </p>
+        <div class="flourish"></div>
+		  
+		 
+		 
       </div>
     </section>
 
-    <!-- 3. APARTA LA FECHA -->
+    <!-- 3. APARTA LA FECHA (NUEVO MINIMAL + FUNCIONAL) -->
     <section id="fecha" class="save-date-min">
       <div class="save-date-min-inner reveal reveal-right">
         <div class="save-date-min-title"><strong>FALTAN</strong></div>
@@ -854,6 +1034,7 @@
         <p class="countdown-note">¡Te espero con mucha ilusión!</p>
       </div>
     </section>
+    <!-- FIN NUEVA SECCIÓN -->
 
     <!-- 4. CUÁNDO Y DÓNDE -->
     <section id="evento">
@@ -862,171 +1043,241 @@
         <div class="flourish"></div>
       </div>
 
-      <!-- Ceremonia religiosa -->
+      <!-- Ceremonia religiosa 
       <div class="event-card reveal reveal-right">
-        <img src="img/iglesia.jpeg" alt="Iglesia" class="event-photo">
+        <img src="img/Salon-portada.png"
+             alt="Capilla de la Santísima" class="event-photo">
         <div class="event-content">
           <div class="event-label">Iniciamos con la</div>
           <div class="event-script">Ceremonia Religiosa</div>
-          <div class="event-title">Iglesia del Seminario Diocesano</div>
-          <p class="event-address">Carretera Valles - Mante kilómetro 1.5, Colonia 20 de Noviembre, C.D. Valles, S.L.P.</p>
-          <div class="event-time">5:00 PM</div>
-          <a href="https://maps.app.goo.gl/dYgtcsVh5VJLLqWk8?g_st=aw" target="_blank" rel="noopener">
+          <div class="event-title">Campo Campestre "Los Arbolitos"</div>
+          <p class="event-address">
+            Av Juárez 20, Presas, 42760 Presas, Hgo.
+          </p>
+          <div class="event-time">14:00 HRS</div>
+          <a href="https://maps.app.goo.gl/3cXaVdePibtWuPxM8" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
           </a>
         </div>
-      </div>
+      </div>-->
 
       <!-- Recepción -->
       <div class="event-card reveal reveal-left">
-        <img src="img/evento.jpg" alt="Recepción" class="event-photo">
+        <img src="img/Salon-portada_2.png"
+             alt="Salón Recepciones Azteca" class="event-photo">
         <div class="event-content">
-          <div class="event-label">Lugar del Evento</div>
+          <div class="event-label">Lugar del evento</div>
           <div class="event-script">Recepción</div>
-          <div class="event-title">Salón Fundadores del Hotel Valles</div>
-          <p class="event-address">Blvd. México - Laredo 36 Norte, Centro, C.D. Valles, S.L.P.</p>
-          <div class="event-time">6:30 PM</div>
-          <a href="https://maps.app.goo.gl/TsxbwYEC9hC7rrgT9?g_st=aw" target="_blank" rel="noopener">
+          <div class="event-title">Terraza Jacarandas</div>
+          <p class="event-address">
+           Hacienda 1706 Cuatro caminos CP 47656 Tepatitlán de Morelos, Jalisco
+          </p>
+          <div class="event-time">19:00 HRS</div>
+          <a href="https://share.google/FUalpY8SamRSBOPim" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 5. ITINERARIO -->
-    <section id="itinerario" class="itinerary-section">
+    <!-- NUEVA SECCIÓN: ITINERARIO -->
+    <!--<section id="itinerario" class="itinerary-section">
       <div class="flourish"></div>
       <h2 class="itinerary-title">Itinerario</h2>
-      <p class="itinerary-date">24 de Enero de 2026</p>
+      <p class="itinerary-date">28 de Febrero de 2026</p>
 
       <div class="itinerary-timeline">
         <div class="itinerary-item reveal reveal-left">
           <div class="itinerary-icon-wrapper">
-            <img src="img/ceremonia.png" alt="">
+            <img src="img/ceremonia.png">
           </div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
-            <div class="itinerary-time">5:00 PM</div>
-            <div class="itinerary-event">Misa</div>
+            <div class="itinerary-time">14:00 Hrs</div>
+            <div class="itinerary-event">Ceremonia religiosa</div>
           </div>
         </div>
 
         <div class="itinerary-item reveal reveal-left">
           <div class="itinerary-icon-wrapper">
-            <img src="img/coctel.png" alt="">
+            <img src="img/coctel.png">
           </div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
-            <div class="itinerary-time">6:30 PM</div>
+            <div class="itinerary-time">15:30 Hrs</div>
             <div class="itinerary-event">Recepción</div>
           </div>
         </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/recepcion.png">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">18:00 Hrs</div>
+            <div class="itinerary-event">Recepción</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/cena.png">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">19:00 Hrs</div>
+            <div class="itinerary-event">Cena</div>
+          </div>
+        </div>
       </div>
+    </section>-->
+    <!-- FIN ITINERARIO -->
+
+    <!-- 5. FOTO DESTACADA -->
+    
+
+    <!-- 6. MESA DE REGALOS -->
+    <section id="regalos" class="gifts-section">
+		<div align="center"><img src="img/cenefa_n.png" width="100%" alt="Foto"></div>
+      <div class="section-title-script">Sugerencia de Hospedaje</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <p class="gift-sub"><strong>Hotel HT Vivienda: </strong><br>
+            C. Niños Héroes 453
+Alameda, Tepatitlán<br>
+
+			  <strong>CÓDIGO : THXVNIC0L2026</strong><br>
+ 
+			  <span style="font-size: 18pt"><em>(da este código en recepción y resive<br>
+ todos los beneficios del hotel por ser mi invitado de honor)</em></span>
+ </p>
+          <div align="center">
+            <a href="https://maps.app.goo.gl/BjWg6LudyagXkcBs5" target="_blank" rel="noopener">
+              <button class="btn-insta">Abrir Ubicación</button>
+            </a>
+          </div>
+          <br>
+
+          </div>
+          
+        </div>
+      
     </section>
 
-    <!-- 6. VESTIMENTA -->
-    <section class="gifts-section">
-		 <div align="center"><img src="img/cenefa.png" width="100%" alt="Foto"></div>
+    <section id="regalos" class="gifts-section">
+		
+     <!-- <div align="center"><img src="img/cenefa_3.png" width="100%" alt="Foto"></div>-->
       <div class="section-title-script">Código de Vestimenta</div>
       <div class="flourish"></div>
 
       <div class="gift-options reveal reveal-right">
         <div class="gift-item">
-         
-			<div class="section-title-script"><span style="color: #585858">Formal</span></div>
+          <div align="center"><img src="img/vestimenta.png" width="40%"></div>
+
+          <p class="gift-sub">Código de Vestimenta:</p>
+          <div class="gift-title">FORMAL</div>
           <p class="gift-sub">
- Con mucho cariño, 
-			  les pedimos que el color lila 
-			  quede reservado exclusivamente 
-			  para la quinceañera.
+         <!--   <strong>Evitar el color Verde y Beige, <br>ya que será exclusivo para la festejada.</strong>-->
           </p>
         </div>
 
-       
+      
       </div>
     </section>
-
-    <!-- 7. MESA DE REGALOS -->
-    <section class="gifts-section">
-      <div align="center"><img src="img/sobre_regalo.png" width="80%" alt=""></div>
-      <div class="section-title-script">Lluvia de sobres</div>
+	    
+	  <!-- 6. MESA DE REGALOS -->
+    <section id="regalos" class="gifts-section">
+		 <div align="center"><img src="img/sobre_regalo.png" width="45%"></div>
+      <div class="section-title-script">Mesa de regalos</div>
       <div class="flourish"></div>
 
       <div class="gift-options reveal reveal-right">
+        <!-- Depósito -->
         <div class="gift-item">
-          <p class="gift-sub">
-            Si deseas acompañar tu presencia con un detalle especial y no has decidido cuál,
-            a tu llegada al evento encontrarás la opción de lluvia de sobres.
-          </p>
+         
+			<p class="gift-sub">Mi mayor regalo es su compañia, pero si tienes el gusto de bendecirme con un obsequio, lo agradezco de corazón. Y si no sabes que regalarme, también habrá una lluvia de sobres el día del evento, o lo puedes enviar a mi cuenta.<br>
+<br>
+				
+				<strong>Nombre: Nicole Abarca Valdés<br>
+
+				Cuenta CLABE: 030396900047124859</strong>
+</p>
+         
         </div>
+
       </div>
     </section>
 
-    <!-- 8. INSTAGRAM / HASHTAG -->
+     <!--7. INSTAGRAM / HASHTAG -->
     <section id="insta" class="hashtag-section">
-
-      <div class="insta-handle-card reveal reveal-right">
-        <div align="center"><div class="gift-icon"><img src="img/camara.png" width="50%" alt=""></div></div>
-        <div class="section-title-script">Captura cada Instante</div>
-        <div class="flourish"></div>
-
+     
+		
+		 <div class="insta-handle-card reveal reveal-right">
+			 <div align="center"> <div class="gift-icon"><img src="img/camara.png" width="50%"></div></div>
+			 <div class="section-title-script">Captura cada Instante</div>
+      <div class="flourish"></div>
         <p class="section-sub" style="margin-top:0;">
-          También puedes etiquetar a nuestra quinceañera en IG con su username
+          También puedes etiquetar a nuestra
+quinceañera en IG con su username
         </p>
-
-        <div class="section-sub">@aitana.yare</div>
-
-        <a href="https://www.instagram.com/aitana.yare/" target="_blank" rel="noopener">
+        <div class="section-sub">nic_0valdes </div>
+        <a href="https://www.instagram.com/nic_0valdes/" target="_blank" rel="noopener">
           <button class="btn-insta">Abrir Instagram</button>
         </a>
       </div>
-
-      <div class="hashtag-photo-wrap">
-        <img src="img/a-hyper-realistic-photograph-of-delicate_tECdo16tQ2uxRsbuGydRIg_kWf8XqWNS66NmrifeOQ4jg.png" alt="fiesta">
+		
+		 <div class="hashtag-photo-wrap">
+        <img src="img/fotos/8.jpeg" alt="fiesta">
         <div class="hashtag-overlay reveal reveal-left">
           <div>
             <p class="hashtag-text">
               Comparte conmigo, publica tus momentos de la fiesta en redes sociales
             </p>
             <p class="hashtag-script">con el hashtag</p>
-            <p class="hashtag-tag">#MISXVAITANA</p>
+            <p class="hashtag-tag">#MISXVNICOLE</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- 9. GALERÍA 
+	  
+	  <!-- 8. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
-      <div class="section-title-main">Galería de Fotos</div>
+		<div align="center"> <div class="gift-icon"><img src="img/camaa_2.png" width="40%"></div></div>
+      <div class="section-title-main">Galeria de fotos</div>
       <div class="flourish"></div>
       <p class="section-sub">
-        Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia. Y esta historia es la de Mis XV.
+        Algunas fotos que cuentan cómo pasé de muñecas y risas de niña,
+        a este momento en el que brilla un nuevo capítulo.
       </p>
 
       <div class="gallery-slider reveal reveal-right">
         <div class="gallery-slide-frame">
-          <img id="gallerySlide" src="img/2.jpg" alt="Foto de la galería">
+          <img id="gallerySlide" src="img/PHOTO-2025-12-05-13-07-16_1.jpg" alt="Foto de la galería">
           <button class="gallery-nav prev" id="galleryPrev">‹</button>
           <button class="gallery-nav next" id="galleryNext">›</button>
         </div>
         <div class="gallery-dots" id="galleryDots"></div>
       </div>
-    </section>-->
+    </section>
 
-    <!-- LIGHTBOX GALERÍA 
+      <!-- LIGHTBOX GALERÍA  -->
     <div id="lightbox" class="lightbox">
       <div class="lightbox-overlay" id="lightboxOverlay"></div>
       <div class="lightbox-content">
         <button class="lightbox-close" id="lightboxClose">✕</button>
-        <img id="lightboxImage" src="/placeholder.svg" alt="Foto ampliada" class="lightbox-image">
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
         <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
         <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
       </div>
-    </div>-->
+    </div>
 
-    <!-- 10. ÁLBUM COMPARTIDO -->
-    <section class="gallery-section">
-      <div align="center"><img src="img/ALBUM.png" width="50%" alt=""></div>
+    <!-- 9. GALERÍA – SLIDER -->
+    <section id="galeria" class="gallery-section">
+		<p class="section-sub">Subir Foto</p>
+		<div align="center"><img src="img/ALBUM.png" width="50%"></div>
       <div class="section-title-main">Álbum Compartido</div>
       <div class="flourish"></div>
       <p class="section-sub">
@@ -1034,17 +1285,19 @@
         las fotos que tomes<br>
         durante la fiesta y formar<br>
         parte de mis recuerdos más especiales.
+        <div class="insta-handle"></div>
         <div align="center">
-          <!-- ⚠️ Si me pasas el link real del Drive lo cambio aquí -->
-          <a href="https://app.arteinvita.com/gallery/xv-aitana-yare-1766874974518?token=fdf477b4a87e91dbe3ca111de290d105" target="_blank" rel="noopener">
+          <a href="https://drive.google.com/drive/folders/1-G5gGXW7MyzRZth14k2Qh25jv-JrLNoJ?usp=drive_link" target="_blank" rel="noopener">
             <button class="btn-insta">Abrir álbum</button>
           </a>
         </div>
       </p>
       <br><br>
+	  
     </section>
+<div align="center"><img src="img/inicio.png" width="100%" alt="Foto"></div>
 
-    <!-- 11. CONFIRMACIÓN -->
+    <!-- 8. CONFIRMACIÓN -->
     <section id="confirmacion" class="confirm-section">
       <div class="reveal reveal-left">
         <div class="confirm-title-script">¿Asistirás?</div>
@@ -1056,50 +1309,60 @@
         </p>
 
         <p class="section-sub">
-          <em>Envía un mensaje con tu nombre completo y el número de personas que asistirán contigo.</em>
+          <em>Confima tu asistencia en mi panel de invitados digital.</em>
           <br><br>
         </p>
 
-        <!-- ✅ BOTÓN SE QUEDA IGUAL -->
-        <button class="btn-whats" onclick="ArteInvita.open(' E8C-858E-32A')">
-          <strong> Confirmar Asistencia</strong>
-        </button>
+       
+		<button class="btn-whats" onclick="ArteInvita.open('8FF-5AA1-6B4')">
+              <strong> Confirmar Asistencia</strong>
+            </button><br>
 
+ <p class="section-sub">
+          Agradecemos su comprensión, <br>
+el día del evento es <strong>sin niños</strong>
+        </p>
+		  
+		  
         <br>
         <div class="flourish"></div>
 
         <p class="section-sub">
           ¡Agradezco de corazón que<br>
-          celebres con nosotros!<br><br>
+          celebres conmigo!<br><br>
           ¡Nos vemos pronto!
         </p>
         <br>
 
-        <div class="section-title-main">¡Con Cariño <br>
-          Aitana Yare!</div>
+        <div class="section-title-main"><span style="color: #2f3d90">¡Con Cariño <br>
+			Nicole!</span></div>
       </div>
 
       <br><br>
 
       <div class="event-card reveal reveal-right">
         <div align="center">
-          <img src="img/final.png" width="100%" alt="Foto final">
+          <img src="img/fotos/3.jpeg" width="100%" alt="Foto final">
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer>© 2026 Mis XV Aitana Yare</footer>
+  <!-- ✅ FOOTER EN 2026 FIJO -->
+  <footer>
+	  © 2026 Mis XV Nicole
+  </footer>
 
+  <!-- BOTÓN IR ARRIBA -->
   <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
 
   <script>
     // =========================
-    // ✅ CUENTA REGRESIVA (ÚNICA)
+    // ✅ CUENTA REGRESIVA MINIMAL
     // =========================
-    // Evento: Sábado 24 Enero 2026 5:00 PM (hora local del dispositivo)
-    const targetDate = new Date(2026, 0, 24, 17, 0, 0); // Mes 0 = Enero
+    // Evento: 14 Febrero 2026 16:00 (hora local del dispositivo)
+    const targetDate = new Date(2026, 1, 28, 19, 0, 0); // mes 1 = Febrero
 
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
@@ -1229,21 +1492,16 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // GALERÍA – SLIDER + LIGHTBOX
+    // GALERÍA – SLIDER + LIGHTBOX (se mantiene igual aunque no esté en el HTML visible)
     const galleryImages = [
-      "img/2.jpg",
-      "img/3.jpg",
-      "img/4.jpg",
-      "img/5.jpg",
-      "img/6.jpg",
-      "img/7.jpg",
-      "img/8.jpg",
-      "img/9.jpg",
-      "img/10.jpg",
-      "img/11.jpg",
-      "img/13.jpg",
-      "img/14.jpg",
-      "img/15.jpg"
+      
+      "img/fotos/2.jpeg",
+		"img/fotos/1.jpeg",
+ "img/fotos/4.jpeg",
+      "img/fotos/5.jpeg",
+      "img/fotos/6.jpeg",
+	  "img/fotos/9.jpeg"
+      
     ];
 
     const gallerySlide = document.getElementById("gallerySlide");
@@ -1331,6 +1589,44 @@
         if (e.key === "Escape") closeLightbox();
       }
     });
+	  
+	  // =========================
+    // ✅ CONTADOR REGRESIVO
+    // =========================
+    
+    // CONFIGURA AQUÍ LA FECHA Y HORA DEL EVENTO
+    // Formato: Año, Mes (0=Enero, 11=Diciembre), Día, Hora, Minutos, Segundos
+    const targetEventDate = new Date(2026, 1, 28, 19, 00, 0); // 25 de Enero 2025, 1:30 PM
+
+    function updateEventCountdown() {
+      const now = new Date();
+      const difference = targetEventDate - now;
+
+      if (difference <= 0) {
+        // El evento ya pasó
+        document.getElementById("cdDays").textContent = "0";
+        document.getElementById("cdHours").textContent = "00";
+        document.getElementById("cdMins").textContent = "00";
+        document.getElementById("cdSecs").textContent = "00";
+        return;
+      }
+
+      // Calcular días, horas, minutos y segundos
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      // Actualizar los elementos del DOM
+      document.getElementById("cdDays").textContent = days;
+      document.getElementById("cdHours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("cdMins").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("cdSecs").textContent = seconds.toString().padStart(2, "0");
+    }
+
+    // Actualizar el contador inmediatamente y luego cada segundo
+    updateEventCountdown();
+    setInterval(updateEventCountdown, 1000);
   </script>
 </body>
 </html>
