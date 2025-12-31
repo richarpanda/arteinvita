@@ -193,7 +193,7 @@
 
     .hero-full {
       position: relative;
-      min-height: calc(100vh - 50px);
+      min-height: calc(110vh - 50px);
       padding: 0;
       overflow: hidden;
     }
@@ -222,19 +222,27 @@
       color: #ab93d1;
     }
 
-    .hero-name {
-      font-family: "Great Vibes", cursive;
-      font-size: 7.2rem;
-      margin-bottom: 5px;
-    }
+   .hero-name{
+  font-family: "Great Vibes", cursive;
+  font-size: 7.2rem;
+  margin: 0;
+  line-height: 0.95;          /* evita que se corte */
+}
 
-    .hero-sub {
-      font-family: "Playfair Display", serif;
-      font-size: 2.25rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #ab93d1;
-    }
+.hero-sub{
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #ab93d1;
+  margin: 0.6rem 0 0;         /* separación natural */
+}
+
+/* baja el contenedor (ajusta el número si quieres más abajo) */
+.hero-overlay > div{
+  transform: translateY(28px);
+}
+
 
     .music-section {
       padding: 1.4rem 1.6rem 0;
@@ -1061,7 +1069,7 @@
         </p>
 
         <!-- ✅ BOTÓN SE QUEDA IGUAL -->
-        <button class="btn-whats" onclick="ArteInvita.open(' E8C-858E-32A')">
+        <button class="btn-whats" onclick="ArteInvita.open('E8C-858E-32A')">
           <strong> Confirmar Asistencia</strong>
         </button>
 
