@@ -227,7 +227,7 @@
   font-family: "Great Vibes", cursive;
   font-size: 7.2rem;
   margin: 0;
-  line-height: 0.95;          /* evita que se corte */
+  line-height: 1;          /* evita que se corte */
 }
 
 .hero-sub{
@@ -236,14 +236,16 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #ab93d1;
-  margin: 0.3rem 0 0;         /* separación natural */
+ margin-top: 0.3rem;
+  padding-bottom: 10px;         /* evita que se “corte” abajo */
+  line-height: 1.2;             /* aire para que no recorte letras */
 }
 
 /* baja el contenedor (ajusta el número si quieres más abajo) */
-.hero-overlay > div{
-  transform: translateY(28px);
-}
 
+.hero-overlay{
+  padding: 3.4rem 2.6rem 4.6rem; /* más padding abajo para bajar el bloque */
+}
 
     .music-section {
       padding: 1.4rem 1.6rem 0;
