@@ -1444,6 +1444,28 @@ Regina Isabella
 	
 	
 	<script>
+
+		  // Seccion social
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-social-item');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.social-item').forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
+
+	
+	<script>
   // Elementos del DOM
   const playerButton = document.getElementById('playerButton');
   const playerContent = document.getElementById('playerContent');
@@ -1620,6 +1642,9 @@ Regina Isabella
   // showUnlockOverlay();
 </script>
 
+	
+	
+    <script>
    
     // Animación de elementos al hacer scroll
     document.addEventListener('DOMContentLoaded', function() {
@@ -1776,8 +1801,7 @@ Regina Isabella
         });
     </script>
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
-
-	<!-- iOS Audio Unlock Overlay -->
+<!-- iOS Audio Unlock Overlay -->
 <div id="iosAudioOverlay" style="
   position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
   background: rgba(0,0,0,.55); z-index: 3000; padding: 20px;
@@ -1793,5 +1817,6 @@ Regina Isabella
   </button>
 </div>
 
+	
 </body>
 </html>
