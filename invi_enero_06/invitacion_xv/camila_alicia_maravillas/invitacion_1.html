@@ -1443,14 +1443,7 @@ celebres conmigo!.</p>
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
 
-        // iOS/Safari: asegurar reproducción inline (evita fullscreen y mejora compatibilidad)
-        if (audioPlayer) {
-            audioPlayer.setAttribute('playsinline', '');
-            audioPlayer.setAttribute('webkit-playsinline', '');
-            audioPlayer.playsInline = true;
-        }
-
-        // Lista de canciones
+        // Lista de canciones (ejemplo)
         const songs = [
             {
                 title: "Escucha la invitación con música de fondo",
@@ -1470,73 +1463,19 @@ celebres conmigo!.</p>
         ];
 
         let currentSongIndex = 0;
-        let isPlaying = false;
-
-        // UI
-        function setPlayingUI(playing) {
-            isPlaying = playing;
-            if (playing) {
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            } else {
-                playIcon.style.display = 'block';
-                pauseIcon.style.display = 'none';
-            }
-        }
 
         // Función para cargar una canción
         function loadSong(index) {
             const song = songs[index];
-            const titleEl = document.querySelector('.song-title');
-            const artistEl = document.querySelector('.song-artist');
-            if (titleEl) titleEl.textContent = song.title;
-            if (artistEl) artistEl.textContent = song.artist;
-
+            document.querySelector('.song-title').textContent = song.title;
+            document.querySelector('.song-artist').textContent = song.artist;
             audioPlayer.src = song.src;
-            // Mantener volumen sincronizado
-            audioPlayer.volume = Number(volumeSlider.value || 0.7);
         }
 
-        // Reproducir con manejo de bloqueo de autoplay (iOS)
-        async function playMusic() {
-            try {
-                // Si el navegador bloquea autoplay con sonido, esto fallará y esperamos interacción
-                await audioPlayer.play();
-                setPlayingUI(true);
-                cleanupAutoplayListeners();
-            } catch (e) {
-                // Autoplay bloqueado: dejamos UI en "Play" y esperamos gesto del usuario
-                setPlayingUI(false);
-            }
-        }
-
-        function pauseMusic() {
-            audioPlayer.pause();
-            setPlayingUI(false);
-        }
-
-        // Intentar autoplay al cargar + reintentar con cualquier interacción (como en tu invitacion.html)
-        async function attemptAutoplay() {
-            if (isPlaying) return;
-            await playMusic();
-        }
-
-        function cleanupAutoplayListeners() {
-            document.removeEventListener('click', attemptAutoplay);
-            document.removeEventListener('touchstart', attemptAutoplay);
-            document.removeEventListener('scroll', attemptAutoplay);
-        }
-
-        // Inicializar canción (NO forzamos play aquí; lo hace attemptAutoplay)
-        loadSong(currentSongIndex);
-        setPlayingUI(false);
-
-        window.addEventListener('load', () => {
-            attemptAutoplay();
-            document.addEventListener('click', attemptAutoplay, { passive: true });
-            document.addEventListener('touchstart', attemptAutoplay, { passive: true });
-            document.addEventListener('scroll', attemptAutoplay, { passive: true });
-        });
+        // Inicializar la primera canción
+        audioPlayer.play();
+playIcon.style.display = 'none';
+pauseIcon.style.display = 'block';
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
@@ -1545,66 +1484,78 @@ celebres conmigo!.</p>
 
         // Permitir que la música siga reproduciéndose cuando se cierra el reproductor
         document.addEventListener('click', (e) => {
+            // Si se hace clic fuera del reproductor y del botón, y no es un elemento dentro del reproductor
             if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target)) {
+                // Solo ocultar el reproductor, pero no detener la música
                 playerContent.classList.remove('active');
             }
         });
 
-        // Reproducir/Pausar (esto SIEMPRE cuenta como gesto de usuario, así que en iPhone ya no falla)
-        playButton.addEventListener('click', async () => {
+        // Reproducir/Pausar
+        playButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
-                await playMusic();
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
             } else {
-                pauseMusic();
+                audioPlayer.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
             }
         });
 
         // Canción anterior
-        prevButton.addEventListener('click', async () => {
+        prevButton.addEventListener('click', () => {
             currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
             loadSong(currentSongIndex);
-            if (isPlaying) await playMusic();
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
         });
 
         // Canción siguiente
-        nextButton.addEventListener('click', async () => {
+        nextButton.addEventListener('click', () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            if (isPlaying) await playMusic();
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
         });
 
         // Control de volumen
         volumeSlider.addEventListener('input', () => {
-            audioPlayer.volume = Number(volumeSlider.value);
+            audioPlayer.volume = volumeSlider.value;
         });
 
         // Actualizar barra de progreso
         audioPlayer.addEventListener('timeupdate', () => {
-            if (!audioPlayer.duration) return;
             const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
             progressBar.style.width = `${progress}%`;
         });
 
         // Cambiar posición de reproducción
         progressContainer.addEventListener('click', (e) => {
-            if (!audioPlayer.duration) return;
-            const rect = progressContainer.getBoundingClientRect();
-            const clickX = (e.clientX - rect.left);
-            const clickPosition = clickX / rect.width;
+            const clickPosition = e.offsetX / progressContainer.offsetWidth;
             audioPlayer.currentTime = clickPosition * audioPlayer.duration;
         });
 
         // Reproducir siguiente canción cuando termine la actual
-        audioPlayer.addEventListener('ended', async () => {
+        audioPlayer.addEventListener('ended', () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            await playMusic();
+            audioPlayer.play();
         });
-
-        // Si el usuario pausa desde controles nativos (por alguna razón), sincronizamos íconos
-        audioPlayer.addEventListener('play', () => setPlayingUI(true));
-        audioPlayer.addEventListener('pause', () => setPlayingUI(false));
-    </script><script>
+    </script>
+	
+	
+	
+	
+	
+    <script>
    
     // Animación de elementos al hacer scroll
     document.addEventListener('DOMContentLoaded', function() {
