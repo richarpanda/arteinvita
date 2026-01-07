@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Save the Date | Mis XV</title>
+  <title>Mis XV</title>
+
+  <!-- WIDGET ARTE INVITA (para ArteInvita.open) -->
+  <script src="https://app.arteinvita.com/widget.js"></script>
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,23 +27,20 @@
       background:#0b0b0b;
       font-family:"Montserrat", sans-serif;
       color:var(--white);
-      padding:0;
     }
 
     .poster{
-      width: 100vw;
-      height: 100vh;
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-      border-radius: 0;
+      width:100vw;
+      height:100vh;
+      position:relative;
+      overflow:hidden;
     }
 
     .poster::before{
       content:"";
       position:absolute;
       inset:0;
-      background:url("portada.png") center center / cover no-repeat;
+      background:url("PORTADA.png") center center / cover no-repeat;
       filter: contrast(1.05) saturate(.95);
       transform: scale(1.05);
       z-index:0;
@@ -59,31 +59,25 @@
       z-index:1;
     }
 
-    /* ✅ CENTRADO REAL + CENTRADO VISUAL */
     .content{
       position:absolute;
       inset:0;
       z-index:2;
-
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-
       text-align:center;
-      padding: 0 26px;
-
-      gap: 18px;                 /* controla el espaciado entre bloques */
-      transform: translateY(-4vh);/* ajuste visual premium */
+      padding:0 26px;
+      gap:18px;
+      transform: translateY(-4vh);
     }
 
-    /* SAVE THE DATE */
     .word{
       font-family:"Playfair Display", serif;
       font-size:clamp(34px,4.5vw,46px);
       letter-spacing:.18em;
       text-transform:uppercase;
-      line-height: 1.05;
     }
 
     .the-row{
@@ -104,46 +98,40 @@
       font-family:"Great Vibes", cursive;
       font-size:32px;
       color:var(--soft);
-      line-height: 1;
     }
 
-    /* XV */
     .xv{
-      margin-top: 8px;
       font-family:"Great Vibes", cursive;
-      font-size:clamp(40px,6vw,56px);
+      font-size:clamp(100px,8vw,58px);
       letter-spacing:.08em;
-      line-height: 1;
     }
 
     .name{
-      margin-top:6px;
-      font-size:12px;
+      font-size:24px;
       letter-spacing:.32em;
       text-transform:uppercase;
       color:var(--soft);
     }
 
-    /* COUNTDOWN */
+    .name_2{
+      font-family:"Great Vibes", cursive;
+      font-size:60px;
+    }
+
     .countdown{
-      margin-top: 8px;
       display:flex;
       gap:18px;
       font-family:"Playfair Display", serif;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap; /* por si en móvil necesita bajar */
     }
 
     .time-box{
       text-align:center;
-      min-width: 62px;
+      min-width:62px;
     }
 
     .num{
       font-size:clamp(22px,3.5vw,28px);
       letter-spacing:.12em;
-      line-height: 1.1;
     }
 
     .label{
@@ -151,44 +139,117 @@
       letter-spacing:.28em;
       text-transform:uppercase;
       color:var(--soft);
-      margin-top:4px;
     }
 
-    /* ✅ Quitamos margin-top:auto para que NO se vaya abajo */
-    .note{
-      margin-top: 10px;
-      font-family:"Great Vibes", cursive;
-      font-size:clamp(30px,2.6vw,22px);
-      color:rgba(255,255,255,.55);
-      line-height: 1.2;
+    /* CONFIRMACIÓN */
+    .confirm-box{
+      margin-top:14px;
+      text-align:center;
     }
 
-    /* ANIMATION */
+    .confirm-text{
+      font-family:"Playfair Display", serif;
+      font-size:15px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--soft);
+      line-height:1.4;
+    }
+
+    /* PANEL INTERACTIVO */
+    .panel{
+      margin-top:14px;
+      padding:14px 22px;
+      font-size:13px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--white);
+      border:1px solid var(--line);
+      display:inline-block;
+      cursor:pointer;
+      transition:all .35s ease;
+      position:relative;
+      background: transparent;
+    }
+
+    .panel::before,
+    .panel::after{
+      content:"";
+      position:absolute;
+      width:0;
+      height:1px;
+      background:var(--white);
+      transition:width .35s ease;
+    }
+
+    .panel::before{
+      top:-6px;
+      left:0;
+    }
+
+    .panel::after{
+      bottom:-6px;
+      right:0;
+    }
+
+    .panel:hover{
+      letter-spacing:.34em;
+      box-shadow:0 0 12px rgba(255,255,255,.25);
+    }
+
+    .panel:hover::before,
+    .panel:hover::after{
+      width:100%;
+    }
+
+    /* BOTÓN SOLO LÍNEAS */
+    .line-btn{
+      margin-top:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      background:none;
+      border:none;
+      color:var(--white);
+      font-family:"Montserrat", sans-serif;
+      font-size:12px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:opacity .3s ease;
+      padding: 0;
+    }
+
+    .line-btn::before,
+    .line-btn::after{
+      content:"";
+      height:1px;
+      width:60px;
+      background:var(--line);
+      transition:background .3s ease;
+    }
+
+    .line-btn:hover{
+      opacity:.85;
+    }
+
+    .line-btn:hover::before,
+    .line-btn:hover::after{
+      background:var(--white);
+    }
+
     .fade{
       opacity:0;
       transform:translateY(10px);
       animation:fadeUp .9s ease forwards;
     }
-    .d2{ animation-delay:.15s }
-    .d3{ animation-delay:.3s }
-    .d4{ animation-delay:.45s }
-    .d5{ animation-delay:.6s }
+
+    .d2{animation-delay:.15s}
+    .d3{animation-delay:.3s}
+    .d4{animation-delay:.45s}
 
     @keyframes fadeUp{
-      to{ opacity:1; transform:none; }
-    }
-
-    /* Ajuste visual para pantallas altas */
-    @media (min-height: 800px){
-      .content{ transform: translateY(-6vh); }
-    }
-
-    /* Ajuste para pantallas pequeñas */
-    @media (max-width: 420px){
-      .content{ gap: 14px; transform: translateY(-3vh); }
-      .name{ letter-spacing: .24em; }
-      .countdown{ gap: 14px; }
-      .time-box{ min-width: 58px; }
+      to{opacity:1;transform:none;}
     }
   </style>
 </head>
@@ -198,25 +259,14 @@
 <section class="poster">
   <div class="content">
 
-    <div class="fade d2">
-      <div class="word">SAVE</div>
-
-      <div class="the-row">
-        <span class="line"></span>
-        <span class="the">the</span>
-        <span class="line"></span>
-      </div>
-
-      <div class="word">DATE</div>
-    </div>
+   
 
     <div class="fade d3">
       <div class="xv">Mis XV</div>
-      <div class="name">YOLANDA</div>
-		<div class="name">31.01.2026</div>
+      <div class="name_2">Zirce Yamile</div>
+      <div class="name">21.02.2026</div>
     </div>
 
-    <!-- COUNTDOWN -->
     <div class="countdown fade d4" id="countdown">
       <div class="time-box">
         <div class="num" id="days">00</div>
@@ -236,17 +286,56 @@
       </div>
     </div>
 
-    <div class="note fade d3">El gran día se acerca</div>
+    <div class="name">17:15 HRS</div>
+	  <br>
+<br>
+
+	   <div class="fade d2">
+      <div class="word">Detalles</div>
+      <div class="the-row">
+        <span class="line"></span>
+        <span class="the">del</span>
+        <span class="line"></span>
+      </div>
+      <div class="word">Evento</div>
+    </div>
+	  
+<div class="confirm-box fade d3">
+      <p class="confirm-text">
+       Salón Violetas<br>
+
+Calle Italia Mz. 13 Lte.23 Col.<br>
+ Olímpica 2, Ecatepec, <br>
+Estado de México.
+      </p>
+
+     <a href="https://share.google/Oan4judY1PZI7DF5y"> <button class="panel">
+       VER MAPA DEL LUGAR
+		 </button></a>
+
+      
+    </div>
+    <!-- CONFIRMACIÓN -->
+    <div class="confirm-box fade d3">
+      <p class="confirm-text">
+        Confirma tu asistencia para acompañarnos<br>
+        en este día tan especial.
+      </p>
+
+      <button class="panel" onclick="ArteInvita.open('')">
+        Panel de Confirmación
+      </button>
+
+      <button class="line-btn" onclick="ArteInvita.open('')">
+        Confirmar
+      </button>
+    </div>
 
   </div>
 </section>
 
 <script>
-  /* ===============================
-     CONFIGURA AQUÍ LA FECHA
-     Formato: Año, Mes-1, Día, Hora
-     =============================== */
-  const eventDate = new Date(2026, 0, 31, 19, 0, 0); // 31 Enero 2026 7:00 pm
+  const eventDate = new Date(2026,1,21,5,30,0);
 
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
@@ -255,7 +344,7 @@
 
   function updateCountdown(){
     const now = Date.now();
-    const distance = eventDate.getTime() - now;
+    const distance = eventDate - now;
 
     if(distance <= 0){
       daysEl.textContent = "00";
@@ -265,10 +354,10 @@
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance / (1000*60*60)) % 24);
+    const minutes = Math.floor((distance / (1000*60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
 
     daysEl.textContent = String(days).padStart(2,"0");
     hoursEl.textContent = String(hours).padStart(2,"0");
@@ -277,7 +366,7 @@
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  setInterval(updateCountdown,1000);
 </script>
 
 </body>
