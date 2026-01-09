@@ -981,6 +981,34 @@
       color:#af8843;
     }
 
+  
+    /* ✅ FIX: separa nombre de novios del fondo (badge suave + blur) */
+    .hero-badge{
+      background: rgba(255,255,255,0.58);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1.05rem 1.35rem 1.0rem;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.14);
+      border: 1px solid rgba(255,255,255,0.55);
+      max-width: 92%;
+      margin: 0 auto;
+    }
+
+    .hero-name{
+      line-height: 0.95;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .hero-sub{
+      margin-top: 0.15rem;
+    }
+
+    /* En pantallas pequeñas baja un poco el tamaño para que respire */
+    @media (max-width: 420px){
+      .hero-name{ font-size: 6.1rem; }
+      .hero-overlay{ padding: 5.8rem 1.4rem 2.7rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -994,7 +1022,7 @@
     <section id="inicio" class="hero-full">
       <img src="img/PORTADA.jpeg" alt="">
       <div class="hero-overlay">
-        <div>
+        <div class="hero-badge">
           <div class="hero-name"> Daniel<br>
  & <br>
 Lizbeth </div>
