@@ -23,7 +23,7 @@
     :root {
       --rojo: #b91c1c;
       --rojo-claro: #b91c1c;
-      --dorado: #c9a24f;
+      --dorado: #35a2d8;
       --crema:#FFFF;
       --crema-oscuro: #f9f9f9;
       --texto: #2f2f38;
@@ -100,14 +100,14 @@
      .date-container {
             font-family: "Great Vibes",serif;
             text-align: center;
-            color: #35a2d8;
+            color: #454545;
             width: 100%;
         }
 
         .day {
             font-size: 3.8em;
             margin-bottom: 0;
-            border-bottom: 2px solid #35a2d8;
+            border-bottom: 2px solid #454545;
             display: inline-block;
             padding: 0 30px 2px;
         }
@@ -122,7 +122,7 @@
         .month {
             font-size: 3.8em;
             margin-top: 0;
-            border-top: 2px solid #35a2d8;
+            border-top: 2px solid #454545;
             display: inline-block;
             padding: 2px 30px 0;
         }
@@ -186,7 +186,7 @@
       font-family: "Playfair Display", serif;
       font-size: 1.8rem;
       text-align: center;
-      color:#35a2d8;
+      color:#454545;
       margin-bottom: 0.2rem;
     }
 
@@ -297,14 +297,14 @@
       gap: 0.55rem;
       padding: 0.5rem 1.4rem;
       border-radius: 999px;
-      border: 1px solid #B1B1B1;
-      background: #ffffff;
+      border: 1px solid #454545;
+      background: #d3dbe6;
       box-shadow: 0 10px 22px rgba(15,23,42,0.10);
       cursor: pointer;
       font-size: 0.8rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #B1B1B1;
+      color: #454545;
     }
 
     .music-icon-min {
@@ -323,7 +323,7 @@
       content: "";
       border-style: solid;
       border-width: 6px 0 6px 9px;
-      border-color: transparent transparent transparent var(--dorado);
+      border-color: transparent transparent transparent #454545;
       transform: translateX(1px);
     }
 
@@ -333,7 +333,7 @@
       position: absolute;
       width: 3px;
       height: 9px;
-      background: #B1B1B1;
+      background: #454545;
     }
 
     .music-icon-min.playing::before { left: 4px; }
@@ -354,7 +354,7 @@
     .intro-script {
       font-family: "Great Vibes", cursive;
       font-size: 2.8rem;
-      color: #35a2d8;
+      color: #454545;
       margin-top: 1.1rem;
       text-align: center;
     }
@@ -362,7 +362,7 @@
     .intro-parents-title {
       font-family: "Great Vibes", cursive;
       font-size: 2.7rem;
-      color: var(--dorado);
+      color: #454545;
       margin-top: 1.8rem;
       text-align: center;
     }
@@ -942,6 +942,72 @@
         background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
       }
     }
+  
+    /* =========================
+       ✅ AJUSTES SOLICITADOS (PAME)
+       ========================= */
+
+    /* HERO SIN DEGRADADO + TEXTO ABAJO (sin encimarse) */
+    .hero-simple{
+      background:#ccd4e3;
+      display:flex;
+      flex-direction:column;
+      min-height: unset; /* ya no forzamos 100vh */
+    }
+    .hero-simple img{
+      width:100%;
+      height:auto;
+      object-fit: cover;
+      display:block;
+    }
+    .hero-text{
+      width:100%;
+      padding: 1.6rem 1.6rem 2.0rem;
+      text-align:center;
+      background:#d3dbe6;
+    }
+    .hero-text .hero-name{
+      font-style: italic;
+      color:#454545; /* mismo tono del fondo de la foto */
+      font-size: clamp(8.4rem, 7vw, 5.2rem);
+      margin: 0 0 0.4rem 0;
+      line-height: 1;
+    }
+    .hero-text .hero-sub{
+      font-style: regular;
+      color:#454545; /* mismo tono del fondo de la foto */
+      font-size: clamp(1.3rem, 4.2vw, 2.1rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    /* Fondo #ccd4e3 desde music-section hasta antes de #fecha */
+    .music-section{ background:#d3dbe6 !important; }
+    .intro-section{
+      background:#d3dbe6 !important;
+      background-image:none !important;
+    }
+
+    /* Álbum compartido (galería QR) con fondo #ccd4e3 */
+    .gallery-section{ background:#d3dbe6 !important; }
+	  
+	 /* Quitar bordes redondeados del CONTENEDOR del inicio */
+#inicio,
+#inicio.hero-full,
+#inicio.hero-simple,
+.hero-full,
+.hero-simple{
+  border-radius: 0 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -952,13 +1018,11 @@
   <main>
 
     <!-- 1. HERO -->
-    <section id="inicio" class="hero-full">
-      <img src="img/portada_2.png" alt="">
-      <div class="hero-overlay">
-        <div>
-          <div class="hero-name">Pamela</div>
-          <div class="hero-sub">Mis XV Años</div>
-        </div>
+    <section id="inicio" class="hero-full hero-simple">
+      <img src="img/WhatsApp%20Image%202026-01-21%20at%209.43.02%20AM.jpeg" alt="">
+      <div class="hero-text">
+        <div class="hero-name">Pame</div>
+        <div class="hero-sub">MIS XV años</div>
       </div>
     </section>
 
@@ -990,7 +1054,8 @@
           Quiero que seas parte de estas páginas que nunca olvidaré.
         </p><br>
 		  
-		  <div align="center"><img src="img/alicia.png" width="100%"></div>
+		  <div align="center"><img src="img/2.jpeg" width="60%" style="border-radius:20px "><br>
+</div>
 	
 		   <p class="intro-script">Tu presencia hará de este día un recuerdo inolvidable.</p>
         <div class="flourish"></div>
@@ -1073,7 +1138,7 @@
           <p class="event-address">
          Francisco Mendoza 531, Plan de Ayala, 43670 Tulancingo, Hgo.
           </p>
-          <div class="event-time">18:30 HRS</div>
+          <div class="event-time">19:00 HRS</div>
           <a href="https://www.google.com/maps/search/?api=1&query=Francisco%20Mendoza%20531%2C%20Plan%20de%20Ayala%2C%2043670%20Tulancingo%2C%20Hgo.%20Sal%C3%B3n%20Punta%20de%20Plata" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
 			   
@@ -1086,7 +1151,7 @@
      <!--5. FOTO DESTACADA -->
    
 <section id="itinerario" class="itinerary-section">
-	<div align="center"><img src="img/dv.png" width="60%" alt="Foto"></div>
+	<div align="center"><img src="img/dv.png" width="80%" alt="Foto"></div>
       <div class="flourish"></div>
 	
       <h2 class="itinerary-title">Itinerario</h2>
@@ -1274,7 +1339,8 @@ quinceañera en IG con su username
     <!-- 9. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
 		
-		<div align="center"><img src="img/XV - PAMELA_galeria_QR.png" width="50%"></div>
+		<div align="center"><img src="img/XV - PAMELA_galeria_QR.png" width="50%"><br>
+</div>
       <div class="section-title-main">Álbum Compartido</div>
       <div class="flourish"></div>
       <p class="section-sub">
