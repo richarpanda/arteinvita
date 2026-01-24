@@ -1443,7 +1443,7 @@ Pamela.</p>
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/Charli XCX - Boom Clap (The Fault In Our Stars Soundtrack) [Official Video].mp3"></audio>
+            <audio id="audioPlayer" src="music/Charli XCX - Boom Clap (The Fault In Our Stars Soundtrack) [Official Video].mp3" playsinline preload="auto"></audio>
         </div>
     </div>
 			
@@ -1496,6 +1496,31 @@ Pamela.</p>
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
 
+        // === iOS SAFE AUTOPLAY HANDLER ===
+        (function () {
+            let started = false;
+
+            function startAudio() {
+                if (started) return;
+                started = true;
+
+                audioPlayer.volume = 0.7;
+                audioPlayer.play().then(() => {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                }).catch(() => {});
+
+                document.removeEventListener('touchstart', startAudio);
+                document.removeEventListener('click', startAudio);
+                document.removeEventListener('scroll', startAudio);
+            }
+
+            document.addEventListener('touchstart', startAudio, { once: true });
+            document.addEventListener('click', startAudio, { once: true });
+            document.addEventListener('scroll', startAudio, { once: true });
+        })();
+
+
         // Lista de canciones (ejemplo)
         const songs = [
             {
@@ -1526,9 +1551,7 @@ Pamela.</p>
         }
 
         // Inicializar la primera canción
-        audioPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'block';
+        
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
