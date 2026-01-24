@@ -1236,12 +1236,15 @@ Miriam Lopez Bautista<br>y<br>Luis Gabriel Leon Anzures
 				 <div class="social-item">
         <div class="social-icon social-icon-gift-2"></div>
         <h2 class="social-title">Lluvia de Sobres</h2>
-        <p class="social-content">Agradezco con el alma tu presencia en este día tan importante.<br>Si deseas obsequiarme algo, he preparado una lluvia de sobres con estos datos:</p>
-					 <div align="center"><img src="img/unnamed.png" width="30%" style="border-radius: 15px"></div>
+        <p class="social-content">Agradezco con el alma tu presencia en este día tan importante por encima de cualquier obsequio.<br> Pero si deseas obsequiarme algún presente será bienvenido.</p>
+					
+					  <p class="thanks">¡Gracias!</p>
 					 
-					 <p class="section-content"><strong>Santander</strong><br>Barbara Itxel Leon Anzures<br><strong>CLABE:</strong> 014180140127326006<br><strong>No. de cuenta:</strong> 14012732600</p>
+					 <p class="section-content"><strong>Lluvia de Sobres</strong><br>Es la tradición de<br>
+ regalar dinero en efectivo<br>
+ dentro de un sobre.</p>
        
-        <p class="thanks">¡Gracias!</p>
+       
     </div>
 </section>
 			 <!-- seccion hospedaje,contador,whats -->
@@ -1429,7 +1432,7 @@ Flon<br>
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/M83 - Outro [Sub Español].mp3"></audio>
+            <audio id="audioPlayer" src="music/M83 - Outro [Sub Español].mp4" playsinline preload="auto"></audio>
         </div>
     </div>
 			
@@ -1481,22 +1484,47 @@ Flon<br>
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
 
+        // === AUTOPLAY SEGURO PARA iOS (Apple Friendly) ===
+        (function () {
+            let started = false;
+
+            function startAudio() {
+                if (started) return;
+                started = true;
+
+                audioPlayer.volume = volumeSlider.value || 0.7;
+                audioPlayer.play().then(() => {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                }).catch(() => {});
+
+                document.removeEventListener('touchstart', startAudio);
+                document.removeEventListener('click', startAudio);
+                document.removeEventListener('scroll', startAudio);
+            }
+
+            document.addEventListener('touchstart', startAudio, { once: true });
+            document.addEventListener('click', startAudio, { once: true });
+            document.addEventListener('scroll', startAudio, { once: true });
+        })();
+
+
         // Lista de canciones (ejemplo)
         const songs = [
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/M83 - Outro [Sub Español].mp3"
+                src: "music/M83 - Outro [Sub Español].mp4"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/M83 - Outro [Sub Español].mp3"
+                src: "music/M83 - Outro [Sub Español].mp4"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/M83 - Outro [Sub Español].mp3"
+                src: "music/M83 - Outro [Sub Español].mp4"
             }
         ];
 
@@ -1511,9 +1539,7 @@ Flon<br>
         }
 
         // Inicializar la primera canción
-        audioPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'block';
+        
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
