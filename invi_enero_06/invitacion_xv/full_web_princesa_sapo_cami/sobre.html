@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación - Mis Quince Años</title>
+    <style>
+        /* Estilo global */
+        @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+            /* Asegúrate de que el archivo esté en la carpeta correcta */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 450px;
+            height: 800px;
+            background-image: url('img/sobre.png');
+            /* Imagen del sobre */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transform-origin: center;
+            /* Punto de giro centrado */
+        }
+
+        .name {
+            position: absolute;
+            bottom: 120px;
+            width: 100%;
+            text-align: center;
+            font-size: 70px;
+            font-weight:500;
+            color: #477060;
+            font-family: 'Nova Quinta', cursive;
+        }
+
+        .button {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            /* Tamaño inicial del botón */
+            height: 150px;
+            background-image: url('img/Sin-título-2.png');
+            /* Imagen del sello */
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            /* Asegura fondo transparente */
+            border: none;
+            /* Elimina bordes predeterminados */
+            outline: none;
+            /* Elimina el contorno del botón */
+            box-shadow: none;
+            /* Elimina sombras predeterminadas */
+            padding: 0;
+            /* Elimina cualquier relleno */
+            appearance: none;
+            /* Resetea el estilo del botón en navegadores */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-size: 16px;
+            font-family: 'Baskerville', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: #6F4509;
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            /* Escala mayor sin mover la posición */
+        }
+
+        /* Animación de apertura desde el centro hacia afuera */
+        .container.open {
+            animation: openEnvelopeOutwards 1s forwards;
+        }
+
+        @keyframes openEnvelopeOutwards {
+            0% {
+                transform: scale(1) rotateX(0deg);
+                /* Estado inicial */
+            }
+
+            50% {
+                transform: scale(1.05) rotateX(30deg) translateZ(10px);
+                /* Expande y levanta */
+            }
+
+            100% {
+                transform: scale(1.1) rotateX(180deg) translateZ(50px);
+                /* Apertura completa */
+                opacity: 0;
+                /* Desvanece el sobre al finalizar */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="envelope">
+        <div class="name">Camila</div> <!-- Ahora no editable -->
+        <button class="button" id="openButton">ABRIR</button>
+    </div>
+
+    <script>
+        const button = document.getElementById('openButton');
+        const envelope = document.getElementById('envelope');
+
+        button.addEventListener('click', () => {
+            envelope.classList.add('open'); // Agrega la clase para activar la animación
+            setTimeout(() => {
+                window.location.href = 'invitacion.html'; // Redirige después de la animación
+            }, 1000); // Tiempo en milisegundos (coincide con la duración de la animación)
+        });
+    </script>
+</body>
+
+</html>
