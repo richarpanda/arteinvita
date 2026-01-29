@@ -1,136 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación - Mis Quince Años</title>
-    <style>
-        /* Estilo global */
-        @font-face {
-            font-family: 'Nova Quinta';
-            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
-            /* Asegúrate de que el archivo esté en la carpeta correcta */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitaciones Disney</title>
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
-        }
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fafafa;
+      padding: 40px 20px;
+      color: #333;
+      text-align: center;
+    }
 
-        .container {
-            position: relative;
-            width: 450px;
-            height: 800px;
-            background-image: url('img/sobre.png');
-            /* Imagen del sobre */
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-            transform-origin: center;
-            /* Punto de giro centrado */
-        }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #5C4800;
+    }
 
-        .name {
-            position: absolute;
-            bottom: 80px;
-            width: 100%;
-            text-align: center;
-            font-size: 65px;
-            font-weight:500;
-            color: #a56d6d;
-            font-family: 'Nova Quinta', cursive;
-        }
+    .links-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
 
-        .button {
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            /* Tamaño inicial del botón */
-            height: 150px;
-            background-image: url('img/Sin-título-2.png');
-            /* Imagen del sello */
-            background-size: cover;
-            background-position: center;
-            background-color: transparent;
-            /* Asegura fondo transparente */
-            border: none;
-            /* Elimina bordes predeterminados */
-            outline: none;
-            /* Elimina el contorno del botón */
-            box-shadow: none;
-            /* Elimina sombras predeterminadas */
-            padding: 0;
-            /* Elimina cualquier relleno */
-            appearance: none;
-            /* Resetea el estilo del botón en navegadores */
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            font-size: 16px;
-            font-family: 'Baskerville', serif;
-            font-style: italic;
-            font-weight: 600;
-            color: #6F4509;
-            text-align: center;
-        }
+    .link-item {
+      background: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform .2s ease;
+    }
 
-        .button:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-            /* Escala mayor sin mover la posición */
-        }
+    .link-item:hover {
+      transform: translateY(-3px);
+    }
 
-        /* Animación de apertura desde el centro hacia afuera */
-        .container.open {
-            animation: openEnvelopeOutwards 1s forwards;
-        }
-
-        @keyframes openEnvelopeOutwards {
-            0% {
-                transform: scale(1) rotateX(0deg);
-                /* Estado inicial */
-            }
-
-            50% {
-                transform: scale(1.05) rotateX(30deg) translateZ(10px);
-                /* Expande y levanta */
-            }
-
-            100% {
-                transform: scale(1.1) rotateX(180deg) translateZ(50px);
-                /* Apertura completa */
-                opacity: 0;
-                /* Desvanece el sobre al finalizar */
-            }
-        }
-    </style>
+    a {
+      color: #392602;
+      font-size: 17px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container" id="envelope">
-        <div class="name">Valeria <br>
-Renata</div> <!-- Ahora no editable -->
-        <button class="button" id="openButton">ABRIR</button>
-    </div>
+<div align="center"> <img src="6.jpg" width="80%"></div>
+  
 
-    <script>
-        const button = document.getElementById('openButton');
-        const envelope = document.getElementById('envelope');
+	<br>
+<br>
 
-        button.addEventListener('click', () => {
-            envelope.classList.add('open'); // Agrega la clase para activar la animación
-            setTimeout(() => {
-                window.location.href = 'invitacion.html'; // Redirige después de la animación
-            }, 1000); // Tiempo en milisegundos (coincide con la duración de la animación)
-        });
-    </script>
+	<h1><strong>⚠️ Invitación<br>
+ temporalmente <br>
+desactivada</strong></h1>
+	<h5>Esta invitación se encuentra pausada<br>
+ por un pago pendiente.
+<br>
+<br>
+
+Para reactivarla y continuar compartiéndola<br> con tus invitados,
+por favor ponte en contacto <br>
+con Arte Invita.
+<br>
+<br>
+
+<em>En cuanto se regularice, la invitación <br>
+se habilita nuevamente.</em></h5>
+	
+	 <div class="links-container">
+
+    
+
+   
+
+  </div>
+
 </body>
-
 </html>
