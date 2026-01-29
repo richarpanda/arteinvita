@@ -1452,7 +1452,7 @@ Ivana.
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/Dove Cameron - If Only (Lyrics).mp3"></audio>
+            <audio id="audioPlayer" src="music/Dove Cameron - If Only (Lyrics).mp3" autoplay muted playsinline></audio>
         </div>
     </div>
 			
@@ -1786,5 +1786,29 @@ pauseIcon.style.display = 'block';
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
 
 	
+
+<script>
+(function () {
+  const audio = document.getElementById('audioPlayer');
+  if (!audio) return;
+
+  // Try silent autoplay
+  audio.volume = 0;
+  audio.play().catch(() => {});
+
+  // Unlock on first user interaction (iOS)
+  const unlock = () => {
+    audio.muted = false;
+    audio.volume = document.getElementById('volumeSlider')?.value || 0.7;
+    audio.play().catch(() => {});
+    document.removeEventListener('touchstart', unlock);
+    document.removeEventListener('click', unlock);
+  };
+
+  document.addEventListener('touchstart', unlock, { once: true });
+  document.addEventListener('click', unlock, { once: true });
+})();
+</script>
+
 </body>
 </html>
