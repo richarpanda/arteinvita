@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación - Mis Quince Años</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-		<script src="https://app.arteinvita.com/widget.js"></script>
+	<script src="https://app.arteinvita.com/widget.js"></script>
     <style>
         /* Estilo Global */
         @font-face {
@@ -33,11 +33,11 @@
        .background {
         background-image: url('img/fondo.png'); /* Ruta de tu imagen */
         background-repeat: no-repeat; /* Evita que se repita */
-        background-size: 450px 7012px; /* Tamaño exacto */
+        background-size: 450px 6932px; /* Tamaño exacto */
         background-position: top center; /* Centrado en la parte superior */
         width: 100%; /* Ancho fijo */
 		max-width: 450px; /* Ancho máximo */
-        min-height: 7012px; /* Altura exacta */
+        min-height: 6932px; /* Altura exacta */
         margin: 0 auto;
         animation: slideIn 1.5s ease-out;
 		position: relative;
@@ -65,11 +65,11 @@
     /* Estilo del nombre */
     .name {
         font-family: 'Nova Quinta', cursive; /* Tipografía personalizada */
-        font-size: 60px; /* Tamaño del texto */
+        font-size: 55px; /* Tamaño del texto */
 		font-weight:500;
-        color: #2e7794; /* Color del texto */
+        color: #8cad91; /* Color del texto */
         text-align: center; /* Centrado */
-        margin-top: 640px; /* Separación superior exacta */
+        margin-top: 590px; /* Separación superior exacta */
        
        
     }
@@ -98,14 +98,14 @@
      .date-container {
             font-family: 'Gabriola', serif;
             text-align: center;
-            color: #2e7794;
+            color: #8cad91;
             width: 100%;
         }
 
         .day {
             font-size: 2.8em;
             margin-bottom: 0;
-            border-bottom: 2px solid #2e7794;
+            border-bottom: 2px solid #8cad91;
             display: inline-block;
             padding: 0 30px 2px;
         }
@@ -120,7 +120,7 @@
         .month {
             font-size: 2.8em;
             margin-top: 0;
-            border-top: 2px solid #2e7794;
+            border-top: 2px solid #8cad91;
             display: inline-block;
             padding: 2px 30px 0;
         }
@@ -412,10 +412,9 @@
     .social-icon-gift {
         background-image: url('img/icon-gift.png');
     }
-	.social-icon-gift-2 {
+		.social-icon-gift-2 {
         background-image: url('img/icon-gift-2.png');
-    }	
-		
+    }
 		.social-icon-album {
         background-image: url('img/icon-album.png');
     }
@@ -507,7 +506,7 @@
     .final-title {
         font-family: 'Nova Quinta', cursive;
         font-size: 34px;
-        color: #2e7794;
+        color: #8cad91;
         margin: 15px 0;
         text-align: center;
     }
@@ -515,7 +514,7 @@
     .final-content {
         font-family: 'Gabriola', serif;
         font-size: 24px;
-        color: #513814;
+        color: #000000;
         line-height: 1.4;
         text-align: center;
         margin: 10px 0;
@@ -587,7 +586,7 @@
         text-decoration: none; /* Sin subrayado */
         text-align: center; /* Texto centrado */
         background-color: transparent; /* Fondo transparente */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+        transition: background-color 0.3s ease, color 0.3s ease;
 		
  }
     .confirm-button:hover {
@@ -867,72 +866,8 @@
     html, body {
         overflow-x: hidden;
     }
-	}	
-	/* NUEVA SECCIÓN: Estilos para el reloj digital en formato de cronómetro */
-        .digital-clock-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-       .digital-clock {
-    font-family: 'Courier New', monospace;
-    font-size: 2.8em;           /* Reducido de 4.5em */
-    font-weight: bold;
-    color: #af8843;
-   
-    padding: 10px 25px;         /* Reducido de 30px 50px */
-    border-radius: 15px;
-    border: 0px solid #af8843;
-    text-align: center;
-    letter-spacing: 5px;        /* Reducido de 8px */
-    
-    min-width: auto;            /* Cambiado de 350px */
-    transition: all 0.3s ease;
 }
-
-        .clock-separator {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 49%, 100% {
-                opacity: 1;
-            }
-            50%, 99% {
-                opacity: 0;
-            }
-        }
-
-        .clock-label {
-    font-family: 'Gabriola', serif;
-    font-size: 1.2em;           /* Reducido de 1.8em */
-    color: #477060;
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.clock-status {
-    font-family: 'Gabriola', serif;
-    font-size: 1.7em;           /* Reducido de 1.4em */
-    color: #513814;
-    margin-top: 10px;
-    font-style: italic;
-}
-        .digital-clock.event-today {
-            
-            border-color: #513814;
-            color: #513814;
-        }
-
-        .digital-clock.event-today .clock-separator {
-            color: #513814;
-        }
-	 }
-		
+	
 		/* NUEVO: ESTILOS PARA EL MODAL DE GALERÍA */
         .gallery-button-container {
             text-align: center;
@@ -1129,8 +1064,70 @@
             }
         }
         /* FIN NUEVO: ESTILOS GALERÍA */
+		
+        /* NUEVA SECCIÓN: Estilos para el reloj digital en formato de cronómetro */
+        .digital-clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
 
-    	
+       .digital-clock {
+    font-family: 'Courier New', monospace;
+    font-size: 2.8em;           /* Reducido de 4.5em */
+    font-weight: bold;
+    color: #af8843;
+   
+    padding: 10px 25px;         /* Reducido de 30px 50px */
+    border-radius: 15px;
+    border: 0px solid #af8843;
+    text-align: center;
+    letter-spacing: 5px;        /* Reducido de 8px */
+    
+    min-width: auto;            /* Cambiado de 350px */
+    transition: all 0.3s ease;
+}
+
+        .clock-separator {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% {
+                opacity: 1;
+            }
+            50%, 99% {
+                opacity: 0;
+            }
+        }
+
+        .clock-label {
+    font-family: 'Gabriola', serif;
+    font-size: 1.2em;           /* Reducido de 1.8em */
+    color: #477060;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.clock-status {
+    font-family: 'Gabriola', serif;
+    font-size: 1.7em;           /* Reducido de 1.4em */
+    color: #513814;
+    margin-top: 10px;
+    font-style: italic;
+}
+        .digital-clock.event-today {
+            
+            border-color: #513814;
+            color: #513814;
+        }
+
+        .digital-clock.event-today .clock-separator {
+            color: #513814;
+        }
     </style>
 </head>
 <body>
@@ -1141,10 +1138,11 @@
         <div class="arrow-up"></div>
     </button> 
 			
-            <h1 class="name">Kiara</h1>
-            <p class="subtext">Quince años de amor,<br>
- sueños
-				
+            <h1 class="name">María <br>
+José</h1>
+            <p class="subtext">Quince años de amor, <br>
+sueños
+				<br>
 y alegría…<br>¡Ven a celebrarlos <br>
 conmigo!</p>
 
@@ -1155,133 +1153,112 @@ conmigo!</p>
         <div class="day">Sábado</div>
         <div class="number">25</div>
         <div class="month">Abril</div>
-       
+        <div class="time">4:00 pm</div>
     </div>
 <br>
 
-			 <p class="parrafo">La vida está hecha de momentos<br>únicos,
- y este es uno de los<br>más importantes para mí.<br> Junto a mis padres: <br>Marco Antonio Pérez Mendoza <br>y<br>
-Edith Anayeli González Ramos,<br> te invito a celebrar <br>
- el inicio de una nueva etapa.
+			 <p class="parrafo">La vida está hecha de momentos<br> únicos,
+ y este es uno de los<br>más importantes para mí.<br> Junto a mis padres: <br>María del Rosario Landeros Sierra<br>
+ y <br>
+Sebastián Llamas Ortega,<br> te invito a celebrar conmigo<br> el inicio de una nueva etapa.
 <br>
 <br>
-Con amor, mis padrinos:
+				 Con amor, mis padrinos:<br>
 <br>
-<br>
-Víctor Hugo Velázquez Tafolla<br>
+María de la Luz Zermeño Alfaro<br>
 y<br>
-Rosa Elena Pérez Mendoza</p>
+Leonardo Daniel Landeros Sierra<br>
+			</p>
 
             <!-- Línea de tiempo -->
             <div class="timeline">
                 <div class="timeline-item">
 					<div class="section-icon"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Ceremonia Religiosa</h2>
-                    <p class="section-content"><strong>Capilla de Nuestra Señora de Guadalupe<br>
-Dentro del Club Campestre Monte Sur</strong><br>
-Xompol s/n, Pedregal de San Francisco, Xochimilco, 16800, CDMX.
-</p>
-                    <p class="section-content-hora">Hora: 11:45 a. m.</p>
-                    
-                    <a href="https://www.google.com/maps/search/?api=1&query=Xompol%20s/n%2C%20Pedregal%20de%20San%20Francisco%2C%20Xochimilco%2C%2016800%2C%20CDMX%20%28Club%20Campestre%20Monte%20Sur%29" class="btn">Ver mapa</a>
+                    <p class="section-content"><strong>Parroquia de San Pedro Apóstol</strong><br>
+Dom. Parroquia San Pedro Apóstol, Calle Fray Daniel Mireles #295,<br>
+Colonia San Pedro de los Hernández.</p>
+                    <p class="section-content-hora">Hora: 4:00 pm</p>
+                    <a href="https://maps.google.com/?q=Dom.%20Parroquia%20San%20Pedro%20Ap%C3%B3stol%2C%20Calle%20Fray%20Daniel%20Mireles%20%23295%2C%20Colonia%20San%20Pedro%20de%20los%20Hern%C3%A1ndez" class="btn">Ver mapa</a>
                 </div>
                 <div class="timeline-item">
 					<div class="section-icon-event"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Recepción del evento</h2>
-                    <p class="section-content"><strong>Salón “Rancho” dentro del Club Campestre Monte Sur</strong><br>
-Xompol s/n, Pedregal de San Francisco, Xochimilco, 16800, CDMX.
-</p>
-                    <p class="section-content-hora">Hora: 14:00 hrs</p>
-                   
-                    <a href="https://www.google.com/maps/search/?api=1&query=Xompol%20s/n%2C%20Pedregal%20de%20San%20Francisco%2C%20Xochimilco%2C%2016800%2C%20CDMX%20%28Club%20Campestre%20Monte%20Sur%29" class="btn">Ver mapa</a>
+                    <p class="section-content"><strong>Salón Quinta Renata</strong><br>
+Domicilio Calle Sarmiento #618, Fracciones San Juan Bautista.</p>
+                    <p class="section-content-hora">Hora: 6:00 pm</p>
+                    <a href="https://maps.app.goo.gl/44cUteqj9JGKJCRP8" class="btn">Ver mapa</a>
                 </div>
 				
 				 <div class="timeline-item">
 					<div class="section-icon-dress"></div> <!-- Ícono con enlace a la imagen -->
                     <h2 class="section-title">Código de Vestimenta</h2>
-                   <p class="section-content">Vistamos este día de elegancia y alegría: 
+                    <p class="section-content">Vistamos este día de elegancia y alegría:
 					</p>
-                    <p class="section-content-hora">Formal-casual</p>
-					<p class="section-content">Les pedimos con cariño que el color azul cielo quede reservado para la festejada.</p>
-					<p class="section-content">
-					</p>
+                    <p class="section-content-hora">Formal</p>
+                   
+                </div>
             </div>
 			
-			</div>
-			 
 			
+			 <!-- seccion pinterest  y hastag -->
 			<section class="social-section">
-    <!-- <div class="social-item">
+    <!--<div class="social-item">
         <div class="social-icon social-icon-camera"></div>
         <h2 class="social-title">Captura cada instante</h2>
         <p class="social-content">y compártelo con el hashtag:</p>
-        <p class="hashtag">#KiaraXV</p>
-		<p class="social-content">También puedes etiquetar a nuestra<br>quinceañera en IG con su username</p>
-		<p class="social-content instagram">No hay</p>
-    </div> -->
-		<div class="social-item">
-        <div class="social-icon social-icon-gift-2"></div>
-        <h2 class="social-title">Lluvia de Sobres<br>
- y Mesa de Regalos</h2>
-
-
-					  <p class="social-content">Agradezco con el alma tu presencia <br>
-en este día tan importante.<br><br>
-Si deseas tener un lindo detalle conmigo, <br>
-puedes elegir una de estas opciones:</p>
-			 <p align="center"><img src="img/liverpool.ico" width="50px" style="vertical-align: middle"></p>
-	   <p class="social-content">Mesa de regalos Liverpool <br>
-No. Evento 51917490 </p>
-<a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51917490" class="btn">Ver mesa de regalos</a>
-
-<p class="social-content">Ó en efectivo en la lluvia de sobres<br>
- que he preparado el día del evento.</p>
-<p class="thanks">¡Gracias!</p>
-    </div>
+        <p class="hashtag">#MariJoXV</p>
+		<p class="social-content">Esta quinceañera no cuenta con Instagram.</p>
+		<p class="social-content instagram"><a href="#" class="enlace-instagram">Sin Instagram</a></p>
+    </div>-->
 				
-			
-				 <!-- <div class="social-item">
-        <div align="center"><img src="img/galeria/imagen_09.jpeg" width="100%" style="
-			border-radius: 20px"></div>-->
+				<div class="social-item">
+        <div align="center"><img src="img/galeria/1.jpEg" style="border-radius: 15px" width="100%"></div>
         
-        <!-- Agregar botón "Ver Galería" 
+        <!-- Agregar botón "Ver Galería" -->
         <div class="gallery-button-container">
             <button id="openGalleryBtn" class="gallery-button">Ver Galería</button>
         </div>
-    </div>-->
-
+    </div>
     
-   
+   <div class="social-item">
+        <div class="social-icon social-icon-gift"></div>
+        <h2 class="social-title">Mesa de Regalos</h2>
+        
+	   <p class="social-content">El mejor regalo en este día es contar con tu presencia.</p>
+        <p class="thanks">¡Gracias!</p>
+    </div>
 				
-				
-    
-    
+				 
 </section>
-
 			 <!-- seccion hospedaje,contador,whats -->
 			
 		<section class="final-section">
 			
 			<div class="final-item">
-         <div align="center"><img src="img/XV - KIARA_galeria_QR.png" width="55%"></div>
-        <h2 class="final-title">Álbum Compartido</h2>
+         <div align="center"><img src="img/XV - MARIA JOSE Y SEBASTIAN_galeria_QR.png" width="60%">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</div>
+        <h2 class="final-title">Galería de Recuerdos</h2>
         <p class="final-content">Da click aquí para subir<br> las fotos que tomes<br>
- durante la fiesta y formar <br>parte de mis recuerdos más especiales.</p>
+ durante la fiesta y formar <br>parte de mis recuerdos más especiales. Dejandome tu foto con una linda dedicatoria.</p>
        
-        <a href="https://app.arteinvita.com/gallery/xv-kiara-1768591000928?token=7b317aae87e9fb784fd4ce2cdad09667" class="confirm-button"><strong><em>Subir Fotos</em></strong></a>
+        <a href="https://app.arteinvita.com/gallery/xv-maria-jose-y-sebastian-1767920555027?token=1ec1f6589dd20a22cc1aeffd3450f366" class="confirm-button"><strong><em>Subir Fotos</em></strong></a>
     </div>
 			
-			
-    <!-- Album Compartido -->
-			<div class="final-item">
-        
-        <h2 class="final-title">Sugerencia de Hospedaje</h2>
-        <p class="final-content">Si vienes de fuera, te sugerimos<br>este hospedaje cercano:<br><br><strong>Hotel Topilejo</strong><br>Av. Cruz Blanca 75, San Miguel Topilejo,<br>Tlalpan, 14500, CDMX.</p>
-       
-        <a href="https://maps.app.goo.gl/qyeD5VJTgWJzrgcW6" class="confirm-button"><strong><em>Ver ubicación</em></strong></a>
-    </div>
-			
+    
    
+    
+    
+
     <!-- Contador -->
     <div class="final-item">
         <div style="width: 100%">
@@ -1349,16 +1326,15 @@ No. Evento 51917490 </p>
 
     
     <!-- Confirmación WhatsApp -->
-   <div class="final-item">
+    <div class="final-item">
         <div class="whatsapp-icon"></div>
         <h2 class="final-title">Confirma tu asistencia</h2>
         <p class="final-content">Tu presencia es muy importante<br>
- para mí. <em>Por eso te pido que confirmes tu asistencia <strong>antes del 5 abril</strong>.</em><br>
-
-Da click en  mi panel digital y descarga tu QR.
+ para mí.<em>Por eso te pido que confirmes tu asistencia.</em><br>
+Da click en el botón y escribas tu nombre.
 </p><br>
 
-        <button class="confirm-button" onclick="ArteInvita.open('391-410A-FD4')" >
+        <button class="confirm-button" onclick="ArteInvita.open('6DE-D047-56E')" >
           <strong> Confirmar Asistencia</strong> </button>
     </div>
 			
@@ -1366,20 +1342,17 @@ Da click en  mi panel digital y descarga tu QR.
 			
 			
 			
-			
-		 <p class="parrafo">
+			 <p class="parrafo">
 ¡Agradezco de corazón que <br>
-celebres conmigo!</p>
-			 <h2 class="final-title">¡Nos vemos
+celebres conmigo!.</p>
+			 <h2 class="final-title">¡Nos vemos<br>
 
  pronto!</h2>
+<p class="thanks">
+Con cariño <br>
 
+María José.</p>
            
-            <p class="thanks">
-Con Cariño,<br>
-
-Kiara.
-</p>     
             <!-- Reproductor flotante -->
     <div class="floating-player">
         <div class="player-button" id="playerButton">
@@ -1443,7 +1416,7 @@ Kiara.
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/Ed Sheeran - Perfect.mp3"></audio>
+            <audio id="audioPlayer" src="music/Bon Jovi - Always.mp3"></audio>
         </div>
     </div>
 			
@@ -1457,7 +1430,22 @@ Kiara.
 		
     </div>
 	
-	 
+	 <script>
+        // JavaScript para manejar el clic del botón
+        document.getElementById('whatsapp-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Reemplaza este número con el número de WhatsApp del asesor
+            const phoneNumber = '5217713646690'; // Formato: código de país + número sin espacios ni símbolos
+            const message = 'Buen día, me gustaría adquirir la invitación digital para XV Años: Encanto Celeste. ¿Podrían orientarme con el proceso?';
+            
+            // Crear la URL de WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Abrir WhatsApp en una nueva ventana/pestaña
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 	
 	
 	<script>
@@ -1501,17 +1489,17 @@ Kiara.
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Bon Jovi - Always.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Bon Jovi - Always.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Bon Jovi - Always.mp3"
             }
         ];
 
@@ -1658,11 +1646,11 @@ pauseIcon.style.display = 'block';
     <div id="galleryModal" class="gallery-modal">
         <button id="closeGalleryBtn" class="gallery-close-btn">&times;</button>
         <div class="gallery-container">
-            <img id="mainImage" class="gallery-main-image" src="img/galeria/imagen_01.jpeg" alt="Imagen Principal">
+            <img id="mainImage" class="gallery-main-image" src="/placeholder.svg" alt="Imagen Principal">
             <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
             <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
         </div>
-       
+        <div id="thumbnailsContainer" class="gallery-thumbnails"></div>
         <div id="imageCounter" class="gallery-counter"></div>
     </div>
     <!-- FIN NUEVO: MODAL DE GALERÍA -->
@@ -1672,21 +1660,21 @@ pauseIcon.style.display = 'block';
         // Array con las rutas de tus fotos
         // IMPORTANTE: Asegúrate de que los archivos existan en la carpeta fotos/
         const galleryImages = [
-           'img/galeria/imagen_01.jpeg',
-            'img/galeria/imagen_02.jpeg',
-			'img/galeria/imagen_03.jpeg',
-			'img/galeria/imagen_04.jpeg',
-			'img/galeria/imagen_05.jpeg',
-			'img/galeria/imagen_06.jpeg',
-			'img/galeria/imagen_07.jpeg',
-			'img/galeria/imagen_08.jpeg',
-			'img/galeria/imagen_09.jpeg',
-			'img/galeria/imagen_10.jpeg',
-			'img/galeria/imagen_11.jpeg',
-			'img/galeria/imagen_12.jpeg',
-			'img/galeria/imagen_13.jpeg',
-			'img/galeria/imagen_14.jpeg'
-			
+           'img/galeria/1.jpeg',
+			 'img/galeria/2.jpeg',
+			 'img/galeria/3.jpeg',
+			'img/galeria/4.jpeg',
+			'img/galeria/5.jpeg',
+			'img/galeria/6.jpeg',
+			'img/galeria/7.jpeg',
+			'img/galeria/8.jpeg',
+			'img/galeria/9.jpeg',
+			'img/galeria/10.jpeg',
+			'img/galeria/11.jpeg',
+			'img/galeria/12.jpeg',
+			'img/galeria/13.jpeg',
+			'img/galeria/15.jpeg',
+			'img/galeria/16.jpeg'
 			
             // Agrega más fotos según necesites
         ];
@@ -1776,6 +1764,5 @@ pauseIcon.style.display = 'block';
     </script>
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
 
-	
 </body>
 </html>
