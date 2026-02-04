@@ -1426,7 +1426,7 @@ Sara Valentina.</p>
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/lady killers ii (instrumental).mp3" preload="auto" playsinline webkit-playsinline muted></audio>
+            <audio id="audioPlayer" src="music/lady killers ii (instrumental).mp3"></audio>
         </div>
     </div>
 			
@@ -1506,44 +1506,11 @@ Sara Valentina.</p>
             document.querySelector('.song-artist').textContent = song.artist;
             audioPlayer.src = song.src;
         }
+
         // Inicializar la primera canción
-        loadSong(currentSongIndex);
-
-
-        // ===== FIX AUTOPLAY iPhone (iOS) SIN ROMPER ANDROID =====
-        function setPlayIcons(isPlaying){
-            if (isPlaying){
-                setPlayIcons(true);
-            } else {
-                setPlayIcons(false);
-            }
-        }
-
-        // Intento de autoplay silencioso (iOS permite muted)
-        function tryAutoplayMuted(){
-            audioPlayer.muted = true;
-            const p = audioPlayer.play();
-            if (p !== undefined){
-                p.then(()=> setPlayIcons(true)).catch(()=> setPlayIcons(false));
-            }
-        }
-
-        // Desbloqueo definitivo al primer toque/click del usuario
-        function unlockAudio(){
-            audioPlayer.muted = false;
-            const p = audioPlayer.play();
-            if (p !== undefined){
-                p.then(()=> setPlayIcons(true)).catch(()=> setPlayIcons(false));
-            }
-        }
-
-        // iOS: se requiere interacción para audio con sonido
-        document.addEventListener('touchstart', unlockAudio, { once:true, passive:true });
-        document.addEventListener('click', unlockAudio, { once:true });
-
-        // Intento inicial al cargar
-        window.addEventListener('load', tryAutoplayMuted);
-        // ===== FIN FIX AUTOPLAY iPhone (iOS) =====
+        audioPlayer.play();
+playIcon.style.display = 'none';
+pauseIcon.style.display = 'block';
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
@@ -1563,10 +1530,12 @@ Sara Valentina.</p>
         playButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                setPlayIcons(true);
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
             } else {
                 audioPlayer.pause();
-                setPlayIcons(false);
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
             }
         });
 
@@ -1576,7 +1545,8 @@ Sara Valentina.</p>
             loadSong(currentSongIndex);
             if (!audioPlayer.paused) {
                 audioPlayer.play();
-                setPlayIcons(true);
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
             }
         });
 
@@ -1586,7 +1556,8 @@ Sara Valentina.</p>
             loadSong(currentSongIndex);
             if (!audioPlayer.paused) {
                 audioPlayer.play();
-                setPlayIcons(true);
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
             }
         });
 
