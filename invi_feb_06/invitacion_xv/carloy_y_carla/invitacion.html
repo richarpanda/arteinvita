@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación - Mis XV Camila de Jesús</title>
+    <title>Invitación - Mis Quince Años</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<script src="https://app.arteinvita.com/widget.js"></script>
     <style>
@@ -31,43 +31,19 @@
 
         /* Fondo fijo */
        .background {
-    /* IMPORTANTE: el fondo va en un pseudo-elemento para evitar el bug de iOS/Safari
-       donde backgrounds dentro de elementos animados/transformados a veces "desaparecen". */
-    width: 100%;
-    max-width: 450px;
-    min-height: 6402px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-
-    /* Render helpers */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-.background::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('img/fondo.png');
-    background-repeat: no-repeat;
-    /* En móvil conviene que el fondo se adapte al ancho del contenedor */
-    background-size: 450px 6402px;
-    background-position: top center;
-    z-index: -1;
-}
-
-
-        
-/* Ajuste específico móvil: que el fondo siempre se adapte al ancho del dispositivo */
-@media (max-width: 768px){
-    .background::before{
-        background-size: 100% auto;
+        background-image: url('img/fondo.png'); /* Ruta de tu imagen */
+        background-repeat: no-repeat; /* Evita que se repita */
+        background-size: 450px 6402px; /* Tamaño exacto */
+        background-position: top center; /* Centrado en la parte superior */
+        width: 100%; /* Ancho fijo */
+		max-width: 450px; /* Ancho máximo */
+        min-height: 6402px; /* Altura exacta */
+        margin: 0 auto;
+        animation: slideIn 1.5s ease-out;
+		position: relative;
     }
-}
 
-@keyframes slideIn {
+        @keyframes slideIn {
         from {
             transform: translateY(100%);
         }
@@ -82,7 +58,6 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
-                    animation: slideIn 1.5s ease-out;
         }
 
         /* Estilo de textos */
@@ -94,7 +69,7 @@
 		font-weight:500;
         color: #a56d6d; /* Color del texto */
         text-align: center; /* Centrado */
-        margin-top: 680px; /* Separación superior exacta */
+        margin-top: 690px; /* Separación superior exacta */
        
        
     }
@@ -102,7 +77,7 @@
     /* Texto debajo del nombre */
     .subtext {
         font-family: 'Nova Quinta', cursive; /* Tipografía personalizada */
-        font-size: 26px; /* Tamaño del texto */
+        font-size: 24px; /* Tamaño del texto */
         color: #af8843; /* Color del texto */
         text-align: center; /* Centrado */
         margin-top: 1px; /* Espaciado respecto al nombre */
@@ -227,15 +202,6 @@
         text-align: center;
         margin: 10px 0;
     }
-
-    .section-content-hora {
-        font-family: 'Gabriola', serif;
-        font-size: 30px;
-        color: #513814;
-        text-align: center;
-        margin: 10px 0;
-        font-weight: 500;
-    }
 		
 		.section-icon-itinerary {
         width: 80px; /* Ancho del ícono */
@@ -248,6 +214,15 @@
         background-position: center; /* Centrado dentro del contenedor */
     }
 		
+
+    .section-content-hora {
+        font-family: 'Gabriola', serif;
+        font-size: 30px;
+        color: #513814;
+        text-align: center;
+        margin: 10px 0;
+        font-weight: 500;
+    }
 
     .btn {
         display: inline-block;
@@ -313,7 +288,6 @@
 		
 		 .section-icon-dress {
         width: 80px; /* Ancho del ícono */
-
         height: 80px; /* Altura del ícono */
         margin: 0 auto 5px auto; /* Centrado con espacio debajo */
         display: block; /* Para manejarlo como bloque */
@@ -624,7 +598,7 @@
         text-decoration: none; /* Sin subrayado */
         text-align: center; /* Texto centrado */
         background-color: transparent; /* Fondo transparente */
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 		
  }
     .confirm-button:hover {
@@ -916,9 +890,9 @@
             display: inline-block;
             font-family: 'Gabriola', serif;
             font-size: 22px;
-            color: #af8843;
+            color: #878787;
             padding: 8px 40px;
-            border: 2px solid #af8843;
+            border: 2px solid #878787;
             border-radius: 25px;
             text-decoration: none;
             text-align: center;
@@ -928,7 +902,7 @@
         }
 
         .gallery-button:hover {
-            background-color: #af8843;
+            background-color: #878787;
             color: white;
             transform: scale(1.05);
         }
@@ -1464,7 +1438,7 @@ celebres con nosotros!.</p>
 		
     </div>
 	
-	 
+	
 	
 	
 	<script>
@@ -1503,14 +1477,7 @@ celebres con nosotros!.</p>
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
 
-        // iOS/Safari: asegurar reproducción inline (evita fullscreen y mejora compatibilidad)
-        if (audioPlayer) {
-            audioPlayer.setAttribute('playsinline', '');
-            audioPlayer.setAttribute('webkit-playsinline', '');
-            audioPlayer.playsInline = true;
-        }
-
-        // Lista de canciones
+        // Lista de canciones (ejemplo)
         const songs = [
             {
                 title: "Escucha la invitación con música de fondo",
@@ -1530,73 +1497,19 @@ celebres con nosotros!.</p>
         ];
 
         let currentSongIndex = 0;
-        let isPlaying = false;
-
-        // UI
-        function setPlayingUI(playing) {
-            isPlaying = playing;
-            if (playing) {
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            } else {
-                playIcon.style.display = 'block';
-                pauseIcon.style.display = 'none';
-            }
-        }
 
         // Función para cargar una canción
         function loadSong(index) {
             const song = songs[index];
-            const titleEl = document.querySelector('.song-title');
-            const artistEl = document.querySelector('.song-artist');
-            if (titleEl) titleEl.textContent = song.title;
-            if (artistEl) artistEl.textContent = song.artist;
-
+            document.querySelector('.song-title').textContent = song.title;
+            document.querySelector('.song-artist').textContent = song.artist;
             audioPlayer.src = song.src;
-            // Mantener volumen sincronizado
-            audioPlayer.volume = Number(volumeSlider.value || 0.7);
         }
 
-        // Reproducir con manejo de bloqueo de autoplay (iOS)
-        async function playMusic() {
-            try {
-                // Si el navegador bloquea autoplay con sonido, esto fallará y esperamos interacción
-                await audioPlayer.play();
-                setPlayingUI(true);
-                cleanupAutoplayListeners();
-            } catch (e) {
-                // Autoplay bloqueado: dejamos UI en "Play" y esperamos gesto del usuario
-                setPlayingUI(false);
-            }
-        }
-
-        function pauseMusic() {
-            audioPlayer.pause();
-            setPlayingUI(false);
-        }
-
-        // Intentar autoplay al cargar + reintentar con cualquier interacción (como en tu invitacion.html)
-        async function attemptAutoplay() {
-            if (isPlaying) return;
-            await playMusic();
-        }
-
-        function cleanupAutoplayListeners() {
-            document.removeEventListener('click', attemptAutoplay);
-            document.removeEventListener('touchstart', attemptAutoplay);
-            document.removeEventListener('scroll', attemptAutoplay);
-        }
-
-        // Inicializar canción (NO forzamos play aquí; lo hace attemptAutoplay)
-        loadSong(currentSongIndex);
-        setPlayingUI(false);
-
-        window.addEventListener('load', () => {
-            attemptAutoplay();
-            document.addEventListener('click', attemptAutoplay, { passive: true });
-            document.addEventListener('touchstart', attemptAutoplay, { passive: true });
-            document.addEventListener('scroll', attemptAutoplay, { passive: true });
-        });
+        // Inicializar la primera canción
+        audioPlayer.play();
+playIcon.style.display = 'none';
+pauseIcon.style.display = 'block';
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
@@ -1605,66 +1518,78 @@ celebres con nosotros!.</p>
 
         // Permitir que la música siga reproduciéndose cuando se cierra el reproductor
         document.addEventListener('click', (e) => {
+            // Si se hace clic fuera del reproductor y del botón, y no es un elemento dentro del reproductor
             if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target)) {
+                // Solo ocultar el reproductor, pero no detener la música
                 playerContent.classList.remove('active');
             }
         });
 
-        // Reproducir/Pausar (esto SIEMPRE cuenta como gesto de usuario, así que en iPhone ya no falla)
-        playButton.addEventListener('click', async () => {
+        // Reproducir/Pausar
+        playButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
-                await playMusic();
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
             } else {
-                pauseMusic();
+                audioPlayer.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
             }
         });
 
         // Canción anterior
-        prevButton.addEventListener('click', async () => {
+        prevButton.addEventListener('click', () => {
             currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
             loadSong(currentSongIndex);
-            if (isPlaying) await playMusic();
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
         });
 
         // Canción siguiente
-        nextButton.addEventListener('click', async () => {
+        nextButton.addEventListener('click', () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            if (isPlaying) await playMusic();
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
         });
 
         // Control de volumen
         volumeSlider.addEventListener('input', () => {
-            audioPlayer.volume = Number(volumeSlider.value);
+            audioPlayer.volume = volumeSlider.value;
         });
 
         // Actualizar barra de progreso
         audioPlayer.addEventListener('timeupdate', () => {
-            if (!audioPlayer.duration) return;
             const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
             progressBar.style.width = `${progress}%`;
         });
 
         // Cambiar posición de reproducción
         progressContainer.addEventListener('click', (e) => {
-            if (!audioPlayer.duration) return;
-            const rect = progressContainer.getBoundingClientRect();
-            const clickX = (e.clientX - rect.left);
-            const clickPosition = clickX / rect.width;
+            const clickPosition = e.offsetX / progressContainer.offsetWidth;
             audioPlayer.currentTime = clickPosition * audioPlayer.duration;
         });
 
         // Reproducir siguiente canción cuando termine la actual
-        audioPlayer.addEventListener('ended', async () => {
+        audioPlayer.addEventListener('ended', () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            await playMusic();
+            audioPlayer.play();
         });
-
-        // Si el usuario pausa desde controles nativos (por alguna razón), sincronizamos íconos
-        audioPlayer.addEventListener('play', () => setPlayingUI(true));
-        audioPlayer.addEventListener('pause', () => setPlayingUI(false));
-    </script><script>
+    </script>
+	
+	
+	
+	
+	
+    <script>
    
     // Animación de elementos al hacer scroll
     document.addEventListener('DOMContentLoaded', function() {
@@ -1718,7 +1643,7 @@ celebres con nosotros!.</p>
             <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
             <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
         </div>
-        <div id="thumbnailsContainer" class="gallery-thumbnails"></div>
+       
         <div id="imageCounter" class="gallery-counter"></div>
     </div>
     <!-- FIN NUEVO: MODAL DE GALERÍA -->
@@ -1728,7 +1653,7 @@ celebres con nosotros!.</p>
         // Array con las rutas de tus fotos
         // IMPORTANTE: Asegúrate de que los archivos existan en la carpeta fotos/
         const galleryImages = [
-            'img/galeria/1.jpeg',
+           'img/galeria/1.jpeg',
            'img/galeria/2.jpeg',
 			 'img/galeria/3.jpeg',
 			 'img/galeria/4.jpeg',
@@ -1825,3 +1750,4 @@ celebres con nosotros!.</p>
 
 </body>
 </html>
+
