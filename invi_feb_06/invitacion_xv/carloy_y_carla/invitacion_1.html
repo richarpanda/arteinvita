@@ -31,43 +31,19 @@
 
         /* Fondo fijo */
        .background {
-    /* IMPORTANTE: el fondo va en un pseudo-elemento para evitar el bug de iOS/Safari
-       donde backgrounds dentro de elementos animados/transformados a veces "desaparecen". */
-    width: 100%;
-    max-width: 450px;
-    min-height: 6402px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-
-    /* Render helpers */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-.background::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('img/fondo.png');
-    background-repeat: no-repeat;
-    /* En móvil conviene que el fondo se adapte al ancho del contenedor */
-    background-size: 450px 6402px;
-    background-position: top center;
-    z-index: -1;
-}
-
-
-        
-/* Ajuste específico móvil: que el fondo siempre se adapte al ancho del dispositivo */
-@media (max-width: 768px){
-    .background::before{
-        background-size: 100% auto;
+        background-image: url('img/fondo.png'); /* Ruta de tu imagen */
+        background-repeat: no-repeat; /* Evita que se repita */
+        background-size: 450px 6402px; /* Tamaño exacto */
+        background-position: top center; /* Centrado en la parte superior */
+        width: 100%; /* Ancho fijo */
+		max-width: 450px; /* Ancho máximo */
+        min-height: 6402px; /* Altura exacta */
+        margin: 0 auto;
+        animation: slideIn 1.5s ease-out;
+		position: relative;
     }
-}
 
-@keyframes slideIn {
+        @keyframes slideIn {
         from {
             transform: translateY(100%);
         }
@@ -82,7 +58,6 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
-                    animation: slideIn 1.5s ease-out;
         }
 
         /* Estilo de textos */
