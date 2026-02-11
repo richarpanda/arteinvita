@@ -1099,6 +1099,46 @@ te recomendamos hospedarte en:</p>
             audioPlayer.play();
         });
     </script>
+
+    <script>
+    /* =========================
+       AUTOPLAY iOS FRIENDLY
+    ========================= */
+    document.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("audioPlayer");
+        if (!audio) return;
+
+        // Volumen inicial (igual que tu slider)
+        audio.volume = 0.7;
+
+        const tryPlay = () => {
+            audio.play().then(() => {
+                // sincronizamos íconos (si existen)
+                const playIcon = document.getElementById('playIcon');
+                const pauseIcon = document.getElementById('pauseIcon');
+                if (playIcon && pauseIcon) {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                }
+                removeListeners();
+            }).catch(() => {
+                // iOS puede bloquear el primer intento; no pasa nada
+            });
+        };
+
+        const removeListeners = () => {
+            document.removeEventListener("touchstart", tryPlay);
+            document.removeEventListener("scroll", tryPlay);
+            document.removeEventListener("click", tryPlay);
+        };
+
+        // “Autoplay” al primer gesto del usuario (iPhone friendly)
+        document.addEventListener("touchstart", tryPlay, { once: true });
+        document.addEventListener("scroll", tryPlay, { once: true });
+        document.addEventListener("click", tryPlay, { once: true });
+    });
+    </script>
+
 </body>
 
 </html>
