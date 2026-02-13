@@ -77,7 +77,6 @@
       position: relative;
       z-index: 1;
       background: transparent;
-      overflow: hidden; /* para que los brillitos queden dentro */
     }
 
     @media (min-width: 760px) {
@@ -1302,101 +1301,99 @@
       pointer-events: none;
     }
 	  
-	 /* ================== Sparkle overlay (DENTRO del contenido, BIG twinkle, sin movimiento) ================== */
+	 /* ================== Sparkle overlay (NO movement, BIG twinkle) ================== */
 .sparkle-overlay{
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 50; /* arriba del contenido dentro de .app */
+  z-index: 9999;
   overflow: hidden;
-  mix-blend-mode: screen;
 }
 
-/* 2 capasS capas: grandes y medianos, SIN mover, solo parpadeo */
+/* 2 capas: grandes y medianos, SIN mover, solo parpadeo */
 .sparkle-overlay::before,
 .sparkle-overlay::after{
   content:"";
   position:absolute;
-  inset:0;
+  inset:-10%;
   background-repeat:no-repeat;
   opacity: 1;
   will-change: opacity, transform;
 }
 
-/* Capa 1: BRILLOS GRANDES (más hacia dentro para que se noten) */
+/* Capa 1: BRILLOS GRANDES (orillas) */
 .sparkle-overlay::before{
   background-image:
-    radial-gradient(circle, rgba(255,255,255,1) 0 5px, transparent 9px),
-    radial-gradient(circle, rgba(255,255,255,.95) 0 4px, transparent 8px),
-    radial-gradient(circle, rgba(255,255,255,1) 0 5.2px, transparent 9.2px),
-    radial-gradient(circle, rgba(255,255,255,.92) 0 4.2px, transparent 8.2px),
-    radial-gradient(circle, rgba(255,255,255,1) 0 5px, transparent 9px),
-    radial-gradient(circle, rgba(255,255,255,.95) 0 4px, transparent 8px),
-    radial-gradient(circle, rgba(255,255,255,1) 0 5.2px, transparent 9.2px),
-    radial-gradient(circle, rgba(255,255,255,.92) 0 4.2px, transparent 8.2px);
+    radial-gradient(circle, rgba(255,255,255,1) 0 3.8px, transparent 6.5px),
+    radial-gradient(circle, rgba(255,255,255,.95) 0 3.2px, transparent 6.0px),
+    radial-gradient(circle, rgba(255,255,255,1) 0 4.2px, transparent 7.0px),
+    radial-gradient(circle, rgba(255,255,255,.9) 0 3.0px, transparent 5.6px),
+    radial-gradient(circle, rgba(255,255,255,1) 0 4.0px, transparent 6.8px),
+    radial-gradient(circle, rgba(255,255,255,.95) 0 3.4px, transparent 6.2px),
+    radial-gradient(circle, rgba(255,255,255,1) 0 4.4px, transparent 7.2px),
+    radial-gradient(circle, rgba(255,255,255,.9) 0 3.0px, transparent 5.6px);
 
   background-size:
-    30px 30px, 26px 26px, 32px 32px, 28px 28px,
-    30px 30px, 26px 26px, 32px 32px, 28px 28px;
+    18px 18px, 16px 16px, 20px 20px, 15px 15px,
+    18px 18px, 16px 16px, 20px 20px, 15px 15px;
 
-  /* posiciones "dentro" del diseño */
+  /* posiciones fijas SOLO en orillas */
   background-position:
-    12% 18%,  32% 12%,  72% 16%,  88% 26%,
-    18% 58%,  52% 62%,  82% 68%,  64% 86%;
+    3% 8%,   14% 6%,   86% 7%,   97% 10%,
+    2% 50%,  98% 52%,  12% 94%,  92% 96%;
 
-  filter: drop-shadow(0 0 14px rgba(255,255,255,0.95));
-  animation: twinkleOnOff 5.15s infinite steps(2, end);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.95));
+  animation: twinkleOnOff 1.2s infinite steps(2, end);
 }
 
-/* Capa 2: BRILLOS medianos para relleno */
+/* Capa 2: BRILLOS medianos para “relleno” (más sutil) */
 .sparkle-overlay::after{
   background-image:
-    radial-gradient(circle, rgba(255,255,255,.9) 0 3.6px, transparent 7px),
-    radial-gradient(circle, rgba(255,255,255,.85) 0 3.2px, transparent 6.6px),
-    radial-gradient(circle, rgba(255,255,255,.95) 0 3.8px, transparent 7.2px),
-    radial-gradient(circle, rgba(255,255,255,.85) 0 3.2px, transparent 6.6px),
-    radial-gradient(circle, rgba(255,255,255,.9) 0 3.6px, transparent 7px),
-    radial-gradient(circle, rgba(255,255,255,.85) 0 3.2px, transparent 6.6px);
+    radial-gradient(circle, rgba(255,255,255,.9) 0 2.6px, transparent 5.0px),
+    radial-gradient(circle, rgba(255,255,255,.85) 0 2.2px, transparent 4.6px),
+    radial-gradient(circle, rgba(255,255,255,.95) 0 2.8px, transparent 5.2px),
+    radial-gradient(circle, rgba(255,255,255,.85) 0 2.2px, transparent 4.6px),
+    radial-gradient(circle, rgba(255,255,255,.9) 0 2.6px, transparent 5.0px),
+    radial-gradient(circle, rgba(255,255,255,.85) 0 2.2px, transparent 4.6px);
 
   background-size:
-    22px 22px, 20px 20px, 24px 24px, 20px 20px, 22px 22px, 20px 20px;
+    14px 14px, 12px 12px, 15px 15px, 12px 12px, 14px 14px, 12px 12px;
 
   background-position:
-    22% 32%,  78% 34%,  50% 10%,  50% 90%,  10% 78%,  90% 78%;
+    6% 18%,  94% 20%,  50% 3%,  50% 97%,  6% 82%,  94% 80%;
 
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.75));
-  animation: twinkleOnOff 3.3s infinite steps(2, end);
-  animation-delay: -0.45s;
-  opacity: .92;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.75));
+  animation: twinkleOnOff 1.6s infinite steps(2, end);
+  animation-delay: -0.4s;
+  opacity: .9;
 }
 
 /* “Prende / apaga” real (sin fade suave) */
 @keyframes twinkleOnOff{
   0%   { opacity: 0; transform: scale(.92); }
-  40%  { opacity: 1; transform: scale(1.05); }
-  60%  { opacity: 1; transform: scale(1.05); }
+  40%  { opacity: 1; transform: scale(1.03); }
+  60%  { opacity: 1; transform: scale(1.03); }
   100% { opacity: 0; transform: scale(.92); }
 }
 
 /* Accesibilidad */
 @media (prefers-reduced-motion: reduce){
   .sparkle-overlay::before,
-  .sparkle-overlay::after{ animation: none; opacity: .55; }
+  .sparkle-overlay::after{ animation: none; opacity: .5; }
 }
 
+}
   </style>
 </head>
 
 	
 <body>
-	  <!-- FONDO FIJO -->
+	<div class="sparkle-overlay" aria-hidden="true"></div>
+
+  <!-- FONDO FIJO -->
   <div class="bg-fixed" aria-hidden="true"></div>
 
   <div class="app">
-
-    <!-- Brillitos (overlay dentro del contenido) -->
-    <div class="sparkle-overlay" aria-hidden="true"></div>
-
 
     <!-- VIDEO 1 (inicio) CON IMAGEN xv.png SUPERPUESTA EN LA PARTE INFERIOR -->
     <section class="video-section" aria-label="Video de inicio">
