@@ -1429,7 +1429,7 @@
                 <div class="day">Sábado</div>
                 <div class="number">9</div>
                 <div class="month">Mayo</div>
-                <div class="time">15:45 pm</div>
+                <div class="time">17:45 pm</div>
             </div>
             <br>
 
@@ -1481,7 +1481,7 @@
                         el inicio de una nueva etapa.<br><br>
 
                         Con el cariño de
-                        mis padrinos:<br> <br><strong>Arturo García Rivera</strong> <br>
+                        mis padrinos:<br> <br><strong>José Arturo García Rivera</strong> <br>
                         y<br>
                         <strong>Monserrat Mendoza Sánchez</strong>
 
@@ -1522,7 +1522,7 @@
                                 <strong>18:30</strong> Coctel de Bienvenida <br>
                                 <strong>19:00</strong> Recepción <br>
                                 <strong>19:30</strong> Cena <br>
-                                <strong>21:00</strong> Baile <br>
+                                <strong>20:30</strong> Baile <br>
                                 <strong>01:00</strong> Cierre
                             </p>
                         </div>
@@ -1842,10 +1842,57 @@
             audioPlayer.src = song.src;
         }
 
-        // Inicializar la primera canción
-        audioPlayer.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
+        // ===== Autoplay iPhone (desbloqueo por gesto) =====
+        // Nota: iOS/Safari bloquea audio con sonido hasta que exista una interacción del usuario.
+        // Intentamos autoplay en navegadores que lo permiten y, si falla, lo activamos al primer toque/clic.
+        const __autoplayState = { started: false };
+
+        function setPlayingUI(isPlaying) {
+            if (!playIcon || !pauseIcon) return;
+            playIcon.style.display = isPlaying ? 'none' : 'block';
+            pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        }
+
+        async function tryAutoPlay() {
+            try {
+                // Algunos navegadores permiten autoplay si está en mute; iOS suele requerir gesto igualmente.
+                audioPlayer.muted = true;
+                const p = audioPlayer.play();
+                if (p && typeof p.then === 'function') await p;
+                // Si logró iniciar, quitamos mute para que suene (en iOS esto normalmente seguirá bloqueado sin gesto).
+                audioPlayer.muted = false;
+                __autoplayState.started = true;
+                setPlayingUI(true);
+            } catch (e) {
+                __autoplayState.started = false;
+                setPlayingUI(false);
+            }
+        }
+
+        async function startFromGesture() {
+            if (__autoplayState.started) return;
+            try {
+                audioPlayer.muted = false;
+                const p = audioPlayer.play();
+                if (p && typeof p.then === 'function') await p;
+                __autoplayState.started = true;
+                setPlayingUI(true);
+            } catch (e) {
+                // Si aun así falla, no hacemos nada; el usuario podrá dar play manual.
+                __autoplayState.started = false;
+                setPlayingUI(false);
+            }
+        }
+
+        // 1) Intento de autoplay (funciona en varios Android/desktop)
+        tryAutoPlay();
+
+        // 2) Desbloqueo iPhone: primer toque/clic en cualquier parte
+        // Usamos once:true para que solo se ejecute una vez y no moleste.
+        ['touchstart', 'touchend', 'click'].forEach((evt) => {
+            document.addEventListener(evt, startFromGesture, { passive: true, once: true });
+        });
+        // ===== Fin Autoplay iPhone =====
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
