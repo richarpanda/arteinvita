@@ -333,28 +333,35 @@
        ANIMACIONES SCROLL
     ========================== */
     .anim-up {
-      opacity: 0 !important;
-      transform: translate3d(0, 28px, 0) !important;
-      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      opacity: 0;
+      -webkit-transform: translate3d(0, 28px, 0);
+      transform: translate3d(0, 28px, 0);
+      -webkit-transition: opacity .7s ease, -webkit-transform .9s cubic-bezier(.2, .8, .2, 1);
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
       will-change: transform, opacity;
     }
 
     .anim-left {
-      opacity: 0 !important;
-      transform: translate3d(-60px, 0, 0) !important;
-      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      opacity: 0;
+      -webkit-transform: translate3d(-60px, 0, 0);
+      transform: translate3d(-60px, 0, 0);
+      -webkit-transition: opacity .7s ease, -webkit-transform .9s cubic-bezier(.2, .8, .2, 1);
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
       will-change: transform, opacity;
     }
 
     .anim-right {
-      opacity: 0 !important;
-      transform: translate3d(60px, 0, 0) !important;
-      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      opacity: 0;
+      -webkit-transform: translate3d(60px, 0, 0);
+      transform: translate3d(60px, 0, 0);
+      -webkit-transition: opacity .7s ease, -webkit-transform .9s cubic-bezier(.2, .8, .2, 1);
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
       will-change: transform, opacity;
     }
 
     .in-view {
       opacity: 1 !important;
+      -webkit-transform: translate3d(0, 0, 0) !important;
       transform: translate3d(0, 0, 0) !important;
     }
 
@@ -363,7 +370,9 @@
       .anim-left,
       .anim-right {
         opacity: 1 !important;
+        -webkit-transform: none !important;
         transform: none !important;
+        -webkit-transition: none !important;
         transition: none !important;
       }
     }
@@ -376,7 +385,10 @@
       margin: 14px auto;
       padding-inline: 25px;
       -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
       text-align: center;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .text-block {
@@ -660,12 +672,15 @@
       bottom: 10px;
       left: 50%;
       width: 2px;
+      -webkit-transform: translateX(-50%) scaleY(0);
       transform: translateX(-50%) scaleY(0);
+      -webkit-transform-origin: top;
       transform-origin: top;
       background: linear-gradient(180deg, rgba(214,178,106,.15), var(--tl-line), rgba(214,178,106,.15));
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
       border-radius: 999px;
       opacity: .95;
+      -webkit-transition: -webkit-transform .9s cubic-bezier(.2,.8,.2,1);
       transition: transform .9s cubic-bezier(.2,.8,.2,1);
     }
 
@@ -675,7 +690,9 @@
       width: calc(50% - 18px);
       padding: 6px 0 18px;
       opacity: 0;
+      -webkit-transform: translate3d(0, 12px, 0);
       transform: translate3d(0, 12px, 0);
+      -webkit-transition: opacity .6s ease, -webkit-transform .8s cubic-bezier(.2,.8,.2,1);
       transition: opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1);
     }
 
@@ -741,8 +758,8 @@
     }
 
     /* Activación (cuando el article entra en vista) */
-    .in-view .ai-timeline::before{ transform: translateX(-50%) scaleY(1); }
-    .in-view .ai-tl-item{ opacity: 1; transform: translate3d(0,0,0); }
+    .in-view .ai-timeline::before{ -webkit-transform: translateX(-50%) scaleY(1); transform: translateX(-50%) scaleY(1); }
+    .in-view .ai-tl-item{ opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
     .in-view .ai-tl-item:nth-child(4){ transition-delay: .05s; }
     .in-view .ai-tl-item:nth-child(5){ transition-delay: .16s; }
     .in-view .ai-tl-item:nth-child(6){ transition-delay: .27s; }
@@ -1512,8 +1529,8 @@
           </a>
         </article>
 
-        <!-- ITINERARIO - entra desde la izquierda -->
-        <article class="event-card anim-left" id="itinerario">
+        <!-- ITINERARIO -->
+        <article class="event-card" id="itinerario">
 			
           <img class="event-icon" src="img/iti.png" alt="" aria-hidden="true" />
           <h2 class="event-title">Itinerario</h2>
@@ -1783,19 +1800,26 @@ Melanie Pamela</h2>
        ANIMACIONES SCROLL (izquierda, derecha, arriba)
     ========================== */
     document.addEventListener('DOMContentLoaded', function () {
-      const targets = document.querySelectorAll('.anim-up, .anim-left, .anim-right');
+      var targets = document.querySelectorAll('.anim-up, .anim-left, .anim-right');
       if (!targets.length) return;
 
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+      /* Safari iOS tiene problemas con rootMargin negativo,
+         usamos un threshold bajo y sin rootMargin negativo */
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: "0px 0px 0px 0px" });
 
-      targets.forEach(el => io.observe(el));
+        targets.forEach(function(el) { io.observe(el); });
+      } else {
+        /* Fallback: mostrar todo de inmediato si IO no existe */
+        targets.forEach(function(el) { el.classList.add('in-view'); });
+      }
     });
 
     /* =========================
