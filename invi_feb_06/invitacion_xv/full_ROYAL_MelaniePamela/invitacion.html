@@ -1682,7 +1682,7 @@ Con cariño, te pedimos evitar obsequios como maquillaje.
             Da click en el botón y escribe tu nombre.
           </p>
 
-          <button class="confirm-button" onclick="ArteInvita.open(' 56D-68DB-ED7')">
+          <button class="confirm-button" onclick="ArteInvita.open('56D-68DB-ED7')">
             <strong>Confirmar Asistencia</strong>
           </button>
         </div>
@@ -2010,31 +2010,61 @@ Melanie Pamela</h2>
       audioPlayer.addEventListener('play', function () { setPlayingUI(true); });
 
       // ===== AUTOPLAY UNIVERSAL (iPhone + Android) =====
-      // Nota: iPhone NO permite autoplay con sonido sin interacción. Esto lo dispara en el primer toque.
-      let hasInteracted = false;
+      var hasInteracted = false;
 
-      async function tryAutoplay() {
+      function tryAutoplay() {
         if (hasInteracted) return;
         hasInteracted = true;
 
-        try {
-          audioPlayer.volume = Number(volumeSlider ? volumeSlider.value : 0.7);
-          audioPlayer.muted = false; // aseguramos audio con sonido
-          await audioPlayer.play();
-          setPlayingUI(true);
-          playerButton.classList.remove('pulse');
-        } catch (e) {
-          // Si el navegador lo bloquea, el usuario podrá darle play manual.
-          console.log("Autoplay bloqueado por el navegador:", e);
+        // 1. Desbloqueo sincrono: Safari iOS requiere que play()
+        //    se invoque DENTRO del call-stack del evento de usuario.
+        //    Primero hacemos play() sincrono (aunque falle, desbloquea el elemento).
+        audioPlayer.volume = Number(volumeSlider ? volumeSlider.value : 0.7);
+        audioPlayer.muted = false;
+
+        // play() sincrono dentro del gesto — esto "desbloquea" el audio en Safari
+        var playPromise = audioPlayer.play();
+
+        if (playPromise !== undefined) {
+          playPromise.then(function() {
+            setPlayingUI(true);
+            playerButton.classList.remove('pulse');
+          }).catch(function() {
+            // 2. Fallback: si fallo, reintentar tras un micro-delay
+            //    (algunos iOS necesitan que el src este listo)
+            audioPlayer.load();
+            audioPlayer.addEventListener('canplaythrough', function onReady() {
+              audioPlayer.removeEventListener('canplaythrough', onReady);
+              audioPlayer.play().then(function() {
+                setPlayingUI(true);
+                playerButton.classList.remove('pulse');
+              }).catch(function() {
+                // Ultimo recurso: el usuario le dara play manual
+              });
+            });
+          });
         }
+
+        // Limpiar los otros listeners
+        ["touchstart", "click", "pointerdown", "scroll"].forEach(function(evt) {
+          document.removeEventListener(evt, tryAutoplay, true);
+        });
       }
 
-      // Intento inmediato (Android / algunos navegadores lo permiten)
-      window.addEventListener("load", tryAutoplay);
+      // Intento inmediato (Android / desktop)
+      window.addEventListener("load", function() {
+        audioPlayer.play().then(function() {
+          hasInteracted = true;
+          setPlayingUI(true);
+          playerButton.classList.remove('pulse');
+        }).catch(function() {
+          // Bloqueado — esperamos gesto del usuario
+        });
+      });
 
-      // Desbloqueo en iPhone (primer gesto del usuario)
-      ["touchstart", "click", "pointerdown"].forEach((evt) => {
-        document.addEventListener(evt, tryAutoplay, { once: true, capture: true });
+      // Desbloqueo en iPhone: primer gesto del usuario (toque, click o scroll)
+      ["touchstart", "click", "pointerdown", "scroll"].forEach(function(evt) {
+        document.addEventListener(evt, tryAutoplay, { once: false, capture: true });
       });
 })();
 
