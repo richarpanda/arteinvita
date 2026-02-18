@@ -1650,7 +1650,7 @@ pauseIcon.style.display = 'block';
             <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
             <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
         </div>
-        <div id="thumbnailsContainer" class="gallery-thumbnails"></div>
+        
         <div id="imageCounter" class="gallery-counter"></div>
     </div>
     <!-- FIN NUEVO: MODAL DE GALERÍA -->
@@ -1753,5 +1753,33 @@ pauseIcon.style.display = 'block';
         });
     </script>
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
+	
+	
+	<audio id="musica" autoplay loop playsinline>
+  <source src="music/Beauty and the Beast.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("musica");
+
+    // Intento de autoplay automático
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // Si iPhone bloquea autoplay
+            const activarAudio = () => {
+                audio.play();
+                document.removeEventListener("click", activarAudio);
+                document.removeEventListener("touchstart", activarAudio);
+            };
+            document.addEventListener("click", activarAudio);
+            document.addEventListener("touchstart", activarAudio);
+        });
+    }
+});
+</script>
+
 </body>
 </html>
