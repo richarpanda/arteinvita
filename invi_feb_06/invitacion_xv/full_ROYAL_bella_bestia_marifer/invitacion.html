@@ -1751,5 +1751,37 @@ quinceañera en IG con su username
       if (e.target === this) closeGallery();
     });
   </script>
+
+<script>
+// =========================
+// FIX AUTOPLAY VIDEO iPhone
+// =========================
+document.addEventListener("DOMContentLoaded", function() {
+  const heroVideo = document.querySelector(".hero-media video");
+
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.setAttribute("playsinline", "");
+    heroVideo.setAttribute("webkit-playsinline", "");
+
+    const attemptPlay = () => {
+      heroVideo.play().catch(() => {});
+    };
+
+    attemptPlay();
+
+    document.addEventListener("touchstart", attemptPlay, { once: true });
+    document.addEventListener("click", attemptPlay, { once: true });
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        attemptPlay();
+      }
+    });
+  }
+});
+</script>
+
 </body>
 </html>
