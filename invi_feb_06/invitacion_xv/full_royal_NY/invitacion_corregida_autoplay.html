@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis XV Ximena Yaretzi</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    :root {
+      --verde: #6F8F7A;
+      --rojo: #7B1E2B;
+      /* rojo vino elegante */
+      --dorado: #C9A74D;
+      --crema: #F5F1E8;
+      --crema-oscuro: #E8D8B0;
+      --texto: #2E3545;
+      --gris: #6B7280;
+      --shadow-soft: 0 18px 40px rgba(17, 19, 21, 0.18);
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gabriola', serif, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background: #EBEBEB;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: #4b5563;
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* CONTENEDOR */
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .08;
+      background-image: radial-gradient(rgba(0, 0, 0, 0.18) 0.6px, transparent 0.7px);
+      background-size: 5px 5px;
+      mix-blend-mode: soft-light;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: #252440;
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #252440;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.25;
+      margin-top: 1rem;
+    }
+
+    .flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+    }
+
+    /* FONDOS */
+    .bg-fixed {
+      background-image: url("img/bg-paper-2.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-top {
+      background-image: url("img/bg-paper.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    .bg-bottom {
+      background-image: url("img/bg-paper-2.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    /* iOS/Android FIX */
+    @media (hover: none) and (pointer: coarse) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .bg-top,
+      .bg-bottom {
+        background-size: 100% auto;
+      }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    /* HERO */
+    .hero-wrap {
+      padding: 30px;
+      background: transparent;
+    }
+
+    .hero-card {
+      margin: 0 auto;
+      padding: 3.6rem 2.0rem 0;
+      position: relative;
+    }
+
+    .hero-frame {
+      border-radius: 150px 150px 28px 28px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 145px 145px 22px 22px;
+      border: 1px solid rgba(17, 24, 39, 0.10);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--crema-oscuro);
+    }
+
+    .hero-media img,
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25));
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .hero-bottom {
+      padding: 2.8rem 1.4rem 2.2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 1.00);
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-names {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.10rem;
+      color: var(--rojo);
+      line-height: 1.0;
+    }
+
+    .hero-subline {
+      font-family: "Playfair Display", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--rojo);
+      margin-top: 0.85rem;
+    }
+
+    .hero-date {
+      margin-top: 1.25rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 2.25rem;
+      letter-spacing: 0.07em;
+      color: var(--dorado);
+    }
+
+    /* MUSIC STRIP */
+    .music-strip {
+      padding: 0.75rem 1.4rem 0;
+      background: transparent;
+    }
+
+    .music-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.65rem;
+    }
+
+    .music-btn {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.12rem 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .music-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(17, 24, 39, 0.16);
+      background: rgba(255, 255, 255, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .music-icon.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent rgba(17, 24, 39, 0.62);
+      transform: translateX(1px);
+    }
+
+    .music-icon.playing::before,
+    .music-icon.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 10px;
+      background: rgba(17, 24, 39, 0.58);
+      border-radius: 2px;
+    }
+
+    .music-icon.playing::before {
+      left: 8px;
+    }
+
+    .music-icon.playing::after {
+      right: 8px;
+    }
+
+    .music-label {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.50);
+    }
+
+    /* INTRO */
+    .intro-paper {
+      padding-top: 4.2rem;
+      padding-bottom: 4.8rem;
+    }
+
+    .intro-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(175, 136, 67, 0.25);
+      pointer-events: none;
+    }
+
+    .date-container {
+      text-align: center;
+      color: var(--rojo);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.2em;
+      border-bottom: 2px solid var(--rojo);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 9em;
+      font-weight: lighter;
+      line-height: 1;
+    }
+
+    .month {
+      font-size: 3.2em;
+      border-top: 2px solid var(--rojo);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: #252440;
+      margin-top: 1.1rem;
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* CONTADOR */
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/counter_2.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #111827;
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.85));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #111827;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(17, 24, 39, 0.10);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #0f172a;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #111827;
+      opacity: 0.9;
+    }
+
+    /* EVENTOS */
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(249, 220, 214, 0.8);
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      max-width: 360px;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.4rem 1.2rem 1.6rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.4rem;
+      color: var(--verde);
+      margin-bottom: 0.2rem;
+      line-height: 1.05;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .event-title {
+      font-weight: 700;
+      font-size: 2.0rem;
+      margin-bottom: 0.30rem;
+      color: var(--rojo);
+    }
+
+    .event-address {
+      font-size: 1.5rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    .event-time {
+      margin-top: 1.0rem;
+      font-weight: 700;
+      color: #0F6B5B;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+    }
+
+    .btn-ubicacion {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: #252440;
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* CALENDARIO */
+    .calendar-section {
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+
+    .calendar-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .calendar-month {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      color: var(--rojo);
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gabriola', serif;
+      font-size: 1.6rem;
+      color: var(--rojo);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .calendar-day:hover {
+      background: rgba(175, 136, 67, 0.1);
+    }
+
+    .calendar-day.selected {
+      background: rgba(175, 136, 67, 0.15);
+      font-weight: 600;
+    }
+
+    .calendar-day.special::after {
+      content: "♥";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 1.2rem;
+      color: #d4909a;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(1.15);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+    }
+
+    /* ITINERARIO */
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--rojo);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--verde);
+      text-align: center;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      margin-bottom: 2.1rem;
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 72px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 70px;
+      height: 2px;
+      background: #9ba869;
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.3rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* VESTIMENTA + REGALOS */
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+      line-height: 1.35;
+    }
+
+    .gift-strong {
+      color: var(--rojo);
+      font-weight: 700;
+    }
+
+    /* CONFIRMACIÓN */
+    .glass-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(175, 136, 67, 0.25);
+      pointer-events: none;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.0rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 0.9rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      background: #252440;
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-outline {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0.9rem auto 0;
+      padding: 0.86rem 1.1rem;
+      border-radius: 999px;
+      border: 2px solid #252440;
+      background: var(--crema);
+      color: var(--texto);
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+    }
+
+
+    /* REVEAL (simple) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* IR ARRIBA */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: var(--dorado);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease-out, transform .25s ease-out, visibility .25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #7B1E2B;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
+      }
+
+      .hero-frame {
+        border-radius: 32px;
+      }
+    }
+
+    .icon-liverpool {
+      display: block;
+      width: min(140px, 45vw);
+      height: auto;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    #regalos .icon-liverpool {
+      width: 132px;
+      max-width: 55%;
+      margin: 0 auto 0.9rem;
+      height: auto;
+      display: block;
+    }
+
+    .hashtag-section {
+      padding: 3rem 1.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hashtag-photo-wrap {
+      max-width: 360px;
+      margin: 0 auto 1.6rem;
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(79, 183, 255, 0.22);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hashtag-overlay {
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+    }
+
+    .hashtag-text {
+      font-family: "Gabriola", serif;
+      font-size: 1.55rem;
+      color: var(--texto);
+      line-height: 1.35;
+      margin: 0.2rem 0 0.8rem;
+    }
+
+    .hashtag-script {
+      font-family: "Nova Quinta", cursive;
+      font-size: 2.1rem;
+      color: var(--rojo);
+      margin: 0.2rem 0 0.8rem;
+    }
+
+    .hashtag-tag {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 0.9rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--dorado);
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .hashtag-tag:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+    }
+
+    .hashtag-tag:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .hashtag-tag:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(79, 183, 255, 0.28), 0 12px 28px rgba(11, 26, 43, 0.18);
+    }
+
+    .icon-center-sm {
+      display: block;
+      width: 150px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA (slider) ===== */
+    .gallery-section {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .gallery-slider {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      /* recorta flechas y foto */
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(46, 119, 148, 0.25);
+      box-shadow: 0 10px 22px rgba(11, 29, 51, 0.12);
+      isolation: isolate;
+    }
+
+    .gallery-slide-frame img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+
+    /* Flechas del slider (dentro del frame) */
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+
+      display: grid;
+      place-items: center;
+
+      background: rgba(255, 255, 255, 0.75);
+      color: #0b1d33;
+      font-size: 26px;
+      line-height: 1;
+
+      box-shadow: 0 8px 18px rgba(11, 29, 51, 0.18);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-nav:hover {
+      filter: brightness(1.03);
+      transform: translateY(-50%) scale(1.03);
+    }
+
+    .gallery-nav:active {
+      transform: translateY(-50%) scale(0.98);
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    /* Dots */
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(46, 119, 148, 0.25);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .gallery-dot:hover {
+      transform: scale(1.15);
+    }
+
+    .gallery-dot.active {
+      background: rgba(46, 119, 148, 0.85);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      /* lo prende el JS con flex */
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 3001;
+      width: min(92vw, 420px);
+      max-height: 86vh;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      display: grid;
+      place-items: center;
+    }
+
+    .lightbox-image {
+      width: 100%;
+      height: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+
+    /* Cerrar */
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3002;
+
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+
+      background: rgba(255, 255, 255, 0.75);
+      color: #0b1d33;
+      font-size: 18px;
+      line-height: 1;
+
+      display: grid;
+      place-items: center;
+    }
+
+    /* Flechas lightbox */
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3002;
+
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+
+      background: rgba(255, 255, 255, 0.75);
+      color: #0b1d33;
+      font-size: 30px;
+      line-height: 1;
+
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    @media (max-width: 380px) {
+      .gallery-slide-frame img {
+        height: 300px;
+      }
+
+      .gallery-nav {
+        width: 34px;
+        height: 34px;
+        font-size: 24px;
+      }
+    }
+
+    /* ========= Álbum Compartido (final-section) ========= */
+    .final-section {
+      padding: 1.2rem 0 0.8rem;
+    }
+
+    .final-item {
+      max-width: 360px;
+      margin: 0 auto 1.6rem;
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(79, 183, 255, 0.22);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .final-title {
+      font-family: "Nova Quinta", cursive;
+      font-size: 2.1rem;
+      color: var(--rojo);
+      margin: 0.2rem 0 0.8rem;
+    }
+
+    .final-content {
+      font-family: "Gabriola", serif;
+      font-size: 1.55rem;
+      color: var(--texto);
+      line-height: 1.35;
+      margin: 0.5rem 0;
+    }
+
+    /* Icono álbum */
+    .social-icon.social-icon-album {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 0.6rem;
+      background-image: url("img/icon-album.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.95;
+    }
+
+    /* Botón */
+    .confirm-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.9rem auto 0.2rem;
+      padding: 0.72rem 1.35rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      color: #fff;
+      background: linear-gradient(135deg, var(--rojo), var(--verde));
+      border: 1px solid rgba(11, 26, 43, 0.10);
+      box-shadow: 0 12px 28px rgba(11, 26, 43, 0.18);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .confirm-button:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+    }
+
+    .confirm-button:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .confirm-button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(79, 183, 255, 0.28), 0 12px 28px rgba(11, 26, 43, 0.18);
+    }
+
+    .confirm-button strong,
+    .confirm-button em {
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    @media (max-width: 420px) {
+      .final-item {
+        padding: 1.4rem 1rem;
+      }
+
+      .final-title {
+        font-size: 1.95rem;
+      }
+
+      .final-content {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bg-music" src="BLACKPINK - Don't Know What To Do (Traducida al Español).mp3" loop preload="auto" playsinline muted></audio>
+
+  <main>
+
+    <!-- TOP BG -->
+    <div class="bg-fixed bg-top">
+      <!-- HERO -->
+      <section id="inicio" class="hero-wrap">
+        <div class="hero-card reveal">
+          <div class="hero-frame">
+            <div class="hero-media">
+              <!-- Reemplaza video/cover por tus archivos -->
+              <video src="img/video.mp4" autoplay loop muted playsinline preload="auto"></video>
+            </div>
+
+            <div class="hero-bottom">
+              <div class="hero-names">Ximena Yaretzi</div>
+              <div class="hero-subline">Mis XV Años</div>
+              <div class="hero-date">18 · Abril · 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC STRIP -->
+      <section class="music-strip">
+        <div class="music-strip-inner reveal">
+          <button class="music-btn" id="musicToggle" aria-label="Control de música">
+            <div class="music-icon paused" id="musicIcon"></div>
+            <span class="music-label" id="musicStatus">Play</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section id="intro" class="intro-paper">
+        <div class="intro-card reveal">
+          <div class="content">
+            <div class="date-container">
+              <div class="day">Sábado</div>
+              <div class="number">18</div>
+              <div class="month">Abril</div>
+            </div>
+
+            <p class="section-sub" style="margin-top:1.6rem;">
+              Hay momentos inolvidables que <br>
+              se atesoran en el corazón <br>
+              para siempre,<br>
+              y con la bendición de Dios <br>
+              y el amor de <br>
+              mi familia me siento muy <br>
+              feliz de llegar <br>
+              a ese momento de mi vida.
+              <br><br>
+              Por esta razón queremos que <br>
+              nos acompañen <br>
+              en este día tan especial.
+            </p>
+
+            <div class="intro-parents-title">Junto a mis padres:</div>
+            <p class="intro-list">
+              Oswaldo Hernández Muñoz<br>
+              y <br>
+              Elba Alejandra Flores Becerra
+            </p>
+
+            <div class="flourish"></div>
+
+            <p class="intro-script">
+              Tu presencia hará<br>
+              de este día
+              un recuerdo <br>
+              inolvidable.
+            </p>
+
+            <div class="intro-parents-title">Mis padrinos</div>
+            <p class="intro-list">
+              Oscar Lopez Contreras<br>
+              y <br>
+              Luz Adriana Flores Becerra
+            </p>
+
+            <div class="flourish"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal">
+        <div class="content">
+          <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+          <div class="countdown-min" aria-label="Cuenta regresiva">
+            <div class="countdown-time">
+              <span id="cdDays">0</span>:
+              <span id="cdHours">00</span>:
+              <span id="cdMins">00</span>:
+              <span id="cdSecs">00</span>
+            </div>
+            <div class="countdown-labels">
+              <span>Días</span><span>Horas</span><span>Min</span><span>Seg</span>
+            </div>
+          </div>
+
+          <p class="countdown-note">¡Te espero con mucha ilusión!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUÁNDO Y DÓNDE -->
+    <section id="evento">
+      <div class="content">
+        <div class="reveal">
+          <div class="flourish"></div>
+          <div class="section-title-script">¿Cuándo y dónde?</div>
+        </div>
+      </div>
+
+      <!-- IGLESIA -->
+      <div class="event-card reveal">
+        <img src="img/iglesia.jpg" alt="Iglesia" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Ceremonia religiosa</div>
+            <div class="event-script">Parroquia Santa Teresita del Niño Jesús</div>
+
+            <p class="event-address">
+              <strong>Hora:</strong> 06:00 pm <br>
+              2 poniente No. 2714, Col. Amor, Puebla, Pue.
+            </p>
+
+            <a href="https://share.google/8ir0H6nnvLzlkeXfj" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALÓN -->
+      <div class="event-card reveal">
+        <img src="img/salon.jpg" alt="Salón" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Recepción</div>
+            <div class="event-script">Antares Recepciones</div>
+
+            <p class="event-address">
+              <strong>Hora:</strong> 08:00 pm <br>
+              Entronque Zavaleta, Recta Sur - Recta Cholula, De Los Alamos, Santa Cruz Buenavista, Puebla, Pue.
+            </p>
+
+            <!-- Tu link viene como share.google. Si es un link de Maps, aquí va tal cual: -->
+            <a href="https://share.google/kx2KUcbYdwZtDrpsH" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section id="calendario" class="calendar-section">
+      <div class="content">
+        <div class="flourish"></div>
+        <div class="section-title-script reveal">Recuerda la fecha del evento</div>
+        <div class="calendar-container reveal">
+          <div class="calendar-header">
+            <div class="calendar-month">Marzo</div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario">
+      <div class="content">
+        <div class="flourish"></div>
+        <h2 class="itinerary-title reveal">Itinerario</h2>
+        <p class="itinerary-date reveal">28 de Marzo de 2026</p>
+      </div>
+
+      <div class="itinerary-timeline content">
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">18:00</div>
+            <div class="itinerary-event">CEREMONIA</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">20:00</div>
+            <div class="itinerary-event">RECEPCIÓN</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">20:35</div>
+            <div class="itinerary-event">CENA</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">21:40</div>
+            <div class="itinerary-event">VALS</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/baile.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">22:20</div>
+            <div class="itinerary-event">BAILE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- VESTIMENTA -->
+    <section id="vestimenta">
+      <div class="content">
+        <div class="flourish"></div>
+        <div class="section-title-script reveal">Código de Vestimenta</div>
+        <div class="gift-item reveal">
+          <p class="gift-sub">Tipo de vestimenta:</p>
+          <p class="gift-sub gift-strong">FORMAL</p>
+          <p class="gift-sub">Les pedimos con cariño el color verde quede reservado para nuestra quinceañera</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGALOS (Liverpool) -->
+    <section id="regalos">
+      <div class="content">
+        <div class="flourish"></div>
+        <div class="section-title-script reveal">Mesa de Regalos</div>
+
+        <!-- Liverpool -->
+        <div class="gift-item reveal">
+          <img src="img/logo-liverpool.png" class="icon-liverpool" alt="Liverpool">
+
+          <p class="gift-sub">
+            Si deseas obsequiarme algo, puedes hacerlo en Liverpool con el número de evento:
+          </p>
+          <p class="gift-sub gift-strong" style="margin-top:.6rem;">1234567</p>
+
+          <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/" target="_blank" rel="noopener noreferrer">
+            <button class="btn-ubicacion" type="button">Ver mesa de regalos</button>
+          </a>
+        </div>
+
+        <!-- Bancoppel -->
+        <div class="gift-item reveal">
+          <img src="img/bancoppel.png" class="icon-liverpool" alt="BanCoppel">
+          <p class="gift-sub">
+            También puedes realizar tu obsequio mediante depósito o transferencia a la cuenta BanCoppel:
+          </p>
+          <p class="gift-sub gift-strong" style="margin-top:.6rem;">CLABE<br>123456789</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="final-section">
+
+      <div class="final-item">
+        <div class="social-icon social-icon-album"></div>
+        <div align="center"><img class="icon-center-sm" src="img/album.png"></div>
+        <h2 class="final-title">Álbum Compartido</h2>
+        <p class="final-content">Da click aquí para subir<br> las fotos que tomes<br>
+          durante la fiesta y formar <br>parte de mis recuerdos más especiales.</p>
+        <button class="btn-primary" onclick="ArteInvita.open('998-2C82-BF8')"><strong><em>Subir Fotos</em></strong></a>
+      </div>
+
+      <section id="insta" class="hashtag-section">
+        <div class="hashtag-photo-wrap">
+          <div class="hashtag-overlay reveal reveal-left">
+            <div>
+              <div align="center"><img class="icon-center-sm" src="img/camara.png"></div>
+              <p class="hashtag-text">
+                Comparte conmigo, publica tus momentos de la fiesta en redes sociales
+              </p>
+              <p class="hashtag-script">y etiquétame en Instagram</p>
+
+              <a class="hashtag-tag" href="https://www.instagram.com/arte_invita?igsh=bHA1Y2RxZHp6cjFy" target="_blank"
+                rel="noopener">
+                @arte_invita
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" class="gallery-section">
+        <div class="final-title">Mis momentos</div>
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Un recorrido en fotos por esta etapa tan especial.
+          Gracias por acompañarme a celebrar mis XV.
+        </p>
+
+        <div class="gallery-slider">
+          <div class="gallery-slide-frame">
+            <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Fotos de la quinceañera">
+
+            <button class="gallery-nav prev" id="galleryPrev" aria-label="Anterior">‹</button>
+            <button class="gallery-nav next" id="galleryNext" aria-label="Siguiente">›</button>
+          </div>
+
+          <div class="gallery-dots" id="galleryDots" aria-label="Indicadores de galería"></div>
+        </div>
+      </section>
+
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+          <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+
+          <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+
+          <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+          <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+
+
+      <!-- CONFIRMACIÓN -->
+      <section id="confirmacion" class="bg-fixed bg-bottom">
+        <div class="content reveal">
+          <div class="glass-card">
+            <div class="confirm-title-script">¿Asistirás?</div>
+            <div class="flourish"></div>
+
+            <p class="section-sub">
+              ¡Será increíble contar con tu presencia!<br>
+              Por favor, confirma tu asistencia.
+            </p>
+
+            <!-- Panel ArteInvita (cambia el código por el correcto) -->
+            <button class="btn-primary" onclick="ArteInvita.open('998-2C82-BF8')">
+              Confirmar en panel
+            </button>
+
+            <!-- WhatsApp -->
+            <a class="btn-outline"
+              href="https://wa.me/522281043405?text=Hola%20%F0%9F%91%8B%20Quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20de%20Gabriela.%20Mi%20nombre%20es%3A%20"
+              target="_blank" rel="noopener">
+              Confirmar por WhatsApp
+            </a>
+
+            <div class="flourish" style="margin-top:1.4rem;"></div>
+
+            <p class="section-sub">
+              ¡Agradezco de corazón que<br>celebres conmigo!<br><br>¡Nos vemos pronto!
+            </p>
+
+            <div class="section-title-main" style="margin-top:1.2rem;">
+              ¡Con cariño <br>Gabriela!
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <footer>© 2026 Mis XV Gabriela Sánchez</footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    // =========================
+    // CUENTA REGRESIVA (18 Abril 2026 - 12:00 PM)
+    // =========================
+    const targetDate = new Date(2026, 2, 28, 18, 0, 0); // Mes 3 = Abril
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) { return String(n).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================
+    // MÚSICA (autoplay robusto iPhone/Android/Desktop)
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+
+    // Estado
+    let isPlaying = false;
+
+    // Asegura que el src con espacios/caracteres especiales cargue bien en servidor
+    try {
+      const rawSrc = music.getAttribute("src") || "";
+      if (rawSrc) music.src = encodeURI(rawSrc);
+    } catch (e) {}
+
+    // Para permitir autoplay en la mayoría de navegadores: iniciamos en muted
+    // y desmuteamos en la primera interacción del usuario (click/touch/scroll).
+    music.preload = "auto";
+    music.loop = true;
+    music.volume = 1;
+    music.muted = true;
+
+    async function startPlayback({ unmute = false } = {}) {
+      try {
+        if (unmute) music.muted = false;
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function stopPlayback() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    // Botón Play/Pause (respeta tu UI actual)
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) {
+        // click = interacción válida: intentamos con sonido
+        await startPlayback({ unmute: true });
+      } else {
+        stopPlayback();
+      }
+    });
+
+    // Autoplay al cargar (muted). Luego, en 1ª interacción, desmutea y asegura sonido.
+    async function autoplayMuted() {
+      if (isPlaying) return;
+      await startPlayback({ unmute: false });
+    }
+
+    // Desbloqueo iOS/WebAudio (cuando aplica) + desmute
+    function unlockAndUnmute() {
+      // Si ya está sonando con audio, no hacemos nada
+      if (isPlaying && !music.muted) return;
+
+      // iOS a veces requiere "desbloquear" el audio en un gesto
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) {
+          const ctx = new AudioCtx();
+          if (ctx.state === "suspended") ctx.resume();
+          // cerramos rápido para no dejar recursos colgados
+          setTimeout(() => { try { ctx.close(); } catch (e) {} }, 250);
+        }
+      } catch (e) {}
+
+      // Desmute y garantiza reproducción
+      startPlayback({ unmute: true });
+    }
+
+    function attachUnlockListeners() {
+      const opts = { once: true, passive: true };
+      window.addEventListener("pointerdown", unlockAndUnmute, opts);
+      window.addEventListener("touchstart", unlockAndUnmute, opts);
+      window.addEventListener("click", unlockAndUnmute, opts);
+      window.addEventListener("keydown", unlockAndUnmute, opts);
+      window.addEventListener("scroll", unlockAndUnmute, opts);
+      document.addEventListener("visibilitychange", () => {
+        // Si el usuario vuelve a la pestaña, reintenta (sin romper nada)
+        if (!document.hidden && (!isPlaying || music.muted)) {
+          autoplayMuted();
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      autoplayMuted();
+      attachUnlockListeners();
+    });
+
+// =========================
+    // REVEAL
+    // =========================
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // =========================
+    // IR ARRIBA
+    // =========================
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // =========================
+    // CALENDARIO (Abril)
+    // =========================
+    function generateCalendar() {
+      const calendarGrid = document.getElementById('calendarGrid');
+      const daysInMonth = 30;
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+
+        if (day === 18) {
+          dayElement.classList.add('special', 'selected');
+        }
+
+        dayElement.addEventListener('click', function () {
+          document.querySelectorAll('.calendar-day').forEach(d => {
+            if (!d.classList.contains('special')) d.classList.remove('selected');
+          });
+          this.classList.add('selected');
+        });
+
+        calendarGrid.appendChild(dayElement);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', generateCalendar);
+
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg",
+      "img/galeria/4.jpeg",
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDotsContainer = document.getElementById("galleryDots");
+    let galleryIndex = 0;
+
+    function renderDots() {
+      if (!galleryDotsContainer) return;
+      galleryDotsContainer.innerHTML = "";
+      galleryImages.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = "gallery-dot" + (idx === galleryIndex ? " active" : "");
+        dot.addEventListener("click", () => {
+          galleryIndex = idx;
+          updateGallery();
+        });
+        galleryDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      if (!gallerySlide) return;
+      gallerySlide.src = galleryImages[galleryIndex];
+      renderDots();
+    }
+
+    // Lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      if (!lightbox || !lightboxImage) return;
+      currentImageIndex = index;
+      lightboxImage.src = galleryImages[currentImageIndex];
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    if (galleryPrev && galleryNext && gallerySlide) {
+      galleryPrev.addEventListener("click", () => {
+        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+      });
+
+      galleryNext.addEventListener("click", () => {
+        galleryIndex = (galleryIndex + 1) % galleryImages.length;
+        updateGallery();
+      });
+
+      gallerySlide.addEventListener("click", () => openLightbox(galleryIndex));
+      updateGallery();
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
+    if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox && lightbox.style.display === "flex") {
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
+        if (e.key === "Escape") closeLightbox();
+      }
+    });
+
+  </script>
+</body>
+
+</html>
