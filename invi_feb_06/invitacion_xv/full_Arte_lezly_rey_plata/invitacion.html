@@ -1898,6 +1898,32 @@ Adamary</p>
     </script>
     <!-- FIN NUEVO: SCRIPT GALERÍA -->
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const audio = document.getElementById("audioPlayer");
+
+    if(!audio) return;
+
+    audio.setAttribute("playsinline","");
+    audio.setAttribute("webkit-playsinline","");
+    audio.muted = true;
+
+    function startAudio(){
+        audio.play().then(()=>{
+            audio.muted = false;
+        }).catch(()=>{});
+    }
+
+    startAudio();
+
+    document.addEventListener("touchstart", startAudio, {once:true});
+    document.addEventListener("click", startAudio, {once:true});
+
+});
+</script>
+
 </body>
 
 </html>
