@@ -1226,16 +1226,16 @@ Xompol s/n, Pedregal de San Francisco, Xochimilco, 16800, CDMX.
 
 
 					  <p class="social-content">Agradezco con el alma tu presencia <br>
-en este día tan importante.<br><br>
-Si deseas tener un lindo detalle conmigo, <br>
-puedes elegir una de estas opciones:</p>
+en este día tan importante.<br>
+Si deseas puedes obsequiarme un regalo sorpresa el día del evento, <br>
+ó revisar la mesa de regalos que he preparado:</p>
 			 <p align="center"><img src="img/liverpool.ico" width="50px" style="vertical-align: middle"></p>
 	   <p class="social-content">Mesa de regalos Liverpool <br>
 No. Evento 51917490 </p>
 <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51917490" class="btn">Ver mesa de regalos</a>
 
 <p class="social-content">Ó en efectivo en la lluvia de sobres<br>
- que he preparado el día del evento.</p>
+  del día del festejo.</p>
 <p class="thanks">¡Gracias!</p>
     </div>
 				
@@ -1443,7 +1443,7 @@ Kiara.
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/Ed Sheeran - Perfect.mp3"></audio>
+            <audio id="audioPlayer" src="music/Lady Gaga & Bruno Mars - Die With A Smile (Español  Lyrics)  video musical.mp3"></audio>
         </div>
     </div>
 			
@@ -1501,17 +1501,17 @@ Kiara.
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Lady Gaga & Bruno Mars - Die With A Smile (Español  Lyrics)  video musical.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Lady Gaga & Bruno Mars - Die With A Smile (Español  Lyrics)  video musical.mp3"
             },
             {
                 title: "Escucha la invitación con música de fondo",
                 artist: "",
-                src: "music/Ed Sheeran - Perfect.mp3"
+                src: "music/Lady Gaga & Bruno Mars - Die With A Smile (Español  Lyrics)  video musical.mp3"
             }
         ];
 
@@ -1525,10 +1525,24 @@ Kiara.
             audioPlayer.src = song.src;
         }
 
-        // Inicializar la primera canción
-        audioPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'block';
+        // Intentar autoplay compatible con iPhone
+function iniciarMusica() {
+    audioPlayer.play().then(() => {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+    }).catch(() => {
+        document.addEventListener('touchstart', activarMusica, { once: true });
+        document.addEventListener('click', activarMusica, { once: true });
+    });
+}
+
+function activarMusica() {
+    audioPlayer.play();
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+}
+
+window.addEventListener("load", iniciarMusica);
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
