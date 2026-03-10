@@ -649,7 +649,195 @@
   text-decoration: underline;
 }
 		
-		
+	.gallery-button {
+            display: inline-block;
+            font-family: 'Gabriola', serif;
+            font-size: 22px;
+            color: #b0926b;
+            padding: 8px 40px;
+            border: 2px solid #b0926b;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-button:hover {
+            background-color: #b0926b;
+            color: white;
+            transform: scale(1.05);
+        }
+	
+		.gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease-in;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gallery-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2001;
+            transition: color 0.3s ease;
+        }
+
+        .gallery-close-btn:hover {
+            color: #921c32;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .gallery-main-image {
+            max-width: 90%;
+            max-height: 100%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease-in;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #000;
+            border: none;
+            font-size: 30px;
+            padding: 15px 20px;
+            cursor: pointer;
+            z-index: 2001;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .gallery-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-prev {
+            left: 10px;
+        }
+
+        .gallery-next {
+            right: 10px;
+        }
+
+        .gallery-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Gabriola', serif;
+            font-size: 18px;
+            z-index: 2001;
+        }
+
+        .gallery-thumbnails {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            max-width: 80%;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            z-index: 2001;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery-thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .gallery-thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .gallery-thumbnail.active {
+            border-color: #921c32;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                height: 60vh;
+            }
+            .gallery-arrow {
+                padding: 10px 15px;
+                font-size: 20px;
+            }
+            .gallery-thumbnails {
+                bottom: 70px;
+                gap: 8px;
+            }
+            .gallery-thumbnail {
+                width: 50px;
+                height: 50px;
+            }
+            .gallery-close-btn {
+                font-size: 30px;
+                top: 10px;
+                right: 15px;
+            }
+        }
 		
 		
 		/* Scroll to Top Button */
@@ -1024,6 +1212,15 @@ he preparado una pequeña mesa de regalos con opciones que me hacen mucha ilusi�
         <a href="https://mesaderegalos.liverpool.com.mx/?_ga=2.250783045.2105570888.1744765848-1828678887.1735875147&_gac=1.113120502.1744765848.Cj0KCQjwh_i_BhCzARIsANimeoEa4bjjnYD2UUT94MTO2JqE62d8jNFW0UifX7nQXBuZfRGuok0nI1IaAlJAEALw_wcB" class="btn">Ver mesa de regalos</a>
         <p class="thanks">¡Gracias!</p>
     </div>-->
+				
+				 <div class="social-item">
+        <div align="center"><img src="img/2.jpeg" style="border-radius: 15px" width="100%"></div>
+        
+        <!-- Agregar botón "Ver Galería" -->
+        <div class="gallery-button-container">
+            <button id="openGalleryBtn" class="gallery-button">Ver Galería</button>
+        </div>
+    </div>
 		<div class="social-item">
         <div class="social-icon social-icon-gift-2"></div>
         <h2 class="social-title">Lluvia de <br>
@@ -1458,8 +1655,119 @@ document.addEventListener("DOMContentLoaded", function () {
             document.addEventListener("touchstart", activarAudio);
         });
     }
-});
-</script>
+
+	<!-- NUEVO: MODAL DE GALERÍA -->
+    <div id="galleryModal" class="gallery-modal">
+        <button id="closeGalleryBtn" class="gallery-close-btn">&times;</button>
+        <div class="gallery-container">
+            <img id="mainImage" class="gallery-main-image" src="/placeholder.svg" alt="Imagen Principal">
+            <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
+            <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
+        </div>
+       
+        <div id="imageCounter" class="gallery-counter"></div>
+    </div>
+    <!-- FIN NUEVO: MODAL DE GALERÍA -->
+
+    <!-- NUEVO: SCRIPT PARA CONTROL DE LA GALERÍA -->
+    <script>
+        // Array con las rutas de tus fotos
+        // IMPORTANTE: Asegúrate de que los archivos existan en la carpeta fotos/
+        const galleryImages = [
+           'img/1.jpeg',
+           'img/2.jpeg',
+			 'img/3.jpeg',
+			 'img/4.jpeg',
+             'img/5.jpeg'
+			
+			
+            // Agrega más fotos según necesites
+        ];
+
+        let currentImageIndex = 0;
+        const galleryModal = document.getElementById('galleryModal');
+        const mainImage = document.getElementById('mainImage');
+        const imageCounter = document.getElementById('imageCounter');
+        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+
+        function openGallery() {
+            galleryModal.style.display = 'flex';
+            generateThumbnails();
+            updateGallery();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            galleryModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function generateThumbnails() {
+            // Clear existing thumbnails to prevent duplicates if called multiple times
+            thumbnailsContainer.innerHTML = '';
+            
+            galleryImages.forEach((image, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = image;
+                thumbnail.alt = 'Foto ' + (index + 1);
+                thumbnail.className = 'gallery-thumbnail';
+                if (index === 0) thumbnail.classList.add('active');
+                
+                thumbnail.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateGallery();
+                });
+                
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+        }
+
+        function updateGallery() {
+            mainImage.src = galleryImages[currentImageIndex];
+            imageCounter.textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
+
+            document.querySelectorAll('.gallery-thumbnail').forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+
+            const activeThumbnail = document.querySelectorAll('.gallery-thumbnail')[currentImageIndex];
+            if (activeThumbnail) {
+                activeThumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGallery();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGallery();
+        }
+
+        // Event listeners
+        document.getElementById('openGalleryBtn').addEventListener('click', openGallery);
+        document.getElementById('closeGalleryBtn').addEventListener('click', closeGallery);
+        document.getElementById('prevImage').addEventListener('click', prevImage);
+        document.getElementById('nextImage').addEventListener('click', nextImage);
+
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeGallery();
+            }
+        });
+
+        // Controles por teclado
+        document.addEventListener('keydown', (e) => {
+            if (galleryModal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'Escape') closeGallery();
+            }
+        });
+    </script>
+    <!-- FIN NUEVO: SCRIPT GALERÍA -->
 
 </body>
 </html>
