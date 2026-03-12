@@ -1129,6 +1129,35 @@
         .digital-clock.event-today .clock-separator {
             color: #513814;
         }
+    
+        /* Overlay sutil para activar audio si el navegador lo bloquea */
+        .audio-unlock-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.22);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            backdrop-filter: blur(2px);
+        }
+
+        .audio-unlock-overlay.show {
+            display: flex;
+        }
+
+        .audio-unlock-button {
+            border: none;
+            border-radius: 999px;
+            padding: 14px 24px;
+            font-size: 20px;
+            font-family: 'Gabriola', serif;
+            background: #af8843;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -1464,7 +1493,7 @@ Paola Ximena.</p>
             </div>
             
             <!-- Elemento de audio oculto -->
-            <audio id="audioPlayer" src="music/cancion.mp3"></audio>
+            <audio id="audioPlayer" src="music/cancion.mp3" preload="auto" loop playsinline webkit-playsinline></audio>
         </div>
     </div>
             
@@ -1481,6 +1510,10 @@ Paola Ximena.</p>
      
     
     
+    <div id="audioUnlockOverlay" class="audio-unlock-overlay">
+        <button id="audioUnlockButton" class="audio-unlock-button">Toca para escuchar la música</button>
+    </div>
+
     <script>
 
           // Seccion social
@@ -1516,113 +1549,128 @@ Paola Ximena.</p>
         const volumeSlider = document.getElementById('volumeSlider');
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
+        const audioUnlockOverlay = document.getElementById('audioUnlockOverlay');
+        const audioUnlockButton = document.getElementById('audioUnlockButton');
 
-        // Lista de canciones (ejemplo)
         const songs = [
-            {
-                title: "Escucha la invitación con música de fondo",
-                artist: "",
-                src: "music/cancion.mp3"
-            },
-            {
-                title: "Escucha la invitación con música de fondo",
-                artist: "",
-                src: "music/cancion.mp3"
-            },
-            {
-                title: "Escucha la invitación con música de fondo",
-                artist: "",
-                src: "music/cancion.mp3"
-            }
+            { title: "Escucha la invitación con música de fondo", artist: "", src: "music/cancion.mp3" },
+            { title: "Escucha la invitación con música de fondo", artist: "", src: "music/cancion.mp3" },
+            { title: "Escucha la invitación con música de fondo", artist: "", src: "music/cancion.mp3" }
         ];
 
         let currentSongIndex = 0;
 
-        // Función para cargar una canción
+        function updatePlayerIcons() {
+            if (audioPlayer.paused) {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            } else {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+        }
+
         function loadSong(index) {
             const song = songs[index];
             document.querySelector('.song-title').textContent = song.title;
             document.querySelector('.song-artist').textContent = song.artist;
             audioPlayer.src = song.src;
+            audioPlayer.load();
+            updatePlayerIcons();
         }
 
-        // Inicializar la primera canción
-        audioPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'block';
+        async function attemptAutoplay(showOverlayOnFail = false) {
+            try {
+                audioPlayer.muted = false;
+                audioPlayer.volume = parseFloat(volumeSlider.value || 0.7);
+                await audioPlayer.play();
+                updatePlayerIcons();
+                audioUnlockOverlay.classList.remove('show');
+                return true;
+            } catch (error) {
+                updatePlayerIcons();
+                if (showOverlayOnFail) {
+                    audioUnlockOverlay.classList.add('show');
+                }
+                return false;
+            }
+        }
 
-        // Alternar la visibilidad del reproductor
+        function unlockAndPlay() {
+            attemptAutoplay(true);
+        }
+
+        loadSong(currentSongIndex);
+
+        window.addEventListener('load', () => {
+            setTimeout(() => attemptAutoplay(true), 250);
+        });
+
+        ['touchstart', 'touchend', 'click', 'scroll'].forEach((eventName) => {
+            window.addEventListener(eventName, unlockAndPlay, { once: true, passive: true });
+        });
+
+        audioUnlockButton.addEventListener('click', async () => {
+            await attemptAutoplay(false);
+        });
+
         playerButton.addEventListener('click', () => {
             playerContent.classList.toggle('active');
         });
 
-        // Permitir que la música siga reproduciéndose cuando se cierra el reproductor
         document.addEventListener('click', (e) => {
-            // Si se hace clic fuera del reproductor y del botón, y no es un elemento dentro del reproductor
-            if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target)) {
-                // Solo ocultar el reproductor, pero no detener la música
+            if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target) && !audioUnlockOverlay.contains(e.target)) {
                 playerContent.classList.remove('active');
             }
         });
 
-        // Reproducir/Pausar
-        playButton.addEventListener('click', () => {
+        playButton.addEventListener('click', async () => {
             if (audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
+                const started = await attemptAutoplay(true);
+                if (!started) return;
             } else {
                 audioPlayer.pause();
-                playIcon.style.display = 'block';
-                pauseIcon.style.display = 'none';
+                updatePlayerIcons();
             }
         });
 
-        // Canción anterior
-        prevButton.addEventListener('click', () => {
+        prevButton.addEventListener('click', async () => {
             currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            }
+            await attemptAutoplay(false);
         });
 
-        // Canción siguiente
-        nextButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', async () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            }
+            await attemptAutoplay(false);
         });
 
-        // Control de volumen
         volumeSlider.addEventListener('input', () => {
             audioPlayer.volume = volumeSlider.value;
         });
 
-        // Actualizar barra de progreso
         audioPlayer.addEventListener('timeupdate', () => {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            const duration = audioPlayer.duration || 0;
+            const progress = duration ? (audioPlayer.currentTime / duration) * 100 : 0;
             progressBar.style.width = `${progress}%`;
         });
 
-        // Cambiar posición de reproducción
         progressContainer.addEventListener('click', (e) => {
+            const duration = audioPlayer.duration || 0;
+            if (!duration) return;
             const clickPosition = e.offsetX / progressContainer.offsetWidth;
-            audioPlayer.currentTime = clickPosition * audioPlayer.duration;
+            audioPlayer.currentTime = clickPosition * duration;
         });
 
-        // Reproducir siguiente canción cuando termine la actual
-        audioPlayer.addEventListener('ended', () => {
+        audioPlayer.addEventListener('ended', async () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            audioPlayer.play();
+            await attemptAutoplay(false);
         });
+
+        audioPlayer.addEventListener('play', updatePlayerIcons);
+        audioPlayer.addEventListener('pause', updatePlayerIcons);
     </script>
     
     
