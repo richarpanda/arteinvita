@@ -1015,9 +1015,8 @@ border-color:#b0926b;
     html, body {
         overflow-x: hidden;
     }
-		
-		
-		
+}
+
     </style>
 </head>
 <body>
@@ -1334,8 +1333,8 @@ Valeria</p>
             </div>
             
             <!-- Elemento de audio oculto -->
-			<audio id="audioPlayer" autoplay loop playsinline>
-  <source src="music/Moonlight.mp3" >
+			<audio id="audioPlayer" preload="auto" autoplay loop playsinline webkit-playsinline>
+  <source src="music/Moonlight.mp3" type="audio/mpeg">
 </audio>
             
         </div>
@@ -1348,30 +1347,6 @@ Valeria</p>
 			
         </div>
 		
-	
-	<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("musica");
-
-    // Intento de autoplay automático
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // Si iPhone bloquea autoplay
-            const activarAudio = () => {
-                audio.play();
-                document.removeEventListener("click", activarAudio);
-                document.removeEventListener("touchstart", activarAudio);
-            };
-            document.addEventListener("click", activarAudio);
-            document.addEventListener("touchstart", activarAudio);
-        });
-    }
-});
-</script>
-	 
-	
 	
 	<script>
 
@@ -1439,9 +1414,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Inicializar la primera canción
-        audioPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'block';
+        loadSong(currentSongIndex);
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
@@ -1570,135 +1543,113 @@ pauseIcon.style.display = 'block';
 	
 	
 
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("musica");
+document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audioPlayer');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const volumeSlider = document.getElementById('volumeSlider');
 
-    // Intento de autoplay automático
-    const playPromise = audio.play();
+    if (!audio) return;
 
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // Si iPhone bloquea autoplay
-            const activarAudio = () => {
-                audio.play();
-                document.removeEventListener("click", activarAudio);
-                document.removeEventListener("touchstart", activarAudio);
-            };
-            document.addEventListener("click", activarAudio);
-            document.addEventListener("touchstart", activarAudio);
-        });
+    audio.volume = volumeSlider ? parseFloat(volumeSlider.value || '0.7') : 0.7;
+
+    function syncIcons() {
+        if (!playIcon || !pauseIcon) return;
+        if (audio.paused) {
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        } else {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        }
     }
 
-	</script>
-	
-	<div id="galleryModal" class="gallery-modal">
+    async function tryPlay() {
+        try {
+            await audio.play();
+        } catch (e) {}
+        syncIcons();
+    }
 
+    async function unlockAudio() {
+        await tryPlay();
+        if (!audio.paused) {
+            ['click','touchstart','pointerdown','scroll'].forEach(evt => {
+                document.removeEventListener(evt, unlockAudio, listenerOpts);
+            });
+        }
+    }
+
+    const listenerOpts = { passive: true };
+
+    tryPlay();
+    window.addEventListener('load', tryPlay);
+    document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && audio.paused) tryPlay();
+    });
+
+    ['click','touchstart','pointerdown','scroll'].forEach(evt => {
+        document.addEventListener(evt, unlockAudio, listenerOpts);
+    });
+
+    audio.addEventListener('play', syncIcons);
+    audio.addEventListener('pause', syncIcons);
+    syncIcons();
+});
+</script>
+
+<div id="galleryModal" class="gallery-modal">
 <button id="closeGalleryBtn" class="gallery-close-btn">&times;</button>
-
 <img id="mainImage" class="gallery-main-image" src="img/1.jpeg">
-
 <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
 <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
-
 <div id="imageCounter" class="gallery-counter"></div>
+<div id="thumbnailsContainer" class="gallery-thumbnails"></div>
+</div>
 
-<!-- ESTE ERA EL QUE FALTABA -->
-
-   <script>
-
-/* IMAGENES */
-
-const galleryImages = [
-'img/1.jpeg',
-'img/2.jpeg',
-'img/3.jpeg',
-'img/4.jpeg',
-'img/5.jpeg'
-];
-
+<script>
+const galleryImages = ['img/1.jpeg','img/2.jpeg','img/3.jpeg','img/4.jpeg','img/5.jpeg'];
 let currentImageIndex = 0;
-
-const galleryModal = document.getElementById("galleryModal");
-const mainImage = document.getElementById("mainImage");
-const imageCounter = document.getElementById("imageCounter");
-const thumbnailsContainer = document.getElementById("thumbnailsContainer");
-
+const galleryModal = document.getElementById('galleryModal');
+const mainImage = document.getElementById('mainImage');
+const imageCounter = document.getElementById('imageCounter');
+const thumbnailsContainer = document.getElementById('thumbnailsContainer');
 
 function openGallery(){
-galleryModal.style.display="flex";
-generateThumbnails();
-updateGallery();
+  galleryModal.style.display='flex';
+  generateThumbnails();
+  updateGallery();
 }
-
-function closeGallery(){
-galleryModal.style.display="none";
-}
-
+function closeGallery(){ galleryModal.style.display='none'; }
 function generateThumbnails(){
-
-thumbnailsContainer.innerHTML="";
-
-galleryImages.forEach((image,index)=>{
-
-const thumb=document.createElement("img");
-
-thumb.src=image;
-thumb.className="gallery-thumbnail";
-
-if(index===0) thumb.classList.add("active");
-
-thumb.addEventListener("click",()=>{
-currentImageIndex=index;
-updateGallery();
-});
-
-thumbnailsContainer.appendChild(thumb);
-
-});
-
+  thumbnailsContainer.innerHTML='';
+  galleryImages.forEach((image,index)=>{
+    const thumb=document.createElement('img');
+    thumb.src=image;
+    thumb.className='gallery-thumbnail';
+    if(index===currentImageIndex) thumb.classList.add('active');
+    thumb.addEventListener('click',()=>{ currentImageIndex=index; updateGallery(); });
+    thumbnailsContainer.appendChild(thumb);
+  });
 }
-
 function updateGallery(){
-
-mainImage.src=galleryImages[currentImageIndex];
-
-imageCounter.textContent=(currentImageIndex+1)+" / "+galleryImages.length;
-
-document.querySelectorAll(".gallery-thumbnail").forEach((thumb,index)=>{
-thumb.classList.toggle("active",index===currentImageIndex);
-});
-
+  mainImage.src=galleryImages[currentImageIndex];
+  imageCounter.textContent=(currentImageIndex+1)+' / '+galleryImages.length;
+  document.querySelectorAll('.gallery-thumbnail').forEach((thumb,index)=>{
+    thumb.classList.toggle('active',index===currentImageIndex);
+  });
 }
+function prevImage(){ currentImageIndex=(currentImageIndex-1+galleryImages.length)%galleryImages.length; updateGallery(); }
+function nextImage(){ currentImageIndex=(currentImageIndex+1)%galleryImages.length; updateGallery(); }
 
-function prevImage(){
-currentImageIndex=(currentImageIndex-1+galleryImages.length)%galleryImages.length;
-updateGallery();
-}
-
-function nextImage(){
-currentImageIndex=(currentImageIndex+1)%galleryImages.length;
-updateGallery();
-}
-
-/* EVENTOS */
-
-document.getElementById("openGalleryBtn").addEventListener("click",openGallery);
-
-document.getElementById("closeGalleryBtn").addEventListener("click",closeGallery);
-
-document.getElementById("prevImage").addEventListener("click",prevImage);
-
-document.getElementById("nextImage").addEventListener("click",nextImage);
-
-/* CERRAR AL DAR CLICK FUERA */
-
-galleryModal.addEventListener("click",(e)=>{
-if(e.target===galleryModal){
-closeGallery();
-}
-});
-
+document.getElementById('openGalleryBtn')?.addEventListener('click',openGallery);
+document.getElementById('closeGalleryBtn')?.addEventListener('click',closeGallery);
+document.getElementById('prevImage')?.addEventListener('click',prevImage);
+document.getElementById('nextImage')?.addEventListener('click',nextImage);
+galleryModal?.addEventListener('click',(e)=>{ if(e.target===galleryModal) closeGallery(); });
 </script>
+
 </body>
 </html>
