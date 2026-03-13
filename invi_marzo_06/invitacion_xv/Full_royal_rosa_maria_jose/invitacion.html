@@ -26,7 +26,7 @@
       --rosa-oscuro: #C98A98;
       --rosa-claro: #F7E3E7;
 
-      --dorado: #c4c4c4;
+      --dorado: #C6A06A;
       --rose-gold: #C6A06A;
       --rose-gold-2: #B28B59;
 
@@ -131,23 +131,11 @@
       text-align: center;
       margin-bottom: 0.2rem;
       color: transparent;
-      background: linear-gradient(180deg,
-          #ffffff 0%,
-          #e6e6e6 14%,
-          #ffffff 28%,
-          #bfbfbf 52%,
-          #f7f7f7 72%,
-          #9c9c9c 92%,
-          #ffffff 100%);
+      background: #C98A98;
       -webkit-background-clip: text;
       background-clip: text;
 
-      /* contraste extra */
-      -webkit-text-stroke: 1px rgba(30, 30, 30, .28);
-      /* borde oscuro sutil */
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, .55),
-        0 6px 18px rgba(0, 0, 0, .22);
+     
     }
 
     .section-title-main {
@@ -465,23 +453,11 @@
       margin-top: 1.8rem;
       text-align: center;
       color: transparent;
-      background: linear-gradient(180deg,
-          #ffffff 0%,
-          #e6e6e6 14%,
-          #ffffff 28%,
-          #bfbfbf 52%,
-          #f7f7f7 72%,
-          #9c9c9c 92%,
-          #ffffff 100%);
+      background: #C98A98;
       -webkit-background-clip: text;
       background-clip: text;
 
-      /* contraste extra */
-      -webkit-text-stroke: 1px rgba(30, 30, 30, .28);
-      /* borde oscuro sutil */
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, .55),
-        0 6px 18px rgba(0, 0, 0, .22);
+      
     }
 
     .intro-list {
@@ -596,27 +572,15 @@
 
     .event-script {
       font-family: "Great Vibes", cursive;
-      font-size: 3.4rem;
+      font-size: 3.0rem;
       margin-bottom: 0.2rem;
-      line-height: 1.05;
+      line-height: 1.20;
       color: transparent;
-      background: linear-gradient(180deg,
-          #ffffff 0%,
-          #e6e6e6 14%,
-          #ffffff 28%,
-          #bfbfbf 52%,
-          #f7f7f7 72%,
-          #9c9c9c 92%,
-          #ffffff 100%);
+      background: #C98A98;
       -webkit-background-clip: text;
       background-clip: text;
 
-      /* contraste extra */
-      -webkit-text-stroke: 1px rgba(30, 30, 30, .28);
-      /* borde oscuro sutil */
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, .55),
-        0 6px 18px rgba(0, 0, 0, .22);
+      
     }
 
     .event-label {
@@ -1338,7 +1302,7 @@
 
       <div class="gallery-slider reveal reveal-right">
         <div class="gallery-slide-frame">
-          <img id="gallerySlide" src="img/1.jpeg" alt="Foto de la galería">
+          <img id="gallerySlide" src="img/galeria/12.jpeg" alt="Foto de la galería">
           <button class="gallery-nav prev" id="galleryPrev" type="button">‹</button>
           <button class="gallery-nav next" id="galleryNext" type="button">›</button>
         </div>
@@ -1630,6 +1594,7 @@
     document.addEventListener('DOMContentLoaded', generateCalendar);
     document.addEventListener("DOMContentLoaded", () => {
       const galleryImages = [
+		   "img/galeria/12.jpeg",
         "img/galeria/1.jpeg",
         "img/galeria/2.jpeg",
         "img/galeria/3.jpeg",
@@ -1640,6 +1605,8 @@
         "img/galeria/8.jpeg",
         "img/galeria/9.jpeg",
         "img/galeria/10.jpeg",
+		  "img/galeria/11.jpeg"
+		  
 
 
       ];
