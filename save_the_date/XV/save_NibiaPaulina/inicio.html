@@ -1,274 +1,319 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Save the Date | Mis XV</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Save the Date | Mis XV</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <style>
-    :root{
-      --white:#ffffff;
-      --soft:rgba(255,255,255,.8);
-      --line:rgba(255,255,255,.55);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; }
+<style>
 
-    body{
-      background:#000;
-      font-family:"Montserrat", sans-serif;
-      color:var(--white);
-    }
+:root{
+--white:#ffffff;
+--soft:rgba(255,255,255,.8);
+--line:rgba(255,255,255,.55);
+}
 
-    .poster{
-      width:100%;
-      min-height:100vh;
-      background:#000;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
 
-    /* IMAGEN FIJA */
-    .hero{
-      width:100%;
-      max-width:768px;
-      height:500px;
-      background:url("portada.png") center top / 100% auto no-repeat;
-      position:relative;
-      flex:0 0 auto;
-    }
+body{
+background:#ffffff;
+font-family:"Montserrat",sans-serif;
+color:var(--white);
+}
 
-    /* contenido flotante sobre la imagen si luego lo necesitas */
-    .content{
-      position:absolute;
-      inset:0;
-      z-index:2;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-end;
-      text-align:center;
-      padding:0 24px 28px;
-      gap:12px;
-      pointer-events:none;
-    }
+.poster{
+width:100%;
+min-height:100vh;
+background:#ffffff;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
 
-    .word{
-      font-family:"Playfair Display", serif;
-      font-size:clamp(34px,4.5vw,46px);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      line-height:1.05;
-    }
+/* HERO / PORTADA */
 
-    .the-row{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      margin:14px 0;
-    }
+.hero{
+width:100%;
+max-width:768px;
+height:620px;
+background:url("portada.png") center 70px / 100% auto no-repeat;
+background-color:#ffffff;
+position:relative;
+flex:0 0 auto;
+}
 
-    .line{
-      height:1px;
-      width:min(120px,26vw);
-      background:var(--line);
-    }
+/* contenido flotante si se usa */
 
-    .the{
-      font-family:"Great Vibes", cursive;
-      font-size:32px;
-      color:var(--soft);
-      line-height:1;
-    }
+.content{
+position:absolute;
+inset:0;
+z-index:2;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-end;
+text-align:center;
+padding:0 24px 28px;
+gap:12px;
+pointer-events:none;
+}
 
-    .xv{
-      margin-top:8px;
-      font-family:"Great Vibes", cursive;
-      font-size:clamp(52px,8vw,58px);
-      letter-spacing:.08em;
-      line-height:1;
-    }
+.word{
+font-family:"Playfair Display",serif;
+font-size:clamp(34px,4.5vw,46px);
+letter-spacing:.18em;
+text-transform:uppercase;
+line-height:1.05;
+}
 
-    .name{
-      margin-top:80px;
-      font-size:18px;
-      letter-spacing:.32em;
-      text-transform:uppercase;
-      color:var(--soft);
-    }
+.the-row{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+margin:14px 0;
+}
 
-    .name_2{
-      margin-top:20px;
-      font-family:"Great Vibes", cursive;
-      font-size:60px;
-    }
+.line{
+height:1px;
+width:min(120px,26vw);
+background:var(--line);
+}
 
-    /* BLOQUE NEGRO INFERIOR */
-    .footer-panel{
-      width:100%;
-      max-width:800px;
-      background:#000;
-		margin-top: -70px;
-      
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
+.the{
+font-family:"Great Vibes",cursive;
+font-size:32px;
+color:var(--soft);
+line-height:1;
+}
 
-    .countdown{
-      display:flex;
-      gap:18px;
-      font-family:"Playfair Display", serif;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
-      opacity:1;
-    }
+.xv{
+margin-top:8px;
+font-family:"Great Vibes",cursive;
+font-size:clamp(52px,8vw,58px);
+letter-spacing:.08em;
+line-height:1;
+}
 
-    .time-box{
-      text-align:center;
-      min-width:62px;
-    }
+.name{
+margin-top:80px;
+font-size:18px;
+letter-spacing:.32em;
+text-transform:uppercase;
+color:var(--soft);
+}
 
-    .num{
-      font-size:clamp(22px,3.5vw,28px);
-      letter-spacing:.12em;
-      line-height:1.1;
-      color:#fff;
-      opacity:1;
-    }
+.name_2{
+margin-top:20px;
+font-family:"Great Vibes",cursive;
+font-size:60px;
+}
 
-    .label{
-      font-size:10px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:#fff;
-      margin-top:4px;
-      opacity:1;
-    }
+/* FOOTER NEGRO */
 
-    .note{
-      margin-top:14px;
-      font-family:"Great Vibes", cursive;
-      font-size:clamp(22px,2.6vw,30px);
-      color:#fff;
-      line-height:1.2;
-      opacity:1;
-    }
+.footer-panel{
+width:100%;
+max-width:800px;
+background:#000;
+margin-top:-25px;
+padding:26px 20px 34px;
 
-    .fade{
-      opacity:0;
-      transform:translateY(10px);
-      animation:fadeUp .9s ease forwards;
-    }
-    .d2{ animation-delay:.15s; }
-    .d3{ animation-delay:.3s; }
-    .d4{ animation-delay:.45s; }
-    .d5{ animation-delay:.6s; }
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
-    @keyframes fadeUp{
-      to{ opacity:1; transform:none; }
-    }
+.countdown{
+display:flex;
+gap:18px;
+font-family:"Playfair Display",serif;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+opacity:1;
+}
 
-    @media (max-width:768px){
-      .hero{
-        height:calc(100vw * 1.35);
-        min-height:560px;
-        max-height:260px;
-      }
-    }
+.time-box{
+text-align:center;
+min-width:62px;
+}
 
-    @media (max-width:10px){
-      .countdown{ gap:14px; }
-      .time-box{ min-width:58px; }
-      .name{ letter-spacing:.24em; }
-      .footer-panel{ padding:62px 56px 30px; }
-    }
-  </style>
+.num{
+font-size:clamp(22px,3.5vw,28px);
+letter-spacing:.12em;
+line-height:1.1;
+color:#fff;
+opacity:1;
+}
+
+.label{
+font-size:10px;
+letter-spacing:.28em;
+text-transform:uppercase;
+color:#fff;
+margin-top:4px;
+opacity:1;
+}
+
+.note{
+margin-top:14px;
+font-family:"Great Vibes",cursive;
+font-size:clamp(22px,2.6vw,30px);
+color:#fff;
+line-height:1.2;
+opacity:1;
+}
+
+.fade{
+opacity:0;
+transform:translateY(10px);
+animation:fadeUp .9s ease forwards;
+}
+
+.d2{animation-delay:.15s;}
+.d3{animation-delay:.3s;}
+.d4{animation-delay:.45s;}
+.d5{animation-delay:.6s;}
+
+@keyframes fadeUp{
+to{opacity:1;transform:none;}
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.hero{
+margin-top:140px;
+height:620px;
+background:url("portada.png") center 55px / 100% auto no-repeat;
+background-color:#ffffff;
+}
+
+.footer-panel{
+margin-top:-20px;
+padding:24px 18px 30px;
+}
+
+.countdown{gap:14px;}
+.time-box{min-width:58px;}
+.name{letter-spacing:.24em;}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <section class="poster">
-  <div class="hero">
-    <div class="content">
-      <div class="fade d3">
-        <!--<div class="xv">Mis XV</div>
-        <div class="name_2">Nibia Paulina</div>-->
-        
-      </div>
-    </div>
-  </div>
 
-  <div class="footer-panel">
-    <div style="margin-bottom:18px;text-align:center;">
-        <div style="font-family:'Playfair Display',serif;letter-spacing:.25em;font-size:16px;">22.AGOSTO.2026</div>
-        <div style="font-family:'Playfair Display',serif;letter-spacing:.25em;font-size:14px;margin-top:6px;">CD. JUÁREZ, CHIH.</div>
-    </div>
-    <div class="countdown fade d4" id="countdown">
-      <div class="time-box">
-        <div class="num" id="days">00</div>
-        <div class="label">DÍAS</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="hours">00</div>
-        <div class="label">HORAS</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="minutes">00</div>
-        <div class="label">MIN</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="seconds">00</div>
-        <div class="label">SEG</div>
-      </div>
-    </div>
+<div class="hero">
+<div class="content">
+<div class="fade d3">
+<!--
+<div class="xv">Mis XV</div>
+<div class="name_2">Nibia Paulina</div>
+-->
+</div>
+</div>
+</div>
 
-    <div class="note fade d3">El gran día se acerca</div>
-  </div>
+<div class="footer-panel">
+
+<div style="margin-bottom:18px;text-align:center;">
+<div style="font-family:'Playfair Display',serif;letter-spacing:.25em;font-size:16px;">
+22.AGOSTO.2026
+</div>
+
+<div style="font-family:'Playfair Display',serif;letter-spacing:.25em;font-size:14px;margin-top:6px;">
+CD. JUÁREZ, CHIH.
+</div>
+</div>
+
+<div class="countdown fade d4" id="countdown">
+
+<div class="time-box">
+<div class="num" id="days">00</div>
+<div class="label">DÍAS</div>
+</div>
+
+<div class="time-box">
+<div class="num" id="hours">00</div>
+<div class="label">HORAS</div>
+</div>
+
+<div class="time-box">
+<div class="num" id="minutes">00</div>
+<div class="label">MIN</div>
+</div>
+
+<div class="time-box">
+<div class="num" id="seconds">00</div>
+<div class="label">SEG</div>
+</div>
+
+</div>
+
+<div class="note fade d3">El gran día se acerca</div>
+
+</div>
 </section>
 
 <script>
-  const eventDate = new Date(2026, 7, 22, 12, 30, 0);
 
-  const daysEl = document.getElementById("days");
-  const hoursEl = document.getElementById("hours");
-  const minutesEl = document.getElementById("minutes");
-  const secondsEl = document.getElementById("seconds");
+const eventDate = new Date(2026,7,22,12,30,0);
 
-  function updateCountdown(){
-    const now = Date.now();
-    const distance = eventDate.getTime() - now;
+const daysEl=document.getElementById("days");
+const hoursEl=document.getElementById("hours");
+const minutesEl=document.getElementById("minutes");
+const secondsEl=document.getElementById("seconds");
 
-    if(distance <= 0){
-      daysEl.textContent = "00";
-      hoursEl.textContent = "00";
-      minutesEl.textContent = "00";
-      secondsEl.textContent = "00";
-      return;
-    }
+function updateCountdown(){
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const now=Date.now();
+const distance=eventDate.getTime()-now;
 
-    daysEl.textContent = String(days).padStart(2,"0");
-    hoursEl.textContent = String(hours).padStart(2,"0");
-    minutesEl.textContent = String(minutes).padStart(2,"0");
-    secondsEl.textContent = String(seconds).padStart(2,"0");
-  }
+if(distance<=0){
+daysEl.textContent="00";
+hoursEl.textContent="00";
+minutesEl.textContent="00";
+secondsEl.textContent="00";
+return;
+}
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor(
+(distance%(1000*60*60*24))/(1000*60*60)
+);
+
+const minutes=Math.floor(
+(distance%(1000*60*60))/(1000*60)
+);
+
+const seconds=Math.floor(
+(distance%(1000*60))/1000
+);
+
+daysEl.textContent=String(days).padStart(2,"0");
+hoursEl.textContent=String(hours).padStart(2,"0");
+minutesEl.textContent=String(minutes).padStart(2,"0");
+secondsEl.textContent=String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
 </script>
 
 </body>
