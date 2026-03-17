@@ -41,8 +41,8 @@ align-items:center;
 .hero{
   width:100%;
   max-width:768px;
-  height:480px; /* antes 620px */
-  background:url("portada.png") center 40px / 100% auto no-repeat;
+  height:480px;
+  background:url("portada.png") center top / 100% auto no-repeat;
   background-color:#ffffff;
   position:relative;
 }
@@ -120,7 +120,7 @@ font-size:60px;
 width:100%;
 max-width:700px;
 background:#000;
-margin-top:-60px;
+margin-top:0;
 padding:26px 20px 34px;
 
 display:flex;
@@ -186,19 +186,22 @@ animation:fadeUp .9s ease forwards;
 to{opacity:1;transform:none;}
 }
 
-/* MOBILE */
+/* MOBILE - Ajustado para que el footer quede justo debajo de la imagen */
 
 @media (max-width:768px){
 
 .hero{
-margin-top:10px;
-height:659px;
-background:url("portada.png") center / 100% auto no-repeat;
+margin-top:0;
+padding-top:0;
+/* Usamos aspect-ratio para que la altura sea proporcional al ancho */
+height:auto;
+aspect-ratio: 1 / 1.35;
+background:url("portada.png") center top / 100% auto no-repeat;
 background-color:#ffffff;
 }
 
 .footer-panel{
-margin-top:-20px;
+margin-top:0;
 padding:24px 18px 30px;
 }
 
@@ -206,6 +209,13 @@ padding:24px 18px 30px;
 .time-box{min-width:58px;}
 .name{letter-spacing:.24em;}
 
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width:400px){
+.hero{
+  aspect-ratio: 1 / 1.4;
+}
 }
 
 </style>
