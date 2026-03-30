@@ -1372,6 +1372,32 @@
             text-align: center;
             margin: 10px 0 18px;
         }
+
+
+        .audio-unlock-hint {
+            position: fixed;
+            left: 50%;
+            bottom: 78px;
+            transform: translateX(-50%);
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.72);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.3;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            max-width: 280px;
+        }
+
+        .audio-unlock-hint.visible {
+            opacity: 1;
+        }
+
     </style>
 </head>
 
@@ -1464,14 +1490,17 @@
                     <h2 class="section-title">Código de Vestimenta</h2>
                     <p class="section-content">Vistamos este día de elegancia y alegría:
                     </p>
-                    <p class="section-content-hora"><strong>All Black<br>Etiqueta formal</strong></p>
+                    <p class="section-content-hora"><strong>Totalmente Negro<br>Etiqueta rigurosa formal </strong></p>
                     <p class="section-content">
                         <strong>Hombres</strong><br>
                         Smoking o Traje <br><br>
                         <strong>Mujeres</strong><br>
                         Vestido Largo
-                    </p>
+                    </p><br>
 
+
+					<p class="section-content"><strong>NO OLVIDES QUE :</strong><br>
+<em>Ella brillará en dorado… y nos encantará que tú también seas parte de ese brillo con un accesorio en este tono.</em></p>
                 </div>
 				
 				
@@ -1483,37 +1512,37 @@
                         <div class="it-row">
                             <span class="section-content">Misa</span>
                            
-                            <strong class="it-time">16:45</strong>
+                            <strong class="it-time">03:30 PM</strong>
                         </div>
 
                         <div class="it-row">
                             <span class="section-content">Recepción</span>
                            
-                            <strong class="it-time">18:00</strong>
+                            <strong class="it-time">05:00 PM</strong>
                         </div>
 
                         <div class="it-row">
                             <span class="section-content">Cena</span>
                             
-                            <strong class="it-time">19:30</strong>
+                            <strong class="it-time">07:00 PM</strong>
                         </div>
 
                         <div class="it-row">
                             <span class="section-content">Ceremonia</span>
                            
-                            <strong class="it-time">21:00</strong>
+                            <strong class="it-time">08:00 PM</strong>
                         </div>
 
                         <div class="it-row it-row--note">
-                            <span class="section-content">Tornafiesta</span>
+                            <span class="section-content">Baile</span>
                             
-                            <strong class="it-time">00:30</strong>
+                            <strong class="it-time">09:00 PM</strong>
                         </div>
 
                         <div class="it-row">
                             <span class="section-content">Fin Evento</span>
                           
-                            <strong class="it-time">02:00</strong>
+                            <strong class="it-time">03:00 AM</strong>
                         </div>
                     </div>
                 </div>
@@ -1567,12 +1596,13 @@
                 <!-- ========================================================= -->
                 <div class="social-item">
                     <div class="social-icon social-icon-gift-2"></div>
-                    <h2 class="social-title">Lluvia de Sobres</h2>
+                    <h2 class="social-title">Mesa de Regalos y Lluvia de Sobres</h2>
                     <p class="social-content">Agradezco con el alma
                         tu presencia
                         en este día tan importante.
                         Si deseas obsequiarme algo,
-                        prefiero recibirlo en el evento
+                        prefiero recibirlo en el evento 
+en forma de un regalo sorpresa o
                         en efectivo durante la lluvia
                         de sobres que he preparado.</p>
 
@@ -1804,7 +1834,7 @@ Fernanda</p>
                     </div>
 
                     <!-- Elemento de audio oculto -->
-                    <audio id="audioPlayer" src="music/videoplayback.mp3"></audio>
+                    <audio id="audioPlayer" src="music/videoplayback.mp3" preload="auto" loop playsinline webkit-playsinline></audio>
                 </div>
             </div>
 
@@ -1817,7 +1847,8 @@ Fernanda</p>
     <!-- ========================================================= -->
     <script>
         // JavaScript para manejar el clic del botón
-        document.getElementById('whatsapp-button').addEventListener('click', function (e) {
+        const whatsappBtn = document.getElementById('whatsapp-button');
+        if (whatsappBtn) whatsappBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
             // Reemplaza este número con el número de WhatsApp del asesor
@@ -1876,8 +1907,9 @@ Fernanda</p>
         const volumeSlider = document.getElementById('volumeSlider');
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
+        const audioUnlockHint = document.getElementById('audioUnlockHint');
 
-        // Lista de canciones (ejemplo)
+        // Lista de canciones
         const songs = [
             {
                 title: "Escucha la invitación con música de fondo",
@@ -1897,6 +1929,28 @@ Fernanda</p>
         ];
 
         let currentSongIndex = 0;
+        let audioUnlocked = false;
+        let autoplayHintTimeout = null;
+
+        function setPlayerIcons(isPlaying) {
+            playIcon.style.display = isPlaying ? 'none' : 'block';
+            pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        }
+
+        function showUnlockHint() {
+            if (!audioUnlockHint || audioUnlocked) return;
+            audioUnlockHint.classList.add('visible');
+            clearTimeout(autoplayHintTimeout);
+            autoplayHintTimeout = setTimeout(() => {
+                audioUnlockHint.classList.remove('visible');
+            }, 4500);
+        }
+
+        function hideUnlockHint() {
+            if (!audioUnlockHint) return;
+            audioUnlockHint.classList.remove('visible');
+            clearTimeout(autoplayHintTimeout);
+        }
 
         // Función para cargar una canción
         function loadSong(index) {
@@ -1904,12 +1958,85 @@ Fernanda</p>
             document.querySelector('.song-title').textContent = song.title;
             document.querySelector('.song-artist').textContent = song.artist;
             audioPlayer.src = song.src;
+            audioPlayer.load();
         }
 
-        // Inicializar la primera canción
-        audioPlayer.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
+        async function attemptAutoplay(forceUnmute = false) {
+            try {
+                if (forceUnmute) {
+                    audioPlayer.muted = false;
+                }
+
+                await audioPlayer.play();
+
+                if (forceUnmute || !audioPlayer.muted) {
+                    audioUnlocked = true;
+                    audioPlayer.muted = false;
+                    hideUnlockHint();
+                }
+
+                setPlayerIcons(true);
+                return true;
+            } catch (error) {
+                setPlayerIcons(false);
+                return false;
+            }
+        }
+
+        async function bootstrapAutoplay() {
+            audioPlayer.volume = parseFloat(volumeSlider.value || '0.7');
+            audioPlayer.playsInline = true;
+            audioPlayer.setAttribute('playsinline', '');
+            audioPlayer.setAttribute('webkit-playsinline', '');
+            audioPlayer.setAttribute('autoplay', '');
+
+            // Primer intento normal
+            let started = await attemptAutoplay(false);
+            if (started) return;
+
+            // Segundo intento en modo muted para navegadores restrictivos
+            audioPlayer.muted = true;
+            started = await attemptAutoplay(false);
+
+            if (!started) {
+                audioPlayer.muted = false;
+                showUnlockHint();
+            }
+        }
+
+        async function unlockAudioFromGesture() {
+            const played = await attemptAutoplay(true);
+            if (played) {
+                detachUnlockEvents();
+            } else {
+                showUnlockHint();
+            }
+        }
+
+        function attachUnlockEvents() {
+            ['touchstart', 'touchend', 'click', 'scroll'].forEach((eventName) => {
+                document.addEventListener(eventName, unlockAudioFromGesture, { passive: true });
+            });
+        }
+
+        function detachUnlockEvents() {
+            ['touchstart', 'touchend', 'click', 'scroll'].forEach((eventName) => {
+                document.removeEventListener(eventName, unlockAudioFromGesture, { passive: true });
+            });
+        }
+
+        loadSong(currentSongIndex);
+        setPlayerIcons(false);
+        attachUnlockEvents();
+
+        document.addEventListener('DOMContentLoaded', bootstrapAutoplay);
+        window.addEventListener('load', bootstrapAutoplay);
+        window.addEventListener('pageshow', bootstrapAutoplay);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && audioPlayer.paused) {
+                bootstrapAutoplay();
+            }
+        });
 
         // Alternar la visibilidad del reproductor
         playerButton.addEventListener('click', () => {
@@ -1918,70 +2045,70 @@ Fernanda</p>
 
         // Permitir que la música siga reproduciéndose cuando se cierra el reproductor
         document.addEventListener('click', (e) => {
-            // Si se hace clic fuera del reproductor y del botón, y no es un elemento dentro del reproductor
             if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target)) {
-                // Solo ocultar el reproductor, pero no detener la música
                 playerContent.classList.remove('active');
             }
         });
 
         // Reproducir/Pausar
-        playButton.addEventListener('click', () => {
+        playButton.addEventListener('click', async () => {
             if (audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
+                const played = await attemptAutoplay(true);
+                setPlayerIcons(played);
             } else {
                 audioPlayer.pause();
-                playIcon.style.display = 'block';
-                pauseIcon.style.display = 'none';
+                setPlayerIcons(false);
             }
         });
 
         // Canción anterior
-        prevButton.addEventListener('click', () => {
+        prevButton.addEventListener('click', async () => {
             currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            }
+            const played = await attemptAutoplay(audioUnlocked);
+            setPlayerIcons(played);
         });
 
         // Canción siguiente
-        nextButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', async () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'block';
-            }
+            const played = await attemptAutoplay(audioUnlocked);
+            setPlayerIcons(played);
         });
 
         // Control de volumen
-        volumeSlider.addEventListener('input', () => {
+        volumeSlider.addEventListener('input', async () => {
             audioPlayer.volume = volumeSlider.value;
+            if (audioPlayer.muted && parseFloat(volumeSlider.value) > 0) {
+                await unlockAudioFromGesture();
+            }
         });
 
         // Actualizar barra de progreso
         audioPlayer.addEventListener('timeupdate', () => {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            const duration = audioPlayer.duration || 0;
+            const progress = duration ? (audioPlayer.currentTime / duration) * 100 : 0;
             progressBar.style.width = `${progress}%`;
         });
 
         // Cambiar posición de reproducción
         progressContainer.addEventListener('click', (e) => {
+            const duration = audioPlayer.duration || 0;
+            if (!duration) return;
             const clickPosition = e.offsetX / progressContainer.offsetWidth;
-            audioPlayer.currentTime = clickPosition * audioPlayer.duration;
+            audioPlayer.currentTime = clickPosition * duration;
         });
 
-        // Reproducir siguiente canción cuando termine la actual
-        audioPlayer.addEventListener('ended', () => {
+        audioPlayer.addEventListener('play', () => setPlayerIcons(true));
+        audioPlayer.addEventListener('pause', () => setPlayerIcons(false));
+
+        // Respaldo por si el loop no aplica en algún navegador
+        audioPlayer.addEventListener('ended', async () => {
             currentSongIndex = (currentSongIndex + 1) % songs.length;
             loadSong(currentSongIndex);
-            audioPlayer.play();
+            const played = await attemptAutoplay(audioUnlocked);
+            setPlayerIcons(played);
         });
     </script>
 
@@ -2035,6 +2162,9 @@ Fernanda</p>
     <!-- Script externo para soporte de Intersection Observer -->
     <script src="intersection-observer.js"></script>
 
+
+    <div id="audioUnlockHint" class="audio-unlock-hint">Toca cualquier parte de la invitación para activar la música en iPhone.</div>
+
     <!-- ========================================================= -->
     <!-- MODAL DE GALERÍA                                          -->
     <!-- Estructura del visor emergente de imágenes.               -->
@@ -2074,6 +2204,7 @@ Fernanda</p>
         const mainImage = document.getElementById('mainImage');
         const imageCounter = document.getElementById('imageCounter');
         const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+        const openGalleryBtn = document.getElementById('openGalleryBtn');
 
         function openGallery() {
             galleryModal.style.display = 'flex';
@@ -2089,6 +2220,7 @@ Fernanda</p>
 
         function generateThumbnails() {
             // Clear existing thumbnails to prevent duplicates if called multiple times
+            if (!thumbnailsContainer) return;
             thumbnailsContainer.innerHTML = '';
 
             galleryImages.forEach((image, index) => {
@@ -2132,7 +2264,7 @@ Fernanda</p>
         }
 
         // Event listeners
-        document.getElementById('openGalleryBtn').addEventListener('click', openGallery);
+        if (openGalleryBtn) openGalleryBtn.addEventListener('click', openGallery);
         document.getElementById('closeGalleryBtn').addEventListener('click', closeGallery);
         document.getElementById('prevImage').addEventListener('click', prevImage);
         document.getElementById('nextImage').addEventListener('click', nextImage);
