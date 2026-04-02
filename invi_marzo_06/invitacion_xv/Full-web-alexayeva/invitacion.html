@@ -30,7 +30,7 @@
 
       --rojo-claro: #E9DDFB;
 
-      --dorado: #B79AF2;
+      --dorado: rgb(231, 130, 184);
 
 
       --crema: #F8F5FF;
@@ -218,9 +218,9 @@
     }
 
     .flourish {
-      width: 400px;
-      height: 70px;
-      margin: 0.5rem auto 2rem;
+      width: 300px;
+      height: 100px;
+      margin: 0.2rem auto 2rem;
       background-image: url("img/greca.png");
       background-repeat: no-repeat;
       background-size: contain;
@@ -258,37 +258,41 @@
     /* HERO A PANTALLA COMPLETA */
     .hero-full {
       position: relative;
-      min-height: calc(100vh - 50px);
       padding: 0;
       overflow: hidden;
+      background: linear-gradient(to bottom,
+          rgba(145, 108, 196, 0.00) 0%,
+          rgba(145, 108, 196, 0.00) 2%,
+          rgba(145, 108, 196, 0.14) 8%,
+          rgba(145, 108, 196, 0.55) 20%,
+          rgba(145, 108, 196, 0.85) 38%,
+          rgba(182, 122, 192, 1.00) 68%,
+          rgba(214, 126, 179, 1.00) 100%);
     }
 
     .hero-full img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      display: block;
       object-fit: cover;
+      object-position: center top;
     }
 
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top,
-          rgba(214, 126, 179, 1.00) 0%,
-          rgba(182, 122, 192, 1.00) 24%,
-          rgba(145, 108, 196, 1.00) 46%,
-          rgba(145, 108, 196, 0.12) 62%,
-          rgba(145, 108, 196, 0.00) 74%);
+      position: relative;
+      margin-top: -2px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding: 3.4rem 2.6rem 3rem;
+      padding: 3.2rem 2.6rem 1rem;
       text-align: center;
       color: #ffffff;
+      background: transparent;
     }
 
     .hero-name {
       font-family: "Great Vibes", cursive;
-      font-size: 8.2rem;
+      font-size: 6.2rem;
     }
 
     .hero-sub {
@@ -302,7 +306,7 @@
     /* REPRODUCTOR DE MÚSICA DENTRO DE LA INVITACIÓN */
     .music-section {
       padding: 1.4rem 1.6rem 0;
-      background: transparent;
+      background: #ffffff;
       display: flex;
       justify-content: center;
     }
@@ -362,7 +366,7 @@
 
     /* INTRO */
     .intro-section {
-      background: linear-gradient(to bottom, var(--crema), var(--crema-oscuro));
+      background: #FFFFFF;
       position: relative;
       overflow: hidden;
     }
@@ -559,6 +563,10 @@
       margin-bottom: 2rem;
     }
 
+    #evento {
+      background: #ffffff;
+    }
+
     .event-card {
       background: #ffffff;
       border-radius: 1.5rem;
@@ -650,7 +658,7 @@
 
     /* MESA DE REGALOS */
     .gifts-section {
-      background: var(--crema);
+      background: #FFFFFF;
     }
 
     .gift-options {
@@ -766,7 +774,7 @@
 
     /* CONFIRMACIÓN */
     .confirm-section {
-      background: linear-gradient(to bottom, var(--crema-oscuro), var(--crema));
+      background: #FFFFFF;
       position: relative;
     }
 
@@ -805,7 +813,7 @@
 
     /* GALERÍA – SLIDER */
     .gallery-section {
-      background: var(--crema);
+      background: #FFFFFF;
     }
 
     .gallery-slider {
@@ -1007,7 +1015,7 @@
       }
 
       body {
-        background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
+        background: #FFFFFF;
       }
     }
 
@@ -1029,10 +1037,12 @@
 
     <!-- 1. HERO -->
     <section id="inicio" class="hero-full">
-      <img src="img/PHOTO-2025-12-09-14-26-42.jpg" alt="">
+      <img src="img/final.jpg" alt="">
       <div class="hero-overlay">
         <div>
-          <div class="hero-name">Alexa & Eva</div>
+          <div class="hero-name">Alexa<br>
+ & <br>
+Eva</div>
           <div class="hero-sub">Nuestros XV Años</div>
         </div>
       </div>
@@ -1144,7 +1154,9 @@
           <p class="event-address">
             Blvd. Hidalgo 1165, Ayuntamiento, 88620 Reynosa, Tamps.
           </p>
-          <div class="event-time">08:00 pm a 01:00 am</div>
+          <div class="event-time">08:00 pm<br>
+ a <br>
+01:00 am</div>
           <a href="https://maps.app.goo.gl/YhSCH6qcYpmfKYGF9" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
           </a>
@@ -1241,7 +1253,7 @@
    FIN ITINERARIO -->
 
     <!-- 5. FOTO DESTACADA -->
-    <div align="center"><img src="img/cenefa.png" width="80%" alt="Foto"></div>
+   
 
     <!-- 6. MESA DE REGALOS 
     <section id="regalos" class="gifts-section">
@@ -1280,6 +1292,10 @@
     </section> -->
 
     <section id="regalos" class="gifts-section">
+		 <div align="center"><img src="img/cenefa.png" width="80%" alt="Foto"></div>
+		<br>
+<br>
+
       <div align="center"><img src="img/cenefa_3.png" width="100%" alt="Foto"></div>
       <div class="section-title-script">Código de Vestimenta</div>
       <div class="flourish"></div>
@@ -1290,6 +1306,7 @@
 
           <p class="gift-sub">Código de Vestimenta:</p>
           <div class="gift-title">FORMAL</div>
+			<p class="gift-sub">Con cariño, les pedimos que los colores <strong>rosa y lila</strong> queden reservados para nuestras quinceañeras.</p>
         </div>
 
         <div align="center"><img src="img/cenefa_2.png" width="100%" alt="Foto"></div>
@@ -1337,18 +1354,18 @@
     </section> -->
 
 
-    <!-- 8. GALERÍA – SLIDER 
+    <!-- 8. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
-      <div class="section-title-main">Un poquito de mi historia</div>
+      <div class="section-title-main">Un poquito de nuestra historia</div>
       <div class="flourish"></div>
       <p class="section-sub">
-        Algunas fotos que cuentan cómo pasé de muñecas y risas de niña,
+        Algunas fotos que cuentan cómo pasamos de muñecas y risas de niñas,
         a este momento en el que brilla un nuevo capítulo.
       </p>
 
       <div class="gallery-slider reveal reveal-right">
         <div class="gallery-slide-frame">
-          <img id="gallerySlide" src="img/PHOTO-2025-12-05-13-07-16_1.jpg" alt="Foto de la galería">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de la galería">
           <button class="gallery-nav prev" id="galleryPrev">‹</button>
           <button class="gallery-nav next" id="galleryNext">›</button>
         </div>
@@ -1356,7 +1373,7 @@
       </div>
     </section>
 
- LIGHTBOX GALERÍA 
+
     <div id="lightbox" class="lightbox">
       <div class="lightbox-overlay" id="lightboxOverlay"></div>
       <div class="lightbox-content">
@@ -1365,7 +1382,7 @@
         <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
         <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
       </div>
-    </div> -->
+    </div> 
 
     <!-- 9. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
@@ -1426,7 +1443,7 @@
 
       <div class="event-card reveal reveal-right">
         <div align="center">
-          <img src="img/foto-final.jpeg" width="100%" alt="Foto final">
+          <img src="img/PHOTO-2025-12-09-14-26-42.jpg" width="100%" alt="Foto final">
         </div>
       </div>
     </section>
@@ -1655,13 +1672,11 @@
 
     // GALERÍA – SLIDER + LIGHTBOX (se mantiene igual aunque no esté en el HTML visible)
     const galleryImages = [
-      "img/PHOTO-2025-12-05-13-07-16_1.jpg",
-      "img/PHOTO-2025-12-05-13-07-15_3.jpg",
-      "img/PHOTO-2025-12-05-13-07-16_2.jpg",
-      "img/PHOTO-2025-12-06-11-18-03_3.jpg",
-      "img/PHOTO-2025-12-05-13-07-15.jpg",
-      "img/PHOTO-2025-12-05-13-07-15_1.jpg",
-      "img/PHOTO-2025-12-06-11-18-03_2.jpg"
+      "img/galeria/1.jpeg",
+		"img/galeria/3.jpeg",
+		"img/galeria/2.jpeg",
+		"img/PHOTO-2025-12-09-14-26-42.jpg"
+     
 
     ];
 
