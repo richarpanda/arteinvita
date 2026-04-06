@@ -256,44 +256,53 @@
     }
 
     /* HERO A PANTALLA COMPLETA */
+    
+	  
+	  
+	  
+
+    /* HERO A PANTALLA COMPLETA */
     .hero-full {
       position: relative;
+      min-height: calc(100vh - 50px);
       padding: 0;
       overflow: hidden;
-      background: linear-gradient(to bottom,
-          rgba(226, 175, 168, 0.00) 0%,
-          rgba(226, 175, 168, 0.00) 2%,
-          rgba(226, 175, 168, 0.14) 8%,
-          rgba(226, 175, 168, 0.55) 20%,
-          rgba(226, 175, 168, 0.85) 38%,
-          rgba(226, 175, 168, 1.00) 68%,
-          rgba(182, 122, 192, 1.00) 100%);
     }
-	  
 
     .hero-full img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
       object-fit: cover;
-      object-position: center top;
     }
 
-    .hero-overlay {
-      position: relative;
-      margin-top: -2px;
+   .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(226, 175, 168, 0.00) ,
+          rgba(226, 175, 168, 0.00) ,
+          rgba(226, 175, 168, 0.00) ,
+          rgba(226, 175, 168, 0.00) ,
+          rgba(226, 175, 168, 0.30) ,
+          rgba(226, 175, 168, 1.00) ,
+		  rgba(226, 175, 168, 1.00) ,
+		  rgba(182, 122, 192, 1.00),
+          rgba(182, 122, 192, 1.00) 
+	   
+	   
+      );
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding: 3.2rem 2.6rem 1rem;
+      padding: 3.4rem 2.6rem 3rem;
       text-align: center;
       color: #ffffff;
-      background: transparent;
     }
 
     .hero-name {
       font-family: "Great Vibes", cursive;
-      font-size: 6.2rem;
+      font-size: 5.2rem;
+      margin-bottom: 4.4rem;
     }
 
     .hero-sub {
@@ -303,7 +312,6 @@
       text-transform: uppercase;
       color: #ffffff;
     }
-
     /* REPRODUCTOR DE MÚSICA DENTRO DE LA INVITACIÓN */
     .music-section {
       padding: 1.4rem 1.6rem 0;
@@ -1037,12 +1045,14 @@
   <main>
 
     <!-- 1. HERO -->
-    <section id="inicio" class="hero-full">
-      <img src="img/final.jpg" alt="">
+    
+	  
+	   <section id="inicio" class="hero-full">
+      <img src="img/inicio.jpeg" alt="">
       <div class="hero-overlay">
         <div>
-          <div class="hero-name">Alexa<br>
- & <br>
+          <div class="hero-name">Alexa
+ & 
 Eva</div>
           <div class="hero-sub">Nuestros XV Años</div>
         </div>
@@ -1444,7 +1454,7 @@ Eva</div>
 
       <div class="event-card reveal reveal-right">
         <div align="center">
-          <img src="img/PHOTO-2025-12-09-14-26-42.jpg" width="100%" alt="Foto final">
+          <img src="img/final.jpg" width="100%" alt="Foto final">
         </div>
       </div>
     </section>
