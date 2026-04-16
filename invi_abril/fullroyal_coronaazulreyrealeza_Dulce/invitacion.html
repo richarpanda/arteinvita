@@ -1631,11 +1631,13 @@ Dulce Alegría!</div>
       document.removeEventListener("scroll", attemptAutoplay);
     }
     window.addEventListener("load", () => {
+      music.volume = 1;
       attemptAutoplay();
-      document.addEventListener("click", attemptAutoplay);
-      document.addEventListener("touchstart", attemptAutoplay);
-      document.addEventListener("scroll", attemptAutoplay);
+      setTimeout(attemptAutoplay,300);
+      setTimeout(attemptAutoplay,1200);
+      ["click","touchstart","touchend","scroll"].forEach(evt=>document.addEventListener(evt, attemptAutoplay, {passive:true}));
     });
+    document.addEventListener("visibilitychange",()=>{ if(!document.hidden) attemptAutoplay(); });
 
     // =========================
     // ✅ REVEAL
