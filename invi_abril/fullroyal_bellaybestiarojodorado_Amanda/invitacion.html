@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis XV Amanda</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    :root{
+      --verde: #5a7759;
+      --rojo: #b91c1c;
+      --rojo-claro: #b91c1c;
+      --dorado: #c9a24f;
+      --crema: #ffffff;
+      --crema-oscuro:#f9f9f9;
+      --texto:#2f2f38;
+      --gris:#000000;
+      --borde:#e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15,23,42,0.12);
+      --shadow-prem: 0 26px 70px rgba(15,23,42,0.18);
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: 'Gabriola', serif, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background:#EBEBEB;
+      font-size: 18px;
+    }
+    img{ max-width:100%; display:block; }
+
+    a{ text-decoration:none; color: var(--gris); }
+    a:hover{ color:#4b5563; }
+
+    button{
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    button:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+    }
+    button:active{
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    /* =========================
+       CONTENEDOR / FONDO PREMIUM
+    ========================= */
+    main{
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* grain overlay */
+    main::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity: .08;
+      background-image: radial-gradient(rgba(0,0,0,0.18) 0.6px, transparent 0.7px);
+      background-size: 5px 5px;
+      mix-blend-mode: soft-light;
+    }
+
+    main::before{
+      content:"";
+      position:absolute;
+      top:-140px;
+      left:50%;
+      transform: translateX(-50%);
+      width: 560px;
+      height: 280px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.85), rgba(255,255,255,0));
+      opacity: .85;
+      z-index:0;
+      pointer-events:none;
+      filter: blur(2px);
+    }
+
+    section{ padding: 3rem 1.6rem; position: relative; z-index:1; }
+
+    /* ✅ contenido más angosto para dejar diseño a los lados */
+    .content{
+      width: 100%;
+      max-width: 360px; /* ajusta a gusto */
+      margin: 0 auto;
+    }
+
+    .section-title-script{
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--dorado);
+      text-align:center;
+      margin-bottom: 0.2rem;
+    }
+    .section-title-main{
+       font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      text-align:center;
+      color: #af8843;
+      margin-bottom: 0.2rem;
+    }
+    .section-sub{
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align:center;
+      line-height: 1.25;
+      margin-top: 1rem;
+    }
+    .flourish{
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* =========================
+       ✅ FONDO FIJO SOLO HERO+INTRO
+    ========================= */
+    .bg-fixed{
+    background-image: url("img/bg-paper-2.png"); /* ✅ igual que inicio. Si quieres el otro: img/bg-event.png */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .bg-top{
+  background-image: url("img/bg-paper.png");
+  background-repeat: repeat-y;   /* ✅ para que no se “moche” */
+  background-position: center top;
+  background-size: 520px auto;   /* ✅ tamaño controlado en desktop */
+}
+
+    /* =========================
+       ✅ EVENTO SIN PARALLAX (mismo estilo fondo fijo)
+    ========================= */
+    .bg-event-fixed{
+      background-image: url("img/bg-paper-2.png"); /* ✅ igual que inicio. Si quieres el otro: img/bg-event.png */
+      background-size: 520px auto;
+      background-position: center center;
+      background-repeat: repeat-y;
+      background-attachment: scroll;
+      position: relative;
+      overflow: hidden;
+    }
+    .bg-event-fixed::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.22), rgba(255,255,255,0.55));
+      pointer-events:none;
+    }
+    .bg-event-fixed > *{
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =========================
+       HERO PREMIUM
+    ========================= */
+    .hero-wrap{ padding: 30px; background: transparent; }
+    .hero-card{ margin: 0 auto; padding: 3.6rem 2.0rem 0; position: relative; }
+
+    .hero-frame{
+      border-radius: 150px 150px 28px 28px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+    .hero-frame::before{
+      content:"";
+      position:absolute;
+      inset: 10px;
+      border-radius: 145px 145px 22px 22px;
+      border: 1px solid rgba(17,24,39,0.10);
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .hero-media{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .hero-media img,
+    .hero-media video{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center center;
+      display:block;
+      transform: scale(1.0);
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), rgba(0,0,0,0.25));
+      opacity: .35;
+      pointer-events:none;
+    }
+
+    .hero-bottom{
+      padding: 2.8rem 1.4rem 2.2rem;
+      text-align:center;
+      background: rgba(255,255,255,1.00);
+      position: relative;
+      z-index: 3;
+    }
+    .hero-names{
+      font-family: "Great Vibes", cursive;
+      font-size: 4.10rem;
+      color: #8f1010;
+      line-height: 1.0;
+    }
+    .hero-subline{
+      font-family: "Playfair Display", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: #8f1010;
+      margin-top: 0.85rem;
+    }
+    .hero-date{
+      margin-top: 1.25rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 2.25rem;
+      letter-spacing: 0.07em;
+      color: var(--dorado);
+    }
+
+     /* =========================
+       MUSIC STRIP (más discreta)
+    ========================= */
+    .music-strip{ padding: 0.75rem 1.4rem 0; background: transparent; }
+    .music-strip-inner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0.42rem 0.65rem;
+    }
+    .music-btn{
+      border:none;
+      background: transparent;
+      cursor:pointer;
+      padding: 0.12rem 0.25rem;
+      display:flex;
+      align-items:center;
+      gap: .55rem;
+    }
+    .music-icon{
+      width: 22px; height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,24,39,0.16);
+      background: rgba(255,255,255,0.88);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .music-icon.paused::before{
+      content:"";
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent rgba(17,24,39,0.62);
+      transform: translateX(1px);
+    }
+    .music-icon.playing::before,
+    .music-icon.playing::after{
+      content:"";
+      position:absolute;
+      width: 3px;
+      height: 10px;
+      background: rgba(17,24,39,0.58);
+      border-radius: 2px;
+    }
+    .music-icon.playing::before{ left: 8px; }
+    .music-icon.playing::after{ right: 8px; }
+    .music-label{
+      font-family:"Poppins", sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(17,24,39,0.50);
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+    .intro-paper{ padding-top: 4.2rem; padding-bottom: 4.8rem; }
+    .intro-card{
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15,23,42,0.14);
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    .intro-card::before{
+      content:"";
+      position:absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(175,136,67,0.25);
+      pointer-events:none;
+    }
+
+    .date-container{
+      font-family: 'Gabriola', serif, "Segoe UI", sans-serif;
+      text-align:center;
+      color:#8f1010;
+      width:100%;
+    }
+    .day{
+      font-size: 3.2em;
+      border-bottom: 2px solid #8f1010;
+      display:inline-block;
+      padding: 0 30px 2px;
+    }
+    .number{ font-size: 9em; font-weight: lighter; line-height: 1; }
+    .month{
+      font-size: 3.2em;
+      border-top: 2px solid #8f1010;
+      display:inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-script{
+      font-family:"Great Vibes", cursive;
+      font-size: 2.6rem;
+      color:#af8843;
+      margin-top: 1.1rem;
+      text-align:center;
+    }
+    .intro-parents-title{
+      font-family:"Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align:center;
+    }
+    .intro-list{
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      text-align:center;
+    }
+
+    /* =========================
+       CONTADOR (IGUAL)
+    ========================= */
+    .save-date-min{
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/counter_2.jpeg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #111827;
+    }
+    .save-date-min::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.85));
+    }
+    .save-date-min-inner{ position: relative; text-align:center; }
+    .save-date-min-title{
+      font-family:"Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color:#111827;
+      opacity:0.9;
+      margin-bottom: 1.2rem;
+    }
+    .countdown-min{
+      width:100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(17,24,39,0.10);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(15,23,42,0.10);
+      backdrop-filter: blur(8px);
+    }
+    .countdown-time{
+      font-family:"Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color:#0f172a;
+      display:flex;
+      justify-content:center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+    .countdown-time span{ display:inline-block; min-width:2ch; }
+    .countdown-labels{
+      margin-top: 0.6rem;
+      display:flex;
+      justify-content:center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color:#6b7280;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .countdown-note{
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color:#111827;
+      opacity:0.9;
+    }
+
+    /* =========================
+       EVENTOS (más delgado)
+    ========================= */
+    .when-where-header{ text-align:center; margin-bottom:2rem; }
+
+    .event-card{
+      background:#ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(249, 220, 214, 0.8);
+      overflow:hidden;
+      margin: 0 auto 2rem;
+      max-width: 360px;
+    }
+
+    .event-card img.event-photo{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+    }
+
+    .event-content{
+      padding: 1.4rem 1.2rem 1.6rem;
+      text-align:center;
+    }
+
+    .event-script{
+      font-family:"Great Vibes", cursive;
+      font-size: 3.8rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+    }
+    .event-label{
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+    }
+    .event-title{
+      font-weight:700;
+      font-size: 2.0rem;
+      margin-bottom: 0.30rem;
+      color: #8f1010;
+    }
+    .event-address{
+      font-size: 1.5rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+    .event-time{
+      margin-top: 1.2rem;
+      font-weight:700;
+      color: #8f1010;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+    .btn-ubicacion{
+      margin-top: 1rem;
+      display:inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border:none;
+      background:#af8843;
+      color:#fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor:pointer;
+    }
+
+    /* =========================
+       NUEVA SECCIÓN: CALENDARIO INTERACTIVO
+    ========================= */
+    .calendar-section{
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+    .calendar-container{
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+    }
+    .calendar-header{
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .calendar-month{
+      font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      color: #8f1010;
+      margin-bottom: 0.5rem;
+    }
+    .calendar-grid{
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
+    }
+    .calendar-day{
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gabriola', serif;
+      font-size: 1.6rem;
+      color: #8f1010;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .calendar-day:hover{
+      background: rgba(175, 136, 67, 0.1);
+    }
+    .calendar-day.selected{
+      background: rgba(175, 136, 67, 0.15);
+      font-weight: 600;
+    }
+    .calendar-day.special::after{
+      content: "♥";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 1.2rem;
+      color: #d4909a;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.15); }
+      50% { transform: scale(1); }
+    }
+
+    /* =========================
+       NUEVA SECCIÓN: GALERÍA CON SLIDER
+    ========================= */
+    .gallery-section{
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+    .gallery-preview{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+    .gallery-preview-item{
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-preview-item:hover{
+      transform: translateY(-4px) rotate(-1deg);
+    }
+    .gallery-preview-item img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .btn-ver-galeria{
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.9rem 2.5rem;
+      border-radius: 999px;
+      border: none;
+      background: #af8843;
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(175, 136, 67, 0.3);
+    }
+
+    /* Slider / Lightbox */
+    .gallery-lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-lightbox.active{
+      display: flex;
+      opacity: 1;
+    }
+    .gallery-lightbox-content{
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+    .gallery-lightbox img{
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+    .gallery-nav{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #8f1010;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .gallery-nav:hover{
+      background: rgba(175, 136, 67, 0.9);
+      color: #fff;
+    }
+    .gallery-nav.prev{ left: -20px; }
+    .gallery-nav.next{ right: -20px; }
+    .gallery-close{
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #af8843;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+    }
+    .gallery-close:hover{
+      background: #8d6935;
+      transform: rotate(90deg);
+    }
+    .gallery-counter{
+      text-align: center;
+      margin-top: 1rem;
+      font-family: "Playfair Display", serif;
+      color: #8f1010;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ITINERARIO */
+    .itinerary-section{ background: transparent; }
+    .itinerary-title{
+      font-family:"Great Vibes", cursive;
+      font-size: 4.5rem;
+      color:var(--dorado);
+      text-align:center;
+      margin-bottom:1rem;
+    }
+    .itinerary-date{
+      font-family:"Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-align:center;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+    .itinerary-timeline{ max-width: 400px; margin: 0 auto; }
+    .itinerary-item{
+      display:flex;
+      align-items:center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      opacity:0;
+      transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+    .itinerary-item.visible{ opacity:1; transform: translateY(0); }
+    .itinerary-icon-wrapper{ flex-shrink:0; width:80px; display:flex; justify-content:center; }
+    .itinerary-divider{ flex-shrink:0; width:80px; height:2px; background: var(--dorado); }
+    .itinerary-content{ flex:1; text-align:left; }
+    .itinerary-time{
+      font-family:"Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--dorado);
+      font-weight:600;
+      margin-bottom: 0.2rem;
+    }
+    .itinerary-event{
+      font-size: 1.4rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Vestimenta + botones (igual) */
+    .gifts-section{ background: transparent; }
+    .gift-options{ margin-top: 1rem; }
+    .gift-item{ text-align:center; margin-bottom:2rem; color: var(--texto); }
+    .gift-sub{ font-size:1.6rem; color: var(--gris); }
+    .btn-insta{
+      margin-top: 1.3rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: 2px solid #af8843;
+      background:#fff;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor:pointer;
+      color: #af8843;
+    }
+    
+    
+    /* INSTAGRAM / HASHTAG */
+    .hashtag-section { padding: 0; }
+
+    .hashtag-photo-wrap {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .hashtag-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hashtag-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.25));
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 2.8rem 1.6rem;
+    }
+
+    .hashtag-text {
+      font-size: 1.0rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hashtag-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.5rem;
+      margin-top: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hashtag-tag {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #facc15;
+    }
+
+    .insta-handle-card {
+      padding: 2.1rem 1.6rem 2.6rem;
+      background: var(--crema-oscuro);
+      text-align: center;
+    }
+
+    .insta-handle {
+      margin-top: 0.6rem;
+      color: var(--rojo);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .btn-insta {
+      margin-top: 1.3rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid #8f1010;
+      background: #fff;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--texto);
+    }
+
+    /* =========================
+       CONFIRMACIÓN
+    ========================= */
+    .confirm-bg{
+      background-image: url("img/bg-paper-2.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat:no-repeat;
+    }
+    .confirm-bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0.10));
+      pointer-events:none;
+    }
+    .confirm-inner{ position: relative; z-index: 1; }
+    .confirm-title-script{
+      font-family:"Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--dorado);
+      text-align:center;
+      margin-bottom: 0.2rem;
+    }
+    .confirm-flourish{
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat:no-repeat;
+      background-size: contain;
+      background-position:center;
+    }
+    .btn-whats{
+      display:block;
+      width:100%;
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 0.9rem 1.1rem;
+      border-radius: 999px;
+      border:none;
+      background:#af8843;
+      color:#fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor:pointer;
+    }
+    .event-card-final{
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(17,24,39,0.10);
+      border-radius: 22px;
+      overflow:hidden;
+      box-shadow: 0 22px 65px rgba(15,23,42,0.14);
+      backdrop-filter: blur(12px);
+    }
+
+    /* IR ARRIBA */
+    .scroll-top{
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: #af8843;
+      color: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+      cursor:pointer;
+      z-index: 60;
+      opacity:0;
+      visibility:hidden;
+      transition: opacity .25s ease-out, transform .25s ease-out, visibility .25s;
+    }
+    .scroll-top.visible{ opacity:1; visibility:visible; transform: translateY(-4px); }
+
+    footer{
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align:center;
+      color: #462B0D;
+    }
+
+    /* REVEAL */
+    .reveal{ opacity:0; transition: opacity .0s ease-out, transform .7s ease-out; }
+    .reveal-left{ transform: translateX(-40px); }
+    .reveal-right{ transform: translateX(40px); }
+    .reveal.visible{ opacity:1; transform: translateX(0); }
+
+    @media (min-width: 768px){
+      main{ border-radius: 40px; margin-top: 12px; margin-bottom: 12px; }
+      body{ background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb); }
+      .hero-frame{ border-radius: 32px; }
+      .gallery-nav.prev{ left: -25px; }
+      .gallery-nav.next{ right: -25px; }
+    }
+
+    /* Fondo fijo como hero/intro pero para confirmación */
+    .bg-bottom{
+      background-image: url("img/bg-paper-2.png");
+    }
+
+    /* Tarjeta cristal premium reusable (igual vibe que intro) */
+    .glass-card{
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15,23,42,0.14);
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    .glass-card::before{
+      content:"";
+      position:absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(175,136,67,0.25);
+      pointer-events:none;
+    }
+    
+    /* =========================
+   FIX: iOS/Android rompe background-attachment: fixed
+   => Solo desactivarlo en dispositivos táctiles
+========================= */
+@media (hover: none) and (pointer: coarse) {
+  .bg-fixed{
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+
+.bg-bottom{
+  background-image: url("img/bg-paper-2.png");
+  background-repeat: repeat-y;   /* ✅ para que no se “moche” */
+  background-position: center top;
+  background-size: 520px auto;   /* ✅ tamaño controlado en desktop */
+}
+
+/* ✅ móvil: ajusta al ancho del contenedor */
+@media (max-width: 520px){
+  .bg-top, .bg-bottom{
+    background-size: 100% auto;
+  }
+}
+
+@supports (-webkit-touch-callout: none){
+  .bg-fixed{
+    background-attachment: scroll !important;
+  }
+}
+    
+/* =========================
+   FIX REAL iOS SAFARI (sin blanco)
+   Fondo en ::before para evitar zoom/pixel
+========================= */
+
+.bg-fixed, .bg-top, .bg-bottom{
+  position: relative;
+  overflow: hidden;
+}
+
+/* asegura que el contenido quede arriba del fondo */
+.bg-fixed > *, .bg-top > *, .bg-bottom > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Fondo base (desktop) */
+.bg-top::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("img/bg-paper.png") center top / 520px auto repeat-y;
+  z-index:0;
+}
+
+.bg-bottom::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("img/bg-paper-2.png") center top / 520px auto repeat-y;
+  z-index:0;
+}
+
+/* móvil */
+@media (max-width: 520px){
+  .bg-top::before,
+  .bg-bottom::before{
+    background-size: 100% auto;
+  }
+}
+
+/* iOS Safari: quitar fixed y evitar recalculo */
+@supports (-webkit-touch-callout: none){
+  .bg-fixed{
+    background-attachment: scroll !important;
+    background-image: none !important; /* el bg ahora lo controla bg-top/bg-bottom via ::before */
+  }
+  .bg-top, .bg-bottom{
+    background-image: none !important; /* importante para que NO compita con ::before */
+  }
+  .bg-top::before,
+  .bg-bottom::before{
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+   
+
+    
+  </style>
+</head>
+
+<body>
+  <audio id="bg-music" src="cancion.mp3" loop autoplay></audio>
+
+  <main id="paperBg">
+
+    <!-- ✅ Fondo fijo SOLO HERO + INTRO -->
+    <div id="topBg" class="bg-fixed bg-top">
+      <!-- HERO -->
+      <section id="inicio" class="hero-wrap">
+        <div class="hero-card reveal reveal-left">
+          <div class="hero-frame">
+            <div class="hero-media">
+  <video
+    src="img/video.mp4"
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="auto"
+     poster="img/cover.jpg"
+  ></video>
+</div>
+
+
+            <div class="hero-bottom">
+              <div class="hero-names">Amanda</div>
+              <div class="hero-subline">El gran día llegó</div>
+              <div class="hero-date">Mis XV Años</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC STRIP -->
+      <section class="music-strip">
+        <div class="music-strip-inner reveal reveal-center">
+          <button class="music-btn" id="musicToggle" aria-label="Control de música">
+            <div class="music-icon paused" id="musicIcon"></div>
+            <span class="music-label" id="musicStatus">Play</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section id="intro" class="intro-paper">
+        <div class="intro-card reveal reveal-left">
+          <div class="content">
+            <div class="date-container">
+              <div class="day">Sábado</div>
+              <div class="number">09</div>
+              <div class="month">Mayo</div>
+            </div>
+
+            <p class="section-sub" style="margin-top:1.6rem;">
+              Hay momentos inolvidables que <br>
+              se atesoran en el corazón <br>
+              para siempre,<br>
+              y con la bendición de Dios <br>
+              y el amor de <br>
+              mi familia me siento muy <br>
+              feliz de llegar <br>
+              a ese momento de mi vida.
+              <br><br>
+              Por esta razón queremos que <br>
+              nos acompañen <br>
+              en este día tan especial.
+            </p>
+<div class="intro-parents-title">Junto a mis padres:</div>
+        <p class="intro-list">
+             Rubicel Gómez<br>y<br>Yuridia Hernández 
+            </p>
+            <div class="flourish"></div>
+
+            <p class="intro-script">Tu presencia hará<br>
+              de este día
+              un recuerdo <br>
+              inolvidable.</p>
+
+            
+            
+
+            <div class="intro-parents-title">Mis padrinos: </div>
+            
+            <p class="intro-list">
+             Porfirio González<br>y<br>Alvina González 
+            </p>
+
+            <div class="flourish"></div>
+          </div>
+        </div>
+      </section>
+    </div><!-- /topBg -->
+
+    <!-- ✅ CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-right">
+        <div class="content">
+          <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+          <div class="countdown-min" aria-label="Cuenta regresiva">
+            <div class="countdown-time">
+              <span id="cdDays">0</span>:
+              <span id="cdHours">00</span>:
+              <span id="cdMins">00</span>:
+              <span id="cdSecs">00</span>
+            </div>
+            <div class="countdown-labels">
+              <span>Días</span><span>Horas</span><span>Min</span><span>Seg</span>
+            </div>
+          </div>
+
+          <p class="countdown-note">¡Te espero con mucha ilusión!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ EVENTO (YA SIN PARALLAX, con fondo fijo igual al inicio) -->
+    <section id="evento" class="bg-event-fixed">
+      <div class="content">
+        <div class="when-where-header reveal reveal-left">
+          <div class="section-title-script">¿Cuándo y dónde?</div>
+          <div class="flourish"></div>
+        </div>
+      </div>
+ <!--  -->
+      
+      <div class="event-card reveal reveal-right">
+        <img src="img/Salon-portada.png" alt="Ceremonia" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Iniciamos con la</div>
+            <div class="event-script">Ceremonia Religiosa</div>
+            <div class="event-title">Parroquia de Nuestra Señora de La Encarnacion Zacualtipan</div>
+            <p class="event-address">Pl. de la Constitución 14, Centro, 43200 Zacualtipán, Hgo.</p>
+            <div class="event-time">17:00 HRS</div>
+            <a href="https://maps.app.goo.gl/ALBfQrzctwWdGzhe9?g_st=iw" target="_blank" rel="noopener">
+              <button class="btn-ubicacion">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card reveal reveal-left">
+        <img src="img/Salon-portada_2.png" alt="Recepción" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Continuamos con la</div>
+            <div class="event-script">Recepción del Evento</div>
+            <div class="event-title">Salón Ejidal Atopixco Hidalgo</div>
+            <p class="event-address">Atopixco, Hgo.</p>
+            <div class="event-time">18:00 HRS</div>
+            <a href="https://maps.app.goo.gl/ZkUxTjFNB6VFwXv5A" target="_blank" rel="noopener">
+              <button class="btn-ubicacion">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section id="calendario" class="calendar-section">
+    
+    <div align="center"><img src="img/reloj.png" width="70%" alt="Foto"></div>
+      <div class="content">
+        <div class="section-title-script reveal reveal-left">Recuerda la fecha del evento</div>
+        <div class="flourish"></div>
+<div align="center">
+        <div class="calendar-container reveal reveal-right">
+          <div class="calendar-header">
+            <div class="calendar-month">Mayo</div>
+          </div>
+
+          <div class="calendar-grid" id="calendarGrid"></div>
+      </div></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA--> 
+    <!-- GALERÍA: N/A
+<section id="galeria-fotos" class="gallery-section">
+    <div align="center"><img src="img/cenefa_3.png" width="50%" alt="Foto"></div>
+      <div class="content">
+        <div class="section-title-script reveal reveal-left">Galeria de Fotos</div>
+        <div class="flourish"></div>
+
+        <p class="section-sub reveal reveal-right">
+          Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia.
+        </p>
+
+        <div class="gallery-preview reveal reveal-left">
+          <div class="gallery-preview-item" onclick="openGallery(0)">
+            <img src="img/galeria/1.jpeg" alt="Foto 1">
+          </div>
+          <div class="gallery-preview-item" onclick="openGallery(1)">
+            <img src="img/galeria/2.jpeg" alt="Foto 2">
+          </div>
+        </div>
+
+        <button class="btn-ver-galeria reveal reveal-right" onclick="openGallery(0)">
+          Ver Galería Completa
+        </button>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="galleryLightbox">
+      <div class="gallery-lightbox-content">
+        <button class="gallery-close" onclick="closeGallery()">&times;</button>
+        <button class="gallery-nav prev" onclick="changeImage(-1)">❮</button>
+        <img id="galleryImage" src="/placeholder.svg" alt="Imagen de galería">
+        <button class="gallery-nav next" onclick="changeImage(1)">❯</button>
+        <div class="gallery-counter">
+          <span id="currentImage">1</span> / <span id="totalImages">0</span>
+        </div>
+      </div>
+-->
+    </div>
+
+    <!-- ITINERARIO
+    <section id="itinerario" class="itinerary-section">
+      <div class="content">
+        <div class="flourish"></div>
+        <h2 class="itinerary-title">Itinerario</h2>
+        <p class="itinerary-date">09 de Mayo de 2026</p>
+    </div>
+     <div class="itinerary-timeline">
+          
+
+          <div class="itinerary-item reveal reveal-right">
+            <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt=""></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">17:00 Hrs</div>
+              <div class="itinerary-event">Ceremonia Religiosa</div>
+            </div>
+          </div>
+     
+     <div class="itinerary-item reveal reveal-left">
+            <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt=""></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">20:00 Hrs</div>
+              <div class="itinerary-event">Recepción del Evento</div>
+            </div>
+          </div>    
+      
+      
+        
+    
+       
+      </div>
+    </section> 
+-->
+    
+
+    <!-- VESTIMENTA -->
+    <div align="center"><img src="img/cenefa_6.png" width="50%" alt="Foto"></div>
+    <section id="regalos" class="gifts-section">
+    
+      <div class="content">
+        <div class="section-title-script">Código de Vestimenta</div>
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-right">
+          <div class="gift-item">
+            <div align="center"><img src="img/vestimenta.png" width="50%" alt=""></div>
+            <p class="gift-sub">Código de Vestimenta:</p>
+        <p class="gift-sub"><strong>Formal</strong></p>
+            <div class="intro-list">Les pedimos con cariño reservar los colores rojo, dorado y beige para la quinceañera.</div>
+          </div>
+          
+        </div>
+      </div>
+    
+    </section>
+    
+    
+    <!-- 6. MESA DE REGALOS -->
+    <section id="regalos" class="gifts-section">
+     <div align="center"><img src="img/sobre_regalo.png" width="80%"></div>
+      <div class="section-title-script">Mesa de Regalos</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <!-- Depósito -->
+        <div class="gift-item">
+         
+      <p class="gift-sub"><strong>Tu cariño es mi mejor regalo,</strong><br>
+ pero si deseas darme algo especial habrá una mesa donde podrás colocar tu regalo.</p>
+      
+      <div class="intro-parents-title">¡Gracias!</div>
+      
+       
+       
+        </div>
+
+      </div>
+    
+    
+    </section>
+    
+    <div align="center"><img src="img/cenefa_7.png" width="90%" alt="Foto"></div>
+    
+    <!--  7. INSTAGRAM / HASHTAG
+    <section id="insta" class="hashtag-section">
+    
+     <div class="insta-handle-card reveal reveal-right">
+       <div align="center"> <div class="gift-icon"><img src="img/camara.png" width="60%"></div></div>
+       <div class="section-title-script">Captura cada Instante</div>
+      <div class="flourish"></div>
+        <p class="section-sub" style="margin-top:0;">
+          También puedes etiquetar a nuestra
+quinceañera en IG con su username
+        </p>
+        <div class="section-sub">@cami</div>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">
+          <button class="btn-insta">Abrir Instagram</button>
+        </a>
+      </div>
+    
+      <div class="hashtag-photo-wrap">
+        <img src="img/counter.png" alt="fiesta">
+        <div class="hashtag-overlay reveal reveal-left">
+          <div>
+            <p class="hashtag-text">
+              Comparte conmigo, publica tus momentos de la fiesta en redes sociales
+            </p>
+            <p class="hashtag-script">con el hashtag</p>
+            <p class="hashtag-tag">#MISXVCAMI</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    -->
+    
+    
+    
+
+    <!-- ÁLBUM -->
+    <!-- ÁLBUM QR: N/A
+<section id="galeria" class="gifts-section">
+      <div class="content">
+      
+        <p class="section-sub">Escanear y subir Foto</p>
+        <div align="center"><img src="img/XV - MARIA FERNANDA_galeria_QR.png" width="50%" alt=""></div>
+        <div class="section-title-main">Galería de Recuerdos</div>
+        <div class="flourish"></div>
+        <p class="section-sub">Da click aquí para subir las fotos que tomes durante la fiesta o escribeme una dedicatoria.<br> Y forma parte de mis recuerdos más especiales.</p>
+
+        <div align="center" style="margin-top:1rem;">
+          <a href="https://app.arteinvita.com/gallery/xv-maria-fernanda-1771354039063?token=6ca6957069e02e6c02d33bb394393684" target="_blank" rel="noopener">
+            <button class="btn-insta">Subir foto o dedicatoriaria</button>
+          </a>
+        </div>
+      </div>
+    </section>
+-->
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion" class="bg-fixed bg-bottom">
+      <div class="confirm-inner reveal reveal-left">
+
+        <div class="glass-card">
+          <div class="content">
+			  <div align="center"><img src="img/cenefa_6.png" width="60%" alt="Foto"></div>
+            <div class="confirm-title-script">¿Asistirás?</div>
+            <div class="confirm-flourish"></div>
+            <p class="section-sub">
+              ¡Será increíble contar con tu presencia!<br>
+              Por favor, confirma tu asistencia a este día tan especial para mí.
+              <br>Tu respuesta es muy importante.
+            </p>
+
+            <p class="section-sub">
+              <em>Confirma tu asistencia por WhatsApp</em>
+              <br><br>
+            </p>
+            <!--
+             <button class="btn-whats" onclick="ArteInvita.open('AE5-73FF-CE6')">
+              <strong> Confirmar Asistencia</strong>
+            </button>-->
+
+            <a href="https://wa.me/527712883850?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Amanda%20el%2009%20de%20mayo%20de%202026.%20Nombre%3A" target="_blank" rel="noopener">
+              <button class="btn-whats"><strong>Confirmar con mamá</strong></button>
+            </a>
+
+            <br><br>
+
+            <a href="https://wa.me/527711004283?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Amanda%20el%2009%20de%20mayo%20de%202026.%20Nombre%3A" target="_blank" rel="noopener">
+              <button class="btn-whats"><strong>Confirmar con papá</strong></button>
+            </a>
+<br>
+            <div class="flourish"></div>
+
+            <p class="section-sub">¡Agradezco de corazón que<br>celebres conmigo!<br><br>¡Nos vemos pronto!</p>
+
+            <br>
+            <div class="section-title-main">¡Con Cariño <br>Amanda!</div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="content">
+          <div class="event-card-final reveal reveal-left">
+            <div align="center"><img src="img/final.png" width="100%" alt="Foto final"></div>
+          </div>
+
+         
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Mis XV Amanda</footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    // =========================
+    // ✅ CUENTA REGRESIVA
+    // =========================
+    const targetDate = new Date(2026, 4, 9, 17, 0, 0);
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) { return String(n).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================
+    // ✅ MÚSICA
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) {}
+    }
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) await playMusic();
+      else pauseMusic();
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+        cleanupAutoplayListeners();
+      } catch (e) {}
+    }
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // =========================
+    // ✅ REVEAL
+    // =========================
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    itineraryItems.forEach(el => observer.observe(el));
+
+    // =========================
+    // ✅ IR ARRIBA
+    // =========================
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // =========================
+    // CALENDARIO (Febrero)
+    // =========================
+    function generateCalendar() {
+      const calendarGrid = document.getElementById('calendarGrid');
+      const daysInMonth = 31;
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+
+        if (day === 9) {
+          dayElement.classList.add('special', 'selected');
+        }
+
+        dayElement.addEventListener('click', function() {
+          document.querySelectorAll('.calendar-day').forEach(d => {
+            if (!d.classList.contains('special')) {
+              d.classList.remove('selected');
+            }
+          });
+          this.classList.add('selected');
+        });
+
+        calendarGrid.appendChild(dayElement);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', generateCalendar);
+
+    // =========================
+    // GALERÍA
+    // =========================
+    const galleryImages = [
+      'img/galeria/1.jpeg',
+      'img/galeria/2.jpeg',
+      'img/galeria/3.jpeg',
+      'img/galeria/4.jpeg',
+      'img/galeria/5.jpeg',
+      'img/galeria/6.jpeg',
+      'img/galeria/7.jpeg',
+      'img/galeria/8.jpeg',
+      'img/galeria/9.jpeg',
+      'img/galeria/10.jpeg'
+     
+    ];
+
+    let currentImageIndex = 0;
+
+    function openGallery(index) {
+      currentImageIndex = index;
+      const lightbox = document.getElementById('galleryLightbox');
+      const galleryImage = document.getElementById('galleryImage');
+      const totalImagesSpan = document.getElementById('totalImages');
+
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      galleryImage.src = galleryImages[currentImageIndex];
+      totalImagesSpan.textContent = galleryImages.length;
+      updateImageCounter();
+    }
+
+    function closeGallery() {
+      const lightbox = document.getElementById('galleryLightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+
+      if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+      else if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+
+      document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+      updateImageCounter();
+    }
+
+    function updateImageCounter() {
+      document.getElementById('currentImage').textContent = currentImageIndex + 1;
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeGallery();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('galleryLightbox');
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        else if (e.key === 'ArrowRight') changeImage(1);
+      }
+    });
+
+    document.getElementById('galleryLightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeGallery();
+    });
+  </script>
+
+<script>
+// =========================
+// FIX AUTOPLAY VIDEO iPhone
+// =========================
+document.addEventListener("DOMContentLoaded", function() {
+  const heroVideo = document.querySelector(".hero-media video");
+
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.setAttribute("playsinline", "");
+    heroVideo.setAttribute("webkit-playsinline", "");
+
+    const attemptPlay = () => {
+      heroVideo.play().catch(() => {});
+    };
+
+    attemptPlay();
+
+    document.addEventListener("touchstart", attemptPlay, { once: true });
+    document.addEventListener("click", attemptPlay, { once: true });
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        attemptPlay();
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
