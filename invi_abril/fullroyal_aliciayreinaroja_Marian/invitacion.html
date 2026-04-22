@@ -258,7 +258,7 @@
       margin-top: 1.25rem;
       font-family: "Playfair Display", serif;
       font-weight: 600;
-      font-size: 2.25rem;
+      font-size: 1.25rem;
       letter-spacing: 0.07em;
       color: var(--dorado);
     }
@@ -584,6 +584,22 @@
       font-size: 1.2rem;
       color: #d4909a;
       animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    .calendar-weekday{
+      font-family: "Poppins", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #af8843;
+      cursor: default;
+      pointer-events: none;
+      aspect-ratio: auto;
+      min-height: 24px;
+    }
+    .calendar-empty{
+      cursor: default;
+      pointer-events: none;
+      color: transparent;
+      background: transparent !important;
     }
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
@@ -1664,11 +1680,28 @@ quinceañera en IG con su username
     });
 
     // =========================
-    // CALENDARIO (Febrero)
+    // CALENDARIO (Mayo 2026)
     // =========================
     function generateCalendar() {
       const calendarGrid = document.getElementById('calendarGrid');
+      calendarGrid.innerHTML = '';
+
+      const weekDays = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
       const daysInMonth = 31;
+      const firstDayOfMonth = 5; // Mayo 1, 2026 cae en viernes (0=Domingo)
+
+      weekDays.forEach(day => {
+        const header = document.createElement('div');
+        header.className = 'calendar-day calendar-weekday';
+        header.textContent = day;
+        calendarGrid.appendChild(header);
+      });
+
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.className = 'calendar-day calendar-empty';
+        calendarGrid.appendChild(emptyCell);
+      }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement('div');
@@ -1681,11 +1714,13 @@ quinceañera en IG con su username
 
         dayElement.addEventListener('click', function() {
           document.querySelectorAll('.calendar-day').forEach(d => {
-            if (!d.classList.contains('special')) {
+            if (!d.classList.contains('special') && !d.classList.contains('calendar-weekday')) {
               d.classList.remove('selected');
             }
           });
-          this.classList.add('selected');
+          if (!this.classList.contains('calendar-weekday') && !this.classList.contains('calendar-empty')) {
+            this.classList.add('selected');
+          }
         });
 
         calendarGrid.appendChild(dayElement);
