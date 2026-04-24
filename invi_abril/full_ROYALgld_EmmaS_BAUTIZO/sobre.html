@@ -26,7 +26,7 @@
             position: relative;
             width: 450px;
             height: 800px;
-            background-image: url('galeria/background.png');
+            background-image: url('galeria/fondo_sobre.jpeg');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -36,12 +36,23 @@
 
         .name {
             position: absolute;
-            bottom: 200px;
+            bottom: 75%;
             width: 100%;
             text-align: center;
-            font-size: 45px;
+            font-size: 30px;
             font-weight: 500;
-            color: #e14a9a;
+            color: #D0829A;
+            font-family: 'Nova Quinta', cursive;
+        }
+		
+		 .name2 {
+            position: absolute;
+            bottom: 48%;
+            width: 100%;
+            text-align: center;
+            font-size: 60px;
+            font-weight: 500;
+            color: #D0829A;
             font-family: 'Nova Quinta', cursive;
         }
 
@@ -116,7 +127,7 @@
             overflow: hidden;
             box-shadow: 0 6px 10px rgba(0, 0, 0, .20);
 
-            background-image: url('galeria/fondo_sobre.png');
+            background-image: url('galeria/fondo_sobre.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -158,7 +169,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 2%;
+            bottom: 12%;
             width: min(92%, 430px);
             /* El alto lo controla tu imagen; esto evita deformar */
             aspect-ratio: 1 / 0.72;
@@ -215,7 +226,7 @@
 
         .seal-btn span {
             position: relative;
-            top: 80%;
+            top: 50%;
             inset: 0;
             display: grid;
             place-items: center;
@@ -223,7 +234,7 @@
             font-style: italic;
             font-weight: 700;
             font-size: 28px;
-            color: #f98f8f;
+            color: #D37390;
             text-shadow: 0 8px 18px rgb(255, 255, 255);
             letter-spacing: .06em;
             pointer-events: none;
@@ -269,10 +280,16 @@
     <main class="cover">
         <div class="stage">
 
-            <img class="title-img3" src="img/nombre.png" alt="Mis XV Años" />
+			<div class="name">Mi
+				<br>
+
+				Bautizo</div>
 
             <!--  1) TÍTULO (imagen) -->
-            <img class="title-img" src="img/name.png" alt="Mis XV Años" /> 
+            <strong><div class="name2">Emma
+				<br>
+
+				Sofía</div></strong>
 
             <!-- 2) SOBRE -->
             <section class="envelope-wrap" id="envelope">
