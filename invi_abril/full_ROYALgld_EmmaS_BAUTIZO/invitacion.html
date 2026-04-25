@@ -58,6 +58,7 @@
       padding: 0;
       width: 100%;
       overflow-x: hidden;
+      background: var(--app-bg);
     }
 
     body {
@@ -98,11 +99,11 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        padding: 18px 0;
+        padding: 0;
       }
 
       .app {
-        border-radius: 22px;
+        border-radius: 0;
         box-shadow: var(--shadow);
       }
     }
@@ -133,7 +134,7 @@
     /* =========================
        VIDEO SECTIONS
     ========================= */
-    .video-section {
+     .video-section {
       width: 100%;
       padding: 0;
       margin: 0;
@@ -197,6 +198,7 @@
       display: block;
       filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.20));
     }
+
 
     /* =========================
        CONTENIDO GENERAL
@@ -1305,6 +1307,33 @@
         transform: scale(1);
       }
     }
+
+    /* =========================
+       AJUSTE VIDEOS AL RAS
+       Evita que se vea el fondo antes/después de los videos
+    ========================= */
+    .app-content > .video-section:first-child,
+    .app-content > .video-section:first-child .hero-video-wrapper,
+    .app-content > .video-section:first-child .video-embed {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      border-top: 0 !important;
+    }
+
+    .app-content > .video-section:last-child,
+    .app-content > .video-section:last-child .video-wrap,
+    .app-content > .video-section:last-child .video-embed {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    .app-content > .video-section:first-child .video-embed,
+    .app-content > .video-section:last-child .video-embed {
+      width: 100%;
+      display: block;
+    }
+
   </style>
 </head>
 
@@ -1709,7 +1738,7 @@
 
               <strong>Cabañas Calicanto</strong><br>
               Tel. 221 436 5696<br>
-              22 min del salón del evento</ <br><br> <br>
+              22 min del salón del evento<br><br>
 
               <strong>Hotel Plaza Central</strong><br>
               Tel. 797 973 0217<br>
