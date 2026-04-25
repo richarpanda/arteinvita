@@ -186,14 +186,46 @@
       z-index: 1;
     }
 
+    .bg-top {
+      background-image: url("img/bg-paper.png");
+      background-repeat: repeat-y;
+      /* ✅ para que no se “moche” */
+      background-position: center top;
+      background-size: 520px auto;
+      /* ✅ tamaño controlado en desktop */
+    }
+
+    .bg-event-fixed {
+      background-image: url("img/bg-paper-2.png");
+      background-size: 520px auto;
+      background-position: center center;
+      background-repeat: repeat-y;
+      background-attachment: scroll;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-event-fixed::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      ;
+      pointer-events: none;
+    }
+
+    .bg-bottom {
+      background-image: url("img/bg-paper-3.png");
+    }
+
+
     .hero-wrap {
-      padding: 30px 22px 10px;
+      padding: 30px;
       background: transparent;
     }
 
     .hero-card {
       margin: 0 auto;
-      padding: 1.4rem 0 0;
+      padding: 3.6rem 2.0rem 0;
       position: relative;
     }
 
@@ -238,9 +270,6 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.45)),
-        radial-gradient(circle at 50% 20%, rgba(198, 161, 91, 0.18), transparent 40%);
       pointer-events: none;
     }
 
@@ -255,10 +284,14 @@
     .hero-names {
       font-family: "Playfair Display", serif;
       font-size: 4.4rem;
-      color: var(--dorado-2);
+      color: #f8df9b;
       line-height: 1;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      text-shadow:
+        0 0 6px rgba(255, 224, 155, 0.55),
+        0 0 16px rgba(198, 161, 91, 0.45),
+        0 2px 4px rgba(0, 0, 0, 0.65);
     }
 
     .hero-subline {
@@ -266,8 +299,11 @@
       font-size: 0.88rem;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--texto-soft);
+      color: #f1dfbd;
       margin-top: 0.95rem;
+      text-shadow:
+        0 0 5px rgba(255, 235, 190, 0.45),
+        0 1px 3px rgba(0, 0, 0, 0.65);
     }
 
     .hero-date {
@@ -276,8 +312,12 @@
       font-weight: 600;
       font-size: 1.9rem;
       letter-spacing: 0.10em;
-      color: var(--dorado);
+      color: #e7c26f;
       text-transform: uppercase;
+      text-shadow:
+        0 0 6px rgba(255, 224, 155, 0.5),
+        0 0 14px rgba(198, 161, 91, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.65);
     }
 
     .music-strip {
@@ -359,7 +399,7 @@
     .event-card-final {
       position: relative;
       padding: 2.4rem 1.6rem 2.6rem;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(37, 37, 37, 0.721);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-radius: 26px;
@@ -431,8 +471,9 @@
       position: relative;
       color: var(--crema);
       background:
-        linear-gradient(to bottom, rgba(198, 161, 91, 0.08), rgba(255, 255, 255, 0)),
-        linear-gradient(180deg, #0d0d0d 0%, #070707 100%);
+        radial-gradient(circle at center, rgba(226, 195, 137, 0.28), transparent 52%),
+        linear-gradient(to bottom, rgba(198, 161, 91, 0.22), rgba(255, 224, 155, 0.08)),
+        linear-gradient(180deg, #15100a 0%, #080604 100%);
     }
 
     .save-date-min::before {
@@ -597,8 +638,24 @@
     .gallery-section,
     .itinerary-section,
     .gifts-section {
-      background: transparent;
       padding: 3rem 1.6rem;
+      background:
+        radial-gradient(circle at top left, rgba(226, 195, 137, 0.16), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(198, 161, 91, 0.12), transparent 40%),
+        linear-gradient(180deg, #0b0b0b 0%, #120d07 50%, #080808 100%);
+    }
+
+    .calendar-section::before,
+    .gallery-section::before,
+    .itinerary-section::before,
+    .gifts-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 224, 155, 0.18) 0.7px, transparent 0.8px);
+      background-size: 12px 12px;
+      opacity: 0.18;
+      pointer-events: none;
     }
 
     .calendar-header {
@@ -1120,7 +1177,7 @@
 
             <div class="hero-bottom">
               <div class="hero-subline">El gran día<br>
- se acerca</div>
+                se acerca</div>
               <div class="hero-names">Paris</div>
               <div class="hero-date">Mis XV Años</div>
             </div>
@@ -1238,7 +1295,7 @@
     </section>
 
     <section id="calendario" class="calendar-section">
-      <div align="center"><img src="img/reloj.png" width="70%" alt="Reloj"></div> <br> <br>
+      <div align="center"><img src="img/reloj.png" width="50%" alt="Reloj"></div> <br> <br>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Recuerda la fecha</div>
         <div class="flourish"></div>
@@ -1255,7 +1312,7 @@
     </section>
 
     <section id="galeria-fotos" class="gallery-section">
-      <div align="center"><img src="img/cenefa_3.png" width="50%" alt="Decoración"></div>
+      <div align="center"><img src="img/cenefa_3.png" width="45%" alt="Decoración"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Galería de Fotos</div>
         <div class="flourish"></div>
@@ -1292,6 +1349,7 @@
     </div>
 
     <section id="itinerario" class="itinerary-section">
+		 <div align="center"><img src="img/iti.png" width="40%" alt="Decoración"></div>
       <div class="content">
         <div class="flourish"></div>
         <h2 class="itinerary-title">Itinerario</h2>
@@ -1319,9 +1377,11 @@
       </div>
     </section>
 
-    <div align="center"><img src="img/cenefa_6.png" width="80%" alt="Decoración"></div>
+
 
     <section id="vestimenta" class="gifts-section">
+
+      <div align="center"><img src="img/cenefa_6.png" width="80%" alt="Decoración"></div>
       <div class="content">
         <div class="section-title-script">Código de Vestimenta</div>
         <div class="flourish"></div>
@@ -1336,6 +1396,8 @@
             </div>
           </div>
         </div>
+		  
+		   <div align="center"><img src="img/zapa.png" width="50%" alt="Reloj"></div> <br> <br>
       </div>
     </section>
 
@@ -1367,8 +1429,10 @@
             Ma. de Lourdes García Islas<br>
             5204167373557594
           </p>
+			 <div class="flourish"></div>
+			 <div align="center"><img src="img/corona.png" width="50%" alt="Reloj"></div> <br> <br>
 
-          <div class="flourish"></div>
+         
         </div>
       </div>
     </section>
@@ -1426,7 +1490,7 @@
 
         <div class="glass-card">
           <div class="content">
-			   <div align="center"><img src="img/cenefa_6.png" width="90%" alt="Decoración"></div>
+            <div align="center"><img src="img/cenefa_6.png" width="90%" alt="Decoración"></div>
             <div class="confirm-title-script">¿Asistirás?</div>
             <div class="confirm-flourish"></div>
 
