@@ -42,10 +42,17 @@
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Gabriola', serif;
       color: var(--texto);
-      background: #F7EAF1;
+      background: #FFFFFF;
       scroll-behavior: smooth;
       font-size: 18px;
     }
@@ -173,8 +180,10 @@
 
     main {
       max-width: 520px;
+      width: 100%;
       margin: 0 auto;
       background: var(--crema);
+      overflow: hidden;
     }
 
     section {
@@ -1045,7 +1054,7 @@
         <!--  <div class="day">Sábado</div>-->
           <div class="hero-name">30.05.2026</div>
           <div class="month">Nuestra Boda</div>
-			 <div class="month">Ely & Carlos</div>
+			<div class="month"><span style="color: #D9A441">Ely & Carlos</span></div>
          
         </div>
         <br>
@@ -1069,11 +1078,11 @@
   <div class="flourish"></div>
         <div class="intro-parents-title">Nuestras familias</div>
         <p class="intro-list">
-          Familia Flores 
+          Flores 
 
 Cruz Gutiérrez <br>
 
-Familia Lechuga Hernández <br>
+ Lechuga Hernández <br>
 
         </p>
 
@@ -1133,7 +1142,7 @@ Familia Lechuga Hernández <br>
           <div class="event-script">Recepción del Evento</div>
           <div class="event-title">Ex Hacienda Santa Gertrudis</div>
           
-          <div class="event-time">1:30 PM</div>
+         
           <a href="https://maps.app.goo.gl/pDdmVc5pViov1zvo9" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
           </a>
@@ -1162,7 +1171,7 @@ Familia Lechuga Hernández <br>
     <section id="itinerario" class="itinerary-section">
 		<div align="center"><img src="img/sello.png" width="40%"></div>
       <div class="flourish"></div>
-      <h2 class="itinerary-title">Itinerario</h2>
+		<h2 class="itinerary-title"><span style="color: #D9A441">Itinerario</span></h2>
       <p class="itinerary-date">30 de mayo de 2026</p>
 
       <div class="itinerary-timeline">
