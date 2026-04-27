@@ -968,6 +968,46 @@
                 overflow-x: hidden;
             }
         }
+		
+		/* ===== CENTRADO PERFECTO EN CELULAR ===== */
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+}
+
+.background{
+    width:100%;
+    max-width:450px;
+    background-size:100% 4604px;
+    background-position:top center;
+    margin:0 auto;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    margin:0 auto;
+    padding-left:20px;
+    padding-right:20px;
+    box-sizing:border-box;
+}
+
+/* Extra para pantallas pequeñas */
+@media (max-width:480px){
+    .background,
+    .container{
+        left:0;
+        right:0;
+        margin:auto;
+    }
+}
     </style>
 </head>
 
@@ -1004,7 +1044,7 @@
 
                 Con amor, los padrinos de <br> Lía Alessandra:<br><br>
 
-                <strong>Patricia Anaya<br>
+                <strong>Patricia Amaya<br>
                     y<br>
                     Eduardo Valencia</strong>
             </p>
