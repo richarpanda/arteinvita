@@ -978,6 +978,159 @@
       pointer-events: none;
     }
 
+	  
+	   /* =========================
+       NUEVA SECCIÓN: GALERÍA CON SLIDER
+    ========================= */
+    .gallery-section {
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+
+    .gallery-preview-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-preview-item:hover {
+      transform: translateY(-4px) rotate(-1deg);
+    }
+
+    .gallery-preview-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn-ver-galeria {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.9rem 2.5rem;
+      border-radius: 999px;
+      border: none;
+      background: #af8843;
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(175, 136, 67, 0.3);
+    }
+
+    /* Slider / Lightbox */
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .gallery-lightbox-content {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-lightbox img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #eaacac;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-nav:hover {
+      background: rgba(175, 136, 67, 0.9);
+      color: #fff;
+    }
+
+    .gallery-nav.prev {
+      left: -20px;
+    }
+
+    .gallery-nav.next {
+      right: -20px;
+    }
+
+    .gallery-close {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #af8843;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .gallery-close:hover {
+      background: #8d6935;
+      transform: rotate(90deg);
+    }
+
+    .gallery-counter {
+      text-align: center;
+      margin-top: 1rem;
+      font-family: "Playfair Display", serif;
+      color: #eaacac;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
     /* =========================
    FIX: iOS/Android rompe background-attachment: fixed
 ========================= */
@@ -1229,8 +1382,46 @@
         </div>
       </div>
     </section>
+	  
+	  <!-- GALERÍA-->
+    <section id="galeria-fotos" class="gallery-section">
+      <div align="center"><img src="img/cenefa_3.png" width="55%" alt="Foto"></div>
+      <div class="content">
+        <div class="section-title-script reveal reveal-left">Galeria de Fotos</div>
+        <div class="flourish"></div>
 
-    <!-- ITINERARIO -->
+        <p class="section-sub reveal reveal-right">
+          Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia.
+        </p>
+
+        <div class="gallery-preview reveal reveal-left">
+          <div class="gallery-preview-item" onclick="openGallery(0)">
+            <img src="img/galeria/2.jpeg" alt="Foto 1">
+          </div>
+          <div class="gallery-preview-item" onclick="openGallery(1)">
+            <img src="img/galeria/1.jpeg" alt="Foto 2">
+          </div>
+        </div>
+
+        <button class="btn-ver-galeria reveal reveal-right" onclick="openGallery(0)">
+          Ver Galería Completa
+        </button>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="galleryLightbox">
+      <div class="gallery-lightbox-content">
+        <button class="gallery-close" onclick="closeGallery()">&times;</button>
+        <button class="gallery-nav prev" onclick="changeImage(-1)">❮</button>
+        <img id="galleryImage" src="/placeholder.svg" alt="Imagen de galería">
+        <button class="gallery-nav next" onclick="changeImage(1)">❯</button>
+        <div class="gallery-counter">
+          <span id="currentImage">1</span> / <span id="totalImages">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITINERARIO 
     <section id="itinerario" class="itinerary-section">
       <div class="content">
 		  <div align="center"><img src="img/iti.png" width="75%" alt="Decoracion"></div>
@@ -1258,7 +1449,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- HOSPEDAJE SUGERIDO -->
     <div align="center"><img src="img/cenefa_6.png" width="45%" alt="Decoracion"></div>
@@ -1584,6 +1775,80 @@
       }
     }
     document.addEventListener('DOMContentLoaded', generateCalendar);
+	  
+	  
+  
+	
+	// =========================
+    // GALERÍA
+    // =========================
+    const galleryImages = [
+ 'img/galeria/9.jpeg',
+		 'img/galeria/1.jpeg',
+      'img/galeria/2.jpeg',
+      'img/galeria/6.jpeg',
+      'img/galeria/4.jpeg',
+      'img/galeria/5.jpeg',
+      'img/galeria/3.jpeg',
+	 'img/galeria/7.jpeg',
+		 'img/galeria/8.jpeg',
+	 'img/galeria/10.jpeg',
+
+
+
+    ];
+
+    let currentImageIndex = 0;
+
+    function openGallery(index) {
+      currentImageIndex = index;
+      const lightbox = document.getElementById('galleryLightbox');
+      const galleryImage = document.getElementById('galleryImage');
+      const totalImagesSpan = document.getElementById('totalImages');
+
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      galleryImage.src = galleryImages[currentImageIndex];
+      totalImagesSpan.textContent = galleryImages.length;
+      updateImageCounter();
+    }
+
+    function closeGallery() {
+      const lightbox = document.getElementById('galleryLightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+
+      if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+      else if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+
+      document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+      updateImageCounter();
+    }
+
+    function updateImageCounter() {
+      document.getElementById('currentImage').textContent = currentImageIndex + 1;
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeGallery();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      const lightbox = document.getElementById('galleryLightbox');
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        else if (e.key === 'ArrowRight') changeImage(1);
+      }
+    });
+
+    document.getElementById('galleryLightbox').addEventListener('click', function (e) {
+      if (e.target === this) closeGallery();
+    });
   </script>
 </body>
 

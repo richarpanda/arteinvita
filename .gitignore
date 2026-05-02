@@ -9,15 +9,15 @@
 *.fig
 *.sketch
 # Tipos de archivo pesados
-*.mp3
-*.mp4
-*.wav
-*.ogg
-*.mov
-*.avi
-*.zip
-*.psd
-*.ai
-*.pem
-*.png
-*.jpeg
+# *.mp3
+# *.mp4
+# *.wav
+# *.ogg
+# *.mov
+# *.avi
+# *.zip
+# *.psd
+# *.ai
+# *.pem
+# *.png
+# *.jpeg
