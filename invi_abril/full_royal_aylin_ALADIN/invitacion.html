@@ -1946,6 +1946,29 @@
       cursor: zoom-out;
     }
 
+
+    /* Corrección: lightbox siempre centrado en la pantalla actual */
+    body > .lightbox {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overscroll-behavior: contain;
+    }
+
+    body > .lightbox .lightbox-content {
+      max-height: 92vh;
+      max-height: 92dvh;
+    }
+
+    body > .lightbox .lightbox-image {
+      max-height: 86vh;
+      max-height: 86dvh;
+    }
+
   </style>
 </head>
 
@@ -2217,7 +2240,7 @@
 
           <div class="gallery-slider reveal reveal-right" aria-label="Galería de fotos">
             <div class="gallery-slide-frame">
-              <img id="gallerySlide" src="galeria/1.jpeg" alt="Foto de la galería" loading="lazy" role="button" tabindex="0" title="Ver foto en grande">
+              <img id="gallerySlide" src="galeria/7.jpeg" alt="Foto de la galería" loading="lazy" role="button" tabindex="0" title="Ver foto en grande">
               <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto anterior">‹</button>
               <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto siguiente">›</button>
             </div>
@@ -2646,10 +2669,13 @@
     ========================== */
     (function () {
       const images = [
+		   'galeria/7.jpeg',
         'galeria/1.jpeg',
         'galeria/2.jpeg',
         'galeria/3.jpeg',
-        'galeria/4.jpeg'
+       
+		  'galeria/8.jpeg',
+		  'galeria/9.jpeg'
       ];
 
       const slide = document.getElementById('gallerySlide');
@@ -2711,8 +2737,19 @@
 
       function openLightbox() {
         if (!lightbox || !lightboxImage) return;
+
+        // IMPORTANTE:
+        // La galería vive dentro de una sección animada con transform.
+        // En navegadores móviles, eso puede hacer que position: fixed se calcule
+        // desde esa sección y la foto aparezca más arriba, obligando a hacer scroll.
+        // Al mover el lightbox directo al body, siempre se centra en la pantalla actual.
+        if (lightbox.parentNode !== document.body) {
+          document.body.appendChild(lightbox);
+        }
+
         lightbox.classList.add('is-open');
         lightbox.setAttribute('aria-hidden', 'false');
+        document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
         lightboxImage.src = images[current];
         lightboxImage.alt = 'Foto ampliada ' + (current + 1);
@@ -2722,6 +2759,7 @@
         if (!lightbox) return;
         lightbox.classList.remove('is-open');
         lightbox.setAttribute('aria-hidden', 'true');
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
       }
 
