@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Save the Date | Mis XV</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --white: rgba(255,255,255,.96);
+      --soft: rgba(255,255,255,.7);
+      --line: rgba(255,255,255,.55);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; margin:0; }
+
+    body{
+      background:#0b0b0b;
+      font-family:"Montserrat", sans-serif;
+      color:var(--white);
+      padding:0;
+    }
+
+    .poster{
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .poster::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("portada.png") center center / cover no-repeat;
+      filter: contrast(1.05) saturate(.95);
+      transform: scale(1.05);
+      z-index:0;
+    }
+
+    .poster::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.45)
+      );
+      z-index:1;
+    }
+
+    /* ✅ CENTRADO REAL + CENTRADO VISUAL */
+    .content{
+      position:absolute;
+      inset:0;
+      z-index:2;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+      padding: 0 26px;
+
+      gap: 18px;                 /* controla el espaciado entre bloques */
+      transform: translateY(-4vh);/* ajuste visual premium */
+    }
+
+    /* SAVE THE DATE */
+    .word{
+      font-family:"Playfair Display", serif;
+      font-size:clamp(34px,4.5vw,46px);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      line-height: 1.05;
+    }
+
+    .the-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin:14px 0;
+    }
+
+    .line{
+      height:1px;
+      width:min(120px,26vw);
+      background:var(--line);
+    }
+
+    .the{
+      font-family:"Great Vibes", cursive;
+      font-size:32px;
+      color:var(--soft);
+      line-height: 1;
+    }
+
+    /* XV */
+    .xv{
+      margin-top: 8px;
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(42px,8vw,58px);
+      letter-spacing:.08em;
+      line-height: 1;
+    }
+
+    .name{
+      margin-top:6px;
+      font-size:18px;
+      letter-spacing:.32em;
+      text-transform:uppercase;
+      color:var(--soft);
+    }
+	  
+	   .name_2{
+      margin-top:6px;
+	  font-family:"Great Vibes", cursive;
+      font-size:40px;
+     
+      
+    }
+
+    /* COUNTDOWN */
+    .countdown{
+      margin-top: 8px;
+      display:flex;
+      gap:18px;
+      font-family:"Playfair Display", serif;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; /* por si en móvil necesita bajar */
+    }
+
+    .time-box{
+      text-align:center;
+      min-width: 62px;
+    }
+
+    .num{
+      font-size:clamp(22px,3.5vw,28px);
+      letter-spacing:.12em;
+      line-height: 1.1;
+    }
+
+    .label{
+      font-size:10px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      
+      margin-top:4px;
+    }
+
+    /* ✅ Quitamos margin-top:auto para que NO se vaya abajo */
+    .note{
+      margin-top: 10px;
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(30px,2.6vw,22px);
+      color:rgba(255,255,255,.55);
+      line-height: 1.2;
+    }
+
+    /* ANIMATION */
+    .fade{
+      opacity:0;
+      transform:translateY(10px);
+      animation:fadeUp .9s ease forwards;
+    }
+    .d2{ animation-delay:.15s }
+    .d3{ animation-delay:.3s }
+    .d4{ animation-delay:.45s }
+    .d5{ animation-delay:.6s }
+
+    @keyframes fadeUp{
+      to{ opacity:1; transform:none; }
+    }
+
+    /* Ajuste visual para pantallas altas */
+    @media (min-height: 800px){
+      .content{ transform: translateY(-6vh); }
+    }
+
+    /* Ajuste para pantallas pequeñas */
+    @media (max-width: 420px){
+      .content{ gap: 14px; transform: translateY(-3vh); }
+      .name{ letter-spacing: .24em; }
+      .countdown{ gap: 14px; }
+      .time-box{ min-width: 58px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="poster">
+  <div class="content">
+
+    <div class="fade d2">
+      <div class="word">SAVE</div>
+
+      <div class="the-row">
+        <span class="line"></span>
+        <span class="the">the</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="word">DATE</div>
+    </div>
+
+    <div class="fade d3">
+      <div class="xv">Mis XV</div>
+      <div class="name_2">Vanessa Sarai </div>
+		<div class="name">22.08.2026</div>
+		
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown fade d4" id="countdown">
+      <div class="time-box">
+        <div class="num" id="days">00</div>
+        <div class="label">DÍAS</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="hours">00</div>
+        <div class="label">HORAS</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="minutes">00</div>
+        <div class="label">MIN</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="seconds">00</div>
+        <div class="label">SEG</div>
+      </div>
+		
+
+		
+    </div>
+	  
+	  <div class="name"></div>
+
+    <div class="note fade d3">El gran día se acerca</div>
+
+  </div>
+</section>
+
+<script>
+  /* ===============================
+     CONFIGURA AQUÍ LA FECHA
+     Formato: Año, Mes-1, Día, Hora
+     =============================== */
+  const eventDate = new Date(2026, 7, 22, 12, 30, 0); // 31 Enero 2026 7:00 pm
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  function updateCountdown(){
+    const now = Date.now();
+    const distance = eventDate.getTime() - now;
+
+    if(distance <= 0){
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = String(days).padStart(2,"0");
+    hoursEl.textContent = String(hours).padStart(2,"0");
+    minutesEl.textContent = String(minutes).padStart(2,"0");
+    secondsEl.textContent = String(seconds).padStart(2,"0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
