@@ -1764,6 +1764,188 @@
       transform: scale(1.2);
     }
 
+
+    /* =========================
+       GALERÍA FUNCIONAL + LIGHTBOX
+    ========================== */
+    #galeria .gallery-slider {
+      width: min(380px, 100%);
+      margin: 1.4rem auto 0;
+    }
+
+    #galeria .gallery-slide-frame {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(214, 178, 106, .42);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .28);
+      background: rgba(255, 255, 255, .10);
+    }
+
+    #galeria .gallery-slide-frame img {
+      width: 100%;
+      height: 430px;
+      max-height: 76vh;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    @media (max-width: 420px) {
+      #galeria .gallery-slide-frame img {
+        height: 360px;
+      }
+    }
+
+    #galeria .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .42);
+      background: rgba(0, 0, 0, .34);
+      color: #fff;
+      font-size: 34px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #galeria .gallery-nav.prev { left: 10px; }
+    #galeria .gallery-nav.next { right: 10px; }
+
+    #galeria .gallery-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    #galeria .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 178, 106, .58);
+      background: rgba(255, 255, 255, .35);
+      padding: 0;
+      cursor: pointer;
+      transition: width .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    #galeria .gallery-dot.active,
+    #galeria .gallery-dot.is-active {
+      width: 24px;
+      background: var(--gold);
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 99999;
+    }
+
+    .lightbox.is-open { display: flex; }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .78);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 2;
+      width: min(94vw, 460px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      width: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 18px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, .48);
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -8px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: rgba(0, 0, 0, .50);
+      color: #fff;
+      font-size: 24px;
+      z-index: 4;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .42);
+      background: rgba(0, 0, 0, .42);
+      color: #fff;
+      font-size: 36px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+
+
+    /* Refuerzo para abrir galería en grande */
+    #gallerySlide {
+      cursor: zoom-in !important;
+      pointer-events: auto !important;
+      touch-action: manipulation;
+    }
+
+    .lightbox, .lightbox * {
+      box-sizing: border-box;
+    }
+
+    .lightbox.is-open {
+      display: flex !important;
+    }
+
+    .lightbox-content {
+      pointer-events: auto;
+    }
+
+    .lightbox-image {
+      cursor: zoom-out;
+    }
+
   </style>
 </head>
 
@@ -2024,26 +2206,34 @@
           <img class="bow-img" src="img/mono.png" alt="" aria-hidden="true"
             style="width:100%; max-width:450px; height:auto; display:block;">
         </div>
-		  
-		  <!-- GALERIA -->
-        <section id="galeria" class="gift-section">
+
+
+        <!-- GALERIA -->
+        <section id="galeria" class="gift-section anim-up">
           <div class="gift-title">Un poquito de mi historia</div>
           <div class="flourish"></div>
-          <p class="gift-text"> Algunas fotos que cuentan cómo pasé de muñecas y risas de niña, a este momento en el
-            que brilla un nuevo capítulo. </p>
-          <div class="gallery-slider reveal reveal-right">
-            <div class="gallery-slide-frame"> <img id="gallerySlide" src="img/1.jpeg" alt="Foto de la galería"> <button
-                class="gallery-nav prev" id="galleryPrev" type="button">‹</button> <button class="gallery-nav next"
-                id="galleryNext" type="button">›</button> </div>
-            <div class="gallery-dots" id="galleryDots"></div>
+          <p class="gift-text">Algunas fotos que cuentan cómo pasé de muñecas y risas de niña, a este momento en el
+            que brilla un nuevo capítulo.</p>
+
+          <div class="gallery-slider reveal reveal-right" aria-label="Galería de fotos">
+            <div class="gallery-slide-frame">
+              <img id="gallerySlide" src="galeria/1.jpeg" alt="Foto de la galería" loading="lazy" role="button" tabindex="0" title="Ver foto en grande">
+              <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto anterior">‹</button>
+              <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto siguiente">›</button>
+            </div>
+            <div class="gallery-dots" id="galleryDots" aria-label="Indicadores de galería"></div>
           </div>
-        </section> <!-- LIGHTBOX GALERÍA -->
-        <div id="lightbox" class="lightbox">
+        </section>
+
+        <!-- LIGHTBOX GALERÍA -->
+        <div id="lightbox" class="lightbox" aria-hidden="true">
           <div class="lightbox-overlay" id="lightboxOverlay"></div>
-          <div class="lightbox-content"> <button class="lightbox-close" id="lightboxClose" type="button">✕</button> <img
-              id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image"> <button
-              class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">‹</button> <button
-              class="lightbox-nav lightbox-next" id="lightboxNext" type="button">›</button> </div>
+          <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+            <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar galería">✕</button>
+            <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Foto anterior">‹</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Foto siguiente">›</button>
+          </div>
         </div>
 
 
@@ -2450,94 +2640,145 @@
       });
     })();
 	  
-	  // Galería modal
-      (function(){
-        const openBtn = document.getElementById('openGalleryBtn');
-        const modal = document.getElementById('galleryModal');
-        const closeBtn = document.getElementById('closeGalleryBtn');
-        const prevBtn = document.getElementById('prevImage');
-        const nextBtn = document.getElementById('nextImage');
-        const mainImage = document.getElementById('mainImage');
-        const counter = document.getElementById('imageCounter');
-        const thumbs = document.getElementById('thumbnailsContainer');
 
-        // Nota: thumbs es opcional (si se quitaron miniaturas, la galería sigue funcionando)
-        if(!openBtn || !modal || !closeBtn || !prevBtn || !nextBtn || !mainImage || !counter) return;
+    /* =========================
+       GALERÍA FUNCIONAL
+    ========================== */
+    (function () {
+      const images = [
+        'galeria/1.jpeg',
+        'galeria/2.jpeg',
+        'galeria/3.jpeg',
+        'galeria/4.jpeg'
+      ];
 
-                const images = [
-          'galeria/1.jpeg',
-          'galeria/2.jpeg',
-          'galeria/3.jpeg',
-          'galeria/4.jpeg'
-          
-        ];
-let idx = 0;
+      const slide = document.getElementById('gallerySlide');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      const dotsWrap = document.getElementById('galleryDots');
 
-        function renderThumbs(){
-          if(!thumbs) return;
-          thumbs.innerHTML = '';
-          images.forEach((src, i) => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = 'Foto ' + (i+1);
-            img.className = 'gallery-thumbnail' + (i===idx ? ' active' : '');
-            img.addEventListener('click', () => {
-              idx = i;
-              update();
-            });
-            thumbs.appendChild(img);
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxOverlay = document.getElementById('lightboxOverlay');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+
+      if (!slide || !prevBtn || !nextBtn || !dotsWrap) return;
+
+      let current = 0;
+      let startX = 0;
+
+      function renderDots() {
+        dotsWrap.innerHTML = '';
+        images.forEach(function (_, index) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'gallery-dot' + (index === current ? ' active is-active' : '');
+          dot.setAttribute('aria-label', 'Ver foto ' + (index + 1));
+          dot.addEventListener('click', function () {
+            current = index;
+            updateGallery();
           });
-        }
-
-        function update(){
-          mainImage.src = images[idx];
-          counter.textContent = (idx + 1) + ' / ' + images.length;
-
-          if(thumbs){
-          [...thumbs.querySelectorAll('.gallery-thumbnail')].forEach((t, i) => {
-            t.classList.toggle('active', i === idx);
-          });
-
-          const active = thumbs.querySelectorAll('.gallery-thumbnail')[idx];
-          if(active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-}
-
-        function open(){
-          modal.style.display = 'flex';
-          document.body.style.overflow = 'hidden';
-          renderThumbs();
-          update();
-        }
-        function close(){
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-        function prev(){
-          idx = (idx - 1 + images.length) % images.length;
-          update();
-        }
-        function next(){
-          idx = (idx + 1) % images.length;
-          update();
-        }
-
-        openBtn.addEventListener('click', open);
-        closeBtn.addEventListener('click', close);
-        prevBtn.addEventListener('click', prev);
-        nextBtn.addEventListener('click', next);
-
-        modal.addEventListener('click', (e) => { if(e.target === modal) close(); });
-
-        document.addEventListener('keydown', (e) => {
-          if (modal.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-            if (e.key === 'Escape') close();
-          }
+          dotsWrap.appendChild(dot);
         });
-      })();
-    
+      }
+
+      function updateGallery() {
+        slide.src = images[current];
+        slide.alt = 'Foto de la galería ' + (current + 1);
+
+        Array.prototype.forEach.call(dotsWrap.children, function (dot, index) {
+          dot.classList.toggle('active', index === current);
+          dot.classList.toggle('is-active', index === current);
+        });
+
+        if (lightbox && lightbox.classList.contains('is-open') && lightboxImage) {
+          lightboxImage.src = images[current];
+          lightboxImage.alt = 'Foto ampliada ' + (current + 1);
+        }
+      }
+
+      function prev() {
+        current = (current - 1 + images.length) % images.length;
+        updateGallery();
+      }
+
+      function next() {
+        current = (current + 1) % images.length;
+        updateGallery();
+      }
+
+      function openLightbox() {
+        if (!lightbox || !lightboxImage) return;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lightboxImage.src = images[current];
+        lightboxImage.alt = 'Foto ampliada ' + (current + 1);
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      slide.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox();
+      });
+
+      slide.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox();
+        }
+      });
+
+      // Fallback extra: si algún script externo bloquea el listener directo,
+      // este listener delegado garantiza que el click abra la foto en grande.
+      document.addEventListener('click', function (e) {
+        if (e.target && e.target.id === 'gallerySlide') {
+          e.preventDefault();
+          e.stopPropagation();
+          openLightbox();
+        }
+      }, true);
+
+      if (lightboxPrev) lightboxPrev.addEventListener('click', function(e){ e.stopPropagation(); prev(); });
+      if (lightboxNext) lightboxNext.addEventListener('click', function(e){ e.stopPropagation(); next(); });
+      if (lightboxClose) lightboxClose.addEventListener('click', function(e){ e.stopPropagation(); closeLightbox(); });
+      if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+      if (lightboxImage) lightboxImage.addEventListener('click', closeLightbox);
+
+      slide.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      slide.addEventListener('touchend', function (e) {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 45) {
+          diff > 0 ? next() : prev();
+        }
+      }, { passive: true });
+
+      document.addEventListener('keydown', function (e) {
+        const isOpen = lightbox && lightbox.classList.contains('is-open');
+        if (!isOpen) return;
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      renderDots();
+      updateGallery();
+    })();
 
     /* =========================
        SCROLL TOP BUTTON
