@@ -40,7 +40,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:url("portada.png") center center / cover no-repeat;
+      background:url("portada.jpeg") center center / cover no-repeat;
       filter: contrast(1.05) saturate(.95);
       transform: scale(1.05);
       z-index:0;
@@ -52,9 +52,9 @@
       inset:0;
       background:linear-gradient(
         to bottom,
-        rgba(0,0,0,.45),
+        rgba(0,0,0,.55),
         rgba(0,0,0,.4),
-        rgba(0,0,0,.45)
+        rgba(0,0,0,.55)
       );
       z-index:1;
     }
@@ -158,7 +158,7 @@
       font-size:10px;
       letter-spacing:.28em;
       text-transform:uppercase;
-      color:var(--soft);
+      
       margin-top:4px;
     }
 
@@ -169,6 +169,44 @@
       font-size:clamp(30px,2.6vw,22px);
       color:rgba(255,255,255,.55);
       line-height: 1.2;
+    }
+
+
+    /* BOTÓN WHATSAPP */
+    .whatsapp-confirm{
+      margin-top: 12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 24px;
+      border:1px solid rgba(255,255,255,.55);
+      border-radius:999px;
+      color:rgba(255,255,255,.94);
+      text-decoration:none;
+      font-family:"Montserrat", sans-serif;
+      font-size:12px;
+      font-weight:400;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      background:rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+      transition:all .35s ease;
+    }
+
+    .whatsapp-confirm:hover{
+      background:rgba(255,255,255,.18);
+      transform:translateY(-2px);
+      box-shadow:0 14px 34px rgba(0,0,0,.28);
+    }
+
+    .whatsapp-icon{
+      width:17px;
+      height:17px;
+      flex:0 0 auto;
+      opacity:.95;
     }
 
     /* ANIMATION */
@@ -220,8 +258,8 @@
 
     <div class="fade d3">
       <div class="xv">Mis XV</div>
-      <div class="name_2">Mia Samantha Abygail</div>
-		<div class="name">07.02.2026</div>
+      <div class="name_2">Yoss Montero </div>
+		<div class="name">03.OCT.2026</div>
 		
     </div>
 
@@ -248,9 +286,17 @@
 		
     </div>
 	  
-	  <div class="name">14:45 HRS</div>
+	  <div class="name">Ajoloapan, Méx.</div>
 
     <div class="note fade d3">El gran día se acerca</div>
+
+    <a class="whatsapp-confirm fade d5" href="https://wa.me/525539145392?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Yoss%20Montero" target="_blank" rel="noopener">
+      <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+        <path fill="currentColor" d="M16.04 3C8.86 3 3.02 8.73 3.02 15.78c0 2.25.61 4.45 1.76 6.38L3 29l7.02-1.82a13.2 13.2 0 0 0 6.02 1.47C23.22 28.65 29.06 22.92 29.06 15.87 29.06 8.78 23.22 3 16.04 3Zm0 23.46c-1.92 0-3.8-.51-5.44-1.47l-.39-.23-4.17 1.08 1.11-4.01-.26-.41a11.27 11.27 0 0 1-1.7-5.64c0-5.84 4.86-10.59 10.85-10.59 5.98 0 10.85 4.79 10.85 10.68 0 5.84-4.87 10.59-10.85 10.59Zm5.95-7.91c-.33-.16-1.95-.94-2.25-1.05-.3-.11-.52-.16-.74.16-.22.32-.85 1.05-1.04 1.27-.19.21-.38.24-.71.08-.33-.16-1.39-.5-2.65-1.6-.98-.86-1.64-1.92-1.83-2.24-.19-.32-.02-.5.14-.66.15-.14.33-.37.49-.55.16-.19.22-.32.33-.53.11-.21.05-.4-.03-.56-.08-.16-.74-1.75-1.01-2.4-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.09-1.14 2.66 0 1.57 1.17 3.08 1.33 3.29.16.21 2.3 3.45 5.58 4.83.78.33 1.39.53 1.86.68.78.24 1.49.21 2.05.13.63-.09 1.95-.78 2.23-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.63-.37Z"/>
+      </svg>
+      Confirmar asistencia
+    </a>
+
 
   </div>
 </section>
@@ -260,7 +306,7 @@
      CONFIGURA AQUÍ LA FECHA
      Formato: Año, Mes-1, Día, Hora
      =============================== */
-  const eventDate = new Date(2026, 1, 07, 14, 45, 0); // 31 Enero 2026 7:00 pm
+  const eventDate = new Date(2026, 8, 26, 12, 30, 0); // 31 Enero 2026 7:00 pm
 
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
