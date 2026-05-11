@@ -820,10 +820,11 @@
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 100;
+      z-index: 9999;
       background: rgba(0, 0, 0, 0.94);
       align-items: center;
       justify-content: center;
+      padding: 18px;
     }
 
     .lightbox-overlay {
@@ -834,9 +835,10 @@
 
     .lightbox-content {
       position: relative;
-      z-index: 101;
+      z-index: 10000;
       max-width: 920px;
       width: 92%;
+      height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -844,7 +846,7 @@
 
     .lightbox-image {
       max-width: 100%;
-      max-height: 90vh;
+      max-height: 88vh;
       border-radius: 1rem;
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
       object-fit: contain;
@@ -1336,8 +1338,8 @@ quinceañera en IG con su username
       <div class="gallery-slider reveal reveal-right">
         <div class="gallery-slide-frame">
           <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de la galería">
-          <button class="gallery-nav prev" id="galleryPrev">‹</button>
-          <button class="gallery-nav next" id="galleryNext">›</button>
+          <button type="button" class="gallery-nav prev" id="galleryPrev" aria-label="Foto anterior">‹</button>
+          <button type="button" class="gallery-nav next" id="galleryNext" aria-label="Foto siguiente">›</button>
         </div>
         <div class="gallery-dots" id="galleryDots"></div>
       </div>
@@ -1347,10 +1349,10 @@ quinceañera en IG con su username
     <div id="lightbox" class="lightbox">
       <div class="lightbox-overlay" id="lightboxOverlay"></div>
       <div class="lightbox-content">
-        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar galería">✕</button>
         <img id="lightboxImage" src="img/galeria/1.jpeg" alt="Foto ampliada" class="lightbox-image">
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">‹</button>
+        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Foto siguiente">›</button>
       </div>
     </div>
 
@@ -1568,7 +1570,7 @@ quinceañera en IG con su username
     });
 
     // GALERÍA – SLIDER + LIGHTBOX (se mantiene igual aunque no esté en el HTML visible)
-  const images = [
+  const galleryImages = [
   'img/galeria/1.jpeg',
   'img/galeria/2.jpeg',
   'img/galeria/3.jpeg',
@@ -1583,6 +1585,12 @@ quinceañera en IG con su username
   'img/galeria/12.jpeg',
   'img/galeria/14.jpeg'
 ];
+
+    // Precarga sencilla para que el slider responda más rápido
+    galleryImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
 
     const gallerySlide = document.getElementById("gallerySlide");
     const galleryPrev = document.getElementById("galleryPrev");
@@ -1655,6 +1663,25 @@ quinceañera en IG con su username
     function prevImage() {
       currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
       if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+
+    // Deslizamiento táctil en galería y lightbox
+    let touchStartX = 0;
+    let touchEndX = 0;
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) < 45) return;
+      if (diff > 0) {
+        galleryIndex = (galleryIndex + 1) % galleryImages.length;
+      } else {
+        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+      }
+      updateGallery();
+    }
+    if (gallerySlide) {
+      gallerySlide.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+      gallerySlide.addEventListener("touchend", e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
     }
 
     if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
