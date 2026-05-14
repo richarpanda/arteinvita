@@ -778,6 +778,7 @@
 
     .gallery-nav {
       position: absolute;
+      z-index: 5;
       top: 50%;
       transform: translateY(-50%);
       background: rgba(0,0,0,0.35);
@@ -787,6 +788,7 @@
       padding: 0.3rem 0.6rem;
       border-radius: 0.7rem;
       cursor: pointer;
+      touch-action: manipulation;
     }
 
     .gallery-nav.prev { left: 10px; }
@@ -818,10 +820,11 @@
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 100;
+      z-index: 9999;
       background: rgba(0, 0, 0, 0.94);
       align-items: center;
       justify-content: center;
+      padding: 24px 10px;
     }
 
     .lightbox-overlay {
@@ -1258,8 +1261,8 @@
       <div class="gallery-slider reveal reveal-right">
         <div class="gallery-slide-frame">
           <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de la galería">
-          <button class="gallery-nav prev" id="galleryPrev">‹</button>
-          <button class="gallery-nav next" id="galleryNext">›</button>
+          <button type="button" class="gallery-nav prev" id="galleryPrev">‹</button>
+          <button type="button" class="gallery-nav next" id="galleryNext">›</button>
         </div>
         <div class="gallery-dots" id="galleryDots"></div>
       </div>
@@ -1270,10 +1273,10 @@
     <div id="lightbox" class="lightbox">
       <div class="lightbox-overlay" id="lightboxOverlay"></div>
       <div class="lightbox-content">
-        <button class="lightbox-close" id="lightboxClose">✕</button>
-        <img id="lightboxImage" src="/placeholder.svg" alt="Foto ampliada" class="lightbox-image">
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <button type="button" class="lightbox-close" id="lightboxClose">✕</button>
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
       </div>
     </div>
 
@@ -1500,7 +1503,7 @@
     });
 
     // GALERÍA – SLIDER + LIGHTBOX (se mantiene igual aunque no esté en el HTML visible)
-  const images = [
+  const galleryImages = [
   'img/galeria/1.jpeg',
 	   'img/galeria/3.jpeg',
   'img/galeria/2.jpeg',
@@ -1583,8 +1586,8 @@
 
     if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
     if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
-    if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
-    if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+    if (lightboxNext) lightboxNext.addEventListener("click", (e) => { e.stopPropagation(); nextImage(); });
+    if (lightboxPrev) lightboxPrev.addEventListener("click", (e) => { e.stopPropagation(); prevImage(); });
 
     document.addEventListener("keydown", (e) => {
       if (lightbox && lightbox.style.display === "flex") {
