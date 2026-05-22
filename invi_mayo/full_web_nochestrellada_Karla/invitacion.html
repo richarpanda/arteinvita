@@ -718,6 +718,141 @@
       opacity: 1;
       transform: translateX(0);
     }
+	  
+	  /* GALERÍA – SLIDER */
+    .gallery-section {
+      background: var(--crema);
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(201, 162, 79, 0.45);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.35);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      cursor: pointer;
+      transition: transform 0.2s ease-out, background 0.2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: #0b3d2e;
+      transform: scale(1.2);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      max-width: 920px;
+      width: 92%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
 
     @media (min-width: 768px) {
       .hero-full {
@@ -746,7 +881,7 @@
 
     <!-- 1. HERO -->
     <section id="inicio" class="hero-full">
-      <img src="img/PORTADA.png" alt="Karla Renata">
+      <img src="img/portada.jpeg" alt="Karla Renata">
       <div class="hero-overlay">
         <div>
           <div class="hero-name">Karla Renata</div>
@@ -954,16 +1089,42 @@
           <div class="gift-title">FORMAL</div>
           <p class="gift-sub">Con cariño les pedimos, el color azul quede reservado para la quinceañera.</p>
         </div>
+		
       </div>
     </section>
+	  
+	    <div align="center"><img src="img/PORTADA.png" width="100%" alt="Regalo"></div>
 
     <!-- Galería de fotos sin datos -->
-    <!--
+  <!-- 8. GALERÍA – SLIDER -->
     <section id="galeria" class="gallery-section">
       <div class="section-title-main">Galería de fotos</div>
       <div class="flourish"></div>
+      <p class="section-sub">
+        Cada fotografía guarda un recuerdo; cada recuerdo cuenta una historia.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/3.jpeg" alt="Foto de la galería">
+          <button class="gallery-nav prev" id="galleryPrev">‹</button>
+          <button class="gallery-nav next" id="galleryNext">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
     </section>
-    -->
+
+    <!-- LIGHTBOX GALERÍA -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img id="lightboxImage" src="/placeholder.svg" alt="Foto ampliada" class="lightbox-image">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+      </div>
+    </div>
+   
 
     <!-- 8. MESA DE REGALOS -->
     <section id="mesa-regalos" class="gifts-section">
@@ -1022,7 +1183,9 @@
       <div class="flourish"></div>
     </section>
     -->
+	  <div align="center"><img src="img/galeria/5.jpeg" width="100%" alt="Regalo"></div>
     <section class="quote-section">
+		
       <div class="quote-inner reveal reveal-left">
         <p class="quote-text">Gracias por acompañarme en una noche donde mi historia brillará entre lunas y estrellas.
         </p>
@@ -1141,6 +1304,105 @@
       document.addEventListener("click", attemptAutoplay);
       document.addEventListener("touchstart", attemptAutoplay);
       document.addEventListener("scroll", attemptAutoplay);
+    });
+	  
+	  
+	  // GALERÍA – SLIDER + LIGHTBOX
+    const galleryImages = [
+
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg",
+      "img/galeria/4.jpeg",
+      "img/galeria/5.jpeg",
+      
+
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDotsContainer = document.getElementById("galleryDots");
+    let galleryIndex = 0;
+
+    function renderDots() {
+      if (!galleryDotsContainer) return;
+      galleryDotsContainer.innerHTML = "";
+      galleryImages.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = "gallery-dot" + (idx === galleryIndex ? " active" : "");
+        dot.addEventListener("click", () => {
+          galleryIndex = idx;
+          updateGallery();
+        });
+        galleryDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      if (!gallerySlide) return;
+      gallerySlide.src = galleryImages[galleryIndex];
+      renderDots();
+    }
+
+    if (galleryPrev && galleryNext && gallerySlide) {
+      galleryPrev.addEventListener("click", () => {
+        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+      });
+
+      galleryNext.addEventListener("click", () => {
+        galleryIndex = (galleryIndex + 1) % galleryImages.length;
+        updateGallery();
+      });
+
+      gallerySlide.addEventListener("click", () => openLightbox(galleryIndex));
+      updateGallery();
+    }
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      if (!lightbox || !lightboxImage) return;
+      currentImageIndex = index;
+      lightboxImage.src = galleryImages[currentImageIndex];
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
+    if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox && lightbox.style.display === "flex") {
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
+        if (e.key === "Escape") closeLightbox();
+      }
     });
 
     // REVEAL EN SCROLL
