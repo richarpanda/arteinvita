@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karla Renata | XV Años</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    :root {
+      --rojo: #0a1f44;
+      --rojo-claro: #143866;
+      --dorado: #c9a24f;
+      --crema: #ffffff;
+      --crema-oscuro: #f8f6f0;
+      --texto: #101828;
+      --gris: #667085;
+      --borde: #d8c796;
+      --shadow-soft: 0 18px 40px rgba(10, 31, 68, 0.16);
+      --azul-marino: #061a38;
+      --azul-noche: #020915;
+      --estrella: #f7d77a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Gabriola', serif;
+      color: var(--texto);
+      background: transparent;
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: var(--rojo);
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      overflow: hidden;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.6rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      line-height: 1;
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.85rem;
+      text-align: center;
+      color: var(--rojo);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .section-sub {
+      font-size: 1.78rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.12;
+      margin-top: 1rem;
+    }
+
+    .flourish,
+    .confirm-flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .hero-full {
+      position: relative;
+      min-height: calc(100vh - 50px);
+      padding: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #143866 0%, #061a38 42%, #020915 100%);
+    }
+
+    .hero-full::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(247, 215, 122, 0.95) 0 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.6px);
+      background-size: 58px 58px, 91px 91px;
+      background-position: 8px 12px, 34px 42px;
+      opacity: 0.45;
+      z-index: 1;
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top,
+          rgba(2, 9, 21, 1),
+          rgba(6, 26, 56, 0.92),
+          rgba(10, 31, 68, 0.22),
+          rgba(10, 31, 68, 0.00));
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3.4rem 2.2rem 3rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: 6.2rem;
+      margin-bottom: 0.1rem;
+      color: #fff8dd;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.48);
+      line-height: 0.95;
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .music-section {
+      padding: 1.4rem 1.6rem 0;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--dorado);
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(10, 31, 68, 0.10);
+      cursor: pointer;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rojo);
+    }
+
+    .music-icon-min {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--dorado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color: transparent transparent transparent var(--dorado);
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 9px;
+      background: var(--rojo);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    .intro-section {
+      background: linear-gradient(to bottom, var(--crema), var(--crema-oscuro));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-section::before {
+      content: "✦ ✧ ✦";
+      position: absolute;
+      top: 22px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      letter-spacing: 0.9rem;
+      color: rgba(201, 162, 79, 0.48);
+      font-size: 1rem;
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 1;
+    }
+
+    .date-container {
+      font-family: "Great Vibes", cursive;
+      text-align: center;
+      color: var(--rojo);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.8em;
+      margin-bottom: 0;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 10em;
+      margin: 0;
+      font-weight: lighter;
+      line-height: 1;
+    }
+
+    .month {
+      font-size: 3.8em;
+      margin-top: 0;
+      border-top: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.75rem;
+      color: var(--rojo);
+      margin-top: 1.1rem;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.72rem;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/fondocounter.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(2, 9, 21, 0.72),
+          rgba(6, 26, 56, 0.78));
+      z-index: 1;
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #fff8dd;
+      opacity: 0.95;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(201, 162, 79, 0.70);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: #fff8dd;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #ffffff;
+      opacity: 0.95;
+    }
+
+    .when-where-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(216, 199, 150, 0.70);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+      line-height: 1;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-title {
+      font-weight: 700;
+      font-size: 1.9rem;
+      margin-bottom: 0.30rem;
+      color: var(--texto);
+    }
+
+    .event-address {
+      font-size: 1.45rem;
+      color: var(--gris);
+      line-height: 1.45;
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: var(--rojo);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .btn-ubicacion,
+    .btn-whats,
+    .gift-button,
+    .scroll-top {
+      background: var(--rojo);
+      color: #fff;
+    }
+
+    .btn-ubicacion {
+      margin: 1rem auto 0;
+      display: block;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--rojo);
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* NUEVA SECCIÓN DE ITINERARIO */
+    .itinerary-section {
+      padding: 3rem 1.6rem;
+      background: var(--crema);
+    }
+
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+      color: var(--olive);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-align: center;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: grid;
+      grid-template-columns: 108px 78px 1fr;
+      align-items: center;
+      column-gap: 0.75rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .itinerary-icon-wrapper {
+      width: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 200px;
+      object-fit: contain;
+    }
+
+    .itinerary-divider {
+      width: 58px;
+      height: 1.5px;
+      background: var(--dorado);
+    }
+
+    .itinerary-content {
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      color: var(--dorado);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.28rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .gifts-section {
+      background: var(--crema);
+    }
+
+    .gift-options {
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
+
+    .gift-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+      line-height: 1.25;
+    }
+
+    .gift-button {
+      margin-top: 0.9rem;
+      display: inline-block;
+      padding: 0.65rem 1.8rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+
+    .quote-section {
+      background: radial-gradient(circle at top, #143866 0%, #061a38 52%, #020915 100%);
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(247, 215, 122, 0.95) 0 1px, transparent 1.6px);
+      background-size: 64px 64px;
+      opacity: 0.25;
+    }
+
+    .quote-inner {
+      position: relative;
+    }
+
+    .quote-text {
+      font-size: 1.7rem;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .quote-author {
+      margin-top: 1rem;
+      font-size: 1.45rem;
+      color: #fff8dd;
+      font-style: italic;
+    }
+
+    .confirm-section {
+      background: linear-gradient(to bottom, var(--crema-oscuro), var(--crema));
+      position: relative;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--dorado);
+      background: transparent;
+    }
+
+    .reveal {
+      opacity: 0;
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (min-width: 768px) {
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+        overflow: hidden;
+      }
+
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      body {
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio id="bg-music" src="Potter Waltz.mp3" loop autoplay></audio>
+
+  <main>
+
+    <!-- 1. HERO -->
+    <section id="inicio" class="hero-full">
+      <img src="img/PORTADA.png" alt="Karla Renata">
+      <div class="hero-overlay">
+        <div>
+          <div class="hero-name">Karla Renata</div>
+          <div class="hero-sub">Mis XV Años</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYER MINIMAL -->
+    <section class="music-section">
+      <button class="music-btn-min" id="musicToggle" aria-label="Control de música">
+        <div class="music-icon-min paused" id="musicIcon"></div>
+        <span id="musicStatus">Play</span>
+      </button>
+    </section>
+
+    <div align="center"><img src="img/reloj.png" width="80%" alt="Decoración"></div>
+
+    <!-- 2. INTRO -->
+    <section id="intro" class="intro-section">
+      <div class="intro-card reveal reveal-left">
+        <div class="date-container">
+          <div class="day">Sábado</div>
+          <div class="number">27</div>
+          <div class="month">Junio</div>
+        </div>
+        <br>
+
+        <p class="section-sub">
+          En el silencio de mi alma habita un universo de estrellas; hoy, mi luz se vuelve etérea para celebrar la magia
+          de este instante infinito.
+        </p><br>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">Con la bendición de Dios y de mi familia, quiero compartir este momento tan especial.
+        </p>
+
+        <div class="intro-parents-title">Mis padres</div>
+        <p class="intro-list">
+          Odisel Espinosa Montesinos<br>
+          y <br>
+          Karla Del Rosario Yañez López
+        </p>
+
+        <div class="flourish"></div>
+
+        <div class="intro-parents-title">Mis padrinos</div>
+        <p class="intro-list">
+          Christian Del Jesús Pérez Damas<br>
+          y <br>
+          Fernanda Nisaguié Fernández Yañez
+        </p>
+
+        <div class="flourish"></div>
+
+        <div class="intro-parents-title">Mis abuelos</div>
+        <p class="intro-list">
+          Olga Montesinos Gutiérrez<br>
+          José Luis Espinosa Mendoza <em>†</em><br>
+          Héctor Carlos Yañez Magdaleno<br>
+          María Del Rosario López Montero
+        </p>
+
+        <div class="flourish"></div>
+      </div>
+    </section>
+
+    <!-- 3. FRASE -->
+    <section class="quote-section">
+      <div class="quote-inner reveal reveal-right">
+        <p class="quote-text">Por mi parte, no sé nada con certeza, pero la vista de las estrellas me hace soñar.</p>
+        <p class="quote-author">— Vincent Van Gogh</p>
+      </div>
+    </section>
+
+    <!-- 4. APARTA LA FECHA -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-left">
+        <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+          <div class="countdown-time">
+            <span id="cdDays">0</span>:
+            <span id="cdHours">00</span>:
+            <span id="cdMins">00</span>:
+            <span id="cdSecs">00</span>
+          </div>
+          <div class="countdown-labels">
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+          </div>
+        </div>
+
+        <p class="countdown-note">¡Te espero bajo una noche llena de estrellas!</p>
+      </div>
+    </section>
+
+    <!-- 5. CUÁNDO Y DÓNDE -->
+    <section id="evento">
+      <div class="when-where-header reveal reveal-left">
+        <div class="section-title-script">¿Cuándo y dónde?</div>
+        <div class="flourish"></div>
+      </div>
+
+      <div class="event-card reveal reveal-right">
+        <img src="img/iglesia.jpg" alt="Parroquia de San Pedro y San Pablo" class="event-photo">
+        <div class="event-content">
+          <div class="event-label">Iniciamos con la</div>
+          <div class="event-script">Ceremonia</div>
+          <div class="event-title">Parroquia de San Pedro y San Pablo</div>
+          <p class="event-address">
+            Privada de la Primera Oriente Sur, andador Berlín S/N, Col. Potrero Mirador.
+          </p>
+          <div class="event-time">6:00 PM</div>
+          <a href="https://maps.app.goo.gl/gvB7ZWfKVNw5sEyD9" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="event-card reveal reveal-left">
+        <img src="img/salon.jpeg" alt="Colegio Chiapaneco de Ingenieros Civiles Siglo XXI, A.C." class="event-photo">
+        <div class="event-content">
+          <div class="event-label">Lugar del Evento</div>
+          <div class="event-script">Recepción</div>
+          <div class="event-title">Colegio Chiapaneco de Ingenieros Civiles Siglo XXI, A.C.</div>
+          <p class="event-address">
+            1a. Avenida Sur Ote. Núm. 257, Col. Industrial, 29096 Tuxtla Gutiérrez, Chis.
+          </p>
+          <div class="event-time">7:30 PM</div>
+          <a href="https://maps.app.goo.gl/QMfRjBZkzJ4Am77RA" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ITINERARIO -->
+    <section id="itinerario" class="itinerary-section">
+      <div align="center"><img src="img/cene.png" width="100%" alt="Decoración"></div>
+      <div class="flourish"></div>
+
+      <h2 class="itinerary-title">Itinerario</h2>
+      <p class="itinerary-date">27 de Junio de 2026</p>
+
+      <div class="itinerary-timeline">
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt="Misa"></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">6:00 PM</div>
+            <div class="itinerary-event">Misa</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt="Recepción"></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">7:30 PM</div>
+            <div class="itinerary-event">Recepción</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper"><img src="img/baile.png" alt="Vals"></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">8:30 PM</div>
+            <div class="itinerary-event">Vals</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt="Cena"></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">10:00 PM</div>
+            <div class="itinerary-event">Cena</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper"><img src="img/fin.png" alt="Fin"></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">2:00 AM</div>
+            <div class="itinerary-event">Fin</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CÓDIGO DE VESTIMENTA -->
+    <section id="vestimenta" class="gifts-section">
+      <div align="center"><img src="img/vestimenta.png" width="85%" alt="Vestimenta"></div>
+      <div class="section-title-script">Código de vestimenta</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <div class="gift-title">FORMAL</div>
+          <p class="gift-sub">Con cariño les pedimos, el color azul quede reservado para la quinceañera.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de fotos sin datos -->
+    <!--
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-main">Galería de fotos</div>
+      <div class="flourish"></div>
+    </section>
+    -->
+
+    <!-- 8. MESA DE REGALOS -->
+    <section id="mesa-regalos" class="gifts-section">
+      <div align="center"><img src="img/regalo.png" width="75%" alt="Regalo"></div>
+      <div class="section-title-script">Mesa de regalos</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+          <p class="section-sub">Tu presencia es lo más importante para mí en este día, pero si deseas darme algún
+            presente puedes ver mi mesa de regalos dando click aquí abajo.</p> <br>
+
+          <div align="center"><img src="img/liverpool.ico" width="20%" alt="Regalo"></div> <br>
+          <p class="gift-sub"><strong>No. Evento 52008645</strong></p>
+
+        </div>
+        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52008645" target="_blank" rel="noopener">
+          <button class="btn-ubicacion">Ver Mesa de Regalos</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- 9. LLUVIA DE SOBRES 
+    <section id="sobres" class="gifts-section">
+      <div align="center"><img src="img/sobre.png" width="48%" alt="Sobre"></div>
+      <div class="section-title-script">Lluvia de sobres</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <p class="gift-sub"> </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Instagram sin datos -->
+    <!--
+    <section id="instagram" class="gifts-section">
+      <div class="section-title-script">Instagram</div>
+      <div class="flourish"></div>
+    </section>
+    -->
+
+    <!-- Invita QR sin datos -->
+    <!--
+    <section id="invit-aqr" class="gifts-section">
+      <div class="section-title-script">Invita QR</div>
+      <div class="flourish"></div>
+    </section>
+    -->
+
+    <!-- Álbum QR sin datos -->
+    <!--
+    <section id="albumqr" class="gifts-section">
+      <div class="section-title-script">Álbum QR</div>
+      <div class="flourish"></div>
+    </section>
+    -->
+    <section class="quote-section">
+      <div class="quote-inner reveal reveal-left">
+        <p class="quote-text">Gracias por acompañarme en una noche donde mi historia brillará entre lunas y estrellas.
+        </p>
+        <br>
+
+        <div class="event-card reveal reveal-right">
+          <div align="center">
+            <img src="img/final.png" width="100%" alt="Foto final">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 XV Años Karla Renata</footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    // =========================
+    // CUENTA REGRESIVA
+    // =========================
+    const targetDate = new Date(2026, 5, 27, 18, 0, 0); // 27 de junio de 2026, 6:00 PM
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) { return String(n).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================
+    // MÚSICA
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) {
+        console.log("No se pudo reproducir la música:", e);
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) await playMusic();
+      else pauseMusic();
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+        cleanupAutoplayListeners();
+      } catch (e) {
+        console.log("Autoplay bloqueado, se activará al tocar el botón.");
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // REVEAL EN SCROLL
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    itineraryItems.forEach(el => itineraryObserver.observe(el));
+
+    // BOTÓN IR ARRIBA
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+
+</html>
