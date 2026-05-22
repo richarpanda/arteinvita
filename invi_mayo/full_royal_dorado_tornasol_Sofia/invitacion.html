@@ -1630,6 +1630,18 @@
       const calendarGrid = document.getElementById('calendarGrid');
       const daysInMonth = 31;
 
+      // Agosto 2026 inicia en sábado
+      // Domingo = 0 ... Sábado = 6
+      const firstDay = 6;
+
+      // Espacios vacíos antes del día 1
+      for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-day';
+        empty.style.visibility = 'hidden';
+        calendarGrid.appendChild(empty);
+      }
+
       for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement('div');
         dayElement.className = 'calendar-day';
