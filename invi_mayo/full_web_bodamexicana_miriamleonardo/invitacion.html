@@ -2,1222 +2,1949 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Miriam & Leonardo | Boda</title>
-  <script src="https://app.arteinvita.com/widget.js"></script>
-
-  <!-- TIPOGRAFÍAS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
-    rel="stylesheet">
-
-  <style>
-    @font-face {
-      font-family: 'Nova Quinta';
-      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
-    }
-
-    @font-face {
-      font-family: 'Gabriola';
-      src: url('fonts/gabriola Font Download.ttf') format('truetype');
-    }
-
-    :root {
-      --rojo: #d94b3d;
-      /* coral / rojo mexicano */
-      --rojo-claro: #f06a3b;
-      /* naranja coral */
-      --dorado: #d79a2b;
-      /* mostaza dorado */
-      --crema: #fff8ef;
-      /* fondo claro cálido */
-      --crema-oscuro: #f5e4c9;
-      /* beige cálido */
-      --texto: #5a3d2e;
-      /* café profundo */
-      --gris: #7e6a5c;
-      --borde: #ebd2b0;
-      --shadow-soft: 0 18px 40px rgba(90, 61, 46, 0.16);
-
-      --turquesa: #0f8b8d;
-      /* azul/turquesa */
-      --magenta: #d63a7c;
-      /* rosa mexicano */
-      --naranja: #f28b30;
-      /* naranja vivo */
-      --verde: #4d8a43;
-      /* verde hoja */
-      --arena: #f2d7a6;
-      /* arena / fibras */
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Gabriola', serif;
-      color: var(--texto);
-      background: transparent;
-      scroll-behavior: smooth;
-      font-size: 18px;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--gris);
-    }
-
-    a:hover {
-      color: var(--rojo);
-    }
-
-    button {
-      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.02);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
-    }
-
-    button:active {
-      transform: translateY(0) scale(0.98);
-      filter: brightness(0.98);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    main {
-      max-width: 520px;
-      margin: 0 auto;
-      background: #fffffff;
-      overflow: hidden;
-    }
-
-    section {
-      padding: 3rem 1.6rem;
-    }
-
-    .section-title-script {
-      font-family: "Great Vibes", cursive;
-      font-size: 3.8rem;
-      color: var(--rojo);
-      text-align: center;
-      margin-bottom: 0.2rem;
-      line-height: 1;
-    }
-
-    .section-title-main {
-      font-family: "Playfair Display", serif;
-      font-size: 1.8rem;
-      text-align: center;
-      color: var(--turquesa);
-      margin-bottom: 0.2rem;
-      letter-spacing: 0.05em;
-    }
-
-    .section-sub {
-      font-size: 1.75rem;
-      color: var(--gris);
-      text-align: center;
-      line-height: 1.15;
-      margin-top: 1rem;
-    }
-
-    .flourish,
-    .confirm-flourish {
-      width: 300px;
-      height: 45px;
-      margin: 0.5rem auto 2rem;
-      background-image: url("img/greca.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-    }
-
-
-    .hero-full {
-      position: relative;
-      min-height: calc(- 50px);
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .hero-full::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
-
-
-    .hero-full img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: relative;
-      z-index: 0;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 3.4rem 2.2rem 3rem;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .hero-name {
-      font-family: "Great Vibes", cursive;
-      font-size: 5.9rem;
-      margin-bottom: 0.2rem;
-      color: #fff4dc;
-      text-shadow: 0 4px 20px rgba(61, 42, 32, 0.50);
-      line-height: 0.95;
-    }
-
-    .hero-sub {
-      font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: #ffffff;
-      line-height: 1.35;
-    }
-
-    .music-section {
-      padding: 1.4rem 1.6rem 0;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-    }
-
-    .music-btn-min {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.5rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid var(--dorado);
-      background: #ffffff;
-      box-shadow: 0 10px 22px rgba(61, 42, 32, 0.10);
-      cursor: pointer;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--rojo);
-    }
-
-    .music-icon-min {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 2px solid var(--dorado);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .music-icon-min.paused::before {
-      content: "";
-      border-style: solid;
-      border-width: 6px 0 6px 9px;
-      border-color: transparent transparent transparent var(--dorado);
-      transform: translateX(1px);
-    }
-
-    .music-icon-min.playing::before,
-    .music-icon-min.playing::after {
-      content: "";
-      position: absolute;
-      width: 3px;
-      height: 9px;
-      background: var(--rojo);
-    }
-
-    .music-icon-min.playing::before {
-      left: 4px;
-    }
-
-    .music-icon-min.playing::after {
-      right: 4px;
-    }
-
-    .intro-section {
-      background:
-  to bottom, var(--crema), var(--crema-oscuro));
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 18% 16%, rgba(216, 84, 69, 0.13), transparent 18%),
-        radial-gradient(circle at 82% 22%, rgba(15, 140, 140, 0.10), transparent 20%),
-        radial-gradient(circle at 48% 90%, rgba(224, 122, 47, 0.12), transparent 20%);
-      pointer-events: none;
-    }
-
-    .intro-card {
-      position: relative;
-      z-index: 1;
-    }
-
-    .date-container {
-      font-family: "Great Vibes", cursive;
-      text-align: center;
-      color: var(--rojo);
-      width: 100%;
-    }
-
-    .day {
-      font-size: 3.8em;
-      margin-bottom: 0;
-      border-bottom: 2px solid var(--dorado);
-      display: inline-block;
-      padding: 0 30px 2px;
-    }
-
-    .number {
-      font-size: 10em;
-      margin: 0;
-      font-weight: lighter;
-      line-height: 1;
-    }
-
-    .month {
-      font-size: 3.8em;
-      margin-top: 0;
-      border-top: 2px solid var(--dorado);
-      display: inline-block;
-      padding: 2px 30px 0;
-    }
-
-    .intro-script {
-      font-family: "Great Vibes", cursive;
-      font-size: 2.85rem;
-      color: var(--turquesa);
-      margin-top: 1.1rem;
-      text-align: center;
-      line-height: 1;
-    }
-
-    .intro-parents-title {
-      font-family: "Great Vibes", cursive;
-      font-size: 2.7rem;
-      color: var(--rojo);
-      margin-top: 1.8rem;
-      text-align: center;
-    }
-
-    .intro-list {
-      font-size: 1.72rem;
-      margin-top: 0.4rem;
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    .save-date-min {
-      padding-top: 3.2rem;
-      padding-bottom: 3.2rem;
-      background-image: url("img/fondocounter.jpg");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: #ffffff;
-      overflow: hidden;
-    }
-
-    .save-date-min::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(61, 42, 32, 0.72), rgba(168, 50, 50, 0.78));
-      z-index: 1;
-    }
-
-    .save-date-min::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(215, 168, 77, 0.95) 0 1px, transparent 1.8px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.70) 0 1px, transparent 1.6px);
-      background-size: 52px 52px, 86px 86px;
-      opacity: 0.28;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .save-date-min-inner {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-    }
-
-    .save-date-min-title {
-      font-family: "Playfair Display", serif;
-      font-size: 1.0rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #fff4dc;
-      opacity: 0.95;
-      margin-bottom: 1.2rem;
-    }
-
-    .countdown-min {
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      background: rgba(255, 250, 240, 0.16);
-      border: 1px solid rgba(215, 168, 77, 0.75);
-      border-radius: 18px;
-      padding: 1.2rem 1.2rem 1.1rem;
-      box-shadow: 0 14px 35px rgba(61, 42, 32, 0.22);
-      backdrop-filter: blur(8px);
-    }
-
-    .countdown-time {
-      font-family: "Playfair Display", serif;
-      font-size: 2.2rem;
-      letter-spacing: 0.06em;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      gap: 0.45rem;
-      align-items: baseline;
-    }
-
-    .countdown-time span {
-      display: inline-block;
-      min-width: 2ch;
-    }
-
-    .countdown-labels {
-      margin-top: 0.6rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.35rem;
-      font-size: 0.78rem;
-      color: #fff4dc;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .countdown-note {
-      margin-top: 1.1rem;
-      font-size: 1.55rem;
-      font-style: italic;
-      color: #ffffff;
-      opacity: 0.95;
-    }
-
-    .when-where-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .event-card {
-      background: #ffffff;
-      border-radius: 1.5rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(234, 214, 184, 0.95);
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .event-card img.event-photo {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-    }
-
-    .event-content {
-      padding: 1.6rem 1.6rem 1.8rem;
-      text-align: center;
-    }
-
-    .event-script {
-      font-family: "Great Vibes", cursive;
-      font-size: 3.8rem;
-      color: var(--rojo);
-      margin-bottom: 0.2rem;
-      line-height: 1;
-    }
-
-    .event-label {
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      font-size: 0.90rem;
-      color: var(--gris);
-      margin-bottom: 0.4rem;
-    }
-
-    .event-title {
-      font-weight: 700;
-      font-size: 1.95rem;
-      margin-bottom: 0.30rem;
-      color: var(--texto);
-    }
-
-    .event-address {
-      font-size: 1.45rem;
-      color: var(--gris);
-      line-height: 1.45;
-    }
-
-    .event-time {
-      margin-top: 1.2rem;
-      font-weight: 700;
-      color: var(--turquesa);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 1.8rem;
-    }
-
-    .btn-ubicacion,
-    .btn-whats,
-    .gift-button,
-    .scroll-top {
-      background: var(--rojo);
-      color: #fff;
-    }
-
-    .btn-ubicacion {
-      margin: 1rem auto 0;
-      display: block;
-      padding: 0.8rem 2rem;
-      border-radius: 999px;
-      border: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .event-content a {
-      display: flex;
-      justify-content: center;
-    }
-
-    .itinerary-section {
-      padding: 3rem 1.6rem;
-      background: var(--crema);
-    }
-
-    .itinerary-title {
-      font-family: "Great Vibes", cursive;
-      font-size: 4.5rem;
-      color: var(--turquesa);
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .itinerary-date {
-      font-family: "Playfair Display", serif;
-      font-size: 1.15rem;
-      color: var(--dorado);
-      text-align: center;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-    }
-
-    .itinerary-timeline {
-      max-width: 340px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .itinerary-item {
-      display: grid;
-      grid-template-columns: 64px 46px 1fr;
-      align-items: center;
-      column-gap: 0.75rem;
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .itinerary-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .itinerary-icon-wrapper {
-      width: 85px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .itinerary-icon-wrapper img {
-      width: 85px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .itinerary-divider {
-      width: 46px;
-      height: 1.5px;
-      background: var(--dorado);
-    }
-
-    .itinerary-content {
-      text-align: left;
-    }
-
-    .itinerary-time {
-      font-family: "Playfair Display", serif;
-      font-size: 1.45rem;
-      color: var(--dorado);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .itinerary-event {
-      font-size: 1.28rem;
-      color: var(--texto);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .gifts-section {
-      background: var(--crema);
-    }
-
-    .gift-options {
-      margin-top: 1rem;
-    }
-
-    .gift-item {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--texto);
-    }
-
-    .gift-title {
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      font-size: 1.5rem;
-    }
-
-    .gift-sub {
-      font-size: 1.6rem;
-      color: var(--gris);
-      line-height: 1.25;
-    }
-
-    .gift-button {
-      margin-top: 0.9rem;
-      display: inline-block;
-      padding: 0.65rem 1.8rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-    }
-
-    .travel-card {
-      background: #ffffff;
-      border-radius: 1.4rem;
-      padding: 1.5rem;
-      border: 1px solid var(--borde);
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-    }
-
-    .confirm-section {
-      background: linear-gradient(to bottom, var(--crema-oscuro), var(--crema));
-      position: relative;
-    }
-
-    .confirm-title-script {
-      font-family: "Great Vibes", cursive;
-      font-size: 4.2rem;
-      color: var(--rojo);
-      text-align: center;
-      margin-bottom: 0.2rem;
-    }
-
-    .btn-whats {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-      padding: 0.9rem 1.1rem;
-      border-radius: 999px;
-      border: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .scroll-top {
-      position: fixed;
-      bottom: 20px;
-      right: 16px;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
-      cursor: pointer;
-      z-index: 60;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s;
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(-4px);
-    }
-
-    footer {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 1.8rem 1.1rem 2.1rem;
-      font-size: 1.8rem;
-      text-align: center;
-      color: var(--rojo);
-      background: transparent;
-    }
-
-    .reveal {
-      opacity: 0;
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-
-    .reveal-left {
-      transform: translateX(-40px);
-    }
-
-    .reveal-right {
-      transform: translateX(40px);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    @media (min-width: 768px) {
-      .hero-full {
-        border-radius: 0 0 40px 40px;
-        overflow: hidden;
-      }
-
-      main {
-        border-radius: 40px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-      }
-
-      body {
-        background: transparent;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Miriam & Leonardo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://app.arteinvita.com/widget.js"></script>
+    <style>
+        /* Estilo Global */
+        @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+
+        }
+
+        @font-face {
+            font-family: 'Gabriola';
+            src: url('fonts/gabriola Font Download.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Gabriola', serif;
+            background-color: #fefefe;
+        }
+
+
+        /* Fondo fijo */
+        .background {
+            background-image: url('img/fondo.png');
+            /* Ruta de tu imagen */
+            background-repeat: no-repeat;
+            /* Evita que se repita */
+            background-size: 450px 6205px;
+            /* Tamaño exacto */
+            background-position: top center;
+            /* Centrado en la parte superior */
+            width: 100%;
+            /* Ancho fijo */
+            max-width: 450px;
+            /* Ancho máximo */
+            min-height: 6205px;
+            /* Altura exacta */
+            margin: 0 auto;
+            animation: slideIn 1.5s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Contenedor de texto */
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo de textos */
+
+        /* Estilo del nombre */
+        .name {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 50px;
+            font-weight: 500;
+            color: #3573b8;
+            text-align: center;
+            margin-top: 250px;
+
+        }
+
+        .name2 {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 50px;
+            font-weight: 500;
+            color: #3573b8;
+            text-align: center;
+
+
+        }
+
+        /* Texto debajo del nombre */
+        .subtext {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 24px;
+            color: #af8843;
+            text-align: center;
+            margin-top: 1px;
+            line-height: 1.5;
+            width: 100%;
+        }
+
+        .parrafo {
+            font-family: 'Gabriola', serif;
+            font-size: 26px;
+            /* Tamaño del texto */
+            color: #513814;
+            /* Color del texto */
+            text-align: center;
+            /* Centrado */
+            margin-top: 1px;
+            /* Espaciado respecto al nombre */
+            line-height: 1.5;
+            /* Altura de línea */
+            width: 100%;
+        }
+
+        /* Contenedor general de la fecha */
+        .date-container {
+            font-family: 'Gabriola', serif;
+            text-align: center;
+            color: #2e7794;
+            width: 100%;
+        }
+
+        .day {
+            font-size: 2.8em;
+            margin-bottom: 0;
+            border-bottom: 2px solid #2e7794;
+            display: inline-block;
+            padding: 0 30px 2px;
+        }
+
+        .number {
+            font-size: 8em;
+            margin: 0;
+            font-weight: lighter;
+            line-height: 1;
+        }
+
+        .month {
+            font-size: 2.8em;
+            margin-top: 0;
+            border-top: 2px solid #2e7794;
+            display: inline-block;
+            padding: 2px 30px 0;
+        }
+
+        .time {
+            font-size: 2.4em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+
+
+        .timeline {
+            position: relative;
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 280px);
+            /* Ajustado para no sobresalir arriba ni abajo */
+            background-color: #d7a844;
+            top: 140px;
+            /* Ajustado para comenzar después del primer ícono */
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: #ffffff;
+            /* Color de fondo actualizado para cada item */
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Clase que se agrega cuando el elemento es visible */
+        .animate-timeline-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Retraso escalonado para cada item */
+        .timeline-item:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .timeline-item:nth-child(3) {
+            transition-delay: 0.6s;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 20px;
+        }
+
+        /* El resto de los estilos se mantienen igual */
+        .section-title {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 24px;
+            color: #af8843;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .section-content {
+            font-family: 'Gabriola', serif;
+            font-size: 20px;
+            color: #484a51;
+            line-height: 1.4;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .section-content-hora {
+            font-family: 'Gabriola', serif;
+            font-size: 30px;
+            color: #513814;
+            text-align: center;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Gabriola', serif;
+            font-size: 20px;
+            color: #af8843;
+            padding: 5px 30px;
+            border: 1.5px solid #513814;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #af8843;
+            color: white;
+        }
+
+        .section-icon,
+        .section-icon-event,
+        .section-icon-dress {
+            width: 35px;
+            height: 35px;
+            margin: 0 auto 10px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Animación fade-in con deslizamiento */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* Inicia desde abajo */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                /* Llega a su posición final */
+            }
+        }
+
+
+        /* Ícono antes del título */
+        .section-icon {
+            width: 80px;
+            /* Ancho del ícono */
+            height: 80px;
+            /* Altura del ícono */
+            margin: 0 auto 5px auto;
+            /* Centrado con espacio debajo */
+            display: block;
+            /* Para manejarlo como bloque */
+            background-image: url('img/icon-ceremony.png');
+            /* Enlace directo a la imagen */
+            background-size: cover;
+            /* Asegura que la imagen cubra todo el área */
+            background-repeat: no-repeat;
+            /* Sin repetición */
+            background-position: center;
+            /* Centrado dentro del contenedor */
+        }
+
+        .section-icon-event {
+            width: 80px;
+            /* Ancho del ícono */
+            height: 80px;
+            /* Altura del ícono */
+            margin: 0 auto 5px auto;
+            /* Centrado con espacio debajo */
+            display: block;
+            /* Para manejarlo como bloque */
+            background-image: url('img/icon-event.png');
+            /* Enlace directo a la imagen */
+            background-size: cover;
+            /* Asegura que la imagen cubra todo el área */
+            background-repeat: no-repeat;
+            /* Sin repetición */
+            background-position: center;
+            /* Centrado dentro del contenedor */
+        }
+
+        .section-icon-dress {
+            width: 80px;
+            /* Ancho del ícono */
+            height: 80px;
+            /* Altura del ícono */
+            margin: 0 auto 5px auto;
+            /* Centrado con espacio debajo */
+            display: block;
+            /* Para manejarlo como bloque */
+            background-image: url('img/icon-dress.png');
+            /* Enlace directo a la imagen */
+            background-size: cover;
+            /* Asegura que la imagen cubra todo el área */
+            background-repeat: no-repeat;
+            /* Sin repetición */
+            background-position: center;
+            /* Centrado dentro del contenedor */
+        }
+
+        .section-title {
+            font-family: 'Nova Quinta', cursive;
+            /* Tipografía personalizada */
+            font-size: 28px;
+            color: #af8843;
+            margin: 10px 0;
+        }
+
+        .section-content {
+            font-family: 'Gabriola', serif;
+            font-size: 24px;
+            color: #513814;
+            margin: 10px 0;
+        }
+
+        .section-content-hora {
+            font-family: 'Gabriola', serif;
+            font-size: 32px;
+            color: #513814;
+            margin: 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            /* Bloque alineado al texto */
+            font-family: 'Gabriola', serif;
+            /* Tipografía Gabriola */
+            font-size: 22px;
+            /* Tamaño del texto */
+            color: #513814;
+            /* Color del texto */
+            padding: 3px 40px;
+            /* Menor altura (8px) y mayoor ancho (40px) */
+            border: 2px solid #af8843;
+            /* Borde definido */
+            border-radius: 25px;
+            /* Bordes redondeados más estilizados */
+            text-decoration: none;
+            /* Sin subrayado */
+            text-align: center;
+            /* Texto centrado */
+            background-color: transparent;
+            /* Fondo transparente */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Transiciones suaves */
+        }
+
+        /* Hover del botón */
+        .btn:hover {
+            background-color: #af8843;
+            /* Fondo azul al pasar el mouse */
+            color: white;
+            /* Cambia el color del texto */
+            cursor: pointer;
+            /* Cambia el cursor a mano */
+        }
+
+        /* Contador */
+        .countdown {
+            font-family: 'Gabriola', serif;
+            font-size: 20px;
+            color: #484a51;
+            margin: 20px 0;
+        }
+
+        /* Reproductor */
+        .audio-player {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .audio-player audio {
+            width: 70%;
+        }
+
+
+        /* Estilos para la nueva sección social */
+        .social-section {
+            margin-top: 10px;
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .social-section::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 0px;
+            background-color: #efb3ae;
+            top: 426px;
+        }
+
+        .social-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: transparent;
+            border: 2px solid #fffffF;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .social-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .animate-social-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-item:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+
+        .social-item:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .social-icon-camera {
+            background-image: url('img/icon-camera.png');
+        }
+
+        .social-icon-gift {
+            background-image: url('img/icon-gift.png');
+        }
+
+        .social-icon-gift-2 {
+            background-image: url('img/icon-gift-2.png');
+        }
+
+        .social-icon-album {
+            background-image: url('img/icon-album.png');
+        }
+
+        .social-title {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 26px;
+            color: #af8843;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .social-content {
+            font-family: 'Gabriola', serif;
+            font-size: 22px;
+            color: #513814;
+            line-height: 1.4;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .hashtag {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 32px;
+            color: #af8843;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .instagram {
+            font-family: 'Gabriola', serif;
+            font-size: 32px;
+            color: #484a51;
+        }
+
+        .thanks {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 32px;
+            color: #af8843;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Estilos para la sección final */
+        .final-section {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .final-item {
+            position: relative;
+            margin-bottom: 5px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-final-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .final-item:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+
+        .final-item:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .final-item:nth-child(3) {
+            transition-delay: 0.6s;
+        }
+
+        .section-divider {
+            width: 226px;
+            height: 24px;
+            margin: 10px auto;
+            background-image: url('img/icon-hotel.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .final-title {
+            font-family: 'Nova Quinta', cursive;
+            font-size: 34px;
+            color: #2e7794;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .final-content {
+            font-family: 'Gabriola', serif;
+            font-size: 24px;
+            color: #513814;
+            line-height: 1.4;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* Estilos para el contador */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Gabriola', serif;
+            font-size: 40px;
+            color: #af8843;
+        }
+
+        .countdown-label {
+            font-family: 'Gabriola', serif;
+            font-size: 20px;
+            color: #484a51;
+            text-transform: uppercase;
+        }
+
+        .countdown-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+            background-image: url('img/icon-countdown.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .hotel-icon {
+            width: 226px;
+            height: 24px;
+            margin: 0 auto 15px;
+            background-image: url('img/icon-hotel.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background-image: url('img/icon-whatsapp.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .confirm-button {
+            display: inline-block;
+            /* Bloque alineado al texto */
+            font-family: 'Gabriola', serif;
+            /* Tipografía Gabriola */
+            font-size: 24px;
+            /* Tamaño del texto */
+            color: #af8843;
+            /* Color del texto */
+            padding: 6px 30px;
+            /* Menor altura (8px) y Julior ancho (40px) */
+            border: 2px solid #af8843;
+            /* Borde definido */
+            border-radius: 25px;
+            /* Bordes redondeados más estilizados */
+            text-decoration: none;
+            /* Sin subrayado */
+            text-align: center;
+            /* Texto centrado */
+            background-color: transparent;
+            /* Fondo transparente */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Transiciones suaves */
+
+        }
+
+        .confirm-button:hover {
+            background-color: #af8843;
+            /* Fondo azul al pasar el mouse */
+            color: white;
+            /* Cambia el color del texto */
+            cursor: pointer;
+            /* Cambia el cursor a mano */
+        }
+
+        .enlace-instagram {
+            color: #af8843;
+            /* Color rosado suave */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .enlace-instagram:hover {
+            color: #e2645f;
+            /* Un tono más oscuro al pasar el mouse */
+            text-decoration: underline;
+        }
+
+
+
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #af8843;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 0.7;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #af8843;
+        }
+
+        /* Flecha hacia arriba usando CSS */
+        .arrow-up {
+            width: 10px;
+            height: 10px;
+            border-left: 3px solid white;
+            border-top: 3px solid white;
+            transform: rotate(45deg);
+            margin-top: 4px;
+        }
+
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+
+
+
+        #countdown-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #af8843;
+        }
+
+
+        /* Estilos del reproductor flotante */
+        .floating-player {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .player-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #af8843;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .player-button:hover {
+            background-color: #af8843;
+            transform: scale(1.05);
+        }
+
+        .player-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-left: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .player-content.active {
+            display: block;
+        }
+
+        .song-info {
+            margin-bottom: 15px;
+        }
+
+        .song-title {
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .song-artist {
+            color: #666;
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .control-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #af8843;
+            font-size: 1.2em;
+            padding: 5px;
+        }
+
+        .control-button:hover {
+            color: #af8843;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #af8843;
+            border-radius: 5px;
+            width: 0%;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .volume-icon {
+            margin-right: 10px;
+            color: #af8843;
+        }
+
+        .volume-slider {
+            flex-grow: 1;
+            height: 5px;
+            -webkit-appearance: none;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background-color: #af8843;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Estilos para los iconos */
+        .icon {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .music-icon {
+            width: 28px;
+            height: 28px;
+
+        }
+
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: #25D366;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20BA5A;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        .whatsapp-icon-2 {
+            width: 40px;
+            height: 40px;
+            fill: currentColor;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                padding: 10px 20px;
+                font-size: 16px;
+                gap: 14px;
+            }
+
+            .whatsapp-icon-2 {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+
+        /* En móviles muy pequeños, centramos igual y bloqueamos el zoom lateral */
+        @media (max-width: 480px) {
+
+            html,
+            body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* NUEVA SECCIÓN: Estilos para el reloj digital en formato de cronómetro */
+        .digital-clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .digital-clock {
+            font-family: 'Courier New', monospace;
+            font-size: 2.8em;
+            /* Reducido de 4.5em */
+            font-weight: bold;
+            color: #af8843;
+
+            padding: 10px 25px;
+            /* Reducido de 30px 50px */
+            border-radius: 15px;
+            border: 0px solid #af8843;
+            text-align: center;
+            letter-spacing: 5px;
+            /* Reducido de 8px */
+
+            min-width: auto;
+            /* Cambiado de 350px */
+            transition: all 0.3s ease;
+        }
+
+        .clock-separator {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49%,
+            100% {
+                opacity: 1;
+            }
+
+            50%,
+            99% {
+                opacity: 0;
+            }
+        }
+
+        .clock-label {
+            font-family: 'Gabriola', serif;
+            font-size: 1.2em;
+            /* Reducido de 1.8em */
+            color: #477060;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .clock-status {
+            font-family: 'Gabriola', serif;
+            font-size: 1.7em;
+            /* Reducido de 1.4em */
+            color: #513814;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .digital-clock.event-today {
+
+            border-color: #513814;
+            color: #513814;
+        }
+
+        .digital-clock.event-today .clock-separator {
+            color: #513814;
+        }
+
+
+        /* NUEVO: ESTILOS PARA EL MODAL DE GALERÍA */
+        .gallery-button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .gallery-button {
+            display: inline-block;
+            font-family: 'Gabriola', serif;
+            font-size: 22px;
+            color: #af8843;
+            padding: 8px 40px;
+            border: 2px solid #af8843;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-button:hover {
+            background-color: #af8843;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease-in;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .gallery-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2001;
+            transition: color 0.3s ease;
+        }
+
+        .gallery-close-btn:hover {
+            color: #921c32;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .gallery-main-image {
+            max-width: 90%;
+            max-height: 100%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease-in;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #000;
+            border: none;
+            font-size: 30px;
+            padding: 15px 20px;
+            cursor: pointer;
+            z-index: 2001;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .gallery-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-prev {
+            left: 10px;
+        }
+
+        .gallery-next {
+            right: 10px;
+        }
+
+        .gallery-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Gabriola', serif;
+            font-size: 18px;
+            z-index: 2001;
+        }
+
+        .gallery-thumbnails {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            max-width: 80%;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            z-index: 2001;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery-thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .gallery-thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .gallery-thumbnail.active {
+            border-color: #921c32;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                height: 60vh;
+            }
+
+            .gallery-arrow {
+                padding: 10px 15px;
+                font-size: 20px;
+            }
+
+            .gallery-thumbnails {
+                bottom: 70px;
+                gap: 8px;
+            }
+
+            .gallery-thumbnail {
+                width: 50px;
+                height: 50px;
+            }
+
+            .gallery-close-btn {
+                font-size: 30px;
+                top: 10px;
+                right: 15px;
+            }
+        }
+
+        .pinterest-board {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem auto;
+            overflow: hidden;
+        }
+
+        .pinterest-board span,
+        .pinterest-board iframe {
+            max-width: 100% !important;
+        }
+
+        /* FIN NUEVO: ESTILOS GALERÍA */
+    </style>
 </head>
 
 <body>
+    <div class="background">
+        <div class="container">
+            <!-- Scroll to Top Button -->
+            <button class="scroll-to-top" id="scrollBtn" aria-label="Volver arriba">
+                <div class="arrow-up"></div>
+            </button>
 
-  <!-- AUDIO -->
-  <audio id="bg-music" src="Arctic Monkeys_Baby I_m Yours.mp3" loop autoplay></audio>
 
-  <main>
+            <h1 class="name">Miriam <br>& <br>Leonardo</h1>
 
-    <!-- 1. HERO -->
-    <section id="inicio" class="hero-full">
-      <img src="img/PORTADA.png" alt="Miriam y Leonardo">
-      <!--  <div class="hero-overlay">
-        <div>
-          <div class="hero-name">Miriam<br>&amp; Leonardo</div>
-          <div class="hero-sub">Nuestra Boda</div>
+            <p class="subtext">
+                Con inmensa alegría,<br>
+                te invitamos a que seas parte<br>
+                de nuestra boda
+            </p>
+
+            <!-- Contador de Fecha -->
+            <div class="date-container">
+                <div class="day">Viernes</div>
+                <div class="number">18</div>
+                <div class="month">Diciembre</div>
+            </div>
+
+            <br>
+
+            <p class="parrafo">
+                Nos llena de felicidad invitarte<br>
+                a celebrar nuestra unión.<br>
+                Rodeados del amor <br>de nuestros padres:
+                <br><br>
+
+                <strong>Padres de la novia</strong><br>
+                María Eugenia Yáñez Franco<br>
+
+                Jorge Arturo Gudiño González
+                <br><br>
+
+                <strong>Padres del novio</strong><br>
+                Ma. Socorro García Tostado<br>
+
+                Armando Fernández Villaseñor
+                <br><br>
+
+                Con amor, nuestros padrinos:
+                <br><br>
+                Netzy Terriquez Becerra<br>
+
+                Rodrigo Gudiño Yáñez
+            </p>
+
+            <!-- Línea de tiempo -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="section-icon"></div>
+                    <h2 class="section-title">Ceremonia Religiosa</h2>
+                    <p class="section-content">
+                        <strong>Parroquia Virgen de San Juan</strong><br>
+                        Av. Cancún L-12 Fracc, Paraíso Villas, 77533 Cancún, Q. R.
+                    </p>
+                    <p class="section-content-hora">Hora: 4:00 pm</p>
+                    <a href="https://www.google.com/maps/search/Parroquia%20Virgen%20de%20San%20Juan/@21.1338948,-86.84238964,17z?hl=es"
+                        class="btn">Ver mapa</a>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="section-icon-event"></div>
+                    <h2 class="section-title">Recepción del evento</h2>
+                    <p class="section-content">
+                        <strong>Ocean Events - Ocean Weddings</strong><br>
+                        Carretera Puerto Juárez - Punta Sam, S.M 86, 77520 Cancún, Q.R.
+                    </p>
+                    <p class="section-content-hora">Hora: 6:00 pm</p>
+                    <a href="https://www.google.com/maps/search/Ocean%20Events%20-%20Ocean%20Weddings/@21.21042324,-86.80325251,17z?hl=es"
+                        class="btn">Ver mapa</a>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="section-icon-dress"></div>
+                    <h2 class="section-title">Código de Vestimenta</h2>
+                    <p class="section-content">
+                        Vistamos este día con elegancia frente al mar:
+                    </p>
+                    <p class="section-content-hora">Formal de playa</p>
+                </div>
+            </div>
+
+            <section class="social-section">
+                <!--  INSTAGRAM 
+                <div class="social-item">
+                    <div class="social-icon social-icon-camera"></div>
+                    <h2 class="social-title">Captura cada instante</h2>
+                    <p class="social-content">y compártelo con el hashtag:</p>
+                    <p class="hashtag">#MiriamYLeonardo</p>
+                    <p class="social-content">También puedes etiquetarnos en Instagram.</p>
+                </div> -->
+
+                <!-- MESA DE REGALOS SIN DATOS -->
+                <!--
+                <div class="social-item">
+                    <div class="social-icon social-icon-gift-2"></div>
+
+                    <h2 class="social-title">
+                        Mesa de regalos
+                    </h2>
+
+                    <p class="social-content">
+                        Tu presencia es nuestro mejor regalo.
+                    </p>
+                </div>
+                -->
+
+                <div class="social-item">
+                    <div class="social-icon social-icon-gift-2"></div>
+
+                    <h2 class="social-title">
+                        Lluvia de Sobres
+                    </h2>
+
+                    <p class="social-content">
+                        Tu presencia es nuestro mejor regalo.<br><br>
+
+                        Si deseas tener un detalle con nosotros,<br>
+                        puedes hacerlo durante el evento<br>
+                        o mediante transferencia:
+                        <br><br>
+
+                        Josué Leonardo Fernández García<br>
+                        Banamex CLABE:<br>
+                        <strong>002180701744619518</strong>
+                        <br><br>
+
+                        Miriam Eugenia Gudiño Yáñez<br>
+                        BBVA CLABE:<br>
+                        <strong>012022015975234195</strong>
+                    </p>
+
+                    <p class="thanks">¡Gracias!</p>
+                </div>
+            </section>
+
+            <!-- seccion hospedaje,contador,whats -->
+
+            <section class="final-section">
+                <!-- Hospedaje -->
+                <div class="final-item">
+
+                    <h2 class="final-title">Sugerencia de Hospedaje</h2>
+                    <p class="final-content">
+                        Para quienes nos acompañan desde fuera,<br>
+                        les compartimos contactos de apoyo<br>
+                        para agencia de viajes, hospedaje<br>
+                        o tours en Cancún.
+                        <br><br>
+
+                        <strong>Pamela:</strong> 9983168609<br>
+                        <strong>Alejandro:</strong> 9988205599
+                    </p>
+                </div>
+
+                <!-- Album Compartido sin datos -->
+                <!--
+                <div class="final-item">
+                    <div align="center"><img src="img/album_qr.png" width="60%"></div>
+                    <h2 class="final-title">Álbum Compartido</h2>
+                    <p class="final-content">Da click aquí para subir las fotos que tomes durante la fiesta.</p>
+
+                    <a href="#" class="confirm-button"><strong><em>Subir Fotos</em></strong></a>
+                </div>
+                -->
+
+                <!-- Contador -->
+                <div class="final-item">
+                    <div style="width: 100%">
+
+                        <div class="digital-clock-container">
+                            <div class="countdown-icon"></div>
+                            <h2 class="final-title">Faltan</h2>
+                            <p class="final-content">DIAS// HORAS//MINUTOS </p>
+                            <div id="digital-clock" class="digital-clock">
+                                <span id="days">00</span><span class="clock-separator">:</span><span
+                                    id="hours">00</span><span class="clock-separator">:</span><span
+                                    id="minutes">00</span>
+                            </div>
+                            <div class="clock-label" id="clock-label"></div>
+                            <div class="clock-status" id="clock-status"></div>
+                        </div>
+
+                        <script>
+                            function updateDigitalClock() {
+                                const targetDate = new Date("December 18, 2026 16:00:00").getTime();
+                                const digitalClock = document.getElementById("digital-clock");
+                                const clockStatus = document.getElementById("clock-status");
+                                const daysElement = document.getElementById("days");
+                                const hoursElement = document.getElementById("hours");
+                                const minutesElement = document.getElementById("minutes");
+
+                                function update() {
+                                    const now = new Date().getTime();
+                                    const distance = targetDate - now;
+
+                                    if (distance > 0) {
+                                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                                        daysElement.textContent = String(days).padStart(2, '0');
+                                        hoursElement.textContent = String(hours).padStart(2, '0');
+                                        minutesElement.textContent = String(minutes).padStart(2, '0');
+
+                                        digitalClock.classList.remove("event-today");
+                                        clockStatus.textContent = "Para celebrar nuestra unión";
+                                    } else {
+                                        daysElement.textContent = "00";
+                                        hoursElement.textContent = "00";
+                                        minutesElement.textContent = "00";
+                                        digitalClock.classList.add("event-today");
+                                        clockStatus.textContent = "¡El evento es hoy!";
+                                    }
+                                }
+
+                                update();
+                                setInterval(update, 1000);
+                            }
+
+                            window.addEventListener('load', updateDigitalClock);
+                        </script>
+
+                    </div>
+                </div>
+
+                <!-- Confirmación WhatsApp -->
+                <div class="final-item">
+                    <div class="whatsapp-icon"></div>
+                    <h2 class="final-title">Confirma tu asistencia</h2>
+                    <p class="final-content">
+                        Tu presencia es muy importante<br>
+                        para nosotros.
+                        <br><br>
+                        Da click en el botón para confirmar tu asistencia.
+                    </p>
+                    <br>
+
+                    <a href="https://wa.me/529982604093" target="_blank" rel="noopener" class="confirm-button">
+                        <strong>Confirmar Asistencia</strong>
+                    </a>
+                </div>
+
+            </section>
+
+            <p class="parrafo">
+                Gracias por acompañarnos<br>
+                en este día tan especial.
+            </p>
+
+            <h2 class="final-title">
+                ¡Nos vemos<br>
+                pronto!
+            </h2>
+
+            <br>
+
+            
+
+         
+                <!-- Reproductor flotante -->
+            <div class="floating-player">
+                <div class="player-button" id="playerButton">
+
+                    <!-- Icono de música nuevo -->
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z" />
+                    </svg>
+
+
+
+                </div>
+                <div class="player-content" id="playerContent">
+                    <div class="song-info">
+                        <p class="song-title">¡Escucha la invitación con música!</p>
+                        <p class="song-artist">Artista</p>
+                    </div>
+
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="control-button" id="prevButton">
+                            <!-- Icono anterior -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                                <line x1="5" y1="19" x2="5" y2="5"></line>
+                            </svg>
+                        </button>
+                        <button class="control-button" id="playButton">
+                            <!-- Icono reproducir -->
+                            <svg class="icon" id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <!-- Icono pausa (oculto inicialmente) -->
+                            <svg class="icon" id="pauseIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="6" y="4" width="4" height="16"></rect>
+                                <rect x="14" y="4" width="4" height="16"></rect>
+                            </svg>
+                        </button>
+                        <button class="control-button" id="nextButton">
+                            <!-- Icono siguiente -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                                <line x1="19" y1="5" x2="19" y2="19"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="volume-control">
+                        <div class="volume-icon">
+                            <!-- Icono volumen -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                            </svg>
+                        </div>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
+                            value="0.7">
+                    </div>
+
+                    <!-- Elemento de audio oculto -->
+                    <audio id="audioPlayer" autoplay playsinline webkit-playsinline src="music/Arctic Monkeys_Baby I_m Yours.mp3"></audio>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
-      </div> -->
-    </section>
 
-    <!-- PLAYER MINIMAL -->
-    <section class="music-section">
-      <button class="music-btn-min" id="musicToggle" aria-label="Control de música">
-        <div class="music-icon-min paused" id="musicIcon"></div>
-        <span id="musicStatus">Play</span>
-      </button>
-    </section>
 
-   
-
-    <!-- 2. INTRO -->
-    <section id="intro" class="intro-section">
-      <div class="intro-card reveal reveal-left">
-        <div class="date-container">
-          <div class="day">Viernes</div>
-          <div class="number">18</div>
-          <div class="month">Diciembre</div>
-        </div>
-        <br>
-		  
-		   <div align="center"><img src="img/reloj.png" width="100%" alt="Decoración"></div>
-
-        <p class="section-sub">
-          Con mucha alegría queremos compartir con ustedes el inicio de nuestra nueva historia.
-        </p><br>
-
-        <div class="flourish"></div>
-
-        <p class="intro-script">Nos casamos</p>
-
-        <div class="intro-parents-title">Padres de la novia</div>
-        <p class="intro-list">
-          María Eugenia Yáñez Franco<br>
-          y <br>
-          Jorge Arturo Gudiño González
-        </p>
-
-        <div class="flourish"></div>
-
-        <div class="intro-parents-title">Padres del novio</div>
-        <p class="intro-list">
-          Ma Socorro García Tostado<br>
-          y <br>
-          Armando Fernández Villaseñor
-        </p>
-
-        <div class="flourish"></div>
-
-        <div class="intro-parents-title">Nuestros padrinos</div>
-        <p class="intro-list">
-          Netzy Terriquez Becerra<br>
-          y <br>
-          Rodrigo Gudiño Yáñez
-        </p>
-
-        <div class="flourish"></div>
-      </div>
-    </section>
-
-    <!-- 3. APARTA LA FECHA -->
-    <section id="fecha" class="save-date-min">
-      <div class="save-date-min-inner reveal reveal-right">
-        <div class="save-date-min-title"><strong>FALTAN</strong></div>
-
-        <div class="countdown-min" aria-label="Cuenta regresiva">
-          <div class="countdown-time">
-            <span id="cdDays">0</span>:
-            <span id="cdHours">00</span>:
-            <span id="cdMins">00</span>:
-            <span id="cdSecs">00</span>
-          </div>
-          <div class="countdown-labels">
-            <span>Días</span>
-            <span>Horas</span>
-            <span>Min</span>
-            <span>Seg</span>
-          </div>
-        </div>
-
-        <p class="countdown-note">¡Será un honor celebrar con ustedes!</p>
-      </div>
-    </section>
-
-    <!-- 4. CUÁNDO Y DÓNDE -->
-    <section id="evento">
-		<div align="center"><img src="img/copas.png" width="85%" alt="Decoración"></div>
-      <div class="when-where-header reveal reveal-left">
-        <div class="section-title-script">¿Cuándo y dónde?</div>
-        <div class="flourish"></div>
-      </div>
-
-      <div class="event-card reveal reveal-right">
-        <img src="img/iglesia.jpg" alt="Parroquia Virgen de San Juan" class="event-photo">
-        <div class="event-content">
-          <div class="event-label">Iniciamos con la</div>
-          <div class="event-script">Ceremonia</div>
-          <div class="event-title">Parroquia Virgen de San Juan</div>
-          <p class="event-address">
-            Av. Cancún L-12 Fracc, Paraíso Villas, 77533 Cancún, Q.R.
-          </p>
-          <div class="event-time">4:00 PM</div>
-          <a href="https://maps.app.goo.gl/DdMyM9fSLQnnkzMv7" target="_blank" rel="noopener">
-            <button class="btn-ubicacion">Ver ubicación</button>
-          </a>
-        </div>
-      </div>
-
-      
-
-      <div class="event-card reveal reveal-left">
-        <img src="img/salon.jpeg" alt="Ocean Events - Ocean Weddings" class="event-photo">
-        <div class="event-content">
-          <div class="event-label">Lugar del Evento</div>
-          <div class="event-script">Recepción</div>
-          <div class="event-title">Ocean Events - Ocean Weddings</div>
-          <p class="event-address">
-            Carretera Puerto Juárez - Punta Sam, S.M 86, 77520 Cancún, Q.R.
-          </p>
-          <div class="event-time">6:00 PM</div>
-          <a href="https://www.google.com/maps/search/Ocean%20Events%20-%20Ocean%20Weddings/@21.21042324,-86.80325251,17z?hl=es"
-            target="_blank" rel="noopener">
-            <button class="btn-ubicacion">Ver ubicación</button>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. ITINERARIO -->
-    <section id="itinerario" class="itinerary-section">
-      <div align="center"><img src="img/cene.png" width="100%" alt="Foto"></div>
-      <div class="flourish"></div>
-
-      <h2 class="itinerary-title">Itinerario</h2>
-      <p class="itinerary-date">18 de Diciembre</p>
-
-      <div class="itinerary-timeline">
-        <div class="itinerary-item reveal reveal-left">
-          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt="Ceremonia"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">4:00 PM</div>
-            <div class="itinerary-event">Ceremonia Religiosa</div>
-          </div>
-        </div>
-
-        <div class="itinerary-item reveal reveal-right">
-          <div class="itinerary-icon-wrapper"><img src="img/coctel.png" alt="Recepción"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">6:00 PM</div>
-            <div class="itinerary-event">Recepción del Evento</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. CÓDIGO DE VESTIMENTA -->
-    <section id="vestimenta" class="gifts-section">
-      <div align="center"><img src="img/vestimenta.png" width="85%" alt="Vestimenta"></div>
-      <div class="section-title-script">Código de vestimenta</div>
-      <div class="flourish"></div>
-
-      <div class="gift-options reveal reveal-left">
-        <div class="gift-item">
-          <div class="gift-title">FORMAL DE PLAYA</div>
-          <p class="gift-sub">Te sugerimos asistir con vestimenta <br>
-cómoda y elegante para clima de playa.</p>
-        </div>
-      </div>
-		<div class="flourish"></div>
-    </section>
-
-    <!-- Galería de fotos sin datos -->
-    <!--
-    <section id="galeria" class="gallery-section">
-      <div class="section-title-main">Galería de fotos</div>
-      <div class="flourish"></div>
-    </section>
-    -->
-
-    <!-- Mesa de regalos sin datos -->
-    <!--
-    <section id="mesa-regalos" class="gifts-section">
-      <div class="section-title-script">Mesa de regalos</div>
-      <div class="flourish"></div>
-    </section>
-    -->
-
-    <!-- 7. LLUVIA DE SOBRES -->
-    <section id="sobres" class="gifts-section">
-      <div align="center"><img src="img/sobreregalo.png" width="78%" alt="Sobre"></div><br>
-      <div class="section-title-script">Lluvia de sobres</div>
-      <div class="flourish"></div>
-
-      <div class="gift-options reveal reveal-right">
-        <div class="gift-item">
-          <p class="gift-sub">Si deseas hacernos un regalo, puedes apoyarnos mediante transferencia:</p>
-          <br>
-          <p class="gift-sub"><strong>Josué Leonardo Fernández García</strong></p>
-          <div align="center"><img src="img/banamex.png" width="48%" alt="Sobre"></div>
-          <p class="section-sub">Banamex CLABE<br>002180701744619518</p>
-          <br>
-          <p class="gift-sub">o</p>
-          <br>
-          <p class="gift-sub"><strong>Miriam Eugenia Gudiño Yáñez</strong></p>
-          <div align="center"><img src="img/bbva.png" width="28%" alt="Sobre"></div>
-          <p class="section-sub">BBVA CLABE<br>012022015975234195</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. SUGERENCIA DE HOSPEDAJE -->
-    <section id="hospedaje" class="gifts-section">
-      <div class="travel-card reveal reveal-left">
-		      <div align="center"><img src="img/final.png" width="90%" alt="Sobre"></div><br><br>
-        <div class="section-title-script">Hospedaje</div>
-        <div class="flourish"></div>
-
-        <p class="gift-sub">
-          Para quienes nos acompañan desde fuera, les compartimos contactos de apoyo para opciones de hospedaje, viajes
-          o tours en Cancún.
-        </p>
-
-        <br>
-
-        <p class="intro-list">
-          <strong>Pamela</strong><br>
-          9983168609
-        </p>
-
-        <br>
-
-        <p class="intro-list">
-          <strong>Alejandro</strong><br>
-          9988205599
-        </p>
-
-        <br>
-
-        <p class="gift-sub">
-          Ellos podrán orientarles con alternativas para hacer más cómoda su estancia.
-        </p>
-      </div>
-    </section>
-
-    <!-- Instagram sin datos -->
-    <!--
-    <section id="instagram" class="gifts-section">
-      <div class="section-title-script">Instagram</div>
-      <div class="flourish"></div>
-    </section>
-    -->
-
-    <!-- Invita QR sin datos -->
-    <!--
-    <section id="invit-aqr" class="gifts-section">
-      <div class="section-title-script">Invita QR</div>
-      <div class="flourish"></div>
-    </section>
-    -->
-
-    <!-- Álbum QR sin datos -->
-    <!--
-    <section id="albumqr" class="gifts-section">
-      <div class="section-title-script">Álbum QR</div>
-      <div class="flourish"></div>
-    </section>
-    -->
-
-    <!-- 9. CONFIRMACIÓN -->
-    <section id="confirmacion" class="confirm-section">
-      <div class="reveal reveal-right">
-		    <div align="center"><img src="img/cene.png" width="100%" alt="Foto"></div>
-        <div class="confirm-title-script">¿Nos acompañas?</div>
-        <div class="confirm-flourish"></div>
-        <p class="section-sub">
-          Será un honor contar con tu presencia en este día tan importante para nosotros.
-        </p>
-
-        <p class="section-sub">
-          <em>Confirma tu asistencia por WhatsApp.</em>
-          <br><br>
-        </p>
-
-        <a href="https://wa.me/529982604093?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Miriam%20y%20Leonardo.%20%C2%A1Gracias%21"
-          target="_blank" rel="noopener">
-          <button class="btn-whats"><strong>Confirmar Asistencia</strong></button>
-        </a>
-
-        <br>
-        <div class="flourish"></div>
-
-        <p class="section-sub">
-          ¡Gracias por celebrar con nosotros!<br><br>
-          Con cariño,
-        </p>
-        <br>
-
-        <div class="section-title-main">Miriam &amp; Leonardo</div>
-      </div>
-
-      <br><br>
-
-      <div class="event-card reveal reveal-left">
-        <div align="center">
-          <img src="img/final_2.png" width="100%" alt="Foto final">
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>© 2026 Boda Miriam &amp; Leonardo</footer>
-
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
-
-  <script>
-    // =========================
-    // CUENTA REGRESIVA
-    // =========================
-    const targetDate = new Date(2026, 11, 18, 16, 0, 0); // 18 de diciembre de 2026, 4:00 PM
-
-    const cdDays = document.getElementById("cdDays");
-    const cdHours = document.getElementById("cdHours");
-    const cdMins = document.getElementById("cdMins");
-    const cdSecs = document.getElementById("cdSecs");
-
-    function pad2(n) { return String(n).padStart(2, "0"); }
-
-    function updateCountdown() {
-      const now = new Date();
-      let diff = targetDate - now;
-
-      if (diff <= 0) {
-        cdDays.textContent = "0";
-        cdHours.textContent = "00";
-        cdMins.textContent = "00";
-        cdSecs.textContent = "00";
-        return;
-      }
-
-      const totalSeconds = Math.floor(diff / 1000);
-      const days = Math.floor(totalSeconds / (3600 * 24));
-      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-      const mins = Math.floor((totalSeconds % 3600) / 60);
-      const secs = totalSeconds % 60;
-
-      cdDays.textContent = String(days);
-      cdHours.textContent = pad2(hours);
-      cdMins.textContent = pad2(mins);
-      cdSecs.textContent = pad2(secs);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // =========================
-    // MÚSICA
-    // =========================
-    const music = document.getElementById("bg-music");
-    const musicToggle = document.getElementById("musicToggle");
-    const musicStatus = document.getElementById("musicStatus");
-    const musicIcon = document.getElementById("musicIcon");
-    let isPlaying = false;
-
-    async function playMusic() {
-      try {
-        await music.play();
-        isPlaying = true;
-        musicStatus.textContent = "Pause";
-        musicIcon.classList.remove("paused");
-        musicIcon.classList.add("playing");
-      } catch (e) {
-        console.log("No se pudo reproducir la música:", e);
-      }
-    }
-
-    function pauseMusic() {
-      music.pause();
-      isPlaying = false;
-      musicStatus.textContent = "Play";
-      musicIcon.classList.remove("playing");
-      musicIcon.classList.add("paused");
-    }
-
-    musicToggle.addEventListener("click", async () => {
-      if (!isPlaying) await playMusic();
-      else pauseMusic();
-    });
-
-    async function attemptAutoplay() {
-      if (isPlaying) return;
-      try {
-        await music.play();
-        isPlaying = true;
-        musicStatus.textContent = "Pause";
-        musicIcon.classList.remove("paused");
-        musicIcon.classList.add("playing");
-        cleanupAutoplayListeners();
-      } catch (e) {
-        console.log("Autoplay bloqueado, se activará al tocar el botón.");
-      }
-    }
-
-    function cleanupAutoplayListeners() {
-      document.removeEventListener("click", attemptAutoplay);
-      document.removeEventListener("touchstart", attemptAutoplay);
-      document.removeEventListener("scroll", attemptAutoplay);
-    }
-
-    window.addEventListener("load", () => {
-      attemptAutoplay();
-      document.addEventListener("click", attemptAutoplay);
-      document.addEventListener("touchstart", attemptAutoplay);
-      document.addEventListener("scroll", attemptAutoplay);
-    });
-
-    // REVEAL EN SCROLL
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+    </div>
+
+
+
+
+    <script>
+
+        // Seccion social
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-social-item');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.social-item').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+
+
+    <script>
+        // Elementos del DOM
+        const playerButton = document.getElementById('playerButton');
+        const playerContent = document.getElementById('playerContent');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playButton = document.getElementById('playButton');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+
+        // Lista de canciones (ejemplo)
+        const songs = [
+            {
+                title: "Escucha la invitación con música de fondo",
+                artist: "",
+                src: "music/Arctic Monkeys_Baby I_m Yours.mp3"
+            },
+            {
+                title: "Escucha la invitación con música de fondo",
+                artist: "",
+                src: "music/Arctic Monkeys_Baby I_m Yours.mp3"
+            },
+            {
+                title: "Escucha la invitación con música de fondo",
+                artist: "",
+                src: "music/Arctic Monkeys_Baby I_m Yours.mp3"
+            }
+        ];
+
+        let currentSongIndex = 0;
+
+        // Función para cargar una canción
+        function loadSong(index) {
+            const song = songs[index];
+            document.querySelector('.song-title').textContent = song.title;
+            document.querySelector('.song-artist').textContent = song.artist;
+            audioPlayer.src = song.src;
         }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
 
-    const itineraryItems = document.querySelectorAll(".itinerary-item");
-    const itineraryObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          itineraryObserver.unobserve(entry.target);
+        // Inicializar la primera canción
+        function iniciarAudio() {
+            audioPlayer.play().then(() => {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }).catch(() => {
+                console.log('Autoplay bloqueado temporalmente');
+            });
         }
-      });
-    }, { threshold: 0.15 });
-    itineraryItems.forEach(el => itineraryObserver.observe(el));
 
-    // BOTÓN IR ARRIBA
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
-      else scrollTopBtn.classList.remove("visible");
-    });
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
+        // Intento automático
+        iniciarAudio();
+
+        // Compatibilidad iPhone / Safari
+        document.addEventListener('click', function activarAudio() {
+            iniciarAudio();
+            document.removeEventListener('click', activarAudio);
+        });
+
+        document.addEventListener('touchstart', function activarAudioTouch() {
+            iniciarAudio();
+            document.removeEventListener('touchstart', activarAudioTouch);
+        });
+
+        // Alternar la visibilidad del reproductor
+        playerButton.addEventListener('click', () => {
+            playerContent.classList.toggle('active');
+        });
+
+        // Permitir que la música siga reproduciéndose cuando se cierra el reproductor
+        document.addEventListener('click', (e) => {
+            // Si se hace clic fuera del reproductor y del botón, y no es un elemento dentro del reproductor
+            if (!playerContent.contains(e.target) && e.target !== playerButton && !playerButton.contains(e.target)) {
+                // Solo ocultar el reproductor, pero no detener la música
+                playerContent.classList.remove('active');
+            }
+        });
+
+        // Reproducir/Pausar
+        playButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            } else {
+                audioPlayer.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        });
+
+        // Canción anterior
+        prevButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+        });
+
+        // Canción siguiente
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+            if (!audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+        });
+
+        // Control de volumen
+        volumeSlider.addEventListener('input', () => {
+            audioPlayer.volume = volumeSlider.value;
+        });
+
+        // Actualizar barra de progreso
+        audioPlayer.addEventListener('timeupdate', () => {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+        });
+
+        // Cambiar posición de reproducción
+        progressContainer.addEventListener('click', (e) => {
+            const clickPosition = e.offsetX / progressContainer.offsetWidth;
+            audioPlayer.currentTime = clickPosition * audioPlayer.duration;
+        });
+
+        // Reproducir siguiente canción cuando termine la actual
+        audioPlayer.addEventListener('ended', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+            audioPlayer.play();
+        });
+    </script>
+
+
+
+
+
+    <script>
+
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            updateDigitalClock(); // Ensure the digital clock is updated on load
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-final-item');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.final-item').forEach(item => {
+                observer.observe(item);
+            });
+        });
+
+        // Obtener el botón de scroll
+        const scrollBtn = document.getElementById('scrollBtn');
+
+        // Mostrar/ocultar el botón basado en el scroll
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        };
+
+        // Función para scroll hacia arriba
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
+    <script src="intersection-observer.js"></script>
+
+    <!-- NUEVO: MODAL DE GALERÍA -->
+    <div id="galleryModal" class="gallery-modal">
+        <button id="closeGalleryBtn" class="gallery-close-btn">&times;</button>
+        <div class="gallery-container">
+            <img id="mainImage" class="gallery-main-image" src="/img/galeria/1.jpeg" alt="Imagen Principal">
+            <button id="prevImage" class="gallery-arrow gallery-prev">&#10094;</button>
+            <button id="nextImage" class="gallery-arrow gallery-next">&#10095;</button>
+        </div>
+
+        <div id="imageCounter" class="gallery-counter"></div>
+    </div>
+    <!-- FIN NUEVO: MODAL DE GALERÍA -->
+
+    <!-- NUEVO: SCRIPT PARA CONTROL DE LA GALERÍA -->
+    <script>
+        // Array con las rutas de tus fotos
+        // IMPORTANTE: Asegúrate de que los archivos existan en la carpeta fotos/
+        const galleryImages = [
+            'img/galeria/1.jpeg',
+            'img/galeria/2.jpeg',
+            'img/galeria/3.jpeg',
+            'img/galeria/4.jpeg',
+            'img/galeria/5.jpeg'
+
+
+            // Agrega más fotos según necesites
+        ];
+
+        let currentImageIndex = 0;
+        const galleryModal = document.getElementById('galleryModal');
+        const mainImage = document.getElementById('mainImage');
+        const imageCounter = document.getElementById('imageCounter');
+        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+
+        function openGallery() {
+            galleryModal.style.display = 'flex';
+            generateThumbnails();
+            updateGallery();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            galleryModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function generateThumbnails() {
+            // Clear existing thumbnails to prevent duplicates if called multiple times
+            thumbnailsContainer.innerHTML = '';
+
+            galleryImages.forEach((image, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = image;
+                thumbnail.alt = 'Foto ' + (index + 1);
+                thumbnail.className = 'gallery-thumbnail';
+                if (index === 0) thumbnail.classList.add('active');
+
+                thumbnail.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateGallery();
+                });
+
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+        }
+
+        function updateGallery() {
+            mainImage.src = galleryImages[currentImageIndex];
+            imageCounter.textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
+
+            document.querySelectorAll('.gallery-thumbnail').forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+
+            const activeThumbnail = document.querySelectorAll('.gallery-thumbnail')[currentImageIndex];
+            if (activeThumbnail) {
+                activeThumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGallery();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGallery();
+        }
+
+        // Event listeners
+        document.getElementById('openGalleryBtn').addEventListener('click', openGallery);
+        document.getElementById('closeGalleryBtn').addEventListener('click', closeGallery);
+        document.getElementById('prevImage').addEventListener('click', prevImage);
+        document.getElementById('nextImage').addEventListener('click', nextImage);
+
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeGallery();
+            }
+        });
+
+        // Controles por teclado
+        document.addEventListener('keydown', (e) => {
+            if (galleryModal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'Escape') closeGallery();
+            }
+        });
+    </script>
+    <!-- FIN NUEVO: SCRIPT GALERÍA -->
+    <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+
 </body>
 
 </html>
