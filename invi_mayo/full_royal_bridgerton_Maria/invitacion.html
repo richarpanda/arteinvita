@@ -556,8 +556,22 @@
       justify-items: center;
       align-items: center;
     }
+    .calendar-weekday{
+      font-family: "Playfair Display", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(104,57,41,0.72);
+      text-align: center;
+      width: 100%;
+    }
+    .calendar-empty{
+      aspect-ratio: 1;
+      width: 100%;
+    }
     .calendar-day{
       aspect-ratio: 1;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -624,6 +638,57 @@
       object-fit: cover;
       display: block;
     }
+    .gallery-slider{
+      position: relative;
+      max-width: 400px;
+      margin: 2rem auto 0;
+      background: rgba(255,255,255,0.92);
+      border-radius: 22px;
+      padding: 0.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(175,136,67,0.18);
+    }
+    .gallery-slider-frame{
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .gallery-slider-frame img{
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-slider-nav{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,0.92);
+      color: #683929;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      z-index: 2;
+    }
+    .gallery-slider-nav.prev{ left: 10px; }
+    .gallery-slider-nav.next{ right: 10px; }
+    .gallery-slider-counter{
+      font-family: "Playfair Display", serif;
+      text-align:center;
+      color:#683929;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      margin-top: 0.8rem;
+    }
+
     .btn-ver-galeria{
       display: block;
       margin: 2rem auto 0;
@@ -1240,7 +1305,7 @@
             <div class="event-label">Continuamos con la</div>
             <div class="event-script">Recepción del Evento</div>
             <div class="event-title">Hacienda Figueroa</div>
-            <p class="event-address">Calle Guaymas S/N, Col. Santiaguito Itzícuaro, C.P. 58337</p>
+            <p class="event-address">Calle Guaymas s/n Colonia San Juanito Itzícuaro, 58337 Morelia, Mich.</p>
             <div class="event-time">19:30 HRS</div>
             <a href="https://maps.app.goo.gl/N65DwyaEoAvYNB599" target="_blank" rel="noopener">
               <button class="btn-ubicacion">Ver ubicación</button>
@@ -1279,17 +1344,19 @@
           Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia.
         </p>
 
-        <div class="gallery-preview reveal reveal-left">
-          <div class="gallery-preview-item" onclick="openGallery(0)">
-            <img src="img/galeria/1.jpeg" alt="Foto 1">
+        <div class="gallery-slider reveal reveal-left" aria-label="Galería de fotos en slider">
+          <div class="gallery-slider-frame">
+            <button class="gallery-slider-nav prev" onclick="changeGallerySlide(-1)" aria-label="Foto anterior">❮</button>
+            <img id="gallerySliderImage" src="img/galeria/1.jpeg" alt="Foto de galería">
+            <button class="gallery-slider-nav next" onclick="changeGallerySlide(1)" aria-label="Foto siguiente">❯</button>
           </div>
-          <div class="gallery-preview-item" onclick="openGallery(1)">
-            <img src="img/galeria/2.jpeg" alt="Foto 2">
+          <div class="gallery-slider-counter">
+            <span id="sliderCurrentImage">1</span> / <span id="sliderTotalImages">0</span>
           </div>
         </div>
 
-        <button class="btn-ver-galeria reveal reveal-right" onclick="openGallery(0)">
-          Ver Galería Completa
+        <button class="btn-ver-galeria reveal reveal-right" onclick="openGallery(currentSliderIndex)">
+          Ver foto en grande
         </button>
       </div>
     </section>
@@ -1672,6 +1739,23 @@ quinceañera en IG con su username
     function generateCalendar() {
       const calendarGrid = document.getElementById('calendarGrid');
       const daysInMonth = 31;
+      const weekDays = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
+      const firstDayOffset = 4; // Octubre 2026 inicia en jueves para que el 30 caiga en viernes
+
+      calendarGrid.innerHTML = '';
+
+      weekDays.forEach(label => {
+        const labelElement = document.createElement('div');
+        labelElement.className = 'calendar-weekday';
+        labelElement.textContent = label;
+        calendarGrid.appendChild(labelElement);
+      });
+
+      for (let i = 0; i < firstDayOffset; i++) {
+        const emptyElement = document.createElement('div');
+        emptyElement.className = 'calendar-empty';
+        calendarGrid.appendChild(emptyElement);
+      }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement('div');
@@ -1720,6 +1804,32 @@ quinceañera en IG con su username
 		
      
     ];
+
+    let currentSliderIndex = 0;
+
+    function updateGallerySlider() {
+      const sliderImage = document.getElementById('gallerySliderImage');
+      const sliderCurrent = document.getElementById('sliderCurrentImage');
+      const sliderTotal = document.getElementById('sliderTotalImages');
+
+      if (!sliderImage || !sliderCurrent || !sliderTotal) return;
+
+      sliderImage.src = galleryImages[currentSliderIndex];
+      sliderImage.alt = 'Foto ' + (currentSliderIndex + 1) + ' de galería';
+      sliderCurrent.textContent = currentSliderIndex + 1;
+      sliderTotal.textContent = galleryImages.length;
+    }
+
+    function changeGallerySlide(direction) {
+      currentSliderIndex += direction;
+
+      if (currentSliderIndex >= galleryImages.length) currentSliderIndex = 0;
+      else if (currentSliderIndex < 0) currentSliderIndex = galleryImages.length - 1;
+
+      updateGallerySlider();
+    }
+
+    document.addEventListener('DOMContentLoaded', updateGallerySlider);
 
     let currentImageIndex = 0;
 
