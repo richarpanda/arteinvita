@@ -781,7 +781,7 @@
     .glass-card {
       position: relative;
       padding: 2.4rem 1.6rem 2.6rem;
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 1.00);
       backdrop-filter: blur(14px);
       border-radius: 26px;
       box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
@@ -795,7 +795,7 @@
       position: absolute;
       inset: 14px;
       border-radius: 18px;
-      border: 1px solid rgba(198, 160, 106, .22);
+      border: 1px solid rgba(198, 160, 106, .82);
       pointer-events: none;
     }
 
@@ -808,16 +808,24 @@
       text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
     }
 
-    /* REVEAL */
+    /* REVEAL - Animaciones laterales tipo ejemplo.html */
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .6s ease-out, transform .6s ease-out;
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
     }
 
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
 
     /* IR ARRIBA */
@@ -1405,10 +1413,9 @@ Alan José Patíño Casillas<br>
               Por favor, confirma tu asistencia.
             </p>
 
-            <a href="https://wa.me/523313139539?text=%C2%A1Hola%20Maribel%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Ximena%20el%2029%20de%20Agosto%20de%202026.%20Nombre%3A"
-              target="_blank" rel="noopener">
-              <button class="btn-ubicacion" type="button">Confirmar por WhatsApp</button>
-            </a>
+            <div align="center"><button class="btn-ubicacion" onclick="ArteInvita.open('547-B5FC-605')">
+          <strong>Confirmar Asistencia</strong>
+        </button></div>
 
             <div class="flourish" style="margin-top:1.4rem;"></div>
 
@@ -1524,9 +1531,18 @@ Alan José Patíño Casillas<br>
     });
 
     // =========================
-    // REVEAL
+    // REVEAL - Entradas alternadas izquierda / derecha
     // =========================
     const reveals = document.querySelectorAll(".reveal");
+
+    // Si alguna sección tiene solo .reveal, le asignamos dirección automáticamente
+    // para que entren alternadas como en ejemplo.html.
+    reveals.forEach((el, index) => {
+      if (!el.classList.contains("reveal-left") && !el.classList.contains("reveal-right")) {
+        el.classList.add(index % 2 === 0 ? "reveal-left" : "reveal-right");
+      }
+    });
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
