@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis XV | Valentina</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    /* =========================
+       PALETA (rosa pastel / rose gold)
+    ========================= */
+    :root {
+      --rosa: #E8B8C1;
+      --rosa-oscuro: #cb6ce6;
+      --rosa-claro: #F7E3E7;
+
+      --dorado: #C6A06A;
+      --rose-gold: #C6A06A;
+      --rose-gold-2: #B28B59;
+
+      --crema: #FFFFFF;
+      --crema-oscuro: #FFF7F9;
+
+      --texto: #2F2A2C;
+      --gris: #7B6F73;
+      --borde: #EED7DC;
+
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gabriola', serif, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background: #EBEBEB;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    
+    /* Imagen lluvia de sobres */
+.img-lluvia {
+  width: 220px;
+  max-width: 75%;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: #4b5563;
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* CONTENEDOR */
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .18;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(198, 160, 106, .25) 0.8px, transparent 1.2px),
+        radial-gradient(circle at 85% 30%, rgba(232, 184, 193, .18) 0.8px, transparent 1.2px),
+        radial-gradient(circle at 50% 75%, rgba(198, 160, 106, .20) 0.8px, transparent 1.2px);
+      background-size: 8px 8px, 10px 10px, 12px 12px;
+      mix-blend-mode: multiply;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rosa-oscuro);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.25;
+      margin-top: 1rem;
+    }
+
+    .flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* FONDOS */
+    .bg-fixed {
+      background-image: url("img/background1.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-top {
+      background-image: url("img/background1.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    .bg-bottom {
+      background-image: url("img/bg-paper-2.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    .bg-top::after,
+    .bg-bottom::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(to bottom, rgba(247, 227, 231, .18), rgba(255, 255, 255, .12)),
+        radial-gradient(circle at 22% 12%, rgba(198, 160, 106, .12), transparent 5%),
+        radial-gradient(circle at 78% 18%, rgba(232, 184, 193, .14), transparent 5%);
+    }
+
+    .bg-top>*,
+    .bg-bottom>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* iOS/Android FIX */
+    @media (hover: none) and (pointer: coarse) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .bg-top,
+      .bg-bottom {
+        background-size: 100% auto;
+      }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    /* HERO */
+    .hero-wrap {
+      padding: 30px;
+      background: transparent;
+    }
+
+    .hero-card {
+      margin: 0 auto;
+      padding: 3.6rem 2.0rem 0;
+      position: relative;
+    }
+
+    .hero-frame {
+      border-radius: 150px 150px 28px 28px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 145px 145px 22px 22px;
+      border: 1px solid rgba(198, 160, 106, .32);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25));
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .hero-bottom {
+      padding: 2.8rem 1.4rem 2.2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 1.00);
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-names {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.10rem;
+      color: var(--rosa-oscuro);
+      line-height: 1.0;
+    }
+
+    .hero-subline {
+      font-family: "Playfair Display", serif;
+      font-size: 1.10rem;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-top: 0.85rem;
+    }
+
+    .hero-date {
+      margin-top: 1.25rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 2.25rem;
+      letter-spacing: 0.07em;
+      color: var(--dorado);
+    }
+
+    /* MUSIC STRIP */
+    .music-strip {
+      padding: 0.75rem 1.4rem 0;
+      background: transparent;
+    }
+
+    .music-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.65rem;
+    }
+
+    .music-btn {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.12rem 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .music-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 160, 106, .24);
+      background: rgba(255, 255, 255, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .music-icon.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent rgba(17, 24, 39, 0.62);
+      transform: translateX(1px);
+    }
+
+    .music-icon.playing::before,
+    .music-icon.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 10px;
+      background: rgba(17, 24, 39, 0.58);
+      border-radius: 2px;
+    }
+
+    .music-icon.playing::before {
+      left: 8px;
+    }
+
+    .music-icon.playing::after {
+      right: 8px;
+    }
+
+    .music-label {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.50);
+    }
+
+    /* INTRO */
+    .intro-paper {
+      padding-top: 4.2rem;
+      padding-bottom: 4.8rem;
+    }
+
+    .intro-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 160, 106, .22);
+      pointer-events: none;
+    }
+
+    .date-container {
+      text-align: center;
+      color: var(--rosa-oscuro);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.2em;
+      border-bottom: 2px solid var(--rosa-oscuro);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 9em;
+      font-weight: lighter;
+      line-height: 1;
+    }
+
+    .month {
+      font-size: 3.2em;
+      border-top: 2px solid var(--rosa-oscuro);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--rosa-oscuro);
+      margin-top: 1.1rem;
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      text-align: center;
+      color: var(--gris);
+    }
+
+
+    /* INSTAGRAM / HASHTAG */
+    .hashtag-section { padding: 0; }
+
+    .hashtag-photo-wrap {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .hashtag-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hashtag-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.25));
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 2.8rem 1.6rem;
+    }
+
+    .hashtag-text {
+      font-size: 1.0rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hashtag-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.5rem;
+      margin-top: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hashtag-tag {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #facc15;
+    }
+
+    .insta-handle-card {
+      padding: 2.1rem 1.6rem 2.6rem;
+
+      text-align: center;
+    }
+
+    .insta-handle {
+      margin-top: 0.6rem;
+      color: var(--rojo);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .btn-insta {
+      margin-top: 1.3rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid #eaacac;
+      background: #fff;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--texto);
+    }
+
+
+    /* CONTADOR */
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/fondo.jpeg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #111827;
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.85));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #111827;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(198, 160, 106, .22);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #0f172a;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: var(--gris);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #111827;
+      opacity: 0.9;
+    }
+
+    /* EVENTOS */
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(198, 160, 106, .22);
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      max-width: 360px;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.4rem 1.2rem 1.6rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.4rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+      line-height: 1.05;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .event-address {
+      font-size: 1.8rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    .btn-ubicacion {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--rosa-oscuro);
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(232, 184, 193, .35);
+    }
+
+    /* CALENDARIO */
+    .calendar-section {
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+
+    .calendar-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .calendar-month {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      color: var(--rosa-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gabriola', serif;
+      font-size: 1.6rem;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .calendar-day:hover {
+      background: rgba(232, 184, 193, .12);
+    }
+
+    .calendar-day.selected {
+      background: rgba(232, 184, 193, .18);
+      font-weight: 600;
+      color: var(--rosa-oscuro);
+    }
+
+    .calendar-day.special::after {
+      content: "♥";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 1.2rem;
+      color: var(--rosa);
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(1.15);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+    }
+
+    /* ITINERARIO */
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--rosa-oscuro);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--dorado);
+      text-align: center;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      margin-bottom: 2.1rem;
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 72px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 70px;
+      height: 2px;
+      background: rgba(198, 160, 106, .65);
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.3rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* VESTIMENTA + REGALOS */
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
+
+    .gift-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      line-height: 1.35;
+    }
+
+    .gift-strong {
+      color: var(--rosa-oscuro);
+      font-weight: 700;
+    }
+
+    .dress-icon {
+      display: block;
+      width: 110px;
+      height: auto;
+      margin: 14px auto 10px;
+    }
+
+    /* CONFIRMACIÓN */
+    .glass-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 160, 106, .22);
+      pointer-events: none;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.0rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* IR ARRIBA */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: var(--rosa-oscuro);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease-out, transform .25s ease-out, visibility .25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #462B0D;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
+      }
+
+      .hero-frame {
+        border-radius: 32px;
+      }
+    }
+
+
+    #itinerario .itinerary-timeline {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    #itinerario .itinerary-item {
+      justify-content: center;
+      gap: 1rem;
+    }
+
+
+    #itinerario .itinerary-divider {
+      width: 100px;
+    }
+
+    #itinerario .itinerary-content {
+      text-align: left;
+    }
+
+    .qr-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 12px 0 14px;
+      padding: 0 14px;
+    }
+
+    .qr-img {
+      width: 220px;
+      max-width: 78vw;
+      height: auto;
+      display: block;
+      padding: 10px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(38, 3, 26, 0.18);
+    }
+
+    /* Galería con dots */
+    .gallery-carousel {
+      width: 100%;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 12px 6px 6px;
+      overscroll-behavior-x: contain;
+    }
+
+    .gallery-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .gallery-track::-webkit-scrollbar-thumb {
+      background: rgba(64, 4, 43, 0.22);
+      border-radius: 999px;
+    }
+
+    .gallery-slide {
+      flex: 0 0 84%;
+      max-width: 84%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      scroll-snap-align: center;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      height: 180px;
+      max-height: 44vw;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(64, 4, 43, 0.28);
+      background: rgba(255, 255, 255, 0.25);
+      padding: 0;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-dot.is-active {
+      width: 22px;
+      background: rgba(64, 4, 43, 0.55);
+      border-color: rgba(64, 4, 43, 0.45);
+    }
+
+    .gallery-dot:focus {
+      outline: none;
+    }
+
+    .gallery-dot:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.9);
+      outline-offset: 3px;
+    }
+
+    /* Lightbox */
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.62);
+      z-index: 9999;
+    }
+
+    .gallery-modal.is-open {
+      display: flex;
+    }
+
+    .gallery-modal-img {
+      width: min(92vw, 420px);
+      max-height: 82vh;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .gallery-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-section {
+      background: var(--crema);
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(249, 220, 214, 0.9);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.35);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      cursor: pointer;
+      transition: transform 0.2s ease-out, background 0.2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: var(--rojo);
+      transform: scale(1.2);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      max-width: 920px;
+      width: 92%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bg-music" src="music/cancion.mp3" loop></audio>
+
+  <main>
+
+    <!-- TOP BG -->
+    <div class="bg-fixed bg-top">
+
+      <!-- HERO -->
+      <section id="inicio" class="hero-wrap">
+        <div class="hero-card reveal">
+          <div class="hero-frame">
+            <div class="hero-media">
+              <video src="img/video.mp4" autoplay loop muted playsinline preload="auto"
+                poster="img/background1.png"></video>
+            </div>
+
+            <div class="hero-bottom">
+              <div class="hero-names">Valentina</div>
+              <div class="hero-subline">El gran día llegó</div>
+              <div class="hero-date">Mis XV Años</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC STRIP -->
+      <section class="music-strip">
+        <div class="music-strip-inner reveal">
+          <button class="music-btn" id="musicToggle" aria-label="Control de música">
+            <div class="music-icon paused" id="musicIcon"></div>
+            <span class="music-label" id="musicStatus">Play</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section id="intro" class="intro-paper">
+        <div class="intro-card reveal">
+          <div class="content">
+            <div class="date-container">
+              <div class="day">Viernes</div>
+              <div class="number">3</div>
+              <div class="month">Julio</div>
+            </div>
+
+            <p class="section-sub" style="margin-top:1.6rem;">
+              Hay momentos inolvidables que <br>
+              se atesoran en el corazón <br>
+              para siempre,<br>
+              y con la bendición de Dios <br>
+              y el amor de <br>
+              mi familia me siento muy <br>
+              feliz de llegar <br>
+              a ese momento de mi vida.
+              <br><br>
+              Por esta razón queremos que <br>
+              nos acompañen <br>
+              en este día tan especial.
+            </p>
+
+            <div class="intro-parents-title">Junto a mis padres:</div>
+            <p class="intro-list">
+              Mauricio Ivan Alarcón Gómez<br>
+              y <br>
+              Senyasse Araceli Rosas Ramírez
+            </p>
+
+            <div class="flourish"></div>
+
+            <p class="intro-script">
+              Tu presencia hará<br>
+              de este día
+              un recuerdo <br>
+              inolvidable.
+            </p>
+			   <div class="flourish"></div>
+
+            <div class="intro-parents-title">Mis padrinos</div>
+            <p class="intro-list">
+              José Eduardo Arreola Ramírez<br>
+              y <br>
+              Verónica Reyes Gutiérrez
+            </p>
+
+            <div class="flourish"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal">
+        <div class="content">
+          <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+          <div class="countdown-min" aria-label="Cuenta regresiva">
+            <div class="countdown-time">
+              <span id="cdDays">0</span>:
+              <span id="cdHours">00</span>:
+              <span id="cdMins">00</span>:
+              <span id="cdSecs">00</span>
+            </div>
+            <div class="countdown-labels">
+              <span>Días</span><span>Horas</span><span>Min</span><span>Seg</span>
+            </div>
+          </div>
+
+          <p class="countdown-note">¡Te espero con mucha ilusión!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUÁNDO Y DÓNDE -->
+    <section id="evento">
+      <div class="content">
+        <div class="reveal">
+          <div class="section-title-script">¿Cuándo y dónde?</div>
+          <div class="flourish"></div>
+        </div>
+      </div>
+
+      <!-- IGLESIA -->
+      <div class="event-card reveal">
+        <img src="img/iglesia.jpg" alt="Iglesia" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Ceremonia religiosa</div>
+            <div class="event-script">Capilla Nuestro Señor de los Milagros</div>
+
+            <p class="event-address">
+              Calle Eduardo Olivares, Palmatitla, Gustavo A. Madero<br>
+              <strong>Hora:</strong> 5:30 pm
+            </p>
+
+            <a href="https://www.google.com/maps/search/Capilla%20Nuestro%20Se%C3%B1or%20de%20los%20Milagros/@19.55331471,-99.13498734,17z?hl=es" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALÓN -->
+      <div class="event-card reveal">
+        <img src="img/salon.jpg" alt="Salón" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Recepción</div>
+            <div class="event-script">Jardín Hacienda los Pavorreales</div>
+
+            <p class="event-address">
+              Av. Francisco Villa #7, La Palma, Gustavo A. Madero, C.P. 07100, Cuautepec Barrio Alto<br>
+              <strong>Hora:</strong> 7:00 pm
+            </p>
+
+            <a href="https://www.google.com/maps/search/Sal%C3%B3n%20de%20Eventos%20Sociales%20Hacienda%20Los%20Pavorreales/@19.55699778,-99.13658286,17z?hl=es" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section id="calendario" class="calendar-section">
+      <div class="content">
+      <div align="center"><img src="img/reloj.png" width="50%"></div>
+        <div class="section-title-script reveal">Recuerda la fecha del evento</div>
+
+        <div class="calendar-container reveal">
+          <div class="calendar-header">
+            <div class="calendar-month">Julio</div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO-->
+    <section id="itinerario">
+      <div class="content">
+      <div align="center"><img src="img/sello.png" width="65%"></div>
+        
+        <h2 class="itinerary-title reveal">Itinerario</h2>
+        <p class="itinerary-date reveal">3 de Julio</p>
+      </div>
+
+      <div class="itinerary-timeline content">
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/iglesia_icon.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">5:30 PM</div>
+            <div class="itinerary-event">Misa</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">7:00 PM</div>
+            <div class="itinerary-event">Recepción</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- GALERÍA: N/A
+
+
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-script">Galería de Fotos</div>
+      <div class="flourish"></div>
+      <p class="section-sub">
+        Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/1.jpeg" alt="Foto de la galería">
+          <button class="gallery-nav prev" id="galleryPrev" type="button">‹</button>
+          <button class="gallery-nav next" id="galleryNext" type="button">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+  
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" type="button">✕</button>
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button">›</button>
+      </div>
+    </div>
+    -->
+
+
+    <!-- HOSPEDAJE: N/A
+
+    <section id="hospedaje">
+      <div class="content">
+        <div class="section-title-script reveal">Sugerencia de Hospedaje</div>
+        <div class="flourish"></div>
+
+        <div class="gift-item reveal">
+          <p class="gift-sub"><strong>Hotel el Tular</strong><br>Victoria 98400, Centro, 98420 Río Grande, Zac.</p>
+          <a href="https://maps.app.goo.gl/FqADbz1Jk5Ce4iQK7?g_st=aw" target="_blank" rel="noopener">
+            <button class="btn-ubicacion" type="button">Ver ubicación</button>
+          </a>
+        </div>
+
+        <div class="gift-item reveal">
+          <p class="gift-sub"><strong>Hotel Conquistador</strong><br>Zaragoza 36, Centro, 98429 Río Grande, Zac.</p>
+          <a href="https://maps.app.goo.gl/iTAfFXqeqmtRpVZo6?g_st=aw" target="_blank" rel="noopener">
+            <button class="btn-ubicacion" type="button">Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+    </section>
+-->
+
+    <!-- VESTIMENTA -->
+    <section id="vestimenta">
+      <div class="content">
+        <div class="section-title-script reveal">Código de Vestimenta</div>
+      <div align="center"> <img src="img/vestimenta.png" alt="Vestimenta" width="95%"></div>
+        <div class="gift-item reveal">
+
+
+            <p class="gift-sub"><strong>Formal</strong></p>
+            <div class="intro-list">Les pedimos con mucho cariño que los colores lila y morado queden reservados para nuestra quinceañera.</div>
+         
+       <div class="flourish"></div>
+        </div>
+      </div>
+    </section>
+
+     <!-- INSTAGRAM: -->
+
+    <section id="insta" class="hashtag-section">
+    
+     <div class="insta-handle-card reveal reveal-right">
+       <div align="center"> <div class="gift-icon"><img src="img/camara.png" width="75%"></div></div>
+       <div class="section-title-script">Captura cada Instante</div>
+      <div class="flourish"></div>
+        <p class="section-sub" style="margin-top:0;">
+          También puedes etiquetar a nuestra
+quinceañera en IG con su username
+        </p>
+        <div class="section-sub">@alcr.val</div>
+        <a href="https://www.instagram.com/alcr.val?igsh=MTBhcW91NjZvenYy" target="_blank" rel="noopener">
+          <button class="btn-insta">Abrir Instagram</button>
+        </a>
+      </div>
+    
+      <div class="hashtag-photo-wrap">
+        <img src="img/counter.png" alt="fiesta">
+        <div class="hashtag-overlay reveal reveal-left">
+          <div>
+            <p class="hashtag-text">
+              Comparte conmigo, publica tus momentos de la fiesta en redes sociales
+            </p>
+            <p class="hashtag-script">con el hashtag</p>
+            <p class="hashtag-tag">#MISXVVALENTINA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+    <!-- ÁLBUM QR: ACTIVO -->
+<section id="album-qr" class="hashtag-section">
+    <div align="center"><img src="img/sello1.png" width="100%"></div>
+      <div class="insta-handle-card reveal reveal-right">
+        <div align="center">
+         
+        </div>
+
+        <div class="section-title-script">Galería de Recuerdos</div>
+        <div class="flourish"></div>
+
+        <p class="section-sub" style="margin-top:0;">
+          Escanea el QR para subir tus fotos con una dedicatoria para mi y formar parte de mis recuerdos más especiales.
+        </p>
+
+        <div class="qr-wrap" style="display:flex; justify-content:center; align-items:center; width:100%;">
+          <img src="img/XV- Valentina Alarcón _galeria_QR.png" class="qr-img" alt="QR Álbum">
+        </div>
+
+        <div style="display:flex; justify-content:center; width:100%;">
+        <a href="https://app.arteinvita.com/gallery/xv-valentina-alarcon-1780513455261?token=73731d45f913f34b3724ea889ed93d17"> <button class="btn-ubicacion" type="button">
+            Abrir álbum
+          </button></a>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- LLUVIA DE SOBRES -->
+
+    <section id="lluvia-sobres">
+      <div class="content">
+
+            <div align="center">
+      <img src="img/lluvia.png" width="90%">
+    </div>
+
+        <div class="section-title-script reveal">Lluvia de Sobres</div>
+        <div class="flourish"></div>
+        <div class="gift-item reveal">
+          <p class="gift-sub">Tu presencia es el regalo más bonito, pero si deseas obsequiarme algo, prefiero recibirlo en el evento en efectivo durante la lluvia de sobres que he preparado.</p>
+          <p class="intro-script">¡Gracias!</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion" class="bg-fixed bg-bottom">
+      <div class="confirm-inner reveal reveal-left">
+        <div class="glass-card">
+			 <div align="center"><img src="img/sello.png" width="65%"></div>
+          <div class="confirm-title-script">¿Asistirás?</div>
+          <div class="flourish"></div>
+
+          <p class="section-sub">
+            ¡Será increíble contar con tu presencia!<br>
+            Por favor, confirma tu asistencia.
+          </p>
+
+          <!-- WHATSAPP:  -->
+          <div style="display:flex; justify-content:center; width:100%; margin-top:1rem;">
+            <a href="https://wa.me/525528002098?text=%C2%A1Hola%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Valentina%20Alarc%C3%B3n%20el%2003%20de%20julio%20de%202026.%20Nombre%3A" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">
+                Confirmar por WhatsApp
+              </button>
+            </a>
+          </div>
+          <!-- INVITA QR: N/A
+          <div style="display:flex; justify-content:center; width:100%;">
+            <button class="btn-ubicacion" type="button" onclick="ArteInvita.open('6BF-8512-CF2')">
+              Confirmar asistencia
+            </button>
+          </div>
+          -->
+
+      <div class="flourish" style="margin-top:1.4rem;"></div>
+
+      <p class="section-sub">
+        ¡Agradezco de corazón que<br>celebres conmigo!<br><br>¡Nos vemos pronto!
+      </p>
+
+      <div class="intro-script" style="margin-top:1.2rem;">
+        ¡Con cariño <br>Valentina!
+      </div>
+     </div>
+      
+      <br><br>
+
+        <div class="content">
+          <div class="event-card-final reveal reveal-left">
+            <div align="center"><img src="img/final.jpeg" width="100%" alt="Foto final" style="border-radius: 40px"></div>
+          </div>
+
+         
+        </div>
+
+    </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Mis XV Valentina</footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    const targetDate = new Date(2026, 6, 3, 17, 30, 0);
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) { return String(n).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================
+    // MÚSICA (autoplay por interacción)
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) { }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) await playMusic();
+      else pauseMusic();
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+      try { await playMusic(); } catch (e) { }
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay, { once: true });
+      document.addEventListener("touchstart", attemptAutoplay, { once: true });
+      document.addEventListener("scroll", attemptAutoplay, { once: true });
+    });
+
+    // =========================
+    // REVEAL
+    // =========================
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // =========================
+    // IR ARRIBA
+    // =========================
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+
+    function generateCalendar() {
+      const calendarGrid = document.getElementById('calendarGrid');
+
+
+      const year = 2026;
+      const monthIndex = 6;
+      const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+
+      const firstDow = new Date(year, monthIndex, 1).getDay();
+      const offset = (firstDow + 6) % 7;
+
+      calendarGrid.innerHTML = '';
+
+
+      for (let i = 0; i < offset; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-day empty';
+        empty.textContent = '';
+        calendarGrid.appendChild(empty);
+      }
+
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+
+        if (day === 3) dayElement.classList.add('special', 'selected');
+
+        dayElement.addEventListener('click', function () {
+          document.querySelectorAll('.calendar-day').forEach(d => {
+            if (!d.classList.contains('special') && !d.classList.contains('empty')) d.classList.remove('selected');
+          });
+          this.classList.add('selected');
+        });
+
+        calendarGrid.appendChild(dayElement);
+      }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', generateCalendar);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleryImages = [
+        "img/1.jpeg",
+        "img/2.jpeg",
+        "img/3.jpeg"
+      ];
+
+      const section = document.querySelector("#galeria");
+      if (!section) return;
+
+      const gallerySlide = section.querySelector("#gallerySlide");
+      const galleryPrev = section.querySelector("#galleryPrev");
+      const galleryNext = section.querySelector("#galleryNext");
+      const galleryDotsContainer = section.querySelector("#galleryDots");
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxOverlay = document.getElementById("lightboxOverlay");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+
+      let galleryIndex = 0;
+      let currentImageIndex = 0;
+
+      function renderDots() {
+        if (!galleryDotsContainer) return;
+        galleryDotsContainer.innerHTML = "";
+        galleryImages.forEach((_, idx) => {
+          const dot = document.createElement("div");
+          dot.className = "gallery-dot" + (idx === galleryIndex ? " active" : "");
+          dot.addEventListener("click", () => {
+            galleryIndex = idx;
+            updateGallery();
+          });
+          galleryDotsContainer.appendChild(dot);
+        });
+      }
+
+      function updateGallery() {
+        if (!gallerySlide) return;
+        gallerySlide.src = galleryImages[galleryIndex];
+        renderDots();
+      }
+
+      function openLightbox(index) {
+        if (!lightbox || !lightboxImage) return;
+        currentImageIndex = index;
+        lightboxImage.src = galleryImages[currentImageIndex];
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+      }
+
+      function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+      }
+
+      if (galleryPrev && galleryNext && gallerySlide) {
+        galleryPrev.addEventListener("click", () => {
+          galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+          updateGallery();
+        });
+
+        galleryNext.addEventListener("click", () => {
+          galleryIndex = (galleryIndex + 1) % galleryImages.length;
+          updateGallery();
+        });
+
+        gallerySlide.addEventListener("click", () => openLightbox(galleryIndex));
+        updateGallery();
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+      if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+      if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
+      if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox && lightbox.style.display === "flex") {
+          if (e.key === "ArrowRight") nextImage();
+          if (e.key === "ArrowLeft") prevImage();
+          if (e.key === "Escape") closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
