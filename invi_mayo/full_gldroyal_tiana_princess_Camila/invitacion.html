@@ -1390,6 +1390,114 @@
       -webkit-mask-image: linear-gradient(to bottom, black 0%, black 32%, transparent 76%);
       mask-image: linear-gradient(to bottom, black 0%, black 32%, transparent 76%);
     }
+
+    /* =========================
+       AJUSTE DE CENTRADO GLOBAL
+       Corrige desplazamiento visual en móvil / Safari
+    ========================= */
+    .app {
+      left: 0;
+      right: 0;
+      transform: none;
+    }
+
+    .app-content {
+      width: 100%;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-content > section,
+    .app-content > div,
+    .background,
+    .container,
+    .event-section,
+    .event-wrap,
+    .event-card,
+    .family-section,
+    .glass,
+    .glass-card,
+    .gift-section,
+    .dress-section,
+    .gallery-section,
+    .final-section,
+    .calendar-img-section,
+    .hero-content2 {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center;
+    }
+
+    .hero-content2 {
+      width: 100%;
+      max-width: 460px;
+      display: block;
+      overflow: hidden;
+    }
+
+    .hero-content2 img,
+    img.center-img,
+    img.center-img2,
+    .section-icon,
+    .calendar-img,
+    .video-embed,
+    .portada-img,
+    .gift-section img,
+    .dress-section img,
+    .glass-card img,
+    .event-card img {
+      display: block;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .flourish {
+      width: min(400px, 100%) !important;
+      max-width: 100%;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      background-position: center center !important;
+    }
+
+    .event-section {
+      width: 100%;
+      max-width: 460px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .event-wrap {
+      width: min(380px, 100%) !important;
+      justify-items: center;
+    }
+
+    .event-wrap > * {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    @media (max-width: 480px) {
+      .app,
+      .app-content {
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      .event-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .anim-left,
+      .anim-right {
+        -webkit-transform: translate3d(0, 28px, 0);
+        transform: translate3d(0, 28px, 0);
+      }
+    }
+
   </style>
 </head>
 
@@ -1400,19 +1508,8 @@
 
       <!-- ========================= -->
       <!-- VIDEO INICIAL / SOBRE     -->
-      <!-- ========================= 
-      <section class="video-section" aria-label="Sobre de inicio">
-        <div class="hero-video-wrapper">
-          <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video1.mp4"></video> -->
-
-      <!-- Overlay comentado porque la invitación debe iniciar solo con el sobre -->
-      <!--
-          <div class="text-image-overlay">
-            <img src="img/xv.png" width="100%" alt="Mis XV Años Camila Ballesteros" loading="lazy">
-          </div>
-          -->
-    </div>
-    </section>
+      <!-- ========================= -->
+      <!-- Sección de sobre inicial desactivada temporalmente. -->
 
     <!-- ========================= -->
     <!-- PORTADA CON FOTO          -->
@@ -1565,11 +1662,11 @@
     <!-- ========================= -->
     <!-- VIDEO INTERMEDIO          -->
     <!-- ========================= -->
-    <section class="video-section anim-up" aria-label="Video intermedio">
+   <!--<section class="video-section anim-up" aria-label="Video intermedio">
       <div class="video-wrap">
         <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video2.mp4"></video>
       </div>
-    </section>
+    </section>-->
 
     <!-- ========================= -->
     <!-- CALENDARIO                -->
@@ -1621,7 +1718,7 @@
             Fracc. Victoria Sección Fiesta, H. Matamoros, Tamaulipas, C.P. 87390
           </p>
 
-          <p class="section-text section-text-lg event-time">Hora: <strong>08:00 PM</strong></p>
+          <p class="section-text section-text-lg event-time">Hora: <strong>07:30 PM</strong></p>
 
           <a class="btn-primary" href="https://maps.app.goo.gl/r1Luniw6KppUHTvV9" target="_blank" rel="noopener">
             Ver ubicación
@@ -1644,21 +1741,37 @@
 
             <div class="ai-tl-item right">
               <div class="ai-tl-iconbox">
-                <img src="img/copa.png" alt="" aria-hidden="true">
+                <img src="img/fin.png" alt="" aria-hidden="true">
               </div>
               <div class="ai-tl-label">Recepción</div>
-              <div class="ai-tl-time">08:00 PM</div>
+              <div class="ai-tl-time">07:30 PM</div>
             </div>
 
-            <!-- Sin más datos de itinerario proporcionados
+            
               <div class="ai-tl-item left">
                 <div class="ai-tl-iconbox">
-                  <img src="img/cena.png" alt="" aria-hidden="true">
+                  <img src="img/recepcion.png" alt="" aria-hidden="true">
                 </div>
                 <div class="ai-tl-label">Cena</div>
-                <div class="ai-tl-time">00:00 PM</div>
+                <div class="ai-tl-time">08:30 PM</div>
               </div>
-              -->
+			  
+			  <div class="ai-tl-item right">
+              <div class="ai-tl-iconbox">
+                <img src="img/vals.png" alt="" aria-hidden="true">
+              </div>
+              <div class="ai-tl-label">Vals</div>
+              <div class="ai-tl-time">09:30 PM</div>
+            </div>
+			  
+			    <div class="ai-tl-item left">
+                <div class="ai-tl-iconbox">
+                  <img src="img/baile.png" alt="" aria-hidden="true">
+                </div>
+                <div class="ai-tl-label">Baile</div>
+                <div class="ai-tl-time">10:00 PM</div>
+              </div>
+              
           </div>
         </article>
 
@@ -1734,7 +1847,7 @@
           <h2 class="section-title">Lluvia de sobres</h2>
 
           <p class="section-text">
-            Tu presencia es lo más importante para mí, pero si quieres sorprenderme con un detalle,
+            Tu presencia es lo más importante para nosotros, pero si quieres sorprenderme con un detalle,
             ¡una lluvia de sobres será más que bienvenida!
           </p>
         </section>
@@ -1837,12 +1950,13 @@
 
       <p class="section-text section-text-lg">
         ¡Agradezco de corazón que<br>
-        celebres conmigo!<br><br>
+        celebres con nosotros!<br><br>
         ¡Nos vemos pronto!
       </p>
       <br>
 
-      <h2 class="section-title">Con cariño<br>Camila Ballesteros</h2>
+      <h2 class="section-title">Con cariño<br>Camila y Ramiro <br>
+Hernán Ballesteros</h2>
     </section>
 
     <!-- VIDEO FINAL -->
@@ -1853,7 +1967,7 @@
     </section>
 
   </div>
-  </div>
+ 
 
   <!-- ========================= -->
   <!-- REPRODUCTOR FLOTANTE      -->
@@ -2001,6 +2115,15 @@
       "galeria/2.jpeg",
       "galeria/3.jpeg",
       "galeria/4.jpeg",
+		"galeria/5.jpeg",
+		"galeria/6.jpeg",
+		"galeria/7.jpeg",
+		"galeria/8.jpeg",
+		"galeria/9.jpeg",
+		"galeria/10.jpeg",
+		"galeria/11.jpeg",
+		"galeria/12.jpeg",
+		"galeria/13.jpeg",
     ];
 
     let currentGalleryIndex = 0;
