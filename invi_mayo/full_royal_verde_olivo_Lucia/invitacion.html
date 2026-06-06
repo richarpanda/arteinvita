@@ -1952,6 +1952,25 @@ durante la fiesta,<br> junto con una dedicatoria.<br>
     });
 
   </script>
+
+<script>
+window.addEventListener('load', () => {
+  const music = document.getElementById('bg-music');
+  if (!music) return;
+  music.muted = true;
+  const startMusic = async () => {
+    try {
+      await music.play();
+      setTimeout(() => { music.muted = false; }, 300);
+    } catch(e) {}
+  };
+  startMusic();
+  ['click','touchstart','scroll'].forEach(evt => {
+    document.addEventListener(evt, startMusic, { once:true, passive:true });
+  });
+});
+</script>
+
 </body>
 
 </html>
