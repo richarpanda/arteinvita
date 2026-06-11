@@ -1268,7 +1268,7 @@ más importantes para mí.
             aria-label="Control de volumen">
         </div>
 
-        <audio id="audioPlayer" preload="metadata" playsinline webkit-playsinline>
+        <audio id="audioPlayer" preload="auto" autoplay playsinline webkit-playsinline>
           <source src="Ilusión 98_Marco Flores Y La Jerez.mp3" type="audio/mpeg">
           Tu navegador no soporta audio HTML5.
         </audio>
@@ -1351,15 +1351,40 @@ más importantes para mí.
         playerContent.classList.toggle('active');
       });
 
+      function setPlayIcon(isPlaying) {
+        playIcon.innerHTML = isPlaying
+          ? '<path d="M6 5h4v14H6zM14 5h4v14h-4z"></path>'
+          : '<path d="M8 5v14l11-7z"></path>';
+      }
+
+      function startMusic() {
+        audio.play()
+          .then(() => setPlayIcon(true))
+          .catch(() => setPlayIcon(false));
+      }
+
+      // Autoplay: intenta iniciar al cargar. En iPhone/Chrome, si el navegador lo bloquea,
+      // se activa automáticamente con el primer toque/click/scroll del invitado.
+      startMusic();
+
+      ['click', 'touchstart', 'scroll'].forEach((eventName) => {
+        window.addEventListener(eventName, function unlockAudio() {
+          if (audio.paused) startMusic();
+          window.removeEventListener(eventName, unlockAudio);
+        }, { once: true, passive: true });
+      });
+
       playButton.addEventListener('click', () => {
         if (audio.paused) {
-          audio.play();
-          playIcon.innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"></path>';
+          startMusic();
         } else {
           audio.pause();
-          playIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+          setPlayIcon(false);
         }
       });
+
+      audio.addEventListener('play', () => setPlayIcon(true));
+      audio.addEventListener('pause', () => setPlayIcon(false));
 
       audio.addEventListener('timeupdate', () => {
         if (!audio.duration) return;
