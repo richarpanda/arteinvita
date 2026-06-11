@@ -145,7 +145,7 @@
        ✅ FONDO FIJO SOLO HERO+INTRO
     ========================= */
     .bg-fixed{
-    background-image: url("img/bg_paper2.png"); /* ✅ igual que inicio. Si quieres el otro: img/bg_event.png */
+    background-image: url("img/bg_paper2.jpeg"); /* ✅ igual que inicio. Si quieres el otro: img/bg_event.png */
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -165,7 +165,7 @@
        ✅ EVENTO SIN PARALLAX (mismo estilo fondo fijo)
     ========================= */
     .bg-event-fixed{
-      background-image: url("img/bg_paper2.png"); /* ✅ igual que inicio. Si quieres el otro: img/bg_event.png */
+      background-image: url("img/bg_paper2.jpeg"); /* ✅ igual que inicio. Si quieres el otro: img/bg_event.png */
 background-size: cover;
 /*      background-size: 520px auto;*/
       background-position: center center;
@@ -178,7 +178,7 @@ background-size: cover;
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.22), rgba(255,255,255,0.55));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.15));
       pointer-events:none;
     }
     .bg-event-fixed > *{
@@ -400,7 +400,7 @@ background-size: cover;
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.85));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.88), rgba(255,255,255,0.95));
     }
     .save-date-min-inner{ position: relative; text-align:center; }
     .save-date-min-title{
@@ -868,7 +868,7 @@ background-size: cover;
        CONFIRMACIÓN
     ========================= */
     .confirm-bg{
-      background-image: url("img/bg_paper2.png");
+      background-image: url("img/bg_paper2.jpeg");
       background-size: cover;
       background-position: center;
       background-repeat:no-repeat;
@@ -1008,7 +1008,7 @@ background-size: cover;
 
 
 .bg-bottom{
-  background-image: url("img/bg_paper2.png");
+  background-image: url("img/bg_paper2.jpeg");
   background-repeat: repeat-y;   /* ✅ para que no se “moche” */
   background-position: center top;
   background-size: 520px auto;   /* ✅ tamaño controlado en desktop */
@@ -1056,7 +1056,7 @@ background-size: cover;
   content:"";
   position:absolute;
   inset:0;
-  background: url("img/bg_paper2.png") center top / 520px auto repeat-y;
+  background: url("img/bg_paper2.jpeg") center top / 520px auto repeat-y;
   z-index:0;
 }
 
@@ -1098,7 +1098,7 @@ background-size: cover;
         <div class="hero-card reveal reveal-left">
           <div class="hero-frame">
             <div class="hero-media">
-              <video src="img/video.mp4" autoplay loop muted playsinline preload="auto" poster="img/cover.jpg"></video>
+              <img src="img/galeria/portada.jpeg" width="100%">
             </div>
 
             <div class="hero-bottom">
@@ -1190,8 +1190,8 @@ Por esta razón queremos que nos acompañen en este día tan especial.
     <section id="evento" class="bg-event-fixed">
       <div class="content">
         <div class="when-where-header reveal reveal-left">
-          <div class="section-title-script">¿Cuándo y dónde?</div>
-          <div class="flourish"></div>
+          <div class="section-title-script"><span style="color: #424242">¿Cuándo y dónde?</span></div>
+          
         </div>
       </div>
 
@@ -1257,11 +1257,11 @@ Por esta razón queremos que nos acompañen en este día tan especial.
         </div>
       </div>
     </section>
-    -->
+    --><div align="center"><img src="img/galeria/2.jpeg" width="100%" alt="Foto"></div>
 
         <!-- CALENDARIO -->
     <section id="calendario" class="calendar-section">
-      <div align="center"><img src="img/reloj.png" width="70%" alt="Foto"></div>
+      <div align="center"><img src="img/reloj.png" width="35%" alt="Foto"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Recuerda la fecha del evento</div>
         <div class="flourish"></div>
@@ -1279,7 +1279,7 @@ Por esta razón queremos que nos acompañen en este día tan especial.
     <!-- GALERÍA -->
     <!-- GALERÍA -->
     <section id="galeria-fotos" class="gallery-section">
-      <div align="center"><img src="img/cenefa_3.png" width="80%" alt="Foto"></div>
+      <div align="center"><img src="img/cenefa_3.png" width="35%" alt="Foto"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Galería de Fotos</div>
         <div class="flourish"></div>
@@ -1290,10 +1290,10 @@ Por esta razón queremos que nos acompañen en este día tan especial.
 
         <div class="gallery-preview reveal reveal-left">
           <div class="gallery-preview-item" onclick="openGallery(0)">
-            <img src="img/galeria/1.jpeg" alt="Foto 1">
+            <img src="img/galeria/4.jpeg" alt="Foto 1">
           </div>
           <div class="gallery-preview-item" onclick="openGallery(1)">
-            <img src="img/galeria/2.jpeg" alt="Foto 2">
+            <img src="img/galeria/3.jpeg" alt="Foto 2">
           </div>
         </div>
 
@@ -1318,6 +1318,7 @@ Por esta razón queremos que nos acompañen en este día tan especial.
     <!-- ITINERARIO -->
     <section id="itinerario" class="itinerary-section">
       <div class="content">
+		  <div align="center"><img src="img/iti.png" width="45%" alt="Foto"></div>
         <div class="flourish"></div>
         <h2 class="itinerary-title">Itinerario</h2>
         <p class="itinerary-date">Sábado 1 de Agosto</p>
@@ -1386,7 +1387,7 @@ Por esta razón queremos que nos acompañen en este día tan especial.
     
 <!-- LLUVIA DE SOBRES -->
     <section id="regalos" class="gifts-section">
-      <div align="center"><img src="img/sobre_regalo.png" width="85%"></div>
+      <div align="center"><img src="img/sobre_regalo.png" width="45%"></div>
     <div class="section-title-script">Lluvia de Sobres</div>
       <div class="flourish"></div>
 
@@ -1398,7 +1399,7 @@ Por esta razón queremos que nos acompañen en este día tan especial.
       </div>
     </section>
 
-<div align="center"><img src="img/cenefa_7.png" width="90%" alt="Foto"></div>
+<div align="center"><img src="img/galeria/3.jpeg" width="100%" alt="Foto"></div>
 
     <!--  7. INSTAGRAM / HASHTAG-->
     <!-- INSTAGRAM: N/A
@@ -1507,7 +1508,7 @@ Tu respuesta es muy importante.
 
         <div class="content">
           <div class="event-card-final reveal reveal-left">
-            <div align="center"><img src="img/final.png" width="100%" alt="Foto final"></div>
+            <div align="center"><img src="img/galeria/4.jpeg" width="100%" alt="Foto final"></div>
           </div>
         </div>
 
