@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV Años | Andrea</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+	
+	
+
+  <style>
+	  
+	  
+	  @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+			
+        }
+    :root {
+      --bg: transparent;
+      --surface: rgba(91, 14, 14, 0.88);
+      --ink: #F2D38C;
+      --muted: #E7C166;
+      --accent: #C89A3B;
+      --rose: #F8E3A3;
+      --gold: #D8A93F;
+      --line: rgba(216, 169, 63, 0.45);
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+
+      --rojo: #D8A93F;
+      --rojo-profundo: #4A0909;
+      --dorado: #D8A93F;
+      --dorado-suave: #F2D38C;
+      --crema: #FFF4E4;
+      --cafe: #E7C166;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--gold);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    .app {
+      width: min(460px, 100%);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #5B0E0E;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-size: 32px 32px;
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: min(95vh, 760px);
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      background: url("portada.png") center top / cover no-repeat;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          transparent 0%,
+          transparent 55%,
+          rgba(91, 14, 14, 0.44) 72%,
+          rgba(43, 11, 8, 0.94) 100%),
+        radial-gradient(circle at 18% 30%,
+          rgba(200, 154, 59, 0.22),
+          transparent 34%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(242, 211, 140, .55);
+      margin: 16px;
+      border-radius: 18px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      color: #fff;
+      padding: 0 18px 118px;
+      margin-bottom: 10px;
+    }
+
+    .hero-name {
+      font-family: "Nova Quinta", cursive;
+      font-size: clamp(4.0rem, 12vw, 5.2rem);
+      margin: 0;
+      line-height: 1.05;
+      font-weight: 400;
+      color: #FFF4E4;
+      text-shadow:
+        0 2px 2px rgba(0, 0, 0, .60),
+        0 0 14px rgba(200, 154, 59, .52),
+        0 0 24px rgba(91, 14, 14, .70);
+    }
+
+    .hero-date {
+      margin-top: 18px;
+      font-size: 1.65rem;
+      letter-spacing: 0.18em;
+      font-family: "Playfair Display", serif;
+      color: var(--dorado-suave);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .55);
+    }
+
+    /* SECCIONES */
+    .background {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      min-height: auto !important;
+      animation: none !important;
+    }
+
+    .section {
+      background: var(--bg);
+      padding: 12px 16px 18px;
+      padding-top: 0;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 8px 16px 36px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtext {
+      margin: 28px 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    .parrafo {
+      margin: 14px auto 6px;
+      font-size: 1.02rem;
+      color: var(--ink);
+      line-height: 1.78;
+      max-width: 390px;
+      text-align: center;
+    }
+
+    .parrafo strong {
+      color: var(--rojo);
+      text-shadow: 0 0 8px rgba(242, 211, 140, .35);
+    }
+
+    .date-container {
+      width: 100%;
+      margin: 14px auto 8px;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      color: var(--ink);
+    }
+
+    .day,
+    .month {
+      font-size: 1.00rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--cafe);
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+      font-size: 4.8rem;
+      margin: 0;
+      margin-bottom: 0.25em;
+      line-height: 1;
+      color: var(--rojo);
+      text-shadow: 0 0 16px rgba(200, 154, 59, .34);
+    }
+
+    .timeline {
+      margin: 22px auto 10px;
+      padding: 0;
+      max-width: 380px;
+      display: grid;
+      gap: 26px;
+    }
+
+    .timeline-item {
+      padding: 0 !important;
+      text-align: center;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .timeline-item+.timeline-item::before,
+    .social-item+.social-item::before,
+    .final-item+.final-item::before {
+      content: "";
+      display: block;
+      width: 72%;
+      margin: 22px auto;
+      height: 1px;
+      background: rgba(200, 154, 59, .44);
+    }
+
+    .section-title,
+    .social-title,
+    .final-title,
+    .timeline-title {
+      margin: 6px 0 10px;
+      font-family: "Great Vibes", serif;
+      font-size: 3rem;
+      color: var(--rojo);
+      line-height: 1.25;
+    }
+
+    .section-content,
+    .social-content,
+    .final-content {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 1.0rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .section-content-hora {
+      margin: 10px 0 0;
+      color: var(--rojo);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .btn,
+    .btn-ubicacion,
+    .gallery-button,
+    .confirm-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1.8px solid var(--dorado);
+      color: #FFF4E4;
+      background: linear-gradient(135deg, var(--rojo), var(--rojo-profundo));
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(91, 14, 14, 0.32);
+    }
+
+    .btn:hover,
+    .btn-ubicacion:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .social-section,
+    .final-section {
+      margin: 14px auto 0;
+      padding: 0;
+      max-width: 380px;
+      display: grid;
+      gap: 14px;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .social-item,
+    .final-item {
+      padding: 0 !important;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .thanks {
+      margin-top: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      color: var(--rojo);
+      font-weight: 600;
+    }
+
+    .crown-wrap {
+      text-align: center;
+      margin: 12px auto 4px;
+    }
+
+    .crown-wrap img,
+    .social-item>img,
+    .final-item img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+    }
+
+    .floral-divider {
+      width: 74%;
+      max-width: 280px;
+      height: 42px;
+      margin: 22px auto;
+      background: url("cenefa.png") center / contain no-repeat;
+      opacity: .9;
+      filter: sepia(1) saturate(1.6) hue-rotate(345deg);
+    }
+
+    .floral-divider::before {
+      content: none;
+    }
+
+    /* ITINERARIO TIMELINE */
+    .timeline-section {
+      padding: 1rem 1rem;
+      text-align: center;
+    }
+
+    .timeline-title {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-list {
+      position: relative;
+      width: min(100%, 390px);
+      margin: 0 auto;
+      padding: 0.5rem 0;
+    }
+
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--gold);
+      transform: translateX(-50%);
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr;
+      align-items: center;
+      justify-items: center;
+      min-height: 58px;
+      position: relative;
+    }
+
+    .timeline-time {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      color: var(--rojo);
+      font-weight: 700;
+      line-height: 1.2;
+      width: 100%;
+    }
+
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #FFF4E4;
+      border: 3px solid var(--gold);
+      margin: 0 auto;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    .timeline-event {
+      text-align: center;
+      font-size: .98rem;
+      color: var(--muted);
+      line-height: 1.25;
+      width: 100%;
+    }
+
+    .digital-clock-container {
+      margin: 0;
+    }
+
+    .digital-clock {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--rojo-profundo);
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 244, 228, .70);
+      letter-spacing: 2px;
+      display: inline-block;
+      box-shadow: inset 0 0 18px rgba(91, 14, 14, .12);
+    }
+
+    .clock-status {
+      margin-top: 10px;
+      color: var(--muted);
+      font-style: normal;
+      font-size: .98rem;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background-color: var(--rojo);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out, transform .2s ease;
+      border: 1px solid var(--gold);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .18);
+      z-index: 1000;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 0.85;
+    }
+
+    .arrow-up {
+      width: 10px;
+      height: 10px;
+      border-left: 3px solid white;
+      border-top: 3px solid white;
+      transform: rotate(45deg);
+      margin-top: 4px;
+    }
+
+    .polaroid-single {
+      width: min(96%, 360px);
+      margin: 18px auto 6px;
+      background: rgba(255, 247, 239, .92);
+      border: 1px solid rgba(200, 154, 59, 0.42);
+      border-radius: 20px;
+      padding: 12px 12px 16px;
+      box-shadow: 0 12px 28px rgba(91, 14, 14, 0.22);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .polaroid-single img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid rgba(200, 154, 59, 0.32);
+      background: var(--bg);
+    }
+
+    .polaroid-single .pol-label {
+      margin-top: 12px;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--rojo);
+      font-weight: 600;
+    }
+
+    .polaroid-single .pol-btn {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1.8px solid var(--gold);
+      background: var(--rojo);
+      color: #FFF4E4;
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+      font-weight: 600;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      animation: fadeIn 0.25s ease-in;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .gallery-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 38px;
+      font-weight: bold;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2001;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .gallery-main-image {
+      max-width: 92%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.55);
+      color: #000;
+      border: none;
+      font-size: 28px;
+      padding: 12px 16px;
+      cursor: pointer;
+      z-index: 2001;
+      border-radius: 10px;
+    }
+
+    .gallery-prev {
+      left: 10px;
+    }
+
+    .gallery-next {
+      right: 10px;
+    }
+
+    .gallery-counter {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.65);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      z-index: 2001;
+    }
+
+    .floating-player {
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background-color: var(--rojo);
+      border: 1px solid var(--gold);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+      color: white;
+    }
+
+    .player-content {
+      background-color: rgba(255, 244, 228, .96);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.36);
+      border: 1px solid var(--line);
+      display: none;
+      width: 280px;
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-title {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .95rem;
+      line-height: 1.35;
+    }
+
+    .song-artist {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .control-button {
+      background: rgba(200, 154, 59, 0.18);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      color: var(--rojo);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 6px;
+      background-color: rgba(91, 14, 14, .12);
+      border-radius: 999px;
+      margin-top: 12px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: var(--gold);
+      width: 0%;
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .volume-icon {
+      color: var(--rojo);
+      display: flex;
+    }
+
+    .volume-slider {
+      flex-grow: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      background-color: rgba(91, 14, 14, .12);
+      border-radius: 999px;
+      outline: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      background-color: var(--gold);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 0 !important;
+      transform: translate3d(0, 0, 0) !important;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      will-change: transform, opacity;
+    }
+
+    .anim-left {
+      transform: translate3d(-28px, 0, 0) !important;
+    }
+
+    .anim-right {
+      transform: translate3d(28px, 0, 0) !important;
+    }
+
+    .anim-up {
+      transform: translate3d(0, 18px, 0) !important;
+    }
+
+    .in-view {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-left,
+      .anim-right,
+      .anim-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 5rem;
+      }
+
+      .hero-date {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-name">Andrea</h1>
+        <div class="hero-date">15 · Agosto · 2026</div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <div class="background">
+      <div class="container">
+
+        <button class="scroll-to-top" id="scrollBtn" aria-label="Volver arriba">
+          <div class="arrow-up"></div>
+        </button>
+
+        <div class="crown-wrap anim-up">
+          <img src="corona.png" width="80%" alt="Corona">
+        </div>
+
+        <p class="subtext anim-up">
+          Quince años de amor, sueños y alegría…<br>
+          ¡Ven a celebrarlos conmigo!
+        </p>
+
+        <div class="floral-divider"></div>
+
+        <div class="date-container anim-up">
+          <div class="day">Sábado</div>
+          <div class="number">15</div>
+          <div class="month">Agosto</div>
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <p class="parrafo">
+         La vida está hecha de momentos
+únicos, y este es uno de los
+más importantes para mí.
+        </p>
+
+        
+
+        <p class="parrafo">
+          Junto a mis papás:<br>
+          <strong>Eduardo Cruz Monreal</strong><br>
+          y<br>
+          <strong>Anahí Corona Pinzón</strong><br><br>
+          Te invito a celebrar conmigo este gran día.
+        </p>
+
+
+        <p class="parrafo">
+          Y junto a mis padrinos:<br>
+          <strong>Oscar Alvarez Maldonado</strong><br>
+          y<br>
+          <strong>Verónica Hernández Álvarez</strong>
+        </p>
+
+        <div class="crown-wrap anim-up">
+          <img src="1.png" width="60%" alt="Corona">
+        </div>
+
+
+        <!-- CONTADOR -->
+        <div class="final-item anim-up">
+          <div class="digital-clock-container">
+            <div align="center" style="color:var(--gold);">
+              <svg viewBox="0 0 120 120" width="25%" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                aria-hidden="true">
+                <rect x="18" y="22" width="84" height="78" rx="10" fill="none" stroke="currentColor" stroke-width="6" />
+                <line x1="18" y1="42" x2="102" y2="42" stroke="currentColor" stroke-width="6" />
+                <line x1="34" y1="14" x2="34" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                <line x1="86" y1="14" x2="86" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                <rect x="28" y="52" width="12" height="12" rx="2" />
+                <rect x="46" y="52" width="12" height="12" rx="2" />
+                <rect x="64" y="52" width="12" height="12" rx="2" />
+                <rect x="82" y="52" width="12" height="12" rx="2" />
+                <rect x="28" y="70" width="12" height="12" rx="2" />
+                <rect x="46" y="70" width="12" height="12" rx="2" />
+                <rect x="64" y="70" width="12" height="12" rx="2" />
+                <rect x="82" y="70" width="12" height="12" rx="2" />
+              </svg>
+            </div>
+            <p class="final-title">Faltan</p>
+            <p class="final-content">DÍAS // HORAS // MINUTOS // SEGUNDOS</p>
+            <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva">
+              <span id="days">00</span><span class="clock-separator">:</span>
+              <span id="hours">00</span><span class="clock-separator">:</span>
+              <span id="minutes">00</span><span class="clock-separator">:</span>
+              <span id="seconds">00</span>
+            </div>
+            <div class="clock-status" id="clock-status"></div>
+          </div>
+
+          <br><br>
+
+          <div class="timeline">
+
+            <div class="timeline-item anim-left">
+              <div align="center" style="color:var(--gold);">
+                <svg viewBox="0 0 120 100" width="30%" fill="none" stroke="currentColor" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" aria-label="Ícono de ceremonia">
+                  <path
+                    d="M10 90H110M60 4V62M49 16H71M20 90V55L45 42V90M45 90V28L60 20L75 28V90M75 90V42L100 55V90M32 90V48M52 90V36M68 90V36M88 90V48" />
+                </svg>
+              </div>
+              <p class="section-title">Ceremonia Religiosa</p>
+              <p class="section-content">
+                <strong>Capilla Santiago Apóstol</strong><br>
+                Av. Tejocote Manzana 012, Santiago,<br>
+                54784 Teoloyucan, Méx.
+              </p>
+              <p class="section-content-hora">5:00 p.m.</p>
+              <br>
+              <a href="https://maps.app.goo.gl/nfbAYVRPodPLQRux8 " class="btn" target="_blank" rel="noopener">Ver
+                mapa</a>
+            </div>
+
+            <!-- Recepción -->
+            <div class="timeline-item anim-right">
+              <div align="center" style="color:var(--gold);">
+                <svg viewBox="0 0 120 100" width="30%" fill="none" stroke="currentColor" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" aria-label="Ícono de recepción">
+                  <path d="M20 82H100M30 82V48L60 24L90 48V82M44 82V60H76V82M38 48H82M50 36H70" />
+                  <path d="M28 42L60 16L92 42" />
+                </svg>
+              </div>
+              <p class="section-title">Recepción</p>
+              <p class="section-content">
+                <strong>Recepción en casa</strong><br>
+                Calle 5 de febrero S/N,<br>
+                Bo. Santiago Teoloyucan C.P 54784
+              </p>
+              <p class="section-content-hora">6:00 p.m.</p>
+              <br>
+              <a href="https://maps.app.goo.gl/yJCA6bwrpnvjZTQk9" class="btn" target="_blank" rel="noopener">Ver
+                mapa</a>
+            </div>
+
+          </div> <br><br>
+
+          <div class="crown-wrap anim-up">
+            <img src="2.png" width="60%" alt="Decoración vaquera">
+          </div>
+
+          <!-- ITINERARIO -->
+          <section id="itinerario" class="timeline-section">
+            <p class="timeline-title">Itinerario</p>
+            <div class="timeline-list">
+
+              <div class="timeline-row">
+                <div class="timeline-time">5:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Misa</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">6:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Recepción</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">7:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Comida</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">8:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Vals</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">9:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Baile</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">10:30 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Noche de luces</div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">11:00 p.m.</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-event">Presentación de la Banda</div>
+              </div>
+
+            </div>
+          </section>
+
+          <div class="floral-divider"></div>
+
+          <!-- VESTIMENTA -->
+          <div class="timeline-item anim-up">
+            <div align="center" style="color:var(--gold);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30%" viewBox="0 0 900 900"
+                preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true">
+                <defs>
+                  <clipPath id="dressClipA">
+                    <path d="M 332 233.152344 L 867 233.152344 L 867 852.652344 L 332 852.652344 Z M 332 233.152344" />
+                  </clipPath>
+                  <clipPath id="dressClipB">
+                    <path
+                      d="M 61.269531 47.675781 L 474.519531 47.675781 L 474.519531 594 L 61.269531 594 Z M 61.269531 47.675781" />
+                  </clipPath>
+                  <clipPath id="dressClipC">
+                    <path d="M 245 517 L 291 517 L 291 597.425781 L 245 597.425781 Z M 245 517" />
+                  </clipPath>
+                </defs>
+
+                <g clip-path="url(#dressClipA)">
+                  <path
+                    d="M 788.957031 742.132812 C 752.242188 688.648438 688.964844 593.96875 671.984375 552.628906 C 661.507812 527.128906 652.648438 493.859375 648.773438 478.390625 L 662.105469 478.390625 C 667.886719 489.941406 686.144531 525.460938 704.753906 551.78125 C 737.457031 598.03125 822.761719 691.199219 847.269531 717.75 C 836.765625 723.035156 816.609375 732.480469 788.957031 742.132812 Z M 721.851562 792.273438 C 695.644531 729.867188 647.371094 611.179688 638.460938 563.214844 C 632.890625 533.179688 631.1875 494.152344 630.703125 478.390625 L 633.621094 478.390625 C 636.957031 492.085938 646.503906 529.324219 658.382812 558.21875 C 675.6875 600.382812 737.101562 692.609375 774.40625 747.003906 C 777.507812 751.53125 780.4375 755.777344 783.160156 759.726562 C 788.933594 768.066406 793.785156 775.019531 797.339844 780.101562 C 783.722656 782.824219 757.675781 787.59375 721.851562 792.273438 Z M 721.488281 829.058594 C 701.027344 831.820312 650.140625 837.878906 597.207031 837.878906 C 552.246094 837.878906 495.378906 831.601562 473.007812 828.902344 C 474.710938 824.925781 476.917969 819.796875 479.503906 813.710938 C 481.320312 809.433594 483.34375 804.675781 485.511719 799.523438 C 511.78125 737.140625 561.070312 616.234375 570.414062 565.910156 C 576.296875 534.21875 577.984375 494.234375 578.441406 478.390625 L 615.980469 478.390625 C 616.433594 494.234375 618.121094 534.21875 623.996094 565.910156 C 633.078125 614.835938 679.929688 730.464844 706.667969 794.171875 C 708.785156 799.214844 710.769531 803.9375 712.609375 808.269531 C 716.25 816.863281 719.28125 823.945312 721.488281 829.058594 Z M 396.390625 781.070312 C 400.414062 775.34375 406.285156 766.929688 413.378906 756.644531 C 416.128906 752.65625 419.058594 748.402344 422.148438 743.902344 C 459.597656 689.164062 519.039062 599.589844 536.039062 558.21875 C 547.917969 529.324219 557.464844 492.085938 560.800781 478.390625 L 563.71875 478.390625 C 563.234375 494.152344 561.539062 533.164062 555.960938 563.214844 C 546.804688 612.542969 496.019531 736.625 470.394531 797.410156 C 435.484375 792.085938 409.410156 785.023438 396.390625 781.070312 Z M 351.648438 717.355469 C 376.621094 690.316406 461.277344 597.804688 493.820312 551.78125 C 512.429688 525.460938 530.691406 489.941406 536.472656 478.390625 L 545.632812 478.390625 C 541.769531 493.859375 532.917969 527.117188 522.433594 552.628906 C 505.765625 593.183594 444.519531 685.140625 407.535156 739.105469 C 381.757812 730.347656 362.253906 722.113281 351.648438 717.355469 Z M 520.644531 308.546875 C 521.210938 307.5625 521.546875 306.46875 521.617188 305.335938 L 525.28125 247.871094 L 537.113281 247.871094 L 543.191406 282.058594 C 543.429688 290.160156 547.777344 297.488281 554.664062 301.300781 L 596.839844 324.652344 C 599.050781 325.878906 601.75 325.878906 603.960938 324.652344 L 646.132812 301.300781 C 653.019531 297.488281 657.367188 290.160156 657.605469 282.058594 L 663.6875 247.871094 L 675.515625 247.871094 L 679.183594 305.335938 C 679.253906 306.457031 679.585938 307.558594 680.144531 308.535156 C 680.382812 308.949219 703.726562 350.523438 680.738281 379.792969 C 673.257812 389.316406 666.039062 404.203125 662.652344 411.625 L 538.144531 411.625 C 534.757812 404.203125 527.535156 389.316406 520.0625 379.792969 C 497.066406 350.523438 520.410156 308.949219 520.644531 308.546875 Z M 539.96875 463.671875 L 539.96875 427.554688 L 659.515625 427.554688 L 659.515625 463.671875 Z M 864.566406 714.753906 C 863.464844 713.566406 753.753906 595.585938 716.765625 543.277344 C 697.628906 516.21875 678.195312 477.707031 674.226562 469.722656 L 674.226562 421.816406 C 674.582031 420.980469 683.566406 400.011719 692.300781 388.886719 C 718.910156 355.015625 698.460938 311.695312 693.757812 302.769531 L 689.753906 240.042969 C 689.511719 236.167969 686.296875 233.152344 682.414062 233.152344 L 657.523438 233.152344 C 653.957031 233.152344 650.90625 235.710938 650.285156 239.222656 L 643.019531 280.058594 C 642.949219 280.484375 642.910156 280.917969 642.910156 281.347656 C 642.910156 284.332031 641.378906 287.109375 639.007812 288.421875 L 600.398438 309.796875 L 561.789062 288.421875 C 559.417969 287.109375 557.890625 284.332031 557.890625 281.347656 C 557.890625 280.917969 557.851562 280.484375 557.777344 280.058594 L 550.515625 239.222656 C 549.890625 235.710938 546.839844 233.152344 543.273438 233.152344 L 518.382812 233.152344 C 514.503906 233.152344 511.289062 236.167969 511.039062 240.042969 L 507.042969 302.769531 C 502.335938 311.695312 481.882812 355.015625 508.492188 388.886719 C 515.355469 397.628906 522.398438 412.503906 525.257812 418.847656 L 525.257812 468.296875 L 525.09375 468.21875 C 524.875 468.660156 503.148438 513.105469 481.8125 543.277344 C 444.824219 595.585938 335.113281 713.566406 334.007812 714.753906 C 332.425781 716.445312 331.742188 718.789062 332.160156 721.082031 C 332.5625 723.363281 334.019531 725.316406 336.105469 726.359375 C 337.21875 726.910156 360.667969 738.574219 398.820312 751.777344 C 386.832031 769.160156 378.9375 780.320312 378.628906 780.753906 C 377.304688 782.625 376.925781 785.007812 377.609375 787.203125 C 378.300781 789.402344 379.964844 791.140625 382.121094 791.925781 C 384.242188 792.6875 415.210938 803.738281 464.425781 811.515625 C 459.09375 824.058594 455.785156 831.671875 455.613281 832.050781 C 454.695312 834.164062 454.816406 836.59375 455.953125 838.605469 C 457.085938 840.617188 459.09375 841.980469 461.390625 842.285156 C 462.160156 842.382812 539.230469 852.597656 597.207031 852.597656 C 666.640625 852.597656 732.542969 842.359375 733.207031 842.261719 C 735.445312 841.902344 737.410156 840.53125 738.5 838.527344 C 739.601562 836.53125 739.710938 834.140625 738.792969 832.050781 C 738.597656 831.625 734.394531 821.921875 727.785156 806.316406 C 780.15625 799.351562 810.9375 792.296875 811.449219 792.171875 C 813.84375 791.621094 815.792969 789.914062 816.660156 787.621094 C 817.53125 785.328125 817.214844 782.75 815.792969 780.753906 C 815.507812 780.34375 808.484375 770.433594 797.65625 754.757812 C 838.164062 740.292969 861.816406 726.753906 862.863281 726.148438 C 864.800781 725.023438 866.121094 723.082031 866.453125 720.863281 C 866.796875 718.640625 866.097656 716.398438 864.566406 714.753906" />
+                </g>
+
+                <g clip-path="url(#dressClipB)">
+                  <path
+                    d="M 267.515625 422.65625 C 266.382812 426.035156 265.347656 429.167969 264.28125 432.289062 C 255.703125 457.304688 245.933594 481.808594 232.816406 504.847656 C 226.890625 515.261719 220.160156 525.117188 212.160156 534.121094 C 199.273438 548.625 183.589844 554.105469 164.585938 549.703125 C 164.058594 549.582031 163.519531 549.480469 162.984375 549.40625 C 162.234375 549.296875 161.476562 549.226562 160.34375 549.09375 C 160.90625 555.671875 161.453125 562.148438 162.015625 568.625 C 162.554688 574.804688 163.144531 580.980469 163.644531 587.164062 C 163.964844 591.050781 162.535156 593.132812 159.570312 593.335938 C 156.5625 593.542969 154.855469 591.65625 154.535156 587.863281 C 153.4375 574.851562 152.273438 561.84375 151.273438 548.824219 C 151.132812 546.976562 150.25 546.519531 148.785156 546.078125 C 143.058594 544.359375 137.335938 542.628906 131.664062 540.753906 C 127.328125 539.320312 126.769531 538.019531 127.453125 533.398438 C 131.269531 507.578125 135.042969 481.75 138.820312 455.917969 C 142.859375 428.261719 146.769531 400.585938 150.957031 372.953125 C 153.851562 353.871094 152.675781 334.984375 149.09375 316.148438 C 149.066406 316.023438 148.8125 315.9375 148.265625 315.546875 C 147.550781 319.945312 146.851562 324.136719 146.195312 328.335938 C 139.917969 368.417969 133.648438 408.5 127.390625 448.585938 C 126.804688 452.347656 126.296875 456.121094 125.78125 459.894531 C 125.191406 464.191406 123.277344 465.628906 119.125 464.839844 C 101.285156 461.4375 83.441406 458.039062 65.601562 454.636719 C 62.292969 454.003906 60.945312 452.207031 61.292969 448.914062 C 65.609375 407.792969 69.890625 366.671875 74.253906 325.554688 C 78.257812 287.796875 82.34375 250.046875 86.394531 212.292969 C 89.007812 187.953125 91.632812 163.613281 94.207031 139.273438 C 94.476562 136.742188 95.507812 135.09375 97.972656 134.132812 C 126.691406 122.890625 155.390625 111.589844 184.101562 100.3125 C 187.03125 99.164062 189.949219 97.972656 192.929688 96.964844 C 194.628906 96.390625 195.992188 95.589844 197.191406 94.191406 C 198.597656 92.554688 200.195312 90.933594 202.027344 89.835938 C 206.421875 87.210938 209.019531 83.351562 211.179688 78.835938 C 213.753906 73.453125 216.820312 68.300781 219.773438 63.109375 C 221.792969 59.566406 225.148438 57.441406 228.617188 55.605469 C 236.621094 51.371094 245.304688 49.386719 254.234375 48.488281 C 269.667969 46.941406 284.894531 47.933594 299.722656 52.835938 C 307.675781 55.464844 313.949219 59.976562 317.617188 67.90625 C 320.210938 73.515625 323.539062 78.777344 326.464844 84.238281 C 327.113281 85.457031 327.972656 86.304688 329.128906 86.984375 C 329.96875 87.476562 330.832031 88.027344 331.480469 88.738281 C 337.5 95.324219 345.613281 98.113281 353.617188 101.222656 C 381.578125 112.09375 409.480469 123.105469 437.429688 134.003906 C 440.191406 135.082031 441.472656 136.800781 441.789062 139.789062 C 445.359375 173.550781 449.070312 207.296875 452.667969 241.058594 C 456.5625 277.632812 460.394531 314.210938 464.222656 350.792969 C 467.640625 383.480469 471.023438 416.167969 474.414062 448.859375 C 474.785156 452.453125 473.574219 453.960938 469.875 454.667969 C 452.246094 458.042969 434.613281 461.410156 416.988281 464.796875 C 413.046875 465.550781 410.882812 464.171875 410.265625 460.269531 C 407.175781 440.832031 404.101562 421.390625 401.058594 401.945312 C 396.992188 375.949219 392.953125 349.945312 388.902344 323.941406 C 388.371094 320.527344 387.847656 317.109375 387.050781 313.695312 C 385.039062 320.835938 384.261719 328.132812 383.367188 335.410156 C 381.296875 352.257812 383.628906 368.839844 386.140625 385.4375 C 390.074219 411.46875 393.832031 437.523438 397.679688 463.5625 C 401.082031 486.589844 404.484375 509.621094 407.9375 532.640625 C 408.820312 538.515625 408.609375 539.003906 403.085938 540.984375 C 397.660156 542.929688 392.199219 544.761719 386.609375 546.164062 C 385.277344 546.5 384.691406 547.007812 384.570312 548.515625 C 383.566406 560.992188 382.445312 573.457031 381.355469 585.921875 C 381.261719 587.007812 381.179688 588.09375 381.023438 589.167969 C 380.605469 591.984375 378.945312 593.488281 376.101562 593.246094 C 373.203125 593 371.894531 591.097656 372.089844 588.3125 C 372.578125 581.367188 373.152344 574.425781 373.742188 567.484375 C 374.203125 562.066406 374.65625 556.640625 375.292969 551.238281 C 375.546875 549.082031 374.777344 548.957031 372.984375 549.28125 C 366.234375 550.507812 359.472656 551.679688 352.554688 550.988281 C 343.753906 550.109375 336.414062 546.125 329.828125 540.480469 C 317.722656 530.109375 309.183594 517.011719 301.507812 503.285156 C 287.765625 478.714844 277.734375 452.578125 268.996094 425.90625 C 268.722656 425.082031 268.476562 424.246094 268.191406 423.425781 C 268.132812 423.265625 267.957031 423.148438 267.515625 422.65625 Z" />
+                </g>
+
+                <g clip-path="url(#dressClipC)">
+                  <path
+                    d="M 267.871094 532.46875 C 264.089844 541.597656 261.875 550.429688 259.851562 559.3125 C 257.386719 570.140625 255.691406 581.09375 254.535156 592.132812 C 254.179688 595.527344 252.15625 597.460938 249.371094 597.164062 C 246.835938 596.890625 245.242188 594.796875 245.546875 591.6875 C 247.71875 569.539062 251.757812 547.808594 260.328125 527.121094 C 261.117188 525.21875 262.101562 523.398438 262.96875 521.527344 C 263.933594 519.449219 265.175781 517.746094 267.769531 517.761719 C 270.308594 517.78125 271.625 519.460938 272.75 521.417969 C 275.417969 526.054688 277.414062 530.988281 279.027344 536.066406 C 284.738281 554.054688 288.363281 572.476562 290.261719 591.238281 C 290.589844 594.492188 289.054688 596.761719 286.4375 597.070312 C 283.675781 597.394531 281.652344 595.492188 281.261719 592.074219 C 279.117188 573.359375 275.789062 554.894531 269.65625 537.019531 C 269.199219 535.691406 268.632812 534.402344 267.871094 532.46875 Z" />
+                </g>
+              </svg>
+            </div>
+            <p class="section-title">Código de Vestimenta</p>
+            <p class="section-content-hora">Formal vaquero</p>
+            <p class="section-content">
+              Se reserva el color rojo solo para la quinceañera.
+            </p>
+          </div>
+
+          <br><br>
+
+          <!-- SOCIAL -->
+          <section class="social-section">
+
+            <!-- MESA DE REGALOS -->
+            <div class="social-item anim-up">
+              <div align="center" style="color:var(--gold);">
+                <svg viewBox="0 0 120 120" width="30%" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                  aria-label="Ícono de regalo">
+                  <rect x="20" y="44" width="80" height="58" rx="6"></rect>
+                  <path d="M20 62H100"></path>
+                  <path d="M60 44V102"></path>
+                  <path d="M60 44C48 34 38 30 32 36C26 42 34 50 60 44Z"></path>
+                  <path d="M60 44C72 34 82 30 88 36C94 42 86 50 60 44Z"></path>
+                </svg>
+              </div>
+              <p class="social-title">Mesa de Regalos</p>
+              <p class="social-content">
+                Valoro enormemente tu compañía por <br>encima de cualquier obsequio, pero si <br>deseas honrarme con algún presente, <br>será bienvenido.
+              </p>
+
+
+
+      
+            </div>
+
+            <div class="crown-wrap anim-up">
+              <img src="foto1.png" width="100%" alt="Decoración vaquera">
+            </div>
+
+
+            <!-- LLUVIA DE SOBRES -->
+            <div class="social-item anim-left">
+              <div align="center" style="color:var(--gold);">
+                <svg viewBox="0 0 120 120" width="30%" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                  aria-label="Ícono de sobre">
+                  <rect x="18" y="34" width="84" height="58" rx="8"></rect>
+                  <path d="M20 40L60 68L100 40"></path>
+                  <path d="M42 64L20 90"></path>
+                  <path d="M78 64L100 90"></path>
+                </svg>
+              </div>
+              <p class="social-title">Lluvia de Sobres</p>
+              <p class="social-content">
+                Es una linda tradición de regalar <br>
+                dinero en efectivo dentro <br>
+                de un <strong>sobre</strong>
+              </p>
+              <p class="thanks">¡Gracias!</p>
+              <br><br>
+              <div class="floral-divider"></div>
+            </div>
+
+
+
+            <!-- Instagram: sin datos -->
+            <!--
+          <div class="social-item anim-up">
+            <p class="social-title">Instagram</p>
+            <p class="social-content">Comparte tus fotos y momentos usando:</p>
+            <p class="hashtag">#XVdeAndrea</p>
+            <p class="instagram">@usuario</p>
+          </div>
+          -->
+
+          </section>
+
+          <!-- ÁLBUM QR -->
+          <section class="final-section">
+            <div class="final-item anim-right">
+              <div style="text-align:center;">
+                <img src="XV-Andrea_galeria_QR.png" width="55%" style="border-radius:15px" alt="QR Álbum Compartido">
+              </div>
+              <p class="final-title">Álbum de fotos compartido</p>
+              <p class="final-content">
+                Da click aquí para subir las fotos que tomes<br>
+                durante la fiesta y formar parte de mis recuerdos más especiales.<br><br>
+                También puedes dejarme una dedicatoria.
+              </p>
+              <br>
+              <a href="https://app.arteinvita.com/gallery/xv-andrea-1781064597287?token=32880eada6282de231f97c685f2fc364" class="btn" target="_blank" rel="noopener">Subir foto y dedicatoria</a>
+              <!-- Reemplazar href="#" por el enlace del Álbum QR cuando esté disponible -->
+            </div>
+          </section> <br> <br>
+
+          <!-- GALERÍA DE FOTOS -->
+          <section class="final-section">
+            <div class="final-item anim-up">
+              <p class="final-title">Galería de Fotos</p>
+              <p class="final-content">
+                Algunos recuerdos especiales de este momento.
+               
+              </p>
+
+              <div class="polaroid-single">
+                <img src="galeria/1.jpeg" alt="Foto de Andrea">
+                <div class="pol-label">Mis XV Años</div>
+                <button class="pol-btn" id="openGalleryBtn" type="button">Ver galería</button>
+              </div>
+            </div>
+          </section>
+
+          <br><br>
+
+          <div class="crown-wrap anim-up">
+            <img src="corona2.png" width="50%" alt="Corona">
+          </div>
+
+
+
+          <br><br>
+
+          <!-- CONFIRMACIÓN INVITA QR -->
+          <div class="final-item anim-left">
+            <div class="floral-divider"></div>
+            <p class="final-title">Confirma tu asistencia</p>
+            <p class="final-content">
+              Tu presencia es muy importante para mí.<br>
+              Confirma tu asistencia desde mi panel de invitados<br>
+              y descarga tu QR de acceso.
+            </p>
+
+            <div style="display:flex; justify-content:center; width:100%;">
+              <div align="center">
+                <button class="btn-ubicacion" onclick="ArteInvita.open('E19-70D2-B4E')">
+                  <strong>Confirmar en Panel</strong>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <br><br>
+
+          <p class="parrafo">¡Agradezco de corazón que<br>celebres conmigo!</p>
+          <p class="final-title">¡Nos vemos pronto!</p>
+          <p class="thanks">Con cariño,<br>Andrea</p>
+
+          <br><br>
+
+          <!-- Foto final decorativa -->
+          <div align="center">
+            <img src="galeria/final.png" width="100%"
+              style="border-radius:30px; box-shadow:0 12px 28px rgba(0,0,0,.28);" alt="Foto final de Andrea">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- REPRODUCTOR FLOTANTE -->
+    <div class="floating-player" aria-label="Reproductor de música">
+      <div class="player-button" id="playerButton" title="Abrir reproductor">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z" />
+        </svg>
+      </div>
+
+      <div class="player-content" id="playerContent">
+        <div class="song-info">
+          <p class="song-title" id="songTitle">Canción especial</p>
+          <p class="song-artist" id="songArtist">Mis XV Años</p>
+        </div>
+        <div class="progress-container" id="progressContainer" aria-label="Progreso">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="player-controls" aria-label="Controles">
+          <button class="control-button" id="prevButton" type="button" title="Anterior">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+          <button class="control-button" id="playButton" type="button" title="Reproducir/Pausar">
+            <svg class="icon" id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              aria-hidden="true">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+          <button class="control-button" id="nextButton" type="button" title="Siguiente">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="volume-control">
+          <div class="volume-icon">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7"
+            aria-label="Control de volumen">
+        </div>
+
+        <audio id="audioPlayer" preload="metadata" playsinline webkit-playsinline>
+          <source src="Ilusión 98_Marco Flores Y La Jerez.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio HTML5.
+        </audio>
+      </div>
+    </div>
+
+    <!-- MODAL GALERÍA -->
+    <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+      <button id="closeGalleryBtn" class="gallery-close-btn" type="button" aria-label="Cerrar">&times;</button>
+      <div class="gallery-container">
+        <img id="mainImage" class="gallery-main-image" src="galeria/1.jpeg" alt="Imagen de la galería">
+        <button id="prevImage" class="gallery-arrow gallery-prev" type="button" aria-label="Anterior">&#10094;</button>
+        <button id="nextImage" class="gallery-arrow gallery-next" type="button" aria-label="Siguiente">&#10095;</button>
+        <div id="imageCounter" class="gallery-counter" aria-label="Contador de imágenes"></div>
+      </div>
+    </div>
+
+  </div><!-- /app -->
+
+  <script>
+    // =========================
+    // SCROLL TO TOP
+    // =========================
+    (function () {
+      const scrollBtn = document.getElementById('scrollBtn');
+      if (!scrollBtn) return;
+      window.addEventListener('scroll', function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // =========================
+    // CUENTA REGRESIVA — 15 Agosto 2026 17:00
+    // =========================
+    const targetDate = new Date("August 15, 2026 17:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").innerText = String(Math.max(days, 0)).padStart(2, "0");
+      document.getElementById("hours").innerText = String(Math.max(hours, 0)).padStart(2, "0");
+      document.getElementById("minutes").innerText = String(Math.max(minutes, 0)).padStart(2, "0");
+      document.getElementById("seconds").innerText = String(Math.max(seconds, 0)).padStart(2, "0");
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("clock-status").innerText = "¡Hoy es el gran día!";
+      }
+    }, 1000);
+
+    // =========================
+    // REPRODUCTOR DE MÚSICA
+    // =========================
+    (function () {
+      const playerButton = document.getElementById('playerButton');
+      const playerContent = document.getElementById('playerContent');
+      const audio = document.getElementById('audioPlayer');
+      const playButton = document.getElementById('playButton');
+      const playIcon = document.getElementById('playIcon');
+      const progressContainer = document.getElementById('progressContainer');
+      const progressBar = document.getElementById('progressBar');
+      const volumeSlider = document.getElementById('volumeSlider');
+
+      if (!playerButton || !playerContent || !audio || !playButton) return;
+
+      playerButton.addEventListener('click', () => {
+        playerContent.classList.toggle('active');
+      });
+
+      playButton.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playIcon.innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"></path>';
+        } else {
+          audio.pause();
+          playIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+        }
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        if (!audio.duration) return;
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + '%';
+      });
+
+      progressContainer.addEventListener('click', (e) => {
+        if (!audio.duration) return;
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        audio.currentTime = (clickX / width) * audio.duration;
+      });
+
+      volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+      });
+
+      audio.volume = volumeSlider.value;
+    })();
+
+    // =========================
+    // GALERÍA
+    // =========================
+    (function () {
+      const images = [
+        "galeria/1.jpeg",
+        "galeria/2.jpeg",
+        "galeria/3.jpeg",
+        "galeria/4.jpeg",
+        "galeria/5.jpeg",
+		   "galeria/6.jpeg",
+		   "galeria/7.jpeg",
+		   "galeria/8.jpeg"
+      ];
+
+      const modal = document.getElementById('galleryModal');
+      const openBtn = document.getElementById('openGalleryBtn');
+      const closeBtn = document.getElementById('closeGalleryBtn');
+      const mainImage = document.getElementById('mainImage');
+      const prevBtn = document.getElementById('prevImage');
+      const nextBtn = document.getElementById('nextImage');
+      const counter = document.getElementById('imageCounter');
+
+      if (!modal || !mainImage || !closeBtn || !prevBtn || !nextBtn || !counter) return;
+
+      let idx = 0;
+
+      function update() {
+        mainImage.src = images[idx];
+        counter.textContent = (idx + 1) + " / " + images.length;
+      }
+
+      function open() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        update();
+      }
+
+      function close() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', open);
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', () => {
+        idx = (idx - 1 + images.length) % images.length;
+        update();
+      });
+      nextBtn.addEventListener('click', () => {
+        idx = (idx + 1) % images.length;
+        update();
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+          if (e.key === 'ArrowLeft') {
+            idx = (idx - 1 + images.length) % images.length;
+            update();
+          }
+          if (e.key === 'ArrowRight') {
+            idx = (idx + 1) % images.length;
+            update();
+          }
+          if (e.key === 'Escape') close();
+        }
+      });
+    })();
+
+    // =========================
+    // ANIMACIONES SCROLL
+    // =========================
+    document.addEventListener('DOMContentLoaded', function () {
+      const targets = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
+      if (!targets.length) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+      targets.forEach(el => io.observe(el));
+    });
+  </script>
+
+</body>
+
+</html>
