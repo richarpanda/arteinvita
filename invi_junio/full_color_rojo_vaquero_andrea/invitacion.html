@@ -773,30 +773,34 @@
       fill: currentColor;
     }
 
-    .anim-left,
-    .anim-right,
-    .anim-up {
-      opacity: 0 !important;
-      transform: translate3d(0, 0, 0) !important;
-      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
-      will-change: transform, opacity;
+    /* ANIMACIONES SEGURAS:
+       Antes los elementos iniciaban con opacity:0 y dependían de IntersectionObserver.
+       En algunos celulares eso podía fallar y dejar invisible todo desde el contador.
+       Ahora el contenido siempre queda visible; la animación es solo decorativa. */
+    .anim-left{
+      opacity:0;
+      transform:translateX(-70px);
+      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
+      will-change:transform,opacity;
     }
 
-    .anim-left {
-      transform: translate3d(-28px, 0, 0) !important;
+    .anim-right{
+      opacity:0;
+      transform:translateX(70px);
+      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
+      will-change:transform,opacity;
     }
 
-    .anim-right {
-      transform: translate3d(28px, 0, 0) !important;
+    .anim-up{
+      opacity:0;
+      transform:translateY(50px);
+      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
+      will-change:transform,opacity;
     }
 
-    .anim-up {
-      transform: translate3d(0, 18px, 0) !important;
-    }
-
-    .in-view {
-      opacity: 1 !important;
-      transform: translate3d(0, 0, 0) !important;
+    .in-view{
+      opacity:1 !important;
+      transform:translate3d(0,0,0) !important;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1486,6 +1490,14 @@ más importantes para mí.
     document.addEventListener('DOMContentLoaded', function () {
       const targets = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
       if (!targets.length) return;
+
+      // Fallback: si el navegador no soporta IntersectionObserver,
+      // dejamos todo visible para evitar pantallas en blanco en celular.
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(el => el.classList.add('in-view'));
+        return;
+      }
+
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
