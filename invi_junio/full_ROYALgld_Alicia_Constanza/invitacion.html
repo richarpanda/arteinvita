@@ -1161,13 +1161,19 @@
     }
 
     .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 3000;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 18px;
+      padding: 20px;
+      overflow: hidden;
+      background: transparent;
+      transform: none !important;
     }
 
     .lightbox-overlay {
@@ -1179,19 +1185,32 @@
     .lightbox-content {
       position: relative;
       z-index: 2;
-      width: min(430px, 100%);
+      width: min(430px, 94vw);
+      height: auto;
+      max-height: 88vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      transform: none !important;
     }
 
     .lightbox-image {
-      width: 100%;
-      max-height: 86vh;
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 85vh;
       object-fit: contain;
       border-radius: 18px;
       border: 1.8px solid rgba(243, 223, 155, .70);
       box-shadow: 0 20px 60px rgba(0, 0, 0, .60);
+    }
+
+
+    body.lightbox-open {
+      overflow: hidden !important;
+      height: 100vh !important;
+      touch-action: none;
     }
 
     .lightbox-close,
@@ -1857,11 +1876,9 @@
                       <img class="section-icon icon-40" src="img/vestido.png" alt="Vestimenta" />
                       <h2 class="section-title">Código de vestimenta</h2>
 
-                      <p class="section-text section-text-lg">
-                        Gala
-                        <br><br>
-                        Hombre: traje<br>
-                        Mujer: vestido largo
+                      <p class="section-text section-text-lg"><br>
+                       <strong> Gala</strong>
+                        
                         <br><br>
                         <strong>Colores reservados para la festejada:</strong><br>
                         Dorado, Beige y Rosa Gold.
@@ -2388,6 +2405,10 @@
       const lightboxPrev = document.getElementById("lightboxPrev");
       const lightboxNext = document.getElementById("lightboxNext");
 
+      if (lightbox && lightbox.parentElement !== document.body) {
+        document.body.appendChild(lightbox);
+      }
+
       let galleryIndex = 0;
       let currentImageIndex = 0;
 
@@ -2414,15 +2435,17 @@
       function openLightbox(index) {
         if (!lightbox || !lightboxImage) return;
         currentImageIndex = index;
+        lightboxImage.onload = function () {
+          lightbox.style.display = "flex";
+          document.body.classList.add("lightbox-open");
+        };
         lightboxImage.src = galleryImages[currentImageIndex];
-        lightbox.style.display = "flex";
-        document.body.style.overflow = "hidden";
       }
 
       function closeLightbox() {
         if (!lightbox) return;
         lightbox.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.classList.remove("lightbox-open");
       }
 
       function nextImage() {
