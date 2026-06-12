@@ -777,30 +777,18 @@
        Antes los elementos iniciaban con opacity:0 y dependían de IntersectionObserver.
        En algunos celulares eso podía fallar y dejar invisible todo desde el contador.
        Ahora el contenido siempre queda visible; la animación es solo decorativa. */
-    .anim-left{
-      opacity:0;
-      transform:translateX(-70px);
-      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
-      will-change:transform,opacity;
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      will-change: auto;
     }
 
-    .anim-right{
-      opacity:0;
-      transform:translateX(70px);
-      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
-      will-change:transform,opacity;
-    }
-
-    .anim-up{
-      opacity:0;
-      transform:translateY(50px);
-      transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1);
-      will-change:transform,opacity;
-    }
-
-    .in-view{
-      opacity:1 !important;
-      transform:translate3d(0,0,0) !important;
+    .in-view {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
     }
 
     @media (prefers-reduced-motion: reduce) {
