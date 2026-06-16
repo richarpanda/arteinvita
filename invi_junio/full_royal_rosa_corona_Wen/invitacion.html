@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis XV | Wendy Yamilet ♥</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    /* =========================
+       PALETA (rosa pastel / rose gold)
+    ========================= */
+    :root {
+      /* PALETA ROSA BLUSH / ROSE GOLD */
+      --rosa: #E9B7C3;
+      --rosa-oscuro: #B86F82;
+      --rosa-claro: #FFF1F4;
+
+      --dorado: #C79A5A;
+      --rose-gold: #D7A28F;
+      --rose-gold-2: #A8745E;
+
+      --crema: #FFFDFC;
+      --crema-oscuro: #FFF5F7;
+
+      --texto: #3A2B30;
+      --gris: #7A646B;
+      --borde: #EBCDD5;
+
+      --rojo: #B86F82;
+      --shadow-soft: 0 18px 40px rgba(184, 111, 130, 0.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gabriola', serif, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background: #EBEBEB;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: #4b5563;
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* CONTENEDOR */
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .18;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(198, 160, 106, .25) 0.8px, transparent 1.2px),
+        radial-gradient(circle at 85% 30%, rgba(232, 184, 193, .18) 0.8px, transparent 1.2px),
+        radial-gradient(circle at 50% 75%, rgba(198, 160, 106, .20) 0.8px, transparent 1.2px);
+      background-size: 8px 8px, 10px 10px, 12px 12px;
+      mix-blend-mode: multiply;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rosa-oscuro);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.25;
+      margin-top: 1rem;
+    }
+
+    .flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* FONDOS */
+    .bg-fixed {
+      background-image: url("img/background1.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-top {
+      background-image: url("img/background1.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    .bg-bottom {
+      background-image: url("img/bg_bottom.png");
+      background-repeat: repeat-y;
+      background-position: center top;
+      background-size: 520px auto;
+    }
+
+    .bg-top::after,
+    .bg-bottom::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(to bottom, rgba(247, 227, 231, .18), rgba(255, 255, 255, .12)),
+        radial-gradient(circle at 22% 12%, rgba(198, 160, 106, .12), transparent 55%),
+        radial-gradient(circle at 78% 18%, rgba(232, 184, 193, .14), transparent 55%);
+    }
+
+    .bg-top>*,
+    .bg-bottom>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* iOS/Android FIX */
+    @media (hover: none) and (pointer: coarse) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .bg-top,
+      .bg-bottom {
+        background-size: 100% auto;
+      }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .bg-fixed {
+        background-attachment: scroll !important;
+      }
+    }
+
+    /* HERO */
+    .hero-wrap {
+      padding: 30px;
+      background: transparent;
+    }
+
+    .hero-card {
+      margin: 0 auto;
+      padding: 3.6rem 2.0rem 0;
+      position: relative;
+    }
+
+    .hero-frame {
+      border-radius: 150px 150px 28px 28px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 145px 145px 22px 22px;
+      border: 1px solid rgba(198, 160, 106, .32);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25));
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .hero-bottom {
+      padding: 2.8rem 1.4rem 2.2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 1.00);
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-names {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.10rem;
+      color: var(--rosa-oscuro);
+      line-height: 1.0;
+    }
+
+    .hero-subline {
+      font-family: "Playfair Display", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-top: 0.85rem;
+    }
+
+    .hero-date {
+      margin-top: 1.25rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 2.25rem;
+      letter-spacing: 0.07em;
+      color: var(--dorado);
+    }
+
+    /* MUSIC STRIP */
+    .music-strip {
+      padding: 0.75rem 1.4rem 0;
+      background: transparent;
+    }
+
+    .music-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.65rem;
+    }
+
+    .music-btn {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.12rem 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .music-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 160, 106, .24);
+      background: rgba(255, 255, 255, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .music-icon.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent rgba(17, 24, 39, 0.62);
+      transform: translateX(1px);
+    }
+
+    .music-icon.playing::before,
+    .music-icon.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 10px;
+      background: rgba(17, 24, 39, 0.58);
+      border-radius: 2px;
+    }
+
+    .music-icon.playing::before {
+      left: 8px;
+    }
+
+    .music-icon.playing::after {
+      right: 8px;
+    }
+
+    .music-label {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.50);
+    }
+
+    /* INTRO */
+    .intro-paper {
+      padding-top: 4.2rem;
+      padding-bottom: 4.8rem;
+    }
+
+    .intro-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 160, 106, .22);
+      pointer-events: none;
+    }
+
+    .date-container {
+      text-align: center;
+      color: var(--rosa-oscuro);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.2em;
+      border-bottom: 2px solid var(--rosa-oscuro);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 9em;
+      font-weight: lighter;
+      line-height: 1;
+    }
+
+    .month {
+      font-size: 3.2em;
+      border-top: 2px solid var(--rosa-oscuro);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--rosa-oscuro);
+      margin-top: 1.1rem;
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      text-align: center;
+      color: var(--gris);
+    }
+
+    /* CONTADOR */
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/counter_2.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #111827;
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.85));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #111827;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(198, 160, 106, .22);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #0f172a;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: var(--gris);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #111827;
+      opacity: 0.9;
+    }
+
+    /* EVENTOS */
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(198, 160, 106, .22);
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      max-width: 360px;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.4rem 1.2rem 1.6rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.4rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+      line-height: 1.05;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .event-address {
+      font-size: 1.5rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    .btn-ubicacion {
+      margin-top: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      width: fit-content;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--rosa) 0%, var(--dorado) 100%);
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(232, 184, 193, .35);
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .btn-whats {
+      margin-top: 1rem;
+      display: inline-flex;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--rosa) 0%, var(--dorado) 100%);
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(232, 184, 193, .35);
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* CALENDARIO */
+    .calendar-section {
+      background: transparent;
+      padding: 3rem 1.6rem;
+    }
+
+    .calendar-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .calendar-month {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      color: var(--rosa-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gabriola', serif;
+      font-size: 1.6rem;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .calendar-day:hover {
+      background: rgba(232, 184, 193, .12);
+    }
+
+    .calendar-day.selected {
+      background: rgba(232, 184, 193, .18);
+      font-weight: 600;
+      color: var(--rosa-oscuro);
+    }
+
+    .calendar-day.special::after {
+      content: "♥";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 1.2rem;
+      color: var(--rosa);
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(1.15);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+    }
+
+    /* ITINERARIO */
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--rosa-oscuro);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--dorado);
+      text-align: center;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      margin-bottom: 2.1rem;
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 72px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 70px;
+      height: 2px;
+      background: rgba(198, 160, 106, .65);
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.3rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* VESTIMENTA + REGALOS */
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+      line-height: 1.35;
+    }
+
+    .gift-strong {
+      color: var(--rosa-oscuro);
+      font-weight: 700;
+    }
+
+    .dress-icon {
+      display: block;
+      width: 110px;
+      height: auto;
+      margin: 14px auto 10px;
+    }
+
+    /* CONFIRMACIÓN */
+    .glass-card {
+      position: relative;
+      padding: 2.4rem 1.6rem 2.6rem;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+      max-width: 350px;
+      margin: 0 auto;
+      border: 1px solid rgba(198, 160, 106, .22);
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 160, 106, .22);
+      pointer-events: none;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.0rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* IR ARRIBA */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--rosa) 0%, var(--dorado) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease-out, transform .25s ease-out, visibility .25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #462B0D;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
+      }
+
+      .hero-frame {
+        border-radius: 32px;
+      }
+    }
+
+
+    #itinerario .itinerary-timeline {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    #itinerario .itinerary-item {
+      justify-content: center;
+      gap: 1rem;
+    }
+
+
+    #itinerario .itinerary-divider {
+      width: 100px;
+    }
+
+    #itinerario .itinerary-content {
+      text-align: left;
+    }
+
+    .gallery-section {
+      background: var(--crema);
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--borde);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.35);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      cursor: pointer;
+      transition: transform 0.2s ease-out, background 0.2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: var(--rojo);
+      transform: scale(1.2);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 10001;
+      max-width: 920px;
+      width: 92%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bg-music" src="music/creeyatrevete_haash.mp3" loop></audio>
+
+  <main>
+
+    <!-- TOP BG -->
+    <div class="bg-fixed bg-top">
+
+      <!-- HERO -->
+      <section id="inicio" class="hero-wrap">
+        <div class="hero-card reveal">
+          <div class="hero-frame">
+            <div class="hero-media">
+              <video src="img/video.mp4" autoplay loop muted playsinline preload="auto"
+                poster="img/background1.png"></video>
+            </div>
+
+            <div class="hero-bottom">
+              <div class="hero-names">Wendy Yamilet</div>
+              <div class="hero-subline">El gran día llegó</div>
+              <div class="hero-date">Mis XV Años</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC STRIP -->
+      <section class="music-strip">
+        <div class="music-strip-inner reveal">
+          <button class="music-btn" id="musicToggle" aria-label="Control de música">
+            <div class="music-icon paused" id="musicIcon"></div>
+            <span class="music-label" id="musicStatus">Play</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section id="intro" class="intro-paper">
+        <div class="intro-card reveal">
+          <div class="content">
+            <div class="date-container">
+              <div class="day">Sábado</div>
+              <div class="number">8</div>
+              <div class="month">Agosto</div>
+            </div>
+
+            <p class="section-sub" style="margin-top:1.6rem;">
+              Hay momentos inolvidables que <br>
+              se atesoran en el corazón <br>
+              para siempre,<br>
+              y con la bendición de Dios <br>
+              y el amor de <br>
+              mi familia me siento muy <br>
+              feliz de llegar <br>
+              a este momento de mi vida.
+              <br><br>
+              Por esta razón queremos que <br>
+              nos acompañen <br>
+              en este día tan especial.
+            </p>
+
+            <div class="intro-parents-title">Junto a mis padres:</div>
+            <p class="intro-list">
+              Javier Jonathan Galindo G.<br>
+              y <br>
+              Juana Carolina Yáñez Maqueda
+            </p>
+
+            <div class="flourish"></div>
+
+            <p class="intro-script">
+              Tu presencia hará<br>
+              de este día
+              un recuerdo <br>
+              inolvidable.
+            </p>
+			  
+			   <div class="flourish"></div>
+
+            <div class="intro-parents-title">Mis padrinos</div>
+            <p class="intro-list">
+              Yasmín Cortés Ramírez<br>
+              y <br>
+              Juan Pablo Ortiz Navarrete
+            </p>
+
+            <div class="flourish"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal">
+        <div class="content">
+          <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+          <div class="countdown-min" aria-label="Cuenta regresiva">
+            <div class="countdown-time">
+              <span id="cdDays">0</span>:
+              <span id="cdHours">00</span>:
+              <span id="cdMins">00</span>:
+              <span id="cdSecs">00</span>
+            </div>
+            <div class="countdown-labels">
+              <span>Días</span><span>Horas</span><span>Min</span><span>Seg</span>
+            </div>
+          </div>
+
+          <p class="countdown-note">¡Te espero con mucha ilusión!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUÁNDO Y DÓNDE -->
+    <section id="evento">
+      <div class="content">
+        <div class="reveal">
+          <div class="section-title-script">¿Cuándo y dónde?</div>
+          <div class="flourish"></div>
+        </div>
+      </div>
+
+      <!-- IGLESIA -->
+      <div class="event-card reveal">
+        <img src="img/iglesia.jpeg" alt="Iglesia" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Ceremonia religiosa</div>
+            <div class="event-script">Templo de la Cruz</div>
+            <p class="event-address">C. Independencia 111, La Santa Cruz, La Cruz, 76020 Santiago de Querétaro, Qro.,
+              México</p>
+            <p class="event-address"><strong>Hora:</strong> 04:00 pm</p>
+
+            <a href="https://maps.app.goo.gl/MdTC1WAz7UrR5YAt9" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALÓN -->
+      <div class="event-card reveal">
+        <img src="img/salon.jpg" alt="Salón" class="event-photo">
+        <div class="event-content">
+          <div class="content">
+            <div class="event-label">Recepción</div>
+            <div class="event-script">Salón Villagrand Tecnológico</div>
+            <p class="event-address">Av. Tecnológico 177, La Piedad, 76150 Santiago de Querétaro, Qro., México</p>
+            <p class="event-address"><strong>Hora:</strong> 07:00 pm</p>
+
+            <a href="https://maps.app.goo.gl/z811o9pacGg3Wmc57" target="_blank" rel="noopener">
+              <button class="btn-ubicacion" type="button">Ver ubicación</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HOSPEDAJE 
+<section id="hospedaje" class="gifts-section">
+
+      <div class="section-title-script">Hospedaje</div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+
+          <p class="gift-sub">
+            Para tu comodidad, aquí tienes algunas opciones de hospedaje cercanas. Da click para ver la ubicación en
+            Google Maps.
+          </p>
+
+          <div align="center"><img src="img/hotel.jpeg" width="60%" alt="Hospedaje"></div>
+          <p class="gift-sub" style="margin-top:12px;">
+            <strong>Hotel Paradise</strong><br>
+            <span>Calle Prolongación Francisco J. Múgica 15, Centro, 59160 San Pedro Cahro, Mich.</span><br>
+            <a href="https://maps.app.goo.gl/PLnYWFLLsFs8QY2BA" target="_blank" rel="noopener noreferrer" class="btn-ubicacion">
+              Ver en Google Maps
+            </a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    
+ -->
+
+    <!-- CALENDARIO -->
+    <section id="calendario" class="calendar-section">
+      <div class="content">
+        <div align="center"><img src="img/reloj.png" width="60%" alt="reloj"></div>
+        <div class="section-title-script reveal">Recuerda la fecha del evento</div>
+
+        <div class="calendar-container reveal">
+          <div class="calendar-header">
+            <div class="calendar-month">Agosto</div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO 
+    <section id="itinerario">
+      <div class="content">
+        <div align="center"><img src="img/sello_1.png" width="100%" alt="Vestimenta"></div>
+        <div class="flourish"></div>
+
+        <h2 class="itinerary-title reveal">Itinerario</h2>
+        <p class="itinerary-date reveal">8 de Agosto de 2026</p>
+      </div>
+
+      <div class="itinerary-timeline content">
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">04:00 PM</div>
+            <div class="itinerary-event">MISA</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">07:00 PM</div>
+            <div class="itinerary-event">EVENTO</div>
+          </div>
+        </div>
+
+        <!-- ITINERARIO DETALLADO NO PROPORCIONADO
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">00:00 PM</div>
+            <div class="itinerary-event">CENA</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">00:00 PM</div>
+            <div class="itinerary-event">VALS Y BRINDIS</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/baile.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">00:00 PM</div>
+            <div class="itinerary-event">BAILE</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal">
+          <div class="itinerary-icon-wrapper"><img src="img/fin.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">00:00 AM</div>
+            <div class="itinerary-event">FIN DEL EVENTO</div>
+          </div>
+        </div>
+      
+      </div>
+    </section> -->
+
+    <div align="center"><img src="img/sello_2.png" width="50%" alt="Vestimenta"></div>
+
+    <!-- VESTIMENTA -->
+    <section id="vestimenta">
+      <div class="content">
+
+        <div class="section-title-script reveal">Código de Vestimenta</div>
+        <div class="flourish"></div>
+        <div align="center"><img src="img/vestimenta.png" width="90%" alt="Vestimenta"></div>
+
+        <div class="gift-item reveal">
+          <p class="gift-sub gift-strong">Vistamos este día con elegancia:</p>
+          <p class="gift-sub">
+            <strong>Hombres:</strong> de gala o temática vaquera.<br>
+            <strong>Damas:</strong> vestido de gala.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-main">Mi Galería de Fotos</div>
+      <div class="flourish"></div>
+      <p class="section-sub">
+        Un espacio especial para revivir momentos llenos de alegría.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de la galería">
+          <button class="gallery-nav prev" id="galleryPrev" type="button">‹</button>
+          <button class="gallery-nav next" id="galleryNext" type="button">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" type="button">✕</button>
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button">›</button>
+      </div>
+    </div>
+
+    <!-- REGALOS (Liverpool) -->
+    <section id="regalos">
+      <div class="content">
+        <div align="center"><img src="img/regalos.png" width="100%" alt="Vestimenta"></div>
+        <div class="section-title-script reveal">Lluvia de sobres</div>
+        <div class="flourish"></div>
+
+        <div class="gift-item reveal">
+          <p class="gift-sub">
+            Su presencia será nuestro regalo más valioso. Si desean tener un detalle con Wendy Yamilet,
+            podrán hacerlo mediante lluvia de sobres el día del evento o con un lindo regalo sorpresa;<br>
+ recibiremos con mucho cariño
+            cada muestra de afecto.
+          </p><br>
+          <!-- MESA DE REGALOS 
+          <div align="center"><img src="img/liverpool.ico" width="55px" alt="liverpool"></div>
+          <p class="gift-sub gift-strong" style="margin-top:.6rem;">No. de Evento : </p>
+
+          <a href="" target="_blank" rel="noopener">
+            <button class="btn-ubicacion" type="button">Ver Mesa de Regalos</button>
+          </a>
+          FIN MESA DE REGALOS NO PROPORCIONADA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN INSTAGRAM 
+    <section id="instagram">
+      <div class="content">
+        <div align="center"><img src="img/camara.png" width="70%" alt="Instagram"></div>
+        <div class="section-title-script reveal">Instagram</div>
+        <div class="flourish"></div>
+
+        <div class="gift-item reveal">
+          <p class="gift-sub">
+            Comparte tus fotos y etiquetas en Instagram para conservar cada recuerdo de esta noche.
+          </p><br>
+
+          <div align="center">
+            <a href="" target="_blank" class="btn-ubicacion">
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    FIN SECCIÓN INSTAGRAM NO PROPORCIONADA -->
+
+    <!-- ÁLBUM QR -->
+    <section id="insta" class="hashtag-section">
+      <div class="insta-handle-card reveal reveal-right">
+        <div align="center">
+          <div class="gift-icon"><img src="img/camara.png" width="75%" alt="Álbum QR"></div>
+        </div>
+        <div class="section-title-script">Álbum de fotos compartidas</div>
+        <div class="flourish"></div>
+ <div align="center">
+          <div class="gift-icon"><img src="img/XV-Wendy Yamilet Galindo Yáñez_galeria_QR.png" width="60%" alt="Álbum QR"></div>
+        </div>
+        <p class="section-sub" style="margin-top:0;">
+          Ayúdanos a guardar cada instante de esta celebración.<br>
+          Sube aquí tus fotos y dedicatorias para crear un álbum lleno de recuerdos especiales.
+        </p>
+
+
+        <a href="https://app.arteinvita.com/gallery/xv-wendy-yamilet-galindo-yanez-1781064920888?token=fa54ce1020d866e7e79cf24e244cc01f" target="_blank" rel="noopener">
+          <button class="btn-ubicacion" type="button">Subir fotos o dedicatorias</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion" class="bg-fixed bg-bottom">
+      <div class="confirm-inner reveal reveal-left">
+        <div class="glass-card">
+          <div class="content">
+            <div align="center"><img src="img/1.png" width="70%" alt=""></div>
+            <div class="confirm-title-script">¿Asistirás?</div>
+            <div class="flourish"></div>
+
+            <p class="section-sub">
+              Será una gran alegría compartir este día tan especial contigo.<br>
+              Por favor, confirma tu asistencia.
+            </p>
+
+
+
+            <div align="center">
+              <button class="btn-whats" onclick="ArteInvita.open('A1D-7312-0E3')"><strong>Confirmar Asistencia</strong></button>
+            </div>
+
+            <div class="flourish" style="margin-top:1.4rem;"></div>
+
+            <p class="section-sub">
+              Gracias por acompañarme y ser parte de un recuerdo que guardaré por siempre.<br><br>
+              ¡Nos vemos pronto!
+            </p>
+
+            <div class="intro-script" style="margin-top:1.2rem;">
+              ¡Con cariño <br>Wendy Yamilet!
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="content">
+          <div class="event-card-final reveal reveal-left">
+            <div align="center" style="border-bottom: 15px"><img src="img/final.png" width="100%" alt="Foto final">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Mis XV Wendy Yamilet Galindo Yáñez</footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    // =========================
+    // CUENTA REGRESIVA (8 Agosto 2026 - 04:00 PM)
+    // =========================
+    const targetDate = new Date(2026, 7, 8, 16, 0, 0); // Mes 7 = Agosto
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) { return String(n).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // =========================
+    // MÚSICA (autoplay por interacción)
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) { }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) await playMusic();
+      else pauseMusic();
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+      try { await playMusic(); } catch (e) { }
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay, { once: true });
+      document.addEventListener("touchstart", attemptAutoplay, { once: true });
+      document.addEventListener("scroll", attemptAutoplay, { once: true });
+    });
+
+    // =========================
+    // REVEAL
+    // =========================
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // =========================
+    // IR ARRIBA
+    // =========================
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // =========================
+    // CALENDARIO (Agosto 2026)
+    // Día especial: 8
+    // =========================
+    function generateCalendar() {
+      const calendarGrid = document.getElementById('calendarGrid');
+      calendarGrid.innerHTML = '';
+
+      const weekDays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+      const daysInMonth = 31;
+      const firstDay = 6; // Agosto 1, 2026 cae en sábado
+
+      // Días de la semana
+      weekDays.forEach(day => {
+        const dayName = document.createElement('div');
+        dayName.className = 'calendar-weekday';
+        dayName.textContent = day;
+        calendarGrid.appendChild(dayName);
+      });
+
+      // Espacios antes del día 1
+      for (let i = 0; i < firstDay; i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'calendar-day empty';
+        calendarGrid.appendChild(emptyDay);
+      }
+
+      // Días del mes
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+
+        if (day === 8) dayElement.classList.add('special', 'selected');
+
+        dayElement.addEventListener('click', function () {
+          document.querySelectorAll('.calendar-day').forEach(d => {
+            if (!d.classList.contains('special')) d.classList.remove('selected');
+          });
+          this.classList.add('selected');
+        });
+
+        calendarGrid.appendChild(dayElement);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', generateCalendar);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleryImages = [
+        "img/galeria/1.jpeg",
+		     "img/galeria/3.jpeg",
+        "img/galeria/2.jpeg",
+     
+        "img/galeria/4.jpeg",
+        "img/galeria/5.jpeg",
+        "img/galeria/6.jpeg",
+        "img/galeria/7.jpeg",
+        "img/galeria/8.jpeg",
+        "img/galeria/9.jpeg",
+      ];
+
+      const gallerySlide = document.getElementById("gallerySlide");
+      const galleryPrev = document.getElementById("galleryPrev");
+      const galleryNext = document.getElementById("galleryNext");
+      const galleryDotsContainer = document.getElementById("galleryDots");
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxOverlay = document.getElementById("lightboxOverlay");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+
+      let galleryIndex = 0;
+      let currentImageIndex = 0;
+
+      function renderDots() {
+        if (!galleryDotsContainer) return;
+        galleryDotsContainer.innerHTML = "";
+        galleryImages.forEach((_, idx) => {
+          const dot = document.createElement("div");
+          dot.className = "gallery-dot" + (idx === galleryIndex ? " active" : "");
+          dot.addEventListener("click", () => {
+            galleryIndex = idx;
+            updateGallery();
+          });
+          galleryDotsContainer.appendChild(dot);
+        });
+      }
+
+      function updateGallery() {
+        if (!gallerySlide) return;
+        gallerySlide.src = galleryImages[galleryIndex];
+        renderDots();
+      }
+
+      function openLightbox(index) {
+        if (!lightbox || !lightboxImage) return;
+        currentImageIndex = index;
+        lightboxImage.src = galleryImages[currentImageIndex];
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+      }
+
+      function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+      }
+
+      if (galleryPrev && galleryNext && gallerySlide) {
+        galleryPrev.addEventListener("click", () => {
+          galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+          updateGallery();
+        });
+
+        galleryNext.addEventListener("click", () => {
+          galleryIndex = (galleryIndex + 1) % galleryImages.length;
+          updateGallery();
+        });
+
+        gallerySlide.addEventListener("click", () => openLightbox(galleryIndex));
+        updateGallery();
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+      if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+      if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
+      if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox && lightbox.style.display === "flex") {
+          if (e.key === "ArrowRight") nextImage();
+          if (e.key === "ArrowLeft") prevImage();
+          if (e.key === "Escape") closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
