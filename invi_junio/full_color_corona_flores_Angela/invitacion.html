@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación | Angela Yamilteh</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fff3fa;
+      --surface: #ffffff;
+      --ink: #af056a;
+      --muted: #af056a;
+      --accent: #f77bb7;
+      --rose: #e14a9a;
+      --line: rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .app {
+      width: min(460px, 100%);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--bg);
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+    .hero {
+      position: relative;
+      height: min(95vh, 760px);
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      background: url("galeria/1.jpeg") center top / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.20) 45%, rgba(0, 0, 0, 0.45));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 0 18px 110px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-kicker {
+      letter-spacing: 0.34em;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      opacity: 0.95;
+      margin: 0 0 12px;
+      font-weight: 500;
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(4.3rem, 11vw, 5.8rem);
+      margin: 0;
+      line-height: 1.05;
+      font-weight: 400;
+    }
+
+    .hero-date {
+      margin-top: 18px;
+      font-size: 1.55rem;
+      letter-spacing: 0.18em;
+      font-family: "Playfair Display", serif;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .hero-paper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      width: 100%;
+      height: auto;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* =========================
+       CONTENIDO
+    ========================== */
+    .background {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      min-height: auto !important;
+      animation: none !important;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 8px 16px 36px;
+      text-align: center;
+    }
+
+    .subtext {
+      margin: 28px 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    .parrafo {
+      margin: 14px auto 6px;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.78;
+      max-width: 390px;
+      text-align: center;
+    }
+
+    .parrafo strong {
+      color: var(--ink);
+    }
+
+    .date-container {
+      width: 100%;
+      margin: 14px auto 8px;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      color: var(--ink);
+    }
+
+    .day,
+    .month {
+      font-size: 1.55rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+      font-size: 6.8rem;
+      margin: 0;
+      margin-bottom: 0.25em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .btn,
+    .btn-ubicacion {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1.8px solid var(--ink);
+      color: var(--ink);
+      background: #fff;
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(175, 5, 106, 0.14);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .btn:hover,
+    .btn-ubicacion:hover {
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .timeline {
+      margin: 22px auto 10px;
+      padding: 0;
+      max-width: 380px;
+      display: grid;
+      gap: 26px;
+    }
+
+    .timeline-item {
+      padding: 0 !important;
+      text-align: center;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .section-title {
+      margin: 4px 0 10px;
+      font-family: "Great Vibes", serif;
+      font-size: 3rem;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .section-content {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .section-content strong {
+      color: var(--ink);
+    }
+
+    .section-content-hora {
+      margin: 10px 0 0;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .social-section {
+      margin: 14px auto 0;
+      padding: 0;
+      max-width: 380px;
+      display: grid;
+      gap: 14px;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .social-item {
+      padding: 0 !important;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-align: center;
+    }
+
+    .social-title {
+      margin: 6px 0 10px;
+      font-family: "Great Vibes", serif;
+      font-size: 3rem;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .social-content {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .instagram {
+      font-size: 1.05rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .enlace-instagram {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .enlace-instagram:hover {
+      text-decoration: underline;
+    }
+
+    .thanks {
+      margin-top: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .final-section {
+      margin: 14px auto 0;
+      padding: 0;
+      max-width: 380px;
+      display: grid;
+      gap: 14px;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .final-item {
+      padding: 0 !important;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-align: center;
+    }
+
+    .final-title {
+      margin: 10px 0 8px;
+      font-family: "Great Vibes", serif;
+      font-size: 3rem;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .final-content {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .acuarela-frame {
+      width: min(96%, 360px);
+      margin: 22px auto;
+      padding: 10px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 14px 32px rgba(175, 5, 106, .16);
+      border: 1px solid rgba(175, 5, 106, .10);
+    }
+
+    .acuarela-photo {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .digital-clock-container {
+      margin: 0;
+    }
+
+    .digital-clock {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+      letter-spacing: 2px;
+      display: inline-block;
+      box-shadow: inset 0 0 18px rgba(175, 5, 106, .08);
+    }
+
+    .clock-status,
+    .clock-label {
+      margin-top: 10px;
+      color: var(--muted);
+      font-style: normal;
+      font-size: .98rem;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background-color: var(--ink);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out, transform .2s ease;
+      border: 1px solid var(--accent);
+      box-shadow: 0 10px 22px rgba(175, 5, 106, .22);
+      z-index: 1000;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 0.85;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-2px);
+    }
+
+    .arrow-up {
+      width: 10px;
+      height: 10px;
+      border-left: 3px solid white;
+      border-top: 3px solid white;
+      transform: rotate(45deg);
+      margin-top: 4px;
+    }
+
+    .polaroid-single {
+      width: min(96%, 360px);
+      margin: 18px auto 6px;
+      background: #ffe9f6;
+      border: 1px solid rgba(175, 5, 106, .10);
+      border-radius: 20px;
+      padding: 12px 12px 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .polaroid-single img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid rgba(0, 0, 0, .06);
+      background: #fff;
+    }
+
+    .polaroid-single .pol-label {
+      margin-top: 12px;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(175, 5, 106, .78);
+      font-weight: 600;
+    }
+
+    .polaroid-single .pol-btn {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1.8px solid var(--ink);
+      background: #fff;
+      color: var(--ink);
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+      font-weight: 600;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .polaroid-single .pol-btn:hover {
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* REPRODUCTOR */
+    .floating-player {
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background-color: var(--ink);
+      border: 1px solid var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(175, 5, 106, 0.28);
+      color: white;
+      transition: transform 0.2s ease, opacity .2s ease;
+    }
+
+    .player-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .player-content {
+      background-color: rgba(255, 255, 255, .96);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 14px 34px rgba(175, 5, 106, 0.22);
+      border: 1px solid var(--line);
+      display: none;
+      width: 280px;
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-title {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .95rem;
+      line-height: 1.35;
+    }
+
+    .song-artist {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .control-button {
+      background: rgba(175, 5, 106, 0.10);
+      border: 1px solid rgba(175, 5, 106, .16);
+      cursor: pointer;
+      color: var(--ink);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .control-button:hover {
+      background: rgba(175, 5, 106, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 6px;
+      background-color: rgba(175, 5, 106, .12);
+      border-radius: 999px;
+      margin-top: 12px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: var(--ink);
+      width: 0%;
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .volume-icon {
+      color: var(--ink);
+      display: flex;
+    }
+
+    .volume-slider {
+      flex-grow: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      background-color: rgba(175, 5, 106, .12);
+      border-radius: 999px;
+      outline: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      background-color: var(--ink);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 8px 16px rgba(175, 5, 106, .18);
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      animation: fadeIn 0.25s ease-in;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .gallery-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 38px;
+      font-weight: bold;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2001;
+      transition: opacity 0.2s ease;
+    }
+
+    .gallery-close-btn:hover {
+      opacity: .75;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .gallery-main-image {
+      max-width: 92%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.55);
+      color: #000;
+      border: none;
+      font-size: 28px;
+      padding: 12px 16px;
+      cursor: pointer;
+      z-index: 2001;
+      transition: all 0.2s ease;
+      border-radius: 10px;
+    }
+
+    .gallery-arrow:hover {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .gallery-prev {
+      left: 10px;
+    }
+
+    .gallery-next {
+      right: 10px;
+    }
+
+    .gallery-counter {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.65);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      z-index: 2001;
+    }
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 0 !important;
+      transform: translate3d(0, 0, 0) !important;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      will-change: transform, opacity;
+    }
+
+    .anim-left {
+      transform: translate3d(-28px, 0, 0) !important;
+    }
+
+    .anim-right {
+      transform: translate3d(28px, 0, 0) !important;
+    }
+
+    .anim-up {
+      transform: translate3d(0, 18px, 0) !important;
+    }
+
+    .in-view {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-left,
+      .anim-right,
+      .anim-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <!-- HERO 1 -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">MIS XV AÑOS</p>
+        <h1 class="hero-name">Angela Yamilteh</h1>
+        <div class="hero-date">18 · Julio · 2026 <br> <br></div>
+      </div>
+      <img src="papel.png" alt="" class="hero-paper" />
+    </section>
+
+    <!-- CONTENIDO LARGO -->
+    <div class="background">
+      <div class="container">
+        <!-- Scroll to Top Button -->
+        <button class="scroll-to-top" id="scrollBtn" aria-label="Volver arriba">
+          <div class="arrow-up"></div>
+        </button>
+
+        <div align="center"><img src="galeria/xv_2.png" width="45%"></div>
+
+        <p class="subtext anim-up">
+          Quince años de amor, sueños y alegría…<br>
+          ¡Ven a celebrarlos conmigo!
+        </p>
+
+        <div align="center"><img src="cenefa.png" width="60%"></div>
+
+        <div class="date-container anim-up">
+          <div class="day">Sábado</div>
+          <div class="number">18</div>
+          <div class="month">Julio</div>
+        </div>
+
+        <br>
+
+        <div align="center"><img src="cenefa.png" width="60%"></div>
+
+        <br>
+
+        <p class="parrafo">
+          La vida está hecha de momentos<br>
+          únicos, y este es uno de los<br>
+          más importantes para mí.<br>
+          Junto a mis padres:<br>
+          <strong>Francisco Javier Castro</strong><br>
+          y<br>
+          <strong>Citlalli de los Ángeles Martínez</strong>,<br>
+          te invito a celebrar<br>
+          el inicio de una nueva etapa.
+          <br><br>
+        <div align="center"><img src="cenefa.png" width="60%"></div>
+        Con amor, mi madrina:<br><br>
+        <strong>Ana Lizbeth Martínez</strong>
+        </p>
+
+        <div align="center"><img src="cenefa.png" width="60%"></div>
+
+        <!-- Línea de tiempo -->
+        <div class="timeline">
+
+          <div class="timeline-item anim-left">
+            <div align="center"><img src="iglesia.png" width="30%"></div>
+            <h2 class="section-title"><strong>Ceremonia Religiosa</strong></h2>
+            <p class="section-content">
+              <strong>Parroquia Santa María de Guadalupe</strong><br>
+              Rodrigo Gómez S/N, Col. Centro.
+            </p>
+            <p class="section-content-hora">Hora: 4:00 pm</p><br>
+
+            <a href="https://maps.app.goo.gl/Hm8maxv9CXtCfr118" class="btn" target="_blank" rel="noopener">Ver mapa</a>
+          </div>
+
+          <div class="timeline-item anim-right">
+            <div align="center"><img src="fiesta.png" width="30%"></div>
+            <h2 class="section-title"><strong>Recepción del evento</strong></h2>
+            <p class="section-content">
+              <strong>Salón Hacienda</strong><br>
+              Jaspes s/n, Col. Ex Hacienda de Guadalupe.
+            </p>
+            <p class="section-content-hora">Hora: 5:00 pm</p><br>
+
+            <a href="https://maps.app.goo.gl/nbsHzpvPnoMm5cre7" class="btn" target="_blank" rel="noopener">Ver mapa</a>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div align="center"><img src="vestimenta.png" width="35%"></div>
+            <h2 class="section-title"><strong>Código de Vestimenta</strong></h2>
+            <p class="section-content-hora">Formal / casual</p>
+            <p class="section-content">
+             Con cariño, les pedimos los colores <strong>rosa y dorado</strong> sean reservados para nuestra quinceañera.
+            </p>
+          </div>
+
+          <div align="center"><img src="corona.png" width="40%"></div>
+        </div>
+
+        <!-- FOTO EXTRA -->
+        <div class="acuarela-frame acuarela-frame--mid">
+          <img class="acuarela-photo" src="galeria/2.jpeg" alt="Fotografía">
+        </div>
+        <br> <br>
+        <!-- Social -->
+        <section class="social-section">
+
+          <!-- Instagram -->
+          <div class="social-item anim-up">
+            <div align="center" style="color:var(--gold);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30%" viewBox="0 0 900 900" fill="currentColor" role="img"
+                aria-label="Ícono de Instagram">
+                <path
+                  d="M 275.574219 47.707031 C 233.695312 49.671875 205.097656 56.386719 180.09375 66.179688 C 154.203125 76.269531 132.28125 89.773438 110.46875 111.695312 C 88.621094 133.617188 75.195312 155.578125 65.214844 181.503906 C 55.535156 206.582031 48.96875 235.179688 47.113281 277.09375 C 45.257812 319.046875 44.851562 332.4375 45.035156 439.34375 C 45.222656 546.210938 45.703125 559.636719 47.707031 601.628906 C 49.710938 643.507812 56.386719 672.070312 66.179688 697.109375 C 76.269531 723 89.773438 744.882812 111.695312 766.734375 C 133.617188 788.582031 155.578125 801.972656 181.503906 811.988281 C 206.542969 821.667969 235.179688 828.269531 277.058594 830.089844 C 319.046875 831.945312 332.4375 832.351562 439.304688 832.128906 C 546.210938 831.945312 559.601562 831.460938 601.589844 829.457031 C 643.46875 827.457031 672.03125 820.742188 697.070312 810.984375 C 722.960938 800.859375 744.882812 787.394531 766.695312 765.472656 C 788.507812 743.550781 801.933594 721.589844 811.949219 695.660156 C 821.632812 670.621094 828.234375 641.988281 830.050781 600.144531 C 831.871094 558.15625 832.316406 544.726562 832.128906 437.859375 C 831.945312 330.992188 831.425781 317.601562 829.457031 275.613281 C 827.457031 233.695312 820.777344 205.132812 810.984375 180.09375 C 800.859375 154.203125 787.394531 132.320312 765.472656 110.46875 C 743.550781 88.660156 721.589844 75.195312 695.660156 65.214844 C 670.621094 55.535156 641.988281 48.933594 600.109375 47.113281 C 558.117188 45.257812 544.691406 44.851562 437.824219 45.039062 C 330.957031 45.222656 317.566406 45.703125 275.574219 47.707031 M 280.175781 759.203125 C 241.820312 757.535156 220.972656 751.152344 207.0625 745.8125 C 188.664062 738.691406 175.570312 730.160156 161.734375 716.472656 C 147.933594 702.707031 139.402344 689.613281 132.207031 671.289062 C 126.828125 657.417969 120.335938 636.609375 118.519531 598.214844 C 116.554688 556.746094 116.109375 544.28125 115.921875 439.195312 C 115.738281 334.144531 116.109375 321.683594 117.925781 280.175781 C 119.558594 241.820312 125.976562 220.972656 131.316406 207.101562 C 138.4375 188.699219 146.933594 175.605469 160.660156 161.769531 C 174.421875 147.972656 187.515625 139.441406 205.875 132.246094 C 219.75 126.828125 240.558594 120.375 278.914062 118.558594 C 320.421875 116.589844 332.847656 116.183594 437.933594 115.960938 C 543.019531 115.738281 555.484375 116.109375 596.992188 117.964844 C 635.347656 119.632812 656.195312 125.976562 670.066406 131.355469 C 688.464844 138.476562 701.597656 146.933594 715.394531 160.695312 C 729.195312 174.457031 737.761719 187.515625 744.921875 205.914062 C 750.335938 219.75 756.792969 240.59375 758.609375 278.914062 C 760.574219 320.421875 761.019531 332.882812 761.207031 437.933594 C 761.390625 543.019531 761.019531 555.484375 759.203125 596.953125 C 757.535156 635.308594 751.152344 656.195312 745.8125 670.066406 C 738.691406 688.429688 730.195312 701.558594 716.433594 715.359375 C 702.671875 729.121094 689.613281 737.6875 671.214844 744.882812 C 657.378906 750.300781 636.535156 756.753906 598.214844 758.574219 C 556.707031 760.539062 544.28125 760.984375 439.15625 761.167969 C 334.109375 761.355469 321.644531 760.984375 280.136719 759.164062 M 601.035156 228.207031 C 601.070312 254.28125 622.289062 275.390625 648.328125 275.316406 C 674.40625 275.277344 695.511719 254.097656 695.476562 228.019531 C 695.4375 201.945312 674.222656 180.835938 648.144531 180.875 C 622.066406 180.910156 600.960938 202.128906 600.996094 228.167969 M 236.476562 438.972656 C 236.699219 550.585938 327.359375 640.875 438.933594 640.652344 C 550.550781 640.429688 640.875 549.808594 640.652344 438.195312 C 640.429688 326.617188 549.773438 236.292969 438.15625 236.476562 C 326.578125 236.699219 236.253906 327.359375 236.476562 438.972656 M 307.363281 438.824219 C 307.253906 366.378906 365.859375 307.511719 438.304688 307.402344 C 510.75 307.253906 569.617188 365.859375 569.765625 438.34375 C 569.914062 510.785156 511.269531 569.652344 438.824219 569.765625 C 366.378906 569.914062 307.511719 511.269531 307.402344 438.824219" />
+              </svg>
+              <h2 class="social-title"><strong>Instagram</strong></h2>
+              <p class="social-content">
+                Comparte tus fotos y momentos especiales conmigo.
+              </p>
+              <p class="social-content instagram">
+                <a class="enlace-instagram"
+                  href="https://www.instagram.com/mtz.yam?igsh=MWsyd296emNpZ3IybA%3D%3D&utm_source=qr" target="_blank"
+                  rel="noopener">
+                  @mtz.yam
+                </a>
+              </p>
+              <br> <br>
+              <div align="center"><img src="cenefa.png" width="60%"></div>
+			  </div></div>
+            <br> <br>
+            <!-- Mesa de regalos -->
+            <div class="social-item anim-up">
+              <div align="center" style="color:var(--gold);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30%" viewBox="0 0 120 120" fill="none"
+                  stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" role="img"
+                  aria-label="Ícono de regalo">
+
+                  <!-- Moño -->
+                  <path d="M60 38 C52 22, 34 22, 34 34 C34 45, 49 45, 60 38 Z" />
+                  <path d="M60 38 C68 22, 86 22, 86 34 C86 45, 71 45, 60 38 Z" />
+                  <path d="M60 38 L60 104" />
+
+                  <!-- Tapa -->
+                  <rect x="20" y="42" width="80" height="20" rx="4" />
+
+                  <!-- Caja -->
+                  <rect x="26" y="62" width="68" height="42" rx="5" />
+
+                  <!-- Listón vertical -->
+                  <path d="M48 42 V104" />
+                  <path d="M72 42 V104" />
+
+                  <!-- Detalle central -->
+                  <path d="M48 62 H72" />
+                </svg>
+              </div>
+              <h2 class="social-title"><strong>Mesa de Regalos</strong></h2>
+
+              <p class="social-content">
+                El regalo más valioso para mí es su presencia,<br>
+                pero si deseas obsequiarme algo,<br>
+                agradezco de antemano su generosidad.
+              </p>
+
+              <p class="thanks">¡Gracias!</p> <br> <br>
+              <div align="center"><img src="cenefa.png" width="60%"></div>
+            </div>
+
+
+
+        </section>
+        <br> <br>
+        <!-- Final -->
+        <section class="final-section">
+
+          <div class="final-item anim-right">
+            <div style="text-align:center;">
+              <img src="XV-Angela Yamileth _galeria_QR.png" width="50%" style="border-radius: 15px"
+                alt="QR Álbum Compartido">
+            </div>
+            <h2 class="final-title"><strong>Galería de Recuerdos</strong></h2>
+            <p class="final-content">
+              Da click aquí para subir<br>
+              las fotos que tomes<br>
+              durante la fiesta y formar<br>
+              parte de mis recuerdos más especiales.
+            </p><br>
+
+            <a href="https://app.arteinvita.com/gallery/xv-angela-yamileth-1781656642369?token=0f3f5deef1bd594ae5e0389783e2fec2" class="btn" rel="noopener">Subir foto y dedicatoria</a>
+          </div>
+
+          <br> <br>
+          <!-- CONTADOR -->
+          <div class="final-item anim-up">
+            <div class="digital-clock-container">
+              <div align="center" style="color:var(--gold);">
+                <svg viewBox="0 0 120 120" width="25%" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                  aria-hidden="true">
+                  <rect x="18" y="22" width="84" height="78" rx="10" fill="none" stroke="currentColor"
+                    stroke-width="6" />
+                  <line x1="18" y1="42" x2="102" y2="42" stroke="currentColor" stroke-width="6" />
+                  <line x1="34" y1="14" x2="34" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                  <line x1="86" y1="14" x2="86" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                  <rect x="30" y="54" width="12" height="12" rx="2" />
+                  <rect x="48" y="54" width="12" height="12" rx="2" />
+                  <rect x="66" y="54" width="12" height="12" rx="2" />
+                  <rect x="84" y="54" width="12" height="12" rx="2" />
+                  <rect x="30" y="72" width="12" height="12" rx="2" />
+                  <rect x="48" y="72" width="12" height="12" rx="2" />
+                  <rect x="66" y="72" width="12" height="12" rx="2" />
+                  <rect x="84" y="72" width="12" height="12" rx="2" />
+                </svg>
+              </div>
+              <p class="final-title">Faltan</p>
+              <p class="final-content">DÍAS // HORAS // MINUTOS // SEGUNDOS</p>
+              <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva">
+                <span id="days">00</span><span class="clock-separator">:</span>
+                <span id="hours">00</span><span class="clock-separator">:</span>
+                <span id="minutes">00</span><span class="clock-separator">:</span>
+                <span id="seconds">00</span>
+              </div>
+              <div class="clock-status" id="clock-status"></div>
+            </div>
+
+            <!-- GALERIA 
+            <div class="final-item anim-up"><br><br>
+              <div align="center"><img src="corona.png" width="60%"></div>
+              <div class="polaroid-single">
+                <img src="galeria/1.jpeg" alt="Galería - Foto 1" loading="lazy">
+                <div class="pol-label">“Quince años, una historia que apenas comienza.”</div>
+                <button class="pol-btn" type="button" id="openGalleryBtn">Ver mi galería</button>
+              </div>
+            </div>
+          </div> -->
+            <br> <br>
+            <div class="final-item anim-left">
+              <div align="center"><img src="cenefa.png" width="60%"></div>
+              <h2 class="final-title">Confirma tu asistencia</h2>
+              <p class="final-content">
+                Tu presencia es muy importante<br>
+                para mí. <em>Por eso te pido que confirmes tu asistencia.</em><br><br>
+                Da click en el botón para confirmar<br>
+                tu asistencia por WhatsApp.
+                <br><br>
+              </p>
+
+              <a class="btn-ubicacion"
+                href="https://wa.me/527351128840?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Angela%20Yamilteh."
+                target="_blank" rel="noopener">
+                <strong>Confirmar asistencia</strong>
+              </a>
+            </div>
+        </section>
+
+        <p class="parrafo">¡Agradezco de corazón que <br>celebres conmigo!</p> <br> <br>
+        <h2 class="final-title">¡Nos vemos pronto!</h2>
+        <p class="thanks">Con cariño,<br>Angela Yamilteh.</p>
+
+        <!-- FOTO FINAL -->
+        <div class="acuarela-frame acuarela-frame--end" style="margin-top: 26px; margin-bottom: 10px;">
+          <img class="acuarela-photo" src="galeria/3.jpeg" alt="Fotografía final">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Reproductor flotante -->
+    <div class="floating-player" aria-label="Reproductor de música">
+      <div class="player-button" id="playerButton" title="Abrir reproductor">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z" />
+        </svg>
+      </div>
+
+      <div class="player-content" id="playerContent">
+        <div class="song-info">
+          <p class="song-title" id="songTitle">¡Escucha la invitación con música!</p>
+          <p class="song-artist" id="songArtist"> </p>
+        </div>
+
+        <div class="progress-container" id="progressContainer" aria-label="Progreso">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="player-controls" aria-label="Controles">
+          <button class="control-button" id="prevButton" type="button" title="Anterior">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+
+          <button class="control-button" id="playButton" type="button" title="Reproducir/Pausar">
+            <svg class="icon" id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg class="icon" id="pauseIcon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="currentColor" aria-hidden="true">
+              <path d="M6 5h4v14H6zM14 5h4v14h-4z"></path>
+            </svg>
+          </button>
+
+          <button class="control-button" id="nextButton" type="button" title="Siguiente">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="volume-control">
+          <div class="volume-icon">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7"
+            aria-label="Control de volumen">
+        </div>
+
+        <!-- AUDIO: importante, el autoplay en móvil suele bloquearse; iniciamos al primer click -->
+        <audio id="audioPlayer" preload="auto" autoplay muted playsinline webkit-playsinline>
+          <source src="Ed Sheeran_Photograph.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio HTML5.
+        </audio>
+      </div>
+    </div>
+
+    <!-- MODAL GALERÍA -->
+    <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+      <button id="closeGalleryBtn" class="gallery-close-btn" type="button" aria-label="Cerrar">&times;</button>
+
+      <div class="gallery-container">
+        <img id="mainImage" class="gallery-main-image" src="galeria/1.jpeg" alt="Imagen de la galería">
+        <button id="prevImage" class="gallery-arrow gallery-prev" type="button" aria-label="Anterior">&#10094;</button>
+        <button id="nextImage" class="gallery-arrow gallery-next" type="button" aria-label="Siguiente">&#10095;</button>
+        <div id="imageCounter" class="gallery-counter" aria-label="Contador de imágenes"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // =========================
+    // SCROLL TO TOP
+    // =========================
+    (function () {
+      const scrollBtn = document.getElementById('scrollBtn');
+      if (!scrollBtn) return;
+
+      window.addEventListener('scroll', function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // =========================
+    // CUENTA REGRESIVA — 18 Julio 2026 16:00
+    // =========================
+    const targetDate = new Date("July 18, 2026 16:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").innerText = String(Math.max(days, 0)).padStart(2, "0");
+      document.getElementById("hours").innerText = String(Math.max(hours, 0)).padStart(2, "0");
+      document.getElementById("minutes").innerText = String(Math.max(minutes, 0)).padStart(2, "0");
+      document.getElementById("seconds").innerText = String(Math.max(seconds, 0)).padStart(2, "0");
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        document.getElementById("clock-status").innerText = "¡Hoy es el gran día!";
+      }
+    }, 1000);
+
+    // =========================
+    // REPRODUCTOR
+    // =========================
+    (function () {
+      const playerButton = document.getElementById('playerButton');
+      const playerContent = document.getElementById('playerContent');
+      const audio = document.getElementById('audioPlayer');
+      const playButton = document.getElementById('playButton');
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      const progressContainer = document.getElementById('progressContainer');
+      const progressBar = document.getElementById('progressBar');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+
+      if (!playerButton || !playerContent || !audio || !playButton) return;
+
+      playerButton.addEventListener('click', () => {
+        playerContent.classList.toggle('active');
+      });
+
+      function setPlayIcon(isPlaying) {
+        if (playIcon) playIcon.style.display = isPlaying ? 'none' : 'block';
+        if (pauseIcon) pauseIcon.style.display = isPlaying ? 'block' : 'none';
+      }
+
+      playButton.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          setPlayIcon(true);
+        } else {
+          audio.pause();
+          setPlayIcon(false);
+        }
+      });
+
+      audio.addEventListener('ended', () => {
+        setPlayIcon(false);
+        progressBar.style.width = '0%';
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        if (!audio.duration) return;
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + '%';
+      });
+
+      progressContainer.addEventListener('click', (e) => {
+        if (!audio.duration) return;
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        audio.currentTime = (clickX / width) * audio.duration;
+      });
+
+      volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+      });
+
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          audio.currentTime = 0;
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          audio.currentTime = 0;
+        });
+      }
+
+      audio.volume = volumeSlider.value;
+    })();
+
+    // =========================
+    // GALERÍA
+    // =========================
+    (function () {
+      const images = [
+        "galeria/1.jpeg",
+        "galeria/2.jpeg",
+        "galeria/3.jpeg",
+        "galeria/4.jpeg",
+        "galeria/5.jpeg",
+        "galeria/6.jpeg",
+        "galeria/7.jpeg",
+        "galeria/8.jpeg"
+      ];
+
+      const modal = document.getElementById('galleryModal');
+      const openBtn = document.getElementById('openGalleryBtn');
+      const closeBtn = document.getElementById('closeGalleryBtn');
+      const mainImage = document.getElementById('mainImage');
+      const prevBtn = document.getElementById('prevImage');
+      const nextBtn = document.getElementById('nextImage');
+      const counter = document.getElementById('imageCounter');
+
+      if (!modal || !mainImage || !closeBtn || !prevBtn || !nextBtn || !counter) return;
+
+      let idx = 0;
+
+      function update() {
+        mainImage.src = images[idx];
+        counter.textContent = (idx + 1) + " / " + images.length;
+      }
+
+      function open() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        update();
+      }
+
+      function close() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', open);
+      closeBtn.addEventListener('click', close);
+
+      prevBtn.addEventListener('click', () => {
+        idx = (idx - 1 + images.length) % images.length;
+        update();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        idx = (idx + 1) % images.length;
+        update();
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+          if (e.key === 'ArrowLeft') {
+            idx = (idx - 1 + images.length) % images.length;
+            update();
+          }
+          if (e.key === 'ArrowRight') {
+            idx = (idx + 1) % images.length;
+            update();
+          }
+          if (e.key === 'Escape') close();
+        }
+      });
+    })();
+
+    // =========================
+    // ANIMACIONES SCROLL
+    // =========================
+    document.addEventListener('DOMContentLoaded', function () {
+      const targets = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
+      if (!targets.length) return;
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+      targets.forEach(el => io.observe(el));
+    });
+  
+    // =========================
+    // AUTOPLAY iPhone / Android
+    // =========================
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('audioPlayer');
+      if (!audio) return;
+
+      audio.muted = true;
+
+      const iniciarAudio = () => {
+        audio.play().then(() => {
+          audio.muted = false;
+          const playIcon = document.getElementById('playIcon');
+          const pauseIcon = document.getElementById('pauseIcon');
+          if (playIcon) playIcon.style.display = 'none';
+          if (pauseIcon) pauseIcon.style.display = 'block';
+        }).catch(() => {});
+
+        document.removeEventListener('touchstart', iniciarAudio);
+        document.removeEventListener('click', iniciarAudio);
+        document.removeEventListener('scroll', iniciarAudio);
+      };
+
+      document.addEventListener('touchstart', iniciarAudio, { once: true });
+      document.addEventListener('click', iniciarAudio, { once: true });
+      document.addEventListener('scroll', iniciarAudio, { once: true });
+    });
+
+  </script>
+</body>
+
+</html>
