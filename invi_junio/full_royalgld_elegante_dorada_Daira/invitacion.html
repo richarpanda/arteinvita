@@ -1440,6 +1440,197 @@
       display: block;
       margin: 0 auto 6px;
     }
+
+
+    /* =========================
+       AJUSTE GENERAL ARTE INVITA
+       Centrado completo en móvil
+    ========================= */
+    html,
+    body {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    body {
+      display: block !important;
+      text-align: center !important;
+    }
+
+    .app,
+    .app-content {
+      width: 100% !important;
+      max-width: 460px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    .app-content,
+    .app-content section,
+    .app-content article,
+    .container,
+    .content,
+    .glass,
+    .family-section,
+    .event-section,
+    .event-wrap,
+    .event-card,
+    .dedication-section,
+    .dedication-wrap,
+    .gallery-section,
+    .gift-section,
+    .dress-section,
+    .final-section,
+    .glass-card,
+    .calendar-img-section,
+    .calendar-container {
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      max-width: 100% !important;
+    }
+
+    .container,
+    .event-section,
+    .dedication-section,
+    .gift-section,
+    .dress-section,
+    .final-section,
+    .glass-card {
+      width: 100% !important;
+    }
+
+    .glass,
+    .family-section,
+    .event-wrap,
+    .dedication-wrap,
+    .gallery-section,
+    .calendar-container {
+      width: min(420px, 100%) !important;
+    }
+
+    .section-text,
+    .section-text-lg,
+    .section-names,
+    .text-block,
+    .dedication-text,
+    .dedication-text p,
+    .event-text,
+    .event-time,
+    .ig-users {
+      display: block !important;
+      width: 100% !important;
+      max-width: 360px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      overflow-wrap: break-word !important;
+      word-break: normal !important;
+    }
+
+    .section-title,
+    .section-title-script,
+    .event-title,
+    .calendar-month,
+    .countdown-title,
+    .hero-date {
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+    }
+
+    img,
+    video,
+    .video-embed {
+      max-width: 100% !important;
+    }
+
+    .center-img,
+    .section-icon,
+    .event-icon,
+    .calendar-img,
+    .dedication-wrap img,
+    .glass-card img,
+    div[align="center"] img {
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      height: auto !important;
+    }
+
+    img[style*="115%"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .flourish {
+      width: min(400px, 100%) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      background-position: center !important;
+    }
+
+    .calendar-grid,
+    .countdown-grid,
+    .ai-timeline,
+    .gallery-slider,
+    .gallery-slide-frame,
+    .gallery-dots {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Evita que las animaciones izquierda/derecha empujen la invitación fuera del centro */
+    .anim-left,
+    .anim-right {
+      -webkit-transform: translate3d(0, 28px, 0) !important;
+      transform: translate3d(0, 28px, 0) !important;
+    }
+
+    .anim-left.in-view,
+    .anim-right.in-view,
+    .anim-up.in-view {
+      -webkit-transform: translate3d(0, 0, 0) !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+
+    @media (max-width: 480px) {
+      .app,
+      .app-content {
+        max-width: 100vw !important;
+      }
+
+      .container,
+      .event-section,
+      .dedication-section,
+      .gift-section,
+      .dress-section,
+      .final-section,
+      .glass-card {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      .section-text,
+      .section-text-lg,
+      .section-names,
+      .text-block,
+      .dedication-text,
+      .dedication-text p,
+      .event-text,
+      .event-time {
+        max-width: 100% !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1516,7 +1707,7 @@
       </section>
 
       <div class="anim-right" style="text-align:center;">
-        <img class="center-img" src="img/espejo.png" alt="Imagen centrada">
+        <img class="center-img" src="img/espejo.png" width="40%">
       </div>
 
       <section class="glass anim-left">
@@ -1636,7 +1827,7 @@
 
 
       <div class="anim-left in-view" style="text-align:center;">
-        <img class="center-img" src="img/blancanieves1.png" alt="Imagen centrada">
+        <img class="center-img" src="img/blancanieves1.png" width="50%" alt="Imagen centrada">
       </div>
 
       <!-- ========================= -->
@@ -1818,7 +2009,7 @@ Hotel casa Rogel: </span><br>
           <!-- REGALOS -->
           <section id="regalos" class="gift-section anim-left">
             <img class="section-icon icon-40" src="img/sobre.png" alt="Lluvia de sobres" />
-            <h2 class="section-title">Sugerencia de regalo</h2>
+            <h2 class="section-title">Lluvia de Sobres</h2>
 
             <p class="section-text">
               El mejor regalo es tu presencia en este día tan especial.<br><br>
@@ -1842,7 +2033,7 @@ Hotel casa Rogel: </span><br>
           <!-- ÁLBUM COMPARTIDO / ALBUM QR -->
           <section class="final-section anim-right" id="album">
             <div class="glass-card">
-              <img src="img/camara.png" alt="Cámara" class="center-img">
+              <img src="img/camara.png" alt="Cámara" width="45%" class="center-img">
               <h2 class="section-title">Álbum Compartido</h2>
 
               <p class="section-text">
@@ -1878,7 +2069,7 @@ Hotel casa Rogel: </span><br>
           <!-- CONFIRMAR ASISTENCIA -->
           <div class="glass-card anim-left">
             <h2 class="section-title">Confirma tu asistencia</h2>
-            <img src="img/confirmar.png" alt="Confirmar asistencia" class="center-img">
+            <img src="img/confirmar.png" alt="Confirmar asistencia" width="55%" class="center-img">
             <p class="section-text">
               Tu presencia es muy importante <br>
               para mí. Por eso te pido que confirmes tu asistencia. <br>
