@@ -450,13 +450,13 @@
     }
 
     .anim-left {
-      -webkit-transform: translate3d(-60px, 0, 0);
-      transform: translate3d(-60px, 0, 0);
+      -webkit-transform: translate3d(-24px, 0, 0);
+      transform: translate3d(-24px, 0, 0);
     }
 
     .anim-right {
-      -webkit-transform: translate3d(60px, 0, 0);
-      transform: translate3d(60px, 0, 0);
+      -webkit-transform: translate3d(24px, 0, 0);
+      transform: translate3d(24px, 0, 0);
     }
 
     .in-view {
@@ -1282,6 +1282,157 @@
     .scroll-top-btn:hover {
       transform: translateY(-3px);
     }
+
+
+    /* =========================
+       FIX ARTE INVITA: ALINEACIÓN GLOBAL PERFECTA
+       Evita que secciones animadas o contenedores internos se carguen hacia la derecha/izquierda
+    ========================= */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      margin: 0 auto !important;
+      text-align: center;
+    }
+
+    .app,
+    .app-content,
+    .background,
+    .container,
+    section,
+    article,
+    .glass,
+    .family-section,
+    .calendar-img-section,
+    .content,
+    .calendar-container,
+    .event-section,
+    .event-wrap,
+    .event-card,
+    .dedication-section,
+    .dedication-wrap,
+    .gift-section,
+    .dress-section,
+    .glass-card,
+    .final-section,
+    .video-section,
+    .video-wrap,
+    .flourish {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      max-width: 100%;
+    }
+
+    .container,
+    .event-section,
+    .dedication-section,
+    .gift-section,
+    .dress-section,
+    .glass-card,
+    .calendar-img-section,
+    .family-section,
+    .glass {
+      width: 100% !important;
+    }
+
+    .event-wrap,
+    .content,
+    .dedication-wrap {
+      width: min(420px, 100%) !important;
+    }
+
+    .section-text,
+    .section-text-lg,
+    .section-names,
+    .text-block,
+    .event-text,
+    .event-time,
+    .dedication-text,
+    .hero-content,
+    .hero-date,
+    .countdown-wrap,
+    .countdown-title,
+    .calendar-header,
+    .calendar-month,
+    .section-title,
+    .section-title-script {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+    }
+
+    img,
+    video,
+    .center-img,
+    .section-icon {
+      display: block;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: 100%;
+    }
+
+    .btn-primary,
+    .btn-ubicacion {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    [align="center"] {
+      text-align: center !important;
+      width: 100%;
+    }
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      max-width: 100%;
+    }
+
+    .anim-left.in-view,
+    .anim-right.in-view,
+    .anim-up.in-view {
+      transform: translate3d(0, 0, 0) !important;
+      -webkit-transform: translate3d(0, 0, 0) !important;
+    }
+
+    .ai-timeline {
+      left: 0 !important;
+      right: 0 !important;
+    }
+
+    .floating-player,
+    .scroll-top-btn {
+      text-align: initial !important;
+    }
+
+    @media (max-width: 460px) {
+      .app {
+        width: 100vw !important;
+      }
+
+      .container,
+      .event-section,
+      .dedication-section,
+      .gift-section,
+      .dress-section,
+      .glass-card {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      .event-wrap,
+      .content,
+      .dedication-wrap,
+      .calendar-container {
+        width: 100% !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1358,8 +1509,8 @@
         </p>
       </section>
 
-      <div class="anim-right" style="text-align:center;">
-        <img class="center-img" src="img/espejo.png" alt="Imagen decorativa">
+      <div align="center">
+        <img class="center-img" src="img/espejo.png" width="45%" alt="Imagen decorativa">
       </div>
 
       <section class="glass anim-left">
@@ -1691,7 +1842,7 @@
           <!-- ÁLBUM COMPARTIDO / ALBUM QR -->
           <section class="final-section anim-right" id="album">
             <div class="glass-card">
-              <img src="img/camara.png" alt="Cámara" class="center-img">
+              <img src="img/camara.png" width="55%" alt="Cámara" class="center-img">
               <h2 class="section-title">Álbum Compartido</h2>
 
               <p class="section-text">
@@ -1728,7 +1879,7 @@
           <!-- CONFIRMAR ASISTENCIA / INVITA QR -->
           <div class="glass-card anim-left">
             <h2 class="section-title">Confirma tu asistencia</h2>
-            <img src="img/confirmar.png" alt="Confirmar asistencia" class="center-img">
+            <img src="img/confirmar.png" alt="Confirmar asistencia" width="55%" class="center-img">
             <p class="section-text">
               Tu presencia es muy importante para nosotros.<br>
               Da click en el botón y confirma tu asistencia.
@@ -1775,7 +1926,6 @@
   <div class="floating-player">
     <div class="player-button pulse" id="playerButton" aria-label="Abrir reproductor de música">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-        <" fill="currentColor" viewBox="0 0 24 24">
           <path
             d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z" />
       </svg>
