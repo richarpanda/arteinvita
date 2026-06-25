@@ -1134,7 +1134,7 @@
         <div class="intro-card reveal reveal-left">
           <div class="content">
             <div class="date-container">
-              <div class="day">Sábado</div>
+              <div class="day">Domingo</div>
               <div class="number">12</div>
               <div class="month">Julio</div>
             </div>
@@ -1625,6 +1625,22 @@
     function generateCalendar() {
       const calendarGrid = document.getElementById('calendarGrid');
       const daysInMonth = 31;
+      const firstDay = 3; // Miércoles (0=Domingo)
+
+      const headers = ['D','L','M','M','J','V','S'];
+      headers.forEach(h=>{
+        const el=document.createElement('div');
+        el.textContent=h;
+        el.style.fontWeight='700';
+        el.style.color='#8f1010';
+        el.style.fontSize='1rem';
+        calendarGrid.appendChild(el);
+      });
+
+      for(let i=0;i<firstDay;i++){
+        const empty=document.createElement('div');
+        calendarGrid.appendChild(empty);
+      }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement('div');
