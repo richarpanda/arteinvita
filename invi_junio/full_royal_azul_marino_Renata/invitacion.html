@@ -1687,6 +1687,24 @@ background-size: cover;
     function generateCalendar() {
       const calendarGrid = document.getElementById('calendarGrid');
       const daysInMonth = 31;
+      const firstDay = 3; // Miércoles (0=Domingo)
+      const headers = ['D','L','M','M','J','V','S'];
+
+      headers.forEach(h=>{
+        const el=document.createElement('div');
+        el.className='calendar-day';
+        el.style.fontWeight='700';
+        el.style.cursor='default';
+        el.textContent=h;
+        calendarGrid.appendChild(el);
+      });
+
+      for(let i=0;i<firstDay;i++){
+        const blank=document.createElement('div');
+        blank.className='calendar-day';
+        blank.style.visibility='hidden';
+        calendarGrid.appendChild(blank);
+      }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement('div');
@@ -1699,9 +1717,7 @@ background-size: cover;
 
         dayElement.addEventListener('click', function() {
           document.querySelectorAll('.calendar-day').forEach(d => {
-            if (!d.classList.contains('special')) {
-              d.classList.remove('selected');
-            }
+            if (!d.classList.contains('special')) d.classList.remove('selected');
           });
           this.classList.add('selected');
         });
