@@ -1714,6 +1714,28 @@
       }
 
       audio.volume = volumeSlider.value;
+
+      // Autoplay compatible con iPhone (requiere la primera interacción del usuario)
+      function iniciarAutoplay() {
+        audio.muted = false;
+        const intento = audio.play();
+        if (intento && typeof intento.then === 'function') {
+          intento.then(() => setPlayIcon(true)).catch(() => {});
+        }
+        document.removeEventListener('touchstart', iniciarAutoplay);
+        document.removeEventListener('click', iniciarAutoplay);
+        document.removeEventListener('scroll', iniciarAutoplay);
+      }
+
+      window.addEventListener('load', () => {
+        audio.play().then(() => {
+          setPlayIcon(true);
+        }).catch(() => {
+          document.addEventListener('touchstart', iniciarAutoplay, { once: true, passive: true });
+          document.addEventListener('click', iniciarAutoplay, { once: true });
+          document.addEventListener('scroll', iniciarAutoplay, { once: true, passive: true });
+        });
+      });
     })();
 
     // =========================
