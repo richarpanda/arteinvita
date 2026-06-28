@@ -1439,29 +1439,36 @@
     function generateCalendar() {
       const calendarGrid = document.getElementById('calendarGrid');
       const daysInMonth = 31;
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        const dayElement = document.createElement('div');
-        dayElement.className = 'calendar-day';
-        dayElement.textContent = day;
-
-        if (day === 8) {
-          dayElement.classList.add('special', 'selected');
-        }
-
-        dayElement.addEventListener('click', function() {
-          document.querySelectorAll('.calendar-day').forEach(d => {
-            if (!d.classList.contains('special')) {
-              d.classList.remove('selected');
-            }
+      const headers=['D','L','M','M','J','V','S'];
+      headers.forEach(h=>{
+        const el=document.createElement('div');
+        el.className='calendar-day';
+        el.style.fontWeight='700';
+        el.textContent=h;
+        calendarGrid.appendChild(el);
+      });
+      const startOffset=6;
+      for(let i=0;i<startOffset;i++){
+        const blank=document.createElement('div');
+        blank.className='calendar-day';
+        blank.textContent='';
+        calendarGrid.appendChild(blank);
+      }
+      for(let day=1;day<=daysInMonth;day++){
+        const dayElement=document.createElement('div');
+        dayElement.className='calendar-day';
+        dayElement.textContent=day;
+        if(day===8) dayElement.classList.add('special','selected');
+        dayElement.addEventListener('click',function(){
+          document.querySelectorAll('.calendar-day').forEach(d=>{
+            if(!d.classList.contains('special')) d.classList.remove('selected');
           });
           this.classList.add('selected');
         });
-
         calendarGrid.appendChild(dayElement);
       }
     }
-    document.addEventListener('DOMContentLoaded', generateCalendar);
+document.addEventListener('DOMContentLoaded', generateCalendar);
   </script>
 </body>
 </html>
