@@ -1,166 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación - Mis Quince Años</title>
-
-    <style>
-        /* Estilo global */
-        @font-face {
-            font-family: 'Nova Quinta';
-            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container {
-            position: relative;
-            width: 450px;
-            height: 800px;
-            background-image: url('img/sobre.png');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-            transform-origin: center;
-        }
-
-        .name {
-            position: absolute;
-            bottom: 180px;
-            width: 100%;
-            text-align: center;
-            font-size: 70px;
-            font-weight: 500;
-            color: #203a8e;
-            font-family: 'Nova Quinta', cursive;
-        }
-
-        .button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            background-image: url('img/sello.png');
-            background-size: cover;
-            background-position: center;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            box-shadow: none;
-            padding: 0;
-            appearance: none;
-            cursor: pointer;
-            font-size: 20px;
-            font-family: 'Baskerville', serif;
-            font-style: italic;
-            font-weight: 600;
-            color: #000000;
-            text-align: center;
-
-            /* Efecto de latido */
-            animation: heartbeat 1.4s ease-in-out infinite;
-            transform-origin: center;
-            filter: drop-shadow(0 0 8px rgba(255, 215, 120, 0.55));
-        }
-
-        .button:hover {
-            animation: none;
-            transform: translate(-50%, -50%) scale(1.18);
-            filter: drop-shadow(0 0 14px rgba(255, 215, 120, 0.85));
-        }
-
-        .button:disabled {
-            pointer-events: none;
-            animation: none;
-            opacity: 0.95;
-        }
-
-        @keyframes heartbeat {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                filter: drop-shadow(0 0 6px rgba(255, 215, 120, 0.45));
-            }
-
-            15% {
-                transform: translate(-50%, -50%) scale(1.08);
-                filter: drop-shadow(0 0 14px rgba(255, 215, 120, 0.75));
-            }
-
-            30% {
-                transform: translate(-50%, -50%) scale(1);
-                filter: drop-shadow(0 0 7px rgba(255, 215, 120, 0.5));
-            }
-
-            45% {
-                transform: translate(-50%, -50%) scale(1.12);
-                filter: drop-shadow(0 0 18px rgba(255, 215, 120, 0.9));
-            }
-
-            65% {
-                transform: translate(-50%, -50%) scale(1);
-                filter: drop-shadow(0 0 8px rgba(255, 215, 120, 0.55));
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                filter: drop-shadow(0 0 6px rgba(255, 215, 120, 0.45));
-            }
-        }
-
-        /* Animación de apertura desde el centro hacia afuera */
-        .container.open {
-            animation: openEnvelopeOutwards 1s forwards;
-        }
-
-        @keyframes openEnvelopeOutwards {
-            0% {
-                transform: scale(1) rotateX(0deg);
-            }
-
-            50% {
-                transform: scale(1.05) rotateX(30deg) translateZ(10px);
-            }
-
-            100% {
-                transform: scale(1.1) rotateX(180deg) translateZ(50px);
-                opacity: 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación desactivada</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#f4eadc,#d8c3a5);font-family:Georgia,serif;color:#5a4632}
+.alerta{width:90%;max-width:480px;background:#fff8ef;border:1px solid #c9ad8b;border-radius:22px;padding:35px 25px;text-align:center;box-shadow:0 15px 35px rgba(90,70,50,.18)}
+.alerta h1{margin:0 0 15px;font-size:28px;color:#7a5c3e}
+.alerta p{font-size:17px;line-height:1.6;margin:0 0 25px}
+.boton{display:inline-block;padding:13px 28px;background:#b8956f;color:#fff;text-decoration:none;border-radius:30px;font-size:16px}
+</style>
 </head>
-
 <body>
-    <div class="container" id="envelope">
-        <!-- <div class="name">Alessa</div> Ahora no editable -->
-        <button class="button" id="openButton"><strong>ABRIR</strong></button>
-    </div>
+<div class="alerta">
+<h1>Invitación desactivada</h1>
+<p>Tu invitación ha sido desactivada por falta de pago. Para reactivarla, por favor contáctate con Arte Invita.</p><br>
 
-    <script>
-        const button = document.getElementById('openButton');
-        const envelope = document.getElementById('envelope');
+	<div align="center"><img src="6.jpg" width="20%" style="border-radius:10px"></div><br>
 
-        button.addEventListener('click', () => {
-            button.disabled = true;
-            envelope.classList.add('open');
-
-            setTimeout(() => {
-                window.location.href = 'invitacion.html';
-            }, 1000);
-        });
-    </script>
+<a class="boton" href="https://wa.me/5217713646690" target="_blank">Contactar a Arte Invita</a>
+</div>
 </body>
-
 </html>
