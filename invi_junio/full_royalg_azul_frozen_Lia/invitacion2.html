@@ -1465,29 +1465,10 @@
   }
 }
 
-
-/* Scroll hint overlay */
-.scroll-hint-overlay{position:fixed;inset:0;z-index:5000;background:linear-gradient(180deg,rgba(10,30,50,.78),rgba(20,40,60,.55));display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s}
-.scroll-hint-overlay.hide{opacity:0;visibility:hidden;pointer-events:none}
-.scroll-hint-card{text-align:center;color:#fff;padding:28px}
-.scroll-hint-card h2{font-family:"Playfair Display",serif;font-size:2rem;margin:0 0 12px}
-.scroll-hint-card p{font-size:1.1rem;margin:0 0 18px}
-.scroll-arrow{font-size:48px;animation:bounce 1.2s infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
-
 </style>
 </head>
 
 <body>
-  
-<div class="scroll-hint-overlay" id="scrollHintOverlay">
-  <div class="scroll-hint-card">
-    <h2>Desliza hacia abajo</h2>
-    <p>Continúa para descubrir la invitación ✨</p>
-    <div class="scroll-arrow">⬇</div>
-  </div>
-</div>
-
   <div class="bg-fixed" aria-hidden="true"></div>
   <div class="app">
     <div class="app-content">
@@ -2242,11 +2223,6 @@
         behavior: "smooth"
       });
     });
-
-const scrollHintOverlay=document.getElementById('scrollHintOverlay');
-function hideScrollHint(){if(window.scrollY>20){scrollHintOverlay.classList.add('hide');window.removeEventListener('scroll',hideScrollHint);}}
-window.addEventListener('scroll',hideScrollHint,{passive:true});
-
   </script>
 </body>
 
