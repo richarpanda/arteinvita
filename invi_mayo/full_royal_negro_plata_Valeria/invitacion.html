@@ -1184,8 +1184,8 @@
           <div class="content">
             <div class="date-container">
               <div class="day">Sábado</div>
-              <div class="number">25</div>
-              <div class="month">Julio</div>
+              <div class="number">3</div>
+              <div class="month">Octubre</div>
             </div>
 
             <p class="section-sub" style="margin-top:1.6rem;">
@@ -1296,7 +1296,7 @@
         <div align="center">
           <div class="calendar-container reveal reveal-right">
             <div class="calendar-header">
-              <div class="calendar-month">Julio</div>
+              <div class="calendar-month">Octubre</div>
             </div>
             <div class="calendar-grid" id="calendarGrid"></div>
           </div>
@@ -1309,7 +1309,7 @@
 		  <div align="center"><img src="img/cenefa_6.png" width="85%" alt="Foto"></div>
         <div class="flourish"></div>
         <h2 class="itinerary-title">Itinerario</h2>
-        <p class="itinerary-date">25 de Julio de 2026</p>
+        <p class="itinerary-date">3 de Octubre de 2026</p>
       </div>
 
       <div class="itinerary-timeline">
@@ -1460,7 +1460,7 @@
     // =========================
     // ✅ CUENTA REGRESIVA
     // =========================
-    const targetDate = new Date(2026, 6, 25, 19, 0, 0); // Julio es el mes 6 (0-indexed)
+    const targetDate = new Date(2026, 9, 3, 19, 0, 0); // Julio es el mes 6 (0-indexed)
 
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
@@ -1607,7 +1607,7 @@
 
       // 2. Configuración del mes (Julio 2026)
       const daysInMonth = 31; // Julio tiene 31 días
-      const firstDay = new Date(2026, 6, 1).getDay(); // Julio es mes 6 (0-index). El día 1 es Miércoles (3)
+      const firstDay = new Date(2026, 9, 1).getDay(); // Julio es mes 6 (0-index). El día 1 es Miércoles (3)
 
       // 3. Rellenar los espacios vacíos antes del día 1
       for (let i = 0; i < firstDay; i++) {
@@ -1622,7 +1622,7 @@
         dayElement.className = 'calendar-day';
         dayElement.textContent = day;
 
-        if (day === 25) { // Fecha del evento
+        if (day === 3) { // Fecha del evento
           dayElement.classList.add('special', 'selected');
         }
 
