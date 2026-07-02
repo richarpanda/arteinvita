@@ -202,14 +202,18 @@
     }
 
     .flourish {
-      width: 400px;
-      height: 200px;
-      margin: 0.5rem auto 2rem;
-      background-image: url("img/greca.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width:100%;
+      margin:25px 0;
+    }
 
+    .flourish img{
+      width:100%;
+      max-width:320px;
+      height:auto;
+      display:block;
     }
 
     header {
@@ -985,6 +989,12 @@
       transform: translateX(0);
     }
 
+    @media (max-width:768px){
+      .flourish img{
+        max-width:300px;
+      }
+    }
+
     @media (min-width: 768px) {
       .hero-full {
         border-radius: 0 0 40px 40px;
@@ -1012,7 +1022,7 @@
 
     <!-- 1. HERO -->
     <section id="inicio" class="hero-full">
-      <img src="img/PORTADA.png" alt="">
+      <img src="img/portada.png" alt="">
       <div class="hero-overlay">
         <div>
           <div class="hero-name">Danna Valentina</div>
@@ -1046,7 +1056,7 @@
           Quiero compartir contigo esta celebración llena de ilusión, amor y recuerdos inolvidables.
         </p><br>
 
-        <div class="flourish"></div>
+        <div class="flourish"><img src="img/greca.png" alt=""></div>
 
         <p class="intro-script">Tu presencia hará de este día un recuerdo inolvidable.</p>
 
@@ -1057,7 +1067,7 @@
           Javier Vázquez Vázquez
         </p>
 
-        <div class="flourish"></div>
+        <div class="flourish"><img src="img/greca.png" alt=""></div>
         <div class="intro-parents-title">Mi padrino</div>
         <p class="intro-list">
           Hugo Rocha Quintero
@@ -1106,11 +1116,10 @@
           <div class="event-script">Ceremonia Religiosa</div>
           <div class="event-title">Parroquia Santa María de Guadalupe Xochiaca</div>
           <p class="event-address">
-            Nezahualpilli manzana 417 lote 3,<br>
-            Barrio Canteros
+           Calle Miguel Hidalgo 34 Barrio de Xochiaxa C. P. 56350
           </p>
           <div class="event-time">3:40 p.m.</div>
-          <a href="https://maps.app.goo.gl/dVGuBvcx2z9FV9cn7" target="_blank" rel="noopener">
+          <a href="https://maps.app.goo.gl/HZKRs28yEHZssiqW7" target="_blank" rel="noopener">
             <button class="btn-ubicacion">Ver ubicación</button>
           </a>
         </div>
@@ -1229,7 +1238,7 @@ dejarme elegir mi regalo!</p>
       <div class="insta-handle-card reveal reveal-right">
         <div align="center"><div class="gift-icon"><img src="img/camara.png" width="50%" alt=""></div></div>
         <div class="section-title-script">Captura cada Instante</div>
-        <div class="flourish"></div>
+        <div class="flourish"><img src="img/greca.png" alt=""></div>
         <p class="section-sub" style="margin-top:0;">
           También puedes etiquetar a nuestra quinceañera en Instagram.
         </p>
