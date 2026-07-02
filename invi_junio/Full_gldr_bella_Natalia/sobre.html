@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación - Mis Quince Años</title>
+    <style>
+        /* Estilo global */
+        @font-face {
+            font-family: 'Nova Quinta';
+            src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 450px;
+            height: 800px;
+            background-image: url('galeria/background.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transform-origin: center;
+        }
+
+        .name {
+            position: absolute;
+            bottom: 70px;
+            width: 100%;
+            text-align: center;
+            font-size: 45px;
+            font-weight: 500;
+            color: #e14a9a;
+            font-family: 'Nova Quinta', cursive;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            /* Tamaño inicial del botón */
+            height: 150px;
+            background-image: url('img/sello.png');
+            /* Imagen del sello */
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            /* Asegura fondo transparente */
+            border: none;
+            /* Elimina bordes predeterminados */
+            outline: none;
+            /* Elimina el contorno del botón */
+            box-shadow: none;
+            /* Elimina sombras predeterminadas */
+            padding: 0;
+            /* Elimina cualquier relleno */
+            appearance: none;
+            /* Resetea el estilo del botón en navegadores */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-size: 28px;
+            font-family: 'Baskerville', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: #EC2C98;
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            /* Escala mayor sin mover la posición */
+        }
+
+        /* Animación de apertura desde el centro hacia afuera */
+        .container.open {
+            animation: openEnvelopeOutwards 1s forwards;
+        }
+
+        @keyframes openEnvelopeOutwards {
+            0% {
+                transform: scale(1) rotateX(0deg);
+                /* Estado inicial */
+            }
+
+            50% {
+                transform: scale(1.05) rotateX(30deg) translateZ(10px);
+                /* Expande y levanta */
+            }
+
+            100% {
+                transform: scale(1.1) rotateX(180deg) translateZ(50px);
+                /* Apertura completa */
+                opacity: 0;
+                /* Desvanece el sobre al finalizar */
+            }
+        }
+
+        .cover {
+            position: relative;
+            width: 450px;
+            height: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, .20);
+
+            background-image: url('galeria/fondo_sobre.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* En móvil, que no se corte */
+        @media (max-width:480px) {
+            .cover {
+                width: min(450px, 100vw);
+                height: min(800px, 100vh);
+                border-radius: 0;
+            }
+        }
+
+        /* Contenedor interno: usamos posiciones absolutas para clavar layout */
+        .stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 1) Título centrado (debajo del área superior, encima del sobre) */
+        .title-img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 40%;
+            /* Ajusta este valor para subir/bajar el título */
+            width: 70%;
+            height: auto;
+            z-index: 3;
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* 2) Sobre grande en la parte inferior */
+        .envelope-wrap {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10%;
+            width: min(92%, 430px);
+            /* El alto lo controla tu imagen; esto evita deformar */
+            aspect-ratio: 1 / 0.72;
+            /* ajusta si tu sobre es más alto/bajo */
+            display: grid;
+            place-items: center;
+            z-index: 2;
+
+            transform-origin: center;
+            /* necesario para tu animación */
+        }
+
+        /* Imagen del sobre */
+        .envelope-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            filter: drop-shadow(0 18px 28px rgba(0, 0, 0, .35));
+        }
+
+        /* 3) Sello centrado sobre el sobre (botón) */
+        .seal-btn {
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            z-index: 4;
+            /* sobre el sobre */
+            transition: transform .25s ease, filter .25s ease;
+        }
+
+        .seal-btn:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .seal-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .seal-btn span {
+            position: relative;
+			top: 80%;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-family: 'Baskerville', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 28px;
+            color: #ffffff;
+            text-shadow: 0 8px 18px rgba(0, 0, 0, .45);
+            letter-spacing: .06em;
+            pointer-events: none;
+        }
+
+        /* Tu animación: SOLO asegúrate que esté así (no .container.open) */
+        
+        }
+
+        .title-img2 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10%;
+            /* qué tan pegado al borde inferior */
+            width: min(88%, 380px);
+            /* tamaño del nombre */
+            height: auto;
+            z-index: 5;
+            /* encima del sobre */
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .title-img3 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 2%;
+            width: 75%;
+            height: auto;
+            z-index: 6;
+            pointer-events: none;
+            user-select: none;
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
+        }
+    </style>
+</head>
+
+<body>
+    <main class="cover">
+        <div class="stage">
+
+           <!--<img class="title-img3" src="img/bn.png" alt="Mis XV Años" />-->
+
+            <!-- 1) TÍTULO (imagen)-->
+            <img class="title-img" src="img/xv.png" alt="Mis XV Años" /> 
+
+            <!-- 2) SOBRE -->
+            <section class="envelope-wrap" id="envelope">
+                <img class="envelope-img" src="img/envelope.png" alt="" aria-hidden="true" />
+
+                <!-- Sello/botón -->
+                <button class="seal-btn" id="openButton" aria-label="Abrir invitación">
+                    <img src="img/sello.png" alt="" aria-hidden="true" />
+                    <span>ABRIR</span>
+                </button>
+            </section>
+
+           <!-- <img class="title-img2" src="img/melanie.png" alt="Mis XV Años" />-->
+
+        </div>
+    </main>
+
+    <script>
+        const button = document.getElementById('openButton');
+        const envelope = document.getElementById('envelope');
+
+        button.addEventListener('click', () => {
+            envelope.classList.add('open'); // Agrega la clase para activar la animación
+            setTimeout(() => {
+                window.location.href = 'invitacion.html'; // Redirige después de la animación
+            }, 1000); // Tiempo en milisegundos (coincide con la duración de la animación)
+        });
+    </script>
+</body>
+
+</html>
