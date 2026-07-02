@@ -1444,7 +1444,43 @@
       display: block;
       margin: 0 auto 6px;
     }
-  </style>
+  
+/* === AJUSTE GLOBAL DE CENTRADO MÓVIL === */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+.app,
+.app-content,
+.container,
+.event-wrap,
+.family-section,
+.glass,
+.glass-card,
+.gift-section,
+.dress-section,
+.dedication-wrap,
+.calendar-container{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+img,video{
+  max-width:100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+@media (max-width:480px){
+  .container{padding-left:14px!important;padding-right:14px!important;}
+  .event-section,.gift-section,.dress-section,.dedication-section{padding-left:14px!important;padding-right:14px!important;}
+  .glass,.glass-card,.family-section,.calendar-container,.event-wrap{
+    width:calc(100% - 28px)!important;
+    max-width:420px!important;
+  }
+}
+
+</style>
 </head>
 
 <body>
