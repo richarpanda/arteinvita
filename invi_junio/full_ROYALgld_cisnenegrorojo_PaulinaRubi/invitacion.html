@@ -1480,6 +1480,215 @@ img,video{
   }
 }
 
+
+
+/* === CORRECCIÓN FINAL CENTRADO + GALERÍA SLIDER ARTE INVITA === */
+body{
+  background:#050505;
+  display:block;
+}
+.app{
+  width:min(460px,100vw) !important;
+  max-width:460px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.app-content,
+.background,
+.video-section,
+.event-section,
+.calendar-img-section,
+.final-section,
+.gift-section,
+.dress-section,
+.dedication-section{
+  width:100% !important;
+  max-width:100% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center !important;
+}
+.container,
+.content,
+.event-wrap,
+.glass,
+.glass-card,
+.family-section,
+.dedication-wrap,
+.calendar-container{
+  max-width:calc(100% - 28px) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center !important;
+}
+.event-card,
+.itinerary-card{
+  width:100% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center !important;
+}
+.flourish{
+  width:min(400px,96%) !important;
+  max-width:96% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  background-position:center center !important;
+}
+[align="center"]{
+  width:100% !important;
+  max-width:100% !important;
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+[align="center"] > img{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.ai-timeline{
+  left:0 !important;
+  right:0 !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+@media (max-width:480px){
+  .anim-left,
+  .anim-right{
+    -webkit-transform:translate3d(0,28px,0) !important;
+    transform:translate3d(0,28px,0) !important;
+  }
+  .anim-left.in-view,
+  .anim-right.in-view,
+  .anim-up.in-view{
+    -webkit-transform:translate3d(0,0,0) !important;
+    transform:translate3d(0,0,0) !important;
+  }
+  .container{padding-left:14px!important;padding-right:14px!important;}
+  .event-section,.gift-section,.dress-section,.dedication-section{padding-left:0!important;padding-right:0!important;}
+  .section-text,.section-names,.text-block{max-width:340px!important;}
+  .center-img{max-width:90%!important;}
+}
+.gallery-section{
+  width:100% !important;
+  padding:28px 16px 24px !important;
+  margin:0 auto !important;
+  background:transparent !important;
+  text-align:center !important;
+}
+.gallery-wrap{
+  width:min(390px,100%) !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.gallery-slider{
+  position:relative;
+  width:100%;
+  margin:12px auto 0 !important;
+}
+.gallery-slide-frame{
+  position:relative;
+  width:100%;
+  height:520px;
+  border-radius:24px;
+  overflow:hidden;
+  background:rgba(255,255,255,.08) !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  box-shadow:0 18px 44px rgba(0,0,0,.55) !important;
+}
+.gallery-slide-frame img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  cursor:pointer;
+}
+.gallery-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.65) !important;
+  background:rgba(0,0,0,.55) !important;
+  color:#fff !important;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.gallery-nav.prev{left:10px;}
+.gallery-nav.next{right:10px;}
+.gallery-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:14px auto 0 !important;
+}
+.gallery-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  border:0;
+  background:rgba(255,255,255,.55) !important;
+  opacity:1 !important;
+  padding:0;
+  cursor:pointer;
+}
+.gallery-dot.active{
+  width:24px;
+  background:#fff !important;
+}
+.gallery-lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92) !important;
+  z-index:5000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.gallery-lightbox.active{display:flex;}
+.gallery-lightbox img{
+  max-width:94vw !important;
+  max-height:86vh !important;
+  width:auto !important;
+  height:auto !important;
+  object-fit:contain !important;
+  border-radius:16px;
+  box-shadow:0 20px 55px rgba(0,0,0,.65);
+}
+.lightbox-close,
+.lightbox-nav{
+  position:absolute;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.55) !important;
+  background:rgba(0,0,0,.65) !important;
+  color:#fff !important;
+  cursor:pointer;
+  z-index:5001;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lightbox-close{top:16px;right:16px;width:44px;height:44px;font-size:34px;line-height:1;}
+.lightbox-nav{top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:34px;line-height:1;}
+.lightbox-nav.prev{left:12px;}
+.lightbox-nav.next{right:12px;}
+@media (max-width:480px){
+  .gallery-section{padding-left:14px!important;padding-right:14px!important;}
+  .gallery-slide-frame{height:430px;}
+  .lightbox-nav{width:40px;height:40px;font-size:28px;}
+  .lightbox-close{width:40px;height:40px;font-size:30px;}
+}
+
 </style>
 </head>
 
@@ -1493,7 +1702,7 @@ img,video{
       <!-- ========================= -->
       <section class="video-section" aria-label="Video de inicio">
         <div class="hero-video-wrapper">
-          <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video1.mp4"></video>
+          <img src="galeria/14.jpg" width="100%" alt="Mis XV Años Paulina Rubí" loading="lazy">
 
           <div class="text-image-overlay">
             <img src="img/xv.png" width="100%" alt="Mis XV Años Paulina Rubí" loading="lazy">
@@ -1662,6 +1871,8 @@ img,video{
       <div class="anim-left in-view" style="text-align:center;">
         <img class="center-img" src="img/blancanieves1.png" alt="Imagen centrada">
       </div>
+
+      
       <!-- ========================= -->
       <!-- EVENTO / CEREMONIA        -->
       <!-- ========================= -->
@@ -1732,7 +1943,30 @@ img,video{
           </section>
 
           <div class="flourish"></div>
+<!-- ========================= -->
+      <!-- GALERÍA SLIDER            -->
+      <!-- ========================= -->
+      <section id="galeria" class="gallery-section anim-up" aria-label="Galería de fotos">
+        <div class="gallery-wrap">
+          <h2 class="section-title">Galería de fotos</h2>
+          <p class="section-text">Cada fotografía guarda un recuerdo, una sonrisa y un sueño que me ha acompañado hasta llegar a este gran día.</p>
+          <div class="gallery-slider" id="gallerySlider">
+            <div class="gallery-slide-frame">
+              <button class="gallery-nav prev" type="button" aria-label="Foto anterior">‹</button>
+              <img id="galleryImage" src="galeria/1.JPG" alt="Foto de galería" loading="lazy">
+              <button class="gallery-nav next" type="button" aria-label="Foto siguiente">›</button>
+            </div>
+            <div class="gallery-dots" id="galleryDots" aria-label="Navegación de galería"></div>
+          </div>
+        </div>
+      </section>
 
+      <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Cerrar galería">×</button>
+        <button class="lightbox-nav prev" type="button" aria-label="Foto anterior">‹</button>
+        <img id="lightboxImage" src="galeria/1.JPG" alt="Foto ampliada">
+        <button class="lightbox-nav next" type="button" aria-label="Foto siguiente">›</button>
+      </div>
 
 
           <section id="regalos" class="gift-section anim-left">
@@ -1946,9 +2180,93 @@ img,video{
       tick();
       setInterval(tick, 1000);
     })();
-    function nextGalleryImage() { }
-    function prevGalleryImage() { }
-    function closeGalleryLightbox() { }
+    /* =========================
+       GALERÍA SLIDER FUNCIONAL
+    ========================= */
+    (function () {
+      const galleryFiles = Array.from({ length: 14 }, function (_, i) {
+        return "galeria/" + (i + 1) + ".jpg";
+      });
+
+      let galleryIndex = 0;
+      const galleryImg = document.getElementById("galleryImage");
+      const dotsWrap = document.getElementById("galleryDots");
+      const slider = document.getElementById("gallerySlider");
+      const lightbox = document.getElementById("galleryLightbox");
+      const lightboxImg = document.getElementById("lightboxImage");
+
+      if (!galleryImg || !dotsWrap || !slider || !lightbox || !lightboxImg) return;
+
+      galleryFiles.forEach(function (_, i) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "gallery-dot";
+        dot.setAttribute("aria-label", "Ver foto " + (i + 1));
+        dot.addEventListener("click", function () { showGalleryImage(i); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function normalizeIndex(index) {
+        return (index + galleryFiles.length) % galleryFiles.length;
+      }
+
+      function showGalleryImage(index) {
+        galleryIndex = normalizeIndex(index);
+        galleryImg.src = galleryFiles[galleryIndex];
+        lightboxImg.src = galleryFiles[galleryIndex];
+        Array.from(dotsWrap.children).forEach(function (dot, i) {
+          dot.classList.toggle("active", i === galleryIndex);
+        });
+      }
+
+      window.nextGalleryImage = function () { showGalleryImage(galleryIndex + 1); };
+      window.prevGalleryImage = function () { showGalleryImage(galleryIndex - 1); };
+      window.closeGalleryLightbox = function () {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      slider.querySelector(".gallery-nav.prev").addEventListener("click", window.prevGalleryImage);
+      slider.querySelector(".gallery-nav.next").addEventListener("click", window.nextGalleryImage);
+      lightbox.querySelector(".lightbox-nav.prev").addEventListener("click", window.prevGalleryImage);
+      lightbox.querySelector(".lightbox-nav.next").addEventListener("click", window.nextGalleryImage);
+      lightbox.querySelector(".lightbox-close").addEventListener("click", window.closeGalleryLightbox);
+
+      galleryImg.addEventListener("click", function () {
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+        lightboxImg.src = galleryFiles[galleryIndex];
+        document.body.style.overflow = "hidden";
+      });
+
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) window.closeGalleryLightbox();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") window.closeGalleryLightbox();
+        if (e.key === "ArrowRight") window.nextGalleryImage();
+        if (e.key === "ArrowLeft") window.prevGalleryImage();
+      });
+
+      let startX = 0;
+      [slider, lightbox].forEach(function (area) {
+        area.addEventListener("touchstart", function (e) {
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+        area.addEventListener("touchend", function (e) {
+          const endX = e.changedTouches[0].clientX;
+          const diff = startX - endX;
+          if (Math.abs(diff) > 45) {
+            diff > 0 ? window.nextGalleryImage() : window.prevGalleryImage();
+          }
+        }, { passive: true });
+      });
+
+      showGalleryImage(0);
+    })();
 
 
 
