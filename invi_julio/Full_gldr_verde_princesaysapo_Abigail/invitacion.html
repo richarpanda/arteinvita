@@ -1396,6 +1396,111 @@
       -webkit-mask-image: linear-gradient(to bottom, black 0%, black 32%, transparent 76%);
       mask-image: linear-gradient(to bottom, black 0%, black 32%, transparent 76%);
     }
+
+
+    /* =========================
+       FIX CENTRADO MOBILE ARTE INVITA
+       Evita que elementos anchos empujen todo a la derecha
+    ========================= */
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+    .app,
+    .app-content,
+    section,
+    .background,
+    .container,
+    .event-section,
+    .event-wrap,
+    .event-card,
+    .glass-card,
+    .dress-section,
+    .gift-section,
+    .final-section,
+    .family-section,
+    .calendar-img-section {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .app {
+      left: auto;
+      right: auto;
+      width: min(460px, 100vw);
+    }
+
+    .app-content {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .flourish {
+      width: min(400px, 94vw) !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      background-position: center center !important;
+      background-size: contain !important;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    [align="center"] {
+      text-align: center !important;
+      width: 100%;
+    }
+
+    [align="center"] img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 480px) {
+      .container,
+      .event-section,
+      .gift-section,
+      .dress-section,
+      .dedication-section,
+      .gallery-section {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+      }
+
+      .event-wrap {
+        width: 100% !important;
+      }
+
+      .text-image-overlay {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+      }
+
+      .floating-player {
+        left: 14px !important;
+      }
+
+      .scroll-top-btn {
+        right: 14px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1756,7 +1861,7 @@
         </p>
         <br>
 
-        <h2 class="section-title">Con cariño<br>Abigail 
+        <h2 class="section-title">Con cariño<br>Abigail</h2>
       </section>
 
       <!-- VIDEO FINAL -->
