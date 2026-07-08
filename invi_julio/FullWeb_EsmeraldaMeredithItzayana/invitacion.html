@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meredith Itzayana | Mis XV Años</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Estilo Global */
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    :root {
+      --rojo: #0b3d2e;
+      --rojo-claro: #1f6f54;
+      --dorado: #c9a24f;
+      --crema: #ffffff;
+      --crema-oscuro: #f7fbf8;
+      --texto: #24372f;
+      --gris: #66766f;
+      --borde: #dce8df;
+      --shadow-soft: 0 18px 40px rgba(11, 61, 46, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Gabriola', serif;
+      color: var(--texto);
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: var(--rojo);
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+      box-shadow: 0 14px 30px rgba(11, 61, 46, 0.18);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(11, 61, 46, 0.12);
+    }
+
+    .subtext {
+      font-family: 'Nova Quinta', cursive;
+      font-size: 24px;
+      color: var(--texto);
+      text-align: center;
+      margin-top: 1px;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    .parrafo {
+      font-family: 'Gabriola', serif;
+      font-size: 26px;
+      color: var(--texto);
+      text-align: center;
+      margin-top: 1px;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      overflow: hidden;
+      box-shadow: 0 22px 55px rgba(11, 61, 46, 0.10);
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rojo);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.15;
+      margin-top: 1rem;
+    }
+
+    .flourish,
+    .confirm-flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      filter: sepia(1) saturate(.7) hue-rotate(40deg) brightness(1.05);
+      opacity: 0.85;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      padding: 0.6rem 1rem;
+      background: rgba(7, 31, 24, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 162, 79, 0.45);
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--dorado);
+    }
+
+    .page-offset {
+      margin-top: 50px;
+    }
+
+    .hero-full {
+      position: relative;
+      min-height: calc(80vh - 50px);
+      padding: 0;
+      overflow: hidden;
+      background: var(--rojo);
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(7, 31, 24, 1.00),
+          rgba(7, 31, 24, 0.88),
+          rgba(7, 31, 24, 0.18),
+          rgba(7, 31, 24, 0.00));
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3.4rem 2.6rem 3rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: 6.5rem;
+      margin-bottom: 0.2rem;
+      line-height: .95;
+      color: #fff8e6;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", serif;
+      font-size: 1.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .music-section {
+      padding: 1.4rem 1.6rem 0;
+      background: var(--crema);
+      display: flex;
+      justify-content: center;
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--dorado);
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(11, 61, 46, 0.10);
+      cursor: pointer;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rojo);
+    }
+
+    .music-icon-min {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--dorado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color: transparent transparent transparent var(--rojo);
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 9px;
+      background: var(--rojo);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    .date-container {
+      font-family: "Great Vibes", cursive;
+      text-align: center;
+      color: var(--rojo);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.6em;
+      margin-bottom: 0;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 9.5em;
+      margin: 0;
+      font-weight: lighter;
+      line-height: 1;
+      color: var(--dorado);
+    }
+
+    .month {
+      font-size: 3.4em;
+      margin-top: 0;
+      border-top: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .intro-section {
+      background: var(--crema);
+    }
+
+    .intro-card {
+      background: rgba(255, 255, 255, 0.94);
+
+      border-radius: 1.5rem;
+      padding: 1.5rem 1rem;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.8rem;
+      color: var(--dorado);
+      margin-top: 1.1rem;
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      color: var(--rojo);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.75rem;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+      text-align: center;
+      color: var(--gris);
+    }
+
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/fondocounter.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: var(--texto);
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.95;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(11, 61, 46, 0.12);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(11, 61, 46, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: var(--rojo);
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: var(--gris);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    .when-where-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--borde);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-title {
+      font-weight: 700;
+      font-size: 2.0rem;
+      margin-bottom: 0.30rem;
+      color: var(--rojo);
+    }
+
+    .event-address {
+      font-size: 1.5rem;
+      color: var(--gris);
+      line-height: 1.55;
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: var(--dorado);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .btn-ubicacion,
+    .btn-insta,
+    .btn-whats,
+    .gift-button {
+      margin: 1rem auto 0;
+      display: block;
+      width: fit-content;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--rojo);
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-ubicacion:hover,
+    .btn-insta:hover,
+    .btn-whats:hover,
+    .gift-button:hover {
+      background: var(--dorado);
+    }
+
+    .itinerary-section {
+      padding: 3rem 1.6rem;
+      background: var(--crema);
+    }
+
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--rojo);
+      text-align: center;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 80px;
+      height: 2px;
+      background: var(--dorado);
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--rojo);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.4rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .gifts-section {
+      background: var(--crema-oscuro);
+    }
+
+    .gift-options {
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--borde);
+      border-radius: 1.4rem;
+      padding: 1.5rem 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gift-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+      color: var(--rojo);
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+      line-height: 1.35;
+    }
+
+    .gallery-section {
+      background: var(--crema);
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--borde);
+      background: #fff;
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(11, 61, 46, 0.16);
+      color: var(--rojo);
+      font-size: 2rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--borde);
+      cursor: pointer;
+      transition: transform 0.2s ease-out, background 0.2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: var(--dorado);
+      transform: scale(1.2);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      max-width: 920px;
+      width: 92%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    .confirm-section {
+      background: var(--crema);
+      position: relative;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--dorado);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: var(--rojo);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(11, 61, 46, 0.28);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rojo);
+      background: var(--crema);
+    }
+
+    .reveal {
+      opacity: 0;
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (min-width: 768px) {
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+        overflow: hidden;
+      }
+
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+    }
+
+    @media (max-width: 430px) {
+      .hero-name {
+        font-size: 5.2rem;
+      }
+
+      .hero-sub {
+        font-size: 1.25rem;
+      }
+
+      .section-sub,
+      .intro-list {
+        font-size: 1.48rem;
+      }
+
+      .day,
+      .month {
+        font-size: 2.9em;
+      }
+
+      .number {
+        font-size: 7.8em;
+      }
+
+      .countdown-time {
+        font-size: 1.72rem;
+        gap: 0.24rem;
+      }
+
+      .countdown-labels {
+        gap: 0.95rem;
+        font-size: 0.68rem;
+      }
+
+      .gallery-slide-frame img {
+        height: 430px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO (intento de autoplay) -->
+  <audio id="bg-music" src="creeyatrevete_haash.mp3" loop autoplay></audio>
+
+  <main>
+
+    <!-- 1. HERO -->
+    <section id="inicio" class="hero-full">
+      <img src="img/galeria/9.jpeg" alt="">
+      <div class="hero-overlay">
+        <div>
+          <div class="hero-name">Meredith Itzayana</div>
+          <div class="hero-sub">Mis XV Años</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYER MINIMAL -->
+    <section class="music-section">
+      <button class="music-btn-min" id="musicToggle" aria-label="Control de música">
+        <div class="music-icon-min paused" id="musicIcon"></div>
+        <span id="musicStatus">Play</span>
+      </button>
+    </section>
+
+    <!-- 2. INTRO -->
+    <section id="intro" class="intro-section">
+      <div class="intro-card reveal reveal-left">
+        <div class="date-container">
+          <div class="day">Sábado</div>
+          <div class="number">08</div>
+          <div class="month">Agosto</div>
+        </div>
+        <br>
+
+        <p class="section-sub">
+          Con mucha ilusión quiero compartir contigo uno de los momentos más especiales de mi vida:<br>
+          mis XV años.
+          <br><br>
+          Será un día lleno de magia, alegría <br>y recuerdos inolvidables, rodeada <br>de las personas que más quiero.
+        </p><br>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">Tu presencia hará de este día un recuerdo inolvidable.</p>
+
+        <div class="intro-parents-title">Mis padres</div>
+        <p class="intro-list">
+          Enrique Buendía Rodríguez<br>
+          y <br>
+          Mónica M. Santoyo Arias
+        </p>
+
+        <div class="flourish"></div>
+
+        <div class="intro-parents-title">Mis padrinos</div>
+        <p class="intro-list">
+          José A. Santoyo Arias<br>
+          y <br>
+          Soledad Rodríguez Navarrete
+        </p>
+
+        <div class="flourish"></div>
+      </div>
+    </section>
+
+    <!-- 3. APARTA LA FECHA -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-right">
+        <div class="save-date-min-title"><strong>FALTAN</strong></div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+          <div class="countdown-time">
+            <span id="cdDays">0</span>:
+            <span id="cdHours">00</span>:
+            <span id="cdMins">00</span>:
+            <span id="cdSecs">00</span>
+          </div>
+          <div class="countdown-labels">
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+          </div>
+        </div>
+
+        <p class="countdown-note">¡Te espero con mucha ilusión!</p>
+      </div>
+    </section>
+
+    <!-- 4. CUÁNDO Y DÓNDE -->
+    <section id="evento">
+      <div class="when-where-header reveal reveal-left">
+        <div class="section-title-script">¿Cuándo y dónde?</div>
+        <div class="flourish"></div>
+      </div>
+
+      <!-- CEREMONIA RELIGIOSA 
+      <div class="event-card reveal reveal-right">
+        <img src="img/iglesia.jpg" alt="Iglesia" class="event-photo">
+        <div class="event-content">
+          <div class="event-label">Iniciamos con la</div>
+          <div class="event-script">Ceremonia Religiosa</div>
+          <div class="event-title">Nombre de iglesia</div>
+          <p class="event-address">
+            Dirección pendiente.
+          </p>
+          <div class="event-time">00:00 HRS</div>
+          <a href="#" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+      -->
+
+      <!-- Recepción -->
+      <div class="event-card reveal reveal-left">
+        <img src="img/salon.jpeg" alt="Salón Diamante" class="event-photo">
+        <div class="event-content">
+          <div class="event-label">Lugar del Evento</div>
+          <div class="event-script">Recepción</div>
+          <div class="event-title">Salón Diamante</div>
+          <p class="event-address">
+            4a Cda. de Resurrección s/n,<br>
+            56250 San Miguel Coatlinchán, Méx.
+          </p>
+          <div class="event-time">16:30 HRS</div>
+          <a href="https://maps.app.goo.gl/Tgq1M2kyaE7RC1yTA?g_st=aw" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ITINERARIO -->
+    <section id="itinerario" class="itinerary-section">
+      <div align="center"><img src="img/cene.png" width="60%" alt="Foto"></div>
+      <div class="flourish"></div>
+
+      <h2 class="itinerary-title">Itinerario</h2>
+      <p class="itinerary-date">08 de Agosto de 2026</p>
+
+      <div class="itinerary-timeline">
+        <div class="itinerary-item">
+          <div class="itinerary-icon-wrapper"><img src="img/camara.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">17:00 HRS</div>
+            <div class="itinerary-event">Felicitaciones <br> y fotos</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item">
+          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">18:00 HRS</div>
+            <div class="itinerary-event">Comida</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">20:00 HRS</div>
+            <div class="itinerary-event">Vals</div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper"><img src="img/pastel.png" alt=""></div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">22:00 HRS</div>
+            <div class="itinerary-event">Pastel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CÓDIGO DE VESTIMENTA -->
+    <section id="regalos" class="gifts-section">
+      <div align="center"><img src="img/cenefa.png" width="60%" alt="Foto"></div>
+      <div class="section-title-script">Código de vestimenta</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <div align="center"><img src="img/vestimenta.png" width="95%" alt=""></div>
+          <div class="gift-title">ELLAS LINDAS Y ELLOS GUAPOS</div>
+          <p class="gift-sub">
+            Te invitamos a asistir con un atuendo especial para acompañarme en esta celebración.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESA DE REGALOS 
+    <section id="mesa-regalos" class="gifts-section">
+      <div align="center"><img src="img/regalo.png" width="60%" alt=""></div>
+      <div class="section-title-script">Mesa de regalos</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <p class="gift-sub">
+            Información pendiente.
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- LLUVIA DE SOBRES 
+    <section id="sobres" class="gifts-section">
+      <div align="center"><img src="img/sobreregalo.png" width="48%" alt=""></div>
+      <div class="section-title-script">Lluvia de sobres</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+          <p class="gift-sub">
+            Información pendiente.
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 7. GALERÍA -->
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-script">Galería de Fotos</div>
+      <div class="flourish"></div>
+
+      <p class="section-sub">
+        Cada fotografía guarda un recuerdo especial<br> de esta historia.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de la galería">
+          <button class="gallery-nav prev" id="galleryPrev">‹</button>
+          <button class="gallery-nav next" id="galleryNext">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX GALERÍA -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img id="lightboxImage" src="img/galeria/1.jpeg" alt="Foto ampliada" class="lightbox-image">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM  -->
+
+    <section id="insta" class="hashtag-section">
+      <div class="insta-handle-card reveal reveal-right">
+        <div align="center">
+          <div class="gift-icon"><img src="img/instagram.png" width="50%" alt=""></div>
+        </div>
+        <div class="section-title-script">Captura cada Instante</div>
+        <div class="flourish"></div>
+        <p class="section-sub" style="margin-top:0;">
+          También puedes etiquetar a nuestra<br>quinceañera en Instagram.
+        </p>
+        <div class="insta-handle"></div>
+        <div class="section-sub">@itss_mecre</div>
+        <a href="https://www.instagram.com/itss_mecre?igsh=MTFqdDNyeDRzeTIzMw%3D%3D" target="_blank" rel="noopener">
+          <button class="btn-insta">Abrir Instagram</button>
+        </a>
+      </div>
+    </section>
+
+
+
+    <!-- ALBUM QR 
+    <section id="qr" class="gifts-section">
+      <div align="center"><img src="img/camara.png" width="45%" alt="Álbum QR"></div>
+      <div class="section-title-script">Álbum QR</div>
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <p class="gift-sub">
+            Ayúdame a guardar cada instante especial. Sube tus fotos y dedicatorias al álbum digital del evento.
+          </p>
+          <button class="btn-ubicacion" onclick="ArteInvita.open('')">
+            <strong>Subir fotos</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 8. CONFIRMACIÓN -->
+    <section id="confirmacion" class="confirm-section">
+      <div align="center">
+        <div class="gift-icon"><img src="img/corona.png" width="50%" alt=""></div>
+      </div>
+      <div class="reveal reveal-left">
+        <div class="confirm-title-script">¿Asistirás?</div>
+        <div class="confirm-flourish"></div>
+
+        <p class="section-sub">
+          ¡Será increíble contar con tu presencia!<br>
+          Por favor, confirma tu asistencia a este día tan especial para mí.
+          <br>Tu respuesta es muy importante.
+        </p>
+
+        <p class="section-sub">
+          <em>Confirma tu asistencia por WhatsApp.</em>
+          <br><br>
+        </p>
+
+        <a href="https://wa.me/525538428652?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Meredith%20Itzayana.%20%C2%A1Gracias%21"
+          target="_blank" rel="noopener">
+          <button class="btn-whats"><strong>Confirmar Asistencia</strong></button>
+        </a>
+
+        <br>
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          ¡Agradezco de corazón que<br>
+          celebres conmigo!<br><br>
+          ¡Nos vemos pronto!
+        </p>
+        <br>
+
+        <div class="section-title-main">¡Con cariño <br>
+          Meredith Itzayana!</div>
+      </div>
+
+      <br><br>
+
+      <div class="event-card reveal reveal-right">
+        <div align="center">
+          <img src="img/galeria/10.jpeg" width="100%" alt="Foto final">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Mis XV Meredith Itzayana
+  </footer>
+
+  <!-- BOTÓN IR ARRIBA -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+
+  <script>
+    // =========================
+    // CUENTA REGRESIVA
+    // Evento: 08 Agosto 2026 16:30
+    // =========================
+    const targetEventDate = new Date(2026, 7, 8, 16, 30, 0);
+
+    function updateEventCountdown() {
+      const now = new Date();
+      const difference = targetEventDate - now;
+
+      if (difference <= 0) {
+        document.getElementById("cdDays").textContent = "0";
+        document.getElementById("cdHours").textContent = "00";
+        document.getElementById("cdMins").textContent = "00";
+        document.getElementById("cdSecs").textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById("cdDays").textContent = days;
+      document.getElementById("cdHours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("cdMins").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("cdSecs").textContent = seconds.toString().padStart(2, "0");
+    }
+
+    updateEventCountdown();
+    setInterval(updateEventCountdown, 1000);
+
+    // =========================
+    // MÚSICA
+    // =========================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) {
+        console.log("No se pudo reproducir la música:", e);
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) await playMusic();
+      else pauseMusic();
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+        cleanupAutoplayListeners();
+      } catch (e) {
+        console.log("Autoplay bloqueado, se activará al tocar el botón.");
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // REVEAL EN SCROLL
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    itineraryItems.forEach(el => itineraryObserver.observe(el));
+
+    // BOTÓN IR ARRIBA
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) scrollTopBtn.classList.add("visible");
+      else scrollTopBtn.classList.remove("visible");
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // GALERÍA – SLIDER + LIGHTBOX
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg",
+      "img/galeria/4.jpeg",
+      "img/galeria/5.jpeg",
+      "img/galeria/6.jpeg",
+      "img/galeria/7.jpeg",
+      "img/galeria/8.jpeg",
+
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDotsContainer = document.getElementById("galleryDots");
+    let galleryIndex = 0;
+
+    function renderDots() {
+      if (!galleryDotsContainer) return;
+      galleryDotsContainer.innerHTML = "";
+      galleryImages.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = "gallery-dot" + (idx === galleryIndex ? " active" : "");
+        dot.addEventListener("click", () => {
+          galleryIndex = idx;
+          updateGallery();
+        });
+        galleryDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      if (!gallerySlide) return;
+      gallerySlide.src = galleryImages[galleryIndex];
+      renderDots();
+    }
+
+    if (galleryPrev && galleryNext && gallerySlide) {
+      galleryPrev.addEventListener("click", () => {
+        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+      });
+
+      galleryNext.addEventListener("click", () => {
+        galleryIndex = (galleryIndex + 1) % galleryImages.length;
+        updateGallery();
+      });
+
+      gallerySlide.addEventListener("click", () => openLightbox(galleryIndex));
+      updateGallery();
+    }
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      if (!lightbox || !lightboxImage) return;
+      currentImageIndex = index;
+      lightboxImage.src = galleryImages[currentImageIndex];
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      if (lightboxImage) lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener("click", nextImage);
+    if (lightboxPrev) lightboxPrev.addEventListener("click", prevImage);
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox && lightbox.style.display === "flex") {
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
+        if (e.key === "Escape") closeLightbox();
+      }
+    });
+  </script>
+</body>
+
+</html>
