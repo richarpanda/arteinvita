@@ -693,7 +693,7 @@
       top: -8px;
       right: -4px;
       font-size: 1.2rem;
-      color: #b57bd3;
+      color: #a90000;
       animation: heartbeat 1.5s ease-in-out infinite;
     }
 
@@ -1051,12 +1051,13 @@
       padding: 0.7rem 1.6rem;
       border-radius: 999px;
       border: 2px solid #b8955a;
-      background: #fff;
+  
       font-size: 0.82rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       cursor: pointer;
-      color: #b8955a;
+      background: #b8955a;
+      color: #fff;
     }
 
 
@@ -1123,18 +1124,7 @@
       font-size: 1.02rem;
     }
 
-    .btn-insta {
-      margin-top: 1.3rem;
-      padding: 0.7rem 1.6rem;
-      border-radius: 999px;
-      border: 1px solid #4b352d;
-      background: #fff;
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      color: var(--texto);
-    }
+
 
     /* =========================
        CONFIRMACIÓN
@@ -1171,10 +1161,18 @@
       width: 300px;
       height: 150px;
       margin: 0.5rem auto 0.5rem;
-      background-image: url("img/logo_rk.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+
+      background-color: #b02502;
+
+      -webkit-mask-image: url("img/logo_rk.png");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      -webkit-mask-position: center;
+
+      mask-image: url("img/logo_rk.png");
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
     }
 
     .btn-whats {
@@ -1565,7 +1563,7 @@
       border: 1px solid var(--borde);
       background: rgba(255, 255, 255, .48);
       color: var(--texto);
-      font-size: 1.35rem;
+      font-size: 1.8rem;
       line-height: 1.25;
       text-align: center;
     }
@@ -1577,7 +1575,7 @@
       border-top: 1px solid var(--borde);
       border-bottom: 1px solid var(--borde);
       color: var(--gris);
-      font-size: 1.25rem;
+      font-size: 1.8rem;
       line-height: 1.3;
       text-align: center;
     }
@@ -1747,6 +1745,85 @@
         max-width: 94vw;
       }
     }
+
+    /* =========================
+   CARD SUAVE CARTA SNOWY
+========================= */
+    #carta.love-letter-section {
+      padding: 4rem 1.4rem;
+      position: relative;
+    }
+
+    #carta .letter-card-soft {
+      max-width: 390px;
+      margin: 0 auto;
+      padding: 2rem 1.4rem;
+      text-align: center;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(201, 166, 70, 0.25);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
+    #carta .letter-card-soft .section-sub {
+      color: var(--texto);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    #carta .letter-open-btn {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 1.2rem auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    #carta .letter-heart-img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      animation: letterHeartbeat 1.7s ease-in-out infinite;
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.18));
+    }
+
+    @keyframes letterHeartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.05);
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      42% {
+        transform: scale(1.05);
+      }
+
+      70% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 520px) {
+      #carta .letter-card-soft {
+        max-width: 92%;
+        padding: 1.8rem 1.2rem;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      #carta .letter-heart-img {
+        max-width: 220px;
+      }
+    }
   </style>
 </head>
 
@@ -1766,8 +1843,8 @@
       <section id="inicio" class="hero-wrap">
         <div class="hero-card reveal reveal-left">
           <div class="hero-frame">
-            <div class="hero-media">
-              <img src="img/galeria/1.jpg" alt="Rham, Kary y Snowy">
+             <div class="hero-media">
+              <video src="img/video.mp4" autoplay loop muted playsinline preload="auto" poster="img/cover.jpg"></video>
             </div>
 
 
@@ -1781,7 +1858,42 @@
         </div>
       </section>
 
-      <!-- MUSIC STRIP -->
+      <!-- CARTA DE SNOWY / FOTO COMPLETA -->
+      <!-- CARTA DE SNOWY -->
+      <section id="carta" class="love-letter-section">
+        <div class="love-letter-paper letter-card-soft reveal reveal-left">
+
+          <div align="center">
+            <img src="img/snowy.png" width="40%" alt="Foto">
+          </div>
+
+          <p class="section-sub">
+            Snowy tiene una carta especial para ti.
+          </p>
+
+          <button class="letter-open-btn" type="button" onclick="openLetterPopup()">
+            <img class="letter-heart-img" src="img/carta1.png" alt="Carta de Snowy">
+          </button>
+
+          <p class="section-sub">
+            Toca la carta para leerla.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- POPUP CARTA -->
+      <div class="letter-lightbox" id="letterLightbox">
+        <div class="letter-lightbox-content">
+          <img class="letter-popup-img" src="img/carta.png" alt="Carta de Snowy">
+
+          <button class="btn-ubicacion" type="button" onclick="closeLetterPopup()">
+            Volver a la invitación
+          </button>
+        </div>
+      </div>
+
+      <!-- MUSIC STRIP 
       <section class="music-strip">
         <div class="music-strip-inner reveal reveal-center">
           <button class="music-btn" id="musicToggle" aria-label="Control de música">
@@ -1789,7 +1901,7 @@
             <span class="music-label" id="musicStatus">Play</span>
           </button>
         </div>
-      </section>
+      </section> -->
 
       <!-- INTRO -->
       <section id="intro" class="intro-paper">
@@ -1837,38 +1949,9 @@
 
     <br><br>
 
-    <!-- CARTA DE SNOWY / FOTO COMPLETA -->
-    <!-- CARTA DE SNOWY -->
-    <section id="carta" class="love-letter-section">
-      <div class="love-letter-paper reveal reveal-left">
 
-        <div align="center"><img src="img/snowy.png" width="40%" alt="Foto"></div>
 
-        <p class="section-sub">
-          Snowy tiene una carta especial para ti.
-        </p>
 
-        <button class="letter-open-btn" type="button" onclick="openLetterPopup()">
-          <img class="letter-heart-img" src="img/carta1.png" alt="Carta de Snowy">
-        </button>
-
-        <p class="section-sub">
-          Toca la carta para leerla.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- POPUP CARTA -->
-    <div class="letter-lightbox" id="letterLightbox">
-      <div class="letter-lightbox-content">
-        <img class="letter-popup-img" src="img/carta.png" alt="Carta de Snowy">
-
-        <button class="btn-ubicacion" type="button" onclick="closeLetterPopup()">
-          Volver a la invitación
-        </button>
-      </div>
-    </div>
 
 
     <!-- ✅ EVENTO (YA SIN PARALLAX, con fondo fijo igual al inicio) -->
@@ -1924,7 +2007,9 @@
         </div>
       </div>
 
+
       <div class="access-note reveal reveal-right">
+        <div align="center"><img src="img/trajinera.png" width="80%" alt="Foto"></div>
         <strong>Información importante</strong><br>
         El acceso será mediante trajinera. Te pedimos llegar puntualmente porque saldrán en los horarios establecidos y
         no será posible realizar traslados adicionales.
@@ -2103,7 +2188,9 @@
             <p class="gift-sub">Código de Vestimenta:</p>
             <p class="gift-sub"><strong>FORMAL</strong></p>
             <div class="intro-list">Agradecemos elegir un atuendo formal para acompañarnos en esta celebración.</div>
-            <div class="adult-notice">Aunque nos gustan los niños, esta será una celebración solo para adultos.</div>
+            <div class="adult-notice">Aunque nos gustan los niños, esta será una celebración <br>
+              <strong>solo para adultos.</strong>
+            </div>
           </div>
 
         </div>
@@ -2128,18 +2215,18 @@
           <div align="center"><img src="img/logo_amazon.png" width="40%" alt="Foto"></div>
           <div class="gift-registry-links">
             <a href="https://www.amazon.com.mx/wedding/share/RhamyKary" target="_blank" rel="noopener">
-              <button class="btn-ubicacion">Amazon</button>
+              <button class="btn-insta">Amazon</button>
             </a> <br>
 
             <div align="center"><img src="img/liverpool.ico" width="20%" alt="Foto"> <a
-				href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52014975" target="_blank" rel="noopener">
-            <button class="btn-ubicacion">Liverpool · 52014975</button>
-            </a>
+                href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52014975" target="_blank" rel="noopener">
+                <button class="btn-insta">Liverpool · 52014975</button>
+              </a>
+            </div>
+
           </div>
 
         </div>
-
-      </div>
 
 
     </section>
@@ -2204,10 +2291,11 @@ quinceañera en IG con su username
     <!-- CONFIRMACIÓN -->
     <section id="confirmacion" class="bg-fixed bg-bottom">
       <div class="confirm-inner reveal reveal-left">
-
+   <div class="confirm-flourish"></div>
         <div class="glass-card">
+			<div align="center"><img src="img/logo_2.png" width="100%" alt="Foto"></div>
           <div class="content">
-            <div class="confirm-flourish"></div>
+          
             <div class="confirm-title-script">Te esperamos</div>
 
 
@@ -2406,6 +2494,9 @@ quinceañera en IG con su username
       "img/galeria/11.jpg",
       "img/galeria/12.jpg",
       "img/galeria/13.jpg",
+      "img/galeria/16.jpg",
+      "img/galeria/17.jpg",
+
     ];
 
     let currentGallerySlide = 0;

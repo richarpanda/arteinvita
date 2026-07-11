@@ -34,28 +34,142 @@
       height: min(100vh, 177.777vw);
       aspect-ratio: 9 / 16;
       overflow: hidden;
-      background: url("img/sobre.png") center / cover no-repeat;
+      background: url("img/papel_rk.png") center / cover no-repeat;
       isolation: isolate;
     }
 
     /* =========================
-       SELLO CENTRAL
+       TEXTO CLICK
+    ========================= */
+    .open-text {
+      position: absolute;
+      z-index: 8;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #4b342b;
+      opacity: 0;
+      animation: fadeIn .6s ease 1.15s forwards;
+    }
+
+    /* =========================
+       SOBRES PNG ANIMADOS
+    ========================= */
+    .envelopes-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .envelope-img {
+      position: absolute;
+      display: block;
+      height: auto;
+      opacity: 0;
+      filter: drop-shadow(0 18px 22px rgba(59, 35, 20, 0.20));
+      animation: envelopeIn .58s cubic-bezier(.18, .9, .25, 1.1) forwards;
+    }
+
+    /* sobre blanco del fondo */
+    .envelope-1 {
+      width: 64%;
+      left: 50%;
+      top: 38%;
+      z-index: 1;
+      transform: translate(-50%, -190%) rotate(-2deg);
+      animation-delay: .05s;
+      --final-x: -50%;
+      --final-y: -50%;
+      --final-rotate: -2deg;
+    }
+
+    /* sobre café inferior izquierdo */
+    .envelope-2 {
+      width: 70%;
+      left: 41%;
+      top: 59%;
+      z-index: 2;
+      transform: translate(-160%, 70%) rotate(-11deg);
+      animation-delay: .18s;
+      --final-x: -50%;
+      --final-y: -50%;
+      --final-rotate: -11deg;
+    }
+
+    /* sobre beige derecho */
+    .envelope-3 {
+      width: 68%;
+      left: 60%;
+      top: 56%;
+      z-index: 3;
+      transform: translate(130%, 40%) rotate(7deg);
+      animation-delay: .31s;
+      --final-x: -50%;
+      --final-y: -50%;
+      --final-rotate: 7deg;
+    }
+
+    /* sobre principal dorado */
+    .envelope-4 {
+      width: 68%;
+      left: 50%;
+      top: 49%;
+      z-index: 4;
+      transform: translate(-50%, -180%) rotate(-4deg);
+      animation-delay: .46s;
+      --final-x: -50%;
+      --final-y: -50%;
+      --final-rotate: -4deg;
+    }
+
+    @keyframes envelopeIn {
+      0% {
+        opacity: 0;
+      }
+
+      72% {
+        opacity: 1;
+        transform:
+          translate(calc(var(--final-x)),
+            calc(var(--final-y))) rotate(calc(var(--final-rotate) + 2deg)) scale(1.035);
+      }
+
+      100% {
+        opacity: 1;
+        transform:
+          translate(var(--final-x),
+            var(--final-y)) rotate(var(--final-rotate)) scale(1);
+      }
+    }
+
+    /* =========================
+       BOTÓN / SELLO CENTRAL
     ========================= */
     .open {
       position: absolute;
-      z-index: 3;
+      z-index: 10;
       left: 50%;
       top: 50%;
-      width: 34%;
-      max-width: 160px;
+      width: 29%;
+      max-width: 150px;
       aspect-ratio: 1;
       border: none;
       padding: 0;
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      transform: translate(-50%, -50%);
-      animation: sealHeartbeat 1.8s ease-in-out infinite;
+      transform: translate(-50%, -50%) scale(.65);
+      opacity: 0;
+      animation:
+        sealIn .55s cubic-bezier(.18, .9, .25, 1.1) 1s forwards,
+        sealHeartbeat 1.8s ease-in-out 1.65s infinite;
     }
 
     .open img {
@@ -70,6 +184,13 @@
     .open:focus-visible {
       outline: 3px solid #b88945;
       outline-offset: 7px;
+    }
+
+    @keyframes sealIn {
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
 
     @keyframes sealHeartbeat {
@@ -92,6 +213,10 @@
       70% {
         transform: translate(-50%, -50%) scale(1);
       }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
 
     /* =========================
@@ -99,46 +224,21 @@
     ========================= */
     .names-bottom {
       position: absolute;
-      z-index: 2;
+      z-index: 8;
       left: 50%;
       bottom: 7%;
       width: 40%;
       max-width: 360px;
       transform: translateX(-50%);
       display: block;
+      opacity: 0;
+      animation: fadeIn .7s ease 1.25s forwards;
     }
 
-    @media (max-width: 520px) {
-      .open {
-        width: 36%;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
-
-      .names-bottom {
-        width: 40%;
-        bottom: 7%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .open {
-        animation: none;
-      }
-    }
-
-    .open-text {
-      position: absolute;
-      z-index: 3;
-      left: 50%;
-      top: 30%;
-      transform: translateX(-50%);
-      width: 90%;
-      text-align: center;
-      font-family: Georgia, serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #4b342b;
-      opacity: 0.85;
     }
 
     @media (max-width: 520px) {
@@ -146,20 +246,172 @@
         top: 30%;
         font-size: 0.68rem;
       }
+
+      .open {
+        width: 31%;
+      }
+
+      .names-bottom {
+        width: 40%;
+        bottom: 7%;
+      }
+
+      .envelope-1 {
+        width: 74%;
+        top: 39%;
+      }
+
+      .envelope-2 {
+        width: 84%;
+        left: 35%;
+        top: 61%;
+      }
+
+      .envelope-3 {
+        width: 82%;
+        left: 67%;
+        top: 57%;
+      }
+
+      .envelope-4 {
+        width: 80%;
+        top: 50%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .envelope-img,
+      .open,
+      .open-text,
+      .names-bottom {
+        animation-duration: .01ms;
+        animation-delay: 0s;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .envelope-1 {
+        width: 66%;
+        top: 38%;
+      }
+
+      .envelope-2 {
+        width: 72%;
+        left: 41%;
+        top: 59%;
+      }
+
+      .envelope-3 {
+        width: 70%;
+        left: 60%;
+        top: 56%;
+      }
+
+      .envelope-4 {
+        width: 70%;
+        top: 49%;
+      }
+    }
+
+    /* =========================
+   INDICACIÓN CLICK + FLECHA AJUSTADA
+========================= */
+    .click-instruction {
+      position: absolute;
+      z-index: 9;
+      left: 55%;
+      top: 60%;
+      width: 38%;
+      max-width: 180px;
+      opacity: 0;
+      pointer-events: none;
+      animation: clickHintIn .65s ease 1.35s forwards;
+    }
+
+    .click-arrow {
+      position: absolute;
+      left: -25%;
+      top: -25%;
+      width: 55%;
+      height: auto;
+      display: block;
+      transform: rotate(8deg);
+      opacity: 0.95;
+    }
+
+    .click-text {
+      position: relative;
+      top: 80px;
+      font-family: Georgia, serif;
+      font-size: clamp(0.58rem, 2.2vw, 0.76rem) !important;
+      line-height: 1.12;
+      letter-spacing: 0.04em;
+      color: #6f5a4c;
+      text-align: center;
+      transform: rotate(10deg);
+    }
+
+    @keyframes clickHintIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .click-instruction {
+        left: 55%;
+        top: 60%;
+        width: 40%;
+      }
+
+      .click-arrow {
+        left: -45%;
+        top: -50%;
+        width: 55%;
+      }
+
+      .click-text {
+        font-size: 0.8rem !important;
+        line-height: 1.12;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="scene">
-    <div class="open-text">
-      Da click <br>para abrir la invitación
+
+
+    <!-- SOBRES PNG -->
+    <div class="envelopes-wrap" aria-hidden="true">
+      <img class="envelope-img envelope-1" src="img/sobre2.png" alt="">
+      <img class="envelope-img envelope-2" src="img/sobre3.png" alt="">
+      <img class="envelope-img envelope-3" src="img/sobre4.png" alt="">
+      <img class="envelope-img envelope-4" src="img/sobre5.png" alt="">
     </div>
 
-    <button class="open" type="button" aria-label="Abrir invitación" onclick="location.href='invitacion.html?musica=1'">
+    <!-- INDICACIÓN PARA ABRIR -->
+    <div class="click-instruction">
+      <img src="img/flecha.png" alt="" class="click-arrow">
+
+      <div class="click-text">
+        Haz click en el<br>
+        sello para abrir<br>
+        la invitación
+      </div>
+    </div>
+
+    <!-- BOTÓN CENTRAL -->
+    <button class="open" type="button" aria-label="Abrir invitación" onclick="openInvitation()">
       <img src="img/sello_rk.png" alt="Abrir invitación">
     </button>
-
 
     <img class="names-bottom" src="img/nombres2.png" alt="Rham y Kary">
 

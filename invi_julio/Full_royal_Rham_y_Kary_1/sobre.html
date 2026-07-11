@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rham & Kary | Invitación</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+      background: #f7f2ea;
+      display: grid;
+      place-items: center;
+    }
+
+    /* =========================
+       ESCENA VERTICAL 9:16
+    ========================= */
+    .scene {
+      position: relative;
+      width: min(100vw, 56.25vh);
+      height: min(100vh, 177.777vw);
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      background: url("img/sobre.png") center / cover no-repeat;
+      isolation: isolate;
+    }
+
+    /* =========================
+       SELLO CENTRAL
+    ========================= */
+    .open {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 50%;
+      width: 34%;
+      max-width: 160px;
+      aspect-ratio: 1;
+      border: none;
+      padding: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      animation: sealHeartbeat 1.8s ease-in-out infinite;
+    }
+
+    .open img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 50%;
+      filter: drop-shadow(0 12px 28px rgba(59, 35, 20, 0.36));
+    }
+
+    .open:focus-visible {
+      outline: 3px solid #b88945;
+      outline-offset: 7px;
+    }
+
+    @keyframes sealHeartbeat {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      14% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+
+      28% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      42% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+
+      70% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    /* =========================
+       NOMBRES ABAJO
+    ========================= */
+    .names-bottom {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 7%;
+      width: 40%;
+      max-width: 360px;
+      transform: translateX(-50%);
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .open {
+        width: 36%;
+      }
+
+      .names-bottom {
+        width: 40%;
+        bottom: 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .open {
+        animation: none;
+      }
+    }
+
+    .open-text {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #4b342b;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 520px) {
+      .open-text {
+        top: 30%;
+        font-size: 0.68rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="scene">
+    <div class="open-text">
+      Da click <br>para abrir la invitación
+    </div>
+
+    <button class="open" type="button" aria-label="Abrir invitación" onclick="location.href='invitacion.html?musica=1'">
+      <img src="img/sello_rk.png" alt="Abrir invitación">
+    </button>
+
+
+    <img class="names-bottom" src="img/nombres2.png" alt="Rham y Kary">
+
+  </main>
+
+  <script>
+    function openInvitation() {
+      sessionStorage.setItem("playMusic", "1");
+      location.href = "invitacion.html?musica=1";
+    }
+  </script>
+</body>
+
+</html>
