@@ -1128,6 +1128,198 @@
         height: 200px;
       }
     }
+
+    
+    /* =========================
+       GALERÍA DE FOTOS
+    ========================= */
+    .gallery-card {
+      width: calc(100% - 1.4rem);
+      max-width: 360px;
+      margin: 1.4rem auto 0;
+      padding: 1.2rem 1rem 1.35rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--borde);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .gallery-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .gallery-track {
+      display: flex;
+      width: 100%;
+      transition: transform .42s ease;
+    }
+
+    .gallery-slide {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    .gallery-thumb {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-arrow {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      padding: 0;
+      border: 1px solid var(--dorado);
+      border-radius: 50%;
+      background: var(--dorado);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(198, 164, 92, 0.24);
+    }
+
+    .gallery-counter {
+      min-width: 62px;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      color: var(--azul-marino);
+    }
+
+    /* Ventana emergente real */
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: rgba(3, 10, 20, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .gallery-lightbox.open {
+      display: flex;
+    }
+
+    .gallery-lightbox-content {
+      position: relative;
+      width: min(94vw, 1100px);
+      height: min(88vh, 760px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 24px 75px rgba(0, 0, 0, .55);
+    }
+
+    .gallery-close,
+    .gallery-nav {
+      position: fixed;
+      z-index: 100000;
+      border: 0;
+      color: #fff;
+      background: rgba(255, 255, 255, .16);
+      cursor: pointer;
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .gallery-close {
+      top: 18px;
+      right: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+
+    .gallery-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 60px;
+      border-radius: 14px;
+      font-size: 2rem;
+    }
+
+    .gallery-prev { left: 18px; }
+    .gallery-next { right: 18px; }
+
+    .gallery-nav:hover {
+      transform: translateY(-50%);
+      box-shadow: none;
+    }
+
+    @media (max-width: 520px) {
+      .gallery-card {
+        width: calc(100% - 2rem);
+      }
+
+      .gallery-thumb img {
+        height: 210px;
+      }
+
+      .gallery-lightbox {
+        padding: .8rem;
+      }
+
+      .gallery-lightbox-content {
+        width: 96vw;
+        height: 82vh;
+      }
+
+      .gallery-nav {
+        width: 40px;
+        height: 54px;
+      }
+
+      .gallery-prev { left: 8px; }
+      .gallery-next { right: 8px; }
+    }
+
+
   </style>
 </head>
 
@@ -1149,9 +1341,11 @@
             </div>
 
             <div class="hero-bottom">
-              <div class="hero-kicker">Escuela Secundaria Oficial No. 0729 T.V.</div>
+              <div class="hero-kicker">ESCUELA SECUNDARIA OFICIAL NO. 0729 "SOR JUANA INÉS DE LA CRUZ"<br>
+ TURNO VESPERTINO</div>
               <div class="hero-names">Ceremonia de Entrega de Certificados</div>
-              <div class="hero-subline">Generación 2023 - 2026</div>
+              <div class="hero-subline">Generación<br>
+ 2023 - 2026</div>
               <div class="hero-date">15 de Julio de 2026<br>5:00 PM</div>
             </div>
           </div>
@@ -1181,7 +1375,7 @@
             <div class="intro-parents-title">Con gran orgullo</div>
 
             <p class="section-sub">
-              La <strong>Escuela Secundaria Oficial No. 0729 T.V. “Sor Juana Inés de la Cruz”</strong>
+              La <strong>Escuela Secuendaria Oficial NO. 0729 “Sor Juana Inés de la Cruz” Turno Vespertino  </strong><br>
               tiene el honor de invitarte a la ceremonia de entrega de certificados de la
               <strong>Generación 2023 - 2026</strong>.
             </p>
@@ -1250,12 +1444,12 @@
             <div class="content">
               <div class="event-label">Ceremonia de entrega de certificados</div>
               <div class="event-script">Recepción</div>
-              <div class="event-title">Salón Rincón del Bosque</div>
+              <div class="event-title">Salón Rincón del Bosque </div>
               <p class="event-address">
-                Manzana 2, Cocomate del Progreso,<br>
+                Manzana 2, Coscomate del Progreso,<br>
                 Municipio Jilotepec, Estado de México.
               </p>
-              <div class="event-time">5:00 p.m.</div>
+              <div class="event-time">17:00 HRS</div>
               <a href="https://maps.app.goo.gl/PekE8LsySiB4uins8" target="_blank" rel="noopener">
                 <button class="btn-ubicacion" type="button">Ver ubicación</button>
               </a>
@@ -1300,7 +1494,7 @@
                 <li>ALCÁNTARA ARCINIEGA REGINA</li>
                 <li>ALCÁNTARA HERNÁNDEZ CESAR ALONSO</li>
                 <li>ALCÁNTARA SÁNCHEZ SAORI GUADALUPE</li>
-                <li>ALCATAR SANDOVAL ERNESTO</li>
+                <li>ALCATARA SANDOVAL ERNESTO</li>
                 <li>ARCE CRUZ EDWIN YAEL</li>
                 <li>ARCINIEGA GARCIA JOSE DE JESUS</li>
                 <li>ARIZMENDI ESTRADA NAOMI</li>
@@ -1310,14 +1504,14 @@
             <div class="graduate-slide">
               <div class="graduate-range">Egresados</div>
               <ul class="graduate-list">
-                <li>BERMÚDEZ SERRANO REGINA SUEJ</li>
+                <li>BERMÚDEZ SERRANO REGINA SUSEJ</li>
                 <li>CAPETILLO ROSAS MIA RUBI</li>
                 <li>CAPETILLO RUBIO KARLA FERNANDA</li>
                 <li>CHÁVEZ HERNÁNDEZ JONATHAN ISMAEL</li>
                 <li>CICILIA VELÁZQUEZ GERARDO</li>
                 <li>CID FRANCO CRISTIAN YAEL</li>
                 <li>CISNEROS MARTÍNEZ MAYTHE</li>
-                <li>COLÍN ALCÁNTARA OWN KELET</li>
+                <li>COLÍN ALCÁNTARA OWEN KELET</li>
               </ul>
             </div>
             <div class="graduate-slide">
@@ -1368,7 +1562,7 @@
                 <li>OLGUÍN HERNÁNDEZ OSCAR JAIME</li>
                 <li>PÉREZ GRANADOS FERNANDO YADIR</li>
                 <li>PLATA LÓPEZ MAXIMILIANO</li>
-                <li>QUINTANA MEJIA SANDRA LEAMSL</li>
+                <li>QUINTANAR MEJIA SANDRA LEAMSI</li>
                 <li>ROJAS GUADARRAMA ASRTID YAMILET</li>
               </ul>
             </div>
@@ -1403,7 +1597,7 @@
           <h2 class="itinerary-title">Itinerario</h2>
           <p class="itinerary-date">
             Ceremonia de Entrega de Certificados<br>
-            15 de Julio de 2026 · 5:00 PM
+            15 de Julio de 2026 · 17:00  HRS
           </p>
         </div>
 
@@ -1412,7 +1606,7 @@
             <div class="itinerary-icon-wrapper"><img src="img/alumnos.png" alt=""></div>
             <div class="itinerary-divider"></div>
             <div class="itinerary-content">
-              <div class="itinerary-time">4:30 p.m.</div>
+              <div class="itinerary-time">16:30 HRS</div>
               <div class="itinerary-event">Recepción de alumnos</div>
             </div>
           </div>
@@ -1421,7 +1615,7 @@
             <div class="itinerary-icon-wrapper"><img src="img/padres.png" alt=""></div>
             <div class="itinerary-divider"></div>
             <div class="itinerary-content">
-              <div class="itinerary-time">4:50 p.m.</div>
+              <div class="itinerary-time">16:50 HRS</div>
               <div class="itinerary-event">Recepción de padres de familia</div>
             </div>
           </div>
@@ -1430,7 +1624,7 @@
             <div class="itinerary-icon-wrapper"><img src="img/reloj.png" alt=""></div>
             <div class="itinerary-divider"></div>
             <div class="itinerary-content">
-              <div class="itinerary-time">5:00 p.m.</div>
+              <div class="itinerary-time">17:00 HRS</div>
               <div class="itinerary-event">Inicio de la ceremonia</div>
             </div>
           </div>
@@ -1571,19 +1765,48 @@
         </div>
       </section>
 
-      <!-- GALERÍA DE FOTOS  -->
-      <section id="galeria-fotos" class="gallery-section">
+            <!-- GALERÍA DE FOTOS -->
+      <section id="galeria" class="gifts-section">
         <div class="content">
           <div class="section-title-script reveal reveal-left">Galería de Fotos</div>
           <div class="flourish"></div>
-          <p class="section-sub reveal reveal-right">
-            Galería pendiente.
-          </p>
+
+          <div class="gallery-card reveal reveal-right">
+            <p class="gift-sub" style="text-align:center;">FOTOS GRUPALES DE NUESTROS GRADUADOS</p>
+
+            <div class="gallery-slider">
+              <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-slide">
+                  <button type="button" class="gallery-thumb" data-index="0" aria-label="Abrir foto 1">
+                    <img src="galeria/1.jpeg" alt="Foto 1 de la generación" loading="lazy">
+                  </button>
+                </div>
+
+                <div class="gallery-slide">
+                  <button type="button" class="gallery-thumb" data-index="1" aria-label="Abrir foto 2">
+                    <img src="galeria/2.jpeg" alt="Foto 2 de la generación" loading="lazy">
+                  </button>
+                </div>
+
+                <div class="gallery-slide">
+                  <button type="button" class="gallery-thumb" data-index="2" aria-label="Abrir foto 3">
+                    <img src="galeria/3.jpeg" alt="Foto 3 de la generación" loading="lazy">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-controls">
+              <button class="gallery-arrow" id="gallerySliderPrev" type="button" aria-label="Foto anterior">‹</button>
+              <div class="gallery-counter">
+                <span id="gallerySliderCurrent">1</span> / 3
+              </div>
+              <button class="gallery-arrow" id="gallerySliderNext" type="button" aria-label="Foto siguiente">›</button>
+            </div>
+          </div>
         </div>
       </section>
-    
-
-    </div>
+</div>
 
 
     <!-- CONFIRMACIÓN  -->
@@ -1644,6 +1867,19 @@
     </section>
 
   </main>
+
+
+  <!-- VISOR EMERGENTE DE GALERÍA -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Visor de galería">
+    <button class="gallery-close" id="galleryClose" type="button" aria-label="Cerrar galería">×</button>
+    <button class="gallery-nav gallery-prev" id="galleryPrev" type="button" aria-label="Foto anterior">‹</button>
+
+    <div class="gallery-lightbox-content">
+      <img id="galleryLargeImage" src="" alt="Foto ampliada">
+    </div>
+
+    <button class="gallery-nav gallery-next" id="galleryNext" type="button" aria-label="Foto siguiente">›</button>
+  </div>
 
   <footer>© 2026 Ceremonia de Entrega de Certificados · Generación 2023 - 2026</footer>
 
@@ -1860,6 +2096,83 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => showGraduateSlide(0));
+    // =========================
+    // GALERÍA / CARRUSEL / POPUP
+    // =========================
+    const galleryImages = [
+      "galeria/1.jpeg",
+      "galeria/2.jpeg",
+      "galeria/3.jpeg"
+    ];
+
+    const galleryTrack = document.getElementById("galleryTrack");
+    const gallerySliderCurrent = document.getElementById("gallerySliderCurrent");
+    const gallerySliderPrev = document.getElementById("gallerySliderPrev");
+    const gallerySliderNext = document.getElementById("gallerySliderNext");
+
+    const galleryLightbox = document.getElementById("galleryLightbox");
+    const galleryLargeImage = document.getElementById("galleryLargeImage");
+    const galleryClose = document.getElementById("galleryClose");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryThumbs = document.querySelectorAll(".gallery-thumb");
+
+    let gallerySliderIndex = 0;
+    let galleryCurrentIndex = 0;
+
+    function showGallerySlide(index) {
+      gallerySliderIndex = (index + galleryImages.length) % galleryImages.length;
+      galleryTrack.style.transform = `translateX(-${gallerySliderIndex * 100}%)`;
+      gallerySliderCurrent.textContent = gallerySliderIndex + 1;
+    }
+
+    function showGalleryImage(index) {
+      galleryCurrentIndex = (index + galleryImages.length) % galleryImages.length;
+      galleryLargeImage.src = galleryImages[galleryCurrentIndex];
+      galleryLargeImage.alt = `Foto ${galleryCurrentIndex + 1} ampliada`;
+    }
+
+    function openGallery(index) {
+      showGalleryImage(index);
+      galleryLightbox.classList.add("open");
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeGallery() {
+      galleryLightbox.classList.remove("open");
+      galleryLargeImage.src = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
+
+    gallerySliderPrev.addEventListener("click", () => showGallerySlide(gallerySliderIndex - 1));
+    gallerySliderNext.addEventListener("click", () => showGallerySlide(gallerySliderIndex + 1));
+
+    galleryThumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => openGallery(Number(thumb.dataset.index)));
+    });
+
+    galleryClose.addEventListener("click", closeGallery);
+    galleryPrev.addEventListener("click", () => showGalleryImage(galleryCurrentIndex - 1));
+    galleryNext.addEventListener("click", () => showGalleryImage(galleryCurrentIndex + 1));
+
+    galleryLightbox.addEventListener("click", (event) => {
+      if (event.target === galleryLightbox || event.target.classList.contains("gallery-lightbox-content")) {
+        closeGallery();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!galleryLightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") showGalleryImage(galleryCurrentIndex - 1);
+      if (event.key === "ArrowRight") showGalleryImage(galleryCurrentIndex + 1);
+    });
+
+    showGallerySlide(0);
+
+
   </script>
 </body>
 
