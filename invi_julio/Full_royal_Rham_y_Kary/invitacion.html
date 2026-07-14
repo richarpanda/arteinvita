@@ -2106,7 +2106,7 @@
           </button>
 
           <div class="gallery-main-photo" onclick="openGalleryLightbox(currentGallerySlide)">
-            <img id="galleryMainImage" src="img/galeria/01.jpg" alt="Foto de galería">
+            <img id="galleryMainImage" src="img/galeria/1.jpg" alt="Foto de galería" loading="eager" decoding="async" fetchpriority="high">
           </div>
 
           <button class="gallery-arrow gallery-next" type="button" onclick="changeGallerySlide(1)">
@@ -2129,7 +2129,7 @@
       </button>
 
       <div class="gallery-lightbox-content">
-        <img id="galleryLightboxImage" src="img/galeria/01.jpg" alt="Foto ampliada">
+        <img id="galleryLightboxImage" src="img/galeria/1.jpg" alt="Foto ampliada" decoding="async">
       </div>
 
       <button class="gallery-lightbox-arrow gallery-lightbox-next" type="button" onclick="changeGalleryLightbox(1)">
@@ -2495,18 +2495,56 @@ quinceañera en IG con su username
       "img/galeria/12.jpg",
       "img/galeria/13.jpg",
       "img/galeria/16.jpg",
-      "img/galeria/17.jpg",
-
+      "img/galeria/17.jpg"
     ];
 
     let currentGallerySlide = 0;
+    const galleryCache = new Map();
 
     const galleryMainImage = document.getElementById("galleryMainImage");
     const galleryDots = document.getElementById("galleryDots");
-
     const galleryLightbox = document.getElementById("galleryLightbox");
     const galleryLightboxImage = document.getElementById("galleryLightboxImage");
     const galleryLightboxDots = document.getElementById("galleryLightboxDots");
+
+    function normalizeGalleryIndex(index) {
+      return (index + galleryImages.length) % galleryImages.length;
+    }
+
+    function preloadGalleryImage(index) {
+      const safeIndex = normalizeGalleryIndex(index);
+      const src = galleryImages[safeIndex];
+
+      if (galleryCache.has(src)) return galleryCache.get(src);
+
+      const img = new Image();
+      img.decoding = "sync";
+      img.fetchPriority = "high";
+      img.src = src;
+
+      // Guardamos el elemento Image completo en memoria. Cuando se usa en la
+      // galería, el navegador ya tiene descargada y decodificada la fotografía.
+      galleryCache.set(src, img);
+      return img;
+    }
+
+    function preloadNearbyGalleryImages(index) {
+      preloadGalleryImage(index - 1);
+      preloadGalleryImage(index + 1);
+      preloadGalleryImage(index + 2);
+    }
+
+    function preloadAllGalleryImages() {
+      // Precarga inmediata: no esperamos a que el navegador quede inactivo.
+      // Así las fotos comienzan a descargarse desde que abre la invitación.
+      galleryImages.forEach(function (_, index) {
+        preloadGalleryImage(index);
+      });
+    }
+
+    // Iniciar la descarga desde este mismo momento, incluso antes de llegar
+    // a la sección de galería.
+    preloadAllGalleryImages();
 
     function createGalleryDots() {
       galleryDots.innerHTML = "";
@@ -2516,64 +2554,61 @@ quinceañera en IG con su username
         const dot = document.createElement("button");
         dot.className = "gallery-dot";
         dot.type = "button";
-        dot.onclick = function () {
+        dot.setAttribute("aria-label", "Ver foto " + (index + 1));
+        dot.addEventListener("click", function () {
           goToGallerySlide(index);
-        };
+        });
         galleryDots.appendChild(dot);
 
         const lightboxDot = document.createElement("button");
         lightboxDot.className = "gallery-dot";
         lightboxDot.type = "button";
-        lightboxDot.onclick = function () {
-          goToGallerySlide(index);
-          updateLightboxImage();
-        };
+        lightboxDot.setAttribute("aria-label", "Ver foto ampliada " + (index + 1));
+        lightboxDot.addEventListener("click", function () {
+          goToGallerySlide(index, true);
+        });
         galleryLightboxDots.appendChild(lightboxDot);
       });
     }
 
-    function updateGallery() {
-      galleryMainImage.src = galleryImages[currentGallerySlide];
-
-      const dots = galleryDots.querySelectorAll(".gallery-dot");
-      const lightboxDots = galleryLightboxDots.querySelectorAll(".gallery-dot");
-
-      dots.forEach(function (dot, index) {
+    function updateGalleryDots() {
+      galleryDots.querySelectorAll(".gallery-dot").forEach(function (dot, index) {
         dot.classList.toggle("active", index === currentGallerySlide);
       });
 
-      lightboxDots.forEach(function (dot, index) {
+      galleryLightboxDots.querySelectorAll(".gallery-dot").forEach(function (dot, index) {
         dot.classList.toggle("active", index === currentGallerySlide);
       });
     }
 
-    function updateLightboxImage() {
-      galleryLightboxImage.src = galleryImages[currentGallerySlide];
-      updateGallery();
+    function renderGallery(updateLightbox) {
+      const src = galleryImages[currentGallerySlide];
+
+      // Reutiliza la fotografía precargada y decodificada en memoria.
+      const cachedImage = preloadGalleryImage(currentGallerySlide);
+      galleryMainImage.src = cachedImage.src;
+
+      if (updateLightbox || galleryLightbox.classList.contains("active")) {
+        galleryLightboxImage.src = src;
+      }
+
+      updateGalleryDots();
+      preloadNearbyGalleryImages(currentGallerySlide);
     }
 
     function changeGallerySlide(direction) {
-      currentGallerySlide += direction;
-
-      if (currentGallerySlide < 0) {
-        currentGallerySlide = galleryImages.length - 1;
-      }
-
-      if (currentGallerySlide >= galleryImages.length) {
-        currentGallerySlide = 0;
-      }
-
-      updateGallery();
+      currentGallerySlide = normalizeGalleryIndex(currentGallerySlide + direction);
+      renderGallery(false);
     }
 
-    function goToGallerySlide(index) {
-      currentGallerySlide = index;
-      updateGallery();
+    function goToGallerySlide(index, updateLightbox) {
+      currentGallerySlide = normalizeGalleryIndex(index);
+      renderGallery(Boolean(updateLightbox));
     }
 
     function openGalleryLightbox(index) {
-      currentGallerySlide = index;
-      updateLightboxImage();
+      currentGallerySlide = normalizeGalleryIndex(index);
+      renderGallery(true);
       galleryLightbox.classList.add("active");
       document.body.style.overflow = "hidden";
     }
@@ -2584,14 +2619,12 @@ quinceañera en IG con su username
     }
 
     function changeGalleryLightbox(direction) {
-      changeGallerySlide(direction);
-      updateLightboxImage();
+      currentGallerySlide = normalizeGalleryIndex(currentGallerySlide + direction);
+      renderGallery(true);
     }
 
     galleryLightbox.addEventListener("click", function (e) {
-      if (e.target === galleryLightbox) {
-        closeGalleryLightbox();
-      }
+      if (e.target === galleryLightbox) closeGalleryLightbox();
     });
 
     document.addEventListener("keydown", function (e) {
@@ -2604,7 +2637,8 @@ quinceañera en IG con su username
 
     document.addEventListener("DOMContentLoaded", function () {
       createGalleryDots();
-      updateGallery();
+      renderGallery(false);
+      preloadNearbyGalleryImages(0);
     });
 
 
