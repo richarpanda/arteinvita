@@ -756,7 +756,7 @@
       cursor: pointer;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(201, 166, 70, 0.35);
-      background: #fff;
+      background: var(--crema, #f8f2e9);
     }
 
     .gallery-main-photo img {
@@ -2100,43 +2100,31 @@
           Algunos momentos especiales en familia.
         </p>
 
-        <div class="gallery-slider reveal reveal-right">
-          <button class="gallery-arrow gallery-prev" type="button" onclick="changeGallerySlide(-1)">
-            &#10094;
-          </button>
+        <div class="gallery-slider reveal reveal-right" aria-label="Galería de fotos">
+          <button class="gallery-arrow gallery-prev" type="button" onclick="changeGallerySlide(-1)" aria-label="Foto anterior">‹</button>
 
-          <div class="gallery-main-photo" onclick="openGalleryLightbox(currentGallerySlide)">
-            <img id="galleryMainImage" src="img/galeria/1.jpg" alt="Foto de galería" loading="eager" decoding="async" fetchpriority="high">
+          <div class="gallery-main-photo" onclick="openGalleryLightbox(currentGallerySlide)" role="button" tabindex="0" aria-label="Abrir foto en grande">
+            <img id="galleryMainImage" src="img/galeria/1.jpg" alt="Fotografía 1 de Rham y Kary" loading="eager" decoding="async">
           </div>
 
-          <button class="gallery-arrow gallery-next" type="button" onclick="changeGallerySlide(1)">
-            &#10095;
-          </button>
+          <button class="gallery-arrow gallery-next" type="button" onclick="changeGallerySlide(1)" aria-label="Foto siguiente">›</button>
         </div>
 
-        <div class="gallery-dots" id="galleryDots"></div>
+        <div class="gallery-dots" id="galleryDots" aria-label="Seleccionar fotografía"></div>
       </div>
     </section>
 
     <!-- LIGHTBOX GALERÍA -->
-    <div class="gallery-lightbox" id="galleryLightbox">
-      <button class="gallery-close" type="button" onclick="closeGalleryLightbox()">
-        &times;
-      </button>
-
-      <button class="gallery-lightbox-arrow gallery-lightbox-prev" type="button" onclick="changeGalleryLightbox(-1)">
-        &#10094;
-      </button>
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <button class="gallery-close" type="button" onclick="closeGalleryLightbox()" aria-label="Cerrar galería">×</button>
+      <button class="gallery-lightbox-arrow gallery-lightbox-prev" type="button" onclick="changeGalleryLightbox(-1)" aria-label="Foto anterior">‹</button>
 
       <div class="gallery-lightbox-content">
-        <img id="galleryLightboxImage" src="img/galeria/1.jpg" alt="Foto ampliada" decoding="async">
+        <img id="galleryLightboxImage" src="img/galeria/1.jpg" alt="Fotografía ampliada de Rham y Kary">
       </div>
 
-      <button class="gallery-lightbox-arrow gallery-lightbox-next" type="button" onclick="changeGalleryLightbox(1)">
-        &#10095;
-      </button>
-
-      <div class="gallery-lightbox-dots" id="galleryLightboxDots"></div>
+      <button class="gallery-lightbox-arrow gallery-lightbox-next" type="button" onclick="changeGalleryLightbox(1)" aria-label="Foto siguiente">›</button>
+      <div class="gallery-lightbox-dots" id="galleryLightboxDots" aria-label="Seleccionar fotografía ampliada"></div>
     </div>
 
 
@@ -2268,7 +2256,7 @@ quinceañera en IG con su username
 
 
     <!-- ÁLBUM QR  -->
-    <section id="galeria" class="gifts-section">
+    <section id="album-recuerdos" class="gifts-section">
       <div class="content">
 <div align="center"><img src="img/album.png" width="60%" alt="Foto"></div>
         <p class="section-sub">Escanear y subir Foto</p>
@@ -2480,23 +2468,9 @@ quinceañera en IG con su username
     // GALERÍA
     // =========================
 
-    const galleryImages = [
-      "img/galeria/1.jpg",
-      "img/galeria/2.jpg",
-      "img/galeria/3.jpg",
-      "img/galeria/4.jpg",
-      "img/galeria/5.jpg",
-      "img/galeria/6.jpg",
-      "img/galeria/7.jpg",
-      "img/galeria/8.jpg",
-      "img/galeria/9.jpg",
-      "img/galeria/10.jpg",
-      "img/galeria/11.jpg",
-      "img/galeria/12.jpg",
-      "img/galeria/13.jpg",
-      "img/galeria/16.jpg",
-      "img/galeria/17.jpg"
-    ];
+    const galleryImages = Array.from({ length: 17 }, function (_, index) {
+      return "img/galeria/" + (index + 1) + ".jpg";
+    });
 
     let currentGallerySlide = 0;
     const galleryCache = new Map();
@@ -2581,19 +2555,52 @@ quinceañera en IG con su username
       });
     }
 
-    function renderGallery(updateLightbox) {
-      const src = galleryImages[currentGallerySlide];
+    let galleryRenderRequest = 0;
 
-      // Reutiliza la fotografía precargada y decodificada en memoria.
-      const cachedImage = preloadGalleryImage(currentGallerySlide);
-      galleryMainImage.src = cachedImage.src;
+    async function waitForGalleryImage(image) {
+      if (image.complete && image.naturalWidth > 0) {
+        if (typeof image.decode === "function") {
+          try { await image.decode(); } catch (_) { /* Safari puede rechazar decode aunque ya esté lista */ }
+        }
+        return;
+      }
+
+      await new Promise(function (resolve, reject) {
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", reject, { once: true });
+      });
+
+      if (typeof image.decode === "function") {
+        try { await image.decode(); } catch (_) { /* la imagen cargada sigue siendo utilizable */ }
+      }
+    }
+
+    async function renderGallery(updateLightbox) {
+      const requestedIndex = currentGallerySlide;
+      const src = galleryImages[requestedIndex];
+      const requestId = ++galleryRenderRequest;
+      const cachedImage = preloadGalleryImage(requestedIndex);
+
+      // Mantiene visible la foto actual hasta que la siguiente esté cargada y decodificada.
+      // Así se elimina el cuadro blanco al presionar las flechas.
+      try {
+        await waitForGalleryImage(cachedImage);
+      } catch (_) {
+        return;
+      }
+
+      // Si el usuario pulsó varias veces, solo mostramos la última foto solicitada.
+      if (requestId !== galleryRenderRequest || requestedIndex !== currentGallerySlide) return;
+
+      galleryMainImage.src = src;
+      galleryMainImage.alt = "Foto " + (requestedIndex + 1) + " de Rham y Kary";
 
       if (updateLightbox || galleryLightbox.classList.contains("active")) {
         galleryLightboxImage.src = src;
       }
 
       updateGalleryDots();
-      preloadNearbyGalleryImages(currentGallerySlide);
+      preloadNearbyGalleryImages(requestedIndex);
     }
 
     function changeGallerySlide(direction) {
@@ -2610,11 +2617,13 @@ quinceañera en IG con su username
       currentGallerySlide = normalizeGalleryIndex(index);
       renderGallery(true);
       galleryLightbox.classList.add("active");
+      galleryLightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
 
     function closeGalleryLightbox() {
       galleryLightbox.classList.remove("active");
+      galleryLightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     }
 
@@ -2639,6 +2648,40 @@ quinceañera en IG con su username
       createGalleryDots();
       renderGallery(false);
       preloadNearbyGalleryImages(0);
+    });
+
+
+    // Abrir la foto con teclado y permitir deslizamiento en celular
+    document.addEventListener("DOMContentLoaded", function () {
+      const mainPhoto = document.querySelector(".gallery-main-photo");
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      if (mainPhoto) {
+        mainPhoto.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openGalleryLightbox(currentGallerySlide);
+          }
+        });
+      }
+
+      function handleSwipe(target, isLightbox) {
+        if (!target) return;
+        target.addEventListener("touchstart", function (e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        target.addEventListener("touchend", function (e) {
+          touchEndX = e.changedTouches[0].screenX;
+          const distance = touchEndX - touchStartX;
+          if (Math.abs(distance) < 45) return;
+          if (isLightbox) changeGalleryLightbox(distance > 0 ? -1 : 1);
+          else changeGallerySlide(distance > 0 ? -1 : 1);
+        }, { passive: true });
+      }
+
+      handleSwipe(document.querySelector(".gallery-slider"), false);
+      handleSwipe(galleryLightbox, true);
     });
 
 
