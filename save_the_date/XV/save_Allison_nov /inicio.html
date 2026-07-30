@@ -40,7 +40,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:url("portada.jpeg") center center / cover no-repeat;
+      background:url("PORTADA.jpeg") center center / cover no-repeat;
       filter: contrast(1.05) saturate(.95);
       transform: scale(1.05);
       z-index:0;
@@ -111,7 +111,7 @@
     .xv{
       margin-top: 8px;
       font-family:"Great Vibes", cursive;
-      font-size:clamp(52px,8vw,58px);
+      font-size:clamp(42px,8vw,58px);
       letter-spacing:.08em;
       line-height: 1;
     }
@@ -127,7 +127,7 @@
 	   .name_2{
       margin-top:6px;
 	  font-family:"Great Vibes", cursive;
-      font-size:60px;
+      font-size:40px;
      
       
     }
@@ -158,7 +158,7 @@
       font-size:10px;
       letter-spacing:.28em;
       text-transform:uppercase;
-      color:var(--soft);
+      
       margin-top:4px;
     }
 
@@ -166,8 +166,8 @@
     .note{
       margin-top: 10px;
       font-family:"Great Vibes", cursive;
-      font-size:clamp(30px,2.6vw,22px);
-      color:rgba(255,255,255,.55);
+      font-size:clamp(40px,2.6vw,22px);
+      color:rgba(255,255,255,.85);
       line-height: 1.2;
     }
 
@@ -220,10 +220,10 @@
 
     <div class="fade d3">
       <div class="xv">Mis XV</div>
-      <div class="name_2">Ximena Ruth</div>
-		<div class="name">04.JULIO.2026</div>
+      <div class="name_2">Allison  </div>
+		<div class="name">7.NOV.2026</div>
 		
-    </div>
+    </div><br><br>
 
     <!-- COUNTDOWN -->
     <div class="countdown fade d4" id="countdown">
@@ -248,9 +248,16 @@
 		
     </div>
 	  
-	  <div class="name"></div>
+	
 
-    <div class="note fade d3">El gran día se acerca</div>
+    <div class="name">El gran día se acerca<br><br> 
+Reserva el día<br>
+ para festejar juntos.
+</div>
+	  <span class="line"></span>
+	    <div class="note fade d3">
+Invitación formal<br>
+ próximamente.</div>
 
   </div>
 </section>
@@ -260,7 +267,7 @@
      CONFIGURA AQUÍ LA FECHA
      Formato: Año, Mes-1, Día, Hora
      =============================== */
-  const eventDate = new Date(2026, 6, 04, 12, 30, 0); // 31 Enero 2026 7:00 pm
+  const eventDate = new Date(2026, 10, 7, 18, 30, 0); // 31 Enero 2026 7:00 pm
 
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
