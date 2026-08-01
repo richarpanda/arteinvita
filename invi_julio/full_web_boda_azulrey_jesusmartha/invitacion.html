@@ -1,0 +1,3440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jesús & Martha | Nuestra Boda</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =========================================
+       TIPOGRAFÍAS
+       ========================================= */
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    /* =========================================
+       PALETA
+       BLANCO + AZUL REY
+       ========================================= */
+
+    :root {
+
+      --rojo: #203a8e;
+      --rojo-claro: #4b6fb7;
+      --rojo-profundo: #10245f;
+
+      --dorado: #203a8e;
+      --dorado-claro: #a9b9e8;
+
+      --azul-rey: #203a8e;
+      --azul-claro: #dfe8ff;
+      --azul-palido: #f0f4ff;
+
+      --crema: #ffffff;
+      --crema-oscuro: #f7f9ff;
+
+      --texto: #28334d;
+      --gris: #6b7280;
+
+      --borde: #d9e0ef;
+
+      --shadow-soft:
+        0 18px 40px rgba(32, 58, 142, 0.14);
+    }
+
+    /* =========================================
+       GENERAL
+       ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      font-family: 'Gabriola', serif;
+      color: var(--texto);
+      font-size: 18px;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--gris);
+      text-decoration: none;
+    }
+
+    button {
+
+      font-family: inherit;
+
+      transition:
+        transform .18s ease,
+        filter .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+
+      transform: translateY(-2px);
+
+      filter: brightness(1.03);
+
+      box-shadow:
+        0 14px 30px rgba(32, 58, 142, .20);
+    }
+
+    button:active {
+
+      transform:
+        translateY(0) scale(.98);
+    }
+
+    /* =========================================
+       CONTENEDOR
+       ========================================= */
+
+    main {
+
+      width: 100%;
+      max-width: 520px;
+
+      margin: 0 auto;
+
+      overflow: hidden;
+
+      background: var(--crema);
+
+      box-shadow:
+        0 20px 55px rgba(32, 58, 142, .16);
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    /* =========================================
+       TÍTULOS
+       ========================================= */
+
+    .section-title-script {
+
+      margin-bottom: .3rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 3.7rem;
+      line-height: 1.05;
+
+      color: var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .section-title-main {
+
+      margin-bottom: .2rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.8rem;
+
+      color: var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .section-sub {
+
+      margin-top: 1rem;
+
+      font-size: 1.75rem;
+      line-height: 1.25;
+
+      color: var(--gris);
+
+      text-align: center;
+    }
+
+    /* =========================================
+       FLOURISH
+       ========================================= */
+
+    .flourish,
+    .confirm-flourish {
+
+      width: 300px;
+      max-width: 85%;
+      height: 45px;
+
+      margin:
+        .5rem auto 2rem;
+
+      background-image:
+        url("img/greca.png");
+
+      background-repeat:
+        no-repeat;
+
+      background-size:
+        contain;
+
+      background-position:
+        center;
+
+      filter:
+        brightness(0) saturate(100%) invert(23%) sepia(82%) saturate(1916%) hue-rotate(211deg) brightness(79%) contrast(103%);
+
+      opacity: .92;
+    }
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero-full {
+
+      position: relative;
+
+      min-height: 100vh;
+
+      padding: 0;
+
+      overflow: hidden;
+
+      background:
+        var(--azul-rey);
+    }
+
+    .hero-full>img {
+
+      width: 100%;
+      height: 100vh;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: center;
+
+      padding:
+        3.4rem 1.5rem 3.8rem;
+
+      text-align: center;
+
+      background:
+        linear-gradient(to top,
+          rgba(16, 36, 95, .96) 0%,
+          rgba(32, 58, 142, .80) 19%,
+          rgba(75, 111, 183, .18) 37%,
+          transparent 55%);
+    }
+
+    .hero-name {
+
+      margin-bottom: .7rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 6rem;
+      line-height: .95;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 3px 3px rgba(10, 24, 70, .70),
+        0 8px 18px rgba(10, 24, 70, .48);
+    }
+
+    .hero-sub {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.6rem;
+
+      letter-spacing: .25em;
+
+      color: #ffffff;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 4px 12px rgba(10, 24, 70, .50);
+    }
+
+    /* =========================================
+       PAPEL / BLOQUES
+       ========================================= */
+
+    .paper-sections-wrap {
+
+      position: relative;
+
+      margin:
+        1.2rem 1rem;
+
+      overflow: hidden;
+
+      border-radius: 32px;
+
+      background-image:
+        url("img/papelfondo.png");
+
+      background-repeat:
+        repeat-y;
+
+      background-position:
+        center top;
+
+      background-size:
+        520px auto;
+
+      box-shadow:
+        0 16px 38px rgba(32, 58, 142, .08),
+        inset 0 0 0 1px rgba(32, 58, 142, .08);
+    }
+
+    .paper-sections-wrap::after {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      background:
+        rgba(255, 255, 255, .24);
+
+      pointer-events: none;
+    }
+
+    .paper-sections-wrap>section,
+    .paper-sections-wrap>div {
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .paper-sections-wrap .intro-section,
+    .paper-sections-wrap .featured-photo-section,
+    .paper-sections-wrap .itinerary-section,
+    .paper-sections-wrap .gifts-section,
+    .paper-sections-wrap .gallery-section,
+    .paper-sections-wrap .hashtag-section {
+
+      background: transparent !important;
+    }
+
+    /* =========================================
+       MÚSICA
+       ========================================= */
+
+    .music-section {
+
+      display: flex;
+
+      justify-content: center;
+
+      padding:
+        1.4rem 1.6rem 0;
+    }
+
+    .music-btn-min {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: .55rem;
+
+      padding:
+        .5rem 1.4rem;
+
+      border:
+        1px solid var(--azul-rey);
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, .88);
+
+      box-shadow:
+        0 10px 22px rgba(32, 58, 142, .10);
+
+      font-size: .8rem;
+
+      letter-spacing: .18em;
+
+      color: var(--azul-rey);
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .music-icon-min {
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 18px;
+      height: 18px;
+
+      overflow: hidden;
+
+      border:
+        2px solid var(--azul-rey);
+
+      border-radius: 999px;
+    }
+
+    .music-icon-min.paused::before {
+
+      content: "";
+
+      border-style: solid;
+
+      border-width:
+        6px 0 6px 9px;
+
+      border-color:
+        transparent transparent transparent var(--azul-rey);
+
+      transform:
+        translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 3px;
+      height: 9px;
+
+      background:
+        var(--azul-rey);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    /* =========================================
+       INTRO
+       ========================================= */
+
+    .intro-section {
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .intro-card {
+
+      position: relative;
+
+      z-index: 1;
+
+      padding:
+        1.5rem 1rem;
+
+      border:
+        1px solid rgba(32, 58, 142, .10);
+
+      border-radius: 1.5rem;
+
+      background:
+        rgba(255, 255, 255, .56);
+    }
+
+    .date-container {
+
+      width: 100%;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      color: var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .day {
+
+      display: inline-block;
+
+      padding:
+        0 30px 2px;
+
+      border-bottom:
+        2px solid var(--azul-rey);
+
+      font-size: 3.6em;
+    }
+
+    .number {
+
+      margin: 0;
+
+      font-size: 9em;
+      font-weight: 400;
+      line-height: 1;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .month {
+
+      display: inline-block;
+
+      padding:
+        2px 30px 0;
+
+      border-top:
+        2px solid var(--azul-rey);
+
+      font-size: 3.4em;
+    }
+
+    .intro-script {
+
+      margin-top: 1.1rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 2.8rem;
+      line-height: 1.2;
+
+      color: var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .intro-parents-title {
+
+      margin-top: 1.8rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 2.7rem;
+
+      color: var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .intro-list {
+
+      margin-top: .4rem;
+
+      font-size: 1.7rem;
+      line-height: 1.4;
+
+      color: var(--gris);
+
+      text-align: center;
+    }
+
+    /* =========================================
+       CUENTA REGRESIVA
+       ========================================= */
+
+    .save-date-min {
+
+      position: relative;
+
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+
+      overflow: hidden;
+
+      background-image:
+        url("img/fondocounter.jpg");
+
+      background-position:
+        center;
+
+      background-size:
+        cover;
+
+      color: #ffffff;
+    }
+
+    .save-date-min::before {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(to bottom,
+          rgba(16, 36, 95, .78),
+          rgba(32, 58, 142, .70));
+    }
+
+    .save-date-min-inner {
+
+      position: relative;
+
+      z-index: 1;
+
+      text-align: center;
+    }
+
+    .save-date-min-title {
+
+      margin-bottom: 1.2rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1rem;
+
+      letter-spacing: .28em;
+
+      color: #ffffff;
+
+      text-transform: uppercase;
+    }
+
+    .countdown-min {
+
+      width: 100%;
+      max-width: 360px;
+
+      margin: 0 auto;
+
+      padding:
+        1.2rem 1.2rem 1.1rem;
+
+      border:
+        1px solid rgba(255, 255, 255, .44);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255, 255, 255, .90);
+
+      box-shadow:
+        0 14px 35px rgba(10, 24, 70, .30);
+
+      backdrop-filter:
+        blur(8px);
+    }
+
+    .countdown-time {
+
+      display: flex;
+
+      align-items: baseline;
+      justify-content: center;
+
+      gap: .45rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 2.2rem;
+
+      letter-spacing: .06em;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .countdown-time span {
+
+      display: inline-block;
+
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 1.35rem;
+
+      margin-top: .6rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: .72rem;
+
+      letter-spacing: .15em;
+
+      color:
+        var(--azul-rey);
+
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+
+      margin-top: 1.1rem;
+
+      font-size: 1.6rem;
+
+      color: #ffffff;
+
+      font-style: italic;
+    }
+
+    /* =========================================
+       FOTO DESTACADA
+       ========================================= */
+
+    .featured-photo-section {
+
+      padding:
+        3rem 1.6rem;
+
+      overflow: hidden;
+    }
+
+    .featured-photo-card {
+      text-align: center;
+    }
+
+    .featured-photo-frame {
+
+      position: relative;
+
+      width: 100%;
+      max-width: 390px;
+
+      margin:
+        0 auto 2rem;
+
+      padding: 8px;
+
+      border-radius: 2rem;
+
+      background:
+        linear-gradient(135deg,
+          #10245f,
+          #203a8e,
+          #a9b9e8,
+          #203a8e);
+
+      box-shadow:
+        0 18px 38px rgba(32, 58, 142, .22);
+    }
+
+    .featured-photo-frame img {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+      height: 520px;
+
+      object-fit: cover;
+
+      border-radius: 1.5rem;
+    }
+
+    .featured-photo-glow {
+
+      position: absolute;
+
+      inset: 12px;
+
+      z-index: 3;
+
+      border-radius: 1.5rem;
+
+      box-shadow:
+        0 0 25px rgba(255, 255, 255, .45);
+
+      pointer-events: none;
+    }
+
+    /* =========================================
+       UBICACIONES
+       ========================================= */
+
+    #evento {
+      background: transparent;
+    }
+
+    .when-where-header {
+      margin-bottom: 2rem;
+    }
+
+    .event-card {
+
+      margin-bottom: 2.5rem;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(32, 58, 142, .14);
+
+      border-radius: 1.5rem;
+
+      background:
+        rgba(255, 255, 255, .88);
+
+      box-shadow:
+        var(--shadow-soft);
+    }
+
+    .event-photo {
+
+      width: 100%;
+      height: 300px;
+
+      object-fit: cover;
+    }
+
+    .event-content {
+
+      padding:
+        2rem 1.4rem 2.2rem;
+
+      text-align: center;
+    }
+
+    .event-label {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: .88rem;
+
+      letter-spacing: .15em;
+
+      color: var(--gris);
+
+      text-transform: uppercase;
+    }
+
+    .event-script {
+
+      margin-top: .6rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 3.2rem;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .event-title {
+
+      margin-top: .6rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.3;
+
+      color: var(--texto);
+    }
+
+    .event-address {
+
+      margin-top: .8rem;
+
+      font-size: 1.45rem;
+      line-height: 1.3;
+
+      color: var(--gris);
+    }
+
+    .event-time {
+
+      margin-top: 1rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .btn-ubicacion {
+      font-family: Arial, Helvetica, sans-serif;
+      display: inline-block;
+
+      margin-top: 1rem;
+
+      padding:
+        .8rem 2rem;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(180deg,
+          #3659aa,
+          #203a8e);
+
+      color: #ffffff;
+
+      font-size: .82rem;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       ITINERARIO
+       ========================================= */
+
+    .itinerary-section {
+
+      padding:
+        3rem 1.6rem;
+    }
+
+    .itinerary-title {
+
+      margin-bottom: 1rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 4.5rem;
+
+      color:
+        var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .itinerary-date {
+
+      margin-bottom: 3rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.1rem;
+
+      letter-spacing: .16em;
+
+      color:
+        var(--azul-rey);
+
+      text-align: center;
+
+      text-transform: uppercase;
+    }
+
+    .itinerary-timeline {
+
+      max-width: 410px;
+
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+
+      display: grid;
+
+      grid-template-columns:
+        100px 42px 1fr;
+
+      align-items: center;
+
+      column-gap: .8rem;
+
+      margin-bottom: 2.7rem;
+
+      opacity: 0;
+
+      transform:
+        translateY(20px);
+
+      transition:
+        opacity .6s ease-out,
+        transform .6s ease-out;
+    }
+
+    .itinerary-item.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 100px;
+      min-height: 100px;
+    }
+
+    .itinerary-icon-wrapper img {
+
+      width: 100%;
+
+      max-width: 95px;
+      max-height: 105px;
+
+      object-fit: contain;
+    }
+
+    .itinerary-divider {
+
+      width: 42px;
+      height: 2px;
+
+      background:
+        linear-gradient(to right,
+          var(--azul-rey),
+          var(--azul-claro));
+    }
+
+    .itinerary-content {
+
+      width: 100%;
+
+      text-align: center;
+    }
+
+    .itinerary-time {
+
+      margin-bottom: .25rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.2rem;
+
+      font-weight: 600;
+
+      color:
+        var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .itinerary-event {
+
+      font-size: 1.4rem;
+
+      line-height: 1.2;
+
+      letter-spacing: .04em;
+
+      color: var(--texto);
+
+      text-align: center;
+
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       REGALOS / VESTIMENTA / QR
+       ========================================= */
+
+    .gifts-section {
+
+      background: transparent;
+    }
+
+    .gift-options {
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+
+      margin-bottom: 2rem;
+
+      color: var(--texto);
+
+      text-align: center;
+    }
+
+    .gift-title {
+
+      margin-bottom: .4rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.4rem;
+
+      font-weight: 600;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .gift-sub {
+
+      font-size: 1.6rem;
+
+      line-height: 1.3;
+
+      color: var(--gris);
+    }
+
+    .gift-button {
+
+      display: inline-block;
+
+      margin-top: 1rem;
+
+      padding:
+        .75rem 1.8rem;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        var(--azul-rey);
+
+      color: #ffffff;
+
+      font-size: .8rem;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       INSTAGRAM
+       ========================================= */
+
+    .hashtag-section {
+      padding: 0;
+    }
+
+    .insta-handle-card {
+
+      padding:
+        3rem 1.6rem;
+
+      text-align: center;
+
+      background:
+        rgba(240, 244, 255, .62);
+    }
+
+    .insta-handle {
+
+      margin-top: .8rem;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.1rem;
+
+      color:
+        var(--azul-rey);
+    }
+
+    .btn-insta {
+
+      display: inline-block;
+
+      margin-top: 1.2rem;
+
+      padding:
+        .7rem 1.7rem;
+
+      border:
+        1px solid var(--azul-rey);
+
+      border-radius: 999px;
+
+      background: #ffffff;
+
+      color:
+        var(--azul-rey);
+
+      font-size: .8rem;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       GALERÍA
+       ========================================= */
+
+    .gallery-section {
+      background: transparent;
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(32, 58, 142, .18);
+
+      border-radius: 1.5rem;
+
+      box-shadow:
+        var(--shadow-soft);
+    }
+
+    .gallery-slide-frame img {
+
+      display: block;
+
+      width: 100%;
+      height: 500px;
+
+      object-fit: cover;
+
+      cursor: zoom-in;
+    }
+
+    .gallery-nav {
+
+      position: absolute;
+
+      top: 50%;
+
+      padding:
+        .3rem .65rem;
+
+      border: none;
+
+      border-radius: .7rem;
+
+      background:
+        rgba(32, 58, 142, .78);
+
+      color: #ffffff;
+
+      font-size: 2rem;
+
+      cursor: pointer;
+
+      transform:
+        translateY(-50%);
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: .45rem;
+
+      margin-top: 1rem;
+    }
+
+    .gallery-dot {
+
+      width: 9px;
+      height: 9px;
+
+      padding: 0;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        #cbd5eb;
+
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+
+      background:
+        var(--azul-rey);
+
+      transform:
+        scale(1.3);
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+
+    .lightbox {
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 1000;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(5, 12, 35, .96);
+    }
+
+    .lightbox-overlay {
+
+      position: absolute;
+      inset: 0;
+
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+
+      position: relative;
+
+      z-index: 1001;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 92%;
+      max-width: 920px;
+    }
+
+    .lightbox-image {
+
+      max-width: 100%;
+      max-height: 88vh;
+
+      border-radius: 1rem;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, .60);
+    }
+
+    .lightbox-close {
+
+      position: absolute;
+
+      top: -48px;
+      right: 0;
+
+      border: none;
+
+      background: none;
+
+      color: #ffffff;
+
+      font-size: 2.2rem;
+
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+
+      position: absolute;
+
+      top: 50%;
+
+      padding:
+        .5rem .8rem;
+
+      border: none;
+
+      border-radius: .7rem;
+
+      background:
+        rgba(255, 255, 255, .18);
+
+      color: #ffffff;
+
+      font-size: 2.8rem;
+
+      cursor: pointer;
+
+      transform:
+        translateY(-50%);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    /* =========================================
+       CONFIRMACIÓN
+       ========================================= */
+
+    .confirm-section {
+
+      position: relative;
+
+      text-align: center;
+
+      background:
+        linear-gradient(to bottom,
+          rgba(240, 244, 255, .45),
+          rgba(255, 255, 255, .60));
+    }
+
+    .confirm-title-script {
+
+      margin-bottom: .2rem;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 4.2rem;
+
+      color:
+        var(--azul-rey);
+
+      text-align: center;
+    }
+
+    .btn-whats {
+
+      display: block;
+
+      width: 100%;
+      max-width: 330px;
+
+      margin: 0 auto;
+
+      padding:
+        .9rem 1rem;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(135deg,
+          #3659aa,
+          #203a8e);
+
+      color: #ffffff;
+
+      font-size: .8rem;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       BOTÓN ARRIBA
+       ========================================= */
+
+    .scroll-top {
+
+      position: fixed;
+
+      right: 16px;
+      bottom: 20px;
+
+      z-index: 60;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        var(--azul-rey);
+
+      color: #ffffff;
+
+      font-size: 1.2rem;
+
+      box-shadow:
+        0 14px 30px rgba(32, 58, 142, .35);
+
+      opacity: 0;
+      visibility: hidden;
+
+      cursor: pointer;
+
+      transition:
+        opacity .25s ease-out,
+        transform .25s ease-out,
+        visibility .25s;
+    }
+
+    .scroll-top.visible {
+
+      opacity: 1;
+      visibility: visible;
+
+      transform:
+        translateY(-4px);
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+
+      max-width: 520px;
+
+      margin: 0 auto;
+
+      padding:
+        1.8rem 1.1rem 2.1rem;
+
+      background:
+        #ffffff;
+
+      font-size: 1.65rem;
+
+      color:
+        var(--azul-rey);
+
+      text-align: center;
+    }
+
+    /* =========================================
+       ANIMACIONES
+       ========================================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transition:
+        opacity .7s ease-out,
+        transform .7s ease-out;
+    }
+
+    .reveal-left {
+      transform:
+        translateX(-40px);
+    }
+
+    .reveal-right {
+      transform:
+        translateX(40px);
+    }
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateX(0);
+    }
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
+
+    @media (min-width: 768px) {
+
+      main {
+
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+        border-radius: 40px;
+      }
+
+      .hero-full {
+
+        border-radius:
+          0 0 40px 40px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .paper-sections-wrap {
+
+        margin:
+          1rem .7rem;
+
+        border-radius: 26px;
+
+        background-size:
+          430px auto;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      section {
+        padding:
+          2.8rem 1.2rem;
+      }
+
+      .hero-name {
+        font-size: 4.7rem;
+      }
+
+      .hero-sub {
+        font-size: 1.15rem;
+      }
+
+      .section-title-script {
+        font-size: 3.2rem;
+      }
+
+      .section-sub,
+      .intro-list {
+        font-size: 1.5rem;
+      }
+
+      .day {
+        font-size: 3em;
+      }
+
+      .number {
+        font-size: 7.4em;
+      }
+
+      .month {
+        font-size: 2.8em;
+      }
+
+      .countdown-time {
+
+        gap: .24rem;
+
+        font-size: 1.7rem;
+      }
+
+      .countdown-labels {
+
+        gap: .9rem;
+
+        font-size: .62rem;
+      }
+
+      .itinerary-item {
+
+        grid-template-columns:
+          82px 30px 1fr;
+
+        column-gap: .5rem;
+      }
+
+      .itinerary-icon-wrapper {
+
+        width: 82px;
+        min-height: 85px;
+      }
+
+      .itinerary-icon-wrapper img {
+        max-width: 80px;
+      }
+
+      .itinerary-divider {
+        width: 30px;
+      }
+
+      .itinerary-time {
+        font-size: .95rem;
+      }
+
+      .itinerary-event {
+        font-size: 1.08rem;
+      }
+
+      .gallery-slide-frame img {
+        height: 430px;
+      }
+
+      .featured-photo-frame img {
+        height: 500px;
+      }
+
+      .lightbox-nav {
+
+        padding:
+          .4rem .6rem;
+
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================================
+       AUDIO
+       ========================================= -->
+
+  <audio id="bg-music" src="Carla Morrison_Disfruto.mp3" loop autoplay>
+  </audio>
+
+  <main>
+
+    <!-- =========================================
+         1. PORTADA
+         ========================================= -->
+
+    <section id="inicio" class="hero-full">
+
+      <img src="img/PORTADA.png" alt="Boda de Jesús y Martha">
+
+      <div class="hero-overlay">
+
+        <div>
+
+          <div class="hero-name">
+            Jesús<br>
+ &<br>
+ Martha
+          </div>
+
+          <div class="hero-sub">
+            Nuestra Boda
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         PRIMER BLOQUE
+         ========================================= -->
+
+    <div class="paper-sections-wrap">
+
+      <!-- REPRODUCTOR -->
+
+      <section class="music-section">
+
+        <button class="music-btn-min" id="musicToggle" aria-label="Control de música" type="button">
+
+          <div class="music-icon-min paused" id="musicIcon">
+          </div>
+
+          <span id="musicStatus">
+            Play
+          </span>
+
+        </button>
+
+      </section>
+
+      <div align="center">
+
+        <img src="img/reloj.png" width="70%" alt="Decoración">
+
+      </div>
+
+      <!-- =========================================
+           2. INTRO
+           ========================================= -->
+
+      <section id="intro" class="intro-section">
+
+        <div class="intro-card reveal reveal-left">
+
+          <div class="date-container">
+
+            <div class="day">
+              Sábado
+            </div>
+
+            <div class="number">
+              12
+            </div>
+
+            <div class="month">
+              Septiembre
+            </div>
+
+          </div>
+
+          <br>
+
+          <p class="section-sub">
+
+            Con inmensa alegría queremos compartir contigo
+            uno de los días más importantes de nuestras vidas.
+
+            <br><br>
+
+            Hemos decidido caminar juntos y celebrar nuestro amor
+            rodeados de las personas que forman parte de nuestra historia.
+
+          </p>
+
+          <div class="flourish"></div>
+
+          <p class="intro-script">
+            Nos encantará compartir contigo este día tan especial.
+          </p>
+
+          <!-- PADRES -->
+
+          <div class="intro-parents-title">
+            Con la bendición
+            <br>
+            de nuestras familias
+          </div>
+
+          <p class="intro-list">
+
+            Quienes con amor nos acompañan
+            y celebran con nosotros
+            este nuevo comienzo.
+
+          </p>
+
+          <div class="flourish"></div>
+
+          <!-- PADRINOS 
+
+          <div class="intro-parents-title">
+            Nuestros padrinos
+          </div>
+
+          <p class="intro-list">
+
+            Gracias por acompañarnos
+            y ser parte de este momento
+            tan importante en nuestras vidas.
+
+          </p>
+
+          <div class="flourish"></div> -->
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- =========================================
+         3. CUENTA REGRESIVA
+         ========================================= -->
+
+    <section id="fecha" class="save-date-min">
+
+      <div class="save-date-min-inner reveal reveal-right">
+
+        <div class="save-date-min-title">
+
+          <strong>
+            FALTAN
+          </strong>
+
+        </div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+
+          <div class="countdown-time">
+
+            <span id="cdDays">0</span>:
+
+            <span id="cdHours">00</span>:
+
+            <span id="cdMins">00</span>:
+
+            <span id="cdSecs">00</span>
+
+          </div>
+
+          <div class="countdown-labels">
+
+            <span>Días</span>
+
+            <span>Horas</span>
+
+            <span>Min</span>
+
+            <span>Seg</span>
+
+          </div>
+
+        </div>
+
+        <p class="countdown-note">
+          Para vivir juntos este día inolvidable.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         SEGUNDO BLOQUE
+         ========================================= -->
+
+    <div class="paper-sections-wrap">
+
+
+      <!-- =========================================
+           4. CUÁNDO Y DÓNDE
+           ========================================= -->
+
+      <section id="evento">
+
+        <div class="when-where-header reveal reveal-left">
+
+          <div class="section-title-script">
+            ¿Cuándo y dónde?
+          </div>
+
+          <div class="flourish"></div>
+
+        </div>
+
+        <!-- CEREMONIA -->
+
+        <div class="event-card reveal reveal-right">
+
+          <img src="img/iglesia.jpg" alt="Nuestra Señora del Carmen" class="event-photo">
+
+          <div class="event-content">
+
+            <div class="event-label">
+              Iniciamos con la
+            </div>
+
+            <div class="event-script">
+              Ceremonia Religiosa
+            </div>
+
+            <div class="event-title">
+              Nuestra Señora del Carmen
+            </div>
+
+            <p class="event-address">
+
+              Calle Olmo #2104
+              <br>
+              Ampliación Año 2000,
+              Piedras Negras, Coahuila
+
+            </p>
+
+            <div class="event-time">
+              7:00 P. M.
+            </div>
+
+            <a href="https://maps.app.goo.gl/15NbsV8y1DgsfywA7" target="_blank" rel="noopener">
+
+              <button class="btn-ubicacion" type="button">
+
+                Ver ubicación
+
+              </button>
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- RECEPCIÓN -->
+
+        <div class="event-card reveal reveal-left">
+
+          <img src="img/salon.jpeg" alt="Salón Los Fresnos" class="event-photo">
+
+          <div class="event-content">
+
+            <div class="event-label">
+              Continuamos en
+            </div>
+
+            <div class="event-script">
+              Recepción
+            </div>
+
+            <div class="event-title">
+              Salón Los Fresnos
+            </div>
+
+            <p class="event-address">
+
+              Lib. Dr. Armando Treviño Flores #609
+              <br>
+              Piedras Negras, Coahuila
+
+            </p>
+
+            <div class="event-time">
+              9:00 P. M.
+            </div>
+
+            <a href="https://maps.app.goo.gl/G3mZyFa5uhsSJ3uf6" target="_blank" rel="noopener">
+
+              <button class="btn-ubicacion" type="button">
+
+                Ver ubicación
+
+              </button>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- =========================================
+           5. ITINERARIO
+           ========================================= -->
+
+      <section id="itinerario" class="itinerary-section">
+
+        <div align="center">
+
+          <img src="img/copas.png" width="70%" alt="Decoración">
+
+        </div>
+
+        <div class="flourish"></div>
+
+        <h2 class="itinerary-title">
+          Itinerario
+        </h2>
+
+        <p class="itinerary-date">
+          12 de Septiembre de 2026
+        </p>
+
+        <div class="itinerary-timeline">
+
+          <!-- CEREMONIA -->
+
+          <div class="itinerary-item reveal reveal-left">
+
+            <div class="itinerary-icon-wrapper">
+
+              <img src="img/ceremonia.png" alt="Ceremonia religiosa">
+
+            </div>
+
+            <div class="itinerary-divider"></div>
+
+            <div class="itinerary-content">
+
+              <div class="itinerary-time">
+                7:00 P. M.
+              </div>
+
+              <div class="itinerary-event">
+                Ceremonia religiosa
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RECEPCIÓN -->
+
+          <div class="itinerary-item reveal reveal-right">
+
+            <div class="itinerary-icon-wrapper">
+
+              <img src="img/coctel.png" alt="Recepción">
+
+            </div>
+
+            <div class="itinerary-divider"></div>
+
+            <div class="itinerary-content">
+
+              <div class="itinerary-time">
+                9:00 P. M.
+              </div>
+
+              <div class="itinerary-event">
+                Recepción del evento
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- =========================================
+           6. CÓDIGO DE VESTIMENTA
+           ========================================= 
+
+      <section id="regalos" class="gifts-section">
+
+        <div align="center">
+
+          <img src="img/vestimenta.png" width="65%" alt="Código de vestimenta">
+
+        </div>
+
+        <div class="section-title-script">
+          Código de vestimenta
+        </div>
+
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-right">
+
+          <div class="gift-item">
+
+            <div class="gift-title">
+              Elegante
+            </div>
+
+            <p class="gift-sub">
+
+              Te invitamos a acompañarnos
+              con un atuendo especial para celebrar
+              juntos este día inolvidable.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section> -->
+
+      <!-- =========================================
+           7. MESA DE REGALOS
+           ========================================= 
+
+      <section id="mesa-regalos" class="gifts-section">
+
+        <div align="center">
+
+          <img src="img/regalo.png" width="60%" alt="Mesa de regalos">
+
+        </div>
+
+        <div class="section-title-script">
+          Mesa de regalos
+        </div>
+
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-left">
+
+          <div class="gift-item">
+
+            <p class="gift-sub">
+
+              Tu presencia es nuestro mejor regalo.
+
+              <br><br>
+
+              Gracias por acompañarnos
+              y celebrar con nosotros
+              el inicio de esta nueva etapa.
+
+            </p>
+
+          </div>
+
+        </div>
+ 
+      </section>   -->
+
+      <!-- =========================================
+           8. LLUVIA DE SOBRES
+           ========================================= -->
+
+      <section id="sobres" class="gifts-section">
+
+        <div align="center">
+
+          <img src="img/sobreregalo.png" width="55%" alt="Lluvia de sobres">
+
+        </div>
+
+        <div class="section-title-script">
+          Lluvia de sobres
+        </div>
+
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-right">
+
+          <div class="gift-item">
+
+            <p class="gift-sub">
+
+              Tu presencia es el regalo
+              más importante para nosotros.
+
+              <br><br>
+
+              Si deseas tener un detalle adicional,
+              tendremos lluvia de sobres
+              durante nuestra celebración.
+
+              <br><br>
+
+              ¡Gracias por acompañarnos!
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- =========================================
+           9. HOSPEDAJE
+           ========================================= 
+
+      <section id="hospedaje" class="gifts-section">
+
+        <div align="center">
+
+          <img src="img/hospedaje.png" width="55%" alt="Hospedaje">
+
+        </div>
+
+        <div class="section-title-script">
+          Hospedaje
+        </div>
+
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-left">
+
+          <div class="gift-item">
+
+            <p class="gift-sub">
+
+              Si vienes de fuera de la ciudad
+              y requieres información sobre hospedaje,
+              con gusto podremos orientarte.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section> -->
+
+      <!-- =========================================
+           10. INSTAGRAM
+           ========================================= 
+
+      <section id="insta" class="hashtag-section">
+
+        <div class="insta-handle-card reveal reveal-right">
+
+          <div align="center">
+
+            <img src="img/camara.png" width="50%" alt="Instagram">
+
+          </div>
+
+          <div class="section-title-script">
+            Captura cada instante
+          </div>
+
+          <div class="flourish"></div>
+
+          <p class="section-sub" style="margin-top:0;">
+
+            Comparte tus fotografías
+            y momentos favoritos de nuestra boda.
+
+            <br><br>
+
+            Nos encantará conservar
+            todos esos recuerdos.
+
+          </p>
+
+          <div class="insta-handle">
+            Instagram por agregar
+          </div>
+
+        </div>
+
+      </section> -->
+
+     
+      <!-- =========================================
+           12. ÁLBUM QR
+           ========================================= 
+
+      <section id="album-qr" class="gifts-section">
+
+        <div align="center">
+
+          <img src="img/camara.png" width="50%" alt="Álbum digital">
+
+        </div>
+
+        <div class="section-title-script">
+          Álbum digital
+        </div>
+
+        <div class="flourish"></div>
+
+        <div class="gift-options reveal reveal-right">
+
+          <div class="gift-item">
+
+            <div align="center">
+
+              <img src="img/album_qr.png" width="60%" alt="QR del álbum digital">
+
+            </div>
+
+            <p class="gift-sub">
+
+              Ayúdanos a guardar
+              los recuerdos más bonitos
+              de nuestra boda.
+
+              <br><br>
+
+              Comparte aquí tus fotografías,
+              videos y dedicatorias.
+
+            </p>
+
+            <a href="#" target="_blank" rel="noopener">
+
+              <button class="gift-button" type="button">
+
+                Subir fotos y dedicatorias
+
+              </button>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </section> -->
+
+      <!-- =========================================
+           13. GALERÍA
+           ========================================= 
+
+      <section id="galeria" class="gallery-section">
+
+        <div class="section-title-main">
+          Galería de fotos
+        </div>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+
+          Cada fotografía guarda un recuerdo;
+          cada recuerdo cuenta una historia.
+
+        </p>
+
+        <div class="gallery-slider reveal reveal-right">
+
+          <div class="gallery-slide-frame">
+
+            <img id="gallerySlide" src="img/PORTADA.png" alt="Fotografía de Jesús y Martha">
+
+            <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Fotografía anterior">
+
+              ‹
+
+            </button>
+
+            <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Fotografía siguiente">
+
+              ›
+
+            </button>
+
+          </div>
+
+          <div class="gallery-dots" id="galleryDots">
+          </div>
+
+        </div>
+
+      </section> -->
+
+      <!-- =========================================
+           LIGHTBOX
+           ========================================= 
+
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+
+        <div class="lightbox-overlay" id="lightboxOverlay">
+        </div>
+
+        <div class="lightbox-content">
+
+          <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar fotografía">
+
+            ✕
+
+          </button>
+
+          <img id="lightboxImage" src="" alt="Fotografía ampliada" class="lightbox-image">
+
+          <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Fotografía anterior">
+
+            ‹
+
+          </button>
+
+          <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Fotografía siguiente">
+
+            ›
+
+          </button>
+
+        </div>
+
+      </div> -->
+
+      <!-- =========================================
+           14. CONFIRMACIÓN
+           ========================================= -->
+
+      <section id="confirmacion" class="confirm-section">
+
+        <div class="reveal reveal-left">
+
+          <div align="center">
+
+            <img src="img/flores.png" width="60%" alt="Decoración">
+
+          </div>
+
+          <br>
+
+          <div class="confirm-title-script">
+            ¿Asistirás?
+          </div>
+
+          <div class="confirm-flourish"></div>
+
+          <p class="section-sub">
+
+            Será un honor contar con tu presencia
+            en este día tan especial para nosotros.
+
+            <br><br>
+
+            Por favor, confirma tu asistencia.
+            Tu respuesta es muy importante.
+
+          </p>
+
+          <p class="section-sub">
+
+            <em>
+              Confirma tu asistencia por WhatsApp.
+            </em>
+
+          </p>
+
+          <br>
+
+          <a href="https://wa.me/528782104066?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Jes%C3%BAs%20y%20Martha%20el%2012%20de%20septiembre%20de%202026.%20%C2%A1Gracias%21"
+            target="_blank" rel="noopener">
+
+            <button class="btn-whats" type="button">
+
+              <strong>
+                Confirmar al 878 210 4066
+              </strong>
+
+            </button>
+
+          </a>
+
+          <br><br>
+
+          <div class="flourish"></div>
+
+          <p class="section-sub">
+
+            Gracias por ser parte
+            de nuestra historia.
+
+            <br><br>
+
+            ¡Nos vemos pronto!
+
+          </p>
+
+          <br>
+
+          <div class="section-title-main">
+            Jesús & Martha
+          </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="event-card reveal reveal-right">
+
+          <div align="center">
+
+            <img src="img/final.png" width="100%" alt="Jesús y Martha">
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer>
+
+    © 2026 Boda Jesús & Martha
+
+  </footer>
+
+  <!-- =========================================
+       BOTÓN ARRIBA
+       ========================================= -->
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba" type="button">
+
+    ↑
+
+  </button>
+
+  <script>
+
+    /* =========================================
+       CUENTA REGRESIVA
+       12 SEPTIEMBRE 2026 · 7:00 P. M.
+       SEPTIEMBRE = MES 8
+       ========================================= */
+
+    const targetDate =
+      new Date(
+        2026,
+        8,
+        12,
+        19,
+        0,
+        0
+      );
+
+    const cdDays =
+      document.getElementById(
+        "cdDays"
+      );
+
+    const cdHours =
+      document.getElementById(
+        "cdHours"
+      );
+
+    const cdMins =
+      document.getElementById(
+        "cdMins"
+      );
+
+    const cdSecs =
+      document.getElementById(
+        "cdSecs"
+      );
+
+    function pad2(number) {
+
+      return String(number)
+        .padStart(2, "0");
+
+    }
+
+    function updateCountdown() {
+
+      const now =
+        new Date();
+
+      const difference =
+        targetDate - now;
+
+      if (
+        difference <= 0
+      ) {
+
+        cdDays.textContent =
+          "0";
+
+        cdHours.textContent =
+          "00";
+
+        cdMins.textContent =
+          "00";
+
+        cdSecs.textContent =
+          "00";
+
+        return;
+      }
+
+      const totalSeconds =
+        Math.floor(
+          difference / 1000
+        );
+
+      const days =
+        Math.floor(
+          totalSeconds /
+          (3600 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (
+            totalSeconds %
+            (3600 * 24)
+          ) /
+          3600
+        );
+
+      const minutes =
+        Math.floor(
+          (
+            totalSeconds %
+            3600
+          ) /
+          60
+        );
+
+      const seconds =
+        totalSeconds % 60;
+
+      cdDays.textContent =
+        String(days);
+
+      cdHours.textContent =
+        pad2(hours);
+
+      cdMins.textContent =
+        pad2(minutes);
+
+      cdSecs.textContent =
+        pad2(seconds);
+    }
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+    /* =========================================
+       MÚSICA
+       ========================================= */
+
+    const music =
+      document.getElementById(
+        "bg-music"
+      );
+
+    const musicToggle =
+      document.getElementById(
+        "musicToggle"
+      );
+
+    const musicStatus =
+      document.getElementById(
+        "musicStatus"
+      );
+
+    const musicIcon =
+      document.getElementById(
+        "musicIcon"
+      );
+
+    let isPlaying =
+      false;
+
+    function updateMusicButton(
+      playing
+    ) {
+
+      isPlaying =
+        playing;
+
+      musicStatus.textContent =
+        playing
+          ? "Pause"
+          : "Play";
+
+      musicIcon.classList.toggle(
+        "playing",
+        playing
+      );
+
+      musicIcon.classList.toggle(
+        "paused",
+        !playing
+      );
+    }
+
+    async function playMusic() {
+
+      try {
+
+        await music.play();
+
+        updateMusicButton(
+          true
+        );
+
+      } catch (error) {
+
+        console.log(
+          "No se pudo reproducir la música:",
+          error
+        );
+      }
+    }
+
+    function pauseMusic() {
+
+      music.pause();
+
+      updateMusicButton(
+        false
+      );
+    }
+
+    musicToggle.addEventListener(
+      "click",
+      async () => {
+
+        if (
+          isPlaying
+        ) {
+
+          pauseMusic();
+
+        } else {
+
+          await playMusic();
+
+        }
+      }
+    );
+
+    async function attemptAutoplay() {
+
+      if (
+        isPlaying
+      ) {
+        return;
+      }
+
+      try {
+
+        await music.play();
+
+        updateMusicButton(
+          true
+        );
+
+        cleanupAutoplayListeners();
+
+      } catch (error) {
+
+        console.log(
+          "La música se activará al interactuar."
+        );
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+
+      document.removeEventListener(
+        "click",
+        attemptAutoplay
+      );
+
+      document.removeEventListener(
+        "touchstart",
+        attemptAutoplay
+      );
+
+      document.removeEventListener(
+        "scroll",
+        attemptAutoplay
+      );
+    }
+
+    window.addEventListener(
+      "load",
+      () => {
+
+        attemptAutoplay();
+
+        document.addEventListener(
+          "click",
+          attemptAutoplay
+        );
+
+        document.addEventListener(
+          "touchstart",
+          attemptAutoplay
+        );
+
+        document.addEventListener(
+          "scroll",
+          attemptAutoplay
+        );
+      }
+    );
+
+    /* =========================================
+       REVEAL
+       ========================================= */
+
+    const reveals =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target
+                  .classList
+                  .add(
+                    "visible"
+                  );
+
+                observer.unobserve(
+                  entry.target
+                );
+              }
+            }
+          );
+        },
+        {
+          threshold: .12
+        }
+      );
+
+    reveals.forEach(
+      element =>
+        observer.observe(
+          element
+        )
+    );
+
+    /* =========================================
+       ITINERARIO
+       ========================================= */
+
+    const itineraryItems =
+      document.querySelectorAll(
+        ".itinerary-item"
+      );
+
+    const itineraryObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target
+                  .classList
+                  .add(
+                    "visible"
+                  );
+
+                itineraryObserver
+                  .unobserve(
+                    entry.target
+                  );
+              }
+            }
+          );
+        },
+        {
+          threshold: .15
+        }
+      );
+
+    itineraryItems.forEach(
+      element =>
+        itineraryObserver
+          .observe(
+            element
+          )
+    );
+
+    /* =========================================
+       BOTÓN ARRIBA
+       ========================================= */
+
+    const scrollTopBtn =
+      document.getElementById(
+        "scrollTopBtn"
+      );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        scrollTopBtn
+          .classList
+          .toggle(
+            "visible",
+            window.scrollY > 420
+          );
+      }
+    );
+
+    scrollTopBtn.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    );
+
+    /* =========================================
+       GALERÍA
+       POR AHORA USA LA PORTADA
+       ========================================= */
+
+    const galleryImages = [
+      "img/PORTADA.png"
+    ];
+
+    const gallerySlide =
+      document.getElementById(
+        "gallerySlide"
+      );
+
+    const galleryPrev =
+      document.getElementById(
+        "galleryPrev"
+      );
+
+    const galleryNext =
+      document.getElementById(
+        "galleryNext"
+      );
+
+    const galleryDotsContainer =
+      document.getElementById(
+        "galleryDots"
+      );
+
+    let galleryIndex =
+      0;
+
+    function renderDots() {
+
+      if (
+        !galleryDotsContainer
+      ) {
+        return;
+      }
+
+      galleryDotsContainer
+        .innerHTML = "";
+
+      galleryImages.forEach(
+        (_, index) => {
+
+          const dot =
+            document.createElement(
+              "button"
+            );
+
+          dot.type =
+            "button";
+
+          dot.className =
+            index === galleryIndex
+              ? "gallery-dot active"
+              : "gallery-dot";
+
+          dot.setAttribute(
+            "aria-label",
+            `Ver fotografía ${index + 1}`
+          );
+
+          dot.addEventListener(
+            "click",
+            () => {
+
+              galleryIndex =
+                index;
+
+              updateGallery();
+            }
+          );
+
+          galleryDotsContainer
+            .appendChild(
+              dot
+            );
+        }
+      );
+    }
+
+    function updateGallery() {
+
+      if (
+        !gallerySlide
+      ) {
+        return;
+      }
+
+      gallerySlide.src =
+        galleryImages[
+        galleryIndex
+        ];
+
+      gallerySlide.alt =
+        `Fotografía ${galleryIndex + 1} de Jesús y Martha`;
+
+      renderDots();
+    }
+
+    function previousGalleryImage() {
+
+      galleryIndex =
+        (
+          galleryIndex -
+          1 +
+          galleryImages.length
+        ) %
+        galleryImages.length;
+
+      updateGallery();
+    }
+
+    function nextGalleryImage() {
+
+      galleryIndex =
+        (
+          galleryIndex +
+          1
+        ) %
+        galleryImages.length;
+
+      updateGallery();
+    }
+
+    if (
+      galleryPrev
+    ) {
+
+      galleryPrev.addEventListener(
+        "click",
+        previousGalleryImage
+      );
+    }
+
+    if (
+      galleryNext
+    ) {
+
+      galleryNext.addEventListener(
+        "click",
+        nextGalleryImage
+      );
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+    const lightboxImage =
+      document.getElementById(
+        "lightboxImage"
+      );
+
+    const lightboxClose =
+      document.getElementById(
+        "lightboxClose"
+      );
+
+    const lightboxOverlay =
+      document.getElementById(
+        "lightboxOverlay"
+      );
+
+    const lightboxPrev =
+      document.getElementById(
+        "lightboxPrev"
+      );
+
+    const lightboxNext =
+      document.getElementById(
+        "lightboxNext"
+      );
+
+    let currentImageIndex =
+      0;
+
+    function updateLightboxImage() {
+
+      if (
+        !lightboxImage
+      ) {
+        return;
+      }
+
+      lightboxImage.src =
+        galleryImages[
+        currentImageIndex
+        ];
+
+      lightboxImage.alt =
+        `Fotografía ${currentImageIndex + 1} de Jesús y Martha`;
+    }
+
+    function openLightbox(
+      index
+    ) {
+
+      if (
+        !lightbox ||
+        !lightboxImage
+      ) {
+        return;
+      }
+
+      currentImageIndex =
+        index;
+
+      updateLightboxImage();
+
+      lightbox.style.display =
+        "flex";
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body
+        .classList
+        .add(
+          "no-scroll"
+        );
+    }
+
+    function closeLightbox() {
+
+      if (
+        !lightbox
+      ) {
+        return;
+      }
+
+      lightbox.style.display =
+        "none";
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body
+        .classList
+        .remove(
+          "no-scroll"
+        );
+    }
+
+    function nextImage() {
+
+      currentImageIndex =
+        (
+          currentImageIndex +
+          1
+        ) %
+        galleryImages.length;
+
+      updateLightboxImage();
+    }
+
+    function previousImage() {
+
+      currentImageIndex =
+        (
+          currentImageIndex -
+          1 +
+          galleryImages.length
+        ) %
+        galleryImages.length;
+
+      updateLightboxImage();
+    }
+
+    if (
+      gallerySlide
+    ) {
+
+      gallerySlide.addEventListener(
+        "click",
+        () => {
+
+          openLightbox(
+            galleryIndex
+          );
+        }
+      );
+    }
+
+    if (
+      lightboxClose
+    ) {
+
+      lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+      );
+    }
+
+    if (
+      lightboxOverlay
+    ) {
+
+      lightboxOverlay.addEventListener(
+        "click",
+        closeLightbox
+      );
+    }
+
+    if (
+      lightboxNext
+    ) {
+
+      lightboxNext.addEventListener(
+        "click",
+        nextImage
+      );
+    }
+
+    if (
+      lightboxPrev
+    ) {
+
+      lightboxPrev.addEventListener(
+        "click",
+        previousImage
+      );
+    }
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          !lightbox ||
+          lightbox.style.display !==
+          "flex"
+        ) {
+          return;
+        }
+
+        if (
+          event.key ===
+          "ArrowRight"
+        ) {
+
+          nextImage();
+        }
+
+        if (
+          event.key ===
+          "ArrowLeft"
+        ) {
+
+          previousImage();
+        }
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeLightbox();
+        }
+      }
+    );
+
+    updateGallery();
+
+  </script>
+
+</body>
+
+</html>
