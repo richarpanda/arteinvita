@@ -1371,7 +1371,8 @@
     .confirm-title-script,
     .intro-parents-title,
     .event-script,
-    .itinerary-title: #3E5532;  !important;
+    .itinerary-title {
+      color: #3E5532 !important;
     }
 
     .hero-names,
@@ -1494,6 +1495,32 @@
     #instagram {
       background-color: transparent !important;
       background-image: none !important;
+    }
+
+    /* Corrección estable para la galería */
+    body.gallery-open {
+      overflow: hidden !important;
+      touch-action: none;
+    }
+
+    #galleryLightbox {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100dvh !important;
+      z-index: 2147483647 !important;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #galleryLightbox .gallery-lightbox-content {
+      max-height: 88dvh;
+    }
+
+    #galleryLightbox img {
+      user-select: none;
+      -webkit-user-drag: none;
+      touch-action: pan-y;
     }
   </style>
 </head>
@@ -1706,14 +1733,14 @@
             Cada fotografía guarda un recuerdo, cada recuerdo cuenta una historia.
           </p>
           <div class="gallery-preview reveal reveal-left">
-            <div class="gallery-preview-item" onclick="openGallery(0)">
+            <div class="gallery-preview-item" data-gallery-index="0">
               <img alt="Foto de inicio" src="img/galeria/4.jpeg" />
             </div>
-            <div class="gallery-preview-item" onclick="openGallery(1)">
+            <div class="gallery-preview-item" data-gallery-index="1">
               <img alt="Foto 1" src="img/galeria/1.jpeg" />
             </div>
           </div>
-          <button class="btn-ver-galeria reveal reveal-right" onclick="openGallery(0)">
+          <button class="btn-ver-galeria reveal reveal-right" data-gallery-index="0">
             Ver Galería Completa
           </button>
         </div>
@@ -1831,17 +1858,7 @@
 	  
 	  
 
-    <div class="gallery-lightbox" id="galleryLightbox">
-      <div class="gallery-lightbox-content">
-        <button class="gallery-close" onclick="closeGallery()" type="button">×</button>
-        <button class="gallery-nav prev" onclick="changeImage(-1)" type="button">❮</button>
-        <img alt="Imagen de galería" id="galleryImage" src="img/galeria/1.jpeg" />
-        <button class="gallery-nav next" onclick="changeImage(1)" type="button">❯</button>
-        <div class="gallery-counter">
-          <span id="currentImage">1</span> / <span id="totalImages">0</span>
-        </div>
-      </div>
-    </div>
+    
 	  </div>
     
     <!-- CONFIRMACION -->
@@ -1877,6 +1894,19 @@
       </div>
     </section>
   </main>
+
+  <div class="gallery-lightbox" id="galleryLightbox">
+      <div class="gallery-lightbox-content">
+        <button class="gallery-close" id="galleryClose" type="button">×</button>
+        <button class="gallery-nav prev" id="galleryPrev" type="button">❮</button>
+        <img alt="Imagen de galería" id="galleryImage" src="img/galeria/1.jpeg" />
+        <button class="gallery-nav next" id="galleryNext" type="button">❯</button>
+        <div class="gallery-counter">
+          <span id="currentImage">1</span> / <span id="totalImages">0</span>
+        </div>
+      </div>
+    </div>
+
   <footer>© 2026 Mis XV Alondra</footer>
   <button aria-label="Ir arriba" class="scroll-top" id="scrollTopBtn">↑</button>
   <script>
@@ -2060,9 +2090,8 @@
     document.addEventListener('DOMContentLoaded', generateCalendar);
 
     // =========================
-    // GALERÍA
+    // GALERÍA CORREGIDA
     // =========================
-
     const galleryImages = [
       "img/galeria/1.jpeg",
       "img/galeria/2.jpeg",
@@ -2073,63 +2102,98 @@
       "img/galeria/7.jpeg",
       "img/galeria/8.jpeg",
       "img/galeria/9.jpeg",
+      "img/galeria/10.jpeg",
+      "img/galeria/11.jpeg"
     ];
 
     let currentGalleryIndex = 0;
+    let galleryTouchStartX = 0;
 
     const galleryLightbox = document.getElementById("galleryLightbox");
     const galleryImage = document.getElementById("galleryImage");
     const currentImage = document.getElementById("currentImage");
     const totalImages = document.getElementById("totalImages");
+    const galleryClose = document.getElementById("galleryClose");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
 
-    if (totalImages) {
-      totalImages.textContent = galleryImages.length;
+    function updateGalleryImage() {
+      if (!galleryImage || !currentImage) return;
+      galleryImage.src = galleryImages[currentGalleryIndex];
+      galleryImage.alt = `Foto ${currentGalleryIndex + 1} de la galería`;
+      currentImage.textContent = String(currentGalleryIndex + 1);
     }
 
     function openGallery(index = 0) {
-      currentGalleryIndex = index;
+      if (!galleryLightbox) return;
+      currentGalleryIndex = Math.max(0, Math.min(Number(index) || 0, galleryImages.length - 1));
       updateGalleryImage();
-
       galleryLightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
+      galleryLightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("gallery-open");
+      galleryClose?.focus({ preventScroll: true });
     }
 
     function closeGallery() {
+      if (!galleryLightbox) return;
       galleryLightbox.classList.remove("active");
-      document.body.style.overflow = "";
+      galleryLightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("gallery-open");
     }
 
     function changeImage(direction) {
-      currentGalleryIndex += direction;
-
-      if (currentGalleryIndex < 0) {
-        currentGalleryIndex = galleryImages.length - 1;
-      }
-
-      if (currentGalleryIndex >= galleryImages.length) {
-        currentGalleryIndex = 0;
-      }
-
+      currentGalleryIndex = (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
       updateGalleryImage();
     }
 
-    function updateGalleryImage() {
-      galleryImage.src = galleryImages[currentGalleryIndex];
-      currentImage.textContent = currentGalleryIndex + 1;
-    }
+    if (totalImages) totalImages.textContent = String(galleryImages.length);
+    galleryLightbox?.setAttribute("aria-hidden", "true");
 
-    galleryLightbox.addEventListener("click", function (e) {
-      if (e.target === galleryLightbox) {
-        closeGallery();
-      }
+    document.querySelectorAll("[data-gallery-index]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        openGallery(trigger.dataset.galleryIndex);
+      });
     });
 
-    document.addEventListener("keydown", function (e) {
-      if (!galleryLightbox.classList.contains("active")) return;
+    galleryClose?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      closeGallery();
+    });
 
-      if (e.key === "Escape") closeGallery();
-      if (e.key === "ArrowLeft") changeImage(-1);
-      if (e.key === "ArrowRight") changeImage(1);
+    galleryPrev?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      changeImage(-1);
+    });
+
+    galleryNext?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      changeImage(1);
+    });
+
+    galleryLightbox?.addEventListener("click", (event) => {
+      if (event.target === galleryLightbox) closeGallery();
+    });
+
+    galleryLightbox?.addEventListener("touchstart", (event) => {
+      galleryTouchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    galleryLightbox?.addEventListener("touchend", (event) => {
+      const deltaX = event.changedTouches[0].screenX - galleryTouchStartX;
+      if (Math.abs(deltaX) < 45) return;
+      changeImage(deltaX > 0 ? -1 : 1);
+    }, { passive: true });
+
+    document.addEventListener("keydown", (event) => {
+      if (!galleryLightbox?.classList.contains("active")) return;
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") changeImage(-1);
+      if (event.key === "ArrowRight") changeImage(1);
     });
   </script>
 </body>
