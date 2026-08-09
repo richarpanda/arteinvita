@@ -1285,6 +1285,19 @@
       z-index: 1;
       background: var(--paper-green);
     }
+
+    /* Número de WhatsApp: mantener beige también en celulares/iPhone */
+    .whatsapp-number,
+    .whatsapp-number a,
+    .whatsapp-number a:link,
+    .whatsapp-number a:visited,
+    .whatsapp-number a:hover,
+    .whatsapp-number a:active {
+      color: var(--muted) !important;
+      text-decoration: none !important;
+      -webkit-text-fill-color: var(--muted) !important;
+    }
+
   </style>
 </head>
 
@@ -1296,8 +1309,6 @@
     <section class="hero">
 
 
-
-      <div class="hero-paper" aria-hidden="true"></div>
 
     </section>
 
@@ -1975,7 +1986,7 @@
 
             </a>
 
-            <p class="final-content">
+            <p class="final-content whatsapp-number">
               33 1470 5509
             </p>
 
