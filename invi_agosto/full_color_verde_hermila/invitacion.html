@@ -2176,7 +2176,7 @@
 
         </div>
 
-        <audio id="audioPlayer" preload="metadata" playsinline webkit-playsinline>
+        <audio id="audioPlayer" preload="auto" autoplay playsinline webkit-playsinline>
 
           <source src="Bee Gees_How Deep Is Your Love.mp3" type="audio/mpeg">
 
@@ -2504,16 +2504,42 @@
         }
       }
 
-      if (new URLSearchParams(window.location.search).get("startMusic") === "1") {
-        audioPlayer
-          .play()
-          .then(function () {
-            setPlayingUI(true);
-          })
-          .catch(function () {
-            setPlayingUI(false);
-          });
+      // AUTOPLAY reforzado para Android/iPhone.
+      // Los navegadores móviles pueden bloquear audio con sonido hasta la primera interacción.
+      async function tryAutoplay() {
+        try {
+          audioPlayer.muted = false;
+          audioPlayer.volume = volumeSlider ? Number(volumeSlider.value) : 0.7;
+          await audioPlayer.play();
+          setPlayingUI(true);
+          return true;
+        } catch (error) {
+          setPlayingUI(false);
+          return false;
+        }
       }
+
+      // Intentos al cargar y al volver a la pestaña.
+      tryAutoplay();
+      window.addEventListener("load", tryAutoplay, { once: true });
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden && audioPlayer.paused) tryAutoplay();
+      });
+
+      // Fallback compatible con políticas de iOS/Android:
+      // en el primer toque/click/scroll del usuario se inicia la música automáticamente.
+      const unlockEvents = ["touchstart", "pointerdown", "click", "keydown"];
+      const unlockAudio = async function () {
+        const started = await tryAutoplay();
+        if (started) {
+          unlockEvents.forEach(function (eventName) {
+            document.removeEventListener(eventName, unlockAudio, true);
+          });
+        }
+      };
+      unlockEvents.forEach(function (eventName) {
+        document.addEventListener(eventName, unlockAudio, { capture: true, passive: true });
+      });
 
       playerButton.addEventListener(
         "click",
