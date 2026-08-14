@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mis Dulces 16 | Paty</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: "Nova Quinta";
+      src: url("fonts/NovaQuinta_PERSONAL_USE_ONLY.otf") format("opentype");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Gabriola";
+      src: url("fonts/gabriola Font Download.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      --fucsia: #d81b60;
+      --rosa-mexicano: #e91e63;
+      --rosa-claro: #fde7ef;
+      --azul-talavera: #1778b5;
+      --azul-talavera-oscuro: #0f5f92;
+      --dorado: #c8a24d;
+      --crema: #fffaf7;
+      --crema-oscuro: #f8f0ea;
+      --blanco: #ffffff;
+      --texto: #5b3d4d;
+      --gris: #7e6975;
+      --borde: #f2c7d8;
+      --shadow-soft: 0 18px 42px rgba(180, 54, 107, 0.16);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Gabriola", Georgia, serif;
+      line-height: 1.5;
+      color: var(--texto);
+
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--azul-talavera);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--fucsia);
+    }
+
+    button {
+      font-family: "Poppins", Arial, sans-serif;
+      transition:
+        transform 0.18s ease,
+        filter 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+      box-shadow: 0 14px 30px rgba(180, 54, 107, 0.22);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(180, 54, 107, 0.16);
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--crema);
+      box-shadow: 0 22px 55px rgba(97, 48, 74, 0.22);
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    .section-title-script {
+      margin-bottom: 0.3rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--rosa-mexicano);
+      text-align: center;
+    }
+
+    .section-title-main {
+      margin-bottom: 0.3rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--azul-talavera-oscuro);
+      text-align: center;
+    }
+
+    .section-sub {
+      margin-top: 1rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1.45;
+      color: var(--gris);
+      text-align: center;
+    }
+
+    .intro-list {
+      margin-top: 0.5rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1.55;
+      color: var(--texto);
+      text-align: center;
+    }
+
+    .intro-script {
+      margin-top: 1rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      line-height: 1.2;
+      color: var(--azul-talavera);
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      margin-top: 1.8rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      color: var(--rosa-mexicano);
+      text-align: center;
+    }
+
+    .flourish {
+      width: 300px;
+      max-width: 90%;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter:
+        brightness(0) saturate(100%) invert(17%) sepia(77%) saturate(2865%) hue-rotate(306deg) brightness(97%) contrast(92%);
+      opacity: 0.9;
+    }
+
+    .hero-full {
+      position: relative;
+      min-height: 100vh;
+      padding: 0;
+      overflow: hidden;
+      background: var(--azul-talavera-oscuro);
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3.3rem 1.5rem 3rem;
+      background:
+        linear-gradient(to top,
+          rgba(136, 8, 67, 0.98) 0%,
+          rgba(233, 30, 98, 0.692) 22%,
+          rgba(233, 30, 98, 0.362) 42%,
+          rgba(233, 30, 98, 0.152) 60%,
+          transparent 78%);
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .hero-name {
+      margin-bottom: 0.45rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 6.9rem;
+      font-weight: 400;
+      line-height: 0.95;
+      color: var(--blanco);
+      text-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.45),
+        0 0 16px rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.95rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: #fff4f8;
+      text-transform: uppercase;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.42);
+    }
+
+    .music-section {
+      display: flex;
+      justify-content: center;
+      padding: 1.4rem 1.6rem 0;
+      background: var(--crema);
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--rosa-mexicano);
+      border-radius: 999px;
+      background: var(--blanco);
+      box-shadow: 0 10px 22px rgba(180, 54, 107, 0.13);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--rosa-mexicano);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .music-icon-min {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
+      border: 2px solid var(--azul-talavera);
+      border-radius: 999px;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color:
+        transparent transparent transparent var(--azul-talavera);
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 9px;
+      background: var(--azul-talavera);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    .intro-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--rosa-claro));
+    }
+
+    .date-container {
+      width: 100%;
+      font-family: "Great Vibes", cursive;
+      color: var(--rosa-mexicano);
+      text-align: center;
+    }
+
+    .day {
+      display: inline-block;
+      padding: 0 30px 3px;
+      font-size: 3.5rem;
+    }
+
+    .number {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 8rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--azul-talavera-oscuro);
+    }
+
+    .month {
+      display: inline-block;
+      padding: 3px 30px 0;
+      font-size: 3.5rem;
+    }
+
+    .time {
+      margin-top: 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.15rem;
+      color: var(--azul-talavera);
+    }
+
+    .save-date-min {
+      position: relative;
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/counter.jpg");
+      background-position: center;
+      background-size: cover;
+      color: var(--texto);
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(255, 255, 255, 0.862),
+          rgba(253, 231, 239, 0.86));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      margin-bottom: 1.2rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.28em;
+      color: var(--azul-talavera-oscuro);
+      text-transform: uppercase;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 1.2rem 1.2rem 1.1rem;
+      border: 1px solid rgba(23, 120, 181, 0.22);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 14px 35px rgba(86, 47, 76, 0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.4rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      color: var(--azul-talavera-oscuro);
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.6rem;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      color: var(--gris);
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2rem;
+      color: var(--rosa-mexicano);
+    }
+
+    #evento {
+      background:
+        linear-gradient(to bottom,
+          var(--rosa-claro),
+          var(--crema));
+    }
+
+    .when-where-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .event-card {
+      margin-bottom: 2rem;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 1.5rem;
+      background: var(--blanco);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-script {
+      margin-bottom: 0.35rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      line-height: 1.15;
+      color: var(--rosa-mexicano);
+    }
+
+    .event-label {
+      margin-bottom: 0.4rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1rem;
+      line-height: 1.3;
+      letter-spacing: 0.14em;
+      color: var(--gris);
+      text-transform: uppercase;
+    }
+
+    .event-title {
+      margin-bottom: 0.5rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--texto);
+    }
+
+    .event-address {
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: var(--gris);
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--azul-talavera);
+      text-transform: uppercase;
+    }
+
+    .event-content a {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn-ubicacion {
+      display: block;
+      width: fit-content;
+      margin: 1rem auto 0;
+      padding: 0.8rem 2rem;
+      border: 1px solid #f3d5e2;
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg,
+          var(--rosa-mexicano),
+          var(--azul-talavera));
+      box-shadow: 0 10px 22px rgba(180, 54, 107, 0.23);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--blanco);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .itinerary-section {
+      background: linear-gradient(to bottom, var(--crema), var(--rosa-claro), var(--crema));
+    }
+
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--rosa-mexicano);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      color: var(--azul-talavera);
+      text-align: center;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .itinerary-timeline {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+      width: 76px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 100%;
+      max-width: 74px;
+      object-fit: contain;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(to right, var(--rosa-mexicano), var(--azul-talavera));
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      color: var(--azul-talavera-oscuro);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .itinerary-event {
+      font-size: 1.35rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .itinerary-timeline {
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .itinerary-item {
+      display: flex;
+      align-items: center;
+
+      gap: 1rem;
+
+      margin: 0 auto 3rem;
+
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity .6s ease-out,
+        transform .6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      flex-shrink: 0;
+
+      width: 100px;
+      min-height: 100px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 100%;
+      max-width: 100px;
+      max-height: 105px;
+      object-fit: contain;
+    }
+
+    .itinerary-divider {
+      flex-shrink: 0;
+
+      width: 42px;
+      height: 2px;
+
+      background:
+        linear-gradient(90deg,
+          var(--rojo-claro),
+          var(--dorado));
+    }
+
+    .itinerary-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    .itinerary-time {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      color: var(--dorado);
+      font-weight: 600;
+      margin-bottom: .2rem;
+      text-align: center;
+    }
+
+    .itinerary-event {
+      font-size: 1.35rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      text-align: center;
+    }
+
+    .gifts-section {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro));
+    }
+
+    .gift-options {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      width: 100%;
+      margin-bottom: 2rem;
+      color: var(--texto);
+      text-align: center;
+    }
+
+    .gift-title {
+      width: 100%;
+      margin-top: 0.8rem;
+      margin-bottom: 0.4rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--azul-talavera-oscuro);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .gift-sub {
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1.45;
+      color: var(--gris);
+    }
+
+    .gift-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.7rem 1.8rem;
+      border: 1px solid #f3d5e2;
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg,
+          var(--rosa-mexicano),
+          var(--azul-talavera));
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--blanco);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .gallery-section {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--rosa-claro));
+    }
+
+    .gallery-slider {
+      max-width: 410px;
+      margin: 1.6rem auto 0;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      overflow: hidden;
+      padding: 8px;
+      border: 1px solid var(--borde);
+      border-radius: 1.6rem;
+      background: var(--blanco);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery-slide-frame img {
+      display: block;
+      width: 100%;
+      height: 500px;
+      border-radius: 1.25rem;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      padding: 0.3rem 0.6rem;
+      border: none;
+      border-radius: 0.7rem;
+      background: rgba(23, 120, 181, 0.72);
+      font-size: 2rem;
+      color: var(--blanco);
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .gallery-nav.prev {
+      left: 14px;
+    }
+
+    .gallery-nav.next {
+      right: 14px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #f8bdd3;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease-out,
+        background 0.2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: var(--rosa-mexicano);
+      transform: scale(1.2);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(29, 19, 24, 0.95);
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 92%;
+      max-width: 920px;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      border: none;
+      background: none;
+      font-size: 2.4rem;
+      color: var(--blanco);
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      padding: 0.6rem 0.9rem;
+      border: none;
+      border-radius: 0.7rem;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 3rem;
+      color: var(--blanco);
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    .album-section {
+      background:
+        linear-gradient(to bottom,
+          var(--rosa-claro),
+          var(--crema));
+    }
+
+    .album-card {
+      max-width: 390px;
+      margin: 0 auto;
+      padding: 1.8rem 1.4rem;
+      border: 1px solid var(--borde);
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .album-card img.qr-img {
+      width: 220px;
+      max-width: 70%;
+      margin: 0 auto 1.2rem;
+    }
+
+    .album-code {
+      margin-top: 1rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.3rem;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      color: var(--azul-talavera-oscuro);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .hashtag-section {
+      padding: 0;
+    }
+
+    .insta-handle-card {
+      padding: 2.2rem 1.6rem 2.6rem;
+      background: var(--crema-oscuro);
+      text-align: center;
+    }
+
+    .insta-handle {
+      margin-top: 0.6rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--azul-talavera-oscuro);
+    }
+
+    .btn-insta {
+      display: block;
+      width: fit-content;
+      margin: 1.3rem auto 0;
+      padding: 0.75rem 1.7rem;
+      border: 1px solid #f3d5e2;
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg,
+          var(--rosa-mexicano),
+          var(--azul-talavera));
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--blanco);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .confirm-section {
+      position: relative;
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--rosa-claro));
+    }
+
+    .confirm-title-script {
+      margin-bottom: 0.3rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      line-height: 1.1;
+      color: var(--azul-talavera);
+      text-align: center;
+    }
+
+    .confirm-flourish {
+      width: 300px;
+      max-width: 90%;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter:
+        brightness(0) saturate(100%) invert(17%) sepia(77%) saturate(2865%) hue-rotate(306deg) brightness(97%) contrast(92%);
+    }
+
+    .btn-whats {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      padding: 0.95rem 1rem;
+      border: 1px solid #f3d5e2;
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg,
+          var(--rosa-mexicano),
+          var(--azul-talavera));
+      box-shadow: 0 12px 24px rgba(180, 54, 107, 0.24);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      color: var(--blanco);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .scroll-top {
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #f3d5e2;
+      border-radius: 999px;
+      background: var(--rosa-mexicano);
+      box-shadow: 0 14px 30px rgba(180, 54, 107, 0.3);
+      font-size: 1.2rem;
+      color: var(--blanco);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out,
+        visibility 0.25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      border-top: 2px solid #f5cfe0;
+      background: var(--crema);
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1.4;
+      color: var(--azul-talavera-oscuro);
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (min-width: 768px) {
+      main {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 40px;
+      }
+
+      .hero-full {
+        overflow: hidden;
+        border-radius: 0 0 40px 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio id="bg-music" src="lapromesa.mp3" loop autoplay></audio>
+
+  <main>
+
+    <!-- PORTADA -->
+
+    <section id="inicio" class="hero-full">
+      <img src="img/portada.png" alt="Invitación de Paty">
+      <div class="hero-overlay">
+        <div>
+          <div class="hero-name">
+            Paty
+          </div>
+          <div class="hero-sub">
+            Mis Dulces 16
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÚSICA -->
+
+    <section class="music-section">
+      <button class="music-btn-min" id="musicToggle" aria-label="Control de música" type="button">
+        <div class="music-icon-min paused" id="musicIcon"></div>
+        <span id="musicStatus">
+          Play
+        </span>
+      </button>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+
+    <section id="intro" class="intro-section">
+
+      <div align="center">
+        <img src="img/silueta.png" width="60%" alt="Decoración talavera">
+      </div>
+
+      <br>
+
+      <div class="reveal reveal-left">
+
+        <div class="date-container">
+          <div class="day">
+            Domingo
+          </div>
+          <div class="number">
+            20
+          </div>
+          <div class="month">
+            Diciembre
+          </div>
+          <div class="time">
+            5:00 P. M.
+          </div>
+        </div>
+
+        <br>
+
+        <p class="section-sub">
+          Hay momentos en la vida que imaginamos, soñamos y esperamos…
+          <br>
+          ¡y uno de ellos ha llegado!
+          <br><br>
+          Deseo compartir este día tan especial con las personas más importantes para mí,
+          <br>
+          ¡y tú eres una de ellas!
+        </p>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">
+          Mis Dulces 16
+          <br>
+          Paty
+        </p>
+
+        <div class="intro-parents-title">
+          Mis padres
+        </div>
+
+        <p class="intro-list">
+          Joaquín Gómez
+          <br>
+          y
+          <br>
+          Monserrat Báez
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-right">
+        <div class="save-date-min-title">
+          <strong>FALTAN</strong>
+        </div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+          <div class="countdown-time">
+            <span id="cdDays">0</span>:
+            <span id="cdHours">00</span>:
+            <span id="cdMins">00</span>:
+            <span id="cdSecs">00</span>
+          </div>
+
+          <div class="countdown-labels">
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+          </div>
+        </div>
+
+        <p class="countdown-note">
+          ¡Te espero para celebrar este día tan especial!
+        </p>
+      </div>
+    </section>
+
+    <!-- CUÁNDO Y DÓNDE -->
+
+    <section id="evento">
+      <div class="when-where-header reveal reveal-left">
+        <div class="section-title-script">
+          ¿Cuándo y dónde?
+        </div>
+        <div class="flourish"></div>
+      </div>
+
+      <!-- CEREMONIA -->
+
+      <div class="event-card reveal reveal-right">
+        <img src="img/iglesia.jpg" alt="Ceremonia" class="event-photo">
+        <div class="event-content">
+          <div class="event-label">
+            Iniciamos con la
+          </div>
+          <div class="event-script">
+            Ceremonia Religiosa
+          </div>
+          <div class="event-title">
+            Nuestra Señora de la Merced
+          </div>
+          <p class="event-address">
+           Josefa Ortiz, Tepeyac, 93250 Poza Rica de Hidalgo, Ver.
+          </p>
+          <div class="event-time">
+            6:00 P. M.
+          </div>
+			
+			  <a href="https://maps.app.goo.gl/WMutGV8WdzJhRR3j8" target="_blank" rel="noopener">
+            <button class="btn-ubicacion" type="button">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- EVENTO -->
+
+      <div class="event-card reveal reveal-left">
+        <img src="img/salon.jpg" alt="Salón Asadero Campinas" class="event-photo">
+        <div class="event-content">
+          <div class="event-label">
+            Continuamos en el
+          </div>
+          <div class="event-script">
+            Evento
+          </div>
+          <div class="event-title">
+            Salón Asadero Campinas
+          </div>
+          <p class="event-address">
+            Ávalo 106, Benito Juárez,
+            <br>
+            Poza Rica, Ver.
+          </p>
+          <div class="event-time">
+            7:00 P. M.
+          </div>
+
+          <a href="https://maps.app.goo.gl/Z57j4PnCg8pMCYMU6" target="_blank" rel="noopener">
+            <button class="btn-ubicacion" type="button">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <div align="center">
+      <img src="img/cenefa.png" width="50%" alt="Decoración talavera">
+    </div>
+
+    <!-- ITINERARIO -->
+
+    <section id="itinerario" class="itinerary-section">
+
+
+      <div class="flourish"></div>
+
+      <h2 class="itinerary-title">
+        Itinerario
+      </h2>
+
+      <p class="itinerary-date">
+        20 de diciembre de 2026<br><br>
+		  Tu puntual asistencia hará que todos podamos disfrutar de una noche mágica.
+      </p>
+
+      <div class="itinerary-timeline">
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/recepcion.png" alt="Recepción">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              7:00 P. M.
+            </div>
+            <div class="itinerary-event">
+              Recepción
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/presentacion.png" alt="Entrada">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              7:30 P. M.
+            </div>
+            <div class="itinerary-event">
+              Entrada de la festejada
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/vals.png" alt="Vals">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              
+            </div>
+            <div class="itinerary-event">
+              Vals
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/coctel.png" alt="Brindis">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+             
+            </div>
+            <div class="itinerary-event">
+              Brindis
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/cena.png" alt="Cena">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+             
+            </div>
+            <div class="itinerary-event">
+              Cena
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/baile2.png" alt="Baile sorpresa">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+            
+            </div>
+            <div class="itinerary-event">
+              Baile sorpresa
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/fiesta.png" alt="Fiesta">
+          </div>
+          <div class="itinerary-divider"></div>
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+             
+            </div>
+            <div class="itinerary-event">
+              Fiesta
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VESTIMENTA -->
+
+    <section id="vestimenta" class="gifts-section">
+      <div class="section-title-script">
+        Código de vestimenta
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <div align="center">
+            <img src="img/vestimenta.png" width="65%" alt="Código de vestimenta">
+          </div>
+
+          <div class="gift-title">
+            Queremos ver a México en tu outfit
+          </div>
+
+          <p class="section-sub">
+            Inspírate en nuestra temática y acompáñanos
+            con un look lleno de color y estilo.
+            <br><br>
+            <strong>
+              El color fucsia / rosa mexicano
+              está reservado exclusivamente para la festejada.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOSPEDAJE -->
+
+    <section id="hospedaje" class="gifts-section">
+		 <div align="center">
+      <img src="img/maleta.png" width="60%" alt="Decoración talavera">
+    </div>
+      <div class="section-title-script">
+        Sugerencia de hospedaje
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+          <p class="section-sub">
+            Si vienes de fuera, aquí te dejamos algunas opciones de hospedaje cercanas.
+          </p>
+
+          <div class="gift-title">
+            Hotel Puerta Marell
+          </div>
+			
+		<p class="section-sub">	Blvd. Adolfo Ruíz Cortines 1905,<br>
+ México, 93310 Poza Rica de Hidalgo, Ver.</p>
+
+          <a href="https://maps.app.goo.gl/3M4fuaxxZ5S44e1o7" target="_blank" rel="noopener">
+            <button class="gift-button" type="button">
+              Ver ubicación
+            </button>
+          </a>
+
+          <br><br>
+
+          <div class="gift-title">
+            Hotel París
+          </div>
+			
+			<p class="section-sub">Blvd. Adolfo Ruíz Cortines 1328,<br>
+ Cazones, 93230 Poza Rica de Hidalgo, Ver.</p>
+
+          <a href="https://maps.app.goo.gl/qCWpN4PUEr74QAfq8" target="_blank" rel="noopener">
+            <button class="gift-button" type="button">
+              Ver ubicación
+            </button>
+          </a>
+
+          <br><br>
+
+          <div class="gift-title">
+            Hotel Victoria
+          </div>
+			
+			<p class="section-sub">Blvd. Adolfo Ruíz Cortines 1306,<br>
+ Cazones, 93230 Poza Rica de Hidalgo, Ver.</p>
+
+          <a href="https://maps.app.goo.gl/V1gxsE4SAjxn1sL2A" target="_blank" rel="noopener">
+            <button class="gift-button" type="button">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA 
+
+    <section id="galeria" class="gallery-section">
+      <div class="section-title-script">
+        Galería de fotos
+      </div>
+
+      <div class="flourish"></div>
+
+      <p class="section-sub">
+        Algunos momentos especiales de mi historia.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Fotografía 1 de Paty">
+
+          <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Anterior">
+            ‹
+          </button>
+
+          <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Siguiente">
+            ›
+          </button>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section> -->
+
+    <!-- LIGHTBOX 
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar">
+          ×
+        </button>
+
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Anterior">
+          ‹
+        </button>
+
+        <img class="lightbox-image" id="lightboxImage" src="img/galeria/1.jpeg" alt="Imagen ampliada">
+
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Siguiente">
+          ›
+        </button>
+      </div>
+    </div> -->
+
+    <!-- MESA DE REGALOS -->
+
+    <section id="mesa-regalos" class="gifts-section">
+
+      <div align="center">
+        <img src="img/regalo.png" width="55%" alt="Mesa de regalos">
+      </div>
+
+      <div class="section-title-script">
+        Mesa de regalos
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+          <p class="section-sub">
+            Tu presencia es mi mejor regalo.
+            <br><br>
+            Si deseas tener un detalle conmigo,
+            puedes encontrar mi mesa de regalos en Liverpool.
+          </p>
+
+
+          <div align="center">
+            <img src="img/liverpool.ico" width="15%" alt="Mesa de regalos">
+          </div>
+
+          <p class="gift-sub">
+            Evento No. 52032256
+          </p>
+
+          <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52032256" target="_blank" rel="noopener">
+            <button class="gift-button" type="button">
+              Ver mesa de regalos
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLUVIA DE SOBRES -->
+
+    <section id="lluvia" class="gifts-section">
+
+      <div align="center">
+        <img src="img/sobre_regalo.png" width="50%" alt="Lluvia de sobres">
+      </div>
+
+      <div class="section-title-script">
+        Lluvia de sobres
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+          <p class="section-sub">
+            “Tú serás partícipe de mi próximo sueño”
+            <br><br>
+            Agradezco con el alma tu presencia en este día tan importante. Si deseas darme tu regalo en efecto habrá una
+            lluvia de sobres que he preparado el día del evento.
+
+            <br> <br>
+            O si de igual forma lo deseas puedes realizarlo mediante transferencia a la siguiente cuenta:
+          </p> <br>
+
+          <div align="center">
+            <img src="img/banamex.png" width="50%" alt="Mesa de regalos">
+          </div> <br>
+
+          <p class="gift-sub">
+            <strong>Titular:</strong> Guadalupe M. Báez Crispín
+            <br>
+            <strong>CLABE:</strong> 00288904701314379
+            <br>
+            <strong>Cuenta:</strong> 0131437
+            <br>
+            <strong>Sucursal:</strong> 9047
+          </p>
+
+          <p class="intro-script">
+            ¡Gracias!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+
+    <section id="insta" class="hashtag-section">
+      <div class="insta-handle-card reveal reveal-left">
+
+        <div align="center">
+          <img src="img/instagram.png" width="45%" alt="Instagram">
+        </div>
+<br>
+        <div class="section-title-script">
+          Instagram
+        </div>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Comparte tus fotos favoritas de esta celebración
+          y etiquétame en Instagram.
+        </p>
+
+        <div class="insta-handle">
+          @lu_pi_ta_baez
+        </div>
+
+        <a href="https://www.instagram.com/lu_pi_ta_baez?utm_source=qr&igsh=aXNhYncybGlnc2h0" target="_blank"
+          rel="noopener">
+          <button class="btn-insta" type="button">
+            Abrir Instagram
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <!-- ÁLBUM QR -->
+
+    <section id="album-qr" class="album-section">
+
+      <div align="center">
+        <img src="img/album.png" width="42%" alt="Álbum compartido">
+      </div>
+
+      <div class="section-title-script">
+        Álbum Compartido
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="album-card reveal reveal-right">
+        <img class="qr-img" src="img/Mis Dulces XVI Paty_galeria_QR.png" alt="Código QR del álbum digital">
+
+        <p class="section-sub" style="margin-top:0;">
+          Da clic aquí para subir las fotos que tomes
+          durante la fiesta y formar parte
+          de este hermoso recuerdo.
+        </p>
+
+        <a href="https://app.arteinvita.com/gallery/mis-dulces-xvi-paty-1786480379097?token=b7366b3f675588a55661656d5597b83e" target="_blank" rel="noopener">
+          <button class="btn-ubicacion" type="button">
+            Subir foto o dedicatoria
+          </button>
+        </a>
+
+
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+
+    <section id="confirmacion" class="confirm-section">
+ <div align="center">
+      <img src="img/cenefa.png" width="60%" alt="Decoración talavera">
+    </div>
+      <br>
+
+      <div class="reveal reveal-left">
+        <div class="confirm-title-script">
+          Confirma tu asistencia
+        </div>
+
+        <div class="confirm-flourish"></div>
+
+        <p class="section-sub">
+          Tu presencia es muy importante para mí,
+          por eso te pido que confirmes tu asistencia.
+          <br><br>
+          Para coordinar mejor el evento,
+          te pedimos confirmar antes del
+          <strong>30 de noviembre</strong>.
+          <br><br>
+          Da clic en el botón
+          y escribe tu nombre.
+        </p>
+
+        <br>
+
+        <button class="btn-ubicacion" onclick="ArteInvita.open('D99-5F3A-AE2')">
+          <strong>Confirmar en Panel</strong>
+        </button>
+
+        <br><br>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Gracias por formar parte
+          de este sueño tan especial.
+        </p>
+
+        <br>
+
+        <div class="section-title-main">
+          Con cariño
+          <br>
+          Paty
+        </div> <br><br>
+      </div>
+      <div class="event-card reveal reveal-right">
+
+        <div align="center">
+
+          <img src="img/final.png" width="100%" alt="Paty">
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Mis Dulces 16 de Paty
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba" type="button">
+    ↑
+  </button>
+
+  <script>
+    // CUENTA REGRESIVA
+
+    const targetDate = new Date(2026, 11, 20, 17, 0, 0);
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(difference / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(minutes);
+      cdSecs.textContent = pad2(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // MÚSICA
+
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (error) {
+        console.log("No se pudo reproducir la música:", error);
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) {
+        await playMusic();
+      } else {
+        pauseMusic();
+      }
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) {
+        return;
+      }
+
+      try {
+        await music.play();
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+        cleanupAutoplayListeners();
+      } catch (error) {
+        console.log("Autoplay bloqueado. La música se activará al interactuar.");
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // ANIMACIONES
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(element => observer.observe(element));
+
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    itineraryItems.forEach(element => itineraryObserver.observe(element));
+
+    // BOTÓN IR ARRIBA
+
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // GALERÍA
+
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg"
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDots = document.getElementById("galleryDots");
+
+    let currentSlide = 0;
+
+    function renderGalleryDots() {
+      galleryDots.innerHTML = "";
+
+      galleryImages.forEach((image, index) => {
+        const dot = document.createElement("div");
+        dot.className = "gallery-dot" + (index === currentSlide ? " active" : "");
+        dot.addEventListener("click", () => {
+          currentSlide = index;
+          updateGallery();
+        });
+        galleryDots.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      gallerySlide.src = galleryImages[currentSlide];
+      renderGalleryDots();
+    }
+
+    galleryPrev.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
+      updateGallery();
+    });
+
+    galleryNext.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % galleryImages.length;
+      updateGallery();
+    });
+
+    updateGallery();
+
+    // LIGHTBOX
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    function openLightbox(index) {
+      currentSlide = index;
+      lightboxImage.src = galleryImages[currentSlide];
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    function showPrevImage() {
+      currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImage.src = galleryImages[currentSlide];
+      updateGallery();
+    }
+
+    function showNextImage() {
+      currentSlide = (currentSlide + 1) % galleryImages.length;
+      lightboxImage.src = galleryImages[currentSlide];
+      updateGallery();
+    }
+
+    gallerySlide.addEventListener("click", () => {
+      openLightbox(currentSlide);
+    });
+
+    lightboxOverlay.addEventListener("click", closeLightbox);
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxPrev.addEventListener("click", showPrevImage);
+    lightboxNext.addEventListener("click", showNextImage);
+
+    document.addEventListener("keydown", (event) => {
+      if (lightbox.style.display === "flex") {
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showPrevImage();
+        if (event.key === "ArrowRight") showNextImage();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
