@@ -816,10 +816,25 @@
 
     .gallery-slide-frame img {
       width: 100%;
-      height: 500px;
-      object-fit: cover;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
       display: block;
       cursor: pointer;
+      background: #fff;
+    }
+
+    /* Evita que las fotos verticales u horizontales se recorten en la galería */
+    .gallery-slide-frame {
+      background: #fff;
+    }
+
+    @media (max-width: 767px) {
+      .gallery-slide-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
 
     .gallery-nav {
@@ -1526,7 +1541,13 @@
   "img/galeria/10.jpeg",
 		 "img/galeria/12.jpeg",
 		"img/galeria/13.jpeg",
-		"img/galeria/14.jpeg"
+		"img/galeria/14.jpeg",
+		"img/galeria/15.jpeg",
+		"img/galeria/16.jpeg",
+		"img/galeria/17.jpeg",
+		"img/galeria/18.jpeg",
+		"img/galeria/19.jpeg",
+		"img/galeria/20.jpeg"
   
  
   
