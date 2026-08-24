@@ -255,7 +255,7 @@
         to top,
 		  rgba(172,109,175,1.00),
 		rgba(172,109,175,1.00),
-		  rgba(172,109,175,1.00),
+		 rgba(172,109,175,0.00), 
         rgba(172,109,175,0.00),
         rgba(172,109,175,0.00)
       );
@@ -269,7 +269,7 @@
 
     .hero-name {
       font-family: "Great Vibes", cursive;
-      font-size: 7.2rem;
+      font-size: 5.2rem;
       margin-bottom: 1.4rem;
     }
 
@@ -940,6 +940,57 @@
         background: radial-gradient(circle at top, #ffffff, #f6f6f6 40%, #fefcfb);
       }
     }
+  
+    /* FIX: evita movimiento lateral del contenido principal en móvil */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overscroll-behavior-x: none;
+    }
+
+    body {
+      position: relative;
+    }
+
+    main {
+      width: 100%;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: hidden;
+    }
+
+    section {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* Las animaciones ya no desplazan físicamente el contenido a los lados */
+    .reveal-left,
+    .reveal-right {
+      transform: translateY(20px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img, video, iframe {
+      max-width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      main {
+        margin: 0 auto;
+      }
+
+      .itinerary-item {
+        max-width: 100%;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1037,7 +1088,7 @@
 
 <!-- Recepción -->
 <div class="event-card reveal reveal-left">
-<img alt="Salones de Fiestas Centenario" class="event-photo" src="img/evento.jpeg"/>
+<img alt="Salones de Fiestas Centenario" class="event-photo" src="img/evento.png">
 <div class="event-content">
 <div class="event-label">Continuamos con la</div>
 <div class="event-script">Recepción</div>
@@ -1097,7 +1148,7 @@ Les pedimos de favor que el <strong>color bugambilia</strong><br>
 </div>
 	<div class="flourish"></div>
 </div>
-<div align="center"><img src="img/sobre_2.png" width="80%"/></div>
+<div align="center"><img src="img/sobre_2.png" width="90%"/></div>
 <div class="section-title-script">Lluvia de sobres</div>
 <div class="flourish"></div>
 <div class="gift-options reveal reveal-right">
@@ -1107,11 +1158,13 @@ Les pedimos de favor que el <strong>color bugambilia</strong><br>
 Si deseas tener un detalle conmigo, en el salón habrá lluvia de sobres , 
 lo cual me ayudará a reunir fondos para poder realizar un viaje 
 con el que he soñado desde hace tiempo.<br><br>
-Si lo prefieres, también podrás hacerlo mediante transferencia bancaria a la siguiente cuenta:  </p>
+</p>
 
-
+<div align="center"><img src="img/viaje.png" width="95%"/></div>
 <br/>
-<div align="center"><img src="img/hsbc.ico" width="10%"/></div>
+	
+<p class="gift-sub">	Si lo prefieres, también podrás hacerlo mediante transferencia bancaria a la siguiente cuenta:  </p>
+<div align="center"><img src="img/hsbc.ico" width="15%"/></div>
 <p class="gift-sub"><strong>HSBC</strong><br/>Tipo de cuenta: Cuenta Flexible Menores<br/>Titular: Ana Laura Álvarez Gutiérrez<br/>CLABE: 021180066388554661</p><br>
 <p class="intro-script">Gracias por acompañarme en este momento tan especial y por formar parte de este hermoso recuerdo.</p>
 </div>
