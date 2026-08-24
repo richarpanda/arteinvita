@@ -7,13 +7,13 @@
 <!-- TIPOGRAFÍAS -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
 <style>
-     /* Estilo Global */
+	   /* Estilo Global */
         @font-face {
             font-family: 'Nova Quinta';
             src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
         }
 
-    @font-face {
+		@font-face {
             font-family: 'Gabriola';
             src: url('fonts/gabriola Font Download.ttf') format('truetype');
         }
@@ -22,8 +22,8 @@
       --rojo: #b91c1c;
       --rojo-claro: #b91c1c;
       --dorado: #c9a24f;
-      --crema:#FFFFF;
-      --crema-oscuro:#ecdff6;
+      --crema:#FFFF;
+      --crema-oscuro: #f9f9f9;
       --texto: #2f2f38;
       --gris: #6b7280;
       --borde: #e5e7eb;
@@ -74,7 +74,7 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
-     /* Texto debajo del nombre */
+	   /* Texto debajo del nombre */
     .subtext {
         font-family: 'Nova Quinta', cursive;
         font-size: 24px;
@@ -82,30 +82,30 @@
         text-align: center;
         margin-top: 1px;
         line-height: 1.5;
-     width: 100%;
+		 width: 100%;
     }
-    .parrafo {
+		.parrafo {
          font-family: 'Gabriola', serif;
         font-size: 26px;
         color: #000000;
         text-align: center;
         margin-top: 1px;
         line-height: 1.5;
-     width: 100%;
+		 width: 100%;
     }
 
-   /* Contenedor general de la fecha */
+	 /* Contenedor general de la fecha */
      .date-container {
             font-family: "Great Vibes",serif;
             text-align: center;
-            color: #c7a8cb;
+            color: #ac6daf;
             width: 100%;
         }
 
         .day {
             font-size: 3.8em;
             margin-bottom: 0;
-            border-bottom: 2px solid #c7a8cb;
+            border-bottom: 2px solid #ac6daf;
             display: inline-block;
             padding: 0 30px 2px;
         }
@@ -120,7 +120,7 @@
         .month {
             font-size: 3.8em;
             margin-top: 0;
-            border-top: 2px solid #c7a8cb;
+            border-top: 2px solid #ac6daf;
             display: inline-block;
             padding: 2px 30px 0;
         }
@@ -165,7 +165,7 @@
     main {
       max-width: 520px;
       margin: 0 auto;
-      background: #ffffff;
+      background: var(--crema);
     }
 
     section {
@@ -174,17 +174,17 @@
 
     .section-title-script {
       font-family: "Great Vibes", cursive;
-      font-size: 3.0rem;
+      font-size: 3.3rem;
       color: var(--dorado);
       text-align: center;
       margin-bottom: 0.2rem;
     }
 
     .section-title-main {
-      font-family: "Great Vibes", cursive;
-      font-size: 2.5rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
       text-align: center;
-      color:#c7a8cb;
+      color:#ac6daf;
       margin-bottom: 0.2rem;
     }
 
@@ -237,7 +237,7 @@
     /* HERO A PANTALLA COMPLETA */
     .hero-full {
       position: relative;
-      min-height: calc(- 50px);
+      min-height: calc(100vh - 50px);
       padding: 0;
       overflow: hidden;
     }
@@ -251,14 +251,14 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-    /*  background: linear-gradient(
+      background: linear-gradient(
         to top,
-      rgba(172,109,175,1.00),
-    rgba(172,109,175,1.00),
-      rgba(172,109,175,1.00),
+		  rgba(172,109,175,1.00),
+		rgba(172,109,175,1.00),
+		  rgba(172,109,175,1.00),
         rgba(172,109,175,0.00),
         rgba(172,109,175,0.00)
-      );*/
+      );
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -269,7 +269,7 @@
 
     .hero-name {
       font-family: "Great Vibes", cursive;
-      font-size: 5.5rem;
+      font-size: 7.2rem;
       margin-bottom: 1.4rem;
     }
 
@@ -284,7 +284,7 @@
     /* REPRODUCTOR DE MÚSICA DENTRO DE LA INVITACIÓN */
     .music-section {
       padding: 1.4rem 1.6rem 0;
-    
+      background: #FFFFFF;
       display: flex;
       justify-content: center;
     }
@@ -352,7 +352,7 @@
     .intro-script {
       font-family: "Great Vibes", cursive;
       font-size: 2.8rem;
-      color: #c7a8cb;
+      color: #ac6daf;
       margin-top: 1.1rem;
       text-align: center;
     }
@@ -453,7 +453,7 @@
     .itinerary-title {
       font-family: "Great Vibes", cursive;
       font-size: 4.5rem;
-      color: #c7a8cb;
+      color: #ac6daf;
       text-align: center;
       margin-bottom: 1rem;
     }
@@ -579,7 +579,7 @@
     .event-time {
       margin-top: 1.2rem;
       font-weight: 700;
-      color: #c7a8cb;
+      color: #ac6daf;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       font-size: 1.8rem;
@@ -591,7 +591,7 @@
       padding: 0.8rem 2rem;
       border-radius: 999px;
       border: none;
-      background: #c7a8cb;
+      background: #ac6daf;
       color: #fff;
       font-size: 0.8rem;
       letter-spacing: 0.18em;
@@ -631,7 +631,7 @@
       display: inline-block;
       padding: 0.65rem 1.8rem;
       border-radius: 999px;
-      background: #c7a8cb;
+      background: var(--dorado);
       color: #fff;
       font-size: 0.82rem;
       letter-spacing: 0.16em;
@@ -705,7 +705,7 @@
       margin-top: 1.3rem;
       padding: 0.7rem 1.6rem;
       border-radius: 999px;
-      border: 1px solid #c7a8cb;
+      border: 1px solid #ac6daf;
       background: #fff;
       font-size: 0.82rem;
       letter-spacing: 0.18em;
@@ -746,7 +746,7 @@
       padding: 0.9rem 1.1rem;
       border-radius: 999px;
       border: none;
-      background: #c7a8cb;
+      background: #ac6daf;
       color: #fff;
       font-size: 0.9rem;
       letter-spacing: 0.16em;
@@ -808,7 +808,7 @@
     }
 
     .gallery-dot.active {
-      background: #c7a8cb;
+      background: #ac6daf;
       transform: scale(1.2);
     }
 
@@ -883,7 +883,7 @@
       height: 42px;
       border-radius: 999px;
       border: none;
-      background: #c7a8cb;
+      background: #ac6daf;
       color: #fff;
       display: flex;
       align-items: center;
@@ -909,7 +909,7 @@
       padding: 1.8rem 1.1rem 2.1rem;
       font-size: 1.8rem;
       text-align: center;
-      color: #c7a8cbf;
+      color: #ac6daf;
     }
 
     /* REVEAL LATERAL */
@@ -948,7 +948,7 @@
 <main>
 <!-- 1. HERO -->
 <section class="hero-full" id="inicio">
-<img alt="" src="img/portada.png"/>
+<img alt="" src="img/portada.png">
 <div class="hero-overlay">
 <div>
 
@@ -967,7 +967,7 @@
 </section>
 <!-- 2. INTRO -->
 <section class="intro-section" id="intro">
-<div align="center"><img src="img/reloj.png" width="90%"/></div>
+<div align="center"><img src="img/alicia_3.png" width="90%"/></div>
 <div class="intro-card reveal reveal-left">
 <!-- Contador de Fecha -->
 <div class="date-container">
@@ -1028,7 +1028,7 @@
 <div class="event-script">Ceremonia Religiosa</div>
 <div class="event-title">Parroquia de la Inmaculada Concepción</div>
 <p class="event-address">Palestina 53, Col. Clavería, Delegación Azcapotzalco, C.P. 02080, CDMX</p>
-<div class="event-time">17:00 PM</div>
+<div class="event-time">17:00 HRS</div>
 <a href="https://maps.app.goo.gl/aMLS9RnzCDe3onoXA?g_st=iw" rel="noopener" target="_blank">
 <button class="btn-ubicacion">Ver ubicación</button>
 </a>
@@ -1043,7 +1043,7 @@
 <div class="event-script">Recepción</div>
 <div class="event-title">Salones de Fiestas Centenario</div>
 <p class="event-address">Av. Centenario 367, Salón 2, Col Nextengo, Azcapotzalco, C.P. 02070.</p>
-<div class="event-time">19:30 PM </div>
+<div class="event-time">19:30 HRS </div>
 <a href="https://maps.app.goo.gl/1eRi1UTCKuYe7yct6?g_st=iw" rel="noopener" target="_blank">
 <button class="btn-ubicacion">Ver ubicación</button>
 </a>
@@ -1069,15 +1069,15 @@
 <div align="center"><img alt="Foto" src="img/dv.png" width="100%"/></div>
 <div class="flourish"></div>
 <h2 class="itinerary-title">Itinerario</h2>
-<!--<p class="itinerary-date">31 de octubre de 2026</p>-->
+<p class="itinerary-date">31 de octubre de 2026</p>
 <div class="itinerary-timeline">
-<div class="itinerary-item reveal reveal-left"><div class="itinerary-icon-wrapper"><img src="img/ceremonia.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">5:00 p.m.</div><div class="itinerary-event">Ceremonia religiosa</div></div></div>
-<div class="itinerary-item reveal reveal-left"><div class="itinerary-icon-wrapper"><img src="img/recepcion.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">7:30 p.m.</div><div class="itinerary-event">Recepción y cóctel de bienvenida</div></div></div>
-<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/cena.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">8:30 p.m.</div><div class="itinerary-event">Cena</div></div></div>
-<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/vals.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">9:00 p.m.</div><div class="itinerary-event">Brindis y vals</div></div></div>
-<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/baile.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">10:00 p.m.</div><div class="itinerary-event">Fiesta ¡A disfrutar la pista!</div></div></div>
-<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/tornafiesta.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">12:30 a.m.</div><div class="itinerary-event">Tornafiesta</div></div></div>
-<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/fin.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">2:00 a.m.</div><div class="itinerary-event">Fin del evento</div></div></div>
+<div class="itinerary-item reveal reveal-left"><div class="itinerary-icon-wrapper"><img src="img/ceremonia.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">17:00 HRS</div><div class="itinerary-event">Ceremonia religiosa</div></div></div>
+<div class="itinerary-item reveal reveal-left"><div class="itinerary-icon-wrapper"><img src="img/recepcion.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">19:30 HRS</div><div class="itinerary-event">Recepción y cóctel de bienvenida</div></div></div>
+<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/cena.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">20:30 HRS</div><div class="itinerary-event">Cena</div></div></div>
+<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/vals.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">21:00 HRS</div><div class="itinerary-event">Brindis y vals</div></div></div>
+<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/baile.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">22:00 HRS</div><div class="itinerary-event">Fiesta ¡A disfrutar la pista!</div></div></div>
+<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/tornafiesta.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">00:30 HRS</div><div class="itinerary-event">Tornafiesta</div></div></div>
+<div class="itinerary-item reveal reveal-right"><div class="itinerary-icon-wrapper"><img src="img/fin.png"/></div><div class="itinerary-divider"></div><div class="itinerary-content"><div class="itinerary-time">02:00 HRS</div><div class="itinerary-event">Fin del evento</div></div></div>
 </div>
 </section>
 <!-- 5. FOTO DESTACADA -->
