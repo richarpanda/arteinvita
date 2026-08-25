@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mayte | Mis XV Años</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* FUENTES */
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    /* PALETA */
+    :root {
+      --negro: #050505;
+      --negro-suave: #111111;
+      --dorado: #bfc3c7;
+      --dorado-claro: #f4f5f6;
+      --crema: #090909;
+      --crema-oscuro: #141414;
+      --texto: #eeeeee;
+      --gris: #b6b6b6;
+      --borde: #565a5e;
+      --plateado: #bfc3c7;
+      --plateado-claro: #f4f5f6;
+      --plateado-medio: #8f969d;
+      --plateado-oscuro: #5f656b;
+      --rosa: #d7a0ad;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.38);
+      --shadow-deep: 0 24px 54px rgba(0, 0, 0, 0.60);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gabriola', serif;
+      color: var(--texto);
+
+      font-size: 18px;
+      overflow-x: hidden;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: var(--plateado-claro);
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 14px 30px rgba(191, 195, 199, 0.18);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      overflow: hidden;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      color: var(--plateado-claro);
+      text-align: center;
+      margin-bottom: 0.2rem;
+      line-height: 1;
+      text-shadow: 0 3px 12px rgba(255, 255, 255, 0.12);
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--plateado);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .section-sub {
+      font-size: 1.75rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.2;
+      margin-top: 1rem;
+    }
+
+    .flourish,
+    .confirm-flourish {
+      width: 300px;
+      max-width: 88%;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      filter: grayscale(1) brightness(1.6);
+      opacity: 0.9;
+    }
+
+    /* HERO */
+    .hero-full {
+      position: relative;
+      min-height: calc(100vh - 50px);
+      padding: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #303338 0%, #101010 45%, #000000 100%);
+    }
+
+    .hero-full::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.20), transparent 23%),
+        radial-gradient(circle at 82% 35%, rgba(191, 195, 199, 0.18), transparent 28%);
+      pointer-events: none;
+    }
+
+    .hero-full::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.80) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(191, 195, 199, 0.50) 0 1px, transparent 1.5px);
+      background-size: 62px 62px, 96px 96px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3.4rem 2rem 3rem;
+      text-align: center;
+      color: #ffffff;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(8, 8, 8, 0.94) 22%,
+          rgba(35, 35, 35, 0.42) 45%,
+          rgba(70, 70, 70, 0.10) 62%,
+          transparent 78%);
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: 6.5rem;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+      padding: 0.15em 0.18em 0.22em;
+
+      background: linear-gradient(180deg,
+          #ffffff 0%,
+          #e9ecef 18%,
+          #c7ccd1 38%,
+          #8f969d 55%,
+          #dfe3e6 72%,
+          #666c72 100%);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+
+      filter:
+        drop-shadow(0 2px 2px rgba(20, 20, 20, 0.55)) drop-shadow(0 4px 5px rgba(0, 0, 0, 0.35));
+    }
+
+    @media (max-width: 430px) {
+      .hero-name {
+        font-size: 5.2rem;
+        line-height: 1.2;
+        padding: 0.15em 0.18em 0.22em;
+      }
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    /* MÚSICA */
+    .music-section {
+      padding: 1.4rem 1.6rem 0;
+      background: var(--crema);
+      display: flex;
+      justify-content: center;
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--plateado-medio);
+      background: var(--negro-suave);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--plateado-claro);
+    }
+
+    .music-icon-min {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--plateado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color: transparent transparent transparent var(--plateado-claro);
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 9px;
+      background: var(--plateado-claro);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    /* INTRO */
+    .intro-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(191, 195, 199, 0.10), transparent 35%),
+        linear-gradient(to bottom, #080808, #151515);
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 1;
+    }
+
+    .date-container {
+      width: 100%;
+      font-family: "Great Vibes", cursive;
+      text-align: center;
+      color: var(--plateado-claro);
+    }
+
+    .day {
+      display: inline-block;
+      padding: 0 30px 2px;
+      border-bottom: 2px solid var(--plateado);
+      font-size: 3.8em;
+      line-height: 1;
+    }
+
+    .number {
+      margin: 0;
+      font-size: 10em;
+      font-weight: lighter;
+      line-height: 1;
+      color: var(--plateado-claro);
+      text-shadow: 0 3px 20px rgba(255, 255, 255, 0.16);
+    }
+
+    .month {
+      display: inline-block;
+      padding: 2px 30px 0;
+      border-top: 2px solid var(--plateado);
+      font-size: 3.5em;
+      line-height: 1.1;
+    }
+
+    .intro-script {
+      margin-top: 1.1rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.85rem;
+      line-height: 1.1;
+      color: var(--plateado-claro);
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      margin-top: 1.8rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      color: var(--plateado);
+      text-align: center;
+    }
+
+    .intro-list {
+      margin-top: 0.4rem;
+      font-size: 1.75rem;
+      line-height: 1.45;
+      text-align: center;
+      color: var(--gris);
+    }
+
+    /* CONTADOR */
+    .save-date-min {
+      position: relative;
+      overflow: hidden;
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/fondocounter.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+    }
+
+    .save-date-min::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.80) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(191, 195, 199, 0.50) 0 1px, transparent 1.5px);
+      background-size: 52px 52px, 86px 86px;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      margin-bottom: 1.2rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--plateado-claro);
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 1.2rem 1.2rem 1.1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(191, 195, 199, 0.75);
+      border-radius: 18px;
+      box-shadow: var(--shadow-deep);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 0.45rem;
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--plateado);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #ffffff;
+    }
+
+    /* EVENTOS */
+    #evento {
+      background: var(--negro);
+    }
+
+    .when-where-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .event-card {
+      margin-bottom: 2rem;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 1.5rem;
+      background: var(--negro-suave);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-script {
+      margin-bottom: 0.2rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      line-height: 1;
+      color: var(--plateado-claro);
+    }
+
+    .event-label {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--gris);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .event-title {
+      margin-bottom: 0.3rem;
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .event-address {
+      font-size: 1.45rem;
+      line-height: 1.45;
+      color: var(--gris);
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--plateado-claro);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .btn-ubicacion,
+    .btn-whats,
+    .gift-button,
+    .scroll-top {
+      background: linear-gradient(135deg, #282b2e, #090909);
+      color: var(--plateado-claro);
+    }
+
+    .btn-ubicacion {
+      display: block;
+      width: fit-content;
+      margin: 1rem auto 0;
+      padding: 0.8rem 2rem;
+      border: 1px solid var(--plateado);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .event-content a {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ITINERARIO */
+    .itinerary-section {
+      padding: 3rem 1.6rem;
+      background: #101010;
+    }
+
+    .itinerary-title {
+      margin-bottom: 1rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+      color: var(--plateado-claro);
+      text-align: center;
+    }
+
+    .itinerary-date {
+      margin-bottom: 3rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      color: var(--plateado);
+      text-align: center;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .itinerary-timeline {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .itinerary-item {
+      display: grid;
+      grid-template-columns: 100px 45px 150px;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.8rem;
+      width: 100%;
+      margin: 0 auto 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      width: 100px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 100%;
+      max-width: 95px;
+      max-height: 105px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .itinerary-divider {
+      width: 45px;
+      height: 2px;
+      margin: 0 auto;
+      background: linear-gradient(90deg,
+          transparent,
+          var(--plateado-claro),
+          transparent);
+    }
+
+    .itinerary-content {
+      width: 150px;
+      text-align: center;
+    }
+
+    .itinerary-time {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--plateado-claro);
+      text-align: center;
+    }
+
+    .itinerary-event {
+      width: 100%;
+      font-size: 1.3rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    @media (max-width: 430px) {
+      .itinerary-item {
+        grid-template-columns: 92px 36px 135px;
+        column-gap: 0.6rem;
+      }
+
+      .itinerary-icon-wrapper {
+        width: 92px;
+        min-height: 92px;
+      }
+
+      .itinerary-icon-wrapper img {
+        max-width: 88px;
+        max-height: 98px;
+      }
+
+      .itinerary-divider {
+        width: 36px;
+      }
+
+      .itinerary-content {
+        width: 135px;
+      }
+    }
+
+    /* REGALOS */
+    .gifts-section {
+      background: var(--negro);
+    }
+
+    .gift-options {
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--texto);
+    }
+
+    .gift-title {
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--plateado-claro);
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      line-height: 1.3;
+      color: var(--gris);
+    }
+
+    .gift-button {
+      display: block;
+      width: fit-content;
+      margin: 0.9rem auto 0;
+      padding: 0.65rem 1.8rem;
+      border: 1px solid var(--plateado);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* GALERÍA */
+    .gallery-section {
+      background: #101010;
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 1.5rem;
+      background: #000;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.3rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      border-radius: 0.7rem;
+      background: rgba(20, 20, 20, 0.70);
+      color: #ffffff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--plateado-oscuro);
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .gallery-dot.active {
+      background: var(--plateado-claro);
+      transform: scale(1.25);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.96);
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      width: 92%;
+      max-width: 920px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      border: none;
+      background: none;
+      color: #ffffff;
+      font-size: 2.4rem;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.6rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      border-radius: 0.7rem;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    /* QR */
+    .qr-card {
+      padding: 1.5rem;
+      border: 1px solid var(--borde);
+      border-radius: 1.4rem;
+      background: linear-gradient(to bottom, #171717, #090909);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    /* CONFIRMACIÓN */
+    .confirm-section {
+      position: relative;
+      background: linear-gradient(to bottom, #151515, #050505);
+    }
+
+    .confirm-title-script {
+      margin-bottom: 0.2rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--plateado-claro);
+      text-align: center;
+    }
+
+    /* BOTÓN ARRIBA */
+    .scroll-top {
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      z-index: 60;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--plateado);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      background: #000000;
+      color: var(--plateado);
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    /* ANIMACIONES */
+    .reveal {
+      opacity: 0;
+      transition: opacity .7s ease-out, transform .7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 430px) {
+      .hero-name {
+        font-size: 5.2rem;
+      }
+
+      .hero-sub {
+        font-size: 1.2rem;
+      }
+
+      .day {
+        font-size: 3.2em;
+      }
+
+      .number {
+        font-size: 8em;
+      }
+
+      .month {
+        font-size: 2.9em;
+      }
+
+      .section-title-script {
+        font-size: 3.2rem;
+      }
+
+      .section-sub,
+      .intro-list {
+        font-size: 1.5rem;
+      }
+
+      .countdown-time {
+        font-size: 1.7rem;
+        gap: 0.25rem;
+      }
+
+      .countdown-labels {
+        gap: 0.9rem;
+        font-size: 0.64rem;
+      }
+
+      .gallery-slide-frame img {
+        height: 430px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+      }
+
+      main {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+  <audio id="bg-music" src="My Girl.mp3" loop autoplay></audio>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-full">
+      <img src="img/portada.png" alt="Mayte">
+
+      <div class="hero-overlay">
+        <div>
+          <div class="hero-name">Mayte</div>
+          <div class="hero-sub">Mis XV Años</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÚSICA -->
+    <section class="music-section">
+      <button class="music-btn-min" id="musicToggle" aria-label="Control de música">
+        <div class="music-icon-min paused" id="musicIcon"></div>
+        <span id="musicStatus">Play</span>
+      </button>
+    </section>
+
+    <div align="center">
+      <img src="img/reloj.png" width="65%" alt="Decoración">
+    </div>
+
+    <!-- INTRO -->
+    <section id="intro" class="intro-section">
+      <div class="intro-card reveal reveal-left">
+
+        <div class="date-container">
+          <div class="day">Sábado</div>
+          <div class="number">31</div>
+          <div class="month">Octubre</div>
+        </div>
+
+        <br>
+
+        <p class="section-sub">
+          Hay momentos en la vida que se sueñan,
+          se esperan y finalmente llegan.
+          <br><br>
+          Hoy quiero compartir contigo uno de los más especiales:
+          la celebración de mis XV años.
+        </p>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">
+          Tu presencia hará de esta noche un recuerdo inolvidable.
+        </p>
+
+        <div class="intro-parents-title">
+          Mis padres
+        </div>
+
+        <p class="intro-list">
+          Hilda Ivonne Núñez Delgadillo<br>
+          y<br>
+          Roberto Jesús Rodríguez Navarrete
+        </p>
+
+        <div class="flourish"></div>
+
+        <div class="intro-parents-title">
+          Mis padrinos
+        </div>
+
+        <p class="intro-list">
+          Israel Gerardo Núñez Delgadillo<br>
+          Claudia Carolina Solís Olivera<br>
+          y<br>
+          Tania Perla Rodríguez Navarrete
+        </p>
+
+        <div class="flourish"></div>
+
+      </div>
+    </section>
+
+    <!-- CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-right">
+
+        <div class="save-date-min-title">
+          <strong>FALTAN</strong>
+        </div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+          <div class="countdown-time">
+            <span id="cdDays">0</span>:
+            <span id="cdHours">00</span>:
+            <span id="cdMins">00</span>:
+            <span id="cdSecs">00</span>
+          </div>
+
+          <div class="countdown-labels">
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+          </div>
+        </div>
+
+        <p class="countdown-note">
+          ¡Te espero con mucha ilusión!
+        </p>
+
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="evento">
+
+      <div class="when-where-header reveal reveal-left">
+		  
+		  
+		  <div align="center">
+        <img src="img/cenefa.png" width="70%" alt="Decoración">
+      </div>
+
+      <br>
+        <div class="section-title-script">
+          ¿Cuándo y dónde?
+        </div>
+
+        <div class="flourish"></div>
+      </div>
+
+      <!-- CEREMONIA -->
+      <div class="event-card reveal reveal-right">
+        <img src="img/iglesia.jpg" alt="Misión Pastoral San Benito Abad" class="event-photo">
+
+        <div class="event-content">
+          <div class="event-label">
+            Iniciamos con la
+          </div>
+
+          <div class="event-script">
+            Ceremonia Religiosa
+          </div>
+
+          <div class="event-title">
+            Misión Pastoral San Benito Abad
+          </div>
+
+          <p class="event-address">
+            Avenida Seis, Cto. Bosques de Bohemia S/N, Bosques del Lago, 54766 Cuautitlán Izcalli, Méx.
+          </p>
+
+          <div class="event-time">
+            Cita 4:30 PM<br>
+            Misa 5:00 PM
+          </div>
+
+          <a href="https://maps.app.goo.gl/Bqb7DZuvzdhepEbf7" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+
+      
+
+      <!-- RECEPCIÓN -->
+      <div class="event-card reveal reveal-left">
+        <img src="img/salon.jpeg" alt="Jardín Los Arcos" class="event-photo">
+
+        <div class="event-content">
+          <div class="event-label">
+            Lugar del Evento
+          </div>
+
+          <div class="event-script">
+            Recepción
+          </div>
+
+          <div class="event-title">
+            Jardín Los Arcos
+          </div>
+
+          <p class="event-address">
+            Av. del Jacal 34, La Perla, 54740 Cuautitlán Izcalli, Méx.
+          </p>
+
+          <div class="event-time">
+            6:30 PM
+          </div>
+
+          <a href="https://maps.app.goo.gl/CYRcPtwgsDhwLRGY8" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario" class="itinerary-section">
+
+      <div align="center">
+        <img src="img/iti.png" width="65%" alt="Itinerario">
+      </div>
+
+      <br>
+
+      <h2 class="itinerary-title">
+        Itinerario
+      </h2>
+
+      <p class="itinerary-date">
+        31 de Octubre de 2026
+      </p>
+
+      <div class="itinerary-timeline">
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/ceremonia.png" alt="Cita">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              4:30 PM
+            </div>
+
+            <div class="itinerary-event">
+              Cita
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/iglesia.png" alt="Misa">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              5:00 PM
+            </div>
+
+            <div class="itinerary-event">
+              Misa
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/coctel.png" alt="Recepción">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              6:30 PM
+            </div>
+
+            <div class="itinerary-event">
+              Recepción
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/cena.png" alt="Cena">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              7:30 PM
+            </div>
+
+            <div class="itinerary-event">
+              Cena
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/fam.png" alt="Ceremonia familiar">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              8:30 PM
+            </div>
+
+            <div class="itinerary-event">
+              Ceremonia Familiar
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/baile.png" alt="Baile">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              9:30 PM
+            </div>
+
+            <div class="itinerary-event">
+              Baile
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary-item reveal reveal-left">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/fin.png" alt="Fin del evento">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">
+              1:00 AM
+            </div>
+
+            <div class="itinerary-event">
+              Fin del evento
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VESTIMENTA -->
+    <section id="vestimenta" class="gifts-section">
+
+
+
+      <div class="section-title-script">
+        Código de vestimenta
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+
+          <div align="center">
+            <img src="img/vestimenta.png" width="65%" alt="Código de vestimenta" style="
+      filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.95))
+        drop-shadow(0 0 14px rgba(255,255,255,0.80))
+        drop-shadow(0 0 24px rgba(255,255,255,0.55));
+    ">
+          </div>
+
+          <div class="gift-title">
+            FORMAL
+          </div>
+
+          <p class="section-sub">
+            Te esperamos con tu mejor look
+            para celebrar esta noche tan especial.
+            <br><br>
+            Agradecemos reservar los colores
+            <strong>plateado y rosa</strong>
+            para la quinceañera.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="gallery-section">
+
+      <div class="section-title-script">
+       Mi Galería
+      </div>
+
+      <div class="flourish"></div>
+
+      <p class="section-sub">
+        Algunos momentos especiales
+        que quiero compartir contigo.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de Mayte">
+
+          <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto anterior">
+            ‹
+          </button>
+
+          <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto siguiente">
+            ›
+          </button>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots"></div>
+
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar">
+          ✕
+        </button>
+
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Foto anterior">
+          ‹
+        </button>
+
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Foto siguiente">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <!-- REGALOS -->
+    <section id="mesa-regalos" class="gifts-section">
+
+      <div align="center">
+        <img src="img/regalo.png" width="70%" alt="Regalos">
+      </div>
+
+      <div class="section-title-script">
+        Regalos
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Tu presencia es el mejor regalo que puedo recibir.
+            <br><br>
+            Si deseas tener un detalle conmigo,
+            puedes hacerlo con un regalo
+            o mediante la tradicional
+            <strong>lluvia de sobres</strong>.
+          </p>
+
+          <p class="intro-script">
+            ¡Gracias por acompañarme!
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ÁLBUM QR -->
+    <section id="albumqr" class="gifts-section">
+
+      <div class="qr-card reveal reveal-right">
+
+        <div align="center">
+          <img src="img/camara.png" width="60%" alt="Código QR del álbum">
+        </div>
+
+        <br>
+
+        <div class="section-title-script">
+          Álbum Compartido
+        </div>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Ayúdame a guardar cada instante
+          de esta noche tan especial.
+          <br><br>
+          Escanea el código QR y comparte
+          tus fotografías, videos y dedicatorias
+          en mi álbum digital.
+        </p>
+
+
+        <div align="center">
+          <img src="img/XV MAYTE_galeria_QR.png" width="55%" alt="Código QR del álbum">
+        </div>
+		  
+		  
+          <a href="https://app.arteinvita.com/gallery/xv-mayte-1787269225522?token=963eafb2048f53924f5150f426b6b7b7" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">
+              Subir foto o dedicatoria
+            </button>
+          </a>
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion" class="confirm-section">
+
+      <div class="reveal reveal-left">
+
+        <div align="center">
+          <img src="img/corona.png" width="60%" alt="Decoración">
+        </div>
+
+        <br>
+
+        <div class="confirm-title-script">
+          ¿Asistirás?
+        </div>
+
+        <div class="confirm-flourish"></div>
+
+        <p class="section-sub">
+          ¡Será increíble contar con tu presencia!
+          <br>
+          Por favor, confirma tu asistencia
+          a este día tan especial para mí.
+          <br><br>
+          Tu respuesta es muy importante.
+        </p>
+
+        <p class="section-sub">
+          <em>Confirma tu asistencia desde mi panel de invitados.</em>
+        </p>
+
+        <br>
+
+        <button class="btn-ubicacion" onclick="ArteInvita.open('1CC-598F-969')">
+          <strong>Confirmar en Panel</strong>
+        </button>
+
+        <br>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          ¡Agradezco de corazón que
+          celebres conmigo!
+          <br><br>
+          ¡Nos vemos pronto!
+        </p>
+
+        <br>
+
+        <div class="section-title-main">
+          ¡Con cariño!<br>
+          Mayte
+        </div>
+
+      </div>
+
+      <br><br>
+
+      <div class="event-card reveal reveal-right">
+        <div align="center">
+          <img src="img/final.png" width="100%" alt="Foto final de Mayte">
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 XV Años Mayte
+  </footer>
+
+  <!-- BOTÓN ARRIBA -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">
+    ↑
+  </button>
+
+  <script>
+    // CONTADOR
+    const targetDate = new Date(2026, 9, 31, 16, 30, 0);
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = days;
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // MÚSICA
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (error) {
+        console.log("No se pudo reproducir la música:", error);
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (isPlaying) {
+        pauseMusic();
+      } else {
+        await playMusic();
+      }
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+
+      try {
+        await music.play();
+
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+
+        cleanupAutoplayListeners();
+      } catch (error) {
+        console.log("Autoplay bloqueado. La música se activará al interactuar.");
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // REVEAL
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ITINERARIO
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    itineraryItems.forEach(el => itineraryObserver.observe(el));
+
+    // BOTÓN ARRIBA
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // GALERÍA
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg"
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDotsContainer = document.getElementById("galleryDots");
+
+    let galleryIndex = 0;
+
+    function renderDots() {
+      galleryDotsContainer.innerHTML = "";
+
+      galleryImages.forEach((_, index) => {
+        const dot = document.createElement("div");
+
+        dot.className =
+          "gallery-dot" +
+          (index === galleryIndex ? " active" : "");
+
+        dot.addEventListener("click", () => {
+          galleryIndex = index;
+          updateGallery();
+        });
+
+        galleryDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      gallerySlide.src = galleryImages[galleryIndex];
+      gallerySlide.alt = `Foto ${galleryIndex + 1} de Mayte`;
+      renderDots();
+    }
+
+    galleryPrev.addEventListener("click", () => {
+      galleryIndex =
+        (galleryIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
+      updateGallery();
+    });
+
+    galleryNext.addEventListener("click", () => {
+      galleryIndex =
+        (galleryIndex + 1) %
+        galleryImages.length;
+
+      updateGallery();
+    });
+
+    // LIGHTBOX
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lightboxImage.src = galleryImages[currentImageIndex];
+      lightbox.style.display = "flex";
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    function nextImage() {
+      currentImageIndex =
+        (currentImageIndex + 1) %
+        galleryImages.length;
+
+      lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
+      lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    gallerySlide.addEventListener("click", () => {
+      openLightbox(galleryIndex);
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxOverlay.addEventListener("click", closeLightbox);
+    lightboxNext.addEventListener("click", nextImage);
+    lightboxPrev.addEventListener("click", prevImage);
+
+    document.addEventListener("keydown", event => {
+      if (lightbox.style.display !== "flex") return;
+
+      if (event.key === "ArrowRight") nextImage();
+      if (event.key === "ArrowLeft") prevImage();
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    updateGallery();
+  </script>
+
+</body>
+
+</html>
