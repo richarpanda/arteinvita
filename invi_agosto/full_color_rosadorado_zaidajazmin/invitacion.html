@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV Años | Mia Gisel</title>
+  <script src="https://app.arteinvita.com/widget.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF5F7;
+      --surface: #FFF9FA;
+      --ink: #744C59;
+      --muted: #A57A87;
+      --accent: #D990A6;
+      --rose: #EAA9BC;
+      --rose-light: #F8DDE5;
+      --rose-soft: #FBECEF;
+      --rose-dark: #AA6378;
+      --pink: #E48CA7;
+      --gold: #C9A35B;
+      --gold-light: #E8CE91;
+      --gold-dark: #99713A;
+      --cream: #FFF8F0;
+      --pastel: #F5E6ED;
+      --line: rgba(201, 163, 91, 0.25);
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(116, 76, 89, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+      background: #F4E7EC;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .app {
+      position: relative;
+      width: min(460px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+      background: linear-gradient(180deg, #FFF3F6 0%, #F9DDE5 23%, #FFF8F6 47%, #F4D8E1 73%, #FFF6F4 100%);
+    }
+
+    .app::before,
+    .app::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .app::before {
+      width: 340px;
+      height: 340px;
+      top: 1050px;
+      left: -270px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 206, 145, .18), rgba(234, 169, 188, .09) 48%, transparent 72%);
+    }
+
+    .app::after {
+      width: 340px;
+      height: 340px;
+      top: 2100px;
+      right: -260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(228, 140, 167, .16), transparent 70%);
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* ===================================
+      HERO
+      =================================== */
+
+    .hero {
+      position: relative;
+      height: min(95vh, 760px);
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      background: url("galeria/3.jpeg") center top / cover no-repeat;
+      z-index: 1;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(255, 247, 249, .03) 0%, rgba(238, 181, 199, .08) 40%, rgba(170, 99, 120, .40) 68%, rgba(91, 54, 65, .91) 100%), radial-gradient(circle at 17% 27%, rgba(255, 212, 225, .28), transparent 35%), radial-gradient(circle at 84% 22%, rgba(232, 206, 145, .18), transparent 29%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      z-index: 2;
+      border: 1px solid rgba(232, 206, 145, .75);
+      border-radius: 18px;
+      box-shadow: inset 0 0 28px rgba(255, 255, 255, .12);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 0 18px 38px;
+      color: #FFFFFF;
+      text-shadow: 0 3px 14px rgba(73, 42, 51, .62);
+    }
+
+    .hero-kicker {
+      margin: 0 0 11px;
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+    }
+
+    .hero-name {
+      margin: 0;
+      color: #FFFFFF;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(5.3rem, 15vw, 7rem);
+      font-weight: 400;
+      line-height: .98;
+      text-shadow: 0 3px 3px rgba(71, 39, 47, .58), 0 0 14px rgba(255, 255, 255, .38), 0 0 28px rgba(228, 140, 167, .42);
+    }
+
+    .hero-date {
+      margin-top: 18px;
+      color: #FFF8F5;
+      font-family: "Playfair Display", serif;
+      font-size: 1.38rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    /* ===================================
+      CONTENIDO
+      =================================== */
+
+    .background {
+      position: relative;
+      z-index: 1;
+      min-height: auto !important;
+      background: transparent !important;
+      animation: none !important;
+    }
+
+    .section {
+      padding: 12px 16px 18px;
+      background: transparent;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 8px 16px 40px;
+      text-align: center;
+    }
+
+    .subtext {
+      max-width: 390px;
+      margin: 28px auto 12px;
+      color: var(--rose-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      line-height: 1.72;
+    }
+
+    .parrafo {
+      max-width: 390px;
+      margin: 14px auto 6px;
+      color: var(--muted);
+      font-size: 1.01rem;
+      line-height: 1.78;
+      text-align: center;
+    }
+
+    .parrafo strong {
+      color: var(--rose-dark);
+      font-weight: 700;
+    }
+
+    /* ===================================
+      FRASES
+      =================================== */
+
+    .quote-card {
+      width: min(94%, 390px);
+      margin: 26px auto;
+      padding: 26px 20px;
+    }
+
+    .quote-card p {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      line-height: 1.72;
+    }
+
+    .quote-card strong {
+      color: var(--rose-dark);
+    }
+
+    /* ===================================
+      DIVISOR
+      =================================== */
+
+    .floral-divider {
+      width: 82%;
+      max-width: 320px;
+      height: 64px;
+      margin: 22px auto;
+      display: block;
+      background: url("cenefa.png") center center / contain no-repeat;
+      opacity: 0.95;
+      filter: brightness(0) saturate(100%) invert(67%) sepia(51%) saturate(525%) hue-rotate(358deg) brightness(94%) contrast(89%) drop-shadow(0 2px 5px rgba(201, 163, 91, .25));
+    }
+
+    img[src="cenefa.png"] {
+      filter: brightness(0) saturate(100%) invert(67%) sepia(51%) saturate(525%) hue-rotate(358deg) brightness(94%) contrast(89%);
+    }
+
+    /* ===================================
+      FECHA
+      =================================== */
+
+    .date-container {
+      width: 100%;
+      margin: 14px auto 8px;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+    }
+
+    .day,
+    .month {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.42rem;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    .number {
+      margin: 0 0 .20em;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 6.8rem;
+      line-height: 1;
+      text-shadow: 0 0 14px rgba(232, 206, 145, .38), 0 4px 16px rgba(116, 76, 89, .10);
+    }
+
+    /* ===================================
+      BOTONES
+      =================================== */
+
+    .btn,
+    .btn-ubicacion,
+    .confirm-button,
+    .gallery-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 20px;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #A95E77 0%, #E192AA 50%, #C9A35B 100%);
+      box-shadow: 0 10px 24px rgba(116, 76, 89, .20), inset 0 1px 1px rgba(255, 255, 255, .28);
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      font-size: .84rem;
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover,
+    .btn-ubicacion:hover,
+    .confirm-button:hover,
+    .gallery-button:hover {
+      filter: brightness(1.07);
+      transform: translateY(-2px);
+    }
+
+    /* ===================================
+      TIMELINE
+      =================================== */
+
+    .timeline {
+      max-width: 390px;
+      margin: 22px auto 10px;
+      padding: 0;
+      display: grid;
+      gap: 26px;
+    }
+
+    .timeline::before {
+      display: none;
+    }
+
+    .timeline-item,
+    .social-item,
+    .final-item {
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      text-align: center;
+    }
+
+    .timeline-item+.timeline-item::before,
+    .social-item+.social-item::before,
+    .final-item+.final-item::before {
+      content: "";
+      display: block;
+      width: 72%;
+      height: 1px;
+      margin: 25px auto;
+      background: linear-gradient(90deg, transparent, rgba(228, 140, 167, .36), rgba(201, 163, 91, .62), rgba(228, 140, 167, .36), transparent);
+    }
+
+    .icon-wrap {
+      width: 148px;
+      height: 148px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      border: 1px solid rgba(201, 163, 91, .32);
+      border-radius: 50%;
+      background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, .82), transparent 42%), linear-gradient(145deg, rgba(255, 251, 252, .95), rgba(248, 221, 229, .74));
+      box-shadow: 0 10px 24px rgba(116, 76, 89, .12), inset 0 0 20px rgba(201, 163, 91, .06);
+    }
+
+    .icon-wrap svg,
+    .icon-wrap img {
+      display: block;
+      width: 98px;
+      height: 98px;
+      object-fit: contain;
+    }
+
+    .icon-wrap svg {
+      color: var(--gold);
+    }
+
+    .icon-wrap img {
+      filter: brightness(0) saturate(100%) invert(67%) sepia(51%) saturate(525%) hue-rotate(358deg) brightness(94%) contrast(89%);
+    }
+
+    .section-title,
+    .social-title,
+    .final-title {
+      margin: 6px 0 10px;
+      color: var(--rose-dark);
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .section-content,
+    .social-content,
+    .final-content {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .section-content strong,
+    .social-content strong,
+    .final-content strong {
+      color: var(--ink);
+    }
+
+    .section-content-hora {
+      margin: 10px 0 0;
+      color: var(--gold-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    /* ===================================
+      ITINERARIO
+      =================================== */
+
+    .timeline-section {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .timeline-title {
+      margin: 0 0 2rem;
+      color: var(--rose-dark);
+      font-family: "Great Vibes", cursive;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .timeline-list {
+      position: relative;
+      width: min(100%, 390px);
+      margin: 0 auto;
+      padding: .5rem 0;
+    }
+
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--gold-light), var(--rose), var(--gold), var(--rose-dark));
+      transform: translateX(-50%);
+    }
+
+    .timeline-row {
+      position: relative;
+      min-height: 67px;
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .timeline-time {
+      width: 100%;
+      color: var(--gold-dark);
+      font-family: "Playfair Display", serif;
+      font-size: .98rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .timeline-dot {
+      z-index: 1;
+      width: 18px;
+      height: 18px;
+      margin: 0 auto;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      background: #FFF8FA;
+      box-shadow: 0 0 10px rgba(201, 163, 91, .28);
+    }
+
+    .timeline-event {
+      width: 100%;
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    /* ===================================
+      SOCIAL
+      =================================== */
+
+    .social-section,
+    .final-section {
+      max-width: 390px;
+      margin: 15px auto 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .thanks {
+      margin-top: 12px;
+      color: var(--gold-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    /* ===================================
+      MESA DE REGALOS
+      =================================== */
+
+    .transfer-card {
+      width: min(92%, 350px);
+      margin: 14px auto;
+      padding: 18px 15px;
+    }
+
+    /* ===================================
+      GALERÍA
+      =================================== */
+
+    .polaroid-single {
+      width: min(96%, 360px);
+      margin: 18px auto 6px;
+      padding: 12px 12px 16px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 163, 91, .28);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #FFFDFC, #FBE8EF);
+      box-shadow: 0 12px 28px rgba(116, 76, 89, .15);
+      text-align: center;
+    }
+
+    .polaroid-single img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      display: block;
+      object-fit: cover;
+      border: 1px solid rgba(228, 140, 167, .18);
+      border-radius: 15px;
+    }
+
+    .polaroid-single .pol-label {
+      margin-top: 12px;
+      color: var(--rose-dark);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .polaroid-single .pol-btn {
+      width: 100%;
+      max-width: 220px;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--rose-dark), var(--rose), var(--gold));
+      cursor: pointer;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    /* ===================================
+      CONTADOR
+      =================================== */
+
+    .digital-clock-container {
+      margin: 0;
+    }
+
+    .digital-clock {
+      display: inline-block;
+      padding: 10px 12px;
+      border: 1px solid rgba(201, 163, 91, .30);
+      border-radius: 14px;
+      color: var(--rose-dark);
+      background: rgba(255, 250, 252, .78);
+      box-shadow: inset 0 0 18px rgba(201, 163, 91, .06);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 1.74rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .clock-separator {
+      color: var(--gold);
+    }
+
+    .clock-status {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    /* ===================================
+      SCROLL
+      =================================== */
+
+    .scroll-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(135deg, var(--rose-dark), var(--gold));
+      box-shadow: 0 10px 22px rgba(116, 76, 89, .22);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity .25s ease, transform .2s ease;
+    }
+
+    .scroll-to-top.visible {
+      opacity: .9;
+    }
+
+    .arrow-up {
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      border-top: 3px solid white;
+      border-left: 3px solid white;
+      transform: rotate(45deg);
+    }
+
+    /* ===================================
+      MODAL GALERÍA
+      =================================== */
+
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(61, 34, 45, .95);
+    }
+
+    .gallery-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      z-index: 2001;
+      border: none;
+      color: white;
+      background: none;
+      cursor: pointer;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .gallery-main-image {
+      max-width: 92%;
+      max-height: 100%;
+      object-fit: contain;
+      border: 2px solid rgba(232, 206, 145, .55);
+      border-radius: 16px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .34);
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2001;
+      padding: 12px 16px;
+      border: 1px solid rgba(232, 206, 145, .72);
+      border-radius: 12px;
+      color: var(--ink);
+      background: rgba(255, 247, 249, .86);
+      cursor: pointer;
+      font-size: 28px;
+      transform: translateY(-50%);
+    }
+
+    .gallery-prev {
+      left: 10px;
+    }
+
+    .gallery-next {
+      right: 10px;
+    }
+
+    .gallery-counter {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      z-index: 2001;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: white;
+      background: rgba(103, 56, 72, .82);
+      font-size: 14px;
+      transform: translateX(-50%);
+    }
+
+    /* ===================================
+      REPRODUCTOR
+      =================================== */
+
+    .floating-player {
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      z-index: 1300;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-light);
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--rose-dark), var(--gold));
+      box-shadow: 0 10px 22px rgba(116, 76, 89, .25);
+      cursor: pointer;
+    }
+
+    .player-content {
+      width: 280px;
+      display: none;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 249, 251, .98);
+      box-shadow: 0 14px 34px rgba(116, 76, 89, .22);
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: .95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .song-artist {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .player-controls {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .control-button {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--rose-dark);
+      background: rgba(228, 140, 167, .10);
+      cursor: pointer;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 6px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(116, 76, 89, .10);
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--rose-dark), var(--rose), var(--gold));
+    }
+
+    .volume-control {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-icon {
+      display: flex;
+      color: var(--gold-dark);
+    }
+
+    .volume-slider {
+      flex-grow: 1;
+      height: 6px;
+      border-radius: 999px;
+      outline: none;
+      background: rgba(116, 76, 89, .10);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      width: 14px;
+      height: 14px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* ===================================
+      ANIMACIONES
+      =================================== */
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 0 !important;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1) !important;
+      will-change: transform, opacity;
+    }
+
+    .anim-left {
+      transform: translate3d(-28px, 0, 0) !important;
+    }
+
+    .anim-right {
+      transform: translate3d(28px, 0, 0) !important;
+    }
+
+    .anim-up {
+      transform: translate3d(0, 18px, 0) !important;
+    }
+
+    .in-view {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-left,
+      .anim-right,
+      .anim-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 5.5rem;
+      }
+
+      .digital-clock {
+        font-size: 1.46rem;
+      }
+
+      .player-content {
+        width: min(280px, calc(100vw - 82px));
+      }
+    }
+
+    /* FOTO FINAL */
+
+    .acuarela-frame--end {
+      width: calc(100% + 20px);
+      max-width: 448px;
+      margin: 30px -10px 10px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .acuarela-frame--end .acuarela-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 26px;
+      border: 1px solid rgba(201, 163, 91, 0.34);
+      box-shadow: 0 16px 38px rgba(116, 76, 89, 0.18);
+      opacity: 0;
+      transform: translateY(12px) scale(0.99);
+      transition: opacity 0.55s ease, transform 0.75s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .acuarela-frame--end.acuarela-in .acuarela-photo {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* ===================================
+   FOTO INTERMEDIA - ANCHO COMPLETO
+   ROSE GOLD
+=================================== */
+
+    .foto-intermedia {
+      width: calc(100% + 32px);
+      margin: 30px -16px;
+
+      padding: 0;
+
+      overflow: hidden;
+
+      border-top: 1px solid rgba(197, 139, 54, 0.34);
+      border-bottom: 1px solid rgba(197, 139, 54, 0.34);
+
+      background: #F8E3DD;
+
+      box-shadow:
+        0 14px 32px rgba(112, 68, 63, 0.20);
+
+      position: relative;
+    }
+
+    .foto-intermedia::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(180deg,
+          rgba(255, 245, 240, 0.10) 0%,
+          transparent 20%,
+          transparent 80%,
+          rgba(112, 68, 63, 0.10) 100%);
+    }
+
+    .foto-intermedia img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+      object-fit: cover;
+      object-position: center;
+
+      filter:
+        saturate(0.97) contrast(1.02) brightness(1.01);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- ===================================
+         HERO
+    ==================================== -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="hero-kicker">
+          Mis XV Años
+        </p>
+
+        <h1 class="hero-name">
+          Zaida Jazmín
+        </h1>
+
+        <div class="hero-date">
+          19 · Septiembre · 2026
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================
+         CONTENIDO
+    ==================================== -->
+
+    <div class="background">
+
+      <div class="container">
+
+        <button class="scroll-to-top" id="scrollBtn" type="button" aria-label="Volver arriba">
+
+          <div class="arrow-up"></div>
+
+        </button>
+
+        <br><br>
+
+
+        <div align="center" class="anim-up">
+
+          <img src="galeria/xv_2.png" width="60%" alt="Decoración">
+
+        </div>
+        <br>
+        <!-- ===================================
+             FRASE PRINCIPAL
+        ==================================== -->
+
+        <div class="quote-card anim-up">
+
+          <p>
+
+            Hoy dejo atrás
+            una hermosa etapa de mi vida
+            para comenzar una nueva
+            llena de sueños por cumplir,
+
+            <br><br>
+
+            caminos por descubrir
+            y experiencias por vivir.
+
+          </p>
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FECHA
+        ==================================== -->
+
+        <div class="date-container anim-up">
+
+          <div class="day">
+            Sábado
+          </div>
+
+          <div class="number">
+            19
+          </div>
+
+          <div class="month">
+            Septiembre
+          </div>
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FAMILIA
+        ==================================== -->
+
+        <p class="parrafo anim-up">
+
+          Durante estos quince años
+          he recibido muchísimo amor
+          y he tenido la dicha de compartir
+          momentos maravillosos
+          con personas que hacen mi vida
+          más especial.
+
+          <br><br>
+
+          Por eso quiero que este día
+          tan importante sea compartido
+          con quienes quiero
+          y forman parte de mi historia.
+
+          <br><br>
+
+          En compañía de:
+
+          <br><br>
+
+          <strong>
+            Zaida Irais Reyna Garcia
+          </strong>
+
+          <br>
+          y
+          <br>
+
+          <strong>
+            Noel Salazar Añorve
+          </strong>
+
+        </p>
+
+        <br>
+
+        <!-- ===================================
+             PADRINOS
+        ==================================== -->
+
+        <p class="parrafo anim-up">
+
+          Acompañada con cariño
+          por mis padrinos:
+
+          <br><br>
+
+          <strong>
+            Karla Yolanda Lara López
+          </strong>
+
+          <br>
+          y
+          <br>
+
+          <strong>
+            Jacobo Adji Guzman Soberanes
+          </strong>
+
+        </p>
+
+        <!-- ===================================
+             FOTO INTERMEDIA
+        ==================================== -->
+
+        <div class="foto-intermedia anim-up">
+
+          <img src="galeria/7.jpeg" alt="Fotografía de Zaida Jazmín">
+
+        </div>
+
+        <!-- ===================================
+             FRASE INTERMEDIA
+        ==================================== -->
+
+        <div class="quote-card anim-up">
+
+          <p>
+
+            Con mucha ilusión
+            y todo mi cariño,
+
+            <br><br>
+
+            <strong>
+              te invito a celebrar
+              conmigo mis XV años.
+            </strong>
+
+            <br><br>
+
+            Será una noche llena de magia,
+            alegría, música, abrazos,
+            sonrisas y recuerdos
+            que quedarán para siempre
+            en nuestros corazones.
+
+          </p>
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             CEREMONIA Y EVENTO
+        ==================================== -->
+
+        <div class="timeline">
+
+          <!-- CEREMONIA -->
+
+          <div class="timeline-item anim-left">
+
+            <div class="icon-wrap">
+
+              <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="Ícono de ceremonia">
+
+                <path
+                  d="M10 90H110M60 4V62M49 16H71M20 90V55L45 42V90M45 90V28L60 20L75 28V90M75 90V42L100 55V90M32 90V48M52 90V36M68 90V36M88 90V48">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <h2 class="section-title">
+              Ceremonia Religiosa
+            </h2>
+
+            <p class="section-content">
+
+              <strong>
+                Parroquia San Antonio de Padua
+              </strong>
+
+              <br><br>
+
+              Alameda 537, Coapinole, 48290 Puerto Vallarta, Jal.
+
+            </p>
+
+            <p class="section-content-hora">
+              4:00 p. m.
+            </p>
+
+            <br>
+
+            <a href="https://maps.app.goo.gl/wXTHrrHLoHAb1eq27" class="btn" target="_blank" rel="noopener">
+
+              Ver ubicación
+
+            </a>
+
+          </div>
+
+          <!-- RECEPCIÓN -->
+
+          <div class="timeline-item anim-right">
+
+            <div class="icon-wrap">
+
+              <img src="fiesta.svg" alt="" aria-hidden="true">
+
+            </div>
+
+            <h2 class="section-title">
+              Recepción
+            </h2>
+
+            <p class="section-content">
+
+              <strong>
+                Río Bendito
+              </strong> <br>
+
+              Calle Playa Grande 133 Col. Primavera, Puerto Vallarta, Mexico, 48327
+
+            </p>
+
+            <p class="section-content-hora">
+              8:00 p. m.
+            </p>
+
+            <br>
+
+            <a href="https://maps.app.goo.gl/QudtWj1GhU4det15A" class="btn" target="_blank" rel="noopener">
+
+              Ver ubicación
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <br><br>
+
+        <!-- ===================================
+             ITINERARIO
+        ==================================== -->
+
+        <section id="itinerario" class="timeline-section anim-up">
+
+          <p class="timeline-title">
+            Itinerario
+          </p>
+
+          <div class="timeline-list">
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                4:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Eucaristía
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                5:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Celebramos a mi hermanita
+                Laila Noelia.
+                Estás cordialmente invitado.
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                8:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Empezamos mi celebración
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                9:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Vals, baile sorpresa
+                y brindis
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                10:30 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Cena
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                11:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Baile hasta que
+                el cuerpo aguante
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             VESTIMENTA
+        ==================================== -->
+
+        <div class="timeline-item anim-up">
+
+          <div class="icon-wrap">
+
+            <img src="vestimenta.svg" alt="Código de vestimenta">
+
+          </div>
+
+          <h2 class="section-title">
+            Código de Vestimenta
+          </h2>
+
+          <p class="section-content-hora">
+            Formal
+          </p>
+
+          <div class="dress-note">
+
+            <p class="section-content">
+
+              Agradecemos vestir formal
+              para esta ocasión tan especial.
+
+              <br><br>
+
+              Los colores
+
+              <strong>
+                rose gold,
+                rosa pastel,
+                rosa palo
+                y oro
+              </strong>
+
+              están reservados
+              exclusivamente
+              para la quinceañera.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- HOSPEDAJE
+        <section
+          class="timeline-item anim-left"
+          aria-label="Sugerencia de hospedaje">
+
+          <h2 class="section-title">
+            Sugerencia de hospedaje
+          </h2>
+
+          <p class="section-content">
+            Información de hospedaje.
+          </p>
+
+        </section>
+        --> <br><br>
+
+        <div align="center" class="anim-up">
+
+          <img src="sello_1.png" width="60%" alt="Decoración">
+
+        </div>
+        <br> <br>
+
+        <!-- ===================================
+             REGALOS / LLUVIA DE SOBRES
+        ==================================== -->
+
+        <section class="social-section">
+
+          <div class="social-item anim-left">
+
+            <div class="icon-wrap">
+
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="Lluvia de sobres">
+
+                <!-- sobre -->
+                <rect x="18" y="38" width="84" height="50" rx="6"></rect>
+                <path d="M18 45L60 74L102 45"></path>
+                <path d="M18 88L46 63"></path>
+                <path d="M102 88L74 63"></path>
+
+                <!-- corazón arriba del sobre -->
+                <path d="M60 26
+                 C60 20, 54 16, 49 16
+                 C42 16, 38 21, 38 27
+                 C38 39, 52 46, 60 52
+                 C68 46, 82 39, 82 27
+                 C82 21, 78 16, 71 16
+                 C66 16, 60 20, 60 26Z">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <h2 class="social-title">
+              Lluvia de Sobres
+            </h2>
+
+            <p class="social-content">
+
+              Tu presencia será uno
+              de los regalos más bonitos
+              que pueda recibir
+              en este día tan especial.
+
+              <br><br>
+
+              Si deseas tener un detalle conmigo,
+              tendremos
+
+              <strong>
+                lluvia de sobres.
+              </strong>
+
+              <br><br>
+
+              Y si prefieres llevar
+              un regalo,
+              también será recibido
+              con mucho cariño.
+
+            </p>
+
+            <p class="thanks">
+              ¡Gracias!
+            </p>
+
+          </div>
+
+        </section>
+
+        <!-- MESA DE REGALOS:
+               
+          <div class="social-item anim-up">
+
+            <h2 class="social-title">
+              Mesa de Regalos
+            </h2>
+
+            <p class="social-content">
+              Información de mesa de regalos.
+            </p>
+
+          </div>
+          -->
+
+        <!-- INSTAGRAM
+          <div class="social-item anim-up">
+
+            <h2 class="social-title">
+              Instagram
+            </h2>
+
+            <p class="social-content">
+              Comparte tus fotografías conmigo.
+            </p>
+
+          </div>
+          -->
+
+        </section>
+
+        <br>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FOTO INTERMEDIA
+        ==================================== -->
+
+        <div class="foto-intermedia anim-up">
+
+          <img src="galeria/13.jpeg" alt="Fotografía de Zaida Jazmín">
+
+        </div>
+
+        <!-- ===================================
+             GALERÍA
+        ==================================== -->
+
+        <section class="final-section">
+
+          <div class="final-item anim-up">
+
+            <h2 class="final-title">
+              Galería
+            </h2>
+
+            <p class="final-content">
+
+              Algunos recuerdos
+              de esta hermosa etapa
+              que quiero compartir contigo.
+
+            </p>
+
+            <div class="polaroid-single">
+
+              <img src="galeria/1.jpeg" alt="Fotografía de Zaida Jazmín">
+
+              <div class="pol-label">
+                Mis XV Años
+              </div>
+
+              <button class="pol-btn" id="openGalleryBtn" type="button">
+
+                Ver galería
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <br>
+
+        <!-- ÁLBUM QR -->
+        <section class="final-section">
+
+          <div class="final-item anim-right">
+
+            <div style="text-align:center;">
+
+              <img
+                src="XV-Zaida Jazmín_galeria_QR.png"
+                width="50%"
+                alt="QR Álbum Compartido">
+
+            </div>
+
+            <h2 class="final-title">
+              Álbum de Recuerdos
+            </h2>
+
+            <p class="final-content">
+              Sube tus fotografías
+              y dedicatorias.
+            </p>
+
+          </div>
+			
+			<a href="https://app.arteinvita.com/gallery/xv-zaida-jazmin-1787704164035?token=faf7a84c4d9e9602aa817459ea870331" class="btn" target="_blank" rel="noopener">
+
+             Subir foto o dedicatoria
+
+            </a>
+
+        </section>
+       
+
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FRASE FINAL
+        ==================================== -->
+
+        <div class="quote-card anim-up">
+
+          <p>
+
+            Quiero compartir contigo
+            esta noche tan importante,
+            llena de sueños,
+            alegría, amor
+            y momentos que guardaré
+            para siempre en mi corazón.
+
+            <br><br>
+
+            Por eso,
+            con mucho cariño,
+            te pido que me acompañes
+            en esta celebración.
+
+            <br><br>
+
+            <strong>
+              Será un honor
+              y una enorme alegría
+              tenerte conmigo
+              en mis XV años.
+            </strong>
+
+          </p>
+
+        </div>
+
+        <!-- ===================================
+             CONTADOR
+        ==================================== -->
+
+        <section class="final-section">
+
+          <div class="final-item anim-up">
+
+            <div class="digital-clock-container">
+
+              <div class="icon-wrap">
+
+                <img src="calendario.svg" alt="Calendario">
+
+              </div>
+
+              <h2 class="final-title">
+                Faltan
+              </h2>
+
+              <p class="final-content">
+                DÍAS // HORAS // MINUTOS // SEGUNDOS
+              </p>
+
+              <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva">
+
+                <span id="days">
+                  00
+                </span>
+
+                <span class="clock-separator">
+                  :
+                </span>
+
+                <span id="hours">
+                  00
+                </span>
+
+                <span class="clock-separator">
+                  :
+                </span>
+
+                <span id="minutes">
+                  00
+                </span>
+
+                <span class="clock-separator">
+                  :
+                </span>
+
+                <span id="seconds">
+                  00
+                </span>
+
+              </div>
+
+              <div class="clock-label" id="clock-label">
+              </div>
+
+              <div class="clock-status" id="clock-status">
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <br>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             CONFIRMACIÓN WHATSAPP
+        ==================================== -->
+
+        <section class="final-section">
+
+          <div class="final-item anim-left">
+
+            <div class="icon-wrap">
+
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="Confirmación">
+
+                <path d="M60 101C60 101 21 78 21 45C21 25 45 17 60 37C75 17 99 25 99 45C99 78 60 101 60 101Z">
+                </path>
+
+                <path d="M42 57L54 69L79 43">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <h2 class="final-title">
+              Confirma tu asistencia
+            </h2>
+
+            <p class="final-content">
+
+              Tu presencia hará
+              que esta noche sea
+              aún más hermosa
+              y quedará guardada
+              como uno de los recuerdos
+              más bonitos de mis XV años.
+
+              <br><br>
+
+              Si es posible,
+              confirma tu asistencia
+              por WhatsApp.
+
+            </p>
+
+            <br>
+
+            <a href="https://wa.me/523223036300?text=Hola%2C%20deseo%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Zaida%20Jazm%C3%ADn."
+              class="btn" target="_blank" rel="noopener">
+
+              Confirmar asistencia
+
+            </a>
+
+            <p class="final-content">
+              322 303 6300
+            </p>
+
+          </div>
+
+        </section>
+
+        <br>
+
+        <div class="floral-divider"></div>
+
+        <p class="parrafo anim-up">
+
+          Gracias por acompañarme,
+          por compartir mi alegría
+          y por celebrar conmigo
+          este sueño tan esperado.
+
+          <br><br>
+
+          Tu presencia será
+          uno de los regalos más bonitos
+          que pueda recibir
+          en este día tan especial.
+
+          <br><br>
+
+          Espero verte ahí
+          para celebrar juntos
+          este sueño
+          que por tanto tiempo
+          he esperado.
+
+        </p>
+
+        <br>
+
+        <div align="center" class="anim-up">
+
+          <img src="corona.png" width="60%" alt="Decoración">
+
+        </div>
+
+        <h2 class="final-title">
+          ¡Te espero!
+        </h2>
+
+        <p class="thanks">
+          Con cariño,
+          <br>
+          Zaida Jazmín
+        </p>
+
+        <br><br>
+
+        <!-- ===================================
+             FOTO FINAL
+        ==================================== -->
+
+        <div class="acuarela-frame acuarela-frame--end">
+
+          <img class="acuarela-photo" src="galeria/8.jpeg" alt="Fotografía final de Zaida Jazmín">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ===================================
+         REPRODUCTOR
+    ==================================== -->
+
+    <div class="floating-player" aria-label="Reproductor de música">
+
+      <div class="player-button" id="playerButton" title="Abrir reproductor">
+
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+
+          <path
+            d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z">
+          </path>
+
+        </svg>
+
+      </div>
+
+      <div class="player-content" id="playerContent">
+
+        <div class="song-info">
+
+          <p class="song-title" id="songTitle">
+
+            ¡Escucha la invitación con música!
+
+          </p>
+
+          <p class="song-artist" id="songArtist">
+          </p>
+
+        </div>
+
+        <div class="progress-container" id="progressContainer" aria-label="Progreso">
+
+          <div class="progress-bar" id="progressBar">
+          </div>
+
+        </div>
+
+        <div class="player-controls" aria-label="Controles">
+
+          <button class="control-button" id="prevButton" type="button" title="Anterior">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <polygon points="19 20 9 12 19 4 19 20">
+              </polygon>
+
+              <line x1="5" y1="19" x2="5" y2="5">
+              </line>
+
+            </svg>
+
+          </button>
+
+          <button class="control-button" id="playButton" type="button" title="Reproducir/Pausar">
+
+            <svg class="icon" id="playIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <polygon points="5 3 19 12 5 21 5 3">
+              </polygon>
+
+            </svg>
+
+            <svg class="icon" id="pauseIcon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              <rect x="6" y="4" width="4" height="16">
+              </rect>
+
+              <rect x="14" y="4" width="4" height="16">
+              </rect>
+
+            </svg>
+
+          </button>
+
+          <button class="control-button" id="nextButton" type="button" title="Siguiente">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <polygon points="5 4 15 12 5 20 5 4">
+              </polygon>
+
+              <line x1="19" y1="5" x2="19" y2="19">
+              </line>
+
+            </svg>
+
+          </button>
+
+        </div>
+
+        <div class="volume-control" aria-label="Volumen">
+
+          <div class="volume-icon" aria-hidden="true">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5">
+              </polygon>
+
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07">
+              </path>
+
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14">
+              </path>
+
+            </svg>
+
+          </div>
+
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7"
+            aria-label="Control de volumen">
+
+        </div>
+
+        <audio id="audioPlayer" preload="auto" autoplay playsinline webkit-playsinline>
+
+          <source src="A Thousand Years.mp3" type="audio/mpeg">
+
+          Tu navegador no soporta audio HTML5.
+
+        </audio>
+
+      </div>
+
+    </div>
+
+    <!-- ===================================
+         MODAL GALERÍA
+    ==================================== -->
+
+    <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+
+      <button id="closeGalleryBtn" class="gallery-close-btn" type="button" aria-label="Cerrar">
+
+        &times;
+
+      </button>
+
+      <div class="gallery-container">
+
+        <img id="mainImage" class="gallery-main-image" src="galeria/1.jpeg" alt="Imagen de la galería">
+
+        <button id="prevImage" class="gallery-arrow gallery-prev" type="button" aria-label="Anterior">
+
+          &#10094;
+
+        </button>
+
+        <button id="nextImage" class="gallery-arrow gallery-next" type="button" aria-label="Siguiente">
+
+          &#10095;
+
+        </button>
+
+        <div id="imageCounter" class="gallery-counter" aria-label="Contador de imágenes">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script>
+
+    /* ===================================
+    ANIMACIONES
+    =================================== */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const targets = document.querySelectorAll('.anim-left, .anim-right, .anim-up, .acuarela-frame--end');
+      if (!targets.length) {
+        return;
+      }
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (element) {
+          element.classList.add('in-view');
+          if (element.classList.contains('acuarela-frame--end')) {
+            element.classList.add('acuarela-in');
+          }
+        });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            if (entry.target.classList.contains('acuarela-frame--end')) {
+              entry.target.classList.add('acuarela-in');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: .12,
+        rootMargin: "0px 0px -10% 0px"
+      });
+      targets.forEach(function (element) {
+        observer.observe(element);
+      });
+    });
+
+    /* ===================================
+    SCROLL
+    =================================== */
+
+    (function () {
+      const scrollBtn = document.getElementById('scrollBtn');
+      if (!scrollBtn) {
+        return;
+      }
+      window.addEventListener('scroll', function () {
+        const position = document.body.scrollTop || document.documentElement.scrollTop;
+        if (position > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    })();
+
+    /* ===================================
+    CUENTA REGRESIVA
+    21 NOVIEMBRE 2026
+    6:30 P. M.
+    =================================== */
+
+    function updateDigitalClock() {
+      const targetDate = new Date("2026-11-21T18:30:00-06:00").getTime();
+      const digitalClock = document.getElementById("digital-clock");
+      const clockStatus = document.getElementById("clock-status");
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
+      if (!digitalClock || !clockStatus || !daysElement || !hoursElement || !minutesElement || !secondsElement) {
+        return;
+      }
+      function tick() {
+        const now = Date.now();
+        const distance = targetDate - now;
+        if (distance > 0) {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          daysElement.textContent = String(days).padStart(2, '0');
+          hoursElement.textContent = String(hours).padStart(2, '0');
+          minutesElement.textContent = String(minutes).padStart(2, '0');
+          secondsElement.textContent = String(seconds).padStart(2, '0');
+          clockStatus.textContent = "Para vivir juntos este momento tan especial";
+        } else {
+          daysElement.textContent = "00";
+          hoursElement.textContent = "00";
+          minutesElement.textContent = "00";
+          secondsElement.textContent = "00";
+          clockStatus.textContent = "¡El gran día ha llegado!";
+        }
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+    window.addEventListener('load', updateDigitalClock);
+
+    /* ===================================
+    REPRODUCTOR
+    =================================== */
+
+    (function () {
+      const playerButton = document.getElementById('playerButton');
+      const playerContent = document.getElementById('playerContent');
+      const audioPlayer = document.getElementById('audioPlayer');
+      const playButton = document.getElementById('playButton');
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      if (!playerButton || !playerContent || !audioPlayer || !playButton) {
+        return;
+      }
+      function setPlayingUI(isPlaying) {
+        if (playIcon) {
+          playIcon.style.display = isPlaying ? 'none' : 'block';
+        }
+        if (pauseIcon) {
+          pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        }
+      }
+      function tryAutoplay() {
+        audioPlayer.volume = volumeSlider ? Number(volumeSlider.value) : 0.7;
+        const playPromise = audioPlayer.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.then(function () {
+            setPlayingUI(true);
+          }).catch(function () {
+            setPlayingUI(false);
+          });
+        }
+      }
+
+      // Intenta reproducir automáticamente al abrir la invitación.
+      // Si iPhone/Safari bloquea el autoplay con sonido, el primer toque del usuario lo activa.
+      window.addEventListener('load', tryAutoplay, { once: true });
+      ['touchstart', 'pointerdown', 'click'].forEach(function (eventName) {
+        document.addEventListener(eventName, function startOnFirstInteraction() {
+          if (audioPlayer.paused) {
+            tryAutoplay();
+          }
+        }, { once: true, passive: true });
+      });
+      playerButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        playerContent.classList.toggle('active');
+      });
+      playerContent.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+      document.addEventListener('click', function () {
+        playerContent.classList.remove('active');
+      });
+      playButton.addEventListener('click', async function () {
+        try {
+          if (audioPlayer.paused) {
+            await audioPlayer.play();
+            setPlayingUI(true);
+          } else {
+            audioPlayer.pause();
+            setPlayingUI(false);
+          }
+        } catch (error) {
+          setPlayingUI(false);
+        }
+      });
+      if (volumeSlider) {
+        audioPlayer.volume = Number(volumeSlider.value);
+        volumeSlider.addEventListener('input', function () {
+          audioPlayer.volume = Number(volumeSlider.value);
+        });
+      }
+      audioPlayer.addEventListener('timeupdate', function () {
+        if (!progressBar || !audioPlayer.duration) {
+          return;
+        }
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+      });
+      if (progressContainer) {
+        progressContainer.addEventListener('click', function (event) {
+          if (!audioPlayer.duration) {
+            return;
+          }
+          const rect = progressContainer.getBoundingClientRect();
+          const position = (event.clientX - rect.left) / rect.width;
+          audioPlayer.currentTime = position * audioPlayer.duration;
+        });
+      }
+      audioPlayer.addEventListener('pause', function () {
+        setPlayingUI(false);
+      });
+      audioPlayer.addEventListener('play', function () {
+        setPlayingUI(true);
+      });
+      setPlayingUI(false);
+    })();
+
+    /* ===================================
+    GALERÍA
+    
+    =================================== */
+
+    (function () {
+      const openBtn = document.getElementById('openGalleryBtn');
+      const modal = document.getElementById('galleryModal');
+      const closeBtn = document.getElementById('closeGalleryBtn');
+      const prevBtn = document.getElementById('prevImage');
+      const nextBtn = document.getElementById('nextImage');
+      const mainImage = document.getElementById('mainImage');
+      const counter = document.getElementById('imageCounter');
+      if (!openBtn || !modal || !closeBtn || !prevBtn || !nextBtn || !mainImage || !counter) {
+        return;
+      }
+      const images = [
+        'galeria/1.jpeg',
+        'galeria/2.jpeg',
+        'galeria/3.jpeg',
+        'galeria/4.jpeg',
+        'galeria/5.jpeg',
+        'galeria/6.jpeg',
+        'galeria/7.jpeg',
+        'galeria/8.jpeg',
+        'galeria/9.jpeg',
+        'galeria/10.jpeg',
+        'galeria/11.jpeg',
+        'galeria/12.jpeg',
+        'galeria/13.jpeg',
+      ];
+
+      let idx = 0;
+      function update() {
+        mainImage.src = images[idx];
+        counter.textContent = (idx + 1) + ' / ' + images.length;
+      }
+      function open() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        update();
+      }
+      function close() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      function prev() {
+        idx = (idx - 1 + images.length) % images.length;
+        update();
+      }
+      function next() {
+        idx = (idx + 1) % images.length;
+        update();
+      }
+      openBtn.addEventListener('click', open);
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          close();
+        }
+      });
+      document.addEventListener('keydown', function (event) {
+        if (modal.style.display !== 'flex') {
+          return;
+        }
+        if (event.key === 'ArrowLeft') {
+          prev();
+        }
+        if (event.key === 'ArrowRight') {
+          next();
+        }
+        if (event.key === 'Escape') {
+          close();
+        }
+      });
+      update();
+    })();
+  </script>
+</body>
+
+</html>
