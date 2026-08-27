@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis XV Sofia Calzada Mancilla</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Nova Quinta';
+      src: url('fonts/NovaQuinta_PERSONAL_USE_ONLY.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gabriola';
+      src: url('fonts/gabriola Font Download.ttf') format('truetype');
+    }
+
+    :root {
+      --rojo: #79513a;
+      --rojo-claro: #b58b6f;
+      --dorado: #c9a45c;
+      --crema: #fbf6ef;
+      --crema-oscuro: #efe3d4;
+      --texto: #4b3529;
+      --gris: #806e61;
+      --borde: #d8c1a0;
+      --shadow-soft: 0 18px 40px rgba(81, 55, 39, 0.16);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Gabriola', serif;
+      color: var(--texto);
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gris);
+    }
+
+    a:hover {
+      color: var(--rojo);
+    }
+
+    button {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 30px rgba(81, 55, 39, 0.18);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+    }
+
+    .subtext {
+      font-family: 'Nova Quinta', cursive;
+      font-size: 24px;
+      color: var(--texto);
+      text-align: center;
+      margin-top: 1px;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    .parrafo {
+      font-family: 'Gabriola', serif;
+      font-size: 26px;
+      color: var(--texto);
+      text-align: center;
+      margin-top: 1px;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    .date-container {
+      font-family: "Great Vibes", cursive;
+      text-align: center;
+      color: var(--rojo);
+      width: 100%;
+    }
+
+    .day {
+      font-size: 3.8em;
+      margin-bottom: 0;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 0 30px 2px;
+    }
+
+    .number {
+      font-size: 10em;
+      margin: 0;
+      font-weight: lighter;
+      line-height: 1;
+      color: var(--dorado);
+    }
+
+    .month {
+      font-size: 3.8em;
+      margin-top: 0;
+      border-top: 2px solid var(--dorado);
+      display: inline-block;
+      padding: 2px 30px 0;
+    }
+
+    .time {
+      font-size: 2.4em;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--crema);
+      overflow: hidden;
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--rojo);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rojo);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 1.8rem;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.1;
+      margin-top: 1rem;
+    }
+
+    .flourish {
+      width: 300px;
+      height: 100px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* HERO */
+    .hero-full {
+      position: relative;
+      min-height: calc(90vh - 50px);
+      padding: 0;
+      overflow: hidden;
+      background: #4d3428;
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(62, 39, 27, 0.98) 0%,
+          rgba(92, 59, 40, 0.82) 20%,
+          rgba(145, 101, 67, 0.30) 42%,
+          rgba(201, 164, 92, 0.08) 60%,
+          transparent 78%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3.4rem 2.6rem 3rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: 6.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+      padding: 0.1em 0.18em 0.2em;
+
+      background: linear-gradient(180deg,
+          #fff7d6 0%,
+          #f2d98d 20%,
+          #c9a45c 42%,
+          #956b32 58%,
+          #daba70 76%,
+          #805722 100%);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+
+      filter:
+        drop-shadow(0 3px 2px rgba(62, 39, 27, 0.70)) drop-shadow(0 6px 6px rgba(45, 27, 17, 0.45));
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", serif;
+      font-size: 2.05rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    /* MÚSICA */
+    .music-section {
+      padding: 1.4rem 1.6rem 0;
+      background: var(--crema);
+      display: flex;
+      justify-content: center;
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--dorado);
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(81, 55, 39, 0.10);
+      cursor: pointer;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rojo);
+    }
+
+    .music-icon-min {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--dorado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color: transparent transparent transparent var(--dorado);
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 9px;
+      background: var(--rojo);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    /* INTRO */
+    .intro-section {
+      background: linear-gradient(to bottom, var(--crema), var(--crema-oscuro));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.70), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(201, 164, 92, 0.18), transparent 40%);
+      pointer-events: none;
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.8rem;
+      color: var(--rojo);
+      margin-top: 1.1rem;
+      text-align: center;
+    }
+
+    .intro-parents-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      color: var(--dorado);
+      margin-top: 1.8rem;
+      text-align: center;
+    }
+
+    .intro-list {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      text-align: center;
+      color: var(--texto);
+    }
+
+    /* CONTADOR */
+    .save-date-min {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      background-image: url("img/counter.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: var(--texto);
+    }
+
+    .save-date-min::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(65, 43, 31, 0.58),
+          rgba(87, 57, 39, 0.78));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(201, 164, 92, 0.70);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: 0 14px 35px rgba(61, 40, 28, 0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-time {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      align-items: baseline;
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.35rem;
+      font-size: 0.78rem;
+      color: #f7e9ce;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.1rem;
+      font-size: 1.55rem;
+      font-style: italic;
+      color: #ffffff;
+    }
+
+    /* ITINERARIO */
+    .itinerary-section {
+      padding: 3rem 1.6rem;
+      background: var(--crema);
+    }
+
+    .itinerary-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+      color: var(--rojo);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .itinerary-date {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-align: center;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .itinerary-timeline {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .itinerary-item {
+      display: grid;
+      grid-template-columns: 100px 45px 150px;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.8rem;
+      width: 100%;
+      margin: 0 auto 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      width: 100px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 100%;
+      max-width: 95px;
+      max-height: 105px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .itinerary-divider {
+      width: 45px;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--dorado);
+    }
+
+    .itinerary-content {
+      width: 150px;
+      text-align: center;
+    }
+
+    .itinerary-time {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--dorado);
+      text-align: center;
+    }
+
+    .itinerary-event {
+      width: 100%;
+      font-size: 1.3rem;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    /* EVENTOS */
+    .when-where-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--borde);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      color: var(--dorado);
+      margin-bottom: 0.2rem;
+    }
+
+    .event-label {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.90rem;
+      color: var(--gris);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.30rem;
+      color: var(--texto);
+    }
+
+    .event-address {
+      font-size: 1.5rem;
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: var(--rojo);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .btn-ubicacion {
+      margin: 1rem auto 0;
+      display: block;
+      width: fit-content;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--rojo);
+      color: #ffffff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* REGALOS */
+    .gifts-section {
+      background: var(--crema);
+    }
+
+    .gift-options {
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--texto);
+    }
+
+    .gift-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+      color: var(--texto);
+    }
+
+    .gift-sub {
+      font-size: 1.6rem;
+      color: var(--gris);
+      line-height: 1.3;
+    }
+
+    .gift-button {
+      margin: 0.9rem auto 0;
+      display: block;
+      width: fit-content;
+      padding: 0.65rem 1.8rem;
+      border-radius: 999px;
+      background: var(--dorado);
+      color: #ffffff;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* INSTAGRAM */
+    .hashtag-section {
+      padding: 0;
+    }
+
+    .insta-handle-card {
+      padding: 2.1rem 1.6rem 2.6rem;
+      background: var(--crema-oscuro);
+      text-align: center;
+    }
+
+    .insta-handle {
+      margin-top: 0.6rem;
+      color: var(--rojo);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .btn-insta {
+      margin: 1.3rem auto 0;
+      display: block;
+      width: fit-content;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--rojo);
+      background: #ffffff;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--texto);
+    }
+
+    /* GALERÍA */
+    .gallery-section {
+      background: var(--crema);
+    }
+
+    .gallery-slider {
+      margin-top: 1.6rem;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--borde);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(88, 57, 39, 0.58);
+      border: none;
+      color: #ffffff;
+      font-size: 2rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #d8c1a0;
+      cursor: pointer;
+      transition: transform .2s ease-out, background .2s ease-out;
+    }
+
+    .gallery-dot.active {
+      background: var(--rojo);
+      transform: scale(1.2);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 101;
+      max-width: 920px;
+      width: 92%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #ffffff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    /* CONFIRMACIÓN */
+    .confirm-section {
+      background: linear-gradient(to bottom, var(--crema-oscuro), var(--crema));
+      position: relative;
+    }
+
+    .confirm-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.2rem;
+      color: var(--rojo);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .confirm-flourish {
+      width: 300px;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: none;
+      background: var(--rojo);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 14px 30px rgba(81, 55, 39, 0.35);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease-out, transform .25s ease-out, visibility .25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--rojo);
+      background: var(--crema);
+    }
+
+    .reveal {
+      opacity: 0;
+      transition: opacity .7s ease-out, transform .7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 430px) {
+      .hero-name {
+        font-size: 5rem;
+      }
+
+      .itinerary-item {
+        grid-template-columns: 92px 36px 135px;
+        column-gap: 0.6rem;
+      }
+
+      .itinerary-icon-wrapper {
+        width: 92px;
+        min-height: 92px;
+      }
+
+      .itinerary-icon-wrapper img {
+        max-width: 88px;
+        max-height: 98px;
+      }
+
+      .itinerary-divider {
+        width: 36px;
+      }
+
+      .itinerary-content {
+        width: 135px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+        overflow: hidden;
+      }
+
+      main {
+        border-radius: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+  <audio id="bg-music" src="cancion.mp3" loop autoplay></audio>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-full">
+      <img src="img/portada.png" alt="Sofia Calzada Mancilla">
+
+      <div class="hero-overlay">
+        <div>
+          <div class="hero-name">Sofia</div>
+          <div class="hero-sub">Mis XV Años</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÚSICA -->
+    <section class="music-section">
+      <button class="music-btn-min" id="musicToggle" aria-label="Control de música">
+        <div class="music-icon-min paused" id="musicIcon"></div>
+        <span id="musicStatus">Play</span>
+      </button>
+    </section>
+
+    <br>
+
+    <div align="center">
+      <img src="img/reloj.png" width="40%" alt="Decoración">
+    </div>
+
+    <!-- INTRO -->
+    <section id="intro" class="intro-section">
+      <div class="intro-card reveal reveal-left">
+
+        <div class="date-container">
+          <div class="day">Sábado</div>
+          <div class="number">14</div>
+          <div class="month">Noviembre</div>
+        </div>
+
+        <br>
+
+        <p class="section-sub">
+          Entre sueños, magia y momentos que parecen sacados de un cuento,
+          ha llegado uno de los días más importantes de mi vida.
+          <br><br>
+          Quiero compartir contigo la celebración de mis XV años.
+        </p>
+
+        <br>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">
+          Que esta noche se convierta en un recuerdo que permanezca para siempre.
+        </p>
+
+        <div class="intro-parents-title">
+          Mis padres
+        </div>
+
+        <p class="intro-list">
+          Sandra Mancilla Montes<br>
+          y<br>
+          Daniel Calzada Vega
+        </p>
+
+        <div class="flourish"></div>
+
+        <div class="intro-parents-title">
+          Mis padrinos
+        </div>
+
+        <p class="intro-list">
+          Guadalupe Cárdenas<br>
+          y<br>
+          Salvador Calzada
+        </p>
+
+        <div class="flourish"></div>
+
+      </div>
+    </section>
+
+    <!-- CONTADOR -->
+    <section id="fecha" class="save-date-min">
+      <div class="save-date-min-inner reveal reveal-right">
+
+        <div class="save-date-min-title">
+          <strong>FALTAN</strong>
+        </div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+          <div class="countdown-time">
+            <span id="cdDays">0</span>:
+            <span id="cdHours">00</span>:
+            <span id="cdMins">00</span>:
+            <span id="cdSecs">00</span>
+          </div>
+
+          <div class="countdown-labels">
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+          </div>
+        </div>
+
+        <p class="countdown-note">
+          ¡Te espero para vivir juntos esta noche mágica!
+        </p>
+
+      </div>
+    </section>
+
+    <!-- EVENTO -->
+    <section id="evento">
+
+      <div class="when-where-header reveal reveal-left">
+        <div class="section-title-script">
+          ¿Cuándo y dónde?
+        </div>
+
+        <div class="flourish"></div>
+      </div>
+
+      <!-- CEREMONIA
+      <div class="event-card reveal reveal-right">
+        <img src="img/iglesia.jpg" alt="Capilla de Santa Estrella" class="event-photo">
+
+        <div class="event-content">
+          <div class="event-label">
+            Iniciamos con la
+          </div>
+
+          <div class="event-script">
+            Ceremonia
+          </div>
+
+          <div class="event-title">
+            Capilla de Santa Estrella
+          </div>
+
+          <p class="event-address">
+            Av. Castillo #100,<br>
+            Col. Bosques Dorados,<br>
+            Ciudad de México
+          </p>
+
+          <div class="event-time">
+            4:00 PM
+          </div>
+
+          <a href="https://maps.google.com/?q=19.4870,-99.1010" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>  -->
+
+      <!-- RECEPCIÓN -->
+      <div class="event-card reveal reveal-left">
+        <img src="img/salon.jpg" alt="Salón Mónaco Las Fuentes" class="event-photo">
+
+        <div class="event-content">
+          <div class="event-label">
+            Lugar del Evento
+          </div>
+
+          <div class="event-script">
+            Recepción
+          </div>
+
+          <div class="event-title">
+            Salón Mónaco Las Fuentes
+          </div>
+
+          <p class="event-address">
+            Gral. Francisco Coss 15, 15 de Agosto, Gustavo A. Madero, Ciudad de México, CDMX
+          </p>
+
+          <div class="event-time">
+            5:00 PM
+          </div>
+
+          <a href="https://maps.app.goo.gl/c76Kx6kMZkbKKqQDA" target="_blank" rel="noopener">
+            <button class="btn-ubicacion">
+              Ver ubicación
+            </button>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario" class="itinerary-section">
+
+      <div align="center">
+        <img src="img/cene.png" width="60%" alt="Decoración">
+      </div>
+
+      <div class="flourish"></div>
+
+      <h2 class="itinerary-title">
+        Itinerario
+      </h2>
+
+      <p class="itinerary-date">
+        14 de Noviembre de 2026
+      </p>
+
+      <div class="itinerary-timeline">
+
+        <div class="itinerary-item">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/coctel.png" alt="Recepción">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">5:00 PM</div>
+            <div class="itinerary-event">Recepción</div>
+          </div>
+        </div>
+
+
+        <div class="itinerary-item">
+          <div class="itinerary-icon-wrapper">
+            <img src="img/fin.png" alt="Fin">
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-time">12:00 AM</div>
+            <div class="itinerary-event">Fin del evento</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VESTIMENTA -->
+    <section id="regalos" class="gifts-section">
+
+      <div class="section-title-script">
+        Código de vestimenta
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+
+          <div align="center">
+            <img src="img/vestimenta.png" width="65%" alt="Vestimenta">
+          </div>
+
+          <div class="gift-title">
+            FORMAL
+          </div>
+
+          <p class="section-sub">
+            Te esperamos con tu mejor look
+            para celebrar esta noche tan especial.
+            <br><br>
+            Agradecemos reservar los tonos
+            <strong>café con dorado</strong>
+            para la quinceañera.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <div align="center">
+      <img src="img/cenefa.png" width="60%" alt="Decoración">
+    </div>
+
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="gallery-section">
+
+      <div class="section-title-main">
+        Galería de fotos
+      </div>
+
+      <div class="flourish"></div>
+
+      <p class="section-sub">
+        Algunos momentos que forman parte
+        de esta historia tan especial.
+      </p>
+
+      <div class="gallery-slider reveal reveal-right">
+
+        <div class="gallery-slide-frame">
+          <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de Sofia">
+
+          <button class="gallery-nav prev" id="galleryPrev" type="button">
+            ‹
+          </button>
+
+          <button class="gallery-nav next" id="galleryNext" type="button">
+            ›
+          </button>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots"></div>
+
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+      <div class="lightbox-content">
+
+        <button class="lightbox-close" id="lightboxClose" type="button">
+          ✕
+        </button>
+
+        <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">
+          ‹
+        </button>
+
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button">
+          ›
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MESA DE REGALOS
+    <section id="mesa-regalos" class="gifts-section">
+
+      <div align="center">
+        <img src="img/regalo.png" width="60%" alt="Mesa de regalos">
+      </div>
+
+      <div class="section-title-script">
+        Mesa de regalos
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Tu presencia es mi regalo más importante.
+            <br><br>
+            Si deseas tener un detalle conmigo,
+            hemos preparado una mesa de regalos
+            para esta ocasión.
+          </p>
+
+      
+
+          <a href="#" target="_blank" rel="noopener">
+            <button class="gift-button">
+              Ver mesa de regalos
+            </button>
+          </a>
+
+        </div>
+      </div>
+    </section>  -->
+
+    <!-- LLUVIA DE SOBRES -->
+    <section id="lluvia-sobres" class="gifts-section">
+
+      <div align="center">
+        <img src="img/sobreregalo.png" width="60%" alt="Lluvia de sobres">
+      </div>
+
+      <div class="section-title-script">
+        Lluvia de sobres
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Esta noche será aún más especial con tu presencia.
+            <br><br>
+            Si quieres hacerme un presente,
+            podrás dejar un sobre en mi
+            <strong>buzón de sueños</strong>.
+          </p>
+
+          <p class="intro-script">
+            ¡Gracias por acompañarme!
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM
+    <section id="insta" class="hashtag-section">
+
+      <div class="insta-handle-card reveal reveal-right">
+
+        <div align="center">
+          <img src="img/camara.png" width="50%" alt="Instagram">
+        </div>
+
+        <div class="section-title-script">
+          Captura cada instante
+        </div>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Comparte conmigo tus fotografías
+          y momentos favoritos de esta noche.
+        </p>
+
+        <div class="insta-handle">
+       
+        </div>
+
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <button class="btn-insta">
+            Ver Instagram
+          </button>
+        </a>
+
+      </div>
+    </section>  -->
+
+    <!-- ÁLBUM QR -->
+    <section id="albumqr" class="gallery-section">
+
+      <div align="center">
+        <img src="img/camara.png" width="75%" alt="Álbum QR">
+      </div>
+
+      <div class="section-title-main">
+        Álbum Compartido
+      </div>
+
+      <div class="flourish"></div>
+
+      <div align="center">
+        <img src="img/qr.png" width="60%" alt="Álbum QR">
+      </div>
+
+      <p class="section-sub">
+        Ayúdame a guardar cada momento de mis XV.
+        <br><br>
+        Escanea el código QR o da click
+        para subir tus fotografías,
+        videos y dedicatorias.
+      </p>
+
+      <a href="https://app.arteinvita.com/gallery/xv-sofia-calzada-mancilla-1787276762751?token=0a8137f304c222fac91af54737ce894b" target="_blank" rel="noopener">
+        <button class="btn-ubicacion">
+          Subir fotos
+        </button>
+      </a>
+
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion" class="confirm-section">
+
+      <div class="reveal reveal-left">
+
+        <div align="center">
+          <img src="img/1.png" width="50%" alt="Decoración">
+        </div>
+
+        <div class="confirm-title-script">
+          ¿Asistirás?
+        </div>
+
+        <div class="confirm-flourish"></div>
+
+        <p class="section-sub">
+          ¡Será increíble contar con tu presencia!
+          <br>
+          Confirma tu asistencia
+          a esta noche tan especial para mí.
+          <br><br>
+          Tu respuesta es muy importante.
+        </p>
+
+        <p class="section-sub">
+          <em>Confirma tu asistencia desde mi panel de invitados.</em>
+        </p>
+
+        <br>
+
+        <button class="btn-ubicacion" onclick="ArteInvita.open('137-717B-5FB')">
+          <strong>Confirmar en Panel</strong>
+        </button>
+
+        <br>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub">
+          Gracias por formar parte
+          de este capítulo tan especial.
+          <br><br>
+          ¡Nos vemos pronto!
+        </p>
+
+        <br>
+
+        <div class="section-title-main">
+          ¡Con cariño!<br>
+          Sofia
+        </div>
+
+      </div>
+
+      <br><br>
+
+      <div class="event-card reveal reveal-right">
+        <div align="center">
+          <img src="img/final.png" width="100%" alt="Foto final de Sofia">
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Mis XV Sofia Calzada Mancilla
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">
+    ↑
+  </button>
+
+  <script>
+    // CONTADOR
+    const targetDate = new Date(2026, 10, 14, 17, 0, 0);
+
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      cdDays.textContent = String(days);
+      cdHours.textContent = pad2(hours);
+      cdMins.textContent = pad2(mins);
+      cdSecs.textContent = pad2(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // MÚSICA
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicStatus = document.getElementById("musicStatus");
+    const musicIcon = document.getElementById("musicIcon");
+
+    let isPlaying = false;
+
+    async function playMusic() {
+      try {
+        await music.play();
+
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+      } catch (e) {
+        console.log("No se pudo reproducir la música:", e);
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+
+      isPlaying = false;
+      musicStatus.textContent = "Play";
+
+      musicIcon.classList.remove("playing");
+      musicIcon.classList.add("paused");
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isPlaying) {
+        await playMusic();
+      } else {
+        pauseMusic();
+      }
+    });
+
+    async function attemptAutoplay() {
+      if (isPlaying) return;
+
+      try {
+        await music.play();
+
+        isPlaying = true;
+        musicStatus.textContent = "Pause";
+
+        musicIcon.classList.remove("paused");
+        musicIcon.classList.add("playing");
+
+        cleanupAutoplayListeners();
+      } catch (e) {
+        console.log("Autoplay bloqueado, se activará al interactuar.");
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener("click", attemptAutoplay);
+      document.removeEventListener("touchstart", attemptAutoplay);
+      document.removeEventListener("scroll", attemptAutoplay);
+    }
+
+    window.addEventListener("load", () => {
+      attemptAutoplay();
+
+      document.addEventListener("click", attemptAutoplay);
+      document.addEventListener("touchstart", attemptAutoplay);
+      document.addEventListener("scroll", attemptAutoplay);
+    });
+
+    // REVEAL
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ITINERARIO
+    const itineraryItems = document.querySelectorAll(".itinerary-item");
+
+    const itineraryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          itineraryObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    itineraryItems.forEach(el => itineraryObserver.observe(el));
+
+    // BOTÓN ARRIBA
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 420) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // GALERÍA
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg",
+      "img/galeria/4.jpeg",
+      "img/galeria/5.jpeg",
+      "img/galeria/6.jpeg",
+      "img/galeria/7.jpeg",
+      "img/galeria/8.jpeg",
+      "img/galeria/9.jpeg"
+    ];
+
+    const gallerySlide = document.getElementById("gallerySlide");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const galleryDotsContainer = document.getElementById("galleryDots");
+
+    let galleryIndex = 0;
+
+    function renderDots() {
+      galleryDotsContainer.innerHTML = "";
+
+      galleryImages.forEach((_, idx) => {
+        const dot = document.createElement("div");
+
+        dot.className =
+          "gallery-dot" +
+          (idx === galleryIndex ? " active" : "");
+
+        dot.addEventListener("click", () => {
+          galleryIndex = idx;
+          updateGallery();
+        });
+
+        galleryDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateGallery() {
+      gallerySlide.src = galleryImages[galleryIndex];
+      gallerySlide.alt = `Foto ${galleryIndex + 1} de Sofia`;
+
+      renderDots();
+    }
+
+    galleryPrev.addEventListener("click", () => {
+      galleryIndex =
+        (galleryIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
+      updateGallery();
+    });
+
+    galleryNext.addEventListener("click", () => {
+      galleryIndex =
+        (galleryIndex + 1) %
+        galleryImages.length;
+
+      updateGallery();
+    });
+
+    // LIGHTBOX
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lightboxImage.src = galleryImages[currentImageIndex];
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    function nextImage() {
+      currentImageIndex =
+        (currentImageIndex + 1) %
+        galleryImages.length;
+
+      lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
+      lightboxImage.src = galleryImages[currentImageIndex];
+    }
+
+    gallerySlide.addEventListener("click", () => {
+      openLightbox(galleryIndex);
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxOverlay.addEventListener("click", closeLightbox);
+    lightboxNext.addEventListener("click", nextImage);
+    lightboxPrev.addEventListener("click", prevImage);
+
+    document.addEventListener("keydown", event => {
+      if (lightbox.style.display !== "flex") return;
+
+      if (event.key === "ArrowRight") nextImage();
+      if (event.key === "ArrowLeft") prevImage();
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    updateGallery();
+  </script>
+
+</body>
+
+</html>
