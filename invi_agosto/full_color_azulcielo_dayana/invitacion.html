@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mis XV Años | Dayana Valentina</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: transparent;
+      --surface: rgba(248, 253, 255, 0.90);
+
+      --ink: #315A73;
+      --muted: #7291A4;
+
+      --accent: #73C7F2;
+
+      --rose: #DDF3FF;
+
+      --gold: #B7D6E7;
+
+      --blue-dark: #39789F;
+      --blue-mid: #65B9E6;
+      --blue-soft: #DDF3FF;
+      --blue-light: #EEF9FF;
+
+      --line: rgba(115, 199, 242, 0.30);
+
+      --shadow:
+        0 14px 40px rgba(49, 90, 115, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--ink);
+
+      font-family:
+        "Poppins",
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Arial,
+        sans-serif;
+
+      overflow-x: hidden;
+
+      background: #EAF4F9;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .app {
+      width: min(460px, 100%);
+
+      margin: 0 auto;
+
+      min-height: 100vh;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 15% 8%,
+          rgba(225, 245, 255, .98),
+          transparent 32%),
+
+        radial-gradient(circle at 88% 18%,
+          rgba(163, 216, 244, .48),
+          transparent 30%),
+
+        radial-gradient(circle at 15% 68%,
+          rgba(255, 255, 255, .70),
+          transparent 28%),
+
+        linear-gradient(180deg,
+          #E3F5FF 0%,
+          #F8FCFF 34%,
+          #D4EEFC 64%,
+          #F5FBFF 100%);
+    }
+
+    .app::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(circle,
+          rgba(255, 255, 255, .58) 1px,
+          transparent 1.5px);
+
+      background-size: 28px 28px;
+
+      opacity: .34;
+
+      pointer-events: none;
+
+      z-index: 0;
+    }
+
+    .app::after {
+      content: "";
+
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      top: 1100px;
+      right: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(circle,
+          rgba(115, 199, 242, .22),
+          transparent 68%);
+
+      pointer-events: none;
+
+      z-index: 0;
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* ===================================
+       HERO
+    =================================== */
+
+    .hero {
+      position: relative;
+
+      height: min(95vh, 760px);
+      min-height: 640px;
+
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: center;
+
+      text-align: center;
+
+      background:
+        url("galeria/1.webp") center top / cover no-repeat;
+
+      z-index: 1;
+
+      overflow: hidden;
+
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 1;
+
+      background:
+        linear-gradient(180deg,
+          rgba(224, 244, 255, .02) 0%,
+          rgba(190, 225, 246, .08) 42%,
+          rgba(57, 104, 136, .42) 70%,
+          rgba(20, 54, 78, .91) 100%),
+
+        radial-gradient(circle at 18% 30%,
+          rgba(255, 255, 255, .28),
+          transparent 34%),
+
+        radial-gradient(circle at 82% 24%,
+          rgba(115, 199, 242, .22),
+          transparent 28%);
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 16px;
+
+      z-index: 2;
+
+      border:
+        1px solid rgba(247, 252, 255, .78);
+
+      border-radius: 18px;
+
+      pointer-events: none;
+
+      box-shadow:
+        inset 0 0 24px rgba(255, 255, 255, .12);
+    }
+
+    .hero-content {
+      position: relative;
+
+      z-index: 3;
+
+      width: 100%;
+
+      color: #FFFFFF;
+
+      padding:
+        0 18px 38px;
+    }
+
+    .hero-kicker {
+      margin:
+        0 0 12px;
+
+      color: #E7F6FF;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.08rem;
+
+      font-weight: 500;
+
+      letter-spacing: .34em;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, .40);
+    }
+
+    .hero-name {
+      margin: 0;
+
+      color: #FFFFFF;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(4.7rem, 13vw, 6.3rem);
+
+      line-height: 1;
+
+      font-weight: 400;
+
+      text-shadow:
+        0 2px 2px rgba(0, 0, 0, .52),
+        0 0 12px rgba(247, 252, 255, .48),
+        0 0 24px rgba(34, 89, 125, .55);
+    }
+
+    .hero-date {
+      margin-top: 18px;
+
+      color: #FFFFFF;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.4rem;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, .46);
+    }
+
+    /* ===================================
+       CONTENIDO
+    =================================== */
+
+    .background {
+      position: relative;
+
+      z-index: 1;
+
+      background: transparent;
+    }
+
+    .container {
+      max-width: 460px;
+
+      margin: 0 auto;
+
+      padding:
+        8px 16px 36px;
+
+      text-align: center;
+    }
+
+    .subtext {
+      max-width: 390px;
+
+      margin:
+        28px auto 12px;
+
+      color: var(--ink);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.7;
+    }
+
+    .parrafo {
+      max-width: 390px;
+
+      margin:
+        14px auto 6px;
+
+      color: var(--muted);
+
+      font-size: 1.02rem;
+
+      line-height: 1.78;
+
+      text-align: center;
+    }
+
+    .parrafo strong {
+      color: var(--ink);
+    }
+
+    /* ===================================
+       FECHA
+    =================================== */
+
+    .date-container {
+      width: 100%;
+
+      margin:
+        14px auto 8px;
+
+      display: grid;
+
+      gap: 6px;
+
+      justify-items: center;
+
+      color: var(--ink);
+    }
+
+    .day,
+    .month {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 1.45rem;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+    }
+
+    .number {
+      margin:
+        0 0 .18em;
+
+      color: var(--accent);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 6.7rem;
+
+      line-height: 1;
+
+      text-shadow:
+        0 0 16px rgba(255, 255, 255, .74);
+    }
+
+    /* ===================================
+       BOTONES
+    =================================== */
+
+    .btn,
+    .btn-ubicacion {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding:
+        10px 18px;
+
+      border:
+        1.8px solid rgba(247, 252, 255, .92);
+
+      border-radius: 999px;
+
+      color: #FFFFFF;
+
+      background:
+        linear-gradient(135deg,
+          #39789F 0%,
+          #73C7F2 52%,
+          #B7D6E7 100%);
+
+      box-shadow:
+        0 10px 24px rgba(36, 76, 104, .22);
+
+      cursor: pointer;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size: .86rem;
+
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .2s ease,
+        filter .2s ease;
+    }
+
+    .btn:hover,
+    .btn-ubicacion:hover {
+      filter: brightness(1.06);
+
+      transform:
+        translateY(-1px);
+    }
+
+    /* ===================================
+       TÍTULOS
+    =================================== */
+
+    .section-title,
+    .social-title,
+    .final-title {
+      margin:
+        4px 0 10px;
+
+      color: var(--accent);
+
+      font-family:
+        "Great Vibes",
+        serif;
+
+      font-size: 3rem;
+
+      line-height: 1.1;
+    }
+
+    .section-content,
+    .social-content,
+    .final-content {
+      margin:
+        8px 0;
+
+      color: var(--muted);
+
+      font-size: 1rem;
+
+      line-height: 1.65;
+
+      text-align: center;
+    }
+
+    .section-content strong,
+    .social-content strong,
+    .final-content strong {
+      color: var(--ink);
+    }
+
+    .section-content-hora {
+      margin:
+        10px 0 0;
+
+      color: var(--blue-dark);
+
+      font-size: 1.05rem;
+
+      font-weight: 700;
+    }
+
+    /* ===================================
+       TIMELINE
+    =================================== */
+
+    .timeline {
+      max-width: 380px;
+
+      margin:
+        22px auto 10px;
+
+      padding: 0;
+
+      display: grid;
+
+      gap: 26px;
+    }
+
+    .timeline-item,
+    .social-item,
+    .final-item {
+      padding: 0 !important;
+
+      border: none !important;
+
+      background:
+        transparent !important;
+
+      box-shadow:
+        none !important;
+
+      text-align: center;
+    }
+
+    .timeline-item+.timeline-item::before,
+    .social-item+.social-item::before,
+    .final-item+.final-item::before {
+      content: "";
+
+      display: block;
+
+      width: 72%;
+
+      height: 1px;
+
+      margin:
+        22px auto;
+
+      background:
+        linear-gradient(90deg,
+          transparent,
+          rgba(115, 199, 242, .32),
+          rgba(183, 214, 231, .60),
+          rgba(115, 199, 242, .32),
+          transparent);
+    }
+
+    /* ===================================
+       ITINERARIO
+    =================================== */
+
+    .timeline-section {
+      padding:
+        .5rem;
+
+      text-align: center;
+    }
+
+    .timeline-title {
+      margin:
+        -10px 0 1rem;
+
+      color: var(--accent);
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 4rem;
+
+      line-height: 1;
+    }
+
+    .timeline-list {
+      position: relative;
+
+      width:
+        min(100%, 390px);
+
+      margin: 0 auto;
+
+      padding:
+        .5rem 0;
+    }
+
+    .timeline-list::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 3px;
+
+      background:
+        linear-gradient(180deg,
+          #B7D6E7,
+          #73C7F2,
+          #39789F);
+
+      transform:
+        translateX(-50%);
+    }
+
+    .timeline-row {
+      position: relative;
+
+      min-height: 68px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 34px 1fr;
+
+      align-items: center;
+
+      justify-items: center;
+    }
+
+    .timeline-time {
+      width: 100%;
+
+      color: var(--blue-dark);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: .96rem;
+
+      font-weight: 700;
+
+      line-height: 1.35;
+
+      text-align: center;
+    }
+
+    .timeline-dot {
+      z-index: 1;
+
+      width: 18px;
+      height: 18px;
+
+      margin: 0 auto;
+
+      border:
+        3px solid var(--accent);
+
+      border-radius: 50%;
+
+      background: #FFFFFF;
+
+      box-shadow:
+        0 0 9px rgba(115, 199, 242, .28);
+    }
+
+    .timeline-event {
+      width: 100%;
+
+      color: var(--muted);
+
+      font-size: .94rem;
+
+      line-height: 1.35;
+
+      text-align: center;
+    }
+
+    /* ===================================
+       DIVISOR
+    =================================== */
+
+    .floral-divider {
+      width: 74%;
+
+      max-width: 280px;
+
+      height: 42px;
+
+      margin:
+        22px auto;
+
+      background:
+        url("cenefa.png") center / contain no-repeat;
+
+      opacity: .92;
+
+      filter:
+        hue-rotate(175deg) saturate(.75);
+    }
+
+    .crown-wrap {
+      margin:
+        12px auto 4px;
+
+      text-align: center;
+    }
+
+    .crown-wrap img {
+      display: block;
+
+      margin:
+        0 auto;
+
+      height: auto;
+    }
+
+    /* ===================================
+       FOTOS DISTRIBUIDAS
+    =================================== */
+
+    .foto-intermedia {
+      width: calc(100% + 32px);
+
+      margin:
+        30px -16px;
+
+      padding: 0;
+
+      overflow: hidden;
+
+      border-top:
+        1px solid rgba(115, 199, 242, .28);
+
+      border-bottom:
+        1px solid rgba(115, 199, 242, .28);
+
+      background: var(--blue-soft);
+
+      box-shadow:
+        0 14px 32px rgba(36, 76, 104, .17);
+    }
+
+    .foto-intermedia img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .foto-final {
+      width: 100%;
+
+      display: block;
+
+      border:
+        1px solid rgba(247, 252, 255, .72);
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 12px 28px rgba(36, 76, 104, .20);
+    }
+
+    /* ===================================
+       VESTIMENTA
+    =================================== */
+
+    .dress-note {
+      width:
+        min(92%, 355px);
+
+      margin:
+        15px auto;
+
+      padding:
+        16px 15px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 22px;
+
+      background:
+        rgba(247, 252, 255, .76);
+
+      box-shadow:
+        0 10px 24px rgba(36, 76, 104, .08);
+    }
+
+    /* ===================================
+       SOCIAL
+    =================================== */
+
+    .social-section,
+    .final-section {
+      max-width: 380px;
+
+      margin:
+        14px auto 0;
+
+      padding: 0;
+
+      display: grid;
+
+      gap: 14px;
+
+      justify-items: center;
+
+      text-align: center;
+    }
+
+    .thanks {
+      margin-top: 12px;
+
+      color: var(--blue-dark);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 2rem;
+
+      font-weight: 600;
+    }
+
+    /* ===================================
+       GALERÍA
+    =================================== */
+
+    .gallery-section {
+      width: 100%;
+
+      margin:
+        18px auto 0;
+
+      padding: 0;
+
+      text-align: center;
+    }
+
+    .gallery-slider {
+      width:
+        min(100%, 360px);
+
+      margin:
+        1.6rem auto 0;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+
+      padding: 8px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(115, 199, 242, .30);
+
+      border-radius: 24px;
+
+      background:
+        rgba(247, 252, 255, .96);
+
+      box-shadow:
+        0 14px 32px rgba(36, 76, 104, .16);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+
+      height:
+        min(500px, 72vh);
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 18px;
+
+      cursor: pointer;
+
+      transition:
+        opacity .3s ease,
+        transform .3s ease;
+    }
+
+    .gallery-slide-frame img.gallery-changing {
+      opacity: .25;
+
+      transform:
+        scale(.985);
+    }
+
+    .gallery-nav {
+      position: absolute;
+
+      top: 50%;
+
+      width: 40px;
+      height: 40px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(183, 214, 231, .65);
+
+      border-radius: 12px;
+
+      color: var(--ink);
+
+      background:
+        rgba(247, 252, 255, .84);
+
+      cursor: pointer;
+
+      font-size: 2rem;
+
+      line-height: 1;
+
+      transform:
+        translateY(-50%);
+    }
+
+    .gallery-nav.prev {
+      left: 18px;
+    }
+
+    .gallery-nav.next {
+      right: 18px;
+    }
+
+    .gallery-dots {
+      display: flex;
+
+      justify-content: center;
+
+      gap: .45rem;
+
+      margin-top: .9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+
+      padding: 0;
+
+      border: none;
+      border-radius: 999px;
+
+      background:
+        rgba(86, 116, 138, .30);
+
+      cursor: pointer;
+
+      transition:
+        background .2s ease,
+        transform .2s ease;
+    }
+
+    .gallery-dot.active {
+      background:
+        var(--accent);
+
+      transform:
+        scale(1.2);
+    }
+
+    /* ===================================
+       LIGHTBOX
+    =================================== */
+
+    .lightbox {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 1500;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(8, 28, 43, .94);
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+
+      z-index: 1501;
+
+      width:
+        min(92%, 420px);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+
+      object-fit: contain;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+
+      top: -48px;
+      right: 0;
+
+      border: none;
+
+      color: #FFFFFF;
+
+      background: none;
+
+      cursor: pointer;
+
+      font-size: 2.2rem;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+
+      top: 50%;
+
+      width: 42px;
+      height: 42px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(255, 255, 255, .30);
+
+      border-radius: 12px;
+
+      color: #FFFFFF;
+
+      background:
+        rgba(255, 255, 255, .22);
+
+      cursor: pointer;
+
+      font-size: 2.7rem;
+
+      transform:
+        translateY(-50%);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    /* ===================================
+       CONTADOR
+    =================================== */
+
+    .digital-clock-container {
+      margin: 0;
+    }
+
+    .digital-clock {
+      display: inline-block;
+
+      padding:
+        10px 12px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 14px;
+
+      color: var(--accent);
+
+      background:
+        rgba(247, 252, 255, .78);
+
+      box-shadow:
+        inset 0 0 18px rgba(36, 76, 104, .08);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+      font-size: 1.85rem;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+    .clock-status {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: .98rem;
+    }
+
+    /* ===================================
+       SCROLL
+    =================================== */
+
+    .scroll-to-top {
+      position: fixed;
+
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 1000;
+
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid #B7D6E7;
+
+      border-radius: 50%;
+
+      color: white;
+
+      background:
+        linear-gradient(135deg,
+          #39789F,
+          #73C7F2);
+
+      box-shadow:
+        0 10px 22px rgba(36, 76, 104, .22);
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      transition:
+        opacity .25s ease,
+        transform .2s ease;
+    }
+
+    .scroll-to-top.visible {
+      opacity: .85;
+    }
+
+    .arrow-up {
+      width: 10px;
+      height: 10px;
+
+      margin-top: 4px;
+
+      border-left:
+        3px solid white;
+
+      border-top:
+        3px solid white;
+
+      transform:
+        rotate(45deg);
+    }
+
+    /* ===================================
+       REPRODUCTOR
+    =================================== */
+
+    .floating-player {
+      position: fixed;
+
+      left: 14px;
+      bottom: 18px;
+
+      z-index: 1200;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 46px;
+      height: 46px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid #B7D6E7;
+
+      border-radius: 14px;
+
+      color: white;
+
+      background:
+        linear-gradient(135deg,
+          #39789F,
+          #73C7F2);
+
+      box-shadow:
+        0 10px 22px rgba(36, 76, 104, .26);
+
+      cursor: pointer;
+    }
+
+    .player-content {
+      width: 280px;
+
+      display: none;
+
+      padding: 14px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 16px;
+
+      background:
+        rgba(247, 252, 255, .96);
+
+      box-shadow:
+        0 14px 34px rgba(36, 76, 104, .22);
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-title {
+      margin: 0;
+
+      color: var(--ink);
+
+      font-size: .95rem;
+
+      font-weight: 700;
+    }
+
+    .song-artist {
+      margin:
+        6px 0 0;
+
+      color: var(--muted);
+
+      font-size: .85rem;
+    }
+
+    .player-controls {
+      margin-top: 10px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 14px;
+    }
+
+    .control-button {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 14px;
+
+      color: var(--accent);
+
+      background:
+        rgba(115, 199, 242, .12);
+
+      cursor: pointer;
+    }
+
+    .progress-container {
+      width: 100%;
+
+      height: 6px;
+
+      margin-top: 12px;
+
+      overflow: hidden;
+
+      border-radius: 999px;
+
+      background:
+        rgba(115, 199, 242, .14);
+
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+
+      background:
+        linear-gradient(90deg,
+          #39789F,
+          #73C7F2,
+          #B7D6E7);
+    }
+
+    .volume-control {
+      margin-top: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .volume-icon {
+      display: flex;
+
+      color: var(--accent);
+    }
+
+    .volume-slider {
+      flex-grow: 1;
+
+      height: 6px;
+
+      border-radius: 999px;
+
+      outline: none;
+
+      background:
+        rgba(115, 199, 242, .14);
+
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      width: 14px;
+      height: 14px;
+
+      border:
+        2px solid #FFFFFF;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+      cursor: pointer;
+
+      -webkit-appearance: none;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+
+      fill: currentColor;
+    }
+
+    /* ===================================
+       ANIMACIONES
+    =================================== */
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 0;
+
+      transition:
+        opacity .7s ease,
+        transform .9s cubic-bezier(.2, .8, .2, 1);
+
+      will-change:
+        transform,
+        opacity;
+    }
+
+    .anim-left {
+      transform:
+        translate3d(-28px, 0, 0);
+    }
+
+    .anim-right {
+      transform:
+        translate3d(28px, 0, 0);
+    }
+
+    .anim-up {
+      transform:
+        translate3d(0, 18px, 0);
+    }
+
+    .in-view {
+      opacity: 1;
+
+      transform:
+        translate3d(0, 0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-left,
+      .anim-right,
+      .anim-up {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 5rem;
+      }
+
+      .player-content {
+        width:
+          min(280px,
+            calc(100vw - 82px));
+      }
+    }
+
+    .icon-wrap {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 0px;
+      display: grid;
+      place-items: center;
+      ;
+      border-radius: 50%;
+
+    }
+
+    .icon-wrap svg {
+      color: #B7D6E7;
+    }
+
+    .icon-wrap svg,
+    .icon-wrap img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .icon-wrap img {
+      filter:
+        brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(520%) hue-rotate(165deg) brightness(96%) contrast(90%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- ===================================
+         HERO
+         FOTO #3
+    ==================================== -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="hero-kicker">
+          Mis XV Años
+        </p>
+
+        <h1 class="hero-name">
+          Dayana Valentina
+        </h1>
+
+        <div class="hero-date">
+          10 · Octubre · 2026
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="background">
+
+      <div class="container">
+
+        <button class="scroll-to-top" id="scrollBtn" aria-label="Volver arriba">
+
+          <div class="arrow-up"></div>
+
+        </button>
+
+        <div class="crown-wrap anim-up">
+
+          <img src="corona.png" width="70%" alt="Corona">
+
+        </div>
+
+        <p class="subtext anim-up">
+
+          Hay momentos en la vida
+          que soñamos durante mucho tiempo
+          y cuando finalmente llegan,
+          deseamos compartirlos
+          con las personas que más queremos.
+
+        </p>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FECHA
+        ==================================== -->
+
+        <div class="date-container anim-up">
+
+          <div class="day">
+            Sábado
+          </div>
+
+          <div class="number">
+            10
+          </div>
+
+          <div class="month">
+            Octubre
+          </div>
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             PADRES
+        ==================================== -->
+
+        <p class="parrafo anim-up">
+
+          Con la bendición de Dios
+          y acompañada del amor
+          de mis padres:
+
+          <br><br>
+
+          <strong>
+            Ulises Cordero
+          </strong>
+
+          <br>
+          y
+          <br>
+
+          <strong>
+            Daniela Ramos
+          </strong>
+
+          <br><br>
+
+          tengo la alegría de invitarte
+          a celebrar conmigo
+          uno de los momentos
+          más especiales de mi vida.
+
+        </p>
+
+        <!-- PADRINOS
+        <p class="parrafo anim-up">
+
+          Acompañada de mis padrinos:
+
+          <br><br>
+
+          <strong>
+            Nombre de padrinos
+          </strong>
+
+        </p>
+        -->
+
+        <!-- ===================================
+             FOTO INTERMEDIA 
+        ==================================== -->
+
+        <div class="foto-intermedia anim-up">
+
+          <img src="galeria/2.webp" alt="Fotografía de Dayana Valentina">
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             CEREMONIA
+        ==================================== -->
+
+        <div class="timeline-item anim-left">
+
+          <div align="center" style="
+              color:var(--gold);
+              font-size:3rem;
+              line-height:1;
+            ">
+
+            <svg viewBox="0 0 120 100" width="30%" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" aria-label="Ícono de ceremonia">
+
+              <path
+                d="M10 90H110M60 4V62M49 16H71M20 90V55L45 42V90M45 90V28L60 20L75 28V90M75 90V42L100 55V90M32 90V48M52 90V36M68 90V36M88 90V48">
+              </path>
+
+            </svg>
+
+          </div>
+
+          <p class="section-title">
+            Ceremonia Religiosa
+          </p>
+
+          <p class="section-content">
+
+            <strong>
+              Capilla Nuestra Señora de Guadalupe
+            </strong>
+
+            <br><br>
+
+            Col. Agrícola 13 de Marzo
+            <br>
+            Gómez Palacio, Dgo.
+
+          </p>
+
+          <p class="section-content-hora">
+            4:00 p. m.
+          </p>
+
+          <br>
+
+          <a href="https://maps.app.goo.gl/UUdeQsaKZmr541zAA" class="btn" target="_blank" rel="noopener">
+
+            Ver ubicación
+
+          </a>
+
+        </div>
+
+        <br><br>
+
+        <!-- ===================================
+             RECEPCIÓN
+        ==================================== -->
+
+        <div class="timeline-item anim-right">
+
+          <div class="icon-wrap">
+            <img src="fiesta.svg" alt="" aria-hidden="true">
+          </div>
+
+          <p class="section-title">
+            Recepción
+          </p>
+
+          <p class="section-content">
+
+            <strong>
+              Granja Manriquez
+            </strong>
+
+            <br><br>
+
+            Col. Agrícola la Popular
+            <br>
+            Gómez Palacio, Dgo.
+
+          </p>
+
+          <p class="section-content-hora">
+            5:30 p. m.
+          </p>
+
+          <br>
+
+          <a href="https://maps.app.goo.gl/LJVw5qPBPoDD6eBV9?g_st=aw" class="btn" target="_blank" rel="noopener">
+
+            Ver ubicación
+
+          </a>
+
+        </div>
+
+        <br><br>
+
+        <div class="crown-wrap anim-up">
+
+          <img src="1.png" width="50%" alt="Corona">
+
+        </div>
+        <br> <br>
+
+        <!-- ===================================
+             ITINERARIO
+        ==================================== -->
+
+        <section id="itinerario" class="timeline-section anim-up">
+
+          <p class="timeline-title">
+            Itinerario
+          </p>
+
+          <div class="timeline-list">
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                4:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Ceremonia
+              </div>
+
+            </div>
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                5:30 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Recepción
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <div class="floral-divider"></div>
+
+        <!-- ==================== #14
+        ==================================== -->
+
+        <div class="foto-intermedia anim-up">
+
+          <img src="galeria/3.webp" alt="Fotografía de Dayana Valentina">
+
+        </div>
+
+        <!-- ===================================
+             VESTIMENTA
+        ==================================== -->
+
+        <div class="timeline-item anim-up">
+          <div class="icon-wrap">
+            <img src="vestimenta.svg" alt="" aria-hidden="true">
+          </div>
+
+          <p class="section-title">
+            Código de Vestimenta
+          </p>
+
+          <p class="section-content-hora">
+            Formal
+          </p>
+
+          <div class="dress-note">
+
+            <p class="section-content">
+
+              Agradecemos vestir formal
+              para esta ocasión tan especial.
+
+              <br><br>
+
+              El color
+
+              <strong>
+                azul
+              </strong>
+
+              queda reservado
+              exclusivamente
+              para la quinceañera.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- ===================================
+             HOSPEDAJE
+        ====================================
+
+        <div class="social-item anim-up">
+
+          <p class="social-title">
+            Hospedaje
+          </p>
+
+          <p class="social-content">
+            Información de hospedaje.
+          </p>
+
+        </div>
+        -->
+
+        <br>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             LLUVIA DE SOBRES
+        ==================================== -->
+
+        <section class="social-section">
+
+          <div class="social-item anim-left">
+
+            <div align="center" style="color:var(--gold);">
+
+              <svg viewBox="0 0 120 120" width="32%" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round" aria-label="Lluvia de sobres">
+
+                <!-- SOBRE -->
+
+                <rect x="18" y="38" width="84" height="50" rx="6">
+                </rect>
+
+                <path d="M18 45L60 74L102 45">
+                </path>
+
+                <path d="M18 88L46 63">
+                </path>
+
+                <path d="M102 88L74 63">
+                </path>
+
+                <!-- CORAZÓN -->
+
+                <path d="
+                    M60 26
+                    C60 20,54 16,49 16
+                    C42 16,38 21,38 27
+                    C38 39,52 46,60 52
+                    C68 46,82 39,82 27
+                    C82 21,78 16,71 16
+                    C66 16,60 20,60 26Z
+                  ">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <p class="social-title">
+              Lluvia de Sobres
+            </p>
+
+            <p class="social-content">
+
+              Tu presencia es
+              el regalo más bonito
+              que puedo recibir.
+
+              <br><br>
+
+              Y si deseas tener
+              un lindo detalle conmigo,
+              habrá una
+
+              <strong>
+                canasta con sobres
+              </strong>
+
+              el día del evento.
+
+            </p>
+
+            <p class="thanks">
+              ¡Gracias!
+            </p>
+
+          </div>
+
+
+        </section>
+
+
+
+
+        <!-- ===================================
+             GALERÍA 
+        ==================================== -->
+
+        <section class="gallery-section anim-up">
+
+          <p class="final-title">
+            Galería
+          </p>
+
+          <p class="final-content">
+
+            Algunos recuerdos
+            de esta hermosa etapa.
+
+          </p>
+
+          <div class="gallery-slider">
+
+            <div class="gallery-slide-frame">
+
+              <img id="galleryImage" src="galeria/4.webp" alt="Fotografía de Dayana Valentina">
+
+              <button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Fotografía anterior">
+
+                &#10094;
+
+              </button>
+
+              <button class="gallery-nav next" id="galleryNext" type="button" aria-label="Fotografía siguiente">
+
+                &#10095;
+
+              </button>
+
+            </div>
+
+            <div class="gallery-dots" id="galleryDots">
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================
+             ÁLBUM QR
+        ====================================
+
+        <section class="final-section">
+
+          <div class="final-item anim-right">
+
+            <div class="qr-wrap">
+
+              <img
+                src="qr.png"
+                alt="QR Álbum Compartido">
+
+            </div>
+
+            <p class="final-title">
+              Galería de Recuerdos
+            </p>
+
+            <p class="final-content">
+              Comparte las fotografías
+              que tomes durante la fiesta.
+            </p>
+
+          </div>
+
+        </section>
+        -->
+        <br> <br>
+        <div class="crown-wrap anim-up">
+
+          <img src="corona2.png" width="60%" alt="Corona">
+
+        </div>
+ 
+
+        <!-- ===================================
+             CONTADOR
+             
+        ====================================  -->
+
+
+
+        <section class="final-section">
+
+          <div class="final-item anim-up">
+
+            <div class="digital-clock-container">
+
+              <p class="final-title">
+                Faltan
+              </p>
+
+              <p class="final-content">
+                DÍAS // HORAS // MINUTOS // SEGUNDOS
+              </p>
+
+              <div id="digital-clock" class="digital-clock">
+
+                <span id="days">00</span>
+                :
+                <span id="hours">00</span>
+                :
+                <span id="minutes">00</span>
+                :
+                <span id="seconds">00</span>
+
+              </div>
+
+              <div class="clock-status" id="clock-status">
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================
+             CONFIRMACIÓN WHATSAPP
+        ==================================== -->
+
+        <section class="final-section">
+
+          <div class="final-item anim-left">
+
+            <div class="floral-divider"></div>
+
+            <div align="center" style="color:var(--gold);">
+
+              <svg viewBox="0 0 120 120" width="28%" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round" aria-label="Confirmación">
+
+                <path d="M60 101C60 101 21 78 21 45C21 25 45 17 60 37C75 17 99 25 99 45C99 78 60 101 60 101Z">
+                </path>
+
+                <path d="M42 57L54 69L79 43">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <p class="final-title">
+              Confirma tu asistencia
+            </p>
+
+            <p class="final-content">
+
+              Tu presencia
+              es muy importante para mí.
+
+              <br><br>
+
+              Confirma tu asistencia
+              por WhatsApp.
+
+            </p>
+
+            <a href="https://wa.me/528714354489?text=Hola%2C%20deseo%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Dayana%20Valentina."
+              class="btn" target="_blank" rel="noopener">
+
+              Confirmar por WhatsApp
+
+            </a>
+
+            <p class="final-content">
+              871 435 4489
+            </p>
+
+          </div>
+
+        </section>
+
+        <br><br>
+
+        <p class="parrafo anim-up">
+
+          Gracias por acompañarme
+          en este momento tan esperado
+          y por formar parte
+          de una noche que guardaré
+          para siempre en mi corazón.
+
+        </p>
+
+        <p class="final-title">
+          ¡Te espero!
+        </p>
+
+        <p class="thanks">
+          Con cariño,
+          <br>
+          Dayana Valentina
+        </p>
+
+
+
+        <div align="center" class="anim-up">
+
+          <img src="galeria/final.png" class="foto-final" alt="Foto final de Dayana Valentina">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ===================================
+       LIGHTBOX
+  ==================================== -->
+
+  <div class="lightbox" id="lightbox">
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+    </div>
+
+    <div class="lightbox-content">
+
+      <button class="lightbox-close" id="lightboxClose" type="button">
+
+        &times;
+
+      </button>
+
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">
+
+        &#10094;
+
+      </button>
+
+      <img src="galeria/1.webp" class="lightbox-image" id="lightboxImage" alt="Fotografía de Dayana Valentina">
+
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button">
+
+        &#10095;
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ===================================
+      REPRODUCTOR
+  ==================================== -->
+
+  <div class="floating-player" aria-label="Reproductor de música">
+
+    <div class="player-button" id="playerButton" title="Abrir reproductor">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+
+        <path
+          d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z">
+        </path>
+
+      </svg>
+
+    </div>
+
+    <div class="player-content" id="playerContent">
+
+      <p class="song-title" id="songTitle">
+
+        ¡Escucha la invitación con música!
+
+      </p>
+
+      <div class="progress-container" id="progressContainer">
+
+        <div class="progress-bar" id="progressBar">
+        </div>
+
+      </div>
+
+      <div class="player-controls">
+
+        <button class="control-button" id="playButton" type="button">
+
+          <svg class="icon" id="playIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+            <polygon points="5 3 19 12 5 21 5 3">
+            </polygon>
+
+          </svg>
+
+          <svg class="icon" id="pauseIcon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+
+            <rect x="6" y="4" width="4" height="16">
+            </rect>
+
+            <rect x="14" y="4" width="4" height="16">
+            </rect>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+      <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7">
+
+      <audio id="audioPlayer" preload="metadata">
+
+        <source src="A Thousand Years.mp3" type="audio/mpeg">
+
+      </audio>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* ===================================
+       ANIMACIONES
+    =================================== */
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      function () {
+
+        const targets =
+          document.querySelectorAll(
+            '.anim-left, .anim-right, .anim-up'
+          );
+
+        if (!targets.length) {
+          return;
+        }
+
+        if (
+          !(
+            'IntersectionObserver'
+            in window
+          )
+        ) {
+
+          targets.forEach(
+            function (element) {
+
+              element
+                .classList
+                .add('in-view');
+
+            }
+          );
+
+          return;
+        }
+
+        const observer =
+          new IntersectionObserver(
+            function (entries) {
+
+              entries.forEach(
+                function (entry) {
+
+                  if (
+                    entry.isIntersecting
+                  ) {
+
+                    entry.target
+                      .classList
+                      .add('in-view');
+
+                    observer
+                      .unobserve(
+                        entry.target
+                      );
+
+                  }
+
+                }
+              );
+
+            },
+            {
+              threshold: .12,
+
+              rootMargin:
+                "0px 0px -10% 0px"
+            }
+          );
+
+        targets.forEach(
+          function (element) {
+
+            observer.observe(
+              element
+            );
+
+          }
+        );
+
+      }
+    );
+
+    /* ===================================
+       SCROLL
+    =================================== */
+
+    (function () {
+
+      const scrollBtn =
+        document.getElementById(
+          'scrollBtn'
+        );
+
+      if (!scrollBtn) {
+        return;
+      }
+
+      window.addEventListener(
+        'scroll',
+        function () {
+
+          const position =
+            document.body.scrollTop ||
+            document.documentElement.scrollTop;
+
+          if (
+            position > 300
+          ) {
+
+            scrollBtn
+              .classList
+              .add('visible');
+
+          } else {
+
+            scrollBtn
+              .classList
+              .remove('visible');
+
+          }
+
+        }
+      );
+
+      scrollBtn
+        .addEventListener(
+          'click',
+          function () {
+
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+
+          }
+        );
+
+    })();
+
+    /* ===================================
+       GALERÍA
+      
+    =================================== */
+
+    (function () {
+
+      const galleryImage =
+        document.getElementById(
+          'galleryImage'
+        );
+
+      const galleryPrev =
+        document.getElementById(
+          'galleryPrev'
+        );
+
+      const galleryNext =
+        document.getElementById(
+          'galleryNext'
+        );
+
+      const galleryDots =
+        document.getElementById(
+          'galleryDots'
+        );
+
+      const lightbox =
+        document.getElementById(
+          'lightbox'
+        );
+
+      const lightboxImage =
+        document.getElementById(
+          'lightboxImage'
+        );
+
+      const lightboxClose =
+        document.getElementById(
+          'lightboxClose'
+        );
+
+      const lightboxPrev =
+        document.getElementById(
+          'lightboxPrev'
+        );
+
+      const lightboxNext =
+        document.getElementById(
+          'lightboxNext'
+        );
+
+      const lightboxOverlay =
+        document.getElementById(
+          'lightboxOverlay'
+        );
+
+      if (
+        !galleryImage ||
+        !galleryPrev ||
+        !galleryNext ||
+        !galleryDots
+      ) {
+        return;
+      }
+
+      const galleryImages = [
+        'galeria/4.webp',
+        'galeria/5.webp',
+        'galeria/6.webp',
+        'galeria/7.webp'
+      ];
+
+      let currentGalleryIndex = 0;
+
+      function createDots() {
+
+        galleryDots.innerHTML = '';
+
+        galleryImages.forEach(
+          function (_, index) {
+
+            const dot =
+              document.createElement(
+                'button'
+              );
+
+            dot.type = 'button';
+
+            dot.className =
+              'gallery-dot';
+
+            dot.setAttribute(
+              'aria-label',
+              'Ver fotografía ' +
+              (index + 1)
+            );
+
+            dot.addEventListener(
+              'click',
+              function () {
+
+                currentGalleryIndex =
+                  index;
+
+                updateGallery();
+
+              }
+            );
+
+            galleryDots
+              .appendChild(dot);
+
+          }
+        );
+
+      }
+
+      function updateGallery() {
+
+        galleryImage
+          .classList
+          .add(
+            'gallery-changing'
+          );
+
+        setTimeout(
+          function () {
+
+            galleryImage.src =
+              galleryImages[
+              currentGalleryIndex
+              ];
+
+            galleryImage
+              .classList
+              .remove(
+                'gallery-changing'
+              );
+
+            const dots =
+              galleryDots
+                .querySelectorAll(
+                  '.gallery-dot'
+                );
+
+            dots.forEach(
+              function (
+                dot,
+                index
+              ) {
+
+                dot
+                  .classList
+                  .toggle(
+                    'active',
+                    index ===
+                    currentGalleryIndex
+                  );
+
+              }
+            );
+
+          },
+          150
+        );
+
+      }
+
+      function prev() {
+
+        currentGalleryIndex =
+          (
+            currentGalleryIndex -
+            1 +
+            galleryImages.length
+          ) %
+          galleryImages.length;
+
+        updateGallery();
+
+      }
+
+      function next() {
+
+        currentGalleryIndex =
+          (
+            currentGalleryIndex +
+            1
+          ) %
+          galleryImages.length;
+
+        updateGallery();
+
+      }
+
+      galleryPrev
+        .addEventListener(
+          'click',
+          prev
+        );
+
+      galleryNext
+        .addEventListener(
+          'click',
+          next
+        );
+
+      galleryImage
+        .addEventListener(
+          'click',
+          function () {
+
+            if (
+              !lightbox ||
+              !lightboxImage
+            ) {
+              return;
+            }
+
+            lightboxImage.src =
+              galleryImages[
+              currentGalleryIndex
+              ];
+
+            lightbox.style.display =
+              'flex';
+
+            document.body
+              .style
+              .overflow =
+              'hidden';
+
+          }
+        );
+
+      function updateLightbox() {
+
+        if (
+          lightboxImage
+        ) {
+
+          lightboxImage.src =
+            galleryImages[
+            currentGalleryIndex
+            ];
+
+        }
+
+        updateGallery();
+
+      }
+
+      if (
+        lightboxPrev
+      ) {
+
+        lightboxPrev
+          .addEventListener(
+            'click',
+            function () {
+
+              currentGalleryIndex =
+                (
+                  currentGalleryIndex -
+                  1 +
+                  galleryImages.length
+                ) %
+                galleryImages.length;
+
+              updateLightbox();
+
+            }
+          );
+
+      }
+
+      if (
+        lightboxNext
+      ) {
+
+        lightboxNext
+          .addEventListener(
+            'click',
+            function () {
+
+              currentGalleryIndex =
+                (
+                  currentGalleryIndex +
+                  1
+                ) %
+                galleryImages.length;
+
+              updateLightbox();
+
+            }
+          );
+
+      }
+
+      function closeLightbox() {
+
+        if (
+          !lightbox
+        ) {
+          return;
+        }
+
+        lightbox.style.display =
+          'none';
+
+        document.body
+          .style
+          .overflow =
+          '';
+
+      }
+
+      if (
+        lightboxClose
+      ) {
+
+        lightboxClose
+          .addEventListener(
+            'click',
+            closeLightbox
+          );
+
+      }
+
+      if (
+        lightboxOverlay
+      ) {
+
+        lightboxOverlay
+          .addEventListener(
+            'click',
+            closeLightbox
+          );
+
+      }
+
+      document
+        .addEventListener(
+          'keydown',
+          function (event) {
+
+            if (
+              !lightbox ||
+              lightbox.style.display !==
+              'flex'
+            ) {
+              return;
+            }
+
+            if (
+              event.key ===
+              'Escape'
+            ) {
+
+              closeLightbox();
+
+            }
+
+            if (
+              event.key ===
+              'ArrowLeft'
+            ) {
+
+              currentGalleryIndex =
+                (
+                  currentGalleryIndex -
+                  1 +
+                  galleryImages.length
+                ) %
+                galleryImages.length;
+
+              updateLightbox();
+
+            }
+
+            if (
+              event.key ===
+              'ArrowRight'
+            ) {
+
+              currentGalleryIndex =
+                (
+                  currentGalleryIndex +
+                  1
+                ) %
+                galleryImages.length;
+
+              updateLightbox();
+
+            }
+
+          }
+        );
+
+      createDots();
+
+      updateGallery();
+
+    })();
+
+    /* ===================================
+       CONTADOR:  =================================== */
+    /* ===================================
+       CUENTA REGRESIVA
+       10 OCTUBRE 2026 - 4:00 P.M.
+    =================================== */
+
+    function updateDigitalClock() {
+
+      const targetDate =
+        new Date(
+          "2026-10-10T16:00:00-06:00"
+        ).getTime();
+
+      const daysElement =
+        document.getElementById("days");
+
+      const hoursElement =
+        document.getElementById("hours");
+
+      const minutesElement =
+        document.getElementById("minutes");
+
+      const secondsElement =
+        document.getElementById("seconds");
+
+      const clockStatus =
+        document.getElementById("clock-status");
+
+      if (
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+      ) {
+        return;
+      }
+
+      function tick() {
+
+        const now = Date.now();
+
+        const distance =
+          targetDate - now;
+
+        if (distance > 0) {
+
+          const days =
+            Math.floor(
+              distance /
+              (1000 * 60 * 60 * 24)
+            );
+
+          const hours =
+            Math.floor(
+              (distance %
+                (1000 * 60 * 60 * 24)) /
+              (1000 * 60 * 60)
+            );
+
+          const minutes =
+            Math.floor(
+              (distance %
+                (1000 * 60 * 60)) /
+              (1000 * 60)
+            );
+
+          const seconds =
+            Math.floor(
+              (distance %
+                (1000 * 60)) /
+              1000
+            );
+
+          daysElement.textContent =
+            String(days).padStart(2, "0");
+
+          hoursElement.textContent =
+            String(hours).padStart(2, "0");
+
+          minutesElement.textContent =
+            String(minutes).padStart(2, "0");
+
+          secondsElement.textContent =
+            String(seconds).padStart(2, "0");
+
+          if (clockStatus) {
+            clockStatus.textContent =
+              "Para vivir juntos este momento tan especial";
+          }
+
+        } else {
+
+          daysElement.textContent = "00";
+          hoursElement.textContent = "00";
+          minutesElement.textContent = "00";
+          secondsElement.textContent = "00";
+
+          if (clockStatus) {
+            clockStatus.textContent =
+              "¡El gran día ha llegado!";
+          }
+
+        }
+
+      }
+
+      tick();
+
+      setInterval(
+        tick,
+        1000
+      );
+
+    }
+
+    window.addEventListener(
+      "load",
+      updateDigitalClock
+    );
+
+    (function () {
+      const playerButton = document.getElementById("playerButton");
+      const playerContent = document.getElementById("playerContent");
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playButton = document.getElementById("playButton");
+      const playIcon = document.getElementById("playIcon");
+      const pauseIcon = document.getElementById("pauseIcon");
+      const volumeSlider = document.getElementById("volumeSlider");
+      const progressBar = document.getElementById("progressBar");
+      const progressContainer = document.getElementById("progressContainer");
+
+      if (!playerButton || !playerContent || !audioPlayer || !playButton) {
+        return;
+      }
+
+      function setPlayingUI(isPlaying) {
+        if (playIcon) playIcon.style.display = isPlaying ? "none" : "block";
+        if (pauseIcon) pauseIcon.style.display = isPlaying ? "block" : "none";
+      }
+
+      async function playMusic() {
+        try {
+          await audioPlayer.play();
+          setPlayingUI(true);
+        } catch (error) {
+          setPlayingUI(false);
+        }
+      }
+
+      playerButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        playerContent.classList.toggle("active");
+      });
+
+      playerContent.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+
+      document.addEventListener("click", function () {
+        playerContent.classList.remove("active");
+      });
+
+      playButton.addEventListener("click", function () {
+        if (audioPlayer.paused) {
+          playMusic();
+        } else {
+          audioPlayer.pause();
+          setPlayingUI(false);
+        }
+      });
+
+      if (volumeSlider) {
+        audioPlayer.volume = Number(volumeSlider.value);
+        volumeSlider.addEventListener("input", function () {
+          audioPlayer.volume = Number(volumeSlider.value);
+        });
+      }
+
+      audioPlayer.addEventListener("timeupdate", function () {
+        if (!progressBar || !audioPlayer.duration) return;
+        progressBar.style.width = (audioPlayer.currentTime / audioPlayer.duration) * 100 + "%";
+      });
+
+      if (progressContainer) {
+        progressContainer.addEventListener("click", function (event) {
+          if (!audioPlayer.duration) return;
+          const bounds = progressContainer.getBoundingClientRect();
+          audioPlayer.currentTime = ((event.clientX - bounds.left) / bounds.width) * audioPlayer.duration;
+        });
+      }
+
+      audioPlayer.addEventListener("play", function () {
+        setPlayingUI(true);
+      });
+
+      audioPlayer.addEventListener("pause", function () {
+        setPlayingUI(false);
+      });
+
+      if (new URLSearchParams(window.location.search).get("startMusic") === "1") {
+        playMusic();
+      }
+    })();
+  </script>
+
+
+  </script>
+
+</body>
+
+</html>
