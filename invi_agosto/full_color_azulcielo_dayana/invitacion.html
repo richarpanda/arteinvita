@@ -1499,6 +1499,22 @@
       }
     }
 
+
+    @media (max-width: 480px) {
+      .gallery-nav {
+        z-index: 5;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .gallery-slide-frame img {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+    }
+
     .icon-wrap {
       width: 200px;
       height: 200px;
@@ -2588,54 +2604,51 @@ a 8:30 p. m.
 
       }
 
+      /* Precarga las fotos para evitar que en celular
+         se quede visualmente la primera imagen al avanzar. */
+      galleryImages.forEach(function (src) {
+        const preload = new Image();
+        preload.src = src;
+      });
+
       function updateGallery() {
+
+        const newSrc =
+          galleryImages[currentGalleryIndex];
 
         galleryImage
           .classList
-          .add(
-            'gallery-changing'
-          );
+          .add('gallery-changing');
 
-        setTimeout(
-          function () {
+        /* Cambiamos el src inmediatamente. Esto es más
+           estable en Safari/iPhone y navegadores móviles. */
+        galleryImage.src = newSrc;
+        galleryImage.setAttribute('src', newSrc);
 
-            galleryImage.src =
-              galleryImages[
-              currentGalleryIndex
-              ];
+        const dots =
+          galleryDots
+            .querySelectorAll('.gallery-dot');
 
-            galleryImage
-              .classList
-              .remove(
-                'gallery-changing'
-              );
-
-            const dots =
-              galleryDots
-                .querySelectorAll(
-                  '.gallery-dot'
-                );
-
-            dots.forEach(
-              function (
-                dot,
-                index
-              ) {
-
-                dot
-                  .classList
-                  .toggle(
-                    'active',
-                    index ===
-                    currentGalleryIndex
-                  );
-
-              }
+        dots.forEach(
+          function (dot, index) {
+            dot.classList.toggle(
+              'active',
+              index === currentGalleryIndex
             );
-
-          },
-          150
+          }
         );
+
+        /* Quitamos la transición cuando la nueva imagen
+           ya terminó de cargar. */
+        if (galleryImage.complete) {
+          requestAnimationFrame(function () {
+            galleryImage.classList.remove('gallery-changing');
+          });
+        } else {
+          galleryImage.onload = function () {
+            galleryImage.classList.remove('gallery-changing');
+          };
+        }
 
       }
 
