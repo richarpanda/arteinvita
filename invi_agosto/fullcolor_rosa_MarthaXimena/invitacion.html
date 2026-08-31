@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV | Martha Ximena</title>
+<script src="https://app.arteinvita.com/widget.js"></script>
+  <!-- TIPOGRAFÍAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+ <style>
+    :root {
+      --bg: #fff3fa;
+      --surface: #ffffff;
+      --ink: #af056a;
+      --muted: #af056a;
+      --accent: #f77bb7;
+      --rose: #e14a9a;
+      --line: rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .app {
+      width: min(460px, 100%);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--bg);
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+      .app {
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* =========================
+       HERO - TEXTO SOBRE LA FOTO
+    ========================== */
+    .hero {
+      position: relative;
+      height: min(95vh, 760px);
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end; /* baja el contenido para liberar la cara */
+      justify-content: center;
+      text-align: center;
+      /* CAMBIA ESTA RUTA POR TU IMAGEN DE LA PAREJA */
+      background: url("img/portada.png") center top / cover no-repeat;
+    }
+
+    /* Viñeta sutil para mejor lectura del texto */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.20) 45%, rgba(0,0,0,0.45));
+      pointer-events: none;
+    }
+
+    /* Texto SOBRE la foto (blanco) */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 0 18px 110px; /* MÁS ABAJO para que se vea la cara */
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
+    }
+
+    .hero-kicker {
+      letter-spacing: 0.34em;
+      font-size: 1.08rem;
+      text-transform: uppercase;
+      opacity: 0.95;
+      margin: 0 0 12px;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .hero-name {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(5.2rem, 10vw, 4.4rem);
+      margin: 0;
+      line-height: 1.1;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .hero-date {
+      margin-top: 16px;
+      font-size: 1.50rem;
+      letter-spacing: 0.22em;
+      opacity: 0.95;
+      font-family: "Playfair Display", serif;
+      color: #fff;
+    }
+
+    /* Papel rasgado en la parte inferior del hero */
+    .hero-paper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      width: 100%;
+      height: auto;
+      min-height: 80px;
+      object-fit: cover;
+      object-position: top;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* =========================
+       SECCIONES
+    ========================== */
+    .section {
+      background: var(--bg);
+      padding: 12px 16px 18px;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 8px 16px 36px;
+      text-align: center;
+    }
+
+    .muted {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .note {
+      margin: 8px 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================== */
+    .countdown {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 8px auto 10px;
+    }
+
+    .tile {
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 14px 8px 12px;
+      border-radius: 14px;
+      background: rgba(247, 123, 183, 0.08);
+      border: 1px solid rgba(247, 123, 183, 0.16);
+    }
+
+    .num {
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height: 1;
+      color: var(--rose);
+    }
+
+    .lbl {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Fecha grande */
+    .date-container {
+      width: 100%;
+      margin: 14px auto 8px;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      color: var(--ink);
+    }
+
+    .day {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+      font-size: 3.4rem;
+      margin: 0;
+      line-height: 1;
+      color: var(--rose);
+    }
+
+    .month {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Ceremonia */
+    .ceremony {
+      margin-top: 14px;
+      padding-top: 6px;
+    }
+
+    .ceremony-icon {
+      width: 78px;
+      height: 78px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      border-radius: 18px;
+      background: rgba(209, 82, 148, 0.06);
+      border: 1px solid rgba(209, 82, 148, 0.14);
+    }
+
+    .ceremony h3 {
+      margin: 6px 0 6px;
+      font-size: 1.15rem;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+    }
+
+    .ceremony p {
+      margin: 4px 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .ceremony p strong {
+      color: var(--ink);
+    }
+
+    /* Botón */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1.8px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+ 
+
+    /* =========================
+       COUNTDOWN (decorativo)
+    ========================== */
+    .countdown{
+      display:flex;
+      gap: 10px;
+      justify-content:center;
+      margin: 8px auto 10px;
+    }
+    .tile{
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 14px 8px 12px;
+      border-radius: 14px;
+      background: rgba(247,123,183,.08);
+      border: 1px solid rgba(247,123,183,.16);
+    }
+    .num{
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height:1;
+      color: var(--rose);
+    }
+    .lbl{
+      display:block;
+      margin-top: 8px;
+      font-size: .75rem;
+      letter-spacing:.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Ceremonia mini-card */
+    .ceremony{
+      margin-top: 14px;
+      padding-top: 6px;
+    }
+    .ceremony-icon{
+      width: 78px;
+      height: 78px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin: 0 auto 8px;
+      border-radius: 18px;
+      background: rgba(209,82,148,.06);
+      border: 1px solid rgba(209,82,148,.14);
+    }
+    .ceremony-icon img{
+      width: 52px;
+      height: auto;
+      display:block;
+    }
+    .ceremony h3{
+      margin: 6px 0 6px;
+      font-size: 1.15rem;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+    }
+    .ceremony p{
+      margin: 4px 0;
+      font-size: .98rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .ceremony p strong{ color: var(--ink); }
+
+    /* =========================
+       TEXTO CENTRAL (sin scripts ni imágenes de fondo)
+    ========================== */
+    .subtext{
+      margin: 18px 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .parrafo{
+      margin: 14px auto 6px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 380px;
+    }
+    .parrafo strong{ color: var(--ink); }
+
+    /* Fecha grande (minimal) */
+    .date-container{
+      width: 100%;
+      margin: 14px auto 8px;
+      display:grid;
+      gap: 6px;
+      justify-items:center;
+      color: var(--ink);
+    }
+    .day{
+      font-size: .95rem;
+      letter-spacing:.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    .number{
+      font-family: "Playfair Display", serif;
+      font-size: 3.4rem;
+      margin: 0;
+      line-height: 1;
+      color: var(--rose);
+    }
+    .month{
+      font-size: .95rem;
+      letter-spacing:.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* =========================
+       TIMELINE -> LISTA ELEGANTE
+    ========================== */
+    .timeline{
+      margin: 22px auto 10px;
+      padding: 0;
+      max-width: 420px;
+      display:grid;
+      gap: 14px;
+    }
+    .timeline::before{ display:none; }
+
+    .timeline-item{
+      padding: 18px 16px;
+      text-align:center;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .section-icon, .section-icon-event, .section-icon-dress{
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 10px;
+      border-radius: 16px;
+      background-size: 34px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid var(--line);
+      background-color: rgba(0,0,0,.02);
+    }
+    .section-icon{ background-image: url('img/icon-ceremony.png'); }
+    .section-icon-event{ background-image: url('img/icon-event.png'); }
+    .section-icon-dress{ background-image: url('img/icon-dress.png'); }
+
+    .section-title{
+      margin: 4px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.80rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .section-content{
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 1.0rem;
+      line-height: 1.65;
+    }
+    .section-content-hora{
+      margin: 10px 0 0;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       SOCIAL
+    ========================== */
+    .social-section{
+      margin: 14px auto 0;
+      padding: 0;
+      max-width: 420px;
+      display:grid;
+      gap: 14px;
+    }
+    .social-item{
+      padding: 18px 16px;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+    }
+
+    .social-icon{
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 10px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background-color: rgba(0,0,0,.02);
+      background-size: 34px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .social-icon-camera{ background-image: url('img/icon-camera.png'); }
+    .social-icon-gift-2{ background-image: url('img/icon-gift-2.png'); }
+
+    .social-title{
+      margin: 6px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.80rem;
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .social-content{
+      margin: 8px 0;
+      font-size: 1.0rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .hashtag{
+      margin: 10px 0 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      color: var(--rose);
+      font-weight: 700;
+      letter-spacing:.02em;
+    }
+    .instagram{
+      font-size: 1.05rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .enlace-instagram{
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .enlace-instagram:hover{ text-decoration: underline; }
+    .thanks{
+      margin-top: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* =========================
+       FINAL
+    ========================== */
+    .final-section{
+      margin: 14px auto 0;
+      padding: 0;
+      max-width: 420px;
+      display:grid;
+      gap: 14px;
+    }
+    .final-item{
+      padding: 18px 16px;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .final-title{
+      margin: 10px 0 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.80rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .final-content{
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 1.0rem;
+      line-height: 1.65;
+    }
+
+    /* Reloj digital */
+    .digital-clock-container{ margin: 0; }
+    .digital-clock{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 2.0rem;
+      font-weight: 700;
+      color: var(--accent);
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(247,123,183,.18);
+      background: rgba(247,123,183,.08);
+      letter-spacing: 4px;
+      display:inline-block;
+    }
+    .clock-status{
+      margin-top: 10px;
+      color: var(--muted);
+      font-style: normal;
+      font-size: .98rem;
+    }
+
+    /* Iconos (se dejan pero más limpios) */
+    .countdown-icon, .whatsapp-icon{
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 10px;
+      background-size: 34px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background-color: rgba(0,0,0,.02);
+    }
+    .countdown-icon{ background-image: url('img/icon-countdown.png'); }
+    .whatsapp-icon{ background-image: url('img/icon-whatsapp.png'); }
+
+    /* Scroll-to-top */
+    .scroll-to-top{
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background-color: var(--accent);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out, transform .2s ease;
+      border: none;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      z-index: 1000;
+    }
+    .scroll-to-top.visible{ opacity: 0.85; }
+    .scroll-to-top:hover{ transform: translateY(-2px); }
+    .arrow-up{
+      width: 10px;
+      height: 10px;
+      border-left: 3px solid white;
+      border-top: 3px solid white;
+      transform: rotate(45deg);
+      margin-top: 4px;
+    }
+
+    /* =========================
+       GALERÍA MODAL (se queda)
+    ========================== */
+    .gallery-button-container{ text-align:center; margin: 0; }
+    .gallery-modal{
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      z-index: 2000;
+      animation: fadeIn 0.25s ease-in;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+    .gallery-close-btn{
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 38px;
+      font-weight: bold;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2001;
+      transition: opacity 0.2s ease;
+    }
+    .gallery-close-btn:hover{ opacity: .75; }
+    .gallery-container{
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .gallery-main-image{
+      max-width: 92%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .gallery-arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.55);
+      color: #000;
+      border: none;
+      font-size: 28px;
+      padding: 12px 16px;
+      cursor: pointer;
+      z-index: 2001;
+      transition: all 0.2s ease;
+      border-radius: 10px;
+    }
+    .gallery-arrow:hover{ background-color: rgba(255,255,255,0.85); }
+    .gallery-prev{ left: 10px; }
+    .gallery-next{ right: 10px; }
+    .gallery-counter{
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0,0,0,0.65);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      z-index: 2001;
+    }
+    .gallery-thumbnails{
+      position: absolute;
+      bottom: 58px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      max-width: 88%;
+      overflow-x: auto;
+      padding: 10px;
+      background-color: rgba(0,0,0,0.45);
+      border-radius: 12px;
+      z-index: 2001;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+    .gallery-thumbnail{
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      opacity: 0.65;
+      transition: opacity 0.2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .gallery-thumbnail:hover{ opacity: 1; transform: scale(1.04); }
+    .gallery-thumbnail.active{ border-color: var(--accent); opacity: 1; }
+
+    /* =========================
+       REPRODUCTOR (YA FUNCIONAL) -> LOOK LIMPIO
+    ========================== */
+    .floating-player{
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      top: auto;
+      transform: none;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .player-button{
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background-color: var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+      color: white;
+      transition: transform 0.2s ease, opacity .2s ease;
+    }
+    .player-button:hover{ transform: translateY(-2px); }
+
+    .player-content{
+      background-color: var(--surface);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+      border: 1px solid var(--line);
+      display: none;
+      width: 280px;
+    }
+    .player-content.active{ display: block; }
+
+    .song-title{
+      margin: 0;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .95rem;
+      line-height: 1.35;
+    }
+    .song-artist{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .player-controls{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .control-button{
+      background: rgba(175,136,67,.08);
+      border: 1px solid rgba(247,123,183,.18);
+      cursor: pointer;
+      color: var(--accent);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .control-button:hover{
+      background: rgba(247,123,183,.16);
+      transform: translateY(-1px);
+    }
+
+    .progress-container{
+      width: 100%;
+      height: 6px;
+      background-color: rgba(0,0,0,.08);
+      border-radius: 999px;
+      margin-top: 12px;
+      cursor: pointer;
+      overflow:hidden;
+    }
+    .progress-bar{
+      height: 100%;
+      background-color: var(--accent);
+      width: 0%;
+    }
+
+    .volume-control{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .volume-icon{ color: var(--accent); display:flex; }
+    .volume-slider{
+      flex-grow: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      background-color: rgba(0,0,0,.08);
+      border-radius: 999px;
+      outline: none;
+    }
+    .volume-slider::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 8px 16px rgba(0,0,0,.15);
+    }
+
+    .icon{ width: 22px; height: 22px; fill: currentColor; }
+
+    /* Quita el “mega-fondo” anterior */
+    .background{
+      background-image: none !important;
+      min-height: auto !important;
+      animation: none !important;
+    }
+
+    /* Acomoda espacios inferiores */
+    .container > .parrafo:last-of-type{ margin-bottom: 18px; }
+  
+
+    /* =========================================================
+       OVERRIDES V2 – Minimalista centrado + "FALTAN" fusionado
+       - FALTAN se integra al papel (sin verse como tarjeta flotante)
+       - Secciones posteriores sin "envolventes" (cards) en toda la página
+    ========================================================== */
+
+    /* Fusión con papel */
+    .section{ padding-top: 0; }
+    .paper{ background: var(--bg); }
+    .paper::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-1px;
+      height: 26px;
+      background: linear-gradient(180deg, rgba(251,247,251,0), rgba(251,247,251,1));
+      pointer-events:none;
+    }
+
+    /* La tarjeta del "FALTAN" se mete bajo el papel */
+    .section .card{
+      width: calc(100% - 24px);
+      margin: -44px auto 0;              /* <-- sube y se “pega” al papel */
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-top: none;
+      padding-top: 34px;                 /* aire para que no se sienta aplastado */
+      box-shadow: 0 12px 30px rgba(0,0,0,.10);
+      background: rgba(255,255,255,.92); /* se funde con el fondo */
+      backdrop-filter: blur(10px);
+    }
+
+    /* Micro detalle: línea superior sutil para remate elegante */
+    .section .card::before{
+      content:"";
+      position:absolute;
+      left: 18px;
+      right: 18px;
+      top: 0;
+      height: 1px;
+      background: rgba(0,0,0,.06);
+    }
+    .card{ position: relative; }
+
+    /* Cuenta regresiva más premium (sin que se sienta “cuadro” pesado) */
+    .tile{
+      background: rgba(247,123,183,.07);
+      border: 1px solid rgba(247,123,183,.14);
+      border-radius: 16px;
+    }
+
+    /* =========================================================
+       Quitar "envolventes" (cards) en el resto
+    ========================================================== */
+    .timeline, .social-section, .final-section{
+      max-width: 380px;
+      gap: 26px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .timeline-item, .social-item, .final-item{
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    /* Separadores minimalistas entre bloques */
+    .timeline-item + .timeline-item::before,
+    .social-item + .social-item::before,
+    .final-item + .final-item::before{
+      content:"";
+      display:block;
+      width: 72%;
+      margin: 22px auto;
+      height: 1px;
+      background: rgba(0,0,0,.08);
+    }
+
+    /* Títulos y textos más centrados tipo Pinterest Premium */
+    .section-title, .social-title, .final-title{
+      letter-spacing: .02em;
+    }
+    .section-content, .social-content, .final-content, .parrafo{
+      text-align: center;
+    }
+
+    /* Iconos como “chip” elegante */
+    .section-icon, .section-icon-event, .section-icon-dress,
+    .social-icon, .countdown-icon, .whatsapp-icon{
+      background-color: rgba(0,0,0,.015);
+      border-color: rgba(0,0,0,.07);
+    }
+
+    /* Botones: un poco más delgados para look minimal */
+    .btn, .confirm-button, .gallery-button{
+      padding: 9px 16px;
+      font-size: .88rem;
+      letter-spacing: .14em;
+    }
+
+    /* =========================================================
+       Ajuste de aire general para que se sienta “una sola página”
+    ========================================================== */
+    .container{ padding-top: 6px; }
+    .subtext{ margin-top: 28px; }
+
+    @media (max-width: 480px){
+      .section .card{ width: calc(100% - 18px); margin-top: -40px; }
+    }
+    
+
+    
+    /* =========================
+       FOTO MARCO ACUARELA (TOP/BOTTOM) + ANIMACIÓN SUAVE
+       - SOLO arriba y abajo (lados limpios) para que la foto se vea más grande
+       - Dos variantes: foto intermedia y foto final
+    ========================== */
+
+    .acuarela-frame{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 10px;
+    }
+
+    .acuarela-photo{
+      width: min(96%, 420px);
+      height: auto;
+      display: block;
+      border-radius: 18px; /* suave, pero el borde real lo da la máscara */
+      box-shadow: 0 18px 45px rgba(0,0,0,.16);
+      transform: translateY(6px) scale(.992);
+      opacity: 0;
+      transition: opacity .55s ease, transform .75s cubic-bezier(.2,.8,.2,1), box-shadow .75s ease, filter .75s ease;
+      will-change: transform, opacity, filter;
+      /* fallback si no hay mask support */
+      overflow: hidden;
+    }
+
+    /* Cuando entra en pantalla */
+    .acuarela-frame.acuarela-in .acuarela-photo{
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+      animation: acuarelaBreathe 5.5s ease-in-out 0.7s infinite;
+    }
+
+    /* Animación sutil editorial */
+    @keyframes acuarelaBreathe{
+      0%   { filter: drop-shadow(0 10px 18px rgba(0,0,0,.10)); }
+      50%  { filter: drop-shadow(0 12px 22px rgba(0,0,0,.14)); }
+      100% { filter: drop-shadow(0 10px 18px rgba(0,0,0,.10)); }
+    }
+
+    /* =========================================================
+       MÁSCARAS: bordes irregulares SOLO ARRIBA/ABAJO (lados rectos)
+       Nota: usamos mask-image con SVG inline (funciona en Safari iPhone con -webkit-)
+    ========================================================= */
+
+    /* Variante 1 (foto intermedia) — más suave */
+    .acuarela-frame--mid .acuarela-photo{
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,70 C80,20 160,95 250,55 C340,15 420,95 500,60 L500,640 C420,610 340,690 250,650 C160,610 80,700 0,640 Z' fill='white'/%3E%3C/svg%3E");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-position: center;
+
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,70 C80,20 160,95 250,55 C340,15 420,95 500,60 L500,640 C420,610 340,690 250,650 C160,610 80,700 0,640 Z' fill='white'/%3E%3C/svg%3E");
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+    }
+
+    /* Variante 2 (foto final) — más “rasgadita” */
+    .acuarela-frame--end .acuarela-photo{
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,78 C60,10 150,120 250,52 C350,-10 430,120 500,62 L500,640 C430,600 350,705 250,652 C150,600 70,710 0,635 Z' fill='white'/%3E%3C/svg%3E");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-position: center;
+
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,78 C60,10 150,120 250,52 C350,-10 430,120 500,62 L500,640 C430,600 350,705 250,652 C150,600 70,710 0,635 Z' fill='white'/%3E%3C/svg%3E");
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+    }
+
+    /* Ajuste responsive */
+    @media (max-width: 480px){
+      .acuarela-photo{ width: min(96%, 380px); }
+    }
+
+
+    /* =========================
+       ANIMACIONES SCROLL EDITORIAL V2 (Arte Invita)
+       - Alterna izquierda / derecha / abajo
+       - Usa !important para ganar a estilos existentes
+    ========================== */
+    .anim-left, .anim-right, .anim-up{
+      opacity: 0 !important;
+      transform: translate3d(0,0,0) !important;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2,.8,.2,1) !important;
+      will-change: transform, opacity;
+    }
+    .anim-left{ transform: translate3d(-28px,0,0) !important; }
+    .anim-right{ transform: translate3d(28px,0,0) !important; }
+    .anim-up{ transform: translate3d(0,18px,0) !important; }
+
+    .in-view{
+      opacity: 1 !important;
+      transform: translate3d(0,0,0) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .anim-left,.anim-right,.anim-up{ opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+    
+
+    /* =========================
+       POLAROID SINGLE CARD (rosa claro) + botón "Ver galería"
+       - Se muestra SOLO 1 tarjeta (no miniaturas en el HTML)
+    ========================== */
+    .polaroid-single{
+      width: min(96%, 360px);
+      margin: 18px auto 6px;
+      background: #ffe9f6;
+      border: 1px solid rgba(175,5,106,.10);
+      border-radius: 20px;
+      padding: 12px 12px 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.10);
+      overflow: hidden;
+      text-align: center;
+    }
+    .polaroid-single img{
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid rgba(0,0,0,.06);
+      background: #fff;
+    }
+    .polaroid-single .pol-label{
+      margin-top: 12px;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(175,5,106,.78);
+      font-weight: 600;
+    }
+    .polaroid-single .pol-btn{
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1.8px solid var(--ink);
+      background: #fff;
+      color: var(--ink);
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+      font-weight: 600;
+      width: 100%;
+      max-width: 220px;
+    }
+    .polaroid-single .pol-btn:hover{
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    
+</style>
+</head>
+
+<body>
+  <div class="app">
+    <!-- HERO 1 -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">MIS XV AÑOS</p>
+        <h1 class="hero-name">Martha Ximena</h1>
+        <div class="hero-date">12 · Septiembre · 2026</div>
+      </div>
+      <img src="img/papel.png" alt="" class="hero-paper" />
+    </section>
+
+    <!-- CONTENIDO LARGO -->
+    <div class="background">
+      <div class="container">
+        <!-- Scroll to Top Button -->
+        <button class="scroll-to-top" id="scrollBtn" aria-label="Volver arriba">
+          <div class="arrow-up"></div>
+        </button>
+      <div align="center"><img src="img/xv.png" width="45%"></div>
+        <p class="subtext anim-up">Quince años de amor, sueños y alegría…<br> ¡Ven a celebrarlos conmigo! </p>
+  <div align="center"><img src="img/cenefa.png" width="60%"></div>
+        <div class="date-container anim-up">
+          <div class="day">Sábado</div>
+          <div class="number">12</div>
+          <div class="month">Septiembre</div>
+        </div>
+<br>
+
+      <div align="center"><img src="img/cenefa.png" width="60%"></div>
+        <br>
+
+        <p class="parrafo">
+          La vida está hecha de momentos únicos<br>
+          y este es uno de los más <br> importantes de mi vida.<br><br>
+          Con amor y junto a mis padres:<br>
+          <strong>Víctor Manuel Alegría Mejía</strong><br>
+          y<br>
+          <strong>Dunnia de Los Ángeles Montes Pérez</strong><br><br>
+          Te invito a celebrar esta hermosa <br> etapa de mi vida.<br><br>
+          <div align="center"><img src="img/cenefa.png" width="60%"></div><br>
+          Con amor, mis padrinos:<br><br>
+          <strong>Velación:</strong><br>Gabriel Juárez Puon<br>
+ y <br>
+Gloria Esperanza Román Zavala<br><br>
+          <strong>Brindis:</strong><br>César Alberto Alegría Sánchez <br>
+y <br>
+Celina Lujan Hidalgo
+        </p>
+ <div align="center"><img src="img/cenefa.png" width="60%"></div>
+        <!-- Línea de tiempo -->
+        <div class="timeline">
+          <div class="timeline-item anim-left">
+            <div align="center"><img src="img/iglesia.png" width="30%"></div>
+            <h2 class="section-title"><strong>Ceremonia Religiosa</strong></h2>
+            <p class="section-content"><strong>Iglesia Santa María de Candelaria</strong><br>C. Mina Pte. 282, Santiago,<br>30870 Tuxtla Chico, Chis.</p>
+            <p class="section-content-hora">Hora: 1:00 pm</p><br>
+            <a href="https://maps.app.goo.gl/iYPEg6nptyguUm827" class="btn" rel="noopener">Ver mapa</a>
+          </div>
+          <div class="timeline-item anim-right">
+            <div align="center"><img src="img/fiesta.png" width="25%"></div>
+            <h2 class="section-title"><strong>Recepción del evento</strong></h2>
+            <p class="section-content"><strong>Salón El Roble</strong><br>El Roble, 30870 2da. Secc. de Izapa, Chis.</p>
+            <p class="section-content-hora">Hora: 2:30 pm</p><br>
+            <a href="https://maps.app.goo.gl/CrRi54mAovgRyDHy9" class="btn" rel="noopener">Ver mapa</a>
+          </div>
+          <!-- HOSPEDAJE SUGERIDO: N/A -->
+          <div class="timeline-item anim-up">
+            <div align="center"><img src="img/vestimenta.png" width="25%"></div>
+            <h2 class="section-title"><strong>Código de Vestimenta</strong></h2>
+            <p class="section-content-hora">Formal<br>
+ (Flores y Colorido)</p>
+            <p class="section-content">Y recuerda: los tonos <strong>rosa</strong> y <strong>azul marino</strong> están reservados para la quinceañera.</p>
+          </div>
+          
+        </div>
+
+        <!-- FOTO EXTRA (marco acuarela) -->
+        <div class="acuarela-frame acuarela-frame--mid">
+          <img class="acuarela-photo" src="img/medio.png
+          " alt="Fotografía">
+        </div>
+
+        <!--Social -->
+        <section class="social-section">
+          <!-- INSTAGRAM: N/A -->
+          <div class="social-item anim-left">
+            <div align="center"><img src="img/lluvia.png" width="25%"></div>
+            <h2 class="social-title"><strong>Lluvia de Sobres</strong></h2>
+            <p class="social-content">Mi mejor regalo es compartir <br> contigo este gran día.<br><br>Si deseas obsequiarme algo, <br>puedes hacerlo con la tradicional <br> lluvia de sobres que hemos preparado el día del evento.<br><br></p>
+            <!-- MESA DE REGALOS: N/A -->
+            <p class="thanks">¡Gracias!</p>
+            <div align="center"><img src="img/cenefa.png" width="60%"></div>
+          </div>
+        </section>
+
+        <!-- Final -->
+        <section class="final-section">
+          <!-- ÁLBUM QR: N/A -->
+          <div class="final-item anim-up">
+            <div class="digital-clock-container">
+              <div align="center"><img src="img/calendario.png" width="20%"></div>
+              <h2 class="final-title">Faltan</h2><p class="final-content">DÍAS // HORAS // MINUTOS</p>
+              <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva"><span id="days">00</span><span class="clock-separator">:</span><span id="hours">00</span><span class="clock-separator">:</span><span id="minutes">00</span></div>
+              <div class="clock-label" id="clock-label"></div><div class="clock-status" id="clock-status"></div>
+            </div>
+            <div class="final-item anim-up"><br><br><div align="center"><img src="img/corona.png" width="60%"></div>
+              <div class="polaroid-single"><img src="galeria/1.jpeg" alt="Galería - Foto 1" loading="lazy"><div class="pol-label">“Quince años, una historia que apenas comienza.”</div><button class="pol-btn" type="button" id="openGalleryBtn">Ver mi galería</button></div>
+            </div>
+          </div>
+          <div class="final-item anim-left">
+            <div align="center"><img src="img/cenefa.png" width="60%"></div>
+            <h2 class="final-title">Confirma tu asistencia</h2>
+            <p class="final-content">Tu presencia es muy importante para mí.<br><em>Por eso te pido que confirmes tu asistencia.</em><br><br>Da click en el botón para confirmar por WhatsApp.</p>
+            <a href="https://wa.me/529622935303?text=%C2%A1Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Martha%20Ximena." class="btn" rel="noopener"><strong>Confirmar asistencia</strong></a>
+            <!-- INVITA QR: N/A -->
+          </div>
+        </section>
+        <p class="parrafo">¡Agradezco de corazón que <br>celebres conmigo!</p>
+        <h2 class="final-title">¡Nos vemos pronto!</h2><br>
+        <p class="thanks">Con cariño,<br>Martha Ximena.</p>
+
+        <!-- FOTO FINAL (marco acuarela) -->
+        <div class="acuarela-frame acuarela-frame--end" style="margin-top: 26px; margin-bottom: 10px;">
+          <img class="acuarela-photo" src="img/final.png" alt="Fotografía final">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Reproductor flotante -->
+    <div class="floating-player" aria-label="Reproductor de música">
+      <div class="player-button" id="playerButton" title="Abrir reproductor">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z"/>
+        </svg>
+      </div>
+
+      <div class="player-content" id="playerContent">
+        <div class="song-info">
+          <p class="song-title" id="songTitle">¡Escucha la invitación con música!</p>
+          <p class="song-artist" id="songArtist">Luna · Zoé: En Vivo</p>
+        </div>
+
+        <div class="progress-container" id="progressContainer" aria-label="Progreso">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="player-controls" aria-label="Controles">
+          <button class="control-button" id="prevButton" type="button" title="Anterior">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+
+          <button class="control-button" id="playButton" type="button" title="Reproducir/Pausar">
+            <svg class="icon" id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg class="icon" id="pauseIcon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+
+          <button class="control-button" id="nextButton" type="button" title="Siguiente">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="volume-control" aria-label="Volumen">
+          <div class="volume-icon" aria-hidden="true">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7" aria-label="Control de volumen">
+        </div>
+
+        <!-- AUDIO: IMPORTANTe: el autoplay en móvil suele bloquearse; iniciamos al primer click -->
+        <audio id="audioPlayer" preload="metadata" playsinline webkit-playsinline>
+          <source src="cancion.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio HTML5.
+        </audio>
+      </div>
+    </div>
+
+    <!-- MODAL GALERÍA -->
+    <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+      <button id="closeGalleryBtn" class="gallery-close-btn" type="button" aria-label="Cerrar">&times;</button>
+
+      <div class="gallery-container">
+        <img id="mainImage" class="gallery-main-image" src="galeria/1.jpeg" alt="Imagen de la galería">
+        <button id="prevImage" class="gallery-arrow gallery-prev" type="button" aria-label="Anterior">&#10094;</button>
+        <button id="nextImage" class="gallery-arrow gallery-next" type="button" aria-label="Siguiente">&#10095;</button>
+
+       
+        <div id="imageCounter" class="gallery-counter" aria-label="Contador de imágenes"></div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS (EN ORDEN) -->
+    <script>
+      // Confirmación: protege si el SDK no está cargado
+      document.getElementById('btnConfirmar')?.addEventListener('click', function(){
+        if (window.ArteInvita && typeof window.ArteInvita.open === 'function') {
+          window.ArteInvita.open('91E-2796-0C4');
+        } else {
+          alert('El panel de confirmación no está disponible en este momento.');
+        }
+      });
+
+      // Animación (timeline)
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-timeline-item');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+      });
+
+      // Animación (social)
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-social-item');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.social-item').forEach(item => observer.observe(item));
+      });
+
+      // Animación (final)
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-final-item');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.final-item').forEach(item => observer.observe(item));
+      });
+
+      
+      // Animación (acuarela top/bottom)
+      document.addEventListener('DOMContentLoaded', function () {
+        const frames = document.querySelectorAll('.acuarela-frame');
+        if (!frames.length) return;
+
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('acuarela-in');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        frames.forEach(f => obs.observe(f));
+      });
+
+// Scroll-to-top
+      (function(){
+        const scrollBtn = document.getElementById('scrollBtn');
+        if(!scrollBtn) return;
+
+        window.addEventListener('scroll', function(){
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollBtn.classList.add('visible');
+          } else {
+            scrollBtn.classList.remove('visible');
+          }
+        });
+
+        scrollBtn.addEventListener('click', function(){
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+
+      // Reloj digital DD:HH:MM
+      function updateDigitalClock() {
+        const targetDate = new Date("September 12, 2026 13:00:00").getTime();
+        const digitalClock = document.getElementById("digital-clock");
+        const clockStatus = document.getElementById("clock-status");
+        const daysElement = document.getElementById("days");
+        const hoursElement = document.getElementById("hours");
+        const minutesElement = document.getElementById("minutes");
+
+        if(!digitalClock || !clockStatus || !daysElement || !hoursElement || !minutesElement) return;
+
+        function tick() {
+          const now = Date.now();
+          const distance = targetDate - now;
+
+          if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            daysElement.textContent = String(days).padStart(2, '0');
+            hoursElement.textContent = String(hours).padStart(2, '0');
+            minutesElement.textContent = String(minutes).padStart(2, '0');
+
+            digitalClock.classList.remove("event-today");
+            clockStatus.textContent = "Para vivir esta gran celebración";
+          } else {
+            daysElement.textContent = "00";
+            hoursElement.textContent = "00";
+            minutesElement.textContent = "00";
+            digitalClock.classList.add("event-today");
+            clockStatus.textContent = "¡El evento es hoy!";
+          }
+        }
+
+        tick();
+        setInterval(tick, 1000);
+      }
+      window.addEventListener('load', updateDigitalClock);
+
+      // Reproductor flotante (sin autoplay: se inicia al primer click del usuario)
+      (function(){
+        const playerButton = document.getElementById('playerButton');
+        const playerContent = document.getElementById('playerContent');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playButton = document.getElementById('playButton');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const songTitle = document.getElementById('songTitle');
+        const songArtist = document.getElementById('songArtist');
+
+        if(!playerButton || !playerContent || !audioPlayer || !playButton || !playIcon || !pauseIcon ||
+           !prevButton || !nextButton || !volumeSlider || !progressBar || !progressContainer) return;
+
+        const songs = [
+          {
+            title: "Escucha la invitación con música de fondo",
+            artist: "Luna · Zoé: En Vivo",
+            src: "cancion.mp3"
+          }
+        ];
+        let currentSongIndex = 0;
+
+        function loadSong(index){
+          const song = songs[index];
+          if(songTitle) songTitle.textContent = song.title;
+          if(songArtist) songArtist.textContent = song.artist || "";
+          audioPlayer.src = song.src;
+        }
+        loadSong(currentSongIndex);
+
+        function setPlayingUI(isPlaying){
+          playIcon.style.display = isPlaying ? 'none' : 'block';
+          pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        }
+        setPlayingUI(false);
+
+        // Intento de autoplay (iPhone puede bloquearlo si no hubo interacción)
+        async function attemptAutoplay(){
+          try{
+            // asegúrate de volumen correcto antes de intentar
+            audioPlayer.volume = Number(volumeSlider.value || 0.7);
+            await audioPlayer.play();
+            setPlayingUI(true);
+          }catch(err){
+            // Bloqueado: activamos "play en primer toque" (cualquier interacción del usuario)
+            setPlayingUI(false);
+            const unlock = async () => {
+              try{
+                audioPlayer.volume = Number(volumeSlider.value || 0.7);
+                await audioPlayer.play();
+                setPlayingUI(true);
+              }catch(e){ /* sigue bloqueado */ }
+            };
+            document.addEventListener('touchstart', unlock, { once:true, capture:true });
+            document.addEventListener('pointerdown', unlock, { once:true, capture:true });
+            document.addEventListener('click', unlock, { once:true, capture:true });
+          }
+        }
+
+        // Dispara el intento al cargar
+        window.addEventListener('load', () => {
+          // pequeño delay para que iOS termine de pintar
+          setTimeout(attemptAutoplay, 350);
+        });
+
+
+        playerButton.addEventListener('click', () => {
+          playerContent.classList.toggle('active');
+        });
+
+        // Click fuera: solo cerrar panel (sin pausar música)
+        document.addEventListener('click', (e) => {
+          const clickedInside = playerContent.contains(e.target) || playerButton.contains(e.target);
+          if (!clickedInside) playerContent.classList.remove('active');
+        });
+
+        playButton.addEventListener('click', async () => {
+          try{
+            if (audioPlayer.paused) {
+              await audioPlayer.play();
+              setPlayingUI(true);
+            } else {
+              audioPlayer.pause();
+              setPlayingUI(false);
+            }
+          }catch(err){
+            console.warn('Audio play blocked:', err);
+          }
+        });
+
+        prevButton.addEventListener('click', () => {
+          currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+          const wasPlaying = !audioPlayer.paused;
+          loadSong(currentSongIndex);
+          if(wasPlaying){
+            audioPlayer.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+          }
+        });
+
+        nextButton.addEventListener('click', () => {
+          currentSongIndex = (currentSongIndex + 1) % songs.length;
+          const wasPlaying = !audioPlayer.paused;
+          loadSong(currentSongIndex);
+          if(wasPlaying){
+            audioPlayer.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+          }
+        });
+
+        volumeSlider.addEventListener('input', () => {
+          audioPlayer.volume = Number(volumeSlider.value);
+        });
+        audioPlayer.volume = Number(volumeSlider.value);
+
+        audioPlayer.addEventListener('timeupdate', () => {
+          if (!audioPlayer.duration) return;
+          const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+          progressBar.style.width = progress + '%';
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+          if (!audioPlayer.duration) return;
+          const rect = progressContainer.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const clickPosition = clickX / rect.width;
+          audioPlayer.currentTime = clickPosition * audioPlayer.duration;
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+          if (songs.length === 1) {
+            audioPlayer.currentTime = 0;
+            audioPlayer.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+            return;
+          }
+          currentSongIndex = (currentSongIndex + 1) % songs.length;
+          loadSong(currentSongIndex);
+          audioPlayer.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+        });
+
+        audioPlayer.addEventListener('pause', ()=>setPlayingUI(false));
+        audioPlayer.addEventListener('play', ()=>setPlayingUI(true));
+      })();
+
+      // Galería modal
+      (function(){
+        const openBtn = document.getElementById('openGalleryBtn');
+        const modal = document.getElementById('galleryModal');
+        const closeBtn = document.getElementById('closeGalleryBtn');
+        const prevBtn = document.getElementById('prevImage');
+        const nextBtn = document.getElementById('nextImage');
+        const mainImage = document.getElementById('mainImage');
+        const counter = document.getElementById('imageCounter');
+        const thumbs = document.getElementById('thumbnailsContainer');
+
+        // Nota: thumbs es opcional (si se quitaron miniaturas, la galería sigue funcionando)
+        if(!openBtn || !modal || !closeBtn || !prevBtn || !nextBtn || !mainImage || !counter) return;
+
+                const images = [
+          'galeria/1.jpeg',
+          'galeria/2.jpeg',
+          'galeria/3.jpeg',
+          'galeria/4.jpeg',
+          'galeria/5.jpeg'
+
+        ];
+let idx = 0;
+
+        function renderThumbs(){
+          if(!thumbs) return;
+          thumbs.innerHTML = '';
+          images.forEach((src, i) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Foto ' + (i+1);
+            img.className = 'gallery-thumbnail' + (i===idx ? ' active' : '');
+            img.addEventListener('click', () => {
+              idx = i;
+              update();
+            });
+            thumbs.appendChild(img);
+          });
+        }
+
+        function update(){
+          mainImage.src = images[idx];
+          counter.textContent = (idx + 1) + ' / ' + images.length;
+
+          if(thumbs){
+          [...thumbs.querySelectorAll('.gallery-thumbnail')].forEach((t, i) => {
+            t.classList.toggle('active', i === idx);
+          });
+
+          const active = thumbs.querySelectorAll('.gallery-thumbnail')[idx];
+          if(active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+}
+
+        function open(){
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          renderThumbs();
+          update();
+        }
+        function close(){
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+        function prev(){
+          idx = (idx - 1 + images.length) % images.length;
+          update();
+        }
+        function next(){
+          idx = (idx + 1) % images.length;
+          update();
+        }
+
+        openBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        prevBtn.addEventListener('click', prev);
+        nextBtn.addEventListener('click', next);
+
+        modal.addEventListener('click', (e) => { if(e.target === modal) close(); });
+
+        document.addEventListener('keydown', (e) => {
+          if (modal.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+            if (e.key === 'Escape') close();
+          }
+        });
+      })();
+    
+      // Animación marco acuarela (solo las 2 fotos)
+      document.addEventListener('DOMContentLoaded', function () {
+        const frames = document.querySelectorAll('.acuarela-frame');
+        if (!frames.length) return;
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('acuarela-in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        frames.forEach(f => io.observe(f));
+      });
+
+
+      // Animaciones finas por scroll (V2) - alterna entradas izq/der/abajo
+      document.addEventListener('DOMContentLoaded', function () {
+        const targets = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
+        if (!targets.length) return;
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+        targets.forEach(el => io.observe(el));
+      });
+    
+    </script>
+  </div>
+</body>
+</html>
