@@ -343,15 +343,15 @@
       border: none;
       background: transparent;
       cursor: pointer;
-      padding: 0.12rem 0.25rem;
+      padding: 0.45rem 0.7rem;
       display: flex;
       align-items: center;
       gap: .55rem;
     }
 
     .music-icon {
-      width: 22px;
-      height: 22px;
+      width: 52px;
+      height: 52px;
       border-radius: 999px;
       border: 1px solid rgba(198, 160, 106, .24);
       background: rgba(255, 255, 255, 0.88);
@@ -364,7 +364,7 @@
     .music-icon.paused::before {
       content: "";
       border-style: solid;
-      border-width: 5px 0 5px 8px;
+      border-width: 10px 0 10px 16px;
       border-color: transparent transparent transparent rgba(17, 24, 39, 0.62);
       transform: translateX(1px);
     }
@@ -373,23 +373,23 @@
     .music-icon.playing::after {
       content: "";
       position: absolute;
-      width: 3px;
-      height: 10px;
+      width: 5px;
+      height: 22px;
       background: rgba(17, 24, 39, 0.58);
       border-radius: 2px;
     }
 
     .music-icon.playing::before {
-      left: 8px;
+      left: 15px;
     }
 
     .music-icon.playing::after {
-      right: 8px;
+      right: 15px;
     }
 
     .music-label {
       font-family: "Poppins", sans-serif;
-      font-size: 0.70rem;
+      font-size: 0.90rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: rgba(17, 24, 39, 0.50);
@@ -1097,7 +1097,7 @@
 </head>
 
 <body>
-  <audio id="bg-music" src="music/Wrecking Ball.mp3" loop></audio>
+  <audio id="bg-music" src="music/Wrecking Ball.mp3" loop autoplay preload="auto" playsinline></audio>
 
   <main>
 
@@ -1667,9 +1667,32 @@
       }
     });
 
-    if (new URLSearchParams(window.location.search).get("startMusic") === "1") {
+    // Intento de autoplay al cargar. Los navegadores que lo permiten iniciarán de inmediato.
+    // En iPhone/Safari y otros navegadores que bloquean audio con sonido,
+    // se vuelve a intentar automáticamente con la primera interacción del usuario.
+    function tryAutoplay() {
+      music.volume = 1;
       playMusic();
     }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", tryAutoplay, { once: true });
+    } else {
+      tryAutoplay();
+    }
+
+    window.addEventListener("load", tryAutoplay, { once: true });
+
+    const unlockMusic = () => {
+      if (music.paused) playMusic();
+      ["touchstart", "pointerdown", "click", "keydown"].forEach(evt =>
+        document.removeEventListener(evt, unlockMusic, true)
+      );
+    };
+
+    ["touchstart", "pointerdown", "click", "keydown"].forEach(evt =>
+      document.addEventListener(evt, unlockMusic, { capture: true, once: false })
+    );
 
     // =========================
     // REVEAL    // =========================
