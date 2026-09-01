@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sharon Dayana | Mis XV Años</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* FUENTES */
+
+    @font-face {
+      font-family: "Nova Quinta";
+      src: url("fonts/NovaQuinta_PERSONAL_USE_ONLY.otf") format("opentype");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Gabriola";
+      src: url("fonts/gabriola Font Download.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    /* PALETA */
+
+    :root {
+      --rojo: #7b0d24;
+      --rojo-claro: #a82b45;
+      --rojo-profundo: #4a0715;
+      --rojo-oscuro: #250208;
+
+      --negro: #121214;
+      --negro-suave: #27272b;
+
+      --plata: #bfc3c8;
+      --plata-claro: #f0f2f4;
+      --plata-oscuro: #737980;
+
+      --blanco: #ffffff;
+      --crema: #fffafa;
+      --crema-oscuro: #f5eeee;
+
+      --texto: #332d30;
+      --gris: #746b6f;
+      --borde: #ded4d7;
+
+      --shadow-soft:
+        0 18px 40px rgba(74, 7, 21, 0.16);
+
+      --shadow-deep:
+        0 24px 50px rgba(18, 18, 20, 0.25);
+    }
+
+    /* GENERAL */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--texto);
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--gris);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--rojo);
+    }
+
+    button {
+      font-family: "Poppins", Arial, sans-serif;
+
+      transition:
+        transform 0.18s ease,
+        filter 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(74, 7, 21, 0.24);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.98);
+      filter: brightness(0.98);
+      box-shadow: 0 8px 18px rgba(74, 7, 21, 0.16);
+    }
+
+    main {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--crema);
+      box-shadow: 0 22px 60px rgba(18, 18, 20, 0.34);
+    }
+
+    section {
+      padding: 3rem 1.6rem;
+    }
+
+    /* TEXTOS */
+
+    .content {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .section-title-script {
+      margin-bottom: 0.2rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 3.6rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .section-title-main {
+      margin-bottom: 0.2rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--rojo-profundo);
+      text-align: center;
+    }
+
+    .section-sub {
+      margin-top: 1rem;
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      color: var(--gris);
+      text-align: center;
+    }
+
+    .intro-script {
+      margin-top: 1.1rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.8rem;
+      line-height: 1.25;
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    /* GRECA */
+
+    .flourish,
+    .confirm-flourish {
+      width: 300px;
+      max-width: 90%;
+      height: 45px;
+      margin: 0.5rem auto 2rem;
+
+      background-image: url("img/greca.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      filter:
+        brightness(0) saturate(100%) invert(14%) sepia(72%) saturate(3400%) hue-rotate(335deg) brightness(78%) contrast(106%);
+
+      opacity: 0.92;
+    }
+
+    /* PORTADA */
+
+    .hero-full {
+      position: relative;
+      min-height: 100vh;
+      padding: 0;
+      overflow: hidden;
+      background: var(--rojo-oscuro);
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      padding: 3.4rem 1.5rem 3.5rem;
+
+      background:
+        linear-gradient(to top,
+          rgba(18, 18, 20, 0.98) 0%,
+          rgba(74, 7, 21, 0.90) 18%,
+          rgba(123, 13, 36, 0.25) 36%,
+          transparent 54%);
+
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .hero-name {
+      margin-bottom: 0.5rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 6.3rem;
+      font-weight: 400;
+      line-height: 0.95;
+
+      color: var(--plata-claro);
+
+      text-shadow:
+        0 3px 3px rgba(0, 0, 0, 0.88),
+        0 8px 20px rgba(0, 0, 0, 0.64);
+    }
+
+    .hero-sub {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--blanco);
+      text-transform: uppercase;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.76);
+    }
+
+    /* MÚSICA */
+
+    .music-section {
+      display: flex;
+      justify-content: center;
+      padding: 1.4rem 1.6rem 0;
+
+    }
+
+    .music-btn-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+
+      padding: 0.55rem 1.4rem;
+
+      border: 1px solid var(--plata);
+      border-radius: 999px;
+
+      background: var(--blanco);
+      box-shadow: 0 10px 22px rgba(74, 7, 21, 0.13);
+
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--rojo);
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .music-icon-min {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 18px;
+      height: 18px;
+
+      overflow: hidden;
+
+      border: 2px solid var(--rojo);
+      border-radius: 999px;
+    }
+
+    .music-icon-min.paused::before {
+      content: "";
+
+      border-style: solid;
+      border-width: 6px 0 6px 9px;
+      border-color:
+        transparent transparent transparent var(--rojo);
+
+      transform: translateX(1px);
+    }
+
+    .music-icon-min.playing::before,
+    .music-icon-min.playing::after {
+      content: "";
+
+      position: absolute;
+
+      width: 3px;
+      height: 9px;
+
+      background: var(--rojo);
+    }
+
+    .music-icon-min.playing::before {
+      left: 4px;
+    }
+
+    .music-icon-min.playing::after {
+      right: 4px;
+    }
+
+    /* INTRODUCCIÓN */
+
+    .intro-section {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at top,
+          rgba(123, 13, 36, 0.10),
+          transparent 42%),
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro));
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-parents-title {
+      margin-top: 1.8rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 2.7rem;
+      line-height: 1.2;
+
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .intro-list {
+      margin-top: 0.4rem;
+
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1.55;
+
+      color: var(--texto);
+      text-align: center;
+    }
+
+    /* FECHA */
+
+    .date-container {
+      width: 100%;
+
+      font-family: "Great Vibes", cursive;
+      color: var(--rojo);
+
+      text-align: center;
+    }
+
+    .day {
+      display: inline-block;
+
+      padding: 0 30px 3px;
+
+      border-bottom: 2px solid var(--plata);
+
+      font-size: 3.6rem;
+    }
+
+    .number {
+      margin: 0;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 8.2rem;
+      font-weight: 600;
+      line-height: 1;
+
+      color: var(--rojo);
+    }
+
+    .month {
+      display: inline-block;
+
+      padding: 3px 20px 0;
+
+      border-top: 2px solid var(--plata);
+
+      font-size: 3.3rem;
+    }
+
+    .time {
+      margin-top: 10px;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.6rem;
+
+      color: var(--negro-suave);
+    }
+
+    /* CUENTA REGRESIVA */
+
+    .save-date-min {
+      position: relative;
+
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+
+      overflow: hidden;
+
+      background-image: url("img/fondocounter.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      color: var(--blanco);
+    }
+
+    .save-date-min::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(to bottom,
+          rgba(18, 18, 20, 0.74),
+          rgba(123, 13, 36, 0.68),
+          rgba(18, 18, 20, 0.86));
+    }
+
+    .save-date-min-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .save-date-min-title {
+      margin-bottom: 1.2rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+
+      color: var(--plata-claro);
+      text-transform: uppercase;
+    }
+
+    .countdown-min {
+      width: 100%;
+      max-width: 360px;
+
+      margin: 0 auto;
+      padding: 1.25rem 1.2rem 1.15rem;
+
+      border: 1px solid rgba(240, 242, 244, 0.72);
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.90);
+      box-shadow: 0 16px 38px rgba(18, 18, 20, 0.42);
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .countdown-time {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.4rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+
+      color: var(--rojo-profundo);
+    }
+
+    .countdown-time span {
+      display: inline-block;
+      min-width: 2ch;
+    }
+
+    .countdown-labels {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+
+      margin-top: 0.6rem;
+
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+
+      color: var(--gris);
+      text-transform: uppercase;
+    }
+
+    .countdown-note {
+      margin-top: 1.2rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 2.3rem;
+      line-height: 1.25;
+
+      color: var(--blanco);
+      text-shadow: 0 2px 7px rgba(0, 0, 0, 0.84);
+    }
+
+    /* FONDOS */
+
+    .bg-fixed {
+      position: relative;
+
+      background-image:
+        linear-gradient(rgba(255, 250, 250, 0.90),
+          rgba(255, 250, 250, 0.90)),
+        url("img/fondo.jpg");
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .bg-bottom {
+      background-position: center bottom;
+    }
+
+    .glass-card {
+      padding: 1.8rem 1.3rem;
+
+      border: 1px solid rgba(191, 195, 200, 0.60);
+      border-radius: 1.5rem;
+
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-soft);
+
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    /* UBICACIONES */
+
+    #evento {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro));
+    }
+
+    .when-where-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .event-card {
+      margin-bottom: 2rem;
+
+      overflow: hidden;
+
+      border: 1px solid var(--borde);
+      border-radius: 1.5rem;
+
+      background: var(--blanco);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .event-card img.event-photo {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1.6rem 1.6rem 1.8rem;
+      text-align: center;
+    }
+
+    .event-label {
+      margin-bottom: 0.4rem;
+
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+
+      color: var(--gris);
+      text-transform: uppercase;
+    }
+
+    .event-script {
+      margin-bottom: 0.35rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      line-height: 1.15;
+
+      color: var(--rojo);
+    }
+
+    .event-title {
+      margin-bottom: 0.5rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.4;
+
+      color: var(--negro);
+    }
+
+    .event-address {
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.5rem;
+      line-height: 1.4;
+
+      color: var(--gris);
+    }
+
+    .event-time {
+      margin-top: 1.2rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+
+      color: var(--rojo);
+      text-transform: uppercase;
+    }
+
+    .event-content a {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    /* BOTONES */
+
+    .btn-ubicacion,
+    .btn-insta,
+    .btn-whats,
+    .gift-button {
+      display: block;
+      width: fit-content;
+
+      margin: 1rem auto 0;
+      padding: 0.8rem 2rem;
+
+      border: 1px solid var(--plata);
+      border-radius: 999px;
+
+      background:
+        linear-gradient(135deg,
+          var(--negro),
+          var(--rojo-profundo),
+          var(--rojo));
+
+      box-shadow: 0 10px 22px rgba(74, 7, 21, 0.25);
+
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+
+      color: var(--blanco);
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .btn-whats {
+      width: 100%;
+      max-width: 340px;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    /* ITINERARIO */
+
+    .itinerary-section {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro),
+          var(--crema));
+    }
+
+    .itinerary-title {
+      margin-bottom: 1rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .itinerary-date {
+      margin-bottom: 3rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.2em;
+
+      color: var(--negro-suave);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .itinerary-timeline {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .itinerary-item {
+      display: grid;
+      grid-template-columns: 105px 42px minmax(145px, 190px);
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.8rem;
+
+      width: 100%;
+      margin-bottom: 3rem;
+
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+    }
+
+    .itinerary-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .itinerary-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 105px;
+      min-height: 105px;
+    }
+
+    .itinerary-icon-wrapper img {
+      width: 100%;
+      max-width: 100px;
+      max-height: 110px;
+      object-fit: contain;
+    }
+
+    .itinerary-divider {
+      width: 42px;
+      height: 2px;
+
+      background:
+        linear-gradient(to right,
+          var(--plata),
+          var(--rojo));
+    }
+
+    .itinerary-content {
+      width: 100%;
+      text-align: center;
+    }
+
+    .itinerary-time {
+      margin-bottom: 0.25rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .itinerary-event {
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+
+      color: var(--texto);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* INFORMACIÓN */
+
+    .gifts-section {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro));
+    }
+
+    .gift-options {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .gift-item {
+      width: 100%;
+      margin-bottom: 2rem;
+      color: var(--texto);
+      text-align: center;
+    }
+
+    .gift-title {
+      width: 100%;
+
+      margin-top: 0.8rem;
+      margin-bottom: 0.4rem;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+
+      color: var(--rojo);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+ 
+
+    /* INSTAGRAM */
+
+    .hashtag-section {
+      padding: 0;
+    }
+
+    .insta-handle-card {
+      padding: 3rem 1.6rem;
+
+      background:
+        linear-gradient(to bottom,
+          var(--negro),
+          var(--rojo-profundo));
+
+      text-align: center;
+    }
+
+    .insta-handle-card .section-title-script,
+    .insta-handle-card .section-sub {
+      color: var(--blanco);
+    }
+
+    .insta-handle {
+      margin-top: 0.7rem;
+
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+
+      color: var(--plata-claro);
+    }
+
+    /* GALERÍA */
+
+    .gallery-section {
+      background:
+        linear-gradient(to bottom,
+          var(--crema),
+          var(--crema-oscuro));
+    }
+
+    .gallery-slider {
+      max-width: 410px;
+      margin: 1.6rem auto 0;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 8px;
+
+      border: 1px solid var(--plata);
+      border-radius: 1.6rem;
+
+      background: var(--negro);
+      box-shadow: var(--shadow-deep);
+    }
+
+    .gallery-slide-frame img {
+      display: block;
+
+      width: 100%;
+      height: 500px;
+
+      border-radius: 1.25rem;
+
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+
+      padding: 0.3rem 0.65rem;
+
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 0.7rem;
+
+      background: rgba(18, 18, 20, 0.78);
+      box-shadow: none;
+
+      font-size: 2rem;
+      color: var(--blanco);
+
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .gallery-nav.prev {
+      left: 14px;
+    }
+
+    .gallery-nav.next {
+      right: 14px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+
+      border: none;
+      border-radius: 999px;
+
+      background: var(--plata);
+      box-shadow: none;
+
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--rojo);
+      transform: scale(1.3);
+    }
+
+    /* LIGHTBOX */
+
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 1.3rem;
+
+      background: rgba(5, 5, 7, 0.97);
+    }
+
+    .gallery-lightbox.active {
+      display: flex;
+    }
+
+    .gallery-lightbox img {
+      max-width: 92%;
+      max-height: 88vh;
+
+      border-radius: 1rem;
+
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.68);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+
+      z-index: 1002;
+
+      border: none;
+      background: transparent;
+      box-shadow: none;
+
+      font-size: 2.7rem;
+      color: var(--blanco);
+
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+
+      z-index: 1002;
+
+      padding: 0.55rem 0.85rem;
+
+      border: none;
+      border-radius: 0.7rem;
+
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: none;
+
+      font-size: 3rem;
+      color: var(--blanco);
+
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-nav.prev {
+      left: 12px;
+    }
+
+    .lightbox-nav.next {
+      right: 12px;
+    }
+
+    /* CONFIRMACIÓN */
+
+    .confirm-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirm-title-script {
+      margin-bottom: 0.3rem;
+
+      font-family: "Great Vibes", cursive;
+      font-size: 3.8rem;
+      line-height: 1.1;
+
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .event-card-final {
+      overflow: hidden;
+
+      border: 1px solid var(--plata);
+      border-radius: 1.5rem;
+
+      background: var(--negro);
+      box-shadow: var(--shadow-deep);
+    }
+
+    /* BOTÓN ARRIBA */
+
+    .scroll-top {
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      z-index: 60;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--plata);
+      border-radius: 999px;
+
+      background: var(--rojo);
+      box-shadow: 0 14px 30px rgba(74, 7, 21, 0.38);
+
+      font-size: 1.2rem;
+      color: var(--blanco);
+
+      cursor: pointer;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out,
+        visibility 0.25s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 520px;
+
+      margin: 0 auto;
+      padding: 1.8rem 1.1rem 2.1rem;
+
+      border-top: 2px solid var(--plata);
+
+      background: var(--negro);
+
+      font-family: "Gabriola", Georgia, serif;
+      font-size: 1.45rem;
+
+      color: var(--plata-claro);
+      text-align: center;
+    }
+
+    /* ANIMACIONES */
+
+    .reveal {
+      opacity: 0;
+
+      transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ESCRITORIO */
+
+    @media (min-width: 768px) {
+      main {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 40px;
+      }
+
+      .hero-full {
+        border-radius: 0 0 40px 40px;
+      }
+    }
+
+    /* CELULARES */
+
+    @media (max-width: 430px) {
+      section {
+        padding: 2.7rem 1.2rem;
+      }
+
+      .hero-name {
+        font-size: 4.8rem;
+      }
+
+      .hero-sub {
+        font-size: 1.15rem;
+        letter-spacing: 0.14em;
+      }
+
+      .section-title-script,
+      .confirm-title-script {
+        font-size: 3rem;
+      }
+
+      .section-title-main {
+        font-size: 1.35rem;
+      }
+
+      .section-sub {
+        font-size: 1.5rem;
+      }
+
+      .intro-script {
+        font-size: 2.3rem;
+      }
+
+      .intro-parents-title {
+        font-size: 2.25rem;
+      }
+
+      .intro-list {
+        font-size: 1.6rem;
+      }
+
+      .day {
+        font-size: 3rem;
+      }
+
+      .number {
+        font-size: 6.5rem;
+      }
+
+      .month {
+        font-size: 2.55rem;
+      }
+
+      .time {
+        font-size: 1.35rem;
+      }
+
+      .countdown-time {
+        gap: 0.24rem;
+        font-size: 1.6rem;
+      }
+
+      .countdown-labels {
+        gap: 0.8rem;
+        font-size: 0.57rem;
+      }
+
+      .itinerary-title {
+        font-size: 3.5rem;
+      }
+
+      .itinerary-date {
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+      }
+
+      .itinerary-item {
+        grid-template-columns: 78px 28px minmax(140px, 175px);
+        column-gap: 0.5rem;
+      }
+
+      .itinerary-icon-wrapper {
+        width: 78px;
+        min-height: 82px;
+      }
+
+      .itinerary-icon-wrapper img {
+        max-width: 76px;
+        max-height: 84px;
+      }
+
+      .itinerary-divider {
+        width: 28px;
+      }
+
+      .itinerary-time {
+        font-size: 0.92rem;
+      }
+
+      .itinerary-event {
+        font-size: 1.08rem;
+      }
+
+      .event-script {
+        font-size: 2.4rem;
+      }
+
+      .event-title {
+        font-size: 1.2rem;
+      }
+
+      .event-time {
+        font-size: 1rem;
+      }
+
+      .gallery-slide-frame img {
+        height: 430px;
+      }
+
+      .lightbox-nav {
+        padding: 0.4rem 0.6rem;
+        font-size: 2.2rem;
+      }
+		
+		/* ENLACES EN GRIS OSCURO */
+a,
+a:link,
+a:visited {
+    color: #454545 !important;
+    text-decoration: none;
+}
+
+/* Al pasar el cursor */
+a:hover {
+    color: #2f2f2f !important;
+}
+
+/* Al presionar */
+a:active {
+    color: #454545 !important;
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+
+  <audio id="bg-music" src="The Pied Pipers_Dream.mp3" loop autoplay>
+  </audio>
+
+  <main>
+
+    <!-- PORTADA -->
+
+    <section id="inicio" class="hero-full">
+
+      <img src="img/PORTADA.png" alt="Invitación de XV años de Sharon Dayana">
+
+      <div class="hero-overlay">
+
+        <div>
+
+          <div class="hero-name">
+            Sharon Dayana
+          </div>
+
+          <div class="hero-sub">
+            Mis XV Años
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section id="intro" class="intro-section">
+
+      <section class="music-section">
+
+        <button class="music-btn-min" id="musicToggle" aria-label="Control de música" type="button">
+
+          <div class="music-icon-min paused" id="musicIcon">
+          </div>
+
+          <span id="musicStatus">
+            Play
+          </span>
+
+        </button>
+
+      </section> <br>
+
+
+      <div align="center">
+
+        <img src="img/reloj.png" width="55%" alt="Decoración">
+
+      </div> <br>
+
+
+      <div class="intro-card reveal reveal-left">
+
+        <div class="date-container">
+
+          <div class="day">
+            Sábado
+          </div>
+
+          <div class="number">
+            24
+          </div> <br> <br>
+
+          <div class="month">
+            Octubre
+          </div>
+
+          
+
+        </div>
+
+        <br>
+
+        <p class="section-sub">
+          Una noche de elegancia, sueños
+          y recuerdos inolvidables está por comenzar.
+          <br><br>
+          Con mucha ilusión quiero compartir contigo
+          la celebración de mis XV años.
+        </p>
+
+        <div class="flourish"></div>
+
+        <p class="intro-script">
+          Tu presencia hará de este día
+          un recuerdo inolvidable.
+        </p>
+
+        <div class="intro-parents-title">
+          Mi mamá
+        </div>
+
+        <p class="intro-list">
+          Zuleyma Natividad Aguilar Gómez
+        </p>
+
+        <div class="flourish"></div>
+
+        <!--<div class="intro-parents-title">
+          Mis padrinos
+        </div>
+
+        <p class="intro-list">
+          Padrinos de honor por confirmar
+        </p>
+
+        <div class="flourish"></div>-->
+
+      </div>
+
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+
+    <section id="fecha" class="save-date-min">
+
+      <div class="save-date-min-inner reveal reveal-right">
+
+        <div class="save-date-min-title">
+          <strong>FALTAN</strong>
+        </div>
+
+        <div class="countdown-min" aria-label="Cuenta regresiva">
+
+          <div class="countdown-time">
+
+            <span id="cdDays">0</span>:
+
+            <span id="cdHours">00</span>:
+
+            <span id="cdMins">00</span>:
+
+            <span id="cdSecs">00</span>
+
+          </div>
+
+          <div class="countdown-labels">
+
+            <span>Días</span>
+            <span>Horas</span>
+            <span>Min</span>
+            <span>Seg</span>
+
+          </div>
+
+        </div>
+
+        <p class="countdown-note">
+          ¡Te espero para vivir una noche inolvidable!
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- UBICACIONES -->
+
+    <section id="evento">
+
+      <div class="when-where-header reveal reveal-left">
+
+        <div class="section-title-script">
+          ¿Cuándo y dónde?
+        </div>
+
+        <div class="flourish"></div>
+
+      </div>
+
+      <!-- CEREMONIA -->
+
+      <div class="event-card reveal reveal-right">
+
+        <img src="img/iglesia.jpg" alt="Iglesia Santa Cruz, Terán" class="event-photo">
+
+        <div class="event-content">
+
+          <div class="event-label">
+            Iniciamos con la
+          </div>
+
+          <div class="event-script">
+            Ceremonia Religiosa
+          </div>
+
+          <div class="event-title">
+            Parroquía de la Santa Cruz de Terán
+          </div>
+
+          <p class="event-address">
+            Avenida 1, Norte Oriente S/N, Terán, 29052 Tuxtla Gutiérrez, Chis.
+          </p>
+
+          <div class="event-time">
+            6:00 P. M.
+          </div>
+
+          <a href="https://maps.app.goo.gl/47Z8c69Jy3SpHMmm8" target="_blank" rel="noopener">
+
+            <button class="btn-ubicacion" type="button">
+              Ver ubicación
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RECEPCIÓN -->
+
+      <div class="event-card reveal reveal-left">
+
+        <img src="img/salon.jpeg" alt="Salón Aloha" class="event-photo">
+
+        <div class="event-content">
+
+          <div class="event-label">
+            Continuamos en
+          </div>
+
+          <div class="event-script">
+            Recepción del Evento 
+          </div>
+
+          <div class="event-title">
+            Salón Aloha
+          </div>
+
+          <p class="event-address">
+            Calzada Emiliano Zapata,
+            <br>
+            Tuxtla Gutiérrez, Chiapas
+          </p>
+
+          <div class="event-time">
+            7:00 P. M.
+          </div>
+
+          <a href="https://maps.app.goo.gl/oedZ18x6U5Wvspaz9?g_st=aw" target="_blank" rel="noopener">
+
+            <button class="btn-ubicacion" type="button">
+              Ver ubicación
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ITINERARIO -->
+
+    <section id="itinerario" class="itinerary-section">
+
+      <div align="center">
+
+        <img src="img/cene.png" width="70%" alt="Decoración">
+
+      </div>
+
+      <div class="flourish"></div>
+
+      <h2 class="itinerary-title">
+        Itinerario
+      </h2>
+
+      <p class="itinerary-date">
+        29 de Septiembre de 2026
+      </p>
+
+      <div class="itinerary-timeline">
+
+        <div class="itinerary-item reveal reveal-left">
+
+          <div class="itinerary-icon-wrapper">
+
+            <img src="img/ceremonia.png" alt="Ceremonia religiosa">
+
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+
+            <div class="itinerary-time">
+              6:00 P. M.
+            </div>
+
+            <div class="itinerary-event">
+              Ceremonia religiosa
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="itinerary-item reveal reveal-right">
+
+          <div class="itinerary-icon-wrapper">
+
+            <img src="img/recepcion.png" alt="Recepción">
+
+          </div>
+
+          <div class="itinerary-divider"></div>
+
+          <div class="itinerary-content">
+
+            <div class="itinerary-time">
+              7:00 P. M.
+            </div>
+
+            <div class="itinerary-event">
+              Recepción
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- VESTIMENTA -->
+
+    <section id="vestimenta" class="gifts-section">
+
+      <div align="center">
+
+        <img src="img/vestimenta.png" width="65%" alt="Código de vestimenta formal">
+
+      </div>
+
+      <div class="section-title-script">
+        Código de vestimenta
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+
+        <div class="gift-item">
+
+          <div class="gift-title">
+            Formal
+          </div>
+
+          <p class="section-sub">
+            Te invitamos a acompañarnos
+            con vestimenta formal.
+            <br><br>
+            El color vino está reservado
+            exclusivamente para la quinceañera.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- GALERÍA 
+
+    <section id="galeria" class="gallery-section">
+
+      <div class="section-title-script">
+        Galería de fotos
+      </div>
+
+      <div class="flourish"></div>
+
+      <p class="section-sub">
+        Cada fotografía guarda un momento especial
+        y forma parte de mi historia.
+      </p>
+
+      <div class="gallery-slider reveal reveal-left">
+
+        <div class="gallery-slide-frame">
+
+          <img id="galleryImage" src="img/galeria/1.jpeg" alt="Galería de Sharon Dayana">
+
+          <button class="gallery-nav prev" type="button" onclick="prevGalleryImage()" aria-label="Fotografía anterior">
+            ‹
+          </button>
+
+          <button class="gallery-nav next" type="button" onclick="nextGalleryImage()" aria-label="Fotografía siguiente">
+            ›
+          </button>
+
+        </div>
+
+        <div class="gallery-dots" id="galleryDots">
+        </div>
+
+      </div>
+
+    </section> -->
+
+    <!-- LIGHTBOX 
+
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+
+      <button class="lightbox-close" type="button" onclick="closeGalleryLightbox()" aria-label="Cerrar fotografía">
+        ×
+      </button>
+
+      <button class="lightbox-nav prev" type="button" onclick="prevGalleryImage()" aria-label="Fotografía anterior">
+        ‹
+      </button>
+
+      <img id="lightboxImage" src="img/galeria/1.jpeg" alt="Fotografía ampliada">
+
+      <button class="lightbox-nav next" type="button" onclick="nextGalleryImage()" aria-label="Fotografía siguiente">
+        ›
+      </button>
+
+    </div> -->
+
+    <!-- MESA DE REGALOS
+
+    <section id="mesa-regalos" class="gifts-section">
+
+      <div align="center">
+
+        <img src="img/regalo.png" width="55%" alt="Mesa de regalos">
+
+      </div>
+
+      <div class="section-title-script">
+        Mesa de regalos
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Tu presencia es el regalo
+            más importante para mí.
+            <br><br>
+            Si deseas tener un detalle conmigo,
+            puedes elegirlo libremente
+            y lo recibiré con mucho cariño.
+          </p>
+
+          <p class="intro-script">
+            ¡Gracias por acompañarme!
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>  -->
+
+    <!-- LLUVIA DE SOBRES -->
+
+    <section id="sobres" class="gifts-section">
+
+      <div align="center">
+
+        <img src="img/sobreregalo.png" width="50%" alt="Lluvia de sobres">
+
+      </div>
+
+      <div class="section-title-script">
+        Lluvia de sobres
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Tu presencia es mi regalo más importante.
+            <br><br>
+            Si deseas tener un detalle adicional conmigo,
+            puedes participar con un presente en efectivo,<br>
+ en la siguiente cuenta:
+            <br><br>
+          </p>
+
+          <div align="center">
+
+            <img src="img/logo_banorte.svg" width="50%" alt="Lluvia de sobres">
+
+          </div>
+
+          <p class="section-sub">
+  
+            <br>
+            4189 1430 7858 3203
+          </p>
+
+          <p class="intro-script">
+            ¡Gracias de corazón!
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- HOSPEDAJE 
+
+    <section id="hospedaje" class="gifts-section">
+
+      <div align="center">
+
+        <img src="img/hospedaje.png" width="55%" alt="Hospedaje">
+
+      </div>
+
+      <div class="section-title-script">
+        Hospedaje
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-right">
+
+        <div class="gift-item">
+
+          <p class="section-sub">
+            Si vienes de otra ciudad
+            y necesitas una recomendación de hospedaje,
+            comunícate con la familia.
+          </p>
+
+          <a href="https://wa.me/529617717389?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20hospedaje%20para%20los%20XV%20a%C3%B1os%20de%20Sharon%20Dayana."
+            target="_blank" rel="noopener">
+
+            <button class="btn-ubicacion" type="button">
+              Consultar hospedaje
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section> -->
+
+    <!-- INSTAGRAM 
+
+    <section id="insta" class="hashtag-section">
+
+      <div class="insta-handle-card reveal reveal-left">
+
+        <div align="center">
+
+          <img src="img/instagram.png" width="45%" alt="Instagram">
+
+        </div>
+
+        <div class="section-title-script">
+          Captura cada instante
+        </div>
+
+        <div class="flourish"></div>
+
+        <p class="section-sub" style="margin-top:0;">
+
+          Comparte tus fotografías,
+          videos y momentos favoritos
+          de esta noche tan especial.
+
+        </p>
+
+        <div class="insta-handle">
+          @usuario
+        </div>
+
+        <a href="#" target="_blank" rel="noopener">
+
+          <button class="btn-insta" type="button">
+            Abrir Instagram
+          </button>
+
+        </a>
+
+      </div>
+
+    </section>-->
+
+   
+
+    <!-- ÁLBUM QR -->
+
+    <section id="qr" class="gifts-section">
+
+      <div align="center">
+
+        <img src="img/album.png" width="50%" alt="Álbum digital">
+
+      </div><br>
+
+      <div class="section-title-script">
+        Álbum digital
+      </div>
+
+      <div class="flourish"></div>
+
+      <div class="gift-options reveal reveal-left">
+
+        <div class="gift-item">
+
+          <div align="center">
+
+            <img src="img/XV Sharon Dayana_galeria_QR.png" width="60%" alt="Código QR del álbum digital">
+
+          </div>
+
+          <p class="section-sub">
+            Ayúdame a guardar cada momento
+            de esta celebración.
+            <br><br>
+            Comparte tus fotografías,
+            videos y dedicatorias
+            en nuestro álbum digital.
+          </p>
+
+          <a href="https://app.arteinvita.com/gallery/xv-sharon-dayana-1785977427355?token=cd465173915753caf1ac00b92e0f23be" target="_blank" rel="noopener">
+
+            <button class="btn-ubicacion" type="button">
+              Abrir álbum QR
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+
+    <section id="confirmacion" class="bg-fixed bg-bottom">
+
+      <div class="confirm-inner reveal reveal-left">
+
+        <div align="center">
+
+          <img src="img/cene2.png" width="60%" alt="Decoración">
+
+        </div>
+
+        <div class="glass-card">
+
+          <div class="content">
+
+            <div class="confirm-title-script">
+              ¿Asistirás?
+            </div>
+
+            <div class="confirm-flourish"></div>
+
+            <p class="section-sub">
+              ¡Será increíble contar con tu presencia!
+              <br><br>
+              Por favor, confirma tu asistencia
+              a este día tan especial para mí.
+              <br>
+              Tu respuesta es muy importante.
+            </p>
+
+            <p class="section-sub">
+              <em>
+                Confirma tu asistencia en mi panel de invitados, buscando tu nombre y dando click.
+              </em>
+            </p>
+
+          <!--  <a href="https://wa.me/529617717389?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Sharon%20Dayana%20el%2029%20de%20septiembre%20de%202026.%20%C2%A1Gracias%21"
+              target="_blank" rel="noopener">
+
+              <button class="btn-whats" type="button">
+
+                <strong>
+                  Confirmar al 961 771 7389
+                </strong>
+
+              </button>
+
+            </a>-->
+
+            <button class="btn-ubicacion" onclick="ArteInvita.open('1E5-CB35-73D')">
+              <strong>Confirmar en Panel</strong>
+            </button>
+
+            <br>
+
+            <div class="flourish"></div>
+
+            <p class="section-sub">
+              ¡Agradezco de corazón
+              que celebres conmigo!
+              <br><br>
+              ¡Nos vemos pronto!
+            </p>
+
+            <br>
+
+            <div class="section-title-main">
+              Con cariño
+              <br>
+              Sharon Dayana
+            </div>
+
+          </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="content">
+
+          <div class="event-card-final reveal reveal-right">
+
+            <div align="center">
+
+              <img src="img/final.png" width="100%" alt="Fotografía final de Sharon Dayana">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Mis XV Años · Sharon Dayana
+  </footer>
+
+  <!-- BOTÓN ARRIBA -->
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba" type="button">
+    ↑
+  </button>
+
+  <script>
+    // CUENTA REGRESIVA
+
+    const targetDate =
+      new Date(2026, 9, 24, 19, 0, 0);
+
+    const cdDays =
+      document.getElementById("cdDays");
+
+    const cdHours =
+      document.getElementById("cdHours");
+
+    const cdMins =
+      document.getElementById("cdMins");
+
+    const cdSecs =
+      document.getElementById("cdSecs");
+
+    function pad2(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        return;
+      }
+
+      const totalSeconds =
+        Math.floor(difference / 1000);
+
+      const days =
+        Math.floor(
+          totalSeconds / (3600 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (totalSeconds % (3600 * 24)) / 3600
+        );
+
+      const minutes =
+        Math.floor(
+          (totalSeconds % 3600) / 60
+        );
+
+      const seconds =
+        totalSeconds % 60;
+
+      cdDays.textContent =
+        String(days);
+
+      cdHours.textContent =
+        pad2(hours);
+
+      cdMins.textContent =
+        pad2(minutes);
+
+      cdSecs.textContent =
+        pad2(seconds);
+    }
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+    // MÚSICA
+
+    const music =
+      document.getElementById("bg-music");
+
+    const musicToggle =
+      document.getElementById("musicToggle");
+
+    const musicStatus =
+      document.getElementById("musicStatus");
+
+    const musicIcon =
+      document.getElementById("musicIcon");
+
+    let isPlaying = false;
+
+    function updateMusicButton(playing) {
+      isPlaying = playing;
+
+      musicStatus.textContent =
+        playing ? "Pause" : "Play";
+
+      musicIcon.classList.toggle(
+        "playing",
+        playing
+      );
+
+      musicIcon.classList.toggle(
+        "paused",
+        !playing
+      );
+    }
+
+    async function playMusic() {
+      try {
+        await music.play();
+        updateMusicButton(true);
+      } catch (error) {
+        console.log(
+          "No se pudo reproducir la música:",
+          error
+        );
+      }
+    }
+
+    function pauseMusic() {
+      music.pause();
+      updateMusicButton(false);
+    }
+
+    musicToggle.addEventListener(
+      "click",
+      async () => {
+        if (isPlaying) {
+          pauseMusic();
+        } else {
+          await playMusic();
+        }
+      }
+    );
+
+    async function attemptAutoplay() {
+      if (isPlaying) {
+        return;
+      }
+
+      try {
+        await music.play();
+        updateMusicButton(true);
+        cleanupAutoplayListeners();
+      } catch (error) {
+        console.log(
+          "La música se activará al interactuar."
+        );
+      }
+    }
+
+    function cleanupAutoplayListeners() {
+      document.removeEventListener(
+        "click",
+        attemptAutoplay
+      );
+
+      document.removeEventListener(
+        "touchstart",
+        attemptAutoplay
+      );
+
+      document.removeEventListener(
+        "scroll",
+        attemptAutoplay
+      );
+    }
+
+    window.addEventListener(
+      "load",
+      () => {
+        attemptAutoplay();
+
+        document.addEventListener(
+          "click",
+          attemptAutoplay
+        );
+
+        document.addEventListener(
+          "touchstart",
+          attemptAutoplay
+        );
+
+        document.addEventListener(
+          "scroll",
+          attemptAutoplay
+        );
+      }
+    );
+
+    // ANIMACIONES
+
+    const reveals =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    reveals.forEach(
+      element => observer.observe(element)
+    );
+
+    // ITINERARIO
+
+    const itineraryItems =
+      document.querySelectorAll(".itinerary-item");
+
+    const itineraryObserver =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              itineraryObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+    itineraryItems.forEach(
+      element => itineraryObserver.observe(element)
+    );
+
+    // BOTÓN ARRIBA
+
+    const scrollTopBtn =
+      document.getElementById("scrollTopBtn");
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        scrollTopBtn.classList.toggle(
+          "visible",
+          window.scrollY > 420
+        );
+      }
+    );
+
+    scrollTopBtn.addEventListener(
+      "click",
+      () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    );
+
+    // GALERÍA
+
+    const galleryImages = [
+      "img/galeria/1.jpeg",
+      "img/galeria/2.jpeg",
+      "img/galeria/3.jpeg",
+      "img/galeria/4.jpeg",
+      "img/galeria/5.jpeg",
+      "img/galeria/6.jpeg",
+      "img/galeria/7.jpeg",
+      "img/galeria/8.jpeg"
+    ];
+
+    let currentGalleryIndex = 0;
+
+    const galleryImage =
+      document.getElementById("galleryImage");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const galleryDots =
+      document.getElementById("galleryDots");
+
+    const galleryLightbox =
+      document.getElementById("galleryLightbox");
+
+    function renderGalleryDots() {
+      if (!galleryDots) {
+        return;
+      }
+
+      galleryDots.innerHTML = "";
+
+      galleryImages.forEach(
+        (_, index) => {
+          const dot =
+            document.createElement("button");
+
+          dot.className = "gallery-dot";
+          dot.type = "button";
+
+          dot.setAttribute(
+            "aria-label",
+            `Ver fotografía ${index + 1}`
+          );
+
+          if (index === currentGalleryIndex) {
+            dot.classList.add("active");
+          }
+
+          dot.addEventListener(
+            "click",
+            () => {
+              currentGalleryIndex = index;
+              updateGalleryImage();
+            }
+          );
+
+          galleryDots.appendChild(dot);
+        }
+      );
+    }
+
+    function updateGalleryImage() {
+      if (!galleryImage || !lightboxImage) {
+        return;
+      }
+
+      galleryImage.src =
+        galleryImages[currentGalleryIndex];
+
+      galleryImage.alt =
+        `Fotografía ${currentGalleryIndex + 1} de Sharon Dayana`;
+
+      lightboxImage.src =
+        galleryImages[currentGalleryIndex];
+
+      lightboxImage.alt =
+        `Fotografía ampliada ${currentGalleryIndex + 1} de Sharon Dayana`;
+
+      document
+        .querySelectorAll(".gallery-dot")
+        .forEach(
+          (dot, index) => {
+            dot.classList.toggle(
+              "active",
+              index === currentGalleryIndex
+            );
+          }
+        );
+    }
+
+    function nextGalleryImage() {
+      currentGalleryIndex =
+        (
+          currentGalleryIndex +
+          1
+        ) %
+        galleryImages.length;
+
+      updateGalleryImage();
+    }
+
+    function prevGalleryImage() {
+      currentGalleryIndex =
+        (
+          currentGalleryIndex -
+          1 +
+          galleryImages.length
+        ) %
+        galleryImages.length;
+
+      updateGalleryImage();
+    }
+
+    function openGalleryLightbox() {
+      if (!galleryLightbox) {
+        return;
+      }
+
+      galleryLightbox.classList.add("active");
+
+      galleryLightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeGalleryLightbox() {
+      if (!galleryLightbox) {
+        return;
+      }
+
+      galleryLightbox.classList.remove("active");
+
+      galleryLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove("no-scroll");
+    }
+
+    if (galleryImage) {
+      galleryImage.addEventListener(
+        "click",
+        openGalleryLightbox
+      );
+    }
+
+    if (galleryLightbox) {
+      galleryLightbox.addEventListener(
+        "click",
+        event => {
+          if (event.target === galleryLightbox) {
+            closeGalleryLightbox();
+          }
+        }
+      );
+    }
+
+    document.addEventListener(
+      "keydown",
+      event => {
+        if (
+          !galleryLightbox ||
+          !galleryLightbox.classList.contains("active")
+        ) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          closeGalleryLightbox();
+        }
+
+        if (event.key === "ArrowRight") {
+          nextGalleryImage();
+        }
+
+        if (event.key === "ArrowLeft") {
+          prevGalleryImage();
+        }
+      }
+    );
+
+    renderGalleryDots();
+    updateGalleryImage();
+  </script>
+
+</body>
+
+</html>
