@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F8E7EC">
+  <title>Mis XV Años | Maya</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F8E7EC;
+      --surface:#FFF9FB;
+      --ink:#754D59;
+      --muted:#9D7480;
+      --accent:#D98EA3;
+      --rose:#DE9EB0;
+      --rose-light:#F2C6D1;
+      --rose-soft:#F8DDE4;
+      --rose-dark:#A95E74;
+      --gold:#C7788F;
+      --gold-light:#E9B5C4;
+      --gold-dark:#8D4D61;
+      --cream:#FFF7F8;
+      --line:rgba(199,120,143,.24);
+      --radius:18px;
+      --shadow:0 14px 40px rgba(117,77,89,.15);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;width:100%;min-height:100%}
+
+    body{
+      background:#EFE1E5;
+      color:var(--ink);
+      font-family:"Poppins",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      overflow-x:hidden;
+      -webkit-text-size-adjust:100%;
+    }
+
+    button,input{font:inherit}
+
+    .app{
+      position:relative;
+      width:min(460px,100%);
+      min-height:100vh;
+      margin:0 auto;
+      overflow-x:hidden;
+      overflow-y:visible;
+      background:var(--bg);
+    }
+
+    @media (min-width:980px){
+      body{display:flex;justify-content:center;padding:18px 0}
+      .app{border-radius:22px;box-shadow:var(--shadow)}
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      height:min(95vh,760px);
+      min-height:640px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      text-align:center;
+      background:url("portada.png") center top/cover no-repeat;
+      overflow:hidden;
+      isolation:isolate;
+      z-index:1;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg,
+          rgba(255,240,245,.02) 0%,
+          rgba(222,158,176,.06) 40%,
+          rgba(138,78,96,.36) 68%,
+          rgba(68,39,48,.90) 100%),
+        radial-gradient(circle at 18% 26%,rgba(255,221,230,.24),transparent 34%),
+        radial-gradient(circle at 82% 22%,rgba(245,190,206,.17),transparent 30%);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:16px;
+      z-index:2;
+      pointer-events:none;
+      border:1px solid rgba(242,198,209,.78);
+      border-radius:18px;
+      box-shadow:inset 0 0 28px rgba(255,255,255,.12);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:3;
+      width:100%;
+      padding:0 18px 110px;
+      color:#fff;
+      text-shadow:0 4px 18px rgba(63,34,43,.56);
+    }
+
+    .hero-kicker{
+      margin:0 0 12px;
+      color:#F8DDE4;
+      font-family:"Playfair Display",serif;
+      font-size:1.08rem;
+      font-weight:500;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+    }
+
+    .hero-name{
+      margin:0;
+      color:#fff;
+      font-family:"Great Vibes",cursive;
+      font-size:clamp(6rem,18vw,8rem);
+      font-weight:400;
+      line-height:1;
+      text-shadow:
+        0 3px 3px rgba(65,35,44,.60),
+        0 0 14px rgba(255,255,255,.38),
+        0 0 26px rgba(217,142,163,.42);
+    }
+
+    .hero-date{
+      margin-top:18px;
+      color:#FFF7FA;
+      font-family:"Playfair Display",serif;
+      font-size:1.38rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    /* CONTENIDO */
+    .background{
+      position:relative;
+      z-index:1;
+      min-height:auto!important;
+      background:transparent!important;
+      animation:none!important;
+    }
+
+    .container{
+      max-width:460px;
+      margin:0 auto;
+      padding:22px 16px 64px;
+      text-align:center;
+    }
+
+    .subtext{
+      max-width:395px;
+      margin:36px auto 20px;
+      color:var(--rose-dark);
+      font-family:"Playfair Display",serif;
+      font-size:1.08rem;
+      line-height:1.75;
+    }
+
+    .parrafo{
+      max-width:390px;
+      margin:20px auto 12px;
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.78;
+      text-align:center;
+    }
+
+    .parrafo strong{color:var(--ink)}
+
+    .floral-divider{
+      width:74%;
+      max-width:280px;
+      height:44px;
+      margin:30px auto;
+      background-color:var(--rose-dark);
+      -webkit-mask-image:url("cenefa.png");
+      -webkit-mask-repeat:no-repeat;
+      -webkit-mask-position:center;
+      -webkit-mask-size:contain;
+      mask-image:url("cenefa.png");
+      mask-repeat:no-repeat;
+      mask-position:center;
+      mask-size:contain;
+      opacity:.90;
+      filter:drop-shadow(0 2px 6px rgba(117,77,89,.16));
+    }
+
+    .date-container{
+      width:100%;
+      margin:20px auto 14px;
+      display:grid;
+      gap:8px;
+      justify-items:center;
+    }
+
+    .day,.month{
+      margin:0;
+      color:var(--muted);
+      font-size:1.25rem;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+    }
+
+    .number{
+      margin:0 0 .18em;
+      color:var(--rose-dark);
+      font-family:"Playfair Display",serif;
+      font-size:6.7rem;
+      line-height:1;
+      text-shadow:0 0 14px rgba(242,198,209,.40),0 4px 16px rgba(117,77,89,.10);
+    }
+
+    .btn,.btn-ubicacion,.confirm-button,.gallery-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 18px;
+      border:1.5px solid var(--rose-dark);
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(135deg,#A95E74 0%,#D98EA3 55%,#E9B5C4 100%);
+      box-shadow:0 10px 24px rgba(117,77,89,.20),inset 0 1px 1px rgba(255,255,255,.28);
+      cursor:pointer;
+      font-family:"Poppins",sans-serif;
+      font-size:.84rem;
+      font-weight:700;
+      letter-spacing:.11em;
+      text-decoration:none;
+      text-transform:uppercase;
+      transition:transform .2s ease,filter .2s ease,box-shadow .2s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .btn:hover,.btn-ubicacion:hover,.confirm-button:hover,.gallery-button:hover{
+      filter:brightness(1.06);
+      transform:translateY(-2px);
+    }
+
+    .timeline{
+      max-width:390px;
+      margin:34px auto 20px;
+      padding:0;
+      display:grid;
+      gap:36px;
+    }
+
+    .timeline-item,.social-item,.final-item{
+      padding:0!important;
+      border:none!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      text-align:center;
+    }
+
+    .timeline-item + .timeline-item::before,
+    .social-item + .social-item::before,
+    .final-item + .final-item::before{
+      content:"";
+      display:block;
+      width:72%;
+      height:1px;
+      margin:32px auto;
+      background:linear-gradient(90deg,transparent,rgba(217,142,163,.25),rgba(169,94,116,.50),rgba(217,142,163,.25),transparent);
+    }
+
+    .icon-wrap{
+      width:148px;
+      height:148px;
+      margin:0 auto 16px;
+      display:grid;
+      place-items:center;
+      color:var(--rose-dark);
+      border:1px solid rgba(169,94,116,.24);
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 32% 28%,rgba(255,255,255,.88),transparent 42%),
+        linear-gradient(145deg,rgba(255,250,252,.95),rgba(248,221,228,.76));
+      box-shadow:0 10px 24px rgba(117,77,89,.10),inset 0 0 20px rgba(217,142,163,.08);
+    }
+
+    .icon-wrap svg,.icon-wrap img{
+      display:block;
+      width:98px;
+      height:98px;
+      object-fit:contain;
+    }
+
+    .icon-wrap img{
+      filter:brightness(0) saturate(100%) invert(47%) sepia(23%) saturate(1376%) hue-rotate(294deg) brightness(87%) contrast(83%);
+    }
+
+    .section-title,.social-title,.final-title{
+      margin:10px 0 14px;
+      color:var(--rose-dark);
+      font-family:"Great Vibes",cursive;
+      font-size:3rem;
+      font-weight:400;
+      line-height:1.15;
+    }
+
+    .section-content,.social-content,.final-content{
+      margin:12px 0;
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.65;
+      text-align:center;
+    }
+
+    .section-content strong,.social-content strong,.final-content strong{color:var(--ink)}
+
+    .section-content-hora{
+      margin:14px 0 0;
+      color:var(--rose-dark);
+      font-family:"Playfair Display",serif;
+      font-size:1.08rem;
+      font-weight:700;
+    }
+
+    .dress-note{
+      width:min(92%,350px);
+      margin:18px auto;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(145deg,rgba(255,250,252,.94),rgba(248,221,228,.74));
+      box-shadow:0 10px 24px rgba(117,77,89,.08);
+    }
+
+    .social-section,.final-section{
+      max-width:390px;
+      margin:28px auto 0;
+      padding:0;
+      display:grid;
+      gap:22px;
+      justify-items:center;
+      text-align:center;
+    }
+
+    .thanks{
+      margin-top:18px;
+      color:var(--rose-dark);
+      font-family:"Playfair Display",serif;
+      font-size:1.8rem;
+      font-weight:600;
+    }
+
+    /* GALERÍA */
+    .polaroid-single{
+      width:min(96%,360px);
+      margin:24px auto 12px;
+      padding:12px 12px 16px;
+      overflow:hidden;
+      border:1px solid rgba(169,94,116,.22);
+      border-radius:22px;
+      background:#FFF7FA;
+      box-shadow:0 12px 28px rgba(117,77,89,.13);
+      text-align:center;
+    }
+
+    .polaroid-single img{
+      width:100%;
+      aspect-ratio:4/5;
+      display:block;
+      object-fit:cover;
+      border-radius:15px;
+    }
+
+    .polaroid-single .pol-label{
+      margin-top:12px;
+      color:var(--rose-dark);
+      font-size:.85rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .polaroid-single .pol-btn{
+      width:100%;
+      max-width:220px;
+      margin-top:10px;
+      padding:10px 18px;
+      border:1.5px solid var(--rose-dark);
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(135deg,var(--rose-dark),var(--rose),var(--rose-light));
+      cursor:pointer;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+
+    .gallery-modal{
+      position:fixed;
+      inset:0;
+      z-index:99999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      background:rgba(52,32,40,.96);
+      padding:max(16px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right))
+              max(16px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
+      overscroll-behavior:contain;
+      touch-action:pan-y;
+    }
+
+    .gallery-modal.is-open{display:flex}
+
+    .gallery-close-btn{
+      position:absolute;
+      top:max(12px,env(safe-area-inset-top));
+      right:max(14px,env(safe-area-inset-right));
+      z-index:100002;
+      width:46px;
+      height:46px;
+      padding:0;
+      border:none;
+      color:#fff;
+      background:rgba(117,77,89,.65);
+      border-radius:50%;
+      cursor:pointer;
+      font-size:34px;
+      line-height:1;
+      font-weight:400;
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+
+    .gallery-container{
+      position:relative;
+      width:100%;
+      height:min(76vh,760px);
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .gallery-main-image{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:min(92vw,430px);
+      max-height:72vh;
+      object-fit:contain;
+      border:2px solid rgba(242,198,209,.50);
+      border-radius:16px;
+      box-shadow:0 20px 55px rgba(0,0,0,.34);
+      user-select:none;
+      -webkit-user-drag:none;
+      -webkit-touch-callout:none;
+    }
+
+    .gallery-main-image.is-changing{opacity:.2}
+
+    .gallery-arrow{
+      position:absolute;
+      top:50%;
+      z-index:100001;
+      width:48px;
+      height:54px;
+      display:grid;
+      place-items:center;
+      padding:0;
+      border:1px solid rgba(242,198,209,.60);
+      border-radius:14px;
+      color:var(--ink);
+      background:rgba(255,247,250,.92);
+      cursor:pointer;
+      font-size:28px;
+      transform:translateY(-50%);
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+
+    .gallery-prev{left:4px}
+    .gallery-next{right:4px}
+
+    .gallery-counter{
+      position:absolute;
+      left:50%;
+      bottom:max(10px,env(safe-area-inset-bottom));
+      z-index:100001;
+      padding:8px 14px;
+      border-radius:999px;
+      color:#fff;
+      background:rgba(117,77,89,.86);
+      font-size:14px;
+      transform:translateX(-50%);
+      white-space:nowrap;
+    }
+
+    /* CONTADOR */
+    .digital-clock-container{margin:0}
+
+    .digital-clock{
+      display:inline-block;
+      padding:10px 12px;
+      border:1px solid rgba(169,94,116,.25);
+      border-radius:14px;
+      color:var(--rose-dark);
+      background:rgba(255,248,250,.82);
+      box-shadow:inset 0 0 18px rgba(217,142,163,.06);
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:1.74rem;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
+    .clock-separator{color:var(--rose)}
+    .clock-status{margin-top:10px;color:var(--muted);font-size:.94rem}
+
+    /* FOTO FINAL */
+    .acuarela-frame{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      margin:38px 0 24px;
+    }
+
+    .acuarela-photo{
+      width:min(100%,420px);
+      height:auto;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(117,77,89,.17);
+      opacity:1;
+      transform:none;
+      transition:opacity .55s ease,transform .75s cubic-bezier(.2,.8,.2,1),filter .75s ease;
+    }
+
+    .acuarela-frame--end .acuarela-photo{
+      -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,78 C60,10 150,120 250,52 C350,-10 430,120 500,62 L500,640 C430,600 350,705 250,652 C150,600 70,710 0,635 Z' fill='white'/%3E%3C/svg%3E");
+      -webkit-mask-repeat:no-repeat;
+      -webkit-mask-size:100% 100%;
+      -webkit-mask-position:center;
+      mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cpath d='M0,78 C60,10 150,120 250,52 C350,-10 430,120 500,62 L500,640 C430,600 350,705 250,652 C150,600 70,710 0,635 Z' fill='white'/%3E%3C/svg%3E");
+      mask-repeat:no-repeat;
+      mask-size:100% 100%;
+      mask-position:center;
+    }
+
+    .acuarela-frame--final{width:100%;margin:0}
+    .acuarela-frame--final .acuarela-photo{width:100%;max-width:460px}
+
+    /* SCROLL */
+    .scroll-to-top{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1200;
+      width:42px;
+      height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--rose-light);
+      border-radius:50%;
+      color:#fff;
+      background:linear-gradient(135deg,var(--rose-dark),var(--rose));
+      box-shadow:0 10px 22px rgba(117,77,89,.22);
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s ease,transform .2s ease;
+    }
+
+    .scroll-to-top.visible{opacity:.9;pointer-events:auto}
+    .arrow-up{width:10px;height:10px;margin-top:5px;border-top:3px solid #fff;border-left:3px solid #fff;transform:rotate(45deg)}
+
+    /* REPRODUCTOR */
+    .floating-player{
+      position:fixed;
+      left:max(14px,env(safe-area-inset-left));
+      bottom:max(18px,env(safe-area-inset-bottom));
+      z-index:1300;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .player-button{
+      width:50px;
+      height:50px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--rose-light);
+      border-radius:14px;
+      color:#fff;
+      background:linear-gradient(135deg,var(--rose-dark),var(--rose));
+      box-shadow:0 10px 22px rgba(117,77,89,.25);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+
+    .player-content{
+      width:280px;
+      display:none;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,249,251,.98);
+      box-shadow:0 14px 34px rgba(117,77,89,.22);
+    }
+
+    .player-content.active{display:block}
+    .song-title{margin:0;color:var(--ink);font-size:.95rem;font-weight:700;line-height:1.35}
+    .song-artist{margin:6px 0 0;color:var(--muted);font-size:.84rem}
+    .player-controls{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:14px}
+
+    .control-button{
+      width:42px;
+      height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      border-radius:14px;
+      color:var(--rose-dark);
+      background:rgba(217,142,163,.12);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+
+    .progress-container{
+      width:100%;
+      height:8px;
+      margin-top:12px;
+      overflow:hidden;
+      border-radius:999px;
+      background:rgba(117,77,89,.10);
+      cursor:pointer;
+      touch-action:manipulation;
+    }
+
+    .progress-bar{
+      width:0%;
+      height:100%;
+      background:linear-gradient(90deg,var(--rose-dark),var(--rose),var(--rose-light));
+    }
+	  
+	  /* ===================================
+       ITINERARIO
+    =================================== */
+
+    .timeline-section {
+      padding: 1.4rem 1rem;
+      text-align: center;
+    }
+
+    .timeline-title {
+      margin: 0 0 2.4rem;
+      color: var(--rose-dark);
+      font-family: "Great Vibes", cursive;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .timeline-list {
+      position: relative;
+      width: min(100%, 390px);
+      margin: 0 auto;
+      padding: 0.5rem 0;
+    }
+
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      border-radius: 999px;
+
+      background:
+        linear-gradient(180deg,
+          var(--rose-light),
+          var(--rose),
+          var(--rose-dark),
+          var(--rose-light));
+
+      transform: translateX(-50%);
+    }
+
+    .timeline-row {
+      position: relative;
+      min-height: 80px;
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .timeline-time {
+      width: 100%;
+      color: var(--rose-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .timeline-dot {
+      z-index: 1;
+      width: 18px;
+      height: 18px;
+      margin: 0 auto;
+      border: 3px solid var(--rose-dark);
+      border-radius: 50%;
+      background: #FFF8FA;
+      box-shadow: 0 0 10px rgba(169, 94, 116, 0.24);
+    }
+
+    .timeline-event {
+      width: 100%;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+
+    .volume-control{margin-top:12px;display:flex;align-items:center;gap:10px}
+    .volume-icon{display:flex;color:var(--rose-dark)}
+
+    .volume-slider{
+      flex-grow:1;
+      height:6px;
+      border-radius:999px;
+      outline:none;
+      background:rgba(117,77,89,.10);
+      -webkit-appearance:none;
+      appearance:none;
+    }
+
+    .volume-slider::-webkit-slider-thumb{
+      width:14px;height:14px;border:2px solid #fff;border-radius:50%;background:var(--rose-dark);cursor:pointer;-webkit-appearance:none;
+    }
+
+    .icon{width:22px;height:22px;fill:currentColor}
+
+    /* ANIMACIONES SEGURAS:
+       Por defecto TODO es visible. Solo se oculta cuando JS ya está listo. */
+    .anim-left,.anim-right,.anim-up{
+      opacity:1;
+      transform:none;
+    }
+
+    html.motion-ready .anim-left,
+    html.motion-ready .anim-right,
+    html.motion-ready .anim-up{
+      opacity:0;
+      transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1);
+      will-change:transform,opacity;
+    }
+
+    html.motion-ready .anim-left{transform:translate3d(-28px,0,0)}
+    html.motion-ready .anim-right{transform:translate3d(28px,0,0)}
+    html.motion-ready .anim-up{transform:translate3d(0,18px,0)}
+    html.motion-ready .in-view{opacity:1!important;transform:translate3d(0,0,0)!important}
+
+    @media (prefers-reduced-motion:reduce){
+      html.motion-ready .anim-left,
+      html.motion-ready .anim-right,
+      html.motion-ready .anim-up{
+        opacity:1!important;
+        transform:none!important;
+        transition:none!important;
+      }
+    }
+
+    @media (max-width:480px){
+      .hero{min-height:600px;height:92svh}
+      .hero-name{font-size:6rem}
+      .hero-date{font-size:1.05rem;letter-spacing:.14em}
+      .hero-content{padding-bottom:82px}
+      .digital-clock{font-size:clamp(1.12rem,5.5vw,1.46rem);letter-spacing:1px}
+      .player-content{width:min(280px,calc(100vw - 82px))}
+      .gallery-container{height:78svh}
+      .gallery-main-image{max-width:88vw;max-height:70svh}
+      .gallery-arrow{width:44px;height:52px;font-size:25px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">Mis XV Años</p>
+        <h1 class="hero-name">Maya</h1>
+        <div class="hero-date">26 · Diciembre · 2026</div>
+      </div>
+    </section>
+
+    <div class="background">
+      <div class="container">
+
+        <button class="scroll-to-top" id="scrollBtn" type="button" aria-label="Volver arriba">
+          <div class="arrow-up"></div>
+        </button>
+
+        <div align="center" class="anim-up">
+          <img src="galeria/xv_2.png" width="55%" alt="Decoración">
+        </div>
+
+        <p class="subtext anim-up">
+          Con la bendición de Dios y el amor que mi familia me ha dado,
+          me siento muy feliz de llegar a este momento de mi vida,
+          el día en que comenzaré un nuevo viaje,
+          porque son parte importante de mi vida,
+          porque simplemente los quiero mucho.
+          <br><br>
+          Es mi deseo que compartan conmigo la alegría de Mis XV años.<br><br>
+          Tu presencia hará de este día un recuerdo inolvidable.
+        </p>
+
+        <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <div class="date-container anim-up">
+          <div class="day">Sábado</div>
+          <div class="number">26</div>
+          <div class="month">Diciembre</div>
+        </div>
+
+         <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <p class="parrafo anim-up">
+          Con mucho amor y acompañada de mis padres:
+          <br><br>
+          <strong>Denise Medina Navarrete</strong>
+          <br>y<br>
+          <strong>Taher Shahid Mahmud</strong>
+        </p>
+ <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <p class="parrafo anim-up">
+          Y con el cariño de mis padrinos:
+          <br><br>
+          <strong>María Fernanda Medina Navarrete</strong>
+          <br><br>
+          <strong>Estefanía Medina Navarrete</strong>
+          <br><br>
+          <strong>Ernesto Sánchez Ramírez</strong>
+        </p>
+
+        <br>
+
+        <div align="center" class="anim-up">
+          <img src="corona.png" width="60%" alt="Decoración">
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item anim-left">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-label="Ícono de ceremonia">
+                <path d="M10 90H110M60 4V62M49 16H71M20 90V55L45 42V90M45 90V28L60 20L75 28V90M75 90V42L100 55V90M32 90V48M52 90V36M68 90V36M88 90V48"></path>
+              </svg>
+            </div>
+
+            <h2 class="section-title">Ceremonia Religiosa</h2>
+            <p class="section-content">
+              <strong>Parroquia Sagrada Familia</strong>
+              <br><br>
+              Av. Presidentes 21,
+              Portales Oriente,
+              Benito Juárez,
+              03570 Ciudad de México, CDMX
+            </p>
+            <p class="section-content-hora">4:00 p. m.</p>
+            <br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Parroquia%20Sagrada%20Familia%20Av.%20Presidentes%2021%20Portales%20Oriente%20Benito%20Juarez%20CDMX" class="btn" target="_blank" rel="noopener">Ver mapa</a>
+          </div>
+
+          <div class="timeline-item anim-right">
+            <div class="icon-wrap">
+              <img src="fiesta.svg" alt="" aria-hidden="true">
+            </div>
+
+            <h2 class="section-title">Recepción</h2>
+            <p class="section-content">
+              <strong>Salón SME</strong>
+              <br>
+              Dentro del Deportivo de los Electricistas
+              <br><br>
+              Calzada del Hueso #380,
+              Col. Los Girasoles III / Villa Coapa,
+              Alcaldía Coyoacán,
+              C.P. 04920,
+              Ciudad de México
+            </p>
+            <p class="section-content-hora">6:45 p. m.</p>
+            <br>
+            <a href="https://maps.app.goo.gl/piBFxfkAtFr85M1i6" class="btn" target="_blank" rel="noopener">Ver mapa</a>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div class="icon-wrap">
+              <img src="vestimenta.svg" alt="Código de vestimenta">
+            </div>
+
+            <h2 class="section-title">Código de Vestimenta</h2>
+            <p class="section-content-hora">Formal – Semiformal</p>
+
+            <div class="dress-note">
+              <p class="section-content">
+                Viste con elegancia y comodidad para disfrutar juntos esta celebración tan especial.
+                <br><br>
+                Con cariño, reservemos el color <strong>rosa</strong> exclusivamente para la quinceañera.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+		  
+		   <!-- ===================================
+             ITINERARIO
+        ====================================-->
+
+        <section id="itinerario" class="timeline-section anim-up">
+
+          <p class="timeline-title">
+            Itinerario
+          </p>
+
+          <div class="timeline-list">
+
+            <div class="timeline-row">
+              <div class="timeline-time">
+                4:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Ceremonia religiosa
+              </div>
+            </div>
+
+            <div class="timeline-row">
+              <div class="timeline-time">
+                6:45 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Recepción
+              </div>
+            </div>
+			  
+			   <div class="timeline-row">
+              <div class="timeline-time">
+                8:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Cena
+              </div>
+            </div>
+			  
+			  
+			   <div class="timeline-row">
+              <div class="timeline-time">
+                9:00 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Baile
+              </div>
+			  </div>
+			  
+			   <div class="timeline-row">
+              <div class="timeline-time">
+                1:00 a. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+              Fin del evento
+              </div>
+            </div>
+				  
+
+          </div>
+        </section> 
+
+        
+
+         <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <section class="social-section">
+          <div class="social-item anim-right">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-label="Lluvia de sobres">
+                <rect x="18" y="38" width="84" height="50" rx="6"></rect>
+                <path d="M18 45L60 74L102 45"></path>
+                <path d="M18 88L46 63"></path>
+                <path d="M102 88L74 63"></path>
+                <path d="M60 26 C60 20,54 16,49 16 C42 16,38 21,38 27 C38 39,52 46,60 52 C68 46,82 39,82 27 C82 21,78 16,71 16 C66 16,60 20,60 26Z"></path>
+              </svg>
+            </div>
+
+            <h2 class="social-title">Lluvia de Sobres</h2>
+            <p class="social-content">
+              Tu presencia en este día tan especial será mi mejor regalo,
+              pero si quisieras tener algún detalle conmigo
+              y no tienes idea de qué podrías regalarme,
+              contaremos con la opción de <strong>lluvia de sobres</strong>.
+            </p>
+            <p class="thanks">¡Gracias!</p>
+          </div>
+        </section>
+
+        <section class="final-section">
+			<div align="center" class="anim-up">
+          <img src="sello1.png" width="60%" alt="Decoración">
+        </div>
+          <div class="final-item anim-up">
+            <h2 class="final-title">Mi Galería de Fotos</h2>
+            <p class="final-content">Algunos recuerdos especiales de esta hermosa etapa.</p>
+
+            <div class="polaroid-single">
+              <img src="galeria/1.jpeg" alt="Fotografía de Maya">
+              <div class="pol-label">Mis XV Años</div>
+              <button class="pol-btn" id="openGalleryBtn" type="button">Ver galería</button>
+            </div>
+          </div>
+        </section>
+
+         <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <section class="final-section">
+          <div class="final-item anim-up">
+            <div class="digital-clock-container">
+              <div class="icon-wrap">
+                <img src="calendario.svg" alt="Calendario">
+              </div>
+
+              <h2 class="final-title">Faltan</h2>
+              <p class="final-content">DÍAS // HORAS // MINUTOS // SEGUNDOS</p>
+
+              <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva">
+                <span id="days">00</span>
+                <span class="clock-separator">:</span>
+                <span id="hours">00</span>
+                <span class="clock-separator">:</span>
+                <span id="minutes">00</span>
+                <span class="clock-separator">:</span>
+                <span id="seconds">00</span>
+              </div>
+
+              <div class="clock-status" id="clock-status"></div>
+            </div>
+          </div>
+        </section>
+
+        <br><br><br>
+
+        <div align="center" class="anim-up">
+          <img src="1.png" width="60%" alt="Decoración">
+        </div>
+
+        <br>
+
+        <section class="final-section">
+          <div class="final-item anim-left">
+            <div class="icon-wrap">
+              <img src="confirmar.svg" alt="Confirmar asistencia">
+            </div>
+
+            <h2 class="final-title">Confirma tu asistencia</h2>
+
+            <p class="final-content">
+              Tu presencia es muy importante para mí.
+              <br><br>
+              Por favor confirma tu asistencia por WhatsApp con mi mamá.
+            </p><br>
+
+            <a class="btn" href="https://wa.me/525554511512?text=Hola%2C%20deseo%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Maya." target="_blank" rel="noopener">
+              Confirmar asistencia
+            </a>
+
+            <p class="final-content">
+              <br>
+             Con  Denise Medina
+              <br>
+            </p>
+          </div>
+        </section>
+
+         <div align="center"><img src="cenefa.png" width="60%" alt="Decoración"></div>
+
+        <p class="parrafo anim-up">
+          Gracias por acompañarme en este momento tan especial
+          y por formar parte de una historia que apenas comienza.
+          Tu presencia hará que este día permanezca para siempre
+          entre mis recuerdos más bonitos.
+        </p>
+
+        <h2 class="final-title">¡Te espero!</h2>
+
+        <p class="thanks">
+          Con cariño,
+          <br>
+          Maya
+        </p>
+      </div>
+    </div>
+
+    <div class="acuarela-frame acuarela-frame--end acuarela-frame--final">
+      <img class="acuarela-photo" src="galeria/2.jpeg" alt="Fotografía final de Maya">
+    </div>
+
+    <!-- REPRODUCTOR -->
+    <div class="floating-player" aria-label="Reproductor de música">
+      <button class="player-button" id="playerButton" type="button" title="Abrir reproductor" aria-label="Abrir reproductor">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z"></path>
+        </svg>
+      </button>
+
+      <div class="player-content" id="playerContent">
+        <div class="song-info">
+          <p class="song-title" id="songTitle">¡Escucha la invitación con música!</p>
+          <p class="song-artist" id="songArtist"></p>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="player-controls">
+          <button class="control-button" id="prevButton" type="button" aria-label="Reiniciar canción">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+
+          <button class="control-button" id="playButton" type="button" aria-label="Reproducir o pausar">
+            <svg class="icon" id="playIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg class="icon" id="pauseIcon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+
+          <button class="control-button" id="nextButton" type="button" aria-label="Reiniciar canción">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="volume-control">
+          <div class="volume-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7">
+        </div>
+
+        <audio id="audioPlayer"
+               preload="auto"
+               autoplay
+               loop
+               playsinline
+               webkit-playsinline
+               x-webkit-airplay="allow">
+          <source src="Lana Del Rey_Videogames.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <!-- MODAL GALERÍA -->
+    <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+      <button id="closeGalleryBtn" class="gallery-close-btn" type="button" aria-label="Cerrar">&times;</button>
+
+      <div class="gallery-container" id="galleryContainer">
+        <img id="mainImage" class="gallery-main-image" src="galeria/1.jpeg" alt="Imagen de la galería" draggable="false">
+
+        <button id="prevImage" class="gallery-arrow gallery-prev" type="button" aria-label="Anterior">&#10094;</button>
+        <button id="nextImage" class="gallery-arrow gallery-next" type="button" aria-label="Siguiente">&#10095;</button>
+
+        <div id="imageCounter" class="gallery-counter" aria-label="Contador de imágenes"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    /* ==========
+       ANIMACIONES SIN RIESGO DE OCULTAR CONTENIDO
+       ========== */
+    (function(){
+      const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const targets = Array.from(document.querySelectorAll(".anim-left,.anim-right,.anim-up"));
+
+      if (!targets.length || reduced || !("IntersectionObserver" in window)) {
+        targets.forEach(el => el.classList.add("in-view"));
+        return;
+      }
+
+      document.documentElement.classList.add("motion-ready");
+
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{
+        threshold:0.06,
+        rootMargin:"120px 0px 120px 0px"
+      });
+
+      targets.forEach(el=>observer.observe(el));
+
+      /* Seguro extra para Safari/iPhone:
+         si algo no recibió el observer, se muestra de todos modos. */
+      setTimeout(()=>{
+        targets.forEach(el=>el.classList.add("in-view"));
+      },1800);
+    })();
+
+    /* ==========
+       SCROLL TO TOP
+       ========== */
+    (function(){
+      const btn = document.getElementById("scrollBtn");
+      if(!btn) return;
+
+      const sync = ()=>{
+        const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        btn.classList.toggle("visible", y > 300);
+      };
+
+      window.addEventListener("scroll", sync, {passive:true});
+      sync();
+
+      btn.addEventListener("click", ()=>{
+        window.scrollTo({top:0,behavior:"smooth"});
+      });
+    })();
+
+    /* ==========
+       CUENTA REGRESIVA
+       ========== */
+    (function(){
+      const target = new Date("2026-12-26T16:00:00-06:00").getTime();
+      const days = document.getElementById("days");
+      const hours = document.getElementById("hours");
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+      const status = document.getElementById("clock-status");
+
+      if(!days || !hours || !minutes || !seconds || !status) return;
+
+      const tick = ()=>{
+        const distance = target - Date.now();
+
+        if(distance <= 0){
+          days.textContent="00";
+          hours.textContent="00";
+          minutes.textContent="00";
+          seconds.textContent="00";
+          status.textContent="¡El gran día ha llegado!";
+          return;
+        }
+
+        const d = Math.floor(distance/86400000);
+        const h = Math.floor((distance%86400000)/3600000);
+        const m = Math.floor((distance%3600000)/60000);
+        const s = Math.floor((distance%60000)/1000);
+
+        days.textContent=String(d).padStart(2,"0");
+        hours.textContent=String(h).padStart(2,"0");
+        minutes.textContent=String(m).padStart(2,"0");
+        seconds.textContent=String(s).padStart(2,"0");
+        status.textContent="Para vivir juntos esta hermosa celebración";
+      };
+
+      tick();
+      setInterval(tick,1000);
+    })();
+
+    /* ==========
+       GALERÍA MÓVIL ROBUSTA
+       - flechas
+       - swipe
+       - precarga
+       - cambio real de src para evitar que Safari repita la primera
+       ========== */
+    (function(){
+      const openBtn = document.getElementById("openGalleryBtn");
+      const modal = document.getElementById("galleryModal");
+      const closeBtn = document.getElementById("closeGalleryBtn");
+      const prevBtn = document.getElementById("prevImage");
+      const nextBtn = document.getElementById("nextImage");
+      const mainImage = document.getElementById("mainImage");
+      const counter = document.getElementById("imageCounter");
+      const container = document.getElementById("galleryContainer");
+
+      if(!openBtn || !modal || !closeBtn || !prevBtn || !nextBtn || !mainImage || !counter || !container) return;
+
+      const images = [
+        "galeria/1.jpeg",
+        "galeria/2.jpeg",
+        "galeria/3.jpeg",
+        "galeria/4.jpeg",
+        "galeria/5.jpeg",
+        "galeria/6.jpeg",
+        "galeria/7.jpeg",
+        "galeria/8.jpeg",
+        "galeria/9.jpeg",
+        "galeria/10.jpeg",
+        "galeria/11.jpeg"
+      ];
+
+      let idx = 0;
+      let startX = null;
+      let startY = null;
+      let loadToken = 0;
+
+      /* Precarga progresiva */
+      images.forEach((src)=>{
+        const img = new Image();
+        img.decoding = "async";
+        img.src = src;
+      });
+
+      function showImage(index){
+        idx = (index + images.length) % images.length;
+        const token = ++loadToken;
+        const src = images[idx];
+
+        counter.textContent = (idx + 1) + " / " + images.length;
+        mainImage.classList.add("is-changing");
+
+        /* En iPhone/Safari a veces el mismo elemento <img> conserva
+           el bitmap anterior. Cargamos primero en un Image nuevo. */
+        const loader = new Image();
+        loader.decoding = "async";
+
+        loader.onload = function(){
+          if(token !== loadToken) return;
+
+          mainImage.src = src;
+          mainImage.alt = "Fotografía " + (idx + 1) + " de la galería de Maya";
+
+          if(mainImage.decode){
+            mainImage.decode().catch(()=>{}).finally(()=>{
+              if(token === loadToken) mainImage.classList.remove("is-changing");
+            });
+          }else{
+            mainImage.classList.remove("is-changing");
+          }
+        };
+
+        loader.onerror = function(){
+          if(token !== loadToken) return;
+          mainImage.src = src;
+          mainImage.classList.remove("is-changing");
+        };
+
+        /* cache-buster SOLO para blob local del navegador no es necesario;
+           la ruta limpia conserva compatibilidad al subir la invitación */
+        loader.src = src;
+      }
+
+      function openGallery(){
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden","false");
+        document.documentElement.style.overflow="hidden";
+        document.body.style.overflow="hidden";
+        showImage(idx);
+      }
+
+      function closeGallery(){
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden","true");
+        document.documentElement.style.overflow="";
+        document.body.style.overflow="";
+      }
+
+      function prev(){ showImage(idx - 1); }
+      function next(){ showImage(idx + 1); }
+
+      openBtn.addEventListener("click",openGallery);
+      closeBtn.addEventListener("click",closeGallery);
+      prevBtn.addEventListener("click",(e)=>{e.preventDefault();e.stopPropagation();prev();});
+      nextBtn.addEventListener("click",(e)=>{e.preventDefault();e.stopPropagation();next();});
+
+      modal.addEventListener("click",(e)=>{
+        if(e.target === modal) closeGallery();
+      });
+
+      document.addEventListener("keydown",(e)=>{
+        if(!modal.classList.contains("is-open")) return;
+        if(e.key === "ArrowLeft") prev();
+        if(e.key === "ArrowRight") next();
+        if(e.key === "Escape") closeGallery();
+      });
+
+      /* Swipe iPhone / Android */
+      container.addEventListener("touchstart",(e)=>{
+        if(!e.touches || e.touches.length !== 1) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      },{passive:true});
+
+      container.addEventListener("touchend",(e)=>{
+        if(startX === null || startY === null || !e.changedTouches || !e.changedTouches.length) return;
+
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+
+        startX = null;
+        startY = null;
+
+        if(Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)) return;
+        if(dx < 0) next(); else prev();
+      },{passive:true});
+
+      showImage(0);
+    })();
+
+    /* ==========
+       AUDIO / AUTOPLAY MULTIDISPOSITIVO
+       ========== */
+    (function(){
+      const playerButton = document.getElementById("playerButton");
+      const playerContent = document.getElementById("playerContent");
+      const audio = document.getElementById("audioPlayer");
+      const playButton = document.getElementById("playButton");
+      const playIcon = document.getElementById("playIcon");
+      const pauseIcon = document.getElementById("pauseIcon");
+      const volumeSlider = document.getElementById("volumeSlider");
+      const progressBar = document.getElementById("progressBar");
+      const progressContainer = document.getElementById("progressContainer");
+      const prevButton = document.getElementById("prevButton");
+      const nextButton = document.getElementById("nextButton");
+
+      if(!playerButton || !playerContent || !audio || !playButton) return;
+
+      audio.volume = volumeSlider ? Number(volumeSlider.value) : .7;
+      audio.loop = true;
+
+      function setPlayingUI(playing){
+        if(playIcon) playIcon.style.display = playing ? "none" : "block";
+        if(pauseIcon) pauseIcon.style.display = playing ? "block" : "none";
+      }
+
+      async function tryAutoplay(){
+        try{
+          audio.muted = false;
+          await audio.play();
+          setPlayingUI(true);
+          return true;
+        }catch(err){
+          setPlayingUI(false);
+          return false;
+        }
+      }
+
+      /* Intentos normales: funcionan en equipos/navegadores que permiten autoplay */
+      document.addEventListener("DOMContentLoaded",tryAutoplay,{once:true});
+      window.addEventListener("load",tryAutoplay,{once:true});
+      window.addEventListener("pageshow",tryAutoplay,{once:true});
+
+      /* iPhone/Safari: Apple no permite audio audible sin interacción.
+         Esta parte lo desbloquea con el PRIMER toque/click/tecla en cualquier parte,
+         sin obligar a tocar específicamente el botón de música. */
+      let unlocked = false;
+      async function unlockAudio(){
+        if(unlocked && !audio.paused) return;
+        const ok = await tryAutoplay();
+        if(ok){
+          unlocked = true;
+          removeUnlockListeners();
+        }
+      }
+
+      function removeUnlockListeners(){
+        document.removeEventListener("touchstart",unlockAudio,true);
+        document.removeEventListener("pointerdown",unlockAudio,true);
+        document.removeEventListener("click",unlockAudio,true);
+        document.removeEventListener("keydown",unlockAudio,true);
+      }
+
+      document.addEventListener("touchstart",unlockAudio,{capture:true,passive:true});
+      document.addEventListener("pointerdown",unlockAudio,{capture:true,passive:true});
+      document.addEventListener("click",unlockAudio,true);
+      document.addEventListener("keydown",unlockAudio,true);
+
+      /* Compatibilidad con sobre / query de Arte Invita */
+      try{
+        const qs = new URLSearchParams(location.search);
+        const requested = qs.get("startMusic") === "1" || sessionStorage.getItem("reproducirMusica") === "1";
+        if(requested){
+          sessionStorage.removeItem("reproducirMusica");
+          tryAutoplay();
+        }
+      }catch(e){}
+
+      playerButton.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        playerContent.classList.toggle("active");
+        unlockAudio();
+      });
+
+      playerContent.addEventListener("click",(e)=>e.stopPropagation());
+
+      document.addEventListener("click",()=>{
+        playerContent.classList.remove("active");
+      });
+
+      playButton.addEventListener("click",async()=>{
+        if(audio.paused){
+          await tryAutoplay();
+        }else{
+          audio.pause();
+          setPlayingUI(false);
+        }
+      });
+
+      [prevButton,nextButton].forEach(btn=>{
+        if(!btn) return;
+        btn.addEventListener("click",async()=>{
+          audio.currentTime = 0;
+          await tryAutoplay();
+        });
+      });
+
+      if(volumeSlider){
+        volumeSlider.addEventListener("input",()=>{
+          audio.volume = Number(volumeSlider.value);
+          audio.muted = false;
+        });
+      }
+
+      audio.addEventListener("play",()=>setPlayingUI(true));
+      audio.addEventListener("pause",()=>setPlayingUI(false));
+      audio.addEventListener("ended",()=>{
+        audio.currentTime = 0;
+        tryAutoplay();
+      });
+
+      audio.addEventListener("timeupdate",()=>{
+        if(!progressBar || !isFinite(audio.duration) || audio.duration <= 0) return;
+        progressBar.style.width = ((audio.currentTime/audio.duration)*100) + "%";
+      });
+
+      if(progressContainer){
+        function seek(clientX){
+          if(!isFinite(audio.duration) || audio.duration <= 0) return;
+          const rect = progressContainer.getBoundingClientRect();
+          const pos = Math.min(1,Math.max(0,(clientX-rect.left)/rect.width));
+          audio.currentTime = pos * audio.duration;
+        }
+
+        progressContainer.addEventListener("click",(e)=>seek(e.clientX));
+        progressContainer.addEventListener("touchend",(e)=>{
+          if(e.changedTouches && e.changedTouches[0]) seek(e.changedTouches[0].clientX);
+        },{passive:true});
+      }
+
+      setPlayingUI(false);
+    })();
+  </script>
+</body>
+</html>
