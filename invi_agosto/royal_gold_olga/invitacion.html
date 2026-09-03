@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mis XV Años | Olga Ixchel Ramírez López</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <!-- TIPOGRAFÍAS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =========================
+       FUENTES / BASE
+    ========================= */
+    @font-face {
+      font-family: "Nova Quinta";
+      src: url("fonts/NovaQuinta_PERSONAL_USE_ONLY.otf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Gabriola";
+      src: url("fonts/gabriola Font Download.ttf") format("truetype");
+    }
+
+    /* =========================
+       ROYAL GOLD
+       ALICIA EN EL PAÍS
+       DE LAS MARAVILLAS
+    ========================= */
+    :root {
+      --bg: #102633;
+      --surface: rgba(22, 55, 69, .72);
+      --ink: #f8fbfc;
+      --muted: #c9dce3;
+
+      --accent: #d4b65f;
+      --rose: #d8bd73;
+
+      --line: rgba(238, 214, 139, .42);
+      --radius: 18px;
+
+      --shadow: 0 18px 48px rgba(5, 24, 34, .46);
+
+      --white: #ffffff;
+
+      --gold: #d8bd73;
+      --gold-light: #f2dea0;
+      --gold-dark: #9b7833;
+
+      --red: #944653;
+      --red-dark: #53232c;
+      --red-border: rgba(243, 223, 155, .78);
+      --red-2: #b45562;
+
+      --star-1: #132d39;
+      --star-2: #2d7185;
+
+      --text-soft: #f2f8fa;
+      --text-dark: #fff8df;
+      --ink-soft: #ecf6f8;
+
+      --blue-gray: #65a9c1;
+      --blue-gray-dark: #173743;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    }
+
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       CONTENEDOR PRINCIPAL
+    ========================= */
+    .app {
+      width: min(460px, 100%);
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .app-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 760px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .app::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8, 29, 39, .34), rgba(15, 53, 66, .22)),
+        radial-gradient(circle at 50% 10%, rgba(243, 223, 155, .22), transparent 38%),
+        radial-gradient(circle at 20% 55%, rgba(132, 210, 232, .15), transparent 32%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* =========================
+       FONDO FIJO
+    ========================= */
+    .bg-fixed {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(460px, 100vw);
+      height: 100vh;
+      z-index: 0;
+      background: url("galeria/1.jpeg") center / cover no-repeat;
+      pointer-events: none;
+    }
+
+    .bg-fixed::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 28, 39, .38), rgba(9, 44, 57, .30)),
+        radial-gradient(circle at 50% 15%, rgba(142, 220, 239, .24), transparent 31%),
+        radial-gradient(circle at 50% 78%, rgba(215, 186, 101, .15), transparent 43%),
+        radial-gradient(circle at 18% 55%, rgba(143, 217, 238, .13), transparent 28%),
+        radial-gradient(circle at 85% 34%, rgba(164, 69, 84, .10), transparent 25%);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      pointer-events: none;
+    }
+
+    /* =========================
+       VIDEO
+    ========================= */
+    .video-section {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .video-wrap {
+      margin: 0;
+      padding: 0;
+    }
+
+    .video-embed {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: transparent;
+    }
+
+    @media (min-width: 760px) {
+      .video-embed {
+        border-radius: 18px;
+      }
+    }
+
+    video {
+      background: transparent !important;
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    video::-webkit-media-controls,
+    video::-webkit-media-controls-panel,
+    video::-webkit-media-controls-play-button,
+    video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+    .hero-video-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .text-image-overlay {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      width: 100%;
+      max-width: 100%;
+      pointer-events: none;
+    }
+
+    .text-image-overlay img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter:
+        drop-shadow(0 8px 18px rgba(4, 24, 34, .52)) drop-shadow(0 0 12px rgba(239, 216, 139, .26));
+    }
+
+    /* =========================
+       CONTENIDO GENERAL
+    ========================= */
+    .background {
+      background: transparent !important;
+      min-height: auto !important;
+      animation: none !important;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 34px 16px 14px;
+      text-align: center;
+    }
+
+    /* =========================
+       TIPOGRAFÍA
+    ========================= */
+    .section-title {
+      margin: 0 0 12px;
+      font-family: "Great Vibes", cursive;
+      font-size: 44px;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 400;
+      text-align: center;
+      text-shadow:
+        0 2px 4px rgba(5, 26, 36, .82),
+        0 0 18px rgba(216, 189, 115, .48);
+    }
+
+    .section-text {
+      margin: 0 auto;
+      max-width: 360px;
+      font-family: "Gabriola", serif;
+      font-size: 24px;
+      line-height: 1.28;
+      color: var(--ink-soft);
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(5, 28, 38, .82);
+    }
+
+    .section-text-lg {
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    .section-names {
+      margin: 10px auto 0;
+      font-family: "Gabriola", serif;
+      font-size: clamp(1.35rem, 5.6vw, 2rem);
+      color: var(--text-dark);
+      line-height: 1.35;
+      max-width: 420px;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(5, 28, 38, .82);
+    }
+
+    .section-icon {
+      display: block;
+      height: auto;
+      margin: 0 auto 12px;
+      filter:
+        drop-shadow(0 8px 18px rgba(5, 28, 38, .45)) drop-shadow(0 0 8px rgba(216, 189, 115, .20));
+    }
+
+    .icon-40,
+    .icon-50,
+    .icon-120 {
+      width: 60%;
+    }
+
+    /* =========================
+       BOTONES
+    ========================= */
+    .btn-primary,
+    .btn-ubicacion {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff8df;
+      background: linear-gradient(180deg, #74bcd2 0%, #397d95 48%, #173743 100%);
+      border: 2px solid var(--red-border);
+      box-shadow:
+        0 14px 28px rgba(5, 28, 38, .44),
+        inset 0 1px 0 rgba(255, 255, 255, .30),
+        0 0 18px rgba(216, 189, 115, .22);
+      transition: transform .18s ease, filter .18s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover,
+    .btn-ubicacion:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .btn-block,
+    .btn-ubicacion {
+      width: 100%;
+      max-width: 280px;
+      margin: 14px auto 0;
+    }
+
+    @media (max-width: 420px) {
+      .section-title {
+        font-size: 40px;
+      }
+
+      .section-text {
+        font-size: 22px;
+      }
+    }
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--text-dark);
+      padding: 0 18px;
+      margin-bottom: 10px;
+    }
+
+    .hero-date {
+      margin-top: 16px;
+      font-size: 1.9rem;
+      letter-spacing: .10em;
+      opacity: .98;
+      font-family: "Playfair Display", serif;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      text-shadow: 0 2px 9px rgba(4, 26, 36, .76);
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+    .countdown-wrap {
+      padding: 18px 14px 16px;
+      margin: 12px auto 16px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .countdown-title {
+      margin: 0 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      letter-spacing: .08em;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .76);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .cd-item {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+    }
+
+    .cd-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #fff8df;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: .06em;
+      background: linear-gradient(180deg, rgba(102, 176, 201, .54), rgba(20, 67, 83, .72));
+      border: 1px solid rgba(243, 223, 155, .64);
+      backdrop-filter: blur(10px);
+      box-shadow:
+        0 12px 26px rgba(5, 28, 38, .34),
+        inset 0 1px 0 rgba(255, 255, 255, .16),
+        0 0 16px rgba(216, 189, 115, .18);
+      text-shadow: 0 10px 30px rgba(4, 23, 32, .38);
+    }
+
+    .cd-label {
+      font-size: .78rem;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .72);
+    }
+
+    .clock-status {
+      margin-top: 12px;
+      color: var(--text-soft);
+      font-size: 1rem;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .72);
+    }
+
+    @media (max-width: 420px) {
+      .cd-circle {
+        width: 58px;
+        height: 58px;
+        font-size: 1.15rem;
+      }
+
+      .cd-label {
+        font-size: .74rem;
+      }
+    }
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+    .anim-up,
+    .anim-left,
+    .anim-right {
+      opacity: 0;
+      transition: opacity .7s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .anim-up {
+      transform: translate3d(0, 28px, 0);
+    }
+
+    .anim-left {
+      transform: translate3d(-60px, 0, 0);
+    }
+
+    .anim-right {
+      transform: translate3d(60px, 0, 0);
+    }
+
+    .in-view {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-up,
+      .anim-left,
+      .anim-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* =========================
+       BLOQUES
+    ========================= */
+    .glass {
+      width: min(96%, 420px);
+      margin: 14px auto;
+      padding: 0 24px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      text-align: center;
+    }
+
+    .text-block {
+      font-family: "Playfair Display", serif;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--text-soft);
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(4, 26, 36, .78);
+    }
+
+    .center-img {
+      display: block;
+      margin: 12px auto;
+      max-width: 60%;
+      height: auto;
+      filter: drop-shadow(0 8px 18px rgba(4, 25, 34, .40));
+    }
+
+    /* =========================
+       FAMILIA
+    ========================= */
+    .family-section {
+      width: min(92%, 420px);
+      margin: 50px auto 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .family-spacer {
+      height: 22px;
+    }
+
+    .family-message {
+      padding: 20px;
+    }
+
+    .family-message-strong {
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       CALENDARIO
+    ========================= */
+    .calendar-img-section {
+      padding: 28px 0 0;
+      text-align: center;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .section-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.3rem;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: .2rem;
+      text-shadow:
+        0 2px 4px rgba(4, 26, 36, .78),
+        0 0 16px rgba(216, 189, 115, .42);
+    }
+
+    .calendar-container {
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(180deg, rgba(45, 109, 129, .64), rgba(10, 41, 52, .56)) !important;
+      border: 1.8px solid rgba(243, 223, 155, .70) !important;
+      box-shadow:
+        0 18px 42px rgba(4, 25, 34, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .16) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .calendar-month {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: .5rem;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .76);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: .5rem;
+      margin: 1rem auto 0;
+      max-width: 340px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Gabriola", serif;
+      font-size: 1.6rem;
+      color: #f4fafb;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all .2s ease;
+      position: relative;
+      text-shadow: 0 2px 6px rgba(4, 26, 36, .72);
+    }
+
+    .calendar-day.selected {
+      background: rgba(216, 189, 115, .24);
+      font-weight: 600;
+      color: #fff1a6;
+      box-shadow: inset 0 0 0 1px rgba(243, 223, 155, .68);
+    }
+
+    .calendar-day.special::after {
+      content: "♥";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 1.2rem;
+      color: #b55362;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      text-shadow: 0 0 8px rgba(255, 219, 225, .55);
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.22);
+      }
+    }
+
+    /* =========================
+       EVENTO
+    ========================= */
+    .event-section {
+      padding: 22px 16px 10px;
+      background: transparent;
+    }
+
+    .event-wrap {
+      width: min(380px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .event-card {
+      text-align: center;
+      padding: 14px 10px 20px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(39, 101, 120, .38), rgba(8, 39, 50, .22));
+      border: 1px solid rgba(243, 223, 155, .24);
+      box-shadow: 0 14px 32px rgba(4, 25, 34, .28);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .event-title {
+      margin: 6px 0 8px;
+      line-height: 1.05;
+    }
+
+    .event-text {
+      margin-bottom: 10px;
+      max-width: 340px;
+    }
+
+    .event-strong {
+      font-weight: 700;
+      color: #fff8df;
+    }
+
+    .event-time {
+      margin: 0 0 14px;
+    }
+
+    .flourish {
+      width: 98%;
+      height: 70px;
+      margin: .5rem auto 2rem;
+      background-image: url("img/mono.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* =========================
+       ITINERARIO
+    ========================= */
+    .ai-timeline {
+      position: relative;
+      width: min(390px, 100%);
+      margin: 14px auto 0;
+      padding: 10px 0 18px;
+    }
+
+    .ai-timeline::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      background: linear-gradient(180deg, #f3df9b, #71bdd2, #9f7b35);
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(216, 189, 115, .42);
+    }
+
+    .ai-tl-item {
+      position: relative;
+      width: calc(50% - 30px);
+      min-height: 175px;
+      padding-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+    }
+
+    .ai-tl-item.left {
+      margin-right: auto;
+      padding-right: 22px;
+    }
+
+    .ai-tl-item.right {
+      margin-left: auto;
+      padding-left: 22px;
+    }
+
+    .ai-tl-item::before {
+      content: "";
+      position: absolute;
+      top: 88px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #d8bd73;
+      box-shadow:
+        0 0 0 3px rgba(216, 189, 115, .18),
+        0 0 14px rgba(216, 189, 115, .42);
+    }
+
+    .ai-tl-item.left::before {
+      right: -37px;
+    }
+
+    .ai-tl-item.right::before {
+      left: -37px;
+    }
+
+    .ai-tl-item::after {
+      content: "";
+      position: absolute;
+      top: 94px;
+      width: 34px;
+      height: 3px;
+      background: #d8bd73;
+      border-radius: 999px;
+    }
+
+    .ai-tl-item.left::after {
+      right: -34px;
+    }
+
+    .ai-tl-item.right::after {
+      left: -34px;
+    }
+
+    .ai-tl-iconbox {
+      height: 78px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .ai-tl-iconbox img {
+      width: 78px;
+      max-height: 85px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 12px rgba(4, 25, 34, .42));
+    }
+
+    .ai-tl-label {
+      font-family: "Gabriola", serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: #f3df9b;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .74);
+    }
+
+    .ai-tl-time {
+      margin-top: 6px;
+      font-family: "Poppins", sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: .10em;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .72);
+    }
+
+    @media (max-width: 420px) {
+      .ai-timeline {
+        width: min(340px, 100%);
+      }
+
+      .ai-tl-item {
+        width: calc(50% - 24px);
+        min-height: 165px;
+      }
+
+      .ai-tl-item.left::before {
+        right: -31px;
+      }
+
+      .ai-tl-item.right::before {
+        left: -31px;
+      }
+
+      .ai-tl-item.left::after {
+        right: -28px;
+      }
+
+      .ai-tl-item.right::after {
+        left: -28px;
+      }
+
+      .ai-tl-iconbox img {
+        width: 72px;
+      }
+
+      .ai-tl-label {
+        font-size: 1.8rem;
+      }
+
+      .ai-tl-time {
+        font-size: .84rem;
+      }
+    }
+
+    /* =========================
+       DEDICATORIA
+    ========================= */
+    .dedication-section {
+      padding: 26px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dedication-wrap {
+      width: min(420px, 100%);
+      padding: 22px 18px 26px;
+      text-align: center;
+      position: relative;
+      background: transparent;
+    }
+
+    .dedication-plaque {
+      width: min(320px, 92%);
+      margin: 0 auto 18px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #4d98af 0%, #173743 100%);
+      border: 2px solid rgba(243, 223, 155, .72);
+      box-shadow: 0 10px 18px rgba(4, 25, 34, .30);
+      position: relative;
+    }
+
+    .dedication-plaque span {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff8df;
+      letter-spacing: .03em;
+    }
+
+    .dedication-plaque::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed rgba(243, 223, 155, .62);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .dedication-text p {
+      margin: 0 0 10px;
+    }
+
+    .dedication-lead {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .dedication-sign {
+      margin-top: 8px;
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       SECCIONES GENERALES
+    ========================= */
+    .gift-section,
+    .dress-section,
+    .final-section {
+      width: min(420px, 100%);
+      margin: 0 auto;
+      padding: 22px 16px 18px;
+      text-align: center;
+      background: transparent;
+    }
+
+    .glass-card {
+      width: min(420px, 100%);
+      margin: 18px auto;
+      padding: 20px 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(47, 116, 136, .42), rgba(8, 39, 50, .26));
+      border: 1px solid rgba(243, 223, 155, .22);
+      box-shadow: 0 14px 34px rgba(4, 25, 34, .25);
+      text-align: center;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    /* =========================
+       INSTAGRAM
+    ========================= */
+    .ig-users {
+      margin: 6px 0 14px;
+      text-align: center;
+      font-family: "Gabriola", serif;
+      font-size: 28px;
+      line-height: 1.2;
+      color: var(--text-dark);
+      text-shadow: 0 2px 8px rgba(4, 26, 36, .72);
+    }
+
+    .ig-users a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* =========================
+       GALERÍA
+    ========================= */
+    .gallery-section {
+      padding: 24px 16px 18px;
+    }
+
+    .gallery-wrap {
+      width: min(390px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .gallery-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1.8px solid rgba(243, 223, 155, .66);
+      box-shadow:
+        0 18px 42px rgba(4, 25, 34, .42),
+        0 0 18px rgba(216, 189, 115, .18);
+      background: rgba(7, 34, 44, .62);
+    }
+
+    .gallery-frame img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(243, 223, 155, .78);
+      background: rgba(18, 64, 79, .78);
+      color: #fff8df;
+      font-size: 28px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 3;
+      backdrop-filter: blur(5px);
+    }
+
+    .gallery-prev {
+      left: 10px;
+    }
+
+    .gallery-next {
+      right: 10px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .35);
+      border: 1px solid rgba(243, 223, 155, .42);
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--gold);
+      box-shadow: 0 0 10px rgba(216, 189, 115, .68);
+    }
+
+    /* =========================
+       LIGHTBOX
+    ========================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(3, 18, 25, .92);
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 2;
+      width: min(430px, 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-image {
+      width: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 18px;
+      border: 1.8px solid rgba(243, 223, 155, .74);
+      box-shadow: 0 20px 60px rgba(3, 18, 25, .70);
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+      position: absolute;
+      border: 1px solid rgba(243, 223, 155, .70);
+      background: rgba(18, 64, 79, .88);
+      color: #fff8df;
+      cursor: pointer;
+      z-index: 4;
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .lightbox-close {
+      top: -12px;
+      right: -4px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .lightbox-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 34px;
+    }
+
+    .lightbox-prev {
+      left: 8px;
+    }
+
+    .lightbox-next {
+      right: 8px;
+    }
+
+    /* =========================
+       REPRODUCTOR
+    ========================= */
+    .floating-player {
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      z-index: 1200;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #72bdd4 0%, #397f96 50%, #173743 100%);
+      border: 1px solid rgba(243, 223, 155, .82);
+      box-shadow: 0 16px 34px rgba(4, 25, 34, .48);
+      color: #fff8df;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .player-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow:
+          0 16px 34px rgba(4, 25, 34, .45),
+          0 0 0 0 rgba(216, 189, 115, .60);
+      }
+
+      50% {
+        box-shadow:
+          0 16px 34px rgba(4, 25, 34, .45),
+          0 0 0 10px rgba(216, 189, 115, 0);
+      }
+    }
+
+    .player-button.pulse {
+      animation: pulse-glow 2s ease infinite;
+    }
+
+    .player-content {
+      width: 292px;
+      display: none;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: #102f3c;
+      border: 1px solid rgba(243, 223, 155, .40);
+      box-shadow: 0 22px 55px rgba(4, 25, 34, .65);
+      color: #fff;
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-info {
+      text-align: left;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      margin-bottom: 10px;
+    }
+
+    .song-title {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      line-height: 1.35;
+      color: #fff;
+    }
+
+    .song-artist {
+      margin: 6px 0 0;
+      font-family: "Poppins", sans-serif;
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .70);
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      cursor: pointer;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(243, 223, 155, .16);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: #d8bd73;
+      transition: width .2s linear;
+    }
+
+    .player-controls {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .control-button {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 1px solid rgba(243, 223, 155, .32);
+      background: #1a4b5c;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .control-button:hover {
+      transform: translateY(-1px);
+      background: #28657a;
+    }
+
+    .volume-control {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-icon {
+      display: flex;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .volume-slider {
+      flex: 1;
+      height: 7px;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(243, 223, 155, .16);
+      outline: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      background: #d8bd73;
+      border: 2px solid rgba(255, 255, 255, .75);
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* =========================
+       SCROLL TOP
+    ========================= */
+    .scroll-top-btn {
+      position: fixed;
+      right: 16px;
+      bottom: 22px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #72bdd4 0%, #397f96 50%, #173743 100%);
+      border: 2px solid rgba(243, 223, 155, .82);
+      color: #fff8df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1300;
+      box-shadow: 0 16px 34px rgba(4, 25, 34, .46);
+      transition: transform .2s ease, opacity .2s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scroll-top-btn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-top-btn:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-fixed"></div>
+
+  <div class="app">
+    <div class="app-content">
+
+      <!-- ========================= -->
+      <!-- VIDEO INICIAL / PORTADA   -->
+      <!-- ========================= -->
+      <section class="video-section hero-video-wrapper"
+        aria-label="Video inicial de los XV años de Olga Ixchel Ramírez López">
+        <div class="video-wrap">
+<div align="center"><img src="img/galeria/3.jpeg" width="100%"></div>
+        <!--  <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video1.mp4">
+          </video>-->
+
+          <div class="text-image-overlay">
+            <img src="img/nombre.png" width="100%" alt="Mis XV Años Olga Ixchel Ramírez López" loading="eager">
+          </div>
+
+        </div>
+      </section>
+
+      <div class="background">
+        <main class="container">
+
+          <br><br>
+
+          <!-- ========================= -->
+          <!-- FECHA                     -->
+          <!-- ========================= -->
+          <section class="hero-content anim-up">
+            <p class="hero-date">24 de Octubre 2026</p>
+          </section>
+
+          <!-- ========================= -->
+          <!-- COUNTDOWN                 -->
+          <!-- ========================= -->
+          <section class="countdown-wrap anim-up" aria-label="Cuenta regresiva">
+
+            <h2 class="countdown-title">Faltan</h2>
+
+            <div class="countdown-grid">
+
+              <div class="cd-item">
+                <div class="cd-circle" id="cdDays">00</div>
+                <div class="cd-label">Días</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="cd-circle" id="cdHours">00</div>
+                <div class="cd-label">Horas</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="cd-circle" id="cdMinutes">00</div>
+                <div class="cd-label">Min</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="cd-circle" id="cdSeconds">00</div>
+                <div class="cd-label">Seg</div>
+              </div>
+
+            </div>
+
+            <p class="clock-status" id="clockStatus">
+              Para vivir esta gran celebración
+            </p>
+
+          </section>
+
+          <div align="center">
+            <img src="img/mono.png" width="100%" alt="Detalle decorativo">
+          </div>
+
+          <!-- ========================= -->
+          <!-- MENSAJE INICIAL           -->
+          <!-- ========================= -->
+          <section class="glass anim-left">
+
+            <p class="text-block">
+              Hay momentos en la vida que parecen sacados de un mundo de fantasía.
+              <br><br>
+              Hoy comienza una nueva aventura llena de sueños, magia y momentos inolvidables.
+              <br><br>
+              Quiero invitarte a celebrar conmigo una de las noches más importantes de mi vida.
+            </p>
+
+          </section>
+
+          <div class="anim-right" style="text-align:center;">
+            <img class="center-img" src="img/espejo.png" alt="Detalle decorativo">
+          </div>
+
+          <section class="glass anim-right">
+
+            <p class="text-block">
+              Sigue al conejo blanco, atraviesa la puerta y acompáñame en esta maravillosa aventura.
+              <br><br>
+              Porque esta noche será única, mágica e irrepetible.
+            </p>
+
+          </section>
+
+          <!-- ========================= -->
+          <!-- EN COMPAÑÍA               -->
+          <!-- ========================= -->
+          <div align="center">
+            <img src="img/compania.png" width="100%" alt="En compañía de">
+          </div>
+
+          <!-- ========================= -->
+          <!-- FAMILIA                   -->
+          <!-- ========================= -->
+          <section class="family-section anim-left" aria-label="Familia">
+
+            <h2 class="section-title">Mis padres</h2>
+
+            <p class="section-names">
+              Alberto Ramírez Suárez
+              <br>
+              y
+              <br>
+              Olga López Gallegos
+            </p>
+
+
+
+            <div class="family-spacer"></div>
+
+            <p class="section-text section-text-lg family-message">
+              Quiero compartir este momento especial con las personas que forman parte de mi historia.
+              <br><br>
+              <span class="family-message-strong">¡Y tú eres una de ellas!</span>
+            </p>
+
+          </section>
+
+          <!-- ========================= -->
+          <!-- VIDEO INTERMEDIO          -->
+          <!-- ========================= -->
+          <section class="video-section anim-up" aria-label="Video intermedio">
+            <div class="video-wrap">
+
+              <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video2.mp4">
+              </video>
+
+            </div>
+          </section>
+
+          <!-- ========================= -->
+          <!-- CALENDARIO                -->
+          <!-- ========================= -->
+          <section id="calendario" class="calendar-img-section anim-right">
+
+            <div class="content">
+
+              <div align="center">
+                <img src="img/reloj.png" width="50%" alt="Reloj">
+              </div>
+
+              <div class="section-title-script reveal">
+                No llegues tarde a esta cita
+              </div>
+
+              <div class="calendar-container reveal">
+
+                <div class="calendar-header">
+                  <div class="calendar-month">Octubre</div>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Dom</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Lun</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Mar</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Mié</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Jue</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Vie</div>
+                  <div class="calendar-day" style="font-weight:600;font-size:1.2rem;cursor:default;">Sáb</div>
+
+                  <div class="calendar-day"></div>
+                  <div class="calendar-day"></div>
+                  <div class="calendar-day"></div>
+                  <div class="calendar-day"></div>
+
+                  <div class="calendar-day">1</div>
+                  <div class="calendar-day">2</div>
+                  <div class="calendar-day">3</div>
+
+                  <div class="calendar-day">4</div>
+                  <div class="calendar-day">5</div>
+                  <div class="calendar-day">6</div>
+                  <div class="calendar-day">7</div>
+                  <div class="calendar-day">8</div>
+                  <div class="calendar-day">9</div>
+                  <div class="calendar-day">10</div>
+
+                  <div class="calendar-day">11</div>
+                  <div class="calendar-day">12</div>
+                  <div class="calendar-day">13</div>
+                  <div class="calendar-day">14</div>
+                  <div class="calendar-day">15</div>
+                  <div class="calendar-day">16</div>
+                  <div class="calendar-day">17</div>
+
+                  <div class="calendar-day">18</div>
+                  <div class="calendar-day">19</div>
+                  <div class="calendar-day">20</div>
+                  <div class="calendar-day">21</div>
+                  <div class="calendar-day">22</div>
+                  <div class="calendar-day">23</div>
+                  <div class="calendar-day special selected">24</div>
+
+                  <div class="calendar-day">25</div>
+                  <div class="calendar-day">26</div>
+                  <div class="calendar-day">27</div>
+                  <div class="calendar-day">28</div>
+                  <div class="calendar-day">29</div>
+                  <div class="calendar-day">30</div>
+                  <div class="calendar-day">31</div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="section-text section-text-lg" style="margin-top:14px;">
+              La magia de cumplir XV años no estaría completa sin personas como tú.
+              <br>
+              ¡Espero verte en mi celebración!
+            </p>
+
+          </section>
+
+
+
+          <br>
+
+          <!-- ========================= -->
+          <!-- EVENTO                    -->
+          <!-- ========================= -->
+          <section id="evento" class="event-section anim-right">
+
+            <div class="event-wrap">
+
+              <!-- CEREMONIA -->
+              <article class="event-card">
+
+                <h2 class="section-title event-title">Ceremonia Religiosa</h2>
+
+                <img class="section-icon icon-120" src="img/iglesia.png" alt="" aria-hidden="true">
+
+                <p class="section-text section-text-lg event-text">
+                  <span class="event-strong">
+                    Iglesia Nuestra Señora del Refugio
+                  </span>
+
+                  <br>
+                  Calle Vicente Guerrero 109, Centro, 27440 Matamoros, Coah.
+                </p>
+
+                <p class="section-text section-text-lg event-time">
+                  Hora: <strong>06:00 pm</strong>
+                </p>
+
+                <a class="btn-primary" href="https://maps.app.goo.gl/ueLzgxuBobRVM49LA" target="_blank" rel="noopener">
+                  Ver ubicación
+                </a>
+
+              </article>
+
+              <div class="flourish"></div>
+
+              <!-- RECEPCIÓN -->
+              <article class="event-card">
+
+                <h2 class="section-title event-title">Recepción</h2>
+
+                <img class="section-icon icon-120" src="img/recepcion.png" alt="" aria-hidden="true">
+
+                <p class="section-text section-text-lg event-text">
+                  <span class="event-strong">
+                    Salón de Eventos Nicte
+                  </span>
+                  <br>
+                  Segunda 906, Venustiano Carranza, 27443 Matamoros, Coah.
+                </p>
+
+                <p class="section-text section-text-lg event-time">
+                  Hora: <strong>09:00 pm</strong>
+                </p>
+
+                <a class="btn-primary" href="https://maps.app.goo.gl/qsSnHqMinZwxyDWU7" target="_blank" rel="noopener">
+                  Ver ubicación
+                </a>
+
+              </article>
+
+              <!-- HOSPEDAJE 
+              <article class="event-card" id="hospedaje">
+
+                <h2 class="section-title event-title">
+                  Sugerencia de hospedaje
+                </h2>
+
+                <img class="section-icon icon-120" src="img/hotel.png" alt="" aria-hidden="true"
+                  style="width:180px;max-width:70%;height:auto;">
+
+                <p class="section-text section-text-lg event-text">
+                  Información pendiente.
+                </p>
+
+              </article> -->
+
+              <!-- ITINERARIO -->
+              <article class="event-card" id="itinerario">
+
+                <img class="event-icon" src="img/iti.png" alt="" aria-hidden="true" style="width:150px;">
+
+                <h2 class="section-title event-title">Itinerario</h2>
+
+                <div class="ai-timeline" aria-label="Itinerario del evento">
+
+                  <div class="ai-tl-item left">
+
+                    <div class="ai-tl-iconbox">
+                      <img src="img/iglesia.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div class="ai-tl-label">
+                      Ceremonia Religiosa
+                    </div>
+
+                    <div class="ai-tl-time">
+                      06:00 pm
+                    </div>
+
+                  </div>
+
+                  <div class="ai-tl-item right">
+
+                    <div class="ai-tl-iconbox">
+                      <img src="img/coctel.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div class="ai-tl-label">
+                      Inicio del Evento
+                    </div>
+
+                    <div class="ai-tl-time">
+                      09:00 pm
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- DEDICATORIA -->
+              <section id="dedicatoria" class="dedication-section anim-right">
+
+                <div class="dedication-wrap">
+
+                  <img src="img/dedicatoria.png" width="100%" alt="Dedicatoria para Olga Ixchel" loading="lazy">
+
+                  <div class="section-text dedication-text">
+
+                    <p class="dedication-lead">
+                      Olga Ixchel
+                    </p>
+
+                    <p>
+                      Hoy comienza una etapa llena de sueños,
+                      nuevas aventuras y momentos inolvidables.
+                    </p>
+
+                    <p>
+                      Deseamos que siempre conserves esa magia que te hace especial
+                      y que cada nuevo camino te lleve hacia algo maravilloso.
+                    </p>
+
+                    <p class="dedication-sign">
+                      Con todo nuestro amor,
+                      <br>
+                      Alberto y Olga.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </section>
+				
+				<div align="center"><img src="img/galeria/4.jpeg" style="border-radius:30px"  width="100%"></div>
+
+             <br><br>
+
+              <!-- MESA DE REGALOS 
+              <section id="mesa-regalos" class="gift-section anim-left">
+
+                <img class="section-icon icon-40" src="img/regalo.png" alt="Mesa de regalos">
+
+                <h2 class="section-title">
+                  Mesa de regalos
+                </h2>
+
+                <p class="section-text">
+                  Información pendiente.
+                </p>
+
+              </section> -->
+				
+				<div class="flourish"></div>
+
+              <!-- LLUVIA DE SOBRES -->
+              <section id="regalos" class="gift-section anim-left">
+
+                <img class="section-icon icon-40" src="img/lluvia.png" alt="Lluvia de sobres">
+
+                <h2 class="section-title">
+                  Lluvia de sobres
+                </h2>
+
+                <p class="section-text">
+                  Tu presencia será el mejor regalo para mí.
+                  <br><br>
+                  Si deseas obsequiarme algún detalle,
+                  durante el evento tendremos lluvia de sobres.
+                </p>
+
+              </section>
+
+              <div class="flourish"></div>
+
+              <!-- VESTIMENTA -->
+              <section id="vestimenta" class="dress-section anim-right">
+
+                <div class="glass-card">
+
+                  <img class="section-icon icon-40" src="img/vestido.png" alt="Vestimenta"
+                    style="width:240px;max-width:75%;height:auto;">
+
+                  <h2 class="section-title">
+                    Código de vestimenta
+                  </h2>
+
+                  <p class="section-text section-text-lg">
+                    <strong>Formal</strong>
+                    <br><br>
+                    Te pedimos amablemente reservar el color
+                    <strong>azul</strong>
+                    para la quinceañera.
+                  </p>
+
+                </div>
+
+              </section>
+
+              <!-- GALERÍA -->
+              <section class="gallery-section anim-left" id="galeria">
+
+                <div class="gallery-wrap">
+
+                  <h2 class="section-title">
+                    Galería de Fotos
+                  </h2>
+
+                  <p class="section-text" style="margin-bottom:14px;">
+                    Algunos momentos especiales de Olga Ixchel.
+                  </p>
+
+                  <div class="gallery-frame">
+
+                    <button class="gallery-btn gallery-prev" id="galleryPrev" type="button" aria-label="Foto anterior">
+                      ‹
+                    </button>
+
+                    <img id="gallerySlide" src="img/galeria/1.jpeg" alt="Foto de Olga Ixchel">
+
+                    <button class="gallery-btn gallery-next" id="galleryNext" type="button" aria-label="Foto siguiente">
+                      ›
+                    </button>
+
+                  </div>
+
+                  <div class="gallery-dots" id="galleryDots"></div>
+
+                </div>
+
+              </section>
+
+              <!-- LIGHTBOX -->
+              <div id="lightbox" class="lightbox">
+
+                <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+                <div class="lightbox-content">
+
+                  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar galería">
+                    ✕
+                  </button>
+
+                  <img id="lightboxImage" src="" alt="Foto ampliada" class="lightbox-image">
+
+                  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Foto anterior">
+                    ‹
+                  </button>
+
+                  <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button"
+                    aria-label="Foto siguiente">
+                    ›
+                  </button>
+
+                </div>
+
+              </div>
+
+              <!-- ÁLBUM QR -->
+              <section class="final-section anim-right" id="album">
+
+                <div class="glass-card">
+
+                  <img src="img/camara.png" alt="Cámara" class="center-img">
+
+                  <h2 class="section-title">
+                    Álbum Compartido
+                  </h2>
+
+                  <p class="section-text">
+                    Sube las fotografías que tomes durante la fiesta
+                    <br>
+                    y ayúdame a formar un álbum lleno de recuerdos especiales.
+                  </p>
+
+                  <div align="center">
+                    <img src="img/XV _Olga Ixchel_galeria_QR.png" width="50%" alt="QR del álbum">
+                  </div>
+
+                  <br>
+
+                  <a href="https://app.arteinvita.com/gallery/xv-olga-ixchel-1788392865226?token=1e2b94d475caf90fb4c1aa66c1634ad0" class="btn-primary btn-block" target="_blank" rel="noopener">
+                    <strong>Subir Fotos</strong>
+                  </a>
+
+                </div>
+
+              </section>
+
+              <!-- INSTAGRAM 
+              <section id="instagram" class="final-section anim-right">
+
+                <div class="glass-card">
+
+                  <img src="img/cuadro.png" width="50%" alt="Instagram">
+
+                  <h2 class="section-title">
+                    Comparte tus recuerdos
+                  </h2>
+
+                  <p class="section-text">
+                    También puedes etiquetarme en Instagram.
+                  </p>
+
+                  <div class="ig-users">
+                    <a href="#">@usuario</a>
+                  </div>
+
+                  <a href="#" class="btn-primary" target="_blank" rel="noopener">
+                    Ver Instagram
+                  </a>
+
+                </div>
+
+              </section> -->
+
+              <!-- CONFIRMACIÓN -->
+              <div class="glass-card anim-left" id="confirmacion">
+
+                <h2 class="section-title">
+                  Confirma tu asistencia
+                </h2>
+
+                <img src="img/confirmar.png" alt="Confirmar asistencia" class="center-img">
+
+                <p class="section-text">
+                  Tu presencia es muy importante para mí.
+                  <br><br>
+                  Te agradeceré confirmar tu asistencia
+                  para poder preparar cada detalle
+                  de esta noche tan especial.
+                </p>
+
+                <button class="btn-ubicacion" onclick="ArteInvita.open('136-B5A8-9CD')">
+                  <strong>Confirmar en Panel</strong>
+                </button>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <div class="flourish"></div>
+
+          <!-- DESPEDIDA -->
+          <section id="despedida" class="gift-section anim-left">
+
+            <img class="section-icon icon-40" src="img/final.png" alt="Imagen final">
+
+            <p class="section-text section-text-lg">
+              Cada gran aventura comienza con un pequeño paso.
+              <br><br>
+              Gracias por acompañarme en este capítulo tan importante de mi historia.
+              <br><br>
+              ¡Nos vemos el 24 de octubre!
+            </p>
+
+            <br>
+
+            <h2 class="section-title">
+              Con cariño
+              <br>
+              Olga Ixchel
+            </h2>
+
+          </section>
+
+          <!-- VIDEO FINAL -->
+          <section class="video-section anim-up" aria-label="Video final">
+
+            <div class="video-wrap">
+
+              <video autoplay muted loop playsinline preload="auto" class="video-embed" src="video/video3.mp4">
+              </video>
+
+            </div>
+
+          </section>
+
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- REPRODUCTOR               -->
+  <!-- ========================= -->
+  <div class="floating-player">
+
+    <div class="player-button pulse" id="playerButton" aria-label="Abrir reproductor de música">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+
+        <path
+          d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z">
+        </path>
+
+      </svg>
+
+    </div>
+
+    <div class="player-content" id="playerContent">
+
+      <div class="song-info">
+
+        <p class="song-title" id="songTitle">
+          Escucha la invitación con música
+        </p>
+
+        <p class="song-artist" id="songArtist">
+          Canción de fondo
+        </p>
+
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="player-controls">
+
+        <button class="control-button" id="prevButton" aria-label="Canción anterior">
+
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+
+            <polygon points="19 20 9 12 19 4 19 20"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5"></line>
+
+          </svg>
+
+        </button>
+
+        <button class="control-button" id="playButton" aria-label="Reproducir / Pausar"
+          style="width:52px;height:52px;border-radius:16px;background:#245b6e;border-color:#d8bd73;">
+
+          <svg class="icon" id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+
+          </svg>
+
+          <svg class="icon" id="pauseIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+
+          </svg>
+
+        </button>
+
+        <button class="control-button" id="nextButton" aria-label="Canción siguiente">
+
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+
+            <polygon points="5 4 15 12 5 20 5 4"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19"></line>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+      <div class="volume-control">
+
+        <div class="volume-icon">
+
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+
+          </svg>
+
+        </div>
+
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.7"
+          aria-label="Volumen">
+
+      </div>
+
+      <audio id="audioPlayer" preload="auto" playsinline>
+      </audio>
+
+    </div>
+
+  </div>
+
+  <!-- SCROLL TOP -->
+  <div class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+    &#9650;
+  </div>
+
+  <script>
+    /* =========================
+       ANIMACIONES
+    ========================= */
+    document.addEventListener("DOMContentLoaded", function () {
+      const targets = document.querySelectorAll(".anim-up, .anim-left, .anim-right");
+
+      if (!targets.length) return;
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.05,
+          rootMargin: "0px"
+        });
+
+        targets.forEach(function (element) {
+          observer.observe(element);
+        });
+      } else {
+        targets.forEach(function (element) {
+          element.classList.add("in-view");
+        });
+      }
+    });
+
+    /* =========================
+       COUNTDOWN
+       24 OCTUBRE 2026
+       06:00 PM
+    ========================= */
+    (function () {
+      const targetDate = new Date(2026, 9, 24, 18, 0, 0).getTime();
+
+      const daysEl = document.getElementById("cdDays");
+      const hoursEl = document.getElementById("cdHours");
+      const minutesEl = document.getElementById("cdMinutes");
+      const secondsEl = document.getElementById("cdSeconds");
+      const statusEl = document.getElementById("clockStatus");
+
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl || !statusEl) return;
+
+      function tick() {
+        const distance = targetDate - Date.now();
+
+        if (distance > 0) {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(days).padStart(2, "0");
+          hoursEl.textContent = String(hours).padStart(2, "0");
+          minutesEl.textContent = String(minutes).padStart(2, "0");
+          secondsEl.textContent = String(seconds).padStart(2, "0");
+
+          statusEl.textContent = "Para vivir esta gran celebración";
+        } else {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+
+          statusEl.textContent = "¡La celebración ya llegó!";
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    /* =========================
+       REPRODUCTOR
+    ========================= */
+    (function () {
+      const playerButton = document.getElementById("playerButton");
+      const playerContent = document.getElementById("playerContent");
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playButton = document.getElementById("playButton");
+      const playIcon = document.getElementById("playIcon");
+      const pauseIcon = document.getElementById("pauseIcon");
+      const prevButton = document.getElementById("prevButton");
+      const nextButton = document.getElementById("nextButton");
+      const volumeSlider = document.getElementById("volumeSlider");
+      const progressBar = document.getElementById("progressBar");
+      const progressContainer = document.getElementById("progressContainer");
+      const titleEl = document.getElementById("songTitle");
+      const artistEl = document.getElementById("songArtist");
+
+      if (!playerButton || !playerContent || !audioPlayer || !playButton || !playIcon || !pauseIcon) {
+        return;
+      }
+
+      const songs = [
+        {
+          title: "ELLA LA ENVIO",
+          artist: "Canción de fondo",
+          src: "./Alices Theme.mp3"
+        }
+      ];
+
+      let currentSongIndex = 0;
+
+      function setPlayingUI(isPlaying) {
+        playIcon.style.display = isPlaying ? "none" : "block";
+        pauseIcon.style.display = isPlaying ? "block" : "none";
+
+        if (isPlaying) {
+          playerButton.classList.remove("pulse");
+        }
+      }
+
+      function loadSong(index) {
+        const song = songs[index];
+
+        if (titleEl) titleEl.textContent = song.title || "";
+        if (artistEl) artistEl.textContent = song.artist || "";
+
+        audioPlayer.src = encodeURI(song.src);
+        audioPlayer.load();
+      }
+
+      loadSong(currentSongIndex);
+      setPlayingUI(false);
+
+      playerButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        playerContent.classList.toggle("active");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!playerContent.contains(event.target) && !playerButton.contains(event.target)) {
+          playerContent.classList.remove("active");
+        }
+      });
+
+      playButton.addEventListener("click", async function () {
+        try {
+          if (audioPlayer.paused) {
+            await audioPlayer.play();
+            setPlayingUI(true);
+          } else {
+            audioPlayer.pause();
+            setPlayingUI(false);
+          }
+        } catch (error) {
+          console.warn("Autoplay bloqueado:", error);
+        }
+      });
+
+      if (prevButton) {
+        prevButton.addEventListener("click", async function () {
+          currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+
+          const wasPlaying = !audioPlayer.paused;
+
+          loadSong(currentSongIndex);
+
+          if (wasPlaying) {
+            try {
+              await audioPlayer.play();
+              setPlayingUI(true);
+            } catch (error) {
+              setPlayingUI(false);
+            }
+          }
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener("click", async function () {
+          currentSongIndex = (currentSongIndex + 1) % songs.length;
+
+          const wasPlaying = !audioPlayer.paused;
+
+          loadSong(currentSongIndex);
+
+          if (wasPlaying) {
+            try {
+              await audioPlayer.play();
+              setPlayingUI(true);
+            } catch (error) {
+              setPlayingUI(false);
+            }
+          }
+        });
+      }
+
+      if (volumeSlider) {
+        audioPlayer.volume = Number(volumeSlider.value || 0.7);
+
+        volumeSlider.addEventListener("input", function () {
+          audioPlayer.volume = Number(volumeSlider.value);
+        });
+      }
+
+      audioPlayer.addEventListener("timeupdate", function () {
+        if (!audioPlayer.duration) return;
+
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + "%";
+      });
+
+      if (progressContainer) {
+        progressContainer.addEventListener("click", function (event) {
+          if (!audioPlayer.duration) return;
+
+          const rect = progressContainer.getBoundingClientRect();
+          const clickX = event.clientX - rect.left;
+
+          audioPlayer.currentTime = (clickX / rect.width) * audioPlayer.duration;
+        });
+      }
+
+      audioPlayer.addEventListener("ended", function () {
+        audioPlayer.currentTime = 0;
+
+        audioPlayer.play()
+          .then(function () {
+            setPlayingUI(true);
+          })
+          .catch(function () { });
+      });
+
+      audioPlayer.addEventListener("pause", function () {
+        setPlayingUI(false);
+      });
+
+      audioPlayer.addEventListener("play", function () {
+        setPlayingUI(true);
+      });
+
+      let hasInteracted = false;
+
+      function tryAutoplay() {
+        if (hasInteracted) return;
+
+        hasInteracted = true;
+
+        audioPlayer.volume = Number(volumeSlider ? volumeSlider.value : 0.7);
+        audioPlayer.muted = false;
+
+        const playPromise = audioPlayer.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(function () {
+              setPlayingUI(true);
+              playerButton.classList.remove("pulse");
+            })
+            .catch(function () { });
+        }
+
+        ["touchstart", "click", "pointerdown", "scroll"].forEach(function (eventName) {
+          document.removeEventListener(eventName, tryAutoplay, true);
+        });
+      }
+
+      ["touchstart", "click", "pointerdown", "scroll"].forEach(function (eventName) {
+        document.addEventListener(eventName, tryAutoplay, {
+          once: false,
+          capture: true
+        });
+      });
+    })();
+
+    /* =========================
+       SCROLL TOP
+    ========================= */
+    (function () {
+      const scrollButton = document.getElementById("scrollTopBtn");
+
+      if (!scrollButton) return;
+
+      window.addEventListener("scroll", function () {
+        scrollButton.classList.toggle("show", window.scrollY > 400);
+      });
+
+      scrollButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    })();
+
+    /* =========================
+       GALERÍA
+       5 FOTOS
+    ========================= */
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleryImages = [
+        "img/galeria/1.jpeg",
+        "img/galeria/2.jpeg",
+        "img/galeria/3.jpeg",
+        "img/galeria/4.jpeg",
+        "img/galeria/5.jpeg"
+      ];
+
+      const gallerySlide = document.getElementById("gallerySlide");
+      const galleryPrev = document.getElementById("galleryPrev");
+      const galleryNext = document.getElementById("galleryNext");
+      const galleryDotsContainer = document.getElementById("galleryDots");
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxOverlay = document.getElementById("lightboxOverlay");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+
+      let galleryIndex = 0;
+      let currentImageIndex = 0;
+
+      function renderDots() {
+        if (!galleryDotsContainer) return;
+
+        galleryDotsContainer.innerHTML = "";
+
+        galleryImages.forEach(function (_, index) {
+          const dot = document.createElement("div");
+
+          dot.className = "gallery-dot" + (index === galleryIndex ? " active" : "");
+
+          dot.addEventListener("click", function () {
+            galleryIndex = index;
+            updateGallery();
+          });
+
+          galleryDotsContainer.appendChild(dot);
+        });
+      }
+
+      function updateGallery() {
+        if (!gallerySlide) return;
+
+        gallerySlide.src = galleryImages[galleryIndex];
+        gallerySlide.alt = "Fotografía " + (galleryIndex + 1) + " de Olga Ixchel";
+
+        renderDots();
+      }
+
+      function openLightbox(index) {
+        if (!lightbox || !lightboxImage) return;
+
+        currentImageIndex = index;
+
+        lightboxImage.src = galleryImages[currentImageIndex];
+        lightbox.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+
+        lightbox.style.display = "none";
+        document.body.style.overflow = "";
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+
+        if (lightboxImage) {
+          lightboxImage.src = galleryImages[currentImageIndex];
+        }
+      }
+
+      function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+
+        if (lightboxImage) {
+          lightboxImage.src = galleryImages[currentImageIndex];
+        }
+      }
+
+      if (galleryPrev) {
+        galleryPrev.addEventListener("click", function () {
+          galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+          updateGallery();
+        });
+      }
+
+      if (galleryNext) {
+        galleryNext.addEventListener("click", function () {
+          galleryIndex = (galleryIndex + 1) % galleryImages.length;
+          updateGallery();
+        });
+      }
+
+      if (gallerySlide) {
+        gallerySlide.addEventListener("click", function () {
+          openLightbox(galleryIndex);
+        });
+      }
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
+      }
+
+      if (lightboxOverlay) {
+        lightboxOverlay.addEventListener("click", closeLightbox);
+      }
+
+      if (lightboxNext) {
+        lightboxNext.addEventListener("click", nextImage);
+      }
+
+      if (lightboxPrev) {
+        lightboxPrev.addEventListener("click", prevImage);
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (!lightbox || lightbox.style.display !== "flex") return;
+
+        if (event.key === "ArrowRight") {
+          nextImage();
+        }
+
+        if (event.key === "ArrowLeft") {
+          prevImage();
+        }
+
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+
+      updateGallery();
+    });
+  </script>
+
+</body>
+
+</html>
