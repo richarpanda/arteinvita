@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mis XV Mishel</title>
-  <script src="https://app.arteinvita.com/widget.js"></script>
+  <script src="https://app.arteinvita.com/widget.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
@@ -26,7 +26,7 @@
     button:hover{transform:translateY(-2px);filter:brightness(1.02);box-shadow:0 14px 30px rgba(0,0,0,.14)}
     button:active{transform:translateY(0) scale(.98);filter:brightness(.98);box-shadow:0 8px 18px rgba(0,0,0,.12)}
     main{max-width:520px;margin:0 auto;background:var(--crema);position:relative;overflow:hidden;isolation:isolate}
-    main::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.08;background-image:radial-gradient(rgba(0,0,0,.18) .6px,transparent .7px);background-size:5px 5px;mix-blend-mode:soft-light}
+    main::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.08;background-image:radial-gradient(rgba(0,0,0,.18) .6px,transparent .7px);background-size:5px 5px;/* mix-blend-mode eliminado para mejorar rendimiento en móvil */}
     main::before{content:"";position:absolute;top:-140px;left:50%;transform:translateX(-50%);width:560px;height:280px;background:radial-gradient(circle at center,rgba(255,255,255,.85),rgba(255,255,255,0));opacity:.85;z-index:0;pointer-events:none;filter:blur(2px)}
     section{padding:3rem 1.6rem;position:relative;z-index:1}
     .content{width:100%;max-width:360px;margin:0 auto}
@@ -113,6 +113,14 @@
     .reveal-left{transform:translateX(-40px)}.reveal-right{transform:translateX(40px)}
     .reveal.visible{opacity:1;transform:translateX(0)}
     .bg-bottom{background-image:url("img/bg-paper-2.png");background-repeat:repeat-y;background-position:center top;background-size:520px auto}
+
+    /* Rendimiento: los fondos de papel se desplazan con el contenido; evita repintados caros de background-attachment:fixed. */
+    .bg-fixed.bg-top,.bg-fixed.bg-bottom{
+      background-attachment:scroll;
+      background-position:center top;
+      background-repeat:repeat-y;
+      background-size:520px auto;
+    }
 
     /* =========================
        ✅ GALERÍA FUNCIONAL
@@ -278,9 +286,44 @@
       .gallery-counter{bottom:12px}
     }
 
-    @media(max-width:520px){.bg-top,.bg-bottom{background-size:100% auto}.itinerary-item{gap:.75rem}.itinerary-divider{width:45px}.itinerary-icon-wrapper{width:65px}}
-    @media(hover:none) and (pointer:coarse){.bg-fixed{background-attachment:scroll!important;background-position:center!important;background-size:cover!important}}
-    @supports(-webkit-touch-callout:none){.bg-fixed{background-attachment:scroll!important}}
+    @media(max-width:520px){
+      .bg-top,.bg-bottom{
+        background-size:100% auto !important;
+        background-position:center top !important;
+        background-repeat:repeat-y !important;
+        background-attachment:scroll !important;
+      }
+      .itinerary-item{gap:.75rem}
+      .itinerary-divider{width:45px}
+      .itinerary-icon-wrapper{width:65px}
+    }
+    /* En móviles nunca forzar COVER en los papeles: provocaba el zoom/corte del fondo. */
+    @media(hover:none) and (pointer:coarse){
+      .bg-fixed{
+        background-attachment:scroll !important;
+        background-position:center top !important;
+      }
+      .bg-fixed.bg-top,.bg-fixed.bg-bottom{
+        background-size:100% auto !important;
+        background-repeat:repeat-y !important;
+      }
+    }
+    @supports(-webkit-touch-callout:none){
+      .bg-fixed{background-attachment:scroll !important}
+      .bg-fixed.bg-top,.bg-fixed.bg-bottom{
+        background-size:100% auto !important;
+        background-position:center top !important;
+        background-repeat:repeat-y !important;
+      }
+    }
+
+    /* Carga/renderizado progresivo para secciones fuera de pantalla. */
+    @supports (content-visibility:auto){
+      main > section:not(#inicio), main > div:not(#topBg):not(.gallery-lightbox){
+        content-visibility:auto;
+        contain-intrinsic-size:800px;
+      }
+    }
   </style>
 </head>
 
@@ -302,7 +345,7 @@
                 loop
                 muted
                 playsinline
-                preload="auto"
+                preload="metadata"
                 poster="img/cover.jpg"
               ></video>
             </div>
@@ -408,7 +451,7 @@
 
       
       <div class="event-card reveal reveal-right">
-        <img src="img/iglesia.jpg" alt="Ceremonia" class="event-photo">
+        <img src="img/iglesia.jpg" alt="Ceremonia" class="event-photo" loading="lazy" decoding="async">
         <div class="event-content">
           <div class="content">
             <div class="event-label">INICIAMOS CON LA</div>
@@ -424,7 +467,7 @@
       </div>
 
       <div class="event-card reveal reveal-left">
-        <img src="img/evento.jpg" alt="Recepción" class="event-photo">
+        <img src="img/evento.jpg" alt="Recepción" class="event-photo" loading="lazy" decoding="async">
         <div class="event-content">
           <div class="content">
             <div class="event-label">LUGAR DEL EVENTO</div>
@@ -443,7 +486,7 @@
      <!-- HOSPEDAJE: ACTIVO -->
     <section id="hospedaje" >
       <div class="event-card reveal reveal-right">
-        <img src="img/hospedaje.png" alt="Hospedaje" class="event-photo">
+        <img src="img/hospedaje.png" alt="Hospedaje" class="event-photo" loading="lazy" decoding="async">
         <div class="event-content">
           <div class="content">
             <div class="event-label">Sugerencia de Hospedaje</div>
@@ -461,7 +504,7 @@
 
     <!-- CALENDARIO -->
     <section id="calendario" class="calendar-section">
-      <div align="center"><img src="img/reloj.png" width="70%" alt="Foto"></div>
+      <div align="center"><img src="img/reloj.png" width="70%" alt="Foto" loading="lazy" decoding="async"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Recuerda la fecha del evento</div>
         <div class="flourish"></div>
@@ -480,7 +523,7 @@
 
     <!-- GALERÍA: ACTIVA -->
     <section id="galeria-fotos" class="gallery-section">
-      <div align="center"><img src="img/galeria.png" width="45%" alt="Foto"></div>
+      <div align="center"><img src="img/galeria.png" width="45%" alt="Foto" loading="lazy" decoding="async"></div>
       <div class="content">
         <div class="section-title-script reveal reveal-left">Galería de Fotos</div>
         <div class="flourish"></div>
@@ -488,10 +531,10 @@
 
         <div class="gallery-preview reveal reveal-left">
           <div class="gallery-preview-item" onclick="openGallery(0)">
-            <img src="img/galeria/1.jpeg" alt="Foto 1">
+            <img src="img/galeria/1.jpeg" alt="Foto 1" loading="lazy" decoding="async">
           </div>
           <div class="gallery-preview-item" onclick="openGallery(1)">
-            <img src="img/galeria/2.jpeg" alt="Foto 2">
+            <img src="img/galeria/2.jpeg" alt="Foto 2" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -505,7 +548,7 @@
       <div class="gallery-lightbox-content">
         <button class="gallery-close" type="button" onclick="closeGallery()">&times;</button>
         <button class="gallery-nav prev" type="button" onclick="changeImage(-1)">❮</button>
-        <img id="galleryImage" src="img/galeria/1.jpeg" alt="Imagen de galería">
+        <img id="galleryImage" src="img/galeria/1.jpeg" alt="Imagen de galería" loading="lazy" decoding="async">
         <button class="gallery-nav next" type="button" onclick="changeImage(1)">❯</button>
         <div class="gallery-counter"><span id="currentImage">1</span> / <span id="totalImages">2</span></div>
       </div>
@@ -522,7 +565,7 @@
 
       <div class="itinerary-timeline">
         <div class="itinerary-item reveal reveal-right">
-          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt=""></div>
+          <div class="itinerary-icon-wrapper"><img src="img/ceremonia.png" alt="" loading="lazy" decoding="async"></div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
             <div class="itinerary-time">4:00 PM</div>
@@ -531,7 +574,7 @@
         </div>
 
         <div class="itinerary-item reveal reveal-left">
-          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt=""></div>
+          <div class="itinerary-icon-wrapper"><img src="img/recepcion.png" alt="" loading="lazy" decoding="async"></div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
             <div class="itinerary-time">8:00 PM</div>
@@ -540,7 +583,7 @@
         </div>
 
         <div class="itinerary-item reveal reveal-left">
-          <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt=""></div>
+          <div class="itinerary-icon-wrapper"><img src="img/vals.png" alt="" loading="lazy" decoding="async"></div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
             <div class="itinerary-time">8:30 PM</div>
@@ -549,7 +592,7 @@
         </div>
 
         <div class="itinerary-item reveal reveal-left">
-          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt=""></div>
+          <div class="itinerary-icon-wrapper"><img src="img/cena.png" alt="" loading="lazy" decoding="async"></div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
             <div class="itinerary-time">10:00 PM</div>
@@ -563,7 +606,7 @@
     
 
     <!-- VESTIMENTA -->
-    <div align="center"><img src="img/cenefa_6.png" width="35%" alt="Foto"></div>
+    <div align="center"><img src="img/cenefa_6.png" width="35%" alt="Foto" loading="lazy" decoding="async"></div>
     <section class="gifts-section">
       <div class="content">
         <div class="section-title-script">Código de Vestimenta</div>
@@ -571,7 +614,7 @@
 
         <div class="gift-options reveal reveal-right">
           <div class="gift-item">
-            <div align="center"><img src="img/vestimenta.png" width="60%" alt=""></div>
+            <div align="center"><img src="img/vestimenta.png" width="60%" alt="" loading="lazy" decoding="async"></div>
             <p class="gift-sub">Código de Vestimenta:</p>
             <p class="gift-sub"><strong>Formal</strong></p>
             <div class="intro-list">Evitar el color hueso y los detalles en rosa.</div>
@@ -583,7 +626,7 @@
 
     <!-- MESA DE REGALOS
 <section class="gifts-section">
-      <div align="center"><img src="img/sobre_regalo.png" width="80%"></div>
+      <div align="center"><img src="img/sobre_regalo.png" width="80%" loading="lazy" decoding="async"></div>
       <div class="section-title-script">Mesa de Regalos</div>
       <div class="flourish"></div>
 
@@ -597,7 +640,7 @@
     <!-- LLUVIA DE SOBRES: N/A
 <section id="regalos">
       <div class="content">
-        <div align="center"><img src="img/lluvia.png" width="60%" alt="Regalos"></div>
+        <div align="center"><img src="img/lluvia.png" width="60%" alt="Regalos" loading="lazy" decoding="async"></div>
         <br>
         <div class="section-title-script reveal">Lluvia de Sobres</div>
         <div class="flourish"></div>
@@ -611,7 +654,7 @@
     <!-- INSTAGRAM: ACTIVO -->
 <section id="insta" class="hashtag-section">
       <div class="insta-handle-card reveal reveal-right">
-        <div align="center"><div class="gift-icon"><img src="img/camara.png" width="40%"></div></div>
+        <div align="center"><div class="gift-icon"><img src="img/camara.png" width="40%" loading="lazy" decoding="async"></div></div>
         <div class="section-title-script">Captura cada Instante</div>
         <div class="flourish"></div>
         <p class="section-sub" style="margin-top:0;">
@@ -625,7 +668,7 @@
       </div>
 
      <!-- <div class="hashtag-photo-wrap">
-        <img src="img/instagram.png" alt="fiesta">
+        <img src="img/instagram.png" alt="fiesta" loading="lazy" decoding="async">
         <div class="hashtag-overlay reveal reveal-left">
           <div>
             <p class="hashtag-text">
@@ -642,12 +685,12 @@
     <section id="galeria" class="gifts-section">
       <div class="content">
         
-        <div align="center"><img src="img/album.png" width="100%" alt="QR"></div>
+        <div align="center"><img src="img/album.png" width="100%" alt="QR" loading="lazy" decoding="async"></div>
         <div class="section-title-script">Galeria de Recuerdos</div>
          <div class="flourish"></div>
         <p class="section-sub">Escanear y subir foto</p>
        
-         <div align="center"><img src="img/qr.png" width="50%" alt="QR"></div>
+         <div align="center"><img src="img/qr.png" width="50%" alt="QR" loading="lazy" decoding="async"></div>
         <p class="section-sub">Da click aqui para subir las fotos que tomes durante la fiesta o escribeme una dedicatoria. Forma parte de mis recuerdos mas especiales.</p>
 
         <div align="center" style="margin-top:1rem;">
@@ -663,7 +706,7 @@
       <div class="confirm-inner reveal reveal-left">
         <div class="glass-card">
           <div class="content">
-			  <div align="center"><img src="img/cenefa_6.png" width="55%" alt="Foto"></div>
+			  <div align="center"><img src="img/cenefa_6.png" width="55%" alt="Foto" loading="lazy" decoding="async"></div>
             <div class="confirm-title-script">¿Asistirás?</div>
             <div class="confirm-flourish"></div>
 
@@ -709,7 +752,7 @@
 
         <div class="content">
           <div class="event-card-final reveal reveal-left">
-            <div align="center"><img src="img/final.png" width="100%" alt="Foto final"></div>
+            <div align="center"><img src="img/final.png" width="100%" alt="Foto final" loading="lazy" decoding="async"></div>
           </div>
         </div>
       </div>
