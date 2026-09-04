@@ -25,12 +25,10 @@
     }
 
     :root {
-      /* ✅ PALETTE UPDATED TO NAVY BLUE & GOLD */
-      --rojo: #1a237e;
-      /* Navy Blue */
-      --rojo-claro: #0b1737;
-      /* Lighter Navy Blue */
-      --dorado: #0b1737;
+      /* PALETA ROSA PASTEL Y DORADO */
+      --rojo: #D58FA4;
+      --rojo-claro: #F3D7E0;
+      --dorado: #A97932;
       --crema: #FFFF;
       --crema-oscuro: #f9f9f9;
       --texto: #2f2f38;
@@ -47,9 +45,6 @@
 
     body {
       font-family: 'Gabriola', serif;
-      ,
-      "Segoe UI",
-      sans-serif;
       color: var(--texto);
       background: #EBEBEB;
       scroll-behavior: smooth;
@@ -114,7 +109,7 @@
     .date-container {
       font-family: "Great Vibes", cursive;
       text-align: center;
-      color: #1a237e;
+      color: #D58FA4;
       /* Updated to navy */
       width: 100%;
     }
@@ -122,7 +117,7 @@
     .day {
       font-size: 3.8em;
       margin-bottom: 0;
-      border-bottom: 2px solid #283593;
+      border-bottom: 2px solid #D58FA4;
       /* Updated to contrast blue */
       display: inline-block;
       padding: 0 30px 2px;
@@ -138,7 +133,7 @@
     .month {
       font-size: 3.8em;
       margin-top: 0;
-      border-top: 2px solid #283593;
+      border-top: 2px solid #D58FA4;
       /* Updated to contrast blue */
       display: inline-block;
       padding: 2px 30px 0;
@@ -203,7 +198,7 @@
       font-family: "Playfair Display", serif;
       font-size: 1.8rem;
       text-align: center;
-      color: #1a237e;
+      color: #D58FA4;
       /* Updated to navy */
       margin-bottom: 0.2rem;
     }
@@ -271,11 +266,13 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
+
       background: linear-gradient(to top,
-          rgba(11, 23, 55, 1.00) 0%,
-          rgba(11, 23, 55, 1.00) 32%,
-          rgba(11, 23, 55, 0.16) 62%,
-          rgba(11, 23, 55, 0.00) 100%);
+          rgba(177, 94, 123, 1.00) 0%,
+          rgba(177, 94, 123, 1.00) 20%,
+          rgba(177, 94, 123, 0.12) 45%,
+          rgba(177, 94, 123, 0.00) 70%);
+
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -374,7 +371,7 @@
     .intro-script {
       font-family: "Great Vibes", cursive;
       font-size: 2.8rem;
-      color: #0b1737;
+      color: #A97932;
       /* Updated to contrast blue */
       margin-top: 1.1rem;
       text-align: center;
@@ -484,7 +481,7 @@
     .itinerary-title {
       font-family: "Great Vibes", cursive;
       font-size: 4.5rem;
-      color: #0b1737;
+      color: #A97932;
       /* Updated to contrast blue */
       text-align: center;
       margin-bottom: 1rem;
@@ -611,7 +608,7 @@
     .event-time {
       margin-top: 1.2rem;
       font-weight: 700;
-      color: #1a237e;
+      color: #D58FA4;
       /* Updated to navy */
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -624,7 +621,7 @@
       padding: 0.8rem 2rem;
       border-radius: 999px;
       border: none;
-      background: #0b1737;
+      background: #A97932;
       /* Updated to contrast blue */
       color: #fff;
       font-size: 0.8rem;
@@ -738,7 +735,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #facc15;
+      color: #A97932;
     }
 
     .insta-handle-card {
@@ -758,7 +755,7 @@
       margin-top: 1.3rem;
       padding: 0.7rem 1.6rem;
       border-radius: 999px;
-      border: 1px solid #0b1737;
+      border: 1px solid #A97932;
       /* Updated to contrast blue */
       background: #fff;
       font-size: 0.82rem;
@@ -800,7 +797,7 @@
       padding: 0.9rem 1.1rem;
       border-radius: 999px;
       border: none;
-      background: #0b1737;
+      background: #A97932;
       /* Updated to contrast blue */
       color: #fff;
       font-size: 0.9rem;
@@ -872,7 +869,7 @@
     }
 
     .gallery-dot.active {
-      background: #1a237e;
+      background: #D58FA4;
       /* Updated to navy */
       transform: scale(1.2);
     }
@@ -953,7 +950,7 @@
       height: 42px;
       border-radius: 999px;
       border: none;
-      background: #0b1737;
+      background: #A97932;
       /* Updated to contrast blue */
       color: #fff;
       display: flex;
@@ -980,7 +977,7 @@
       padding: 1.8rem 1.1rem 2.1rem;
       font-size: 1.8rem;
       text-align: center;
-      color: #0b1737;
+      color: #A97932;
       /* Updated to contrast blue */
     }
 
@@ -1049,20 +1046,22 @@
     </section>
 
     <!-- 2. INTRO -->
-   <section id="intro" class="intro-section">
+    <section id="intro" class="intro-section">
       <div class="intro-card reveal reveal-left">
         <!-- Contador de Fecha -->
         <div class="date-container">
           <div class="day">Sábado</div>
           <div class="number">30</div>
           <div class="month">Enero
- 2027</div>
+            2027</div>
 
         </div>
         <br>
 
         <p class="section-sub">
-          Con el corazón lleno de ilusión, celebro mis 15 años. Gracias a Dios por la vida, a mis padres y hermanos por su amor incondicional y caminar a mi lado en todo momento. A mi familia y amigos por ser parte de mi historia y compartir esta noche inolvidable. </p>
+          Con el corazón lleno de ilusión, celebro mis 15 años. Gracias a Dios por la vida, a mis padres y hermanos por
+          su amor incondicional y caminar a mi lado en todo momento. A mi familia y amigos por ser parte de mi historia
+          y compartir esta noche inolvidable. </p>
         <br>
 
 
@@ -1072,8 +1071,8 @@
         <div class="intro-parents-title">Mis Padres</div>
         <p class="intro-list">
           José Avalos <br>
- Cynthia Gómez<br>
- Humberto Rojas
+          Cynthia Gómez<br>
+          Humberto Rojas
         </p>
 
 
@@ -1088,7 +1087,7 @@
 
         <div class="flourish"></div>
       </div>
-</section>
+    </section>
 
     <!-- 3. APARTA LA FECHA (NUEVO MINIMAL + FUNCIONAL) -->
     <section id="fecha" class="save-date-min">
@@ -1169,7 +1168,7 @@
       <div align="center"><img src="img/cene.png" width="70%" alt="Foto"></div>
       <div class="flourish"></div>
 
-<h2 class="itinerary-title">Itinerario</h2>
+      <h2 class="itinerary-title">Itinerario</h2>
       <p class="itinerary-date">30 de enero de 2027</p>
 
       <div class="itinerary-timeline">
@@ -1180,52 +1179,52 @@
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
             <div class="itinerary-time">7:30 PM</div>
-            <div class="itinerary-event">Espero que hayas confirmado, ¡aquí inicia el party!</div>		  
+            <div class="itinerary-event">Espero que hayas confirmado, ¡aquí inicia el party!</div>
           </div>
-</div>
-<div class="itinerary-timeline">
+        </div>
+        <div class="itinerary-timeline">
 
-        <!-- Only 9pm event specified -->
-        <div class="itinerary-item visible">
-          <div class="itinerary-icon-wrapper"><img src="img/hidra.png"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">8:10 PM</div>
-            <div class="itinerary-event">Ceremonia de hidratación elegante</div>
-	      </div>
-        </div>
-		  <!-- Only 9pm event specified -->
-  <div class="itinerary-item visible">
-          <div class="itinerary-icon-wrapper"><img src="img/cena.png"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">8:40 PM</div>
-            <div class="itinerary-event">Pausa estratégica para comer deli!</div>		  
+          <!-- Only 9pm event specified -->
+          <div class="itinerary-item visible">
+            <div class="itinerary-icon-wrapper"><img src="img/hidra.png"></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">8:10 PM</div>
+              <div class="itinerary-event">Ceremonia de hidratación elegante</div>
+            </div>
           </div>
-  </div>
-		  <!-- Only 9pm event specified -->
-        <div class="itinerary-item visible">
-          <div class="itinerary-icon-wrapper"><img src="img/baile.png"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">10:00 PM</div>
-            <div class="itinerary-event"> Inauguración oficial de los pasos prohibidos</div>		  
+          <!-- Only 9pm event specified -->
+          <div class="itinerary-item visible">
+            <div class="itinerary-icon-wrapper"><img src="img/cena.png"></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">8:40 PM</div>
+              <div class="itinerary-event">Pausa estratégica para comer deli!</div>
+            </div>
           </div>
-        </div>
-		  <!-- Only 9pm event specified -->
-        <div class="itinerary-item visible">
-          <div class="itinerary-icon-wrapper"><img src="img/reloj.png"></div>
-          <div class="itinerary-divider"></div>
-          <div class="itinerary-content">
-            <div class="itinerary-time">2:00 AM</div>
-            <div class="itinerary-event">Se apagan las luces, quedan las evidencias</div>		  
+          <!-- Only 9pm event specified -->
+          <div class="itinerary-item visible">
+            <div class="itinerary-icon-wrapper"><img src="img/baile.png"></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">10:00 PM</div>
+              <div class="itinerary-event"> Inauguración oficial de los pasos prohibidos</div>
+            </div>
           </div>
-        </div>
-			  
-			  
+          <!-- Only 9pm event specified -->
+          <div class="itinerary-item visible">
+            <div class="itinerary-icon-wrapper"><img src="img/fin.png"></div>
+            <div class="itinerary-divider"></div>
+            <div class="itinerary-content">
+              <div class="itinerary-time">2:00 AM</div>
+              <div class="itinerary-event">Se apagan las luces, quedan las evidencias</div>
+            </div>
+          </div>
 
-        <!-- itinerario  -->
-        <!-- <div class="itinerary-item visible">
+
+
+          <!-- itinerario  -->
+          <!-- <div class="itinerary-item visible">
           <div class="itinerary-icon-wrapper"> <img src="img/coctel.png"></div>
           <div class="itinerary-divider"></div>
           <div class="itinerary-content">
@@ -1276,7 +1275,7 @@
             <div class="itinerary-event">FIN DEL EVENTO</div>
           </div>
         </div> -->
-      </div>
+        </div>
     </section>
     <!-- 5. FOTO DESTACADA -->
 
@@ -1294,13 +1293,13 @@
           <div align="center"><img src="img/vestimenta.png" width="65%"></div>
 
 
-         <!-- <div class="gift-title">ETIQUETA</div>-->
+          <!-- <div class="gift-title">ETIQUETA</div>-->
 
           <p class="gift-sub"> Vístete para impresionar<br>(ETIQUETA)<br>
-Los colores <strong>azul y plateado</strong> &nbsp;son exclusivos para la protagonista de la noche.</p>
+            Los colores <strong>rosa pastel y dorado</strong> &nbsp;son exclusivos para la protagonista de la noche.</p>
         </div>
 
- <div class="flourish"></div>
+        <div class="flourish"></div>
       </div>
     </section>
 
@@ -1319,16 +1318,17 @@ Los colores <strong>azul y plateado</strong> &nbsp;son exclusivos para la protag
           </p>
 
           <div align="center" style="margin-bottom: 20px;">
-			   
+
             <img src="img/XV-Valeria_galeria_QR.png" alt="QR Álbum Digital"
               style="max-width: 200px; border: 2px solid var(--dorado); border-radius: 15px; padding: 10px; background: white;">
           </div>
 
-          <a href="https://app.arteinvita.com/gallery/xv-valeria-1781065768424?token=8ac260ded51cc77b7b7748c60c7df4e2" target="_blank" rel="noopener">
+          <a href="https://app.arteinvita.com/gallery/xv-valeria-1781065768424?token=8ac260ded51cc77b7b7748c60c7df4e2"
+            target="_blank" rel="noopener">
             <button class="gift-button">Subir Fotos</button>
           </a>
         </div>
-		   <div class="flourish"></div>
+        <div class="flourish"></div>
       </div>
     </section>
 
@@ -1355,33 +1355,36 @@ Los colores <strong>azul y plateado</strong> &nbsp;son exclusivos para la protag
       <div class="gift-options reveal reveal-right">
         <div class="gift-item">
           <p class="gift-sub"><strong>Tu presencia es el mejor regalo.</strong></p>
-          <p class="gift-sub">Si te gustó para la quinceañera, ¡seguro será un acierto! Si tu regalo no cabe en una caja porque viene doblado, habrá sobres en la entrada.</p>
+          <p class="gift-sub">Si te gustó para la quinceañera, ¡seguro será un acierto! Si tu regalo no cabe en una caja
+            porque viene doblado, habrá sobres en la entrada.</p>
 
-          
+
           <p class="intro-script">¡Gracias por acompañarnos!</p>
         </div>
       </div>
     </section>
 
     <!-- 7. INSTAGRAM / HASHTAG  -->
-   <section id="insta" class="hashtag-section">
-    
-     <div class="insta-handle-card reveal reveal-right">
-       <div align="center"> <div class="gift-icon"><img src="img/insta.png" width="50%"></div></div>
-       <div class="section-title-script">Captura cada Instante</div>
-      <div class="flourish"></div>
+    <section id="insta" class="hashtag-section">
+
+      <div class="insta-handle-card reveal reveal-right">
+        <div align="center">
+          <div class="gift-icon"><img src="img/insta.png" width="50%"></div>
+        </div>
+        <div class="section-title-script">Captura cada Instante</div>
+        <div class="flourish"></div>
         <p class="section-sub" style="margin-top:0;">
           También puedes etiquetar a nuestra
-quinceañera en IG con su username
+          quinceañera en IG con su username
         </p>
-       <div class="insta-handle"></div>
+        <div class="insta-handle"></div>
         <div class="section-sub">@who0se.val</div>
         <a href="https://www.instagram.com/whoose.val?utm_source=qr" target="_blank" rel="noopener">
           <button class="btn-insta">Abrir Instagram</button>
         </a>
       </div>
-      
-    
+
+
     </section>
 
     <!-- 8. GALERÍA – SLIDER  -->
@@ -1416,22 +1419,22 @@ quinceañera en IG con su username
     <!-- 8. CONFIRMACIÓN  -->
     <section id="confirmacion" class="confirm-section">
       <div class="reveal reveal-left">
-		  <div align="center"><img src="img/cene.png" width="70%" alt="Foto"></div>
+        <div align="center"><img src="img/cene.png" width="70%" alt="Foto"></div>
         <div class="confirm-title-script">¿Asistirás?</div>
         <div class="confirm-flourish"></div>
         <p class="section-sub">
           ¡Será increíble contar con tu presencia!<br>
           Por favor, confirma tu asistencia<br>
-<strong>antes del 30 octubre del 2026</strong>.<br>
+          <strong>antes del 18 de diciembre del 2026</strong>.<br>
           <br>Tu respuesta es muy importante <br>
-para para mí en este día especial. 
-        
-        <br>
-		  </p>
+          para para mí en este día especial.
+
+          <br>
+        </p>
         <button class="btn-whats" onclick="ArteInvita.open('C09-50B5-3C1')" style="cursor:pointer; margin-top: 2rem;">
-          <strong>Confirmar  Asistencia</strong>
+          <strong>Confirmar Asistencia</strong>
         </button>
-      
+
 
         <br>
         <div class="flourish"></div>
@@ -1462,7 +1465,7 @@ para para mí en este día especial.
     © 2026 Mis XV Valeria</footer>
 
   <!-- BOTÓN IR ARRIBA -->
-<button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
 
   <script>
     // =========================
@@ -1470,7 +1473,7 @@ para para mí en este día especial.
     // =========================
     // CONFIGURA AQUÍ LA FECHA Y HORA DEL EVENTO
     // Formato: Año, Mes (0=Enero, 11=Diciembre), Día, Hora, Minutos, Segundos
-    const targetEventDate = new Date(2027, 0, 30, 21, 0, 0); 
+    const targetEventDate = new Date(2027, 0, 30, 21, 0, 0);
 
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
@@ -1618,10 +1621,10 @@ para para mí en este día especial.
       "img/galeria/10.jpeg",
       "img/galeria/11.jpeg",
       "img/galeria/12.jpeg",
-		"img/galeria/15.jpeg",
+      "img/galeria/15.jpeg",
       "img/galeria/13.jpeg",
       "img/galeria/14.jpeg"
-		 
+
 
 
     ];
