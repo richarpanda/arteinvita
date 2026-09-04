@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mis XV Años | Maite Ortiz Martínez</title>
+
+  <script src="https://app.arteinvita.com/widget.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: transparent;
+      --surface: rgba(120, 0, 0, 0.72);
+
+      --ink: #FFE8A3;
+      --muted: #FFD36A;
+
+      --accent: #F7C948;
+      --rose: #B00014;
+
+      --gold: #FFD700;
+      --gold-light: #FFF0A8;
+      --gold-dark: #B98518;
+
+      --red: #78000B;
+      --red-dark: #4A0006;
+      --red-light: #B00014;
+
+      --line: rgba(255, 215, 0, 0.32);
+
+      --shadow:
+        0 14px 40px rgba(80, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .app {
+      position: relative;
+      width: min(460px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #78000B;
+    }
+
+    .app::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.24;
+
+      background:
+        radial-gradient(circle,
+          rgba(255, 215, 0, 0.42) 1px,
+          transparent 1.5px);
+
+      background-size: 26px 26px;
+    }
+
+    @media (min-width: 980px) {
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .app {
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+    }
+
+    /* ===================================
+       HERO
+    =================================== */
+
+    .hero {
+      position: relative;
+      height: min(95vh, 760px);
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      background: url("galeria/inicio.jpeg") center top / cover no-repeat;
+      overflow: hidden;
+      isolation: isolate;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+
+      background:
+        linear-gradient(180deg,
+          rgba(176, 0, 20, 0.05) 0%,
+          rgba(176, 0, 20, 0.15) 45%,
+          rgba(88, 0, 8, 0.58) 74%,
+          rgba(45, 0, 4, 0.95) 100%),
+        radial-gradient(circle at 18% 30%,
+          rgba(255, 215, 0, 0.26),
+          transparent 34%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      z-index: 2;
+      pointer-events: none;
+      border: 1.5px solid rgba(255, 215, 0, 0.76);
+      border-radius: 18px;
+      box-shadow: inset 0 0 26px rgba(255, 215, 0, 0.18);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 0 18px 30px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .hero-kicker {
+      margin: 0 0 12px;
+      color: #FFE8A3;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.42);
+    }
+
+    .hero-name {
+      margin: 0;
+      color: #FFD700;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(4.4rem, 12vw, 5rem);
+      font-weight: 400;
+      line-height: 0.98;
+
+      text-shadow:
+        0 2px 2px rgba(60, 0, 0, 0.72),
+        0 0 12px rgba(255, 215, 0, 0.62),
+        0 0 28px rgba(255, 70, 40, 0.45);
+    }
+
+    .hero-date {
+      margin-top: 20px;
+      color: #FFE8A3;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.40);
+    }
+
+    /* ===================================
+       CONTENIDO
+    =================================== */
+
+    .background {
+      position: relative;
+      z-index: 1;
+      min-height: auto !important;
+      background: transparent;
+      animation: none !important;
+    }
+
+    .container {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 30px 20px 88px;
+      text-align: center;
+    }
+
+    .subtext {
+      max-width: 390px;
+      margin: 42px auto 24px;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      line-height: 1.82;
+    }
+
+    .parrafo {
+      max-width: 390px;
+      margin: 30px auto 20px;
+      color: #FFE8A3;
+      font-size: 1.02rem;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    .parrafo strong {
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.38);
+    }
+
+    /* ===================================
+       FECHA
+    =================================== */
+
+    .date-container {
+      width: 100%;
+      margin: 32px auto 20px;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .day,
+    .month {
+      margin: 0;
+      color: #FFE8A3;
+      font-size: 1.45rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .number {
+      margin: 0 0 0.18em;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 6.8rem;
+      line-height: 1;
+
+      text-shadow:
+        0 0 12px rgba(255, 215, 0, 0.50),
+        0 3px 2px rgba(70, 0, 0, 0.72);
+    }
+
+    /* ===================================
+       BOTONES
+    =================================== */
+
+    .btn,
+    .btn-ubicacion,
+    .confirm-button,
+    .gallery-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1.8px solid rgba(255, 232, 163, 0.94);
+      border-radius: 999px;
+      color: #5A0007;
+
+      background:
+        linear-gradient(135deg,
+          #FFF0A8 0%,
+          #FFD700 38%,
+          #B98518 100%);
+
+      box-shadow:
+        0 10px 24px rgba(40, 0, 0, 0.32);
+
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn-ubicacion:hover,
+    .confirm-button:hover,
+    .gallery-button:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    /* ===================================
+       SECCIONES
+    =================================== */
+
+    .timeline {
+      max-width: 380px;
+      margin: 42px auto 24px;
+      padding: 0;
+      display: grid;
+      gap: 42px;
+    }
+
+    .timeline::before {
+      display: none;
+    }
+
+    .timeline-item,
+    .social-item,
+    .final-item {
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      text-align: center;
+    }
+
+    .timeline-item+.timeline-item::before,
+    .social-item+.social-item::before,
+    .final-item+.final-item::before {
+      content: "";
+      display: block;
+      width: 72%;
+      height: 1px;
+      margin: 26px auto;
+      background: rgba(255, 215, 0, 0.32);
+    }
+
+    .section-title,
+    .social-title,
+    .final-title {
+      margin: 14px 0 18px;
+      color: var(--gold);
+      font-family: "Great Vibes", cursive;
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.1;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.34);
+    }
+
+    .section-content,
+    .social-content,
+    .final-content {
+      margin: 14px 0;
+      color: #FFE8A3;
+      font-size: 1rem;
+      line-height: 1.78;
+      text-align: center;
+    }
+
+    .section-content strong,
+    .social-content strong,
+    .final-content strong {
+      color: var(--gold);
+    }
+
+    .section-content-hora {
+      margin: 16px 0 0;
+      color: #FFD700;
+      font-size: 1.08rem;
+      font-weight: 800;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.32);
+    }
+
+    /* ===================================
+       ICONOS
+    =================================== */
+
+    .icon-wrap {
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 14px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 215, 0, 0.38);
+      border-radius: 50%;
+      color: var(--gold);
+
+      background:
+        radial-gradient(circle at 32% 26%,
+          rgba(255, 240, 168, 0.16),
+          transparent 42%),
+        rgba(94, 0, 8, 0.55);
+
+      box-shadow:
+        0 10px 24px rgba(40, 0, 0, 0.28),
+        inset 0 0 18px rgba(255, 215, 0, 0.08);
+    }
+
+    .icon-wrap svg,
+    .icon-wrap img {
+      width: 92px;
+      height: 92px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .icon-wrap img {
+      filter:
+        brightness(0) saturate(100%) invert(83%) sepia(99%) saturate(1620%) hue-rotate(358deg) brightness(104%) contrast(103%);
+    }
+
+    /* ===================================
+       VESTIMENTA
+    =================================== */
+
+    .dress-note {
+      width: min(92%, 350px);
+      margin: 24px auto;
+      padding: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.30);
+      border-radius: 22px;
+      background: rgba(95, 0, 8, 0.55);
+      box-shadow: 0 10px 24px rgba(40, 0, 0, 0.20);
+    }
+
+    /* ===================================
+       DIVISOR
+    =================================== */
+
+    .floral-divider {
+      width: 74%;
+      max-width: 280px;
+      height: 42px;
+      margin: 38px auto;
+      background: url("cenefa.png") center / contain no-repeat;
+      opacity: 1;
+
+      filter:
+        brightness(0) saturate(100%) invert(78%) sepia(92%) saturate(998%) hue-rotate(358deg) brightness(106%) contrast(105%) drop-shadow(0 0 6px rgba(255, 215, 0, 0.55));
+    }
+
+    .crown-wrap {
+      margin: 22px auto 10px;
+      text-align: center;
+    }
+
+    .crown-wrap img {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.34));
+    }
+
+    /* ===================================
+       SOCIAL / FINAL
+    =================================== */
+
+    .social-section,
+    .final-section {
+      max-width: 380px;
+      margin: 34px auto 0;
+      padding: 0;
+      display: grid;
+      gap: 28px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .decorative-slot {
+      width: min(76%, 290px);
+      margin: 42px auto;
+    }
+
+    .decorative-slot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 14px 24px rgba(40, 0, 0, 0.34));
+    }
+
+    .thanks {
+      margin-top: 14px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.34);
+    }
+
+    /* ===================================
+       GALERÍA
+       SE CONSERVAN ESTILOS AUNQUE
+       NO ESTÁ ACTIVA EN ESTA INVITACIÓN
+    =================================== */
+
+    .gallery-section {
+      width: 100%;
+      margin: 18px auto 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .gallery-slider {
+      width: min(100%, 360px);
+      margin: 1.6rem auto 0;
+    }
+
+    .gallery-slide-frame {
+      position: relative;
+      padding: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 215, 0, 0.42);
+      border-radius: 24px;
+      background: rgba(255, 232, 163, 0.92);
+      box-shadow: 0 14px 32px rgba(40, 0, 0, 0.34);
+    }
+
+    .gallery-slide-frame img {
+      width: 100%;
+      height: min(500px, 72vh);
+      display: block;
+      object-fit: cover;
+      border-radius: 18px;
+      cursor: pointer;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 215, 0, 0.70);
+      border-radius: 12px;
+      color: #5A0007;
+      background: rgba(255, 232, 163, 0.84);
+      cursor: pointer;
+      font-size: 2rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .gallery-nav.prev {
+      left: 18px;
+    }
+
+    .gallery-nav.next {
+      right: 18px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255, 232, 163, 0.35);
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--gold);
+      transform: scale(1.2);
+    }
+
+    /* ===================================
+       LIGHTBOX
+    =================================== */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(45, 0, 4, 0.94);
+    }
+
+    .lightbox-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 1501;
+      width: min(92%, 420px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.50);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      border: none;
+      color: #FFFFFF;
+      background: none;
+      cursor: pointer;
+      font-size: 2.2rem;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 215, 0, 0.44);
+      border-radius: 12px;
+      color: #FFFFFF;
+      background: rgba(255, 215, 0, 0.24);
+      cursor: pointer;
+      font-size: 2.7rem;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    /* ===================================
+       CONTADOR
+    =================================== */
+
+    .digital-clock-container {
+      margin: 0;
+    }
+
+    .digital-clock {
+      display: inline-block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--gold);
+      background: rgba(95, 0, 8, 0.58);
+      box-shadow: inset 0 0 18px rgba(255, 215, 0, 0.08);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .clock-separator {
+      color: #FFE8A3;
+    }
+
+    .clock-status {
+      margin-top: 10px;
+      color: #FFE8A3;
+      font-size: 0.98rem;
+    }
+
+    /* ===================================
+       SCROLL
+    =================================== */
+
+    .scroll-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1000;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: #FFFFFF;
+
+      background:
+        linear-gradient(135deg,
+          #B00014,
+          #FFD700);
+
+      box-shadow: 0 10px 22px rgba(40, 0, 0, 0.34);
+      cursor: pointer;
+      opacity: 0;
+
+      transition:
+        opacity 0.25s ease-in-out,
+        transform 0.2s ease;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 0.85;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-2px);
+    }
+
+    .arrow-up {
+      width: 10px;
+      height: 10px;
+      margin-top: 4px;
+      border-top: 3px solid #FFFFFF;
+      border-left: 3px solid #FFFFFF;
+      transform: rotate(45deg);
+    }
+
+    /* ===================================
+       REPRODUCTOR
+    =================================== */
+
+    .floating-player {
+      position: fixed;
+      left: 14px;
+      bottom: 18px;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player-button {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      color: #FFFFFF;
+
+      background:
+        linear-gradient(135deg,
+          #B00014,
+          #FFD700);
+
+      box-shadow: 0 10px 22px rgba(40, 0, 0, 0.34);
+      cursor: pointer;
+    }
+
+    .player-content {
+      width: 280px;
+      display: none;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(95, 0, 8, 0.96);
+      box-shadow: 0 14px 34px rgba(40, 0, 0, 0.34);
+    }
+
+    .player-content.active {
+      display: block;
+    }
+
+    .song-title {
+      margin: 0;
+      color: var(--gold);
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .song-artist {
+      margin: 6px 0 0;
+      color: #FFE8A3;
+      font-size: 0.85rem;
+    }
+
+    .player-controls {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .control-button {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--gold);
+      background: rgba(255, 215, 0, 0.14);
+      cursor: pointer;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 6px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 215, 0, 0.16);
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+
+      background:
+        linear-gradient(90deg,
+          #FFF0A8,
+          #FFD700,
+          #B98518);
+    }
+
+    .volume-control {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-icon {
+      display: flex;
+      color: var(--gold);
+    }
+
+    .volume-slider {
+      flex-grow: 1;
+      height: 6px;
+      border-radius: 999px;
+      outline: none;
+      background: rgba(255, 215, 0, 0.16);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* ===================================
+       ANIMACIONES
+    =================================== */
+
+    .anim-left,
+    .anim-right,
+    .anim-up {
+      opacity: 0;
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.9s cubic-bezier(.2, .8, .2, 1);
+
+      will-change: transform, opacity;
+    }
+
+    .anim-left {
+      transform: translate3d(-28px, 0, 0);
+    }
+
+    .anim-right {
+      transform: translate3d(28px, 0, 0);
+    }
+
+    .anim-up {
+      transform: translate3d(0, 18px, 0);
+    }
+
+    .in-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .anim-left,
+      .anim-right,
+      .anim-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 4.7rem;
+      }
+
+      .digital-clock {
+        font-size: 1.48rem;
+      }
+
+      .player-content {
+        width: min(280px, calc(100vw - 82px));
+      }
+    }
+
+    /* ===================================
+   FOTOGRAFÍA FINAL
+=================================== */
+
+    .foto-final {
+      width: calc(100% + 32px);
+      max-width: none;
+      height: auto;
+      display: block;
+
+      margin: 34px -16px 0;
+
+      object-fit: cover;
+      object-position: center;
+
+      border: none;
+      border-radius: 0;
+
+      box-shadow:
+        0 16px 34px rgba(40, 0, 0, 0.34);
+
+      border-radius: 5%;
+
+      filter:
+        saturate(0.98) contrast(1.02) brightness(1.01);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- ===================================
+         HERO / FOTOGRAFÍA DE INICIO
+    ==================================== -->
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <p class="hero-kicker">
+          Mis XV Años
+        </p>
+
+        <h1 class="hero-name">
+          Maite Ortiz Martínez
+        </h1>
+
+        <div class="hero-date">
+          26 · Septiembre · 2026
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================
+         CONTENIDO
+    ==================================== -->
+
+    <div class="background">
+      <div class="container">
+
+        <button class="scroll-to-top" id="scrollBtn" type="button" aria-label="Volver arriba">
+
+          <div class="arrow-up"></div>
+        </button>
+
+        <div class="crown-wrap anim-up">
+          <img src="corona.png" width="70%" alt="Corona">
+        </div>
+
+        <p class="subtext anim-up">
+          Hay momentos en la vida que se vuelven inolvidables,
+          y este es uno de los más importantes para mí.
+          <br><br>
+          Con mucha alegría quiero compartir contigo
+          la celebración de mis XV años.
+        </p>
+
+        <div class="decorative-slot anim-up">
+          <img src="1.png" alt="" aria-hidden="true">
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             FECHA
+        ==================================== -->
+
+        <div class="date-container anim-up">
+          <div class="day">
+            Sábado
+          </div>
+
+          <div class="number">
+            26
+          </div>
+
+          <div class="month">
+            Septiembre
+          </div>
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             PADRES
+        ==================================== -->
+
+        <p class="parrafo anim-up">
+          Con el amor y la bendición de mis padres:
+
+          <br><br>
+
+          <strong>Gloria Martínez</strong>
+
+          <br>
+          y
+          <br>
+
+          <strong>Héctor Montalvo</strong>
+
+          <br><br>
+
+          tengo la alegría de invitarte
+          a compartir conmigo este día tan especial.
+        </p>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             PADRINOS
+        ==================================== -->
+
+        <p class="parrafo anim-up">
+          Acompañada con mucho cariño por mis padrinos:
+
+          <br><br>
+
+          <strong>Janie Reynoso</strong>
+
+          <br>
+          y
+          <br>
+
+          <strong>Antonio Reynoso</strong>
+        </p>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             CEREMONIA RELIGIOSA:
+          
+        ====================================
+
+        <div class="timeline-item anim-left">
+          <div class="icon-wrap">
+            <svg
+              viewBox="0 0 120 100"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-label="Ícono de ceremonia">
+
+              <path
+                d="M10 90H110M60 4V62M49 16H71M20 90V55L45 42V90M45 90V28L60 20L75 28V90M75 90V42L100 55V90M32 90V48M52 90V36M68 90V36M88 90V48">
+              </path>
+            </svg>
+          </div>
+
+          <p class="section-title">
+            Ceremonia Religiosa
+          </p>
+
+          <p class="section-content">
+            Información de ceremonia.
+          </p>
+        </div>
+
+        -->
+
+        <!-- ===================================
+             RECEPCIÓN
+        ==================================== -->
+
+        <div class="timeline">
+
+          <div class="timeline-item anim-right">
+
+            <div class="icon-wrap">
+              <img src="fiesta.svg" alt="Recepción">
+            </div>
+
+            <p class="section-title">
+              Recepción
+            </p>
+
+            <p class="section-content">
+              <strong>Real las Torres</strong>
+
+              <br><br>
+
+              Las Teresitas 222, Las Teresitas, 25084 Saltillo, Coah.
+            </p>
+
+            <p class="section-content-hora">
+              8:30 p. m.
+            </p>
+
+            <br>
+
+            <a href="https://maps.app.goo.gl/7opSjM8hpgKVEa4a8" class="btn" target="_blank" rel="noopener">
+              Ver mapa
+            </a>
+
+          </div>
+
+          <!-- ===================================
+               VESTIMENTA
+          ==================================== -->
+
+          <div class="timeline-item anim-up">
+
+            <div class="icon-wrap">
+              <img src="vestimenta.svg" alt="Código de vestimenta">
+            </div>
+
+            <p class="section-title">
+              Código de Vestimenta
+            </p>
+
+            <p class="section-content-hora">
+              Formal
+            </p>
+
+            <div class="dress-note">
+              <p class="section-content">
+                Viste con elegancia para acompañarme
+                en esta noche tan especial.
+
+                <br><br>
+
+                Con cariño, reservemos el color
+                <strong>rojo</strong>
+                exclusivamente para la quinceañera.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             ITINERARIO
+        ==================================== 
+
+        <section id="itinerario" class="timeline-section anim-up">
+
+          <p class="section-title">
+            Itinerario
+          </p>
+
+          <div class="timeline-list">
+
+            <div class="timeline-row">
+
+              <div class="timeline-time">
+                8:30 p. m.
+              </div>
+
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-event">
+                Inicio de la celebración
+              </div>
+
+            </div>
+
+          </div>
+        </section> -->
+
+
+
+        <!-- ===================================
+             LLUVIA DE SOBRES
+        ==================================== -->
+
+        <section class="social-section">
+
+          <div class="social-item anim-left">
+
+            <div class="icon-wrap">
+
+              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="Lluvia de sobres">
+
+                <rect x="18" y="38" width="84" height="50" rx="6">
+                </rect>
+
+                <path d="M18 45L60 74L102 45"></path>
+                <path d="M18 88L46 63"></path>
+                <path d="M102 88L74 63"></path>
+
+                <path d="M60 26
+                     C60 20,54 16,49 16
+                     C42 16,38 21,38 27
+                     C38 39,52 46,60 52
+                     C68 46,82 39,82 27
+                     C82 21,78 16,71 16
+                     C66 16,60 20,60 26Z">
+                </path>
+
+              </svg>
+
+            </div>
+
+            <p class="social-title">
+              Lluvia de Sobres
+            </p>
+
+            <p class="social-content">
+              Tu presencia es el regalo más bonito
+              que puedo recibir.
+
+              <br><br>
+
+              Si deseas tener un detalle conmigo,
+              tendremos la opción de
+              <strong>lluvia de sobres</strong>.
+
+              <br><br>
+
+              Podrás entregar tu sobre físico
+              al asistir al evento.
+            </p>
+
+            <p class="thanks">
+              ¡Gracias!
+            </p>
+
+          </div>
+
+        </section>
+
+        <div class="decorative-slot anim-up">
+          <img src="corona2.png" alt="" aria-hidden="true">
+        </div>
+
+        <!-- ===================================
+             MESA DE REGALOS:
+             
+        ====================================
+
+        <section class="social-section">
+          <div class="social-item anim-up">
+
+            <p class="social-title">
+              Mesa de Regalos
+            </p>
+
+            <p class="social-content">
+            mesa de regalos.
+            </p>
+
+          </div>
+        </section>
+
+        -->
+
+        <!-- ===================================
+             HOSPEDAJE
+           
+        ====================================
+
+        <section class="social-section">
+          <div class="social-item anim-up">
+
+            <p class="social-title">
+              Hospedaje
+            </p>
+
+            <p class="social-content">
+          hospedaje.
+            </p>
+
+          </div>
+        </section>
+
+        -->
+
+        <!-- ===================================
+             INSTAGRAM:
+          
+        ====================================
+
+        <section class="social-section">
+          <div class="social-item anim-up">
+
+            <p class="social-title">
+              Instagram
+            </p>
+
+            <p class="social-content">
+              Comparte tus fotografías conmigo.
+            </p>
+
+          </div>
+        </section>
+
+        -->
+
+        <!-- ===================================
+             GALERÍA:
+             
+        ====================================
+
+        <section class="gallery-section anim-up">
+
+          <p class="final-title">
+            Galería
+          </p>
+
+          <p class="final-content">
+            Algunos recuerdos especiales.
+          </p>
+
+          <div class="gallery-slider">
+
+            <div class="gallery-slide-frame">
+
+              <img
+                id="galleryImage"
+                src="galeria/1.jpeg"
+                alt="Fotografía de Maite Ortiz Martínez">
+
+              <button
+                class="gallery-nav prev"
+                id="galleryPrev"
+                type="button"
+                aria-label="Fotografía anterior">
+                &#10094;
+              </button>
+
+              <button
+                class="gallery-nav next"
+                id="galleryNext"
+                type="button"
+                aria-label="Fotografía siguiente">
+                &#10095;
+              </button>
+
+            </div>
+
+            <div
+              class="gallery-dots"
+              id="galleryDots">
+            </div>
+
+          </div>
+
+        </section>
+
+        -->
+
+        <!-- ===================================
+             ÁLBUM QR:
+           
+        ====================================
+
+        <section class="final-section">
+          <div class="final-item anim-up">
+
+            <p class="final-title">
+              Galería de Recuerdos
+            </p>
+
+            <p class="final-content">
+              Comparte tus fotografías conmigo.
+            </p>
+
+          </div>
+        </section>
+
+        -->
+
+
+
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+             CONTADOR
+        ==================================== -->
+
+        <section class="final-section">
+
+          <div class="final-item anim-up">
+
+            <div class="digital-clock-container">
+
+              <div class="icon-wrap">
+                <img src="calendario.svg" alt="Calendario">
+              </div>
+
+              <p class="final-title">
+                Faltan
+              </p>
+
+              <p class="final-content">
+                DÍAS // HORAS // MINUTOS // SEGUNDOS
+              </p>
+
+              <div id="digital-clock" class="digital-clock" aria-label="Cuenta regresiva">
+
+                <span id="days">00</span>
+                <span class="clock-separator">:</span>
+
+                <span id="hours">00</span>
+                <span class="clock-separator">:</span>
+
+                <span id="minutes">00</span>
+                <span class="clock-separator">:</span>
+
+                <span id="seconds">00</span>
+
+              </div>
+
+              <div class="clock-status" id="clock-status">
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <div class="floral-divider"></div>
+
+        <!-- =================================== CONFIRMACIÓN WHATSAPP ==================================== -->
+        <section class="final-section">
+          <div class="final-item anim-left">
+            <div class="icon-wrap"> <img src="confirmar.svg" alt="Confirmar asistencia"> </div>
+            <p class="final-title"> Confirma tu asistencia </p>
+            <p class="final-content"> Tu presencia es muy importante para mí. <br><br> Por favor confirma tu asistencia
+              por WhatsApp. </p> <a class="btn"
+              href="https://wa.me/528442754939?text=Hola%2C%20deseo%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Maite%20Ortiz%20Mart%C3%ADnez."
+              target="_blank" rel="noopener"> Confirmar por WhatsApp </a>
+            <p class="final-content"> <br> <strong>+52 844 275 4939</strong> </p>
+          </div>
+        </section>
+        <div class="floral-divider"></div>
+
+        <!-- ===================================
+     TEXTO FINAL
+==================================== -->
+
+        <p class="parrafo anim-up">
+          Gracias por acompañarme
+          en este momento tan especial
+          y por formar parte de una noche
+          que guardaré para siempre
+          en mi corazón.
+        </p>
+
+        <p class="final-title">
+          ¡Te espero!
+        </p>
+
+        <p class="thanks">
+          Con cariño,
+          <br>
+          Maite Ortiz Martínez
+        </p>
+
+        <br><br>
+
+        <!-- ===================================
+     FOTOGRAFÍA FINAL
+==================================== -->
+
+        <div align="center" class="anim-up">
+          <img src="final.png" class="foto-final" alt="Fotografía final de Maite Ortiz Martínez">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===================================
+         LIGHTBOX GALERÍA:
+       
+
+    <div
+      class="lightbox"
+      id="lightbox">
+
+      <div
+        class="lightbox-overlay"
+        id="lightboxOverlay">
+      </div>
+
+      <div class="lightbox-content">
+
+        <button
+          class="lightbox-close"
+          id="lightboxClose"
+          type="button">
+          &times;
+        </button>
+
+        <button
+          class="lightbox-nav lightbox-prev"
+          id="lightboxPrev"
+          type="button">
+          &#10094;
+        </button>
+
+        <img
+          src="galeria/1.jpeg"
+          class="lightbox-image"
+          id="lightboxImage"
+          alt="Fotografía de Maite Ortiz Martínez">
+
+        <button
+          class="lightbox-nav lightbox-next"
+          id="lightboxNext"
+          type="button">
+          &#10095;
+        </button>
+
+      </div>
+    </div>
+
+    -->
+
+    <!-- ===================================
+         REPRODUCTOR FLOTANTE
+    ==================================== -->
+
+    <div class="floating-player" aria-label="Reproductor de música">
+
+      <div class="player-button" id="playerButton" title="Abrir reproductor">
+
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+
+          <path
+            d="M9 17.5a2.5 2.5 0 1 1-1.999-2.45V6.18l10-2.5v9.77a2.5 2.5 0 1 1-2 2.45V7.75l-6 1.5v7.8a2.5 2.5 0 0 1 0 .45z">
+          </path>
+
+        </svg>
+
+      </div>
+
+      <div class="player-content" id="playerContent">
+
+        <div class="song-info">
+
+          <p class="song-title" id="songTitle">
+            ¡Escucha la invitación con música!
+          </p>
+
+          <p class="song-artist" id="songArtist">
+          </p>
+
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+
+          <div class="progress-bar" id="progressBar">
+          </div>
+
+        </div>
+
+        <div class="player-controls">
+
+          <button class="control-button" id="prevButton" type="button" title="Anterior">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+
+            </svg>
+
+          </button>
+
+          <button class="control-button" id="playButton" type="button" title="Reproducir/Pausar">
+
+            <svg class="icon" id="playIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+
+            </svg>
+
+            <svg class="icon" id="pauseIcon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+
+            </svg>
+
+          </button>
+
+          <button class="control-button" id="nextButton" type="button" title="Siguiente">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+
+            </svg>
+
+          </button>
+
+        </div>
+
+        <div class="volume-control">
+
+          <div class="volume-icon" aria-hidden="true">
+
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5">
+              </polygon>
+
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07">
+              </path>
+
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14">
+              </path>
+
+            </svg>
+
+          </div>
+
+          <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7"
+            aria-label="Control de volumen">
+
+        </div>
+
+        <audio id="audioPlayer" preload="metadata" playsinline webkit-playsinline>
+
+          <source src="./Tercer Cielo_No Crezcas Mas.mp3" type="audio/mpeg">
+
+        </audio>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    /* ===================================
+       ANIMACIONES
+    =================================== */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const targets = document.querySelectorAll(
+        '.anim-left, .anim-right, .anim-up'
+      );
+
+      if (!targets.length) {
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (element) {
+          element.classList.add('in-view');
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: '0px 0px -10% 0px'
+        }
+      );
+
+      targets.forEach(function (element) {
+        observer.observe(element);
+      });
+    });
+
+    /* ===================================
+       SCROLL TO TOP
+    =================================== */
+
+    (function () {
+      const scrollBtn =
+        document.getElementById('scrollBtn');
+
+      if (!scrollBtn) {
+        return;
+      }
+
+      window.addEventListener('scroll', function () {
+        const position =
+          document.body.scrollTop ||
+          document.documentElement.scrollTop;
+
+        if (position > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    })();
+
+    /* ===================================
+       CUENTA REGRESIVA
+       26 SEPTIEMBRE 2026
+       EVENTO 8:30 P. M.
+    =================================== */
+
+    function updateDigitalClock() {
+      const targetDate = new Date(
+        '2026-09-26T20:30:00-06:00'
+      ).getTime();
+
+      const digitalClock =
+        document.getElementById('digital-clock');
+
+      const clockStatus =
+        document.getElementById('clock-status');
+
+      const daysElement =
+        document.getElementById('days');
+
+      const hoursElement =
+        document.getElementById('hours');
+
+      const minutesElement =
+        document.getElementById('minutes');
+
+      const secondsElement =
+        document.getElementById('seconds');
+
+      if (
+        !digitalClock ||
+        !clockStatus ||
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+      ) {
+        return;
+      }
+
+      function tick() {
+        const now = Date.now();
+        const distance = targetDate - now;
+
+        if (distance > 0) {
+          const days = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+          );
+
+          const hours = Math.floor(
+            (
+              distance %
+              (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+          );
+
+          const minutes = Math.floor(
+            (
+              distance %
+              (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+          );
+
+          const seconds = Math.floor(
+            (
+              distance %
+              (1000 * 60)
+            ) /
+            1000
+          );
+
+          daysElement.textContent =
+            String(days).padStart(2, '0');
+
+          hoursElement.textContent =
+            String(hours).padStart(2, '0');
+
+          minutesElement.textContent =
+            String(minutes).padStart(2, '0');
+
+          secondsElement.textContent =
+            String(seconds).padStart(2, '0');
+
+          digitalClock.classList.remove('event-today');
+
+          clockStatus.textContent =
+            'Para vivir juntos esta gran celebración';
+        } else {
+          daysElement.textContent = '00';
+          hoursElement.textContent = '00';
+          minutesElement.textContent = '00';
+          secondsElement.textContent = '00';
+
+          digitalClock.classList.add('event-today');
+
+          clockStatus.textContent =
+            '¡El gran día ha llegado!';
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    window.addEventListener(
+      'load',
+      updateDigitalClock
+    );
+
+    /* ===================================
+       GALERÍA:
+       SIN GALERÍA EN ESTA INVITACIÓN
+       SE CONSERVA SCRIPT PROTEGIDO
+    =================================== */
+
+    (function () {
+      const galleryImage =
+        document.getElementById('galleryImage');
+
+      if (!galleryImage) {
+        return;
+      }
+
+      const images = [
+        'galeria/1.jpeg'
+      ];
+
+      const galleryPrev =
+        document.getElementById('galleryPrev');
+
+      const galleryNext =
+        document.getElementById('galleryNext');
+
+      const galleryDots =
+        document.getElementById('galleryDots');
+
+      const lightbox =
+        document.getElementById('lightbox');
+
+      const lightboxImage =
+        document.getElementById('lightboxImage');
+
+      const lightboxClose =
+        document.getElementById('lightboxClose');
+
+      const lightboxOverlay =
+        document.getElementById('lightboxOverlay');
+
+      const lightboxPrev =
+        document.getElementById('lightboxPrev');
+
+      const lightboxNext =
+        document.getElementById('lightboxNext');
+
+      let current = 0;
+
+      function renderDots() {
+        if (!galleryDots) {
+          return;
+        }
+
+        galleryDots.innerHTML = '';
+
+        images.forEach(function (_, index) {
+          const dot = document.createElement('span');
+
+          dot.className =
+            'gallery-dot' +
+            (
+              index === current
+                ? ' active'
+                : ''
+            );
+
+          dot.addEventListener('click', function () {
+            current = index;
+            updateGallery();
+          });
+
+          galleryDots.appendChild(dot);
+        });
+      }
+
+      function updateGallery() {
+        galleryImage.src =
+          images[current];
+
+        if (lightboxImage) {
+          lightboxImage.src =
+            images[current];
+        }
+
+        renderDots();
+      }
+
+      function prevImage() {
+        current =
+          (
+            current -
+            1 +
+            images.length
+          ) %
+          images.length;
+
+        updateGallery();
+      }
+
+      function nextImage() {
+        current =
+          (
+            current +
+            1
+          ) %
+          images.length;
+
+        updateGallery();
+      }
+
+      if (galleryPrev) {
+        galleryPrev.addEventListener(
+          'click',
+          prevImage
+        );
+      }
+
+      if (galleryNext) {
+        galleryNext.addEventListener(
+          'click',
+          nextImage
+        );
+      }
+
+      galleryImage.addEventListener('click', function () {
+        if (!lightbox) {
+          return;
+        }
+
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        updateGallery();
+      });
+
+      function closeLightbox() {
+        if (!lightbox) {
+          return;
+        }
+
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener(
+          'click',
+          closeLightbox
+        );
+      }
+
+      if (lightboxOverlay) {
+        lightboxOverlay.addEventListener(
+          'click',
+          closeLightbox
+        );
+      }
+
+      if (lightboxPrev) {
+        lightboxPrev.addEventListener(
+          'click',
+          prevImage
+        );
+      }
+
+      if (lightboxNext) {
+        lightboxNext.addEventListener(
+          'click',
+          nextImage
+        );
+      }
+
+      updateGallery();
+    })();
+
+    /* ===================================
+       REPRODUCTOR
+    =================================== */
+
+    (function () {
+      const playerButton =
+        document.getElementById('playerButton');
+
+      const playerContent =
+        document.getElementById('playerContent');
+
+      const audioPlayer =
+        document.getElementById('audioPlayer');
+
+      const playButton =
+        document.getElementById('playButton');
+
+      const playIcon =
+        document.getElementById('playIcon');
+
+      const pauseIcon =
+        document.getElementById('pauseIcon');
+
+      const prevButton =
+        document.getElementById('prevButton');
+
+      const nextButton =
+        document.getElementById('nextButton');
+
+      const volumeSlider =
+        document.getElementById('volumeSlider');
+
+      const progressBar =
+        document.getElementById('progressBar');
+
+      const progressContainer =
+        document.getElementById('progressContainer');
+
+      const songTitle =
+        document.getElementById('songTitle');
+
+      const songArtist =
+        document.getElementById('songArtist');
+
+      if (
+        !playerButton ||
+        !playerContent ||
+        !audioPlayer ||
+        !playButton
+      ) {
+        return;
+      }
+
+      const songs = [
+        {
+          title: 'Canción especial',
+          artist: 'Mis XV Años',
+          src: './Tercer Cielo_No Crezcas Mas.mp3'
+        }
+      ];
+
+      let currentSongIndex = 0;
+
+      function setPlayingUI(isPlaying) {
+        if (playIcon) {
+          playIcon.style.display =
+            isPlaying
+              ? 'none'
+              : 'block';
+        }
+
+        if (pauseIcon) {
+          pauseIcon.style.display =
+            isPlaying
+              ? 'block'
+              : 'none';
+        }
+      }
+
+      function loadSong(index) {
+        const song = songs[index];
+
+        audioPlayer.src = song.src;
+        audioPlayer.load();
+
+        if (songTitle) {
+          songTitle.textContent =
+            song.title;
+        }
+
+        if (songArtist) {
+          songArtist.textContent =
+            song.artist;
+        }
+      }
+
+      playerButton.addEventListener(
+        'click',
+        function (event) {
+          event.stopPropagation();
+
+          playerContent.classList.toggle(
+            'active'
+          );
+        }
+      );
+
+      playerContent.addEventListener(
+        'click',
+        function (event) {
+          event.stopPropagation();
+        }
+      );
+
+      document.addEventListener(
+        'click',
+        function () {
+          playerContent.classList.remove(
+            'active'
+          );
+        }
+      );
+
+      playButton.addEventListener(
+        'click',
+        async function () {
+          try {
+            if (audioPlayer.paused) {
+              await audioPlayer.play();
+              setPlayingUI(true);
+            } else {
+              audioPlayer.pause();
+              setPlayingUI(false);
+            }
+          } catch (error) {
+            setPlayingUI(false);
+          }
+        }
+      );
+
+      if (prevButton) {
+        prevButton.addEventListener(
+          'click',
+          function () {
+            const wasPlaying =
+              !audioPlayer.paused;
+
+            currentSongIndex =
+              (
+                currentSongIndex -
+                1 +
+                songs.length
+              ) %
+              songs.length;
+
+            loadSong(currentSongIndex);
+
+            if (wasPlaying) {
+              audioPlayer
+                .play()
+                .then(function () {
+                  setPlayingUI(true);
+                })
+                .catch(function () {
+                  setPlayingUI(false);
+                });
+            }
+          }
+        );
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener(
+          'click',
+          function () {
+            const wasPlaying =
+              !audioPlayer.paused;
+
+            currentSongIndex =
+              (
+                currentSongIndex +
+                1
+              ) %
+              songs.length;
+
+            loadSong(currentSongIndex);
+
+            if (wasPlaying) {
+              audioPlayer
+                .play()
+                .then(function () {
+                  setPlayingUI(true);
+                })
+                .catch(function () {
+                  setPlayingUI(false);
+                });
+            }
+          }
+        );
+      }
+
+      if (volumeSlider) {
+        audioPlayer.volume =
+          Number(volumeSlider.value);
+
+        volumeSlider.addEventListener(
+          'input',
+          function () {
+            audioPlayer.volume =
+              Number(volumeSlider.value);
+          }
+        );
+      }
+
+      audioPlayer.addEventListener(
+        'timeupdate',
+        function () {
+          if (
+            !audioPlayer.duration ||
+            !progressBar
+          ) {
+            return;
+          }
+
+          const progress =
+            (
+              audioPlayer.currentTime /
+              audioPlayer.duration
+            ) * 100;
+
+          progressBar.style.width =
+            progress + '%';
+        }
+      );
+
+      if (progressContainer) {
+        progressContainer.addEventListener(
+          'click',
+          function (event) {
+            if (!audioPlayer.duration) {
+              return;
+            }
+
+            const rect =
+              progressContainer
+                .getBoundingClientRect();
+
+            const position =
+              (
+                event.clientX -
+                rect.left
+              ) /
+              rect.width;
+
+            audioPlayer.currentTime =
+              position *
+              audioPlayer.duration;
+          }
+        );
+      }
+
+      audioPlayer.addEventListener(
+        'ended',
+        function () {
+          audioPlayer.currentTime = 0;
+          setPlayingUI(false);
+        }
+      );
+
+      audioPlayer.addEventListener(
+        'pause',
+        function () {
+          setPlayingUI(false);
+        }
+      );
+
+      audioPlayer.addEventListener(
+        'play',
+        function () {
+          setPlayingUI(true);
+        }
+      );
+
+      loadSong(currentSongIndex);
+      setPlayingUI(false);
+
+      let startMusicFromEnvelope =
+        new URLSearchParams(window.location.search).get('startMusic') === '1';
+
+      try {
+        startMusicFromEnvelope =
+          startMusicFromEnvelope ||
+          sessionStorage.getItem('reproducirMusica') === '1';
+        sessionStorage.removeItem('reproducirMusica');
+      } catch (error) { }
+
+      if (startMusicFromEnvelope) {
+        audioPlayer
+          .play()
+          .then(function () {
+            setPlayingUI(true);
+          })
+          .catch(function () {
+            setPlayingUI(false);
+          });
+      }
+    })();
+
+  </script>
+
+</body>
+
+</html>
